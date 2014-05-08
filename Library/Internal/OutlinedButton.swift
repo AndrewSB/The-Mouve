@@ -24,8 +24,6 @@ class OutlinedButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.titleLabel?.text = "342"
-        
     }
 
     required init(coder aDecoder: NSCoder) {

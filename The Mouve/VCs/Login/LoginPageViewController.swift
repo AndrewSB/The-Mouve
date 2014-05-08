@@ -27,6 +27,20 @@ class LoginPageViewController: UIPageViewController {
         addStaticViewElements()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.navigationController?.navigationBarHidden = true
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
     
     func addStaticViewElements() {
         self.pageControl = UIPageControl(frame: CGRect(view: view, height: 22, width: 44))
@@ -34,19 +48,19 @@ class LoginPageViewController: UIPageViewController {
         pageControl!.currentPage = 0
         
         let mouveImageView = UIImageView(frame: CGRect(view: view, height: 44, width: 38))
-        mouveImageView.frame.origin.y -= 150
+        mouveImageView.frame.origin.y -= (self.view.frame.height*3 / 9)
         mouveImageView.image = UIImage(named: "mouve-icon")
         
         let loginButton = OutlinedButton(frame: CGRect(view: view, height: 44, width: 200), color: UIColor.seaFoamGreen())
         loginButton.addTarget(self, action: Selector("loginButtonWasHit:"), forControlEvents: .TouchUpInside)
-        loginButton.titleLabel?.text = "Login"
-        loginButton.frame.origin.y += (self.view.frame.height / 2) - 20
+        loginButton.titleLabel!.text = "Login"
+        loginButton.frame.origin.y += (self.view.frame.height / 4) - 50
         
         
         let signupButton = FilledButton(frame: CGRect(view: view, height: 44, width: 200), color: UIColor.seaFoamGreen())
         signupButton.addTarget(self, action: Selector("signupButtonWasHit:"), forControlEvents: .TouchUpInside)
-        signupButton.titleLabel?.text = "Sign up"
-        signupButton.frame.origin.y += (self.view.frame.height / 2) + 20
+        signupButton.titleLabel!.text = "Sign up"
+        signupButton.frame.origin.y += (self.view.frame.height / 4) + 15
         
         self.view.addSubview(pageControl!)
         self.view.addSubview(mouveImageView)
