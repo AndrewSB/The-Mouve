@@ -14,20 +14,28 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let authenticateButton = DGTAuthenticateButton(authenticationCompletion: {
-            (session: DGTSession!, error: NSError!) in
-            // play with Digits session
+        
+        let logInButton = TWTRLogInButton(logInCompletion: {
+            (session: TWTRSession!, error: NSError!) in
+            self.updateWithAuth()
         })
-        authenticateButton.center = self.view.center
-        self.view.addSubview(authenticateButton)
+        logInButton.center = CGPointMake(self.view.center.x, self.view.center.y + 44)
+        self.view.addSubview(logInButton)
+
+        
+        
+        let digitAuthButton = DGTAuthenticateButton(authenticationCompletion: {
+            (session: DGTSession!, error: NSError!) in
+            self.updateWithAuth()
+        })
+        digitAuthButton.center = self.view.center
+        self.view.addSubview(digitAuthButton)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func updateWithAuth() {
+        performSegueWithIdentifier("segueToMain", sender: self)
     }
-
-
+    
+    
 }
 
