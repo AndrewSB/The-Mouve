@@ -35,7 +35,6 @@
 		46FD04941AA7A365008E175B /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD048F1AA7A365008E175B /* ParseCrashReporting.framework */; };
 		46FD04951AA7A365008E175B /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04901AA7A365008E175B /* ParseFacebookUtils.framework */; };
 		46FD04961AA7A365008E175B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04911AA7A365008E175B /* ParseUI.framework */; };
-		46FD049C1AA7A395008E175B /* lolObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FD049B1AA7A395008E175B /* lolObj.m */; };
 		46FD049E1AA7A47C008E175B /* IMG_1962.gif in Resources */ = {isa = PBXBuildFile; fileRef = 46FD049D1AA7A47C008E175B /* IMG_1962.gif */; };
 		46FD04A11AA7A7AA008E175B /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04A01AA7A7AA008E175B /* ImageIO.framework */; };
 		46FD04A31AA7A7D2008E175B /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04A21AA7A7D2008E175B /* Accounts.framework */; };
@@ -93,8 +92,6 @@
 		46FD04901AA7A365008E175B /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
 		46FD04911AA7A365008E175B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		46FD04991AA7A395008E175B /* The Mouve-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Mouve-Bridging-Header.h"; sourceTree = "<group>"; };
-		46FD049A1AA7A395008E175B /* lolObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lolObj.h; sourceTree = "<group>"; };
-		46FD049B1AA7A395008E175B /* lolObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lolObj.m; sourceTree = "<group>"; };
 		46FD049D1AA7A47C008E175B /* IMG_1962.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMG_1962.gif; sourceTree = "<group>"; };
 		46FD04A01AA7A7AA008E175B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		46FD04A21AA7A7D2008E175B /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -182,8 +179,6 @@
 				46FD044C1AA79956008E175B /* Main.storyboard */,
 				46FD044F1AA79956008E175B /* Images.xcassets */,
 				46FD04511AA79956008E175B /* LaunchScreen.xib */,
-				46FD049A1AA7A395008E175B /* lolObj.h */,
-				46FD049B1AA7A395008E175B /* lolObj.m */,
 				46FD04461AA79956008E175B /* Supporting Files */,
 			);
 			path = "The Mouve";
@@ -457,7 +452,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FD04731AA79DEE008E175B /* MainViewController.swift in Sources */,
-				46FD049C1AA7A395008E175B /* lolObj.m in Sources */,
 				46FD048B1AA7A1B6008E175B /* MouveDetailPageViewController.swift in Sources */,
 				46FD044B1AA79956008E175B /* ViewController.swift in Sources */,
 				46FD04491AA79956008E175B /* AppDelegate.swift in Sources */,

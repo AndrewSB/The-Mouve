@@ -118,10 +118,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pUe-gE-Phx">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <webView userInteractionEnabled="NO" contentMode="scaleToFill" mediaPlaybackRequiresUserAction="NO" mediaPlaybackAllowsAirPlay="NO" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYB-D4-fzp">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DPo-xN-pwI">
+                                <rect key="frame" x="150" y="28" width="300" height="300"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXi-Xg-MpB">
                                 <rect key="frame" x="16" y="20" width="34" height="30"/>
                                 <state key="normal" title="back">
@@ -158,30 +163,36 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="y9y-kz-huv" firstAttribute="top" secondItem="pUe-gE-Phx" secondAttribute="bottom" id="3lp-Dg-2h3"/>
-                            <constraint firstItem="pUe-gE-Phx" firstAttribute="top" secondItem="lMe-LB-jVU" secondAttribute="topMargin" id="Ddx-MY-Q76"/>
+                            <constraint firstItem="a7A-vC-8tz" firstAttribute="top" secondItem="8xP-0y-NKq" secondAttribute="bottom" constant="53" id="0oh-8d-pOr"/>
+                            <constraint firstItem="y9y-kz-huv" firstAttribute="top" secondItem="DPo-xN-pwI" secondAttribute="bottom" id="3mF-hV-s4F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DPo-xN-pwI" secondAttribute="trailing" constant="-16" id="6aV-vY-tUJ"/>
+                            <constraint firstItem="a7A-vC-8tz" firstAttribute="leading" secondItem="lMe-LB-jVU" secondAttribute="leadingMargin" constant="52" id="7bA-6E-D2D"/>
+                            <constraint firstItem="DPo-xN-pwI" firstAttribute="top" secondItem="8xP-0y-NKq" secondAttribute="bottom" id="Cb4-Te-U7x"/>
                             <constraint firstItem="afg-cI-pNK" firstAttribute="top" secondItem="dF8-9N-w0W" secondAttribute="bottom" constant="39" id="Dl3-6X-79j"/>
+                            <constraint firstItem="dF8-9N-w0W" firstAttribute="leading" secondItem="lMe-LB-jVU" secondAttribute="leadingMargin" constant="52" id="E5U-RL-xmp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SYB-D4-fzp" secondAttribute="trailing" constant="-16" id="FAJ-Se-BrA"/>
                             <constraint firstItem="zXi-Xg-MpB" firstAttribute="leading" secondItem="lMe-LB-jVU" secondAttribute="leadingMargin" id="GdQ-jJ-DT7"/>
                             <constraint firstItem="a7A-vC-8tz" firstAttribute="leading" secondItem="dF8-9N-w0W" secondAttribute="leading" id="HI3-Tx-Eh8"/>
                             <constraint firstAttribute="trailingMargin" secondItem="afg-cI-pNK" secondAttribute="trailing" constant="78" id="Hjg-oU-c1f"/>
                             <constraint firstItem="zXi-Xg-MpB" firstAttribute="top" secondItem="8xP-0y-NKq" secondAttribute="bottom" id="KUG-S2-yY5"/>
                             <constraint firstItem="bUj-30-G3G" firstAttribute="leading" secondItem="a7A-vC-8tz" secondAttribute="trailing" id="WF4-pP-rSl"/>
+                            <constraint firstItem="SYB-D4-fzp" firstAttribute="leading" secondItem="lMe-LB-jVU" secondAttribute="leadingMargin" constant="-16" id="WT7-fj-RN4"/>
                             <constraint firstItem="afg-cI-pNK" firstAttribute="leading" secondItem="lMe-LB-jVU" secondAttribute="leadingMargin" id="YXf-Px-XUq"/>
-                            <constraint firstItem="pUe-gE-Phx" firstAttribute="top" secondItem="a7A-vC-8tz" secondAttribute="bottom" constant="-103" id="YkZ-LB-Jfo"/>
+                            <constraint firstItem="SYB-D4-fzp" firstAttribute="top" secondItem="8xP-0y-NKq" secondAttribute="bottom" id="ZiG-rN-Tgt"/>
+                            <constraint firstItem="DPo-xN-pwI" firstAttribute="leading" secondItem="lMe-LB-jVU" secondAttribute="leadingMargin" constant="-16" id="aeH-Hi-o4y"/>
                             <constraint firstItem="bUj-30-G3G" firstAttribute="baseline" secondItem="a7A-vC-8tz" secondAttribute="top" id="bu9-YF-Yzh"/>
-                            <constraint firstItem="pUe-gE-Phx" firstAttribute="leading" secondItem="a7A-vC-8tz" secondAttribute="trailing" constant="-185" id="d5X-ih-hRW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pUe-gE-Phx" secondAttribute="trailing" constant="-16" id="gpN-3q-h8u"/>
-                            <constraint firstItem="pUe-gE-Phx" firstAttribute="leading" secondItem="lMe-LB-jVU" secondAttribute="leadingMargin" constant="-16" id="x7i-e6-LUl"/>
+                            <constraint firstItem="y9y-kz-huv" firstAttribute="top" secondItem="SYB-D4-fzp" secondAttribute="bottom" id="mk7-At-Af7"/>
                             <constraint firstItem="dF8-9N-w0W" firstAttribute="top" secondItem="a7A-vC-8tz" secondAttribute="bottom" constant="8" id="zT1-H6-X5o"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backButton" destination="zXi-Xg-MpB" id="UKt-nL-Qzj"/>
+                        <outlet property="clearView" destination="DPo-xN-pwI" id="C7d-Ce-j2N"/>
                         <outlet property="detailLabel" destination="dF8-9N-w0W" id="fOL-4t-DY5"/>
                         <outlet property="friendScrollView" destination="afg-cI-pNK" id="0tt-cz-qhE"/>
                         <outlet property="timeLabel" destination="bUj-30-G3G" id="7gI-H5-OqA"/>
                         <outlet property="titleLabel" destination="a7A-vC-8tz" id="IdM-QV-UHY"/>
-                        <outlet property="webView" destination="pUe-gE-Phx" id="zR3-D9-Jlc"/>
+                        <outlet property="webView" destination="SYB-D4-fzp" id="19B-4K-KB8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8cH-W4-9Wp" userLabel="First Responder" sceneMemberID="firstResponder"/>

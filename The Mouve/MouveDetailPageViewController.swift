@@ -16,16 +16,17 @@ class MouveDetailPageViewController: UIViewController {
 
     @IBOutlet weak var friendScrollView: UIScrollView!
     @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var clearView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setContent()
 
         let tap = UITapGestureRecognizer(target: self, action: "toggleShow")
-        webView.addGestureRecognizer(tap)
+        clearView.addGestureRecognizer(tap)
     }
     
-    func toggleShow(sender:UITapGestureRecognizer) {
+    func toggleShow() {
         println("hit")
     }
     
