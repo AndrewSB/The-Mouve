@@ -18,6 +18,18 @@
 		46FD046F1AA79A11008E175B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD046D1AA79A11008E175B /* TwitterKit.framework */; };
 		46FD04701AA79A11008E175B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 46FD046E1AA79A11008E175B /* TwitterKitResources.bundle */; };
 		46FD04731AA79DEE008E175B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD04721AA79DEE008E175B /* MainViewController.swift */; };
+		46FD04751AA79F05008E175B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04741AA79F05008E175B /* AudioToolbox.framework */; };
+		46FD04771AA79F0B008E175B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04761AA79F0B008E175B /* CFNetwork.framework */; };
+		46FD04791AA79F12008E175B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04781AA79F12008E175B /* CoreGraphics.framework */; };
+		46FD047B1AA79F16008E175B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD047A1AA79F16008E175B /* CoreLocation.framework */; };
+		46FD047D1AA79F1B008E175B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD047C1AA79F1B008E175B /* MobileCoreServices.framework */; };
+		46FD047F1AA79F1F008E175B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD047E1AA79F1F008E175B /* QuartzCore.framework */; };
+		46FD04811AA79F23008E175B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04801AA79F23008E175B /* Security.framework */; };
+		46FD04831AA79F28008E175B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04821AA79F28008E175B /* StoreKit.framework */; };
+		46FD04851AA79F30008E175B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04841AA79F2F008E175B /* SystemConfiguration.framework */; };
+		46FD04871AA79F34008E175B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04861AA79F34008E175B /* libz.dylib */; };
+		46FD04891AA79F3A008E175B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04881AA79F3A008E175B /* libsqlite3.dylib */; };
+		46FD048B1AA7A1B6008E175B /* MouveDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD048A1AA7A1B6008E175B /* MouveDetailPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +58,18 @@
 		46FD046D1AA79A11008E175B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		46FD046E1AA79A11008E175B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		46FD04721AA79DEE008E175B /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		46FD04741AA79F05008E175B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		46FD04761AA79F0B008E175B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		46FD04781AA79F12008E175B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		46FD047A1AA79F16008E175B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		46FD047C1AA79F1B008E175B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		46FD047E1AA79F1F008E175B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		46FD04801AA79F23008E175B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		46FD04821AA79F28008E175B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		46FD04841AA79F2F008E175B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		46FD04861AA79F34008E175B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		46FD04881AA79F3A008E175B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		46FD048A1AA7A1B6008E175B /* MouveDetailPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouveDetailPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +77,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FD04891AA79F3A008E175B /* libsqlite3.dylib in Frameworks */,
+				46FD04871AA79F34008E175B /* libz.dylib in Frameworks */,
+				46FD04851AA79F30008E175B /* SystemConfiguration.framework in Frameworks */,
+				46FD04831AA79F28008E175B /* StoreKit.framework in Frameworks */,
+				46FD04811AA79F23008E175B /* Security.framework in Frameworks */,
+				46FD047F1AA79F1F008E175B /* QuartzCore.framework in Frameworks */,
+				46FD047D1AA79F1B008E175B /* MobileCoreServices.framework in Frameworks */,
+				46FD047B1AA79F16008E175B /* CoreLocation.framework in Frameworks */,
+				46FD04791AA79F12008E175B /* CoreGraphics.framework in Frameworks */,
+				46FD04771AA79F0B008E175B /* CFNetwork.framework in Frameworks */,
+				46FD04751AA79F05008E175B /* AudioToolbox.framework in Frameworks */,
 				46FD046B1AA799D2008E175B /* Crashlytics.framework in Frameworks */,
 				46FD046C1AA799D2008E175B /* Fabric.framework in Frameworks */,
 				46FD046F1AA79A11008E175B /* TwitterKit.framework in Frameworks */,
@@ -94,6 +129,7 @@
 				46FD04481AA79956008E175B /* AppDelegate.swift */,
 				46FD044A1AA79956008E175B /* ViewController.swift */,
 				46FD04721AA79DEE008E175B /* MainViewController.swift */,
+				46FD048A1AA7A1B6008E175B /* MouveDetailPageViewController.swift */,
 				46FD044C1AA79956008E175B /* Main.storyboard */,
 				46FD044F1AA79956008E175B /* Images.xcassets */,
 				46FD04511AA79956008E175B /* LaunchScreen.xib */,
@@ -130,6 +166,17 @@
 		46FD04711AA79A63008E175B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46FD04881AA79F3A008E175B /* libsqlite3.dylib */,
+				46FD04861AA79F34008E175B /* libz.dylib */,
+				46FD04841AA79F2F008E175B /* SystemConfiguration.framework */,
+				46FD04821AA79F28008E175B /* StoreKit.framework */,
+				46FD04801AA79F23008E175B /* Security.framework */,
+				46FD047E1AA79F1F008E175B /* QuartzCore.framework */,
+				46FD047C1AA79F1B008E175B /* MobileCoreServices.framework */,
+				46FD047A1AA79F16008E175B /* CoreLocation.framework */,
+				46FD04781AA79F12008E175B /* CoreGraphics.framework */,
+				46FD04761AA79F0B008E175B /* CFNetwork.framework */,
+				46FD04741AA79F05008E175B /* AudioToolbox.framework */,
 				46FD046D1AA79A11008E175B /* TwitterKit.framework */,
 				46FD046E1AA79A11008E175B /* TwitterKitResources.bundle */,
 				46FD04691AA799D2008E175B /* Crashlytics.framework */,
@@ -258,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FD04731AA79DEE008E175B /* MainViewController.swift in Sources */,
+				46FD048B1AA7A1B6008E175B /* MouveDetailPageViewController.swift in Sources */,
 				46FD044B1AA79956008E175B /* ViewController.swift in Sources */,
 				46FD04491AA79956008E175B /* AppDelegate.swift in Sources */,
 			);
