@@ -56,8 +56,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="172" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5es-pl-mvL">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="172" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5es-pl-mvL">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" rowHeight="172" id="LR5-hF-VQt">
@@ -90,9 +90,16 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cbc-uz-E3r" firstAttribute="top" secondItem="5es-pl-mvL" secondAttribute="bottom" id="4UO-PP-dgA"/>
+                            <constraint firstItem="5es-pl-mvL" firstAttribute="leading" secondItem="U8h-YT-e7p" secondAttribute="leadingMargin" constant="-16" id="JVn-Sg-mZ9"/>
+                            <constraint firstItem="5es-pl-mvL" firstAttribute="top" secondItem="rFI-a8-6m8" secondAttribute="bottom" id="k4O-ft-58G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5es-pl-mvL" secondAttribute="trailing" constant="-16" id="p6f-Nk-x1x"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="mainTableView" destination="5es-pl-mvL" id="ZRl-VP-lb5"/>
+                        <segue destination="ZRF-Tc-FfV" kind="showDetail" id="yOy-jh-lnu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9U-cn-JxV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -179,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8cH-W4-9Wp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1624" y="572"/>
+            <point key="canvasLocation" x="1599" y="565"/>
         </scene>
     </scenes>
 </document>
