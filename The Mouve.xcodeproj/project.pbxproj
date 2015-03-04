@@ -30,6 +30,12 @@
 		46FD04871AA79F34008E175B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04861AA79F34008E175B /* libz.dylib */; };
 		46FD04891AA79F3A008E175B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04881AA79F3A008E175B /* libsqlite3.dylib */; };
 		46FD048B1AA7A1B6008E175B /* MouveDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD048A1AA7A1B6008E175B /* MouveDetailPageViewController.swift */; };
+		46FD04921AA7A365008E175B /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD048D1AA7A365008E175B /* Bolts.framework */; };
+		46FD04931AA7A365008E175B /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD048E1AA7A365008E175B /* Parse.framework */; };
+		46FD04941AA7A365008E175B /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD048F1AA7A365008E175B /* ParseCrashReporting.framework */; };
+		46FD04951AA7A365008E175B /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04901AA7A365008E175B /* ParseFacebookUtils.framework */; };
+		46FD04961AA7A365008E175B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04911AA7A365008E175B /* ParseUI.framework */; };
+		46FD049C1AA7A395008E175B /* lolObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FD049B1AA7A395008E175B /* lolObj.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +76,14 @@
 		46FD04861AA79F34008E175B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		46FD04881AA79F3A008E175B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		46FD048A1AA7A1B6008E175B /* MouveDetailPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouveDetailPageViewController.swift; sourceTree = "<group>"; };
+		46FD048D1AA7A365008E175B /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		46FD048E1AA7A365008E175B /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		46FD048F1AA7A365008E175B /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
+		46FD04901AA7A365008E175B /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		46FD04911AA7A365008E175B /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		46FD04991AA7A395008E175B /* The Mouve-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Mouve-Bridging-Header.h"; sourceTree = "<group>"; };
+		46FD049A1AA7A395008E175B /* lolObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lolObj.h; sourceTree = "<group>"; };
+		46FD049B1AA7A395008E175B /* lolObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lolObj.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +91,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FD04921AA7A365008E175B /* Bolts.framework in Frameworks */,
 				46FD04891AA79F3A008E175B /* libsqlite3.dylib in Frameworks */,
+				46FD04951AA7A365008E175B /* ParseFacebookUtils.framework in Frameworks */,
 				46FD04871AA79F34008E175B /* libz.dylib in Frameworks */,
+				46FD04941AA7A365008E175B /* ParseCrashReporting.framework in Frameworks */,
 				46FD04851AA79F30008E175B /* SystemConfiguration.framework in Frameworks */,
 				46FD04831AA79F28008E175B /* StoreKit.framework in Frameworks */,
 				46FD04811AA79F23008E175B /* Security.framework in Frameworks */,
+				46FD04931AA7A365008E175B /* Parse.framework in Frameworks */,
 				46FD047F1AA79F1F008E175B /* QuartzCore.framework in Frameworks */,
+				46FD04961AA7A365008E175B /* ParseUI.framework in Frameworks */,
 				46FD047D1AA79F1B008E175B /* MobileCoreServices.framework in Frameworks */,
 				46FD047B1AA79F16008E175B /* CoreLocation.framework in Frameworks */,
 				46FD04791AA79F12008E175B /* CoreGraphics.framework in Frameworks */,
@@ -133,7 +152,10 @@
 				46FD044C1AA79956008E175B /* Main.storyboard */,
 				46FD044F1AA79956008E175B /* Images.xcassets */,
 				46FD04511AA79956008E175B /* LaunchScreen.xib */,
+				46FD049A1AA7A395008E175B /* lolObj.h */,
+				46FD049B1AA7A395008E175B /* lolObj.m */,
 				46FD04461AA79956008E175B /* Supporting Files */,
+				46FD04991AA7A395008E175B /* The Mouve-Bridging-Header.h */,
 			);
 			path = "The Mouve";
 			sourceTree = "<group>";
@@ -166,6 +188,39 @@
 		46FD04711AA79A63008E175B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				46FD048C1AA7A365008E175B /* parse-library-1 */,
+				46FD04981AA7A37E008E175B /* Parse Dependencies */,
+				46FD04971AA7A377008E175B /* Fabric */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46FD048C1AA7A365008E175B /* parse-library-1 */ = {
+			isa = PBXGroup;
+			children = (
+				46FD048D1AA7A365008E175B /* Bolts.framework */,
+				46FD048E1AA7A365008E175B /* Parse.framework */,
+				46FD048F1AA7A365008E175B /* ParseCrashReporting.framework */,
+				46FD04901AA7A365008E175B /* ParseFacebookUtils.framework */,
+				46FD04911AA7A365008E175B /* ParseUI.framework */,
+			);
+			path = "parse-library-1";
+			sourceTree = "<group>";
+		};
+		46FD04971AA7A377008E175B /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				46FD046D1AA79A11008E175B /* TwitterKit.framework */,
+				46FD046E1AA79A11008E175B /* TwitterKitResources.bundle */,
+				46FD04691AA799D2008E175B /* Crashlytics.framework */,
+				46FD046A1AA799D2008E175B /* Fabric.framework */,
+			);
+			name = Fabric;
+			sourceTree = "<group>";
+		};
+		46FD04981AA7A37E008E175B /* Parse Dependencies */ = {
+			isa = PBXGroup;
+			children = (
 				46FD04881AA79F3A008E175B /* libsqlite3.dylib */,
 				46FD04861AA79F34008E175B /* libz.dylib */,
 				46FD04841AA79F2F008E175B /* SystemConfiguration.framework */,
@@ -177,12 +232,8 @@
 				46FD04781AA79F12008E175B /* CoreGraphics.framework */,
 				46FD04761AA79F0B008E175B /* CFNetwork.framework */,
 				46FD04741AA79F05008E175B /* AudioToolbox.framework */,
-				46FD046D1AA79A11008E175B /* TwitterKit.framework */,
-				46FD046E1AA79A11008E175B /* TwitterKitResources.bundle */,
-				46FD04691AA799D2008E175B /* Crashlytics.framework */,
-				46FD046A1AA799D2008E175B /* Fabric.framework */,
 			);
-			name = Frameworks;
+			name = "Parse Dependencies";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FD04731AA79DEE008E175B /* MainViewController.swift in Sources */,
+				46FD049C1AA7A395008E175B /* lolObj.m in Sources */,
 				46FD048B1AA7A1B6008E175B /* MouveDetailPageViewController.swift in Sources */,
 				46FD044B1AA79956008E175B /* ViewController.swift in Sources */,
 				46FD04491AA79956008E175B /* AppDelegate.swift in Sources */,
@@ -430,13 +482,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/parse-library-1",
 				);
 				INFOPLIST_FILE = "The Mouve/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "The Mouve/The Mouve-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -444,13 +500,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/parse-library-1",
 				);
 				INFOPLIST_FILE = "The Mouve/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "The Mouve/The Mouve-Bridging-Header.h";
 			};
 			name = Release;
 		};
