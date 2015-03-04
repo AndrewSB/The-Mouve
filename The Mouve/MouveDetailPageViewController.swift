@@ -19,14 +19,22 @@ class MouveDetailPageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let url = NSURL(string: "")
+        setContent()
 
-        let tap = UITapGestureRecognizer(target: self, action: "toggleShow:")
+        let tap = UITapGestureRecognizer(target: self, action: "toggleShow")
         webView.addGestureRecognizer(tap)
     }
     
-    func toggleShow(id: AnyObject) {
+    func toggleShow(sender:UITapGestureRecognizer) {
         println("hit")
+    }
+    
+    func setContent() {
+        var filePath = NSBundle.mainBundle().pathForResource("IMG_1962", ofType: "gif")
+        var gif = NSData(contentsOfFile: filePath!)
+        
+        webView.loadData(gif, MIMEType: "image/gif", textEncodingName: nil, baseURL: nil)
+
     }
 
     

@@ -99,7 +99,7 @@
                     </view>
                     <connections>
                         <outlet property="mainTableView" destination="5es-pl-mvL" id="ZRl-VP-lb5"/>
-                        <segue destination="ZRF-Tc-FfV" kind="showDetail" id="yOy-jh-lnu"/>
+                        <segue destination="ZRF-Tc-FfV" kind="showDetail" identifier="segueToMouve" id="yOy-jh-lnu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G9U-cn-JxV" userLabel="First Responder" sceneMemberID="firstResponder"/>

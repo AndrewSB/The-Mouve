@@ -23,8 +23,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
-//table vc
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
@@ -34,5 +32,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.textLabel?.text = "asd"
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        performSegueWithIdentifier("segueToMouve", sender: self)
     }
 }

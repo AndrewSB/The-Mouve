@@ -36,7 +36,7 @@
 		46FD04951AA7A365008E175B /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04901AA7A365008E175B /* ParseFacebookUtils.framework */; };
 		46FD04961AA7A365008E175B /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04911AA7A365008E175B /* ParseUI.framework */; };
 		46FD049C1AA7A395008E175B /* lolObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 46FD049B1AA7A395008E175B /* lolObj.m */; };
-		46FD049E1AA7A47C008E175B /* IMG_1962.GIF in Resources */ = {isa = PBXBuildFile; fileRef = 46FD049D1AA7A47C008E175B /* IMG_1962.GIF */; };
+		46FD049E1AA7A47C008E175B /* IMG_1962.gif in Resources */ = {isa = PBXBuildFile; fileRef = 46FD049D1AA7A47C008E175B /* IMG_1962.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +85,7 @@
 		46FD04991AA7A395008E175B /* The Mouve-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Mouve-Bridging-Header.h"; sourceTree = "<group>"; };
 		46FD049A1AA7A395008E175B /* lolObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lolObj.h; sourceTree = "<group>"; };
 		46FD049B1AA7A395008E175B /* lolObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lolObj.m; sourceTree = "<group>"; };
-		46FD049D1AA7A47C008E175B /* IMG_1962.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMG_1962.GIF; sourceTree = "<group>"; };
+		46FD049D1AA7A47C008E175B /* IMG_1962.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = IMG_1962.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,7 +242,7 @@
 		46FD049F1AA7A47F008E175B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				46FD049D1AA7A47C008E175B /* IMG_1962.GIF */,
+				46FD049D1AA7A47C008E175B /* IMG_1962.gif */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -332,7 +332,7 @@
 				46FD044E1AA79956008E175B /* Main.storyboard in Resources */,
 				46FD04531AA79956008E175B /* LaunchScreen.xib in Resources */,
 				46FD04501AA79956008E175B /* Images.xcassets in Resources */,
-				46FD049E1AA7A47C008E175B /* IMG_1962.GIF in Resources */,
+				46FD049E1AA7A47C008E175B /* IMG_1962.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
