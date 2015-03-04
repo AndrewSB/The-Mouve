@@ -3,4 +3,6 @@
 //
 
 #import <Parse/Parse.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+
 #import <SDWebImage/UIImageView+WebCache.h>
