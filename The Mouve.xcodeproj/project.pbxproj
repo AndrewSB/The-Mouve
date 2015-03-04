@@ -13,6 +13,10 @@
 		46FD04501AA79956008E175B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46FD044F1AA79956008E175B /* Images.xcassets */; };
 		46FD04531AA79956008E175B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46FD04511AA79956008E175B /* LaunchScreen.xib */; };
 		46FD045F1AA79956008E175B /* The_MouveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD045E1AA79956008E175B /* The_MouveTests.swift */; };
+		46FD046B1AA799D2008E175B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD04691AA799D2008E175B /* Crashlytics.framework */; };
+		46FD046C1AA799D2008E175B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD046A1AA799D2008E175B /* Fabric.framework */; };
+		46FD046F1AA79A11008E175B /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46FD046D1AA79A11008E175B /* TwitterKit.framework */; };
+		46FD04701AA79A11008E175B /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 46FD046E1AA79A11008E175B /* TwitterKitResources.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		46FD04581AA79956008E175B /* The MouveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The MouveTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FD045D1AA79956008E175B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46FD045E1AA79956008E175B /* The_MouveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_MouveTests.swift; sourceTree = "<group>"; };
+		46FD04691AA799D2008E175B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		46FD046A1AA799D2008E175B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		46FD046D1AA79A11008E175B /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		46FD046E1AA79A11008E175B /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +51,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FD046B1AA799D2008E175B /* Crashlytics.framework in Frameworks */,
+				46FD046C1AA799D2008E175B /* Fabric.framework in Frameworks */,
+				46FD046F1AA79A11008E175B /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +70,7 @@
 		46FD043A1AA79956008E175B = {
 			isa = PBXGroup;
 			children = (
+				46FD04711AA79A63008E175B /* Frameworks */,
 				46FD04451AA79956008E175B /* The Mouve */,
 				46FD045B1AA79956008E175B /* The MouveTests */,
 				46FD04441AA79956008E175B /* Products */,
@@ -112,6 +124,17 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		46FD04711AA79A63008E175B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46FD046D1AA79A11008E175B /* TwitterKit.framework */,
+				46FD046E1AA79A11008E175B /* TwitterKitResources.bundle */,
+				46FD04691AA799D2008E175B /* Crashlytics.framework */,
+				46FD046A1AA799D2008E175B /* Fabric.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,6 +145,7 @@
 				46FD043F1AA79956008E175B /* Sources */,
 				46FD04401AA79956008E175B /* Frameworks */,
 				46FD04411AA79956008E175B /* Resources */,
+				46FD04681AA799BF008E175B /* Install Fabric */,
 			);
 			buildRules = (
 			);
@@ -192,6 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46FD04701AA79A11008E175B /* TwitterKitResources.bundle in Resources */,
 				46FD044E1AA79956008E175B /* Main.storyboard in Resources */,
 				46FD04531AA79956008E175B /* LaunchScreen.xib in Resources */,
 				46FD04501AA79956008E175B /* Images.xcassets in Resources */,
@@ -206,6 +231,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		46FD04681AA799BF008E175B /* Install Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Install Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run cf31bd871fb35d3e3e94b3732cd654bbde1f5b0c 33804315ff66b7966281403539d1d005fcf98139ee03282942a67832a10b0f8e";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46FD043F1AA79956008E175B /* Sources */ = {
@@ -336,6 +378,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "The Mouve/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -346,6 +392,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "The Mouve/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
