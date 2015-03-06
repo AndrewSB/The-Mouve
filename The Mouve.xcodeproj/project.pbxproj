@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		378947EA1A6B6A87BF098050 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E3D9AD0F18B850B543A6193E /* libPods.a */; };
+		4698B5851AA94BB700F8729F /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4698B5841AA94BB700F8729F /* Welcome.storyboard */; };
+		4698B5881AA94C0B00F8729F /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4698B5871AA94C0B00F8729F /* TutorialViewController.swift */; };
+		4698B58A1AA94C1700F8729F /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4698B5891AA94C1700F8729F /* TutorialPageViewController.swift */; };
+		4698B58C1AA94C4B00F8729F /* TutorialPageViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4698B58B1AA94C4B00F8729F /* TutorialPageViewControllerDataSource.swift */; };
 		46FD04491AA79956008E175B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD04481AA79956008E175B /* AppDelegate.swift */; };
 		46FD044B1AA79956008E175B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FD044A1AA79956008E175B /* ViewController.swift */; };
 		46FD044E1AA79956008E175B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46FD044C1AA79956008E175B /* Main.storyboard */; };
@@ -60,6 +64,10 @@
 /* Begin PBXFileReference section */
 		2258776F0468E5F1634C01B1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		263108ECADB48EA3685BBBEA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4698B5841AA94BB700F8729F /* Welcome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		4698B5871AA94C0B00F8729F /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		4698B5891AA94C1700F8729F /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
+		4698B58B1AA94C4B00F8729F /* TutorialPageViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewControllerDataSource.swift; sourceTree = "<group>"; };
 		46FD04431AA79956008E175B /* The Mouve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Mouve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46FD04471AA79956008E175B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46FD04481AA79956008E175B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +156,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4698B5861AA94BF400F8729F /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				4698B5841AA94BB700F8729F /* Welcome.storyboard */,
+				4698B5871AA94C0B00F8729F /* TutorialViewController.swift */,
+				4698B5891AA94C1700F8729F /* TutorialPageViewController.swift */,
+				4698B58B1AA94C4B00F8729F /* TutorialPageViewControllerDataSource.swift */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
 		46FD043A1AA79956008E175B = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +196,7 @@
 				46FD04721AA79DEE008E175B /* MainViewController.swift */,
 				46FD048A1AA7A1B6008E175B /* MouveDetailPageViewController.swift */,
 				46FD044C1AA79956008E175B /* Main.storyboard */,
+				4698B5861AA94BF400F8729F /* Welcome */,
 				46FD044F1AA79956008E175B /* Images.xcassets */,
 				46FD04511AA79956008E175B /* LaunchScreen.xib */,
 				46FD04461AA79956008E175B /* Supporting Files */,
@@ -384,6 +404,7 @@
 				46FD044E1AA79956008E175B /* Main.storyboard in Resources */,
 				46FD05C61AA7A88D008E175B /* LICENSE in Resources */,
 				46FD04531AA79956008E175B /* LaunchScreen.xib in Resources */,
+				4698B5851AA94BB700F8729F /* Welcome.storyboard in Resources */,
 				46FD04501AA79956008E175B /* Images.xcassets in Resources */,
 				46FD05C71AA7A88D008E175B /* README.txt in Resources */,
 				46FD049E1AA7A47C008E175B /* IMG_1962.gif in Resources */,
@@ -452,7 +473,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				46FD04731AA79DEE008E175B /* MainViewController.swift in Sources */,
+				4698B58C1AA94C4B00F8729F /* TutorialPageViewControllerDataSource.swift in Sources */,
 				46FD048B1AA7A1B6008E175B /* MouveDetailPageViewController.swift in Sources */,
+				4698B58A1AA94C1700F8729F /* TutorialPageViewController.swift in Sources */,
+				4698B5881AA94C0B00F8729F /* TutorialViewController.swift in Sources */,
 				46FD044B1AA79956008E175B /* ViewController.swift in Sources */,
 				46FD04491AA79956008E175B /* AppDelegate.swift in Sources */,
 			);
