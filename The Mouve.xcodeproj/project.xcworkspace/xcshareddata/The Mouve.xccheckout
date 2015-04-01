@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>53AADAA0-0E80-45DB-A930-039CD2480F3F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>The Mouve</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>38C4E25F994BEC8BEBDBE58ED9CC8108C053634B</key>
+		<string>github.com:AndrewSB/The-Mouve.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>The Mouve.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>38C4E25F994BEC8BEBDBE58ED9CC8108C053634B</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:AndrewSB/The-Mouve.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>38C4E25F994BEC8BEBDBE58ED9CC8108C053634B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>38C4E25F994BEC8BEBDBE58ED9CC8108C053634B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>The-Mouve</string>
+		</dict>
+	</array>
+</dict>
+</plist>
