@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		46111ED11ACCB85B00C14878 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46111ED01ACCB85B00C14878 /* AppDelegate.swift */; };
-		46111ED31ACCB85B00C14878 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46111ED21ACCB85B00C14878 /* ViewController.swift */; };
 		46111ED61ACCB85B00C14878 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46111ED41ACCB85B00C14878 /* Main.storyboard */; };
 		46111ED81ACCB85B00C14878 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46111ED71ACCB85B00C14878 /* Images.xcassets */; };
 		46111EDB1ACCB85B00C14878 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46111ED91ACCB85B00C14878 /* LaunchScreen.xib */; };
@@ -30,6 +29,9 @@
 		46111F101ACCBAA100C14878 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46111F0A1ACCBAA100C14878 /* ParseFacebookUtilsV4.framework */; };
 		46111F111ACCBAA100C14878 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46111F0B1ACCBAA100C14878 /* ParseUI.framework */; };
 		46111F191ACCBB5E00C14878 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46111F181ACCBB5E00C14878 /* SystemConfiguration.framework */; };
+		46111F1D1ACCBCC400C14878 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46111F1C1ACCBCC400C14878 /* Login.storyboard */; };
+		46111F251ACCBDCE00C14878 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46111F241ACCBDCE00C14878 /* LoginPageViewController.swift */; };
+		46111F271ACCBDDF00C14878 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46111F261ACCBDDF00C14878 /* TutorialViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,6 @@
 		46111ECB1ACCB85B00C14878 /* The Mouve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Mouve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46111ECF1ACCB85B00C14878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46111ED01ACCB85B00C14878 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		46111ED21ACCB85B00C14878 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		46111ED51ACCB85B00C14878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46111ED71ACCB85B00C14878 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		46111EDA1ACCB85B00C14878 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -71,6 +72,9 @@
 		46111F0B1ACCBAA100C14878 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		46111F141ACCBADF00C14878 /* The Mouve-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Mouve-Bridging-Header.h"; sourceTree = "<group>"; };
 		46111F181ACCBB5E00C14878 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		46111F1C1ACCBCC400C14878 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		46111F241ACCBDCE00C14878 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
+		46111F261ACCBDDF00C14878 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				46111ED01ACCB85B00C14878 /* AppDelegate.swift */,
-				46111ED21ACCB85B00C14878 /* ViewController.swift */,
-				46111ED41ACCB85B00C14878 /* Main.storyboard */,
+				46111F1E1ACCBD0500C14878 /* Views */,
 				46111ED71ACCB85B00C14878 /* Images.xcassets */,
 				46111ECE1ACCB85B00C14878 /* Supporting Files */,
 			);
@@ -212,6 +215,33 @@
 				46111F121ACCBAA500C14878 /* Parse */,
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		46111F1E1ACCBD0500C14878 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				46111F1F1ACCBD9B00C14878 /* Login */,
+				46111F201ACCBD9F00C14878 /* Main */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		46111F1F1ACCBD9B00C14878 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				46111F1C1ACCBCC400C14878 /* Login.storyboard */,
+				46111F241ACCBDCE00C14878 /* LoginPageViewController.swift */,
+				46111F261ACCBDDF00C14878 /* TutorialViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		46111F201ACCBD9F00C14878 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				46111ED41ACCB85B00C14878 /* Main.storyboard */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +325,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46111F1D1ACCBCC400C14878 /* Login.storyboard in Resources */,
 				46111ED61ACCB85B00C14878 /* Main.storyboard in Resources */,
 				46111EDB1ACCB85B00C14878 /* LaunchScreen.xib in Resources */,
 				46111ED81ACCB85B00C14878 /* Images.xcassets in Resources */,
@@ -315,8 +346,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				46111ED31ACCB85B00C14878 /* ViewController.swift in Sources */,
 				46111ED11ACCB85B00C14878 /* AppDelegate.swift in Sources */,
+				46111F271ACCBDDF00C14878 /* TutorialViewController.swift in Sources */,
+				46111F251ACCBDCE00C14878 /* LoginPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
