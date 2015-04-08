@@ -9,11 +9,20 @@
 import UIKit
 
 class TutorialViewController: UIViewController {
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var pageLabel: UILabel!
+    
+    
+    
     var pageImage: UIImage = UIImage()
     var pageIndex: Int = Int()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("dsaadsasd")
         
+        backgroundImage.image = pageImage
+        backgroundImage.frame = view.frame
+        pageLabel.text = title
     }
 }

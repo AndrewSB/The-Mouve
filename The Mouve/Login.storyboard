@@ -8,7 +8,7 @@
         <!--Tutorial View Controller-->
         <scene sceneID="Htf-0G-A5c">
             <objects>
-                <viewController storyboardIdentifier="tutorialPageVC" id="gLX-tq-VTd" customClass="TutorialViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tutorialPageVC" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="gLX-tq-VTd" customClass="TutorialViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eGf-Wh-oXJ"/>
                         <viewControllerLayoutGuide type="bottom" id="zGo-5P-61d"/>
@@ -16,8 +16,51 @@
                     <view key="view" contentMode="scaleToFill" id="xFP-NZ-TZm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ha5-Bq-VUd">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsW-n1-L19">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="tsW-n1-L19" secondAttribute="centerX" id="R9o-g8-aqE"/>
+                            <constraint firstAttribute="centerY" secondItem="tsW-n1-L19" secondAttribute="centerY" constant="-153.5" id="Uq2-SI-d0k"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ha5-Bq-VUd"/>
+                                <exclude reference="tsW-n1-L19"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="R9o-g8-aqE"/>
+                                <exclude reference="Uq2-SI-d0k"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ha5-Bq-VUd"/>
+                                <include reference="tsW-n1-L19"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="R9o-g8-aqE"/>
+                                <include reference="Uq2-SI-d0k"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="ha5-Bq-VUd" id="Mk8-vQ-PmQ"/>
+                        <outlet property="pageLabel" destination="tsW-n1-L19" id="aXZ-FZ-AP1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeb-KE-suW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

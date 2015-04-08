@@ -11,13 +11,19 @@ import UIKit
 class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSource {
     var currentIndex: Int = Int()
     
-    let pageTitles = ["f", "u", "c", "k"]
-    let pageImages = [UIImage(), UIImage(),UIImage(),UIImage()]
+    let pageTitles = ["fuck", "this", "fucking", "shit"]
+    let pageImages = [UIImage(named: "test"), UIImage(named: "test"), UIImage(named: "test"), UIImage(named: "test")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.dataSource = self
+        
+        let startingViewController = (viewControllerAtIndex(0) as TutorialViewController!)
+        let viewControllers = [startingViewController]
+        
+        self.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
+        edgesForExtendedLayout = .None
     }
 
     func viewControllerAtIndex(index: Int) -> TutorialViewController? {
@@ -26,9 +32,8 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
         currentIndex = index
         vc.pageIndex = currentIndex
         
-        
         vc.title = pageTitles[currentIndex]
-        vc.pageImage = pageImages[currentIndex]
+        vc.pageImage = pageImages[currentIndex]!
         
         return vc
     }
