@@ -8,22 +8,40 @@
 
 import UIKit
 
-class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSource {
+class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     var currentIndex: Int = Int()
+    var showingIndex: Int = Int() {
+        didSet {
+            println("nah \(currentIndex)")
+            pageControl?.currentPage = currentIndex
+        }
+    }
     
     let pageTitles = ["fuck", "this", "fucking", "shit"]
     let pageImages = [UIImage(named: "test"), UIImage(named: "test"), UIImage(named: "test"), UIImage(named: "test")]
+    
+    var pageControl: UIPageControl?
+    
+    var pageViews = [TutorialViewController]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.dataSource = self
         
+        pageControl  = UIPageControl(frame: CGRect.CreateRectInCenterOfView(view, offset: 20, height: 40, width: 100))
+        pageControl!.numberOfPages = 4
+        pageControl!.currentPage = currentIndex
+        
+        view.addSubview(pageControl!)
+        
         let startingViewController = (viewControllerAtIndex(0) as TutorialViewController!)
         let viewControllers = [startingViewController]
         
         self.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
         edgesForExtendedLayout = .None
+        
     }
 
     func viewControllerAtIndex(index: Int) -> TutorialViewController? {
@@ -71,4 +89,8 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
         }
     }
 
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
+        
+        showingIndex = (pageViewController.viewControllers.last as TutorialViewController).pageIndex
+    }
 }

@@ -11,6 +11,7 @@ import UIKit
 class TutorialViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var pageLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
     
     
     
@@ -19,10 +20,24 @@ class TutorialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("dsaadsasd")
-        
         backgroundImage.image = pageImage
         backgroundImage.frame = view.frame
         pageLabel.text = title
+        
+        switch pageIndex {
+        case 3:
+            loginButton.hidden = false
+            pageLabel.hidden = true
+        default:
+            loginButton.hidden = true
+            pageLabel.hidden = false
+        }
+    }
+    
+    
+    @IBAction func loginButtonWasHit(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        presentViewController(storyboard.instantiateInitialViewController() as UIViewController, animated: true, completion: nil)
     }
 }

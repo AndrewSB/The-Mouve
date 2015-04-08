@@ -32,6 +32,8 @@
 		46111F1D1ACCBCC400C14878 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46111F1C1ACCBCC400C14878 /* Login.storyboard */; };
 		46111F251ACCBDCE00C14878 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46111F241ACCBDCE00C14878 /* LoginPageViewController.swift */; };
 		46111F271ACCBDDF00C14878 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46111F261ACCBDDF00C14878 /* TutorialViewController.swift */; };
+		461C82C51AD5D1A4002C7E2E /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C82C41AD5D1A4002C7E2E /* CGGeometeryExtension.swift */; };
+		461C82C71AD5EEDA002C7E2E /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C82C61AD5EEDA002C7E2E /* MainFeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		46111F1C1ACCBCC400C14878 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		46111F241ACCBDCE00C14878 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		46111F261ACCBDDF00C14878 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		461C82C41AD5D1A4002C7E2E /* CGGeometeryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGGeometeryExtension.swift; sourceTree = "<group>"; };
+		461C82C61AD5EEDA002C7E2E /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				46111ED01ACCB85B00C14878 /* AppDelegate.swift */,
+				461C82C81AD5EF9A002C7E2E /* Extensions */,
 				46111F1E1ACCBD0500C14878 /* Views */,
 				46111ED71ACCB85B00C14878 /* Images.xcassets */,
 				46111ECE1ACCB85B00C14878 /* Supporting Files */,
@@ -240,8 +245,17 @@
 			isa = PBXGroup;
 			children = (
 				46111ED41ACCB85B00C14878 /* Main.storyboard */,
+				461C82C61AD5EEDA002C7E2E /* MainFeedViewController.swift */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		461C82C81AD5EF9A002C7E2E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				461C82C41AD5D1A4002C7E2E /* CGGeometeryExtension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +361,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				46111ED11ACCB85B00C14878 /* AppDelegate.swift in Sources */,
+				461C82C71AD5EEDA002C7E2E /* MainFeedViewController.swift in Sources */,
+				461C82C51AD5D1A4002C7E2E /* CGGeometeryExtension.swift in Sources */,
 				46111F271ACCBDDF00C14878 /* TutorialViewController.swift in Sources */,
 				46111F251ACCBDCE00C14878 /* LoginPageViewController.swift in Sources */,
 			);
