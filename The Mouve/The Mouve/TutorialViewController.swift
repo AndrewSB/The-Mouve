@@ -38,6 +38,6 @@ class TutorialViewController: UIViewController {
     @IBAction func loginButtonWasHit(sender: AnyObject) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        presentViewController(storyboard.instantiateInitialViewController() as UIViewController, animated: true, completion: nil)
+        presentViewController(storyboard.instantiateInitialViewController() as! UINavigationController, animated: true, completion: nil)
     }
 }

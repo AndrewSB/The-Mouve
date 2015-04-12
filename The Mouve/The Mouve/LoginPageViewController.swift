@@ -45,7 +45,7 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
     }
 
     func viewControllerAtIndex(index: Int) -> TutorialViewController? {
-        let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewControllerWithIdentifier("tutorialPageVC") as TutorialViewController
+        let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewControllerWithIdentifier("tutorialPageVC") as! TutorialViewController
         
         currentIndex = index
         vc.pageIndex = currentIndex
@@ -58,7 +58,7 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
     
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as TutorialViewController).pageIndex
+        var index = (viewController as! TutorialViewController).pageIndex
         
         switch index {
         case 0:
@@ -74,7 +74,7 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as TutorialViewController).pageIndex
+        var index = (viewController as! TutorialViewController).pageIndex
         index++
         
         switch index {
@@ -91,6 +91,6 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
 
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
         
-        showingIndex = (pageViewController.viewControllers.last as TutorialViewController).pageIndex
+        showingIndex = (pageViewController.viewControllers.last as! TutorialViewController).pageIndex
     }
 }

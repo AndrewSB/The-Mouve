@@ -34,6 +34,7 @@
 		46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B29BC61ADB219C000B9441 /* Main.storyboard */; };
 		46B29BCD1ADB219C000B9441 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC71ADB219C000B9441 /* MainFeedViewController.swift */; };
 		46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */; };
+		46B29BD41ADB2203000B9441 /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BD31ADB2203000B9441 /* CGGeometeryExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		46B29BC61ADB219C000B9441 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		46B29BC71ADB219C000B9441 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
 		46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventTableViewCell.swift; sourceTree = "<group>"; };
+		46B29BD31ADB2203000B9441 /* CGGeometeryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGGeometeryExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				46B29B7A1ADB2067000B9441 /* The Mouve */,
-				46B29BC21ADB2187000B9441 /* External */,
+				46B29BD61ADB221A000B9441 /* Libraries */,
 				46B29B901ADB2068000B9441 /* The MouveTests */,
 				46B29B791ADB2067000B9441 /* Products */,
 			);
@@ -138,8 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				46B29B7D1ADB2067000B9441 /* AppDelegate.swift */,
-				46B29B841ADB2067000B9441 /* Images.xcassets */,
 				46B29BD11ADB21AD000B9441 /* VCs */,
+				46B29BD21ADB21D3000B9441 /* Resources */,
 				46B29B7B1ADB2067000B9441 /* Supporting Files */,
 			);
 			path = "The Mouve";
@@ -248,6 +250,31 @@
 			name = VCs;
 			sourceTree = "<group>";
 		};
+		46B29BD21ADB21D3000B9441 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				46B29B841ADB2067000B9441 /* Images.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		46B29BD51ADB2215000B9441 /* Internal */ = {
+			isa = PBXGroup;
+			children = (
+				46B29BD31ADB2203000B9441 /* CGGeometeryExtension.swift */,
+			);
+			name = Internal;
+			sourceTree = "<group>";
+		};
+		46B29BD61ADB221A000B9441 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				46B29BC21ADB2187000B9441 /* External */,
+				46B29BD51ADB2215000B9441 /* Internal */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -351,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */,
+				46B29BD41ADB2203000B9441 /* CGGeometeryExtension.swift in Sources */,
 				46B29BCB1ADB219C000B9441 /* TutorialViewController.swift in Sources */,
 				46B29BCA1ADB219C000B9441 /* LoginPageViewController.swift in Sources */,
 				46B29BCD1ADB219C000B9441 /* MainFeedViewController.swift in Sources */,
