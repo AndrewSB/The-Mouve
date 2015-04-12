@@ -39,6 +39,14 @@
 						<string>6.3</string>
 						<key>DevelopmentTeam</key>
 						<string>2Z475Y2H59</string>
+						<key>SystemCapabilities</key>
+						<dict>
+							<key>com.apple.InAppPurchase</key>
+							<dict>
+								<key>enabled</key>
+								<string>0</string>
+							</dict>
+						</dict>
 					</dict>
 				</dict>
 			</dict>
@@ -93,7 +101,7 @@
 			<key>files</key>
 			<array>
 				<string>46B29B7E1ADB2067000B9441</string>
-				<string>46B29BD41ADB2203000B9441</string>
+				<string>46B29BD91ADB2777000B9441</string>
 				<string>46B29BCB1ADB219C000B9441</string>
 				<string>46B29BCA1ADB219C000B9441</string>
 				<string>46B29BCD1ADB219C000B9441</string>
@@ -119,7 +127,6 @@
 				<string>46B29BB71ADB20F5000B9441</string>
 				<string>46B29BB81ADB20F5000B9441</string>
 				<string>46B29BB91ADB20F5000B9441</string>
-				<string>46B29BBA1ADB20F5000B9441</string>
 				<string>46B29BBB1ADB20F5000B9441</string>
 				<string>46B29BA91ADB20BE000B9441</string>
 				<string>46B29BA51ADB20BE000B9441</string>
@@ -225,8 +232,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
 			<key>path</key>
 			<string>Supporting Files</string>
 			<key>sourceTree</key>
@@ -478,6 +483,8 @@
 			</array>
 			<key>defaultConfigurationIsVisible</key>
 			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
 			<key>isa</key>
 			<string>XCConfigurationList</string>
 		</dict>
@@ -752,19 +759,6 @@
 			<key>sourceTree</key>
 			<string>SDKROOT</string>
 		</dict>
-		<key>46B29BB11ADB20F5000B9441</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>StoreKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/StoreKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
 		<key>46B29BB21ADB20F5000B9441</key>
 		<dict>
 			<key>isa</key>
@@ -824,13 +818,6 @@
 		<dict>
 			<key>fileRef</key>
 			<string>46B29BB01ADB20F5000B9441</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>46B29BBA1ADB20F5000B9441</key>
-		<dict>
-			<key>fileRef</key>
-			<string>46B29BB11ADB20F5000B9441</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
@@ -894,7 +881,6 @@
 				<string>46B29BAE1ADB20F5000B9441</string>
 				<string>46B29BAF1ADB20F5000B9441</string>
 				<string>46B29BB01ADB20F5000B9441</string>
-				<string>46B29BB11ADB20F5000B9441</string>
 				<string>46B29BB21ADB20F5000B9441</string>
 			</array>
 			<key>isa</key>
@@ -1061,8 +1047,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Main</string>
 			<key>path</key>
 			<string>Main</string>
 			<key>sourceTree</key>
@@ -1078,8 +1062,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Login</string>
 			<key>path</key>
 			<string>Login</string>
 			<key>sourceTree</key>
@@ -1094,8 +1076,6 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>VCs</string>
 			<key>path</key>
 			<string>VCs</string>
 			<key>sourceTree</key>
@@ -1109,38 +1089,16 @@
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Resources</string>
 			<key>path</key>
 			<string>Resources</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
-		</dict>
-		<key>46B29BD31ADB2203000B9441</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.swift</string>
-			<key>path</key>
-			<string>CGGeometeryExtension.swift</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>46B29BD41ADB2203000B9441</key>
-		<dict>
-			<key>fileRef</key>
-			<string>46B29BD31ADB2203000B9441</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
 		</dict>
 		<key>46B29BD51ADB2215000B9441</key>
 		<dict>
 			<key>children</key>
 			<array>
-				<string>46B29BD31ADB2203000B9441</string>
+				<string>46B29BD81ADB2777000B9441</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -1162,6 +1120,28 @@
 			<string>Libraries</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
+		</dict>
+		<key>46B29BD81ADB2777000B9441</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>CGGeometeryExtension.swift</string>
+			<key>path</key>
+			<string>../../../Downloads/The-Mouve-master/The Mouve/CGGeometeryExtension.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>46B29BD91ADB2777000B9441</key>
+		<dict>
+			<key>fileRef</key>
+			<string>46B29BD81ADB2777000B9441</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>
