@@ -28,6 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
 
         
+        let loggedIn = PFUser.currentUser() != nil
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController() as! UINavigationController)
+        window!.makeKeyAndVisible()
+
+        
         return true
     }
 
