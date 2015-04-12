@@ -10,7 +10,6 @@
 		46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29B7D1ADB2067000B9441 /* AppDelegate.swift */; };
 		46B29B851ADB2067000B9441 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B841ADB2067000B9441 /* Images.xcassets */; };
 		46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B861ADB2067000B9441 /* LaunchScreen.xib */; };
-		46B29B941ADB2068000B9441 /* The_MouveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29B931ADB2068000B9441 /* The_MouveTests.swift */; };
 		46B29BA41ADB20BE000B9441 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B29B9E1ADB20BE000B9441 /* Bolts.framework */; };
 		46B29BA51ADB20BE000B9441 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B29B9F1ADB20BE000B9441 /* Parse.framework */; };
 		46B29BA61ADB20BE000B9441 /* ParseCrashReporting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B29BA01ADB20BE000B9441 /* ParseCrashReporting.framework */; };
@@ -37,25 +36,12 @@
 		46B29BD41ADB2203000B9441 /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BD31ADB2203000B9441 /* CGGeometeryExtension.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		46B29B8E1ADB2068000B9441 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46B29B701ADB2067000B9441 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 46B29B771ADB2067000B9441;
-			remoteInfo = "The Mouve";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		46B29B781ADB2067000B9441 /* The Mouve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Mouve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B29B7C1ADB2067000B9441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B29B7D1ADB2067000B9441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46B29B841ADB2067000B9441 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		46B29B871ADB2067000B9441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		46B29B8D1ADB2068000B9441 /* The MouveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "The MouveTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		46B29B921ADB2068000B9441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46B29B931ADB2068000B9441 /* The_MouveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = The_MouveTests.swift; sourceTree = "<group>"; };
 		46B29B9E1ADB20BE000B9441 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		46B29B9F1ADB20BE000B9441 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		46B29BA01ADB20BE000B9441 /* ParseCrashReporting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseCrashReporting.framework; sourceTree = "<group>"; };
@@ -107,13 +93,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46B29B8A1ADB2068000B9441 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -122,7 +101,6 @@
 			children = (
 				46B29B7A1ADB2067000B9441 /* The Mouve */,
 				46B29BD61ADB221A000B9441 /* Libraries */,
-				46B29B901ADB2068000B9441 /* The MouveTests */,
 				46B29B791ADB2067000B9441 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -131,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				46B29B781ADB2067000B9441 /* The Mouve.app */,
-				46B29B8D1ADB2068000B9441 /* The MouveTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,23 +129,6 @@
 			children = (
 				46B29B861ADB2067000B9441 /* LaunchScreen.xib */,
 				46B29B7C1ADB2067000B9441 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		46B29B901ADB2068000B9441 /* The MouveTests */ = {
-			isa = PBXGroup;
-			children = (
-				46B29B931ADB2068000B9441 /* The_MouveTests.swift */,
-				46B29B911ADB2068000B9441 /* Supporting Files */,
-			);
-			path = "The MouveTests";
-			sourceTree = "<group>";
-		};
-		46B29B911ADB2068000B9441 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				46B29B921ADB2068000B9441 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -295,24 +255,6 @@
 			productReference = 46B29B781ADB2067000B9441 /* The Mouve.app */;
 			productType = "com.apple.product-type.application";
 		};
-		46B29B8C1ADB2068000B9441 /* The MouveTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 46B29B9A1ADB2068000B9441 /* Build configuration list for PBXNativeTarget "The MouveTests" */;
-			buildPhases = (
-				46B29B891ADB2068000B9441 /* Sources */,
-				46B29B8A1ADB2068000B9441 /* Frameworks */,
-				46B29B8B1ADB2068000B9441 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				46B29B8F1ADB2068000B9441 /* PBXTargetDependency */,
-			);
-			name = "The MouveTests";
-			productName = "The MouveTests";
-			productReference = 46B29B8D1ADB2068000B9441 /* The MouveTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -325,10 +267,6 @@
 					46B29B771ADB2067000B9441 = {
 						CreatedOnToolsVersion = 6.3;
 						DevelopmentTeam = 2Z475Y2H59;
-					};
-					46B29B8C1ADB2068000B9441 = {
-						CreatedOnToolsVersion = 6.3;
-						TestTargetID = 46B29B771ADB2067000B9441;
 					};
 				};
 			};
@@ -346,7 +284,6 @@
 			projectRoot = "";
 			targets = (
 				46B29B771ADB2067000B9441 /* The Mouve */,
-				46B29B8C1ADB2068000B9441 /* The MouveTests */,
 			);
 		};
 /* End PBXProject section */
@@ -360,13 +297,6 @@
 				46B29B851ADB2067000B9441 /* Images.xcassets in Resources */,
 				46B29BC91ADB219C000B9441 /* Login.storyboard in Resources */,
 				46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		46B29B8B1ADB2068000B9441 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,23 +316,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		46B29B891ADB2068000B9441 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				46B29B941ADB2068000B9441 /* The_MouveTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		46B29B8F1ADB2068000B9441 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 46B29B771ADB2067000B9441 /* The Mouve */;
-			targetProxy = 46B29B8E1ADB2068000B9441 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		46B29B861ADB2067000B9441 /* LaunchScreen.xib */ = {
@@ -452,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -490,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -529,40 +443,6 @@
 			};
 			name = Release;
 		};
-		46B29B9B1ADB2068000B9441 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "The MouveTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Mouve.app/The Mouve";
-			};
-			name = Debug;
-		};
-		46B29B9C1ADB2068000B9441 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "The MouveTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/The Mouve.app/The Mouve";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -580,14 +460,6 @@
 			buildConfigurations = (
 				46B29B981ADB2068000B9441 /* Debug */,
 				46B29B991ADB2068000B9441 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		46B29B9A1ADB2068000B9441 /* Build configuration list for PBXNativeTarget "The MouveTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				46B29B9B1ADB2068000B9441 /* Debug */,
-				46B29B9C1ADB2068000B9441 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
