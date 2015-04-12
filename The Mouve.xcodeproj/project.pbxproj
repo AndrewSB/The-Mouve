@@ -34,6 +34,7 @@
 		46111F271ACCBDDF00C14878 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46111F261ACCBDDF00C14878 /* TutorialViewController.swift */; };
 		461C82C51AD5D1A4002C7E2E /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C82C41AD5D1A4002C7E2E /* CGGeometeryExtension.swift */; };
 		461C82C71AD5EEDA002C7E2E /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C82C61AD5EEDA002C7E2E /* MainFeedViewController.swift */; };
+		461C82CA1AD5F05F002C7E2E /* HomeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C82C91AD5F05F002C7E2E /* HomeEventTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		46111F261ACCBDDF00C14878 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		461C82C41AD5D1A4002C7E2E /* CGGeometeryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGGeometeryExtension.swift; sourceTree = "<group>"; };
 		461C82C61AD5EEDA002C7E2E /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
+		461C82C91AD5F05F002C7E2E /* HomeEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 			children = (
 				46111ED41ACCB85B00C14878 /* Main.storyboard */,
 				461C82C61AD5EEDA002C7E2E /* MainFeedViewController.swift */,
+				461C82C91AD5F05F002C7E2E /* HomeEventTableViewCell.swift */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46111ED11ACCB85B00C14878 /* AppDelegate.swift in Sources */,
+				461C82CA1AD5F05F002C7E2E /* HomeEventTableViewCell.swift in Sources */,
 				461C82C71AD5EEDA002C7E2E /* MainFeedViewController.swift in Sources */,
 				461C82C51AD5D1A4002C7E2E /* CGGeometeryExtension.swift in Sources */,
 				46111F271ACCBDDF00C14878 /* TutorialViewController.swift in Sources */,
