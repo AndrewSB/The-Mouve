@@ -13,6 +13,7 @@
 		469C436D1ADEF96D00D6A510 /* HalisGR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */; };
 		469C436E1ADEF96F00D6A510 /* HalisGR-Regular-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */; };
 		469C43781ADEFAD100D6A510 /* Toucan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469C43751ADEFA7600D6A510 /* Toucan.framework */; };
+		469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C437A1ADF10D200D6A510 /* DetailViewController.swift */; };
 		46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29B7D1ADB2067000B9441 /* AppDelegate.swift */; };
 		46B29B851ADB2067000B9441 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B841ADB2067000B9441 /* Images.xcassets */; };
 		46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B861ADB2067000B9441 /* LaunchScreen.xib */; };
@@ -64,6 +65,7 @@
 		469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Regular.otf"; sourceTree = "<group>"; };
 		469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Regular-Italic.otf"; sourceTree = "<group>"; };
 		469C436F1ADEFA7600D6A510 /* Toucan.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Toucan.xcodeproj; path = "../../../Downloads/Toucan-master/Toucan.xcodeproj"; sourceTree = "<group>"; };
+		469C437A1ADF10D200D6A510 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		46B29B781ADB2067000B9441 /* The Mouve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Mouve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B29B7C1ADB2067000B9441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B29B7D1ADB2067000B9441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,10 +132,26 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		469C43791ADF10BA00D6A510 /* Master */ = {
+			isa = PBXGroup;
+			children = (
+				46B29BC71ADB219C000B9441 /* MainFeedViewController.swift */,
+				46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */,
+			);
+			name = Master;
+			sourceTree = "<group>";
+		};
+		469C437C1ADF10DC00D6A510 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				469C437A1ADF10D200D6A510 /* DetailViewController.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
 		46B29B6F1ADB2067000B9441 = {
 			isa = PBXGroup;
 			children = (
-				469C436F1ADEFA7600D6A510 /* Toucan.xcodeproj */,
 				46B29B7A1ADB2067000B9441 /* The Mouve */,
 				46B29BD61ADB221A000B9441 /* Libraries */,
 				46B29B791ADB2067000B9441 /* Products */,
@@ -210,6 +228,7 @@
 		46B29BC21ADB2187000B9441 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				469C436F1ADEFA7600D6A510 /* Toucan.xcodeproj */,
 				46B29BC11ADB210C000B9441 /* Parse */,
 			);
 			name = External;
@@ -219,8 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				46B29BC61ADB219C000B9441 /* Main.storyboard */,
-				46B29BC71ADB219C000B9441 /* MainFeedViewController.swift */,
-				46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */,
+				469C437C1ADF10DC00D6A510 /* Detail */,
+				469C43791ADF10BA00D6A510 /* Master */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -383,6 +402,7 @@
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
 				46B29BCD1ADB219C000B9441 /* MainFeedViewController.swift in Sources */,
 				46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */,
+				469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
