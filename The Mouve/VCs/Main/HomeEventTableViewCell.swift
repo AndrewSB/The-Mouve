@@ -26,11 +26,12 @@ class HomeEventTableViewCell: UITableViewCell {
         newBackgroundImageView.image = UIImage(named: "list-background")
         newBackgroundImageView.layer.opacity = 0.3
         
+        self.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height + 10)
         
         self.backgroundView = newBackgroundImageView
     }
     
     func createSeperatorForCell() {
-        
+    
     }
 }
