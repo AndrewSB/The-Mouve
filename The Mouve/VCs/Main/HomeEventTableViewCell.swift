@@ -24,13 +24,9 @@ class HomeEventTableViewCell: UITableViewCell {
 
         let newBackgroundImageView = UIImageView(frame: self.frame)
         newBackgroundImageView.image = UIImage(named: "list-background")
+        newBackgroundImageView.layer.opacity = 0.5
         
-        let gradientImageView = UIImageView(frame: self.frame)
-        gradientImageView.image = UIImage(named: "list-background-gradient")
-    
-        newBackgroundImageView.addSubview(gradientImageView)
         
         self.backgroundView = newBackgroundImageView
-        self.backgroundView?.addSubview(gradientImageView)
     }
 }

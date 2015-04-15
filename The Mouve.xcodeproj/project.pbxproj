@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */; };
+		469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */; };
+		469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */; };
+		469C436D1ADEF96D00D6A510 /* HalisGR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */; };
+		469C436E1ADEF96F00D6A510 /* HalisGR-Regular-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */; };
+		469C43781ADEFAD100D6A510 /* Toucan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469C43751ADEFA7600D6A510 /* Toucan.framework */; };
 		46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29B7D1ADB2067000B9441 /* AppDelegate.swift */; };
 		46B29B851ADB2067000B9441 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B841ADB2067000B9441 /* Images.xcassets */; };
 		46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B861ADB2067000B9441 /* LaunchScreen.xib */; };
@@ -35,12 +40,30 @@
 		46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		469C43741ADEFA7600D6A510 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 469C436F1ADEFA7600D6A510 /* Toucan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 740AC3EA1999799900AB9A86;
+			remoteInfo = Toucan;
+		};
+		469C43761ADEFA7600D6A510 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 469C436F1ADEFA7600D6A510 /* Toucan.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 740AC3F51999799900AB9A86;
+			remoteInfo = ToucanTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGGeometeryExtension.swift; path = "The Mouve/CGGeometeryExtension.swift"; sourceTree = "<group>"; };
 		469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Medium.otf"; sourceTree = "<group>"; };
 		469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Book.otf"; sourceTree = "<group>"; };
 		469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Regular.otf"; sourceTree = "<group>"; };
 		469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Regular-Italic.otf"; sourceTree = "<group>"; };
+		469C436F1ADEFA7600D6A510 /* Toucan.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Toucan.xcodeproj; path = "../../../Downloads/Toucan-master/Toucan.xcodeproj"; sourceTree = "<group>"; };
 		46B29B781ADB2067000B9441 /* The Mouve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Mouve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B29B7C1ADB2067000B9441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B29B7D1ADB2067000B9441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				469C43781ADEFAD100D6A510 /* Toucan.framework in Frameworks */,
 				46B29BBF1ADB20FF000B9441 /* libsqlite3.dylib in Frameworks */,
 				46B29BBD1ADB20FA000B9441 /* libz.dylib in Frameworks */,
 				46B29BB31ADB20F5000B9441 /* AudioToolbox.framework in Frameworks */,
@@ -97,9 +121,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		469C43701ADEFA7600D6A510 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				469C43751ADEFA7600D6A510 /* Toucan.framework */,
+				469C43771ADEFA7600D6A510 /* ToucanTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		46B29B6F1ADB2067000B9441 = {
 			isa = PBXGroup;
 			children = (
+				469C436F1ADEFA7600D6A510 /* Toucan.xcodeproj */,
 				46B29B7A1ADB2067000B9441 /* The Mouve */,
 				46B29BD61ADB221A000B9441 /* Libraries */,
 				46B29B791ADB2067000B9441 /* Products */,
@@ -290,6 +324,12 @@
 			mainGroup = 46B29B6F1ADB2067000B9441;
 			productRefGroup = 46B29B791ADB2067000B9441 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 469C43701ADEFA7600D6A510 /* Products */;
+					ProjectRef = 469C436F1ADEFA7600D6A510 /* Toucan.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				46B29B771ADB2067000B9441 /* The Mouve */,
@@ -297,15 +337,36 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		469C43751ADEFA7600D6A510 /* Toucan.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Toucan.framework;
+			remoteRef = 469C43741ADEFA7600D6A510 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		469C43771ADEFA7600D6A510 /* ToucanTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ToucanTests.xctest;
+			remoteRef = 469C43761ADEFA7600D6A510 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		46B29B761ADB2067000B9441 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */,
+				469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */,
 				46B29B851ADB2067000B9441 /* Images.xcassets in Resources */,
 				46B29BC91ADB219C000B9441 /* Login.storyboard in Resources */,
 				46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */,
+				469C436E1ADEF96F00D6A510 /* HalisGR-Regular-Italic.otf in Resources */,
+				469C436D1ADEF96D00D6A510 /* HalisGR-Medium.otf in Resources */,
+				469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

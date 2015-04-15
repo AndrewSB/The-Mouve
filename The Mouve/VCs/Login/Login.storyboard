@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qbo-yh-dhS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qbo-yh-dhS">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="HalisGR-Medium.otf">
+            <string>HalisGR-Medium</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Tutorial View Controller-->
         <scene sceneID="Htf-0G-A5c">
@@ -31,9 +35,13 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkc-yr-djp">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" name="HalisGR-Medium" family="Halis GR" pointSize="15"/>
                                 <state key="normal" title="Getchor ass in the app">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="122" y="713" width="156" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="loginButtonWasHit:" destination="gLX-tq-VTd" eventType="touchUpInside" id="tYl-NQ-sse"/>
                                 </connections>
@@ -55,8 +63,8 @@
                             <mask key="constraints">
                                 <exclude reference="R9o-g8-aqE"/>
                                 <exclude reference="Uq2-SI-d0k"/>
-                                <exclude reference="6LX-8B-DSM"/>
                                 <exclude reference="dyU-EZ-ix3"/>
+                                <exclude reference="6LX-8B-DSM"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -68,8 +76,8 @@
                             <mask key="constraints">
                                 <include reference="R9o-g8-aqE"/>
                                 <include reference="Uq2-SI-d0k"/>
-                                <include reference="6LX-8B-DSM"/>
                                 <include reference="dyU-EZ-ix3"/>
+                                <include reference="6LX-8B-DSM"/>
                             </mask>
                         </variation>
                     </view>

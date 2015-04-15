@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import Bolts
+import Toucan
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,10 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
 
         
-        let loggedIn = PFUser.currentUser() != nil
+        let loggedIn = true//PFUser.currentUser() != nil
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
+        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as! UINavigationController
         window!.makeKeyAndVisible()
 
         
