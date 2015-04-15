@@ -37,6 +37,10 @@
 
 /* Begin PBXFileReference section */
 		469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGGeometeryExtension.swift; path = "The Mouve/CGGeometeryExtension.swift"; sourceTree = "<group>"; };
+		469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Medium.otf"; sourceTree = "<group>"; };
+		469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Book.otf"; sourceTree = "<group>"; };
+		469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Regular.otf"; sourceTree = "<group>"; };
+		469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Regular-Italic.otf"; sourceTree = "<group>"; };
 		46B29B781ADB2067000B9441 /* The Mouve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Mouve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B29B7C1ADB2067000B9441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B29B7D1ADB2067000B9441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +213,10 @@
 		46B29BD21ADB21D3000B9441 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */,
+				469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */,
+				469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */,
+				469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */,
 				46B29B841ADB2067000B9441 /* Images.xcassets */,
 			);
 			path = Resources;

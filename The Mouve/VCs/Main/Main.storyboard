@@ -77,7 +77,7 @@
                                                         <rect key="frame" x="17" y="107" width="180" height="21"/>
                                                     </variation>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="YOOJIN" translatesAutoresizingMaskIntoConstraints="NO" id="0Bt-k9-TTl">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chelsea-pic" translatesAutoresizingMaskIntoConstraints="NO" id="0Bt-k9-TTl">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="0Bt-k9-TTl" secondAttribute="height" multiplier="1:1" id="rho-7W-oRL"/>
@@ -236,6 +236,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="YOOJIN" width="400" height="400"/>
+        <image name="chelsea-pic" width="125" height="125"/>
     </resources>
 </document>
