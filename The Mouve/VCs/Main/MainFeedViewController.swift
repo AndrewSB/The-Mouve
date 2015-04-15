@@ -9,7 +9,20 @@
 import UIKit
 
 class MainFeedViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+}
+
+
+extension MainFeedViewController : UITableViewDelegate, UITableViewDataSource {
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return 5
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! UITableViewCell
+    
+    return cell
+  }
 }

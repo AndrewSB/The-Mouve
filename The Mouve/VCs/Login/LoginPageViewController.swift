@@ -17,8 +17,8 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
         }
     }
     
-    let pageTitles = ["fuck", "this", "fucking", "shit"]
-    let pageImages = [UIImage(named: "test"), UIImage(named: "test"), UIImage(named: "test"), UIImage(named: "test")]
+    let pageTitles = ["dont", "fuck", "this", "please"]
+    let pageImages = [UIImage(named: "YOOJIN"), UIImage(named: "YOOJIN"), UIImage(named: "YOOJIN"), UIImage(named: "YOOJIN")]
     
     var pageControl: UIPageControl?
     
@@ -29,6 +29,7 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
         super.viewDidLoad()
 
         self.dataSource = self
+        self.delegate = self
         
         pageControl  = UIPageControl(frame: CGRect.CreateRectInCenterOfView(view, offset: 20, height: 40, width: 100))
         pageControl!.numberOfPages = 4
@@ -65,7 +66,7 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
             return nil
         case NSNotFound:
             fatalError("NSNotFound")
-        case pageTitles.count...Int.max:
+        case pageTitles.count...Int.max-1:
             return nil
         default:
             index--
@@ -82,7 +83,7 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
             return nil
         case NSNotFound:
             fatalError("NSNotFound")
-        case pageTitles.count...Int.max:
+        case pageTitles.count...Int.max-1:
             return nil
         default:
             return viewControllerAtIndex(index)
@@ -90,7 +91,7 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
     }
 
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
-        
+        println("at something")
         showingIndex = (pageViewController.viewControllers.last as! TutorialViewController).pageIndex
     }
 }

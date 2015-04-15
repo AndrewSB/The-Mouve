@@ -12,6 +12,5 @@ class HomeEventTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
     }
 }
