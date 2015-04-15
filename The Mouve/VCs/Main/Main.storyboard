@@ -38,11 +38,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="189" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GgU-Cd-EKA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="134" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GgU-Cd-EKA">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" rowHeight="189" id="b0x-NL-rnM" customClass="HomeEventTableViewCell" customModule="The_Mouve" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" rowHeight="134" id="b0x-NL-rnM" customClass="HomeEventTableViewCell" customModule="The_Mouve" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="b0x-NL-rnM" id="ejI-Xf-kfY">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -58,9 +58,6 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
-                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="17" y="40" width="145" height="21"/>
-                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today | 5PM - 9PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iSt-K3-LM3">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
@@ -96,19 +93,35 @@
                                                         </mask>
                                                     </variation>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBq-7F-fB5">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <state key="normal" title="c">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2q-aV-9Db">
+                                                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                                    <state key="normal" title="s">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="0Bt-k9-TTl" secondAttribute="bottom" constant="14" id="0ad-LN-DTI"/>
                                                 <constraint firstItem="dqu-vb-6ww" firstAttribute="top" secondItem="iSt-K3-LM3" secondAttribute="bottom" constant="5" id="6uA-iy-gQr"/>
+                                                <constraint firstItem="y2q-aV-9Db" firstAttribute="trailing" secondItem="ejI-Xf-kfY" secondAttribute="trailingMargin" id="85a-Ig-Xjm"/>
                                                 <constraint firstItem="9Zr-f6-9fD" firstAttribute="top" secondItem="5A5-u2-fhK" secondAttribute="bottom" constant="8" id="Eeb-c7-K71"/>
                                                 <constraint firstItem="0Bt-k9-TTl" firstAttribute="leading" secondItem="9Zr-f6-9fD" secondAttribute="trailing" constant="40" id="IdL-wp-7vb"/>
                                                 <constraint firstItem="dqu-vb-6ww" firstAttribute="leading" secondItem="ejI-Xf-kfY" secondAttribute="leadingMargin" constant="9" id="RVb-qo-BWV"/>
                                                 <constraint firstItem="iSt-K3-LM3" firstAttribute="top" secondItem="9Zr-f6-9fD" secondAttribute="bottom" constant="20" id="Rk2-ga-DC7"/>
                                                 <constraint firstItem="5A5-u2-fhK" firstAttribute="leading" secondItem="ejI-Xf-kfY" secondAttribute="leadingMargin" constant="9" id="TzO-Hr-7hp"/>
+                                                <constraint firstItem="aBq-7F-fB5" firstAttribute="top" secondItem="ejI-Xf-kfY" secondAttribute="topMargin" id="Z9V-27-bOM"/>
+                                                <constraint firstItem="aBq-7F-fB5" firstAttribute="trailing" secondItem="ejI-Xf-kfY" secondAttribute="trailingMargin" id="dz7-8V-5Cu"/>
                                                 <constraint firstItem="5A5-u2-fhK" firstAttribute="top" secondItem="ejI-Xf-kfY" secondAttribute="topMargin" constant="3" id="ee5-0n-PPq"/>
                                                 <constraint firstItem="iSt-K3-LM3" firstAttribute="leading" secondItem="ejI-Xf-kfY" secondAttribute="leadingMargin" constant="9" id="evJ-2a-u7V"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0Bt-k9-TTl" secondAttribute="trailing" constant="44" id="hut-cz-9fW"/>
                                                 <constraint firstItem="9Zr-f6-9fD" firstAttribute="leading" secondItem="ejI-Xf-kfY" secondAttribute="leadingMargin" constant="9" id="mkQ-8K-meF"/>
+                                                <constraint firstItem="y2q-aV-9Db" firstAttribute="bottom" secondItem="ejI-Xf-kfY" secondAttribute="bottomMargin" id="pbP-N2-E9I"/>
                                                 <constraint firstItem="0Bt-k9-TTl" firstAttribute="top" secondItem="ejI-Xf-kfY" secondAttribute="topMargin" constant="12" id="slr-KD-aDB"/>
                                             </constraints>
                                             <variation key="default">
@@ -118,6 +131,8 @@
                                                     <exclude reference="iSt-K3-LM3"/>
                                                     <exclude reference="dqu-vb-6ww"/>
                                                     <exclude reference="0Bt-k9-TTl"/>
+                                                    <exclude reference="aBq-7F-fB5"/>
+                                                    <exclude reference="y2q-aV-9Db"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <exclude reference="TzO-Hr-7hp"/>
@@ -132,6 +147,10 @@
                                                     <exclude reference="IdL-wp-7vb"/>
                                                     <exclude reference="hut-cz-9fW"/>
                                                     <exclude reference="slr-KD-aDB"/>
+                                                    <exclude reference="Z9V-27-bOM"/>
+                                                    <exclude reference="dz7-8V-5Cu"/>
+                                                    <exclude reference="85a-Ig-Xjm"/>
+                                                    <exclude reference="pbP-N2-E9I"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
@@ -141,6 +160,8 @@
                                                     <include reference="iSt-K3-LM3"/>
                                                     <include reference="dqu-vb-6ww"/>
                                                     <include reference="0Bt-k9-TTl"/>
+                                                    <include reference="aBq-7F-fB5"/>
+                                                    <include reference="y2q-aV-9Db"/>
                                                 </mask>
                                                 <mask key="constraints">
                                                     <include reference="TzO-Hr-7hp"/>
@@ -155,9 +176,20 @@
                                                     <include reference="IdL-wp-7vb"/>
                                                     <include reference="hut-cz-9fW"/>
                                                     <include reference="slr-KD-aDB"/>
+                                                    <include reference="Z9V-27-bOM"/>
+                                                    <include reference="dz7-8V-5Cu"/>
+                                                    <include reference="85a-Ig-Xjm"/>
+                                                    <include reference="pbP-N2-E9I"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateAndTimeLabel" destination="iSt-K3-LM3" id="Z75-4X-Knf"/>
+                                            <outlet property="descriptionLabel" destination="9Zr-f6-9fD" id="2YZ-vp-An8"/>
+                                            <outlet property="distanceLabel" destination="dqu-vb-6ww" id="Ana-Hy-STS"/>
+                                            <outlet property="nameLabel" destination="5A5-u2-fhK" id="QHm-79-i91"/>
+                                            <outlet property="profileImageLabel" destination="0Bt-k9-TTl" id="rmC-SP-2uF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -194,6 +226,9 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="The Scene" id="3TW-5b-Fxt"/>
+                    <connections>
+                        <outlet property="homeTableView" destination="GgU-Cd-EKA" id="Wax-2t-Oa3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

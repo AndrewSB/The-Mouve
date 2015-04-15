@@ -9,20 +9,30 @@
 import UIKit
 
 class MainFeedViewController: UIViewController {
-  override func viewDidLoad() {
-    super.viewDidLoad()
+    @IBOutlet weak var homeTableView: UITableView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        homeTableView.delegate = self
+        homeTableView.dataSource = self
   }
 }
 
 
 extension MainFeedViewController : UITableViewDelegate, UITableViewDataSource {
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 5
-  }
+    //Data source
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
   
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! UITableViewCell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
     
-    return cell
-  }
+        return cell
+    }
+    
+    
+    //Delegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 }

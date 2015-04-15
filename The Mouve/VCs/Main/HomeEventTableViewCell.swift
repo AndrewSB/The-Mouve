@@ -9,8 +9,21 @@
 import UIKit
 
 class HomeEventTableViewCell: UITableViewCell {
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var descriptionLabel: UILabel!
+  @IBOutlet weak var dateAndTimeLabel: UILabel!
+  @IBOutlet weak var distanceLabel: UILabel!
+  
+  @IBOutlet weak var profileImageView: UIImageView!
+  
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        profileImageView.layer.cornerRadius = (profileImageView.frame.width / CGFloat(2))
+        profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
+        profileImageView.layer.borderWidth = 2
+
+        let newBackgroundImageView = UIImageView(frame: self.frame)
+        newBackgroundImageView.image = UIImage(named: "bg1")
+        self.backgroundView = newBackgroundImageView
     }
 }
