@@ -23,7 +23,14 @@ class HomeEventTableViewCell: UITableViewCell {
         profileImageView.layer.borderWidth = 2
 
         let newBackgroundImageView = UIImageView(frame: self.frame)
-        newBackgroundImageView.image = UIImage(named: "bg1")
+        newBackgroundImageView.image = UIImage(named: "list-background")
+        
+        let gradientImageView = UIImageView(frame: self.frame)
+        gradientImageView.image = UIImage(named: "list-background-gradient")
+    
+        newBackgroundImageView.addSubview(gradientImageView)
+        
         self.backgroundView = newBackgroundImageView
+        self.backgroundView?.addSubview(gradientImageView)
     }
 }

@@ -18,7 +18,7 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
     }
     
     let pageTitles = ["dont", "fuck", "this", "please"]
-    let pageImages = [UIImage(named: "YOOJIN"), UIImage(named: "YOOJIN"), UIImage(named: "YOOJIN"), UIImage(named: "YOOJIN")]
+    let pageImages = [UIImage(named: "taylor-pic"), UIImage(named: "chelsea-pic"), UIImage(named: "noah-pic"), UIImage(named: "yoojin-pic")]
     
     var pageControl: UIPageControl?
     

@@ -188,7 +188,7 @@
                                             <outlet property="descriptionLabel" destination="9Zr-f6-9fD" id="2YZ-vp-An8"/>
                                             <outlet property="distanceLabel" destination="dqu-vb-6ww" id="Ana-Hy-STS"/>
                                             <outlet property="nameLabel" destination="5A5-u2-fhK" id="QHm-79-i91"/>
-                                            <outlet property="profileImageLabel" destination="0Bt-k9-TTl" id="rmC-SP-2uF"/>
+                                            <outlet property="profileImageView" destination="0Bt-k9-TTl" id="fup-hV-WxH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
