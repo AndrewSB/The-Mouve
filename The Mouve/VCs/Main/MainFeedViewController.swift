@@ -10,15 +10,26 @@ import UIKit
 
 class MainFeedViewController: UIViewController {
     @IBOutlet weak var homeTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         homeTableView.delegate = self
         homeTableView.dataSource = self
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        
+        let feedScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: view.bounds.width * 2, height: view.bounds.height - 22 - 40 - 20))
+        
+        homeTableView.removeFromSuperview()
+        feedScrollView.addSubview(homeTableView)
+        
+        homeTableView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - 22 - 44 - 20)
+        
+        let exploreTableView = UITableView(frame: homeTableView.frame, style: homeTableView.style)
+        exploreTableView.frame.origin = CGPoint(x: view.bounds.width, y: 22 + 44 + 20)
+        
+        feedScrollView.addSubview(exploreTableView)
+        view.addSubview(feedScrollView)
+        
+        feedScrollView.frame.origin = CGPoint(x: 0, y: 5)
     }
 }
 
