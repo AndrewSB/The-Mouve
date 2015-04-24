@@ -9,33 +9,46 @@
 import UIKit
 
 @IBDesignable class SceneTitleView: UIView {    
+    @IBOutlet weak var exploreButton: UIButton!
+    @IBOutlet weak var theSceneButton: UIButton!
+    
+    
     var view: UIView!
+    var underlineView = UIView()
+    
+    var type: SceneType {
+        didSet {
+            UIView.animateWithDuration(0.5, animations: {
+                let animateToButton = self.type == .Explore ? self.exploreButton : self.theSceneButton
+                self.underlineView.frame = CGRect(origin: CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height + 2), size: CGSize(width: animateToButton.frame.width, height: 2))
+            })
+        }
+    }
     
     override init(frame: CGRect) {
+//        setup(.Explore)
         super.init(frame: frame)
-        
         xibSetup()
     }
     
     required init(coder aDecoder: NSCoder) {
+//        setup(.Explore)
         super.init(coder: aDecoder)
-        
         xibSetup()
     }
     
+//    func setup(type: SceneType) {
+//        self.type = type
+//        underlineView.backgroundColor = UIColor.seaFoamGreen
+//    }
+    
     func xibSetup() {
-        view = loadViewFromNib()
+        let nib = UINib(nibName: "SceneTitleView", bundle: NSBundle(forClass: self.dynamicType))
+        self.view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
         
         view.frame = bounds
-        view.autoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight
-        addSubview(view)
-    }
-    
-    func loadViewFromNib() -> UIView {
-        let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "SceneTitleView", bundle: bundle)
+        view.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
-        return view
+        addSubview(view)
     }
 }

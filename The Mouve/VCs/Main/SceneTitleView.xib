@@ -10,7 +10,12 @@
         </mutableArray>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SceneTitleView" customModule="The_Mouve" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SceneTitleView" customModule="The_Mouve" customModuleProvider="target">
+            <connections>
+                <outlet property="exploreButton" destination="JJ6-5z-qEK" id="aOL-tZ-ucl"/>
+                <outlet property="theSceneButton" destination="OzF-W8-zLp" id="wog-vA-4o1"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="YdB-Kd-z2m">
             <rect key="frame" x="0.0" y="0.0" width="204" height="43"/>
