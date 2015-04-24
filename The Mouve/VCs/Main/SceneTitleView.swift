@@ -8,47 +8,50 @@
 
 import UIKit
 
-@IBDesignable class SceneTitleView: UIView {    
+class SceneTitleView: UIView {
     @IBOutlet weak var exploreButton: UIButton!
     @IBOutlet weak var theSceneButton: UIButton!
-    
+    @IBOutlet weak var underlineView: UIView!
     
     var view: UIView!
-    var underlineView = UIView()
     
     var type: SceneType {
         didSet {
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animateWithDuration(0.2, animations: {
                 let animateToButton = self.type == .Explore ? self.exploreButton : self.theSceneButton
-                self.underlineView.frame = CGRect(origin: CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height + 2), size: CGSize(width: animateToButton.frame.width, height: 2))
+                self.underlineView.frame = CGRect(origin: CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height), size: CGSize(width: animateToButton.frame.width, height: 4))
             })
         }
     }
     
     override init(frame: CGRect) {
-//        setup(.Explore)
+        self.type = .Explore
+
         super.init(frame: frame)
         xibSetup()
     }
     
     required init(coder aDecoder: NSCoder) {
-//        setup(.Explore)
+        self.type = .Explore
+        
         super.init(coder: aDecoder)
         xibSetup()
     }
     
-//    func setup(type: SceneType) {
-//        self.type = type
-//        underlineView.backgroundColor = UIColor.seaFoamGreen
-//    }
-    
     func xibSetup() {
-        let nib = UINib(nibName: "SceneTitleView", bundle: NSBundle(forClass: self.dynamicType))
-        self.view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        self.view = loadViewFromNib("SceneTitleView")
         
         view.frame = bounds
         view.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         
         addSubview(view)
+    }
+    
+    @IBAction func exploreButtonWasHit(sender: AnyObject) {
+        type = .Explore
+    }
+
+    @IBAction func theSceneButtonWasHit(sender: AnyObject) {
+        type = .Scene
     }
 }

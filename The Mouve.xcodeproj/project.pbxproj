@@ -8,18 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		46042E571AEA1F6900089A5A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46042E561AEA1F6900089A5A /* UIColorExtension.swift */; };
+		46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46042E581AEA230300089A5A /* UIViewExtension.swift */; };
 		462128151AE37876006C950E /* HomeFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462128141AE37876006C950E /* HomeFeedCell.xib */; };
 		469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */; };
 		469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */; };
 		469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */; };
 		469C436D1ADEF96D00D6A510 /* HalisGR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */; };
 		469C436E1ADEF96F00D6A510 /* HalisGR-Regular-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */; };
-		469C43781ADEFAD100D6A510 /* Toucan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469C43751ADEFA7600D6A510 /* Toucan.framework */; };
 		469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C437A1ADF10D200D6A510 /* DetailViewController.swift */; };
 		46A1ACA71AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1ACA61AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift */; };
-		46A1ACA91AEA005900EE5DD7 /* SceneTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */; };
 		46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */; };
-		46AB30641AEA0FD4009724A2 /* SceneTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */; };
 		46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29B7D1ADB2067000B9441 /* AppDelegate.swift */; };
 		46B29B851ADB2067000B9441 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B841ADB2067000B9441 /* Images.xcassets */; };
 		46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B861ADB2067000B9441 /* LaunchScreen.xib */; };
@@ -45,6 +43,8 @@
 		46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B29BC61ADB219C000B9441 /* Main.storyboard */; };
 		46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC71ADB219C000B9441 /* SceneFeedViewController.swift */; };
 		46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */; };
+		46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */; };
+		46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		46042E561AEA1F6900089A5A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		46042E581AEA230300089A5A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		462128141AE37876006C950E /* HomeFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeFeedCell.xib; sourceTree = "<group>"; };
 		469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGGeometeryExtension.swift; path = "The Mouve/CGGeometeryExtension.swift"; sourceTree = "<group>"; };
 		469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Medium.otf"; sourceTree = "<group>"; };
@@ -112,7 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469C43781ADEFAD100D6A510 /* Toucan.framework in Frameworks */,
 				46B29BBF1ADB20FF000B9441 /* libsqlite3.dylib in Frameworks */,
 				46B29BBD1ADB20FA000B9441 /* libz.dylib in Frameworks */,
 				46B29BB31ADB20F5000B9441 /* AudioToolbox.framework in Frameworks */,
@@ -305,6 +305,7 @@
 			children = (
 				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
 				46042E561AEA1F6900089A5A /* UIColorExtension.swift */,
+				46042E581AEA230300089A5A /* UIViewExtension.swift */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
@@ -406,8 +407,8 @@
 			files = (
 				46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */,
 				469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */,
+				46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */,
 				46B29B851ADB2067000B9441 /* Images.xcassets in Resources */,
-				46A1ACA91AEA005900EE5DD7 /* SceneTitleView.xib in Resources */,
 				46B29BC91ADB219C000B9441 /* Login.storyboard in Resources */,
 				46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */,
 				462128151AE37876006C950E /* HomeFeedCell.xib in Resources */,
@@ -430,10 +431,11 @@
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
 				46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */,
 				46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */,
-				46AB30641AEA0FD4009724A2 /* SceneTitleView.swift in Sources */,
+				46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */,
 				46A1ACA71AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift in Sources */,
 				46042E571AEA1F6900089A5A /* UIColorExtension.swift in Sources */,
 				46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */,
+				46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */,
 				469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
