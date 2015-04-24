@@ -21,20 +21,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ha5-Bq-VUd">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
-                                </variation>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsW-n1-L19">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <rect key="frame" x="279" y="443" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkc-yr-djp">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <rect key="frame" x="220" y="514" width="160" height="29"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Medium" family="Halis GR" pointSize="15"/>
                                 <state key="normal" title="Getchor ass in the app">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -46,6 +40,12 @@
                                     <action selector="loginButtonWasHit:" destination="gLX-tq-VTd" eventType="touchUpInside" id="tYl-NQ-sse"/>
                                 </connections>
                             </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ha5-Bq-VUd">
+                                <rect key="frame" x="62" y="20" width="18" height="48"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -54,24 +54,11 @@
                             <constraint firstAttribute="centerY" secondItem="tsW-n1-L19" secondAttribute="centerY" constant="-153.5" id="Uq2-SI-d0k"/>
                             <constraint firstItem="zGo-5P-61d" firstAttribute="top" secondItem="Xkc-yr-djp" secondAttribute="bottom" constant="57" id="dyU-EZ-ix3"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="ha5-Bq-VUd"/>
-                                <exclude reference="tsW-n1-L19"/>
-                                <exclude reference="Xkc-yr-djp"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="R9o-g8-aqE"/>
-                                <exclude reference="Uq2-SI-d0k"/>
-                                <exclude reference="dyU-EZ-ix3"/>
-                                <exclude reference="6LX-8B-DSM"/>
-                            </mask>
-                        </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="ha5-Bq-VUd"/>
                                 <include reference="tsW-n1-L19"/>
                                 <include reference="Xkc-yr-djp"/>
+                                <include reference="ha5-Bq-VUd"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="R9o-g8-aqE"/>

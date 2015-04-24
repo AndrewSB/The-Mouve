@@ -15,6 +15,9 @@
 		469C436E1ADEF96F00D6A510 /* HalisGR-Regular-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */; };
 		469C43781ADEFAD100D6A510 /* Toucan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469C43751ADEFA7600D6A510 /* Toucan.framework */; };
 		469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C437A1ADF10D200D6A510 /* DetailViewController.swift */; };
+		46A1ACA71AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1ACA61AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift */; };
+		46A1ACA91AEA005900EE5DD7 /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* TitleView.xib */; };
+		46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */; };
 		46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29B7D1ADB2067000B9441 /* AppDelegate.swift */; };
 		46B29B851ADB2067000B9441 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B841ADB2067000B9441 /* Images.xcassets */; };
 		46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B861ADB2067000B9441 /* LaunchScreen.xib */; };
@@ -38,7 +41,7 @@
 		46B29BCA1ADB219C000B9441 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC41ADB219C000B9441 /* LoginPageViewController.swift */; };
 		46B29BCB1ADB219C000B9441 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC51ADB219C000B9441 /* TutorialViewController.swift */; };
 		46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B29BC61ADB219C000B9441 /* Main.storyboard */; };
-		46B29BCD1ADB219C000B9441 /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC71ADB219C000B9441 /* MainFeedViewController.swift */; };
+		46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC71ADB219C000B9441 /* SceneFeedViewController.swift */; };
 		46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +71,9 @@
 		469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Regular-Italic.otf"; sourceTree = "<group>"; };
 		469C436F1ADEFA7600D6A510 /* Toucan.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Toucan.xcodeproj; path = "../../../Downloads/Toucan-master/Toucan.xcodeproj"; sourceTree = "<group>"; };
 		469C437A1ADF10D200D6A510 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		46A1ACA61AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheSceneNavigationItem.swift; sourceTree = "<group>"; };
+		46A1ACA81AEA005900EE5DD7 /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
+		46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheScenePageViewController.swift; sourceTree = "<group>"; };
 		46B29B781ADB2067000B9441 /* The Mouve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Mouve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B29B7C1ADB2067000B9441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B29B7D1ADB2067000B9441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,7 +99,7 @@
 		46B29BC41ADB219C000B9441 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		46B29BC51ADB219C000B9441 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		46B29BC61ADB219C000B9441 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		46B29BC71ADB219C000B9441 /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
+		46B29BC71ADB219C000B9441 /* SceneFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneFeedViewController.swift; sourceTree = "<group>"; };
 		46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,8 +143,11 @@
 		469C43791ADF10BA00D6A510 /* Master */ = {
 			isa = PBXGroup;
 			children = (
-				46B29BC71ADB219C000B9441 /* MainFeedViewController.swift */,
+				46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */,
+				46B29BC71ADB219C000B9441 /* SceneFeedViewController.swift */,
+				46A1ACA61AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift */,
 				46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */,
+				46A1ACA81AEA005900EE5DD7 /* TitleView.xib */,
 				462128141AE37876006C950E /* HomeFeedCell.xib */,
 			);
 			name = Master;
@@ -241,8 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				46B29BC61ADB219C000B9441 /* Main.storyboard */,
-				469C437C1ADF10DC00D6A510 /* Detail */,
 				469C43791ADF10BA00D6A510 /* Master */,
+				469C437C1ADF10DC00D6A510 /* Detail */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -384,6 +393,7 @@
 				46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */,
 				469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */,
 				46B29B851ADB2067000B9441 /* Images.xcassets in Resources */,
+				46A1ACA91AEA005900EE5DD7 /* TitleView.xib in Resources */,
 				46B29BC91ADB219C000B9441 /* Login.storyboard in Resources */,
 				46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */,
 				462128151AE37876006C950E /* HomeFeedCell.xib in Resources */,
@@ -404,7 +414,9 @@
 				46B29BCB1ADB219C000B9441 /* TutorialViewController.swift in Sources */,
 				46B29BCA1ADB219C000B9441 /* LoginPageViewController.swift in Sources */,
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
-				46B29BCD1ADB219C000B9441 /* MainFeedViewController.swift in Sources */,
+				46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */,
+				46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */,
+				46A1ACA71AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift in Sources */,
 				46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */,
 				469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */,
 			);
