@@ -17,8 +17,16 @@ class HomeEventTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
   
     @IBOutlet weak var bottomSpacerView: UIView!
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        NSBundle.mainBundle().loadNibNamed("HomeFeedCell", owner: self, options: nil)
+        
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         profileImageView.layer.cornerRadius = (profileImageView.frame.width / CGFloat(2))
         profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
         profileImageView.layer.borderWidth = 2

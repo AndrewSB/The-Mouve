@@ -9,27 +9,25 @@
 import UIKit
 
 class MainFeedViewController: UIViewController {
-    @IBOutlet weak var homeTableView: UITableView!
+    @IBOutlet weak var feedScrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        feedScrollView.contentSize = CGSize(width: view.frame.width, height: feedScrollView.frame.height)
+        
+        let homeTableView = UITableView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: feedScrollView.frame.height))
+        let exploreTableView = UITableView(frame: CGRect(x: view.frame.width, y: 0, width: view.frame.width, height: feedScrollView.frame.height))
+        
         homeTableView.delegate = self
         homeTableView.dataSource = self
+        homeTableView.registerNib(UINib(nibName: "HomeFeedCell", bundle: nil), forCellReuseIdentifier: "cellID")
+        exploreTableView.delegate = self
+        exploreTableView.dataSource = self
         
-        let feedScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: view.bounds.width * 2, height: view.bounds.height - 22 - 40 - 20))
         
-        homeTableView.removeFromSuperview()
         feedScrollView.addSubview(homeTableView)
-        
-        homeTableView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height - 22 - 44 - 20)
-        
-        let exploreTableView = UITableView(frame: homeTableView.frame, style: homeTableView.style)
-        exploreTableView.frame.origin = CGPoint(x: view.bounds.width, y: 22 + 44 + 20)
-        
         feedScrollView.addSubview(exploreTableView)
         view.addSubview(feedScrollView)
-        
-        feedScrollView.frame.origin = CGPoint(x: 0, y: 5)
     }
 }
 
@@ -44,12 +42,13 @@ extension MainFeedViewController : UITableViewDelegate, UITableViewDataSource {
     }
   
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cellID", forIndexPath: indexPath) as? HomeEventTableViewCell
+
         
         if indexPath.row == 4 {
-            cell.bottomSpacerView.frame = CGRect.nullRect
+            cell!.bottomSpacerView.frame = CGRect.nullRect
         }
-        return cell
+        return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

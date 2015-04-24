@@ -28,11 +28,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // [Optional] Track statistics around application opens.
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
 
+        changeNavBar()
         
         let loggedIn = true//PFUser.currentUser() != nil
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
         window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as! UINavigationController
+        
         window!.makeKeyAndVisible()
 
         
@@ -64,3 +67,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    func changeNavBar() {
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont(name: "HalisGR-Regular", size: 16)!, NSForegroundColorAttributeName : UIColor.blackColor()]
+    }
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		462128151AE37876006C950E /* HomeFeedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 462128141AE37876006C950E /* HomeFeedCell.xib */; };
 		469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */; };
 		469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */; };
 		469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */; };
@@ -59,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		462128141AE37876006C950E /* HomeFeedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeFeedCell.xib; sourceTree = "<group>"; };
 		469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGGeometeryExtension.swift; path = "The Mouve/CGGeometeryExtension.swift"; sourceTree = "<group>"; };
 		469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Medium.otf"; sourceTree = "<group>"; };
 		469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Book.otf"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				46B29BC71ADB219C000B9441 /* MainFeedViewController.swift */,
 				46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */,
+				462128141AE37876006C950E /* HomeFeedCell.xib */,
 			);
 			name = Master;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				46B29B851ADB2067000B9441 /* Images.xcassets in Resources */,
 				46B29BC91ADB219C000B9441 /* Login.storyboard in Resources */,
 				46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */,
+				462128151AE37876006C950E /* HomeFeedCell.xib in Resources */,
 				469C436E1ADEF96F00D6A510 /* HalisGR-Regular-Italic.otf in Resources */,
 				469C436D1ADEF96D00D6A510 /* HalisGR-Medium.otf in Resources */,
 				469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */,
