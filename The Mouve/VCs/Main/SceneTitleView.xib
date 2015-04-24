@@ -45,7 +45,7 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r2U-lk-K3H">
-                    <rect key="frame" x="0.0" y="28" width="63" height="5"/>
+                    <rect key="frame" x="0.0" y="32" width="63" height="6"/>
                     <color key="backgroundColor" red="0.47384917736053467" green="0.86037606000900269" blue="0.75323015451431274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>

@@ -19,7 +19,8 @@ class SceneTitleView: UIView {
         didSet {
             UIView.animateWithDuration(0.2, animations: {
                 let animateToButton = self.type == .Explore ? self.exploreButton : self.theSceneButton
-                self.underlineView.frame = CGRect(origin: CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height), size: CGSize(width: animateToButton.frame.width, height: 4))
+                let origin = CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height - 4)
+                self.underlineView.frame = CGRect(origin: origin, size: CGSize(width: animateToButton.frame.width, height: 6))
             })
         }
     }
