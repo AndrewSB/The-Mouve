@@ -25,14 +25,20 @@
             </objects>
             <point key="canvasLocation" x="-919.5" y="282.75"/>
         </scene>
-        <!--The Scene-->
+        <!--The Scene Page View Controller-->
         <scene sceneID="4PI-ge-5fN">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="cod-pV-drU" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="The Scene" id="DWI-Kz-Jcl" customClass="TheSceneNavigationItem" customModule="The_Mouve" customModuleProvider="target">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="cod-pV-drU" customClass="TheScenePageViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="DWI-Kz-Jcl" customClass="TheSceneNavigationItem" customModule="The_Mouve" customModuleProvider="target">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="fMO-cS-xbg">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="i4Z-Gp-noG" customClass="SceneTitleView" customModule="The_Mouve" customModuleProvider="target">
+                            <rect key="frame" x="180" y="6" width="240" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="DCt-MI-E3O">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
@@ -45,7 +51,7 @@
         <!--The Scene-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="MainFeedViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="SceneFeedViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -53,7 +59,19 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UsO-b9-XOW">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UsO-b9-XOW" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="HeQ-qr-fB1"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="UsO-b9-XOW" secondAttribute="bottom" id="HwK-w0-3Hr"/>
+                            <constraint firstAttribute="trailing" secondItem="UsO-b9-XOW" secondAttribute="trailing" id="vMY-sB-YWg"/>
+                            <constraint firstItem="UsO-b9-XOW" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="wD7-fi-8if"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="The Scene" id="3TW-5b-Fxt">
@@ -67,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-256" y="1078"/>
+            <point key="canvasLocation" x="-256" y="1027"/>
         </scene>
     </scenes>
 </document>

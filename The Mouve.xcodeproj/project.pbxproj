@@ -16,8 +16,9 @@
 		469C43781ADEFAD100D6A510 /* Toucan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469C43751ADEFA7600D6A510 /* Toucan.framework */; };
 		469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C437A1ADF10D200D6A510 /* DetailViewController.swift */; };
 		46A1ACA71AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1ACA61AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift */; };
-		46A1ACA91AEA005900EE5DD7 /* TitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* TitleView.xib */; };
+		46A1ACA91AEA005900EE5DD7 /* SceneTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */; };
 		46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */; };
+		46AB30641AEA0FD4009724A2 /* SceneTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */; };
 		46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29B7D1ADB2067000B9441 /* AppDelegate.swift */; };
 		46B29B851ADB2067000B9441 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B841ADB2067000B9441 /* Images.xcassets */; };
 		46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B861ADB2067000B9441 /* LaunchScreen.xib */; };
@@ -72,8 +73,9 @@
 		469C436F1ADEFA7600D6A510 /* Toucan.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Toucan.xcodeproj; path = "../../../Downloads/Toucan-master/Toucan.xcodeproj"; sourceTree = "<group>"; };
 		469C437A1ADF10D200D6A510 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		46A1ACA61AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheSceneNavigationItem.swift; sourceTree = "<group>"; };
-		46A1ACA81AEA005900EE5DD7 /* TitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleView.xib; sourceTree = "<group>"; };
+		46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SceneTitleView.xib; sourceTree = "<group>"; };
 		46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheScenePageViewController.swift; sourceTree = "<group>"; };
+		46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTitleView.swift; sourceTree = "<group>"; };
 		46B29B781ADB2067000B9441 /* The Mouve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Mouve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B29B7C1ADB2067000B9441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B29B7D1ADB2067000B9441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,9 +147,8 @@
 			children = (
 				46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */,
 				46B29BC71ADB219C000B9441 /* SceneFeedViewController.swift */,
-				46A1ACA61AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift */,
+				46AB30651AEA0FDA009724A2 /* TitleView */,
 				46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */,
-				46A1ACA81AEA005900EE5DD7 /* TitleView.xib */,
 				462128141AE37876006C950E /* HomeFeedCell.xib */,
 			);
 			name = Master;
@@ -159,6 +160,16 @@
 				469C437A1ADF10D200D6A510 /* DetailViewController.swift */,
 			);
 			name = Detail;
+			sourceTree = "<group>";
+		};
+		46AB30651AEA0FDA009724A2 /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				46A1ACA61AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift */,
+				46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */,
+				46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */,
+			);
+			name = TitleView;
 			sourceTree = "<group>";
 		};
 		46B29B6F1ADB2067000B9441 = {
@@ -393,7 +404,7 @@
 				46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */,
 				469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */,
 				46B29B851ADB2067000B9441 /* Images.xcassets in Resources */,
-				46A1ACA91AEA005900EE5DD7 /* TitleView.xib in Resources */,
+				46A1ACA91AEA005900EE5DD7 /* SceneTitleView.xib in Resources */,
 				46B29BC91ADB219C000B9441 /* Login.storyboard in Resources */,
 				46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */,
 				462128151AE37876006C950E /* HomeFeedCell.xib in Resources */,
@@ -416,6 +427,7 @@
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
 				46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */,
 				46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */,
+				46AB30641AEA0FD4009724A2 /* SceneTitleView.swift in Sources */,
 				46A1ACA71AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift in Sources */,
 				46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */,
 				469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */,

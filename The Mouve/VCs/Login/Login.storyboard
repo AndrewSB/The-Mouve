@@ -27,7 +27,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkc-yr-djp">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkc-yr-djp">
                                 <rect key="frame" x="220" y="514" width="160" height="29"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Medium" family="Halis GR" pointSize="15"/>
                                 <state key="normal" title="Getchor ass in the app">
@@ -63,8 +63,8 @@
                             <mask key="constraints">
                                 <include reference="R9o-g8-aqE"/>
                                 <include reference="Uq2-SI-d0k"/>
-                                <include reference="dyU-EZ-ix3"/>
                                 <include reference="6LX-8B-DSM"/>
+                                <include reference="dyU-EZ-ix3"/>
                             </mask>
                         </variation>
                     </view>

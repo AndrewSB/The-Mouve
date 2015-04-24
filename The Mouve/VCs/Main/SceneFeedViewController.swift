@@ -8,6 +8,20 @@
 
 import UIKit
 
-class SceneFeedViewController: UIViewController {
+enum SceneType {
+    case Explore
+    case Scene
+}
 
+class SceneFeedViewController: UIViewController {
+    var type: SceneType!
+    
+    convenience init(type: SceneType) {
+        self.init()
+        self.type = type
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
