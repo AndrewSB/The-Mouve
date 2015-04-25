@@ -14,16 +14,32 @@ class TheScenePageViewController: UIPageViewController {
         self.delegate = self
         self.dataSource = self
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pageOne", name: "TitleDidClickPageOne", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pageTwo", name: "TitleDidClickPageTwo", object: nil)
+
+        
         let sceneFeedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
         
         sceneFeedVC.type = .Explore
         
         self.setViewControllers([sceneFeedVC], direction: .Forward, animated: true, completion: nil)
+    }
+    
+    func pageOne() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
+        vc.type = .Explore
         
+        self.setViewControllers([vc], direction: .Reverse, animated: true, completion: nil)
+    }
+    
+    func pageTwo() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
+        vc.type = .Scene
+        
+        self.setViewControllers([vc], direction: .Forward, animated: true, completion: nil)
     }
     
     @IBAction func hamburgerButtonWasHit(sender: AnyObject) {
-        (self.view.superview?.superview as? ECSlidingViewController)?.anchorTopViewToRightAnimated(true)
     }
     
     @IBAction func activityButtonWasHit(sender: AnyObject) {
@@ -49,6 +65,10 @@ extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewCo
     }
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
-        println("changed page")
+        if (self.viewControllers[0] as! SceneFeedViewController).type == .Explore {
+            NSNotificationCenter.defaultCenter().postNotificationName("HomeFeedDidGoToPageOne", object: self)
+        } else {
+            NSNotificationCenter.defaultCenter().postNotificationName("HomeFeedDidGoToPageTwo", object: self)
+        }
     }
 }

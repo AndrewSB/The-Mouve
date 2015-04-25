@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class SceneTitleView: UIView {
+class SceneTitleView: UIView {
     @IBOutlet weak var exploreButton: UIButton!
     @IBOutlet weak var theSceneButton: UIButton!
     @IBOutlet weak var underlineView: UIView!
@@ -17,11 +17,13 @@ import UIKit
     
     var type: SceneType {
         didSet {
-            UIView.animateWithDuration(0.2, animations: {
-                let animateToButton = self.type == .Explore ? self.exploreButton : self.theSceneButton
-                let origin = CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height - 4)
-                self.underlineView.frame = CGRect(origin: origin, size: CGSize(width: animateToButton.frame.width, height: 2))
-            })
+            if type != oldValue {
+                UIView.animateWithDuration(0.2, animations: {
+                    let animateToButton = self.type == .Explore ? self.exploreButton : self.theSceneButton
+                    let origin = CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height - 4)
+                    self.underlineView.frame = CGRect(origin: origin, size: CGSize(width: animateToButton.frame.width, height: 2))
+                })
+            }
         }
     }
     
@@ -29,6 +31,17 @@ import UIKit
         self.type = .Explore
         super.init(frame: frame)
         xibSetup()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pageOne", name: "HomeFeedDidGoToPageOne", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pageTwo", name: "HomeFeedDidGoToPageTwo", object: nil)
+    }
+    
+    func pageOne() {
+        type = .Explore
+    }
+    
+    func pageTwo() {
+        type = .Scene
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -45,13 +58,22 @@ import UIKit
         view.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         
         addSubview(view)
+        
+        
     }
+
     
     @IBAction func exploreButtonWasHit(sender: AnyObject) {
-        type = .Explore
+        if type != .Explore {
+            NSNotificationCenter.defaultCenter().postNotificationName("TitleDidClickPageOne", object: self)
+        }
+        pageOne()
     }
 
     @IBAction func theSceneButtonWasHit(sender: AnyObject) {
-        type = .Scene
+        if type != .Scene {
+            NSNotificationCenter.defaultCenter().postNotificationName("TitleDidClickPageTwo", object: self)
+        }
+        pageTwo()
     }
 }
