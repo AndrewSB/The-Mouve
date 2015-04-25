@@ -9,21 +9,34 @@
 import UIKit
 
 class TheScenePageViewController: UIPageViewController {
+    private let sceneFeedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
         self.dataSource = self
-        self.setViewControllers([SceneFeedViewController(type: .Scene)], direction: .Forward, animated: true, completion: nil)
+        
+        sceneFeedVC.type = .Explore
+        
+        self.setViewControllers([sceneFeedVC], direction: .Forward, animated: true, completion: nil)
     }
 }
 
 extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        return (viewController as! SceneFeedViewController).type == SceneType.Explore ? SceneFeedViewController(type: .Scene) : nil
+        sceneFeedVC.type = .Scene
+        
+        println("before \((viewController as! SceneFeedViewController).type.hashValue)")
+        
+        return (viewController as! SceneFeedViewController).type == SceneType.Explore ? sceneFeedVC : nil
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        return (viewController as! SceneFeedViewController).type == SceneType.Explore ? nil : SceneFeedViewController(type: .Scene)
+        sceneFeedVC.type = .Explore
+        
+        println("after \((viewController as! SceneFeedViewController).type.hashValue)")
+        
+        return (viewController as! SceneFeedViewController).type == SceneType.Explore ? nil : sceneFeedVC
     }
 }

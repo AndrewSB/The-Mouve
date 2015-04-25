@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "bell-icon-1.png"
+      "filename" : "menu-icon@3x-1.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "bell-icon@2x-1.png"
+      "filename" : "menu-icon@2x-1.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "bell-icon@3x-1.png"
+      "filename" : "menu-icon@3x-1-1.png"
     }
   ],
   "info" : {

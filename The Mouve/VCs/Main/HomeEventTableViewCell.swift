@@ -15,14 +15,6 @@ class HomeEventTableViewCell: UITableViewCell {
     @IBOutlet weak var distanceLabel: UILabel!
   
     @IBOutlet weak var profileImageView: UIImageView!
-  
-    @IBOutlet weak var bottomSpacerView: UIView!
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        NSBundle.mainBundle().loadNibNamed("HomeFeedCell", owner: self, options: nil)
-        
-    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,8 +25,8 @@ class HomeEventTableViewCell: UITableViewCell {
 
         let newBackgroundImageView = UIImageView(frame: self.frame)
         newBackgroundImageView.image = UIImage(named: "list-background")
-        newBackgroundImageView.layer.opacity = 0.3
+        newBackgroundImageView.layer.opacity = 0.25
         
-        self.backgroundView = newBackgroundImageView
+        backgroundView = newBackgroundImageView
     }
 }

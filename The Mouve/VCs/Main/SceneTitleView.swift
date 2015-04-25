@@ -27,7 +27,6 @@ import UIKit
     
     override init(frame: CGRect) {
         self.type = .Explore
-
         super.init(frame: frame)
         xibSetup()
     }

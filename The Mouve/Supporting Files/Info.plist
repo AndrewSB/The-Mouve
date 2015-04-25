@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>HalisGR-Light-Italic</string>
 		<string>HalisGR-Regular-Italic</string>
 		<string>HalisGR-Medium</string>
 		<string>HalisGR-Regular</string>
