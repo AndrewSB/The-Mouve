@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SceneTitleView: UIView {
+@IBDesignable class SceneTitleView: UIView {
     @IBOutlet weak var exploreButton: UIButton!
     @IBOutlet weak var theSceneButton: UIButton!
     @IBOutlet weak var underlineView: UIView!
@@ -20,7 +20,7 @@ class SceneTitleView: UIView {
             UIView.animateWithDuration(0.2, animations: {
                 let animateToButton = self.type == .Explore ? self.exploreButton : self.theSceneButton
                 let origin = CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height - 4)
-                self.underlineView.frame = CGRect(origin: origin, size: CGSize(width: animateToButton.frame.width, height: 6))
+                self.underlineView.frame = CGRect(origin: origin, size: CGSize(width: animateToButton.frame.width, height: 2))
             })
         }
     }
