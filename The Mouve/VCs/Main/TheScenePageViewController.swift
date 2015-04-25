@@ -21,6 +21,13 @@ class TheScenePageViewController: UIPageViewController {
         self.setViewControllers([sceneFeedVC], direction: .Forward, animated: true, completion: nil)
         
     }
+    
+    @IBAction func hamburgerButtonWasHit(sender: AnyObject) {
+        (self.view.superview?.superview as? ECSlidingViewController)?.anchorTopViewToRightAnimated(true)
+    }
+    
+    @IBAction func activityButtonWasHit(sender: AnyObject) {
+    }
 }
 
 extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {

@@ -16,6 +16,7 @@
 		462B68BE1AEB4ABD0040C7DD /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462B68B71AEB4ABD0040C7DD /* ECSlidingViewController.m */; };
 		462B68BF1AEB4ABD0040C7DD /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462B68B91AEB4ABD0040C7DD /* UIViewController+ECSlidingViewController.m */; };
 		462B68C71AEB51E40040C7DD /* HalisGR-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */; };
+		462B68C91AEB554D0040C7DD /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68C81AEB554D0040C7DD /* NavigationViewController.swift */; };
 		469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */; };
 		469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */; };
 		469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */; };
@@ -71,6 +72,7 @@
 		462B68B81AEB4ABD0040C7DD /* UIViewController+ECSlidingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ECSlidingViewController.h"; sourceTree = "<group>"; };
 		462B68B91AEB4ABD0040C7DD /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
 		462B68C61AEB4B1F0040C7DD /* The Mouve-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Mouve-Bridging-Header.h"; sourceTree = "<group>"; };
+		462B68C81AEB554D0040C7DD /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGGeometeryExtension.swift; path = "The Mouve/CGGeometeryExtension.swift"; sourceTree = "<group>"; };
 		469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Medium.otf"; sourceTree = "<group>"; };
 		469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Book.otf"; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				46B29BC61ADB219C000B9441 /* Main.storyboard */,
+				462B68C81AEB554D0040C7DD /* NavigationViewController.swift */,
 				469C43791ADF10BA00D6A510 /* Master */,
 				469C437C1ADF10DC00D6A510 /* Detail */,
 			);
@@ -424,6 +427,7 @@
 				462B68BC1AEB4ABD0040C7DD /* ECSlidingInteractiveTransition.m in Sources */,
 				462B68BD1AEB4ABD0040C7DD /* ECSlidingSegue.m in Sources */,
 				46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */,
+				462B68C91AEB554D0040C7DD /* NavigationViewController.swift in Sources */,
 				462B68BE1AEB4ABD0040C7DD /* ECSlidingViewController.m in Sources */,
 				46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */,
 				462B68BF1AEB4ABD0040C7DD /* UIViewController+ECSlidingViewController.m in Sources */,

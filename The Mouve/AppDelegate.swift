@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as! UINavigationController
+        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as! UIViewController
         
         window!.makeKeyAndVisible()
 
