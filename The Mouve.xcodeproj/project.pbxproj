@@ -15,6 +15,7 @@
 		462B68BD1AEB4ABD0040C7DD /* ECSlidingSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 462B68B51AEB4ABD0040C7DD /* ECSlidingSegue.m */; };
 		462B68BE1AEB4ABD0040C7DD /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462B68B71AEB4ABD0040C7DD /* ECSlidingViewController.m */; };
 		462B68BF1AEB4ABD0040C7DD /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 462B68B91AEB4ABD0040C7DD /* UIViewController+ECSlidingViewController.m */; };
+		462B68C71AEB51E40040C7DD /* HalisGR-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */; };
 		469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */; };
 		469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */; };
 		469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */; };
@@ -404,6 +405,7 @@
 				469C436E1ADEF96F00D6A510 /* HalisGR-Regular-Italic.otf in Resources */,
 				469C436D1ADEF96D00D6A510 /* HalisGR-Medium.otf in Resources */,
 				469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */,
+				462B68C71AEB51E40040C7DD /* HalisGR-Light-Italic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

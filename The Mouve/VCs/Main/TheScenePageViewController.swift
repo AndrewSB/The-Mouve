@@ -9,34 +9,39 @@
 import UIKit
 
 class TheScenePageViewController: UIPageViewController {
-    private let sceneFeedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
         self.dataSource = self
         
+        let sceneFeedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
+        
         sceneFeedVC.type = .Explore
         
         self.setViewControllers([sceneFeedVC], direction: .Forward, animated: true, completion: nil)
+        
     }
 }
 
 extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        sceneFeedVC.type = .Scene
+        let afterVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
         
-        println("before \((viewController as! SceneFeedViewController).type.hashValue)")
+        afterVC.type = .Explore
         
-        return (viewController as! SceneFeedViewController).type == SceneType.Explore ? sceneFeedVC : nil
+        return (viewController as! SceneFeedViewController).type == SceneType.Explore ? nil : afterVC
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        sceneFeedVC.type = .Explore
+        let beforeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
         
-        println("after \((viewController as! SceneFeedViewController).type.hashValue)")
+        beforeVC.type = .Scene
         
-        return (viewController as! SceneFeedViewController).type == SceneType.Explore ? nil : sceneFeedVC
+        return (viewController as! SceneFeedViewController).type == .Explore ? beforeVC : nil
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
+        println("changed page")
     }
 }
