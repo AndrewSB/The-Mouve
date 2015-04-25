@@ -10,13 +10,16 @@
 		46042E571AEA1F6900089A5A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46042E561AEA1F6900089A5A /* UIColorExtension.swift */; };
 		46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46042E581AEA230300089A5A /* UIViewExtension.swift */; };
 		462B68C71AEB51E40040C7DD /* HalisGR-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */; };
+		462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */; };
+		462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68D71AEC57E40040C7DD /* ActivityTableViewController.swift */; };
+		462B68DB1AEC5CF90040C7DD /* NSUserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */; };
+		462B68DD1AEC5D010040C7DD /* NSNotificationCenterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */; };
 		469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */; };
 		469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */; };
 		469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */; };
 		469C436D1ADEF96D00D6A510 /* HalisGR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */; };
 		469C436E1ADEF96F00D6A510 /* HalisGR-Regular-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */; };
 		469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C437A1ADF10D200D6A510 /* DetailViewController.swift */; };
-		46A1ACA71AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1ACA61AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift */; };
 		46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */; };
 		46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29B7D1ADB2067000B9441 /* AppDelegate.swift */; };
 		46B29B851ADB2067000B9441 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B841ADB2067000B9441 /* Images.xcassets */; };
@@ -52,13 +55,16 @@
 		46042E581AEA230300089A5A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Light-Italic.otf"; sourceTree = "<group>"; };
 		462B68C61AEB4B1F0040C7DD /* The Mouve-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Mouve-Bridging-Header.h"; sourceTree = "<group>"; };
+		462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPageViewController.swift; sourceTree = "<group>"; };
+		462B68D71AEC57E40040C7DD /* ActivityTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
+		462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultHelper.swift; sourceTree = "<group>"; };
+		462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterHelper.swift; sourceTree = "<group>"; };
 		469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGGeometeryExtension.swift; path = "The Mouve/CGGeometeryExtension.swift"; sourceTree = "<group>"; };
 		469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Medium.otf"; sourceTree = "<group>"; };
 		469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Book.otf"; sourceTree = "<group>"; };
 		469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Regular.otf"; sourceTree = "<group>"; };
 		469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Regular-Italic.otf"; sourceTree = "<group>"; };
 		469C437A1ADF10D200D6A510 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		46A1ACA61AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheSceneNavigationItem.swift; sourceTree = "<group>"; };
 		46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SceneTitleView.xib; sourceTree = "<group>"; };
 		46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheScenePageViewController.swift; sourceTree = "<group>"; };
 		46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTitleView.swift; sourceTree = "<group>"; };
@@ -118,13 +124,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		462B68D41AEC55CD0040C7DD /* The Scene */ = {
+			isa = PBXGroup;
+			children = (
+				469C43791ADF10BA00D6A510 /* Master */,
+				469C437C1ADF10DC00D6A510 /* Detail */,
+			);
+			name = "The Scene";
+			sourceTree = "<group>";
+		};
+		462B68D91AEC57F50040C7DD /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */,
+				462B68D71AEC57E40040C7DD /* ActivityTableViewController.swift */,
+			);
+			name = Activity;
+			sourceTree = "<group>";
+		};
 		469C43791ADF10BA00D6A510 /* Master */ = {
 			isa = PBXGroup;
 			children = (
 				46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */,
 				46B29BC71ADB219C000B9441 /* SceneFeedViewController.swift */,
-				46AB30651AEA0FDA009724A2 /* TitleView */,
 				46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */,
+				46AB30651AEA0FDA009724A2 /* TitleView */,
 			);
 			name = Master;
 			sourceTree = "<group>";
@@ -140,7 +164,6 @@
 		46AB30651AEA0FDA009724A2 /* TitleView */ = {
 			isa = PBXGroup;
 			children = (
-				46A1ACA61AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift */,
 				46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */,
 				46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */,
 			);
@@ -236,8 +259,8 @@
 			isa = PBXGroup;
 			children = (
 				46B29BC61ADB219C000B9441 /* Main.storyboard */,
-				469C43791ADF10BA00D6A510 /* Master */,
-				469C437C1ADF10DC00D6A510 /* Detail */,
+				462B68D91AEC57F50040C7DD /* Activity */,
+				462B68D41AEC55CD0040C7DD /* The Scene */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -278,6 +301,8 @@
 			isa = PBXGroup;
 			children = (
 				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
+				462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */,
+				462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */,
 				46042E561AEA1F6900089A5A /* UIColorExtension.swift */,
 				46042E581AEA230300089A5A /* UIViewExtension.swift */,
 			);
@@ -376,17 +401,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				462B68DD1AEC5D010040C7DD /* NSNotificationCenterHelper.swift in Sources */,
 				46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */,
+				462B68DB1AEC5CF90040C7DD /* NSUserDefaultHelper.swift in Sources */,
 				46B29BCB1ADB219C000B9441 /* TutorialViewController.swift in Sources */,
 				46B29BCA1ADB219C000B9441 /* LoginPageViewController.swift in Sources */,
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
 				46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */,
 				46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */,
+				462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */,
 				46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */,
-				46A1ACA71AE9FE9800EE5DD7 /* TheSceneNavigationItem.swift in Sources */,
 				46042E571AEA1F6900089A5A /* UIColorExtension.swift in Sources */,
 				46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */,
 				46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */,
+				462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */,
 				469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

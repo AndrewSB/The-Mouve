@@ -15,7 +15,7 @@ class SceneTitleView: UIView {
     
     var view: UIView!
     
-    var type: SceneType {
+    @IBInspectable var type: SceneType? {
         didSet {
             if type != oldValue {
                 UIView.animateWithDuration(0.2, animations: {
@@ -27,27 +27,25 @@ class SceneTitleView: UIView {
         }
     }
     
+    @IBInspectable var superVC: String?
+    
     override init(frame: CGRect) {
-        self.type = .Explore
         super.init(frame: frame)
         xibSetup()
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pageOne", name: "HomeFeedDidGoToPageOne", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pageTwo", name: "HomeFeedDidGoToPageTwo", object: nil)
-    }
-    
-    func pageOne() {
-        type = .Explore
-    }
-    
-    func pageTwo() {
-        type = .Scene
     }
     
     required init(coder aDecoder: NSCoder) {
-        self.type = .Explore
-        
         super.init(coder: aDecoder)
+        xibSetup()
+    }
+    
+    convenience init(type: SceneType, superVC: String, frame: CGRect) {
+        self.init()
+        
+        self.frame = frame
+        self.superVC = superVC
+        self.type = type
+        
         xibSetup()
     }
     
@@ -60,6 +58,16 @@ class SceneTitleView: UIView {
         addSubview(view)
         
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pageOne", name: "\(superVC)DidGoToPageOne", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pageTwo", name: "\(superVC)DidGoToPageTwo", object: nil)
+    }
+    
+    func pageOne() {
+        type = .Explore
+    }
+    
+    func pageTwo() {
+        type = .Scene
     }
 
     

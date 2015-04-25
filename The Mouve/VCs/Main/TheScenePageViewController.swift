@@ -14,8 +14,11 @@ class TheScenePageViewController: UIPageViewController {
         self.delegate = self
         self.dataSource = self
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pageOne", name: "TitleDidClickPageOne", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pageTwo", name: "TitleDidClickPageTwo", object: nil)
+        LocalMessage.observe(.HomeFeedPageOne, classFunction: "pageOne", inClass: self)
+        LocalMessage.observe(.HomeFeedPageTwo, classFunction: "pageTwo", inClass: self)
+        
+        
+        self.navigationItem.titleView = SceneTitleView(type: .Explore, superVC: "HomeFeed", frame: CGRect(origin: .zeroPoint, size: CGSize(width: 165, height: 44)))
 
         
         let sceneFeedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
