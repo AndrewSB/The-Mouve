@@ -10,6 +10,9 @@
             <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
         </mutableArray>
+        <mutableArray key="HalisGR-Light-Italic.otf">
+            <string>HalisGR-LightItalic</string>
+        </mutableArray>
         <mutableArray key="HalisGR-Regular.otf">
             <string>HalisGR-Regular</string>
         </mutableArray>
@@ -90,18 +93,11 @@
                                                         <rect key="frame" x="286" y="30" width="62" height="62"/>
                                                     </variation>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8U-AG-Zml">
-                                                    <rect key="frame" x="26" y="35" width="467" height="29"/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment>
-                                                            <string key="content">Your [view release] happens after the return. But as soon as the return happens the method execution is aborted and your release is never called.</string>
-                                                            <attributes>
-                                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="13" name="HalisGR-LightItalic"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="0.29999999999999999"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p8U-AG-Zml">
+                                                    <rect key="frame" x="26" y="35" width="452" height="29"/>
+                                                    <string key="text">Your [view release] happens after the return. But as soon as the return happens the method execution is aborted and your release is never called.</string>
+                                                    <fontDescription key="fontDescription" name="HalisGR-LightItalic" family="Halis GR" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                         <rect key="frame" x="28" y="37" width="145" height="14"/>
@@ -132,7 +128,7 @@
                                                     </variation>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.4 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-GB-5S5">
-                                                    <rect key="frame" x="26" y="96" width="61" height="17"/>
+                                                    <rect key="frame" x="26" y="94" width="61" height="17"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -156,7 +152,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today | 5PM - 9PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-F7-9dh">
-                                                    <rect key="frame" x="26" y="78" width="134" height="17"/>
+                                                    <rect key="frame" x="26" y="76" width="134" height="17"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -180,7 +176,7 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="hJQ-F7-9dh" firstAttribute="top" secondItem="p8U-AG-Zml" secondAttribute="bottom" constant="14" id="1Bx-GK-aXN"/>
+                                                <constraint firstItem="hJQ-F7-9dh" firstAttribute="top" secondItem="p8U-AG-Zml" secondAttribute="bottom" constant="12" id="1Bx-GK-aXN"/>
                                                 <constraint firstItem="XFb-aN-uxj" firstAttribute="top" secondItem="zkT-Sm-5cZ" secondAttribute="top" id="1mm-GT-VEz"/>
                                                 <constraint firstItem="9yP-PG-yHv" firstAttribute="leading" secondItem="lsC-xl-V0x" secondAttribute="trailing" constant="22" id="3tR-DH-8DY"/>
                                                 <constraint firstItem="lpb-ol-NrW" firstAttribute="top" secondItem="xva-GM-ydi" secondAttribute="bottom" id="458-eO-Ikq"/>
