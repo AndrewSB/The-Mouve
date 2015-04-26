@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+enum UserDefaultKeys: String {
+    
+}
+
+class UserDefaults {
+    
+}

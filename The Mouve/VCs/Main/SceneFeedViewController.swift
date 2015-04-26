@@ -41,7 +41,7 @@ class SceneFeedViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        println(type.hashValue)
+        LocalMessage.post(type.hashValue == 0 ? .HomeFeedPageOne : .HomeFeedPageTwo)
     }
 }
 

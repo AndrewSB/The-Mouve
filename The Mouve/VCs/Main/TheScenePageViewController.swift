@@ -14,15 +14,17 @@ class TheScenePageViewController: UIPageViewController {
         self.delegate = self
         self.dataSource = self
         
+        assert(view.subviews[0] is UIScrollView, "s")
+        (view.subviews[0] as! UIScrollView).delegate = self
+        
         LocalMessage.observe(.TitleHitPageOne, classFunction: "pageOne", inClass: self)
         LocalMessage.observe(.TitleHitPageTwo, classFunction: "pageTwo", inClass: self)
         
         
-        self.navigationItem.titleView = SceneTitleView(type: .Explore, superVC: "HomeFeed", frame: CGRect(origin: .zeroPoint, size: CGSize(width: 165, height: 44)))
+        navigationItem.titleView = SceneTitleView(type: .Explore, superVC: "HomeFeed", frame: CGRect(x: 0, y: 0, width: 180, height: 44))
 
         
-        let sceneFeedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
-        
+        let sceneFeedVC = initVC("sceneFeedVC", storyboard: "Main") as! SceneFeedViewController
         sceneFeedVC.type = .Explore
         
         self.setViewControllers([sceneFeedVC], direction: .Forward, animated: true, completion: nil)
@@ -30,7 +32,7 @@ class TheScenePageViewController: UIPageViewController {
     
     func pageOne() {
         if (self.viewControllers[0] as! SceneFeedViewController).type == SceneType.Scene {
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
+            let vc = initVC("sceneFeedVC", storyboard: "Main") as! SceneFeedViewController
             vc.type = .Explore
         
             self.setViewControllers([vc], direction: .Reverse, animated: true, completion: nil)
@@ -39,7 +41,7 @@ class TheScenePageViewController: UIPageViewController {
     
     func pageTwo() {
         if (self.viewControllers[0] as! SceneFeedViewController).type == SceneType.Explore {
-            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
+            let vc = initVC("sceneFeedVC", storyboard: "Main") as! SceneFeedViewController
             vc.type = .Scene
             
             self.setViewControllers([vc], direction: .Forward, animated: true, completion: nil)
@@ -70,14 +72,10 @@ extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewCo
         
         return (viewController as! SceneFeedViewController).type == .Explore ? beforeVC : nil
     }
-    
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
-        println("going to \((self.viewControllers[0] as! SceneFeedViewController).type.hashValue)")
-        
-        if (self.viewControllers[0] as! SceneFeedViewController).type == .Explore {
-            LocalMessage.post(.HomeFeedPageOne)
-        } else {
-            LocalMessage.post(.HomeFeedPageTwo)
-        }
+}
+
+extension TheScenePageViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        println(scrollView.contentOffset.x - view.frame.width)
     }
 }

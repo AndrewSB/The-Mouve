@@ -21,8 +21,9 @@
         <!--The Scene Page View Controller-->
         <scene sceneID="4PI-ge-5fN">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="4" navigationOrientation="horizontal" spineLocation="none" id="cod-pV-drU" customClass="TheScenePageViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="44" navigationOrientation="horizontal" spineLocation="none" id="cod-pV-drU" customClass="TheScenePageViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="DWI-Kz-Jcl">
+                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="search-icon" style="plain" id="fMO-cS-xbg">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>

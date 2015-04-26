@@ -29,54 +29,42 @@ class SceneTitleView: UIView {
     
     @IBInspectable var superVC: String?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        xibSetup()
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        xibSetup()
-    }
-    
-    convenience init(type: SceneType, superVC: String, frame: CGRect) {
+    convenience init(type: SceneType, superVC: String, frame: CGRect) { //init from code
         self.init()
         
         self.frame = frame
         self.superVC = superVC
         self.type = type
-                
+        
         LocalMessage.observe(.HomeFeedPageOne, classFunction: "pageOne", inClass: self)
         LocalMessage.observe(.HomeFeedPageTwo, classFunction: "pageTwo", inClass: self)
     }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        xibSetup()
+    }
+    
+    required init(coder aDecoder: NSCoder) { //init from storyboard
+        println(view)
+        
+        super.init(coder: aDecoder)
+        xibSetup()
+    }
     
     func xibSetup() {
-        println("called xib setup")
         self.view = loadViewFromNib("SceneTitleView")
         
         view.frame = bounds
         view.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         
         addSubview(view)
-        //        LocalMessage.observe(.HomeFeedPageTwo, classFunction: pageTwo(), inClass: self)
+
+        println("called xib setup \(superVC)")
+
     }
     
-    override func didAddSubview(subview: UIView) {
-        println("didAddSubview")
-    }
-    
-    override func willRemoveSubview(subview: UIView) {
-        println("willRemoveSubview")
-    }
-    
-    override func didMoveToWindow() {
-        println("didMoveToWindow")
-    }
-    
-    override func willMoveToWindow(newWindow: UIWindow?) {
-        println("didMoveToWindow")
-    }
-        
+
     func pageOne() {println("did pageone");type = .Explore}
     func pageTwo() {println("did pagetwo");type = .Scene}
 
