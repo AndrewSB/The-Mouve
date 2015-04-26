@@ -84,6 +84,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N73-Mj-ygj" id="zkT-Sm-5cZ">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list-background" translatesAutoresizingMaskIntoConstraints="NO" id="2sm-0X-RFa">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="130"/>
+                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yoojin-pic" translatesAutoresizingMaskIntoConstraints="NO" id="xva-GM-ydi">
                                                     <rect key="frame" x="493" y="34" width="63" height="63"/>
                                                     <constraints>
@@ -182,6 +185,8 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="2sm-0X-RFa" secondAttribute="trailing" id="04B-Nd-jIz"/>
+                                                <constraint firstAttribute="bottom" secondItem="2sm-0X-RFa" secondAttribute="bottom" id="0T3-gW-EEW"/>
                                                 <constraint firstItem="XFb-aN-uxj" firstAttribute="top" secondItem="zkT-Sm-5cZ" secondAttribute="top" constant="16" id="1mm-GT-VEz"/>
                                                 <constraint firstItem="xva-GM-ydi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="coP-Hn-gLS" secondAttribute="trailing" constant="30" id="2Mn-RW-feg"/>
                                                 <constraint firstItem="9yP-PG-yHv" firstAttribute="leading" secondItem="lsC-xl-V0x" secondAttribute="trailing" constant="18" id="3tR-DH-8DY"/>
@@ -193,6 +198,8 @@
                                                 <constraint firstItem="xva-GM-ydi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hJQ-F7-9dh" secondAttribute="trailing" constant="30" id="BwK-rk-7mw"/>
                                                 <constraint firstAttribute="bottom" secondItem="lsC-xl-V0x" secondAttribute="bottom" id="E6j-OZ-8bP"/>
                                                 <constraint firstItem="xTY-Lt-Dp3" firstAttribute="top" secondItem="zkT-Sm-5cZ" secondAttribute="topMargin" id="FaO-b0-wqj"/>
+                                                <constraint firstItem="2sm-0X-RFa" firstAttribute="top" secondItem="zkT-Sm-5cZ" secondAttribute="top" id="HJr-kL-nek"/>
+                                                <constraint firstItem="2sm-0X-RFa" firstAttribute="leading" secondItem="zkT-Sm-5cZ" secondAttribute="leading" id="Ieu-tG-qpa"/>
                                                 <constraint firstItem="xva-GM-ydi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ic1-GB-5S5" secondAttribute="trailing" constant="30" id="JLY-yf-eFt"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="xva-GM-ydi" secondAttribute="trailing" constant="36" id="JXk-Mn-Gvm"/>
                                                 <constraint firstAttribute="trailing" secondItem="DrK-i2-x7H" secondAttribute="trailing" constant="13" id="QVQ-6H-HQF"/>
@@ -211,9 +218,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="XFb-aN-uxj" secondAttribute="trailing" constant="13" id="wG0-iB-QDx"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="backgroundImageView" destination="2sm-0X-RFa" id="jAL-qI-8zn"/>
                                             <outlet property="dateAndTimeLabel" destination="hJQ-F7-9dh" id="VpG-Sp-dcx"/>
+                                            <outlet property="descriptionLabel" destination="coP-Hn-gLS" id="Uue-Sw-I4L"/>
                                             <outlet property="distanceLabel" destination="ic1-GB-5S5" id="VvS-AN-6Oi"/>
                                             <outlet property="goingButton" destination="XFb-aN-uxj" id="IRa-FS-d5b"/>
                                             <outlet property="nameLabel" destination="9yP-PG-yHv" id="dJS-M8-zjv"/>
@@ -464,6 +472,7 @@
         <image name="Line" width="6" height="244"/>
         <image name="bell-icon" width="24" height="24"/>
         <image name="calendar" width="37" height="39"/>
+        <image name="list-background" width="749" height="244"/>
         <image name="profile-icon" width="23" height="23"/>
         <image name="search-icon" width="22" height="23"/>
         <image name="settings-icon" width="24" height="24"/>

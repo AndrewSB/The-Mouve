@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TheScenePageViewController: UIPageViewController {
     override func viewDidLoad() {
@@ -20,14 +21,9 @@ class TheScenePageViewController: UIPageViewController {
         LocalMessage.observe(.TitleHitPageOne, classFunction: "pageOne", inClass: self)
         LocalMessage.observe(.TitleHitPageTwo, classFunction: "pageTwo", inClass: self)
         
-        
         navigationItem.titleView = SceneTitleView(type: .Explore, superVC: "HomeFeed", frame: CGRect(x: 0, y: 0, width: 180, height: 44))
 
-        
-        let sceneFeedVC = initVC("sceneFeedVC", storyboard: "Main") as! SceneFeedViewController
-        sceneFeedVC.type = .Explore
-        
-        self.setViewControllers([sceneFeedVC], direction: .Forward, animated: true, completion: nil)
+        pageViewControllerDidLoad()
     }
     
     func pageOne() {
@@ -56,6 +52,34 @@ class TheScenePageViewController: UIPageViewController {
 }
 
 extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+    func pageViewControllerDidLoad() {
+        let sceneFeedVC = initVC("sceneFeedVC", storyboard: "Main") as! SceneFeedViewController
+        sceneFeedVC.type = .Explore
+        
+        self.setViewControllers([sceneFeedVC], direction: .Forward, animated: true, completion: nil)
+        
+        self.view.backgroundColor = UIColor.whiteColor()
+        if let url = UserDefaults.profilePictureURL {
+            Alamofire.request(.GET, url).response { (request, response, data, error) -> () in
+                if let data = data as? NSData {
+                    let profileImage = UIImage(data: data)
+                    if let profileImage = profileImage {
+                        let imageView = UIImageView(image: profileImage)
+                        imageView.frame = self.view.frame
+                        
+                        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
+                        blurView.frame = self.view.frame
+                        
+                        imageView.addSubview(blurView)
+                        
+                        dispatch_async(dispatch_get_main_queue(), {
+                            self.view.insertSubview(imageView, atIndex: 0)
+                        })
+                    }
+                }
+            }
+        }
+    }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         let afterVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
@@ -76,6 +100,6 @@ extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewCo
 
 extension TheScenePageViewController: UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        println(scrollView.contentOffset.x - view.frame.width)
+        println((scrollView.contentOffset.x - view.frame.width - 44)/view.frame.width)
     }
 }

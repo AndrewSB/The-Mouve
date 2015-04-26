@@ -9,9 +9,19 @@
 import Foundation
 
 enum UserDefaultKeys: String {
-    
+    case profilePictureURL = "profilePictureURL"
 }
 
 class UserDefaults {
+    static let get = NSUserDefaults.standardUserDefaults().objectForKey
+    static let set = NSUserDefaults.standardUserDefaults().setObject
     
+    class var profilePictureURL: String? {
+        get {
+            return get(UserDefaultKeys.profilePictureURL.rawValue) as? String
+        }
+        set {
+            set(newValue, forKey: UserDefaultKeys.profilePictureURL.rawValue)
+        }
+    }
 }

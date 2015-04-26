@@ -27,9 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let loggedIn = true//PFUser.currentUser() != nil
         
+        UserDefaults.profilePictureURL = "https://pbs.twimg.com/profile_images/572841009575231488/7eDMmmpw.jpeg"
+        
+        println(self.window)
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
+        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as! UIViewController
         
         window!.makeKeyAndVisible()
 

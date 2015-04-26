@@ -19,6 +19,7 @@ class HomeEventTableViewCell: UITableViewCell {
     @IBOutlet weak var goingButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
     
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,12 +28,14 @@ class HomeEventTableViewCell: UITableViewCell {
         profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
         profileImageView.layer.borderWidth = 1
         
-        let newBackgroundImageView = UIImageView(frame: self.frame)
-        newBackgroundImageView.image = UIImage(named: "list-background")
-        newBackgroundImageView.layer.opacity = 0.25
+        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+        blurEffectView.frame = backgroundImageView.frame
+        blurEffectView.alpha = 0.85
         
-        backgroundView = newBackgroundImageView
+        backgroundImageView.addSubview(blurEffectView)
+    
     }
+    
     
     @IBAction func goingButtonWasHit(sender: AnyObject) {
     }

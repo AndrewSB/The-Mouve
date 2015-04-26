@@ -15,6 +15,8 @@
 		462B68DB1AEC5CF90040C7DD /* NSUserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */; };
 		462B68DD1AEC5D010040C7DD /* NSNotificationCenterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */; };
 		462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */; };
+		462B68E11AEC80FC0040C7DD /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 462B68E01AEC80FC0040C7DD /* Alamofire.framework */; };
+		462B68E21AEC80FD0040C7DD /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 462B68E01AEC80FC0040C7DD /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */; };
 		469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */; };
 		469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */; };
@@ -51,6 +53,20 @@
 		46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		462B68E31AEC80FD0040C7DD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				462B68E21AEC80FD0040C7DD /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		46042E561AEA1F6900089A5A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		46042E581AEA230300089A5A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -61,6 +77,7 @@
 		462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultHelper.swift; sourceTree = "<group>"; };
 		462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterHelper.swift; sourceTree = "<group>"; };
 		462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		462B68E01AEC80FC0040C7DD /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGGeometeryExtension.swift; path = "The Mouve/CGGeometeryExtension.swift"; sourceTree = "<group>"; };
 		469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Medium.otf"; sourceTree = "<group>"; };
 		469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Book.otf"; sourceTree = "<group>"; };
@@ -108,6 +125,7 @@
 				46B29BBD1ADB20FA000B9441 /* libz.dylib in Frameworks */,
 				46B29BB31ADB20F5000B9441 /* AudioToolbox.framework in Frameworks */,
 				46B29BB41ADB20F5000B9441 /* CFNetwork.framework in Frameworks */,
+				462B68E11AEC80FC0040C7DD /* Alamofire.framework in Frameworks */,
 				46B29BB51ADB20F5000B9441 /* CoreGraphics.framework in Frameworks */,
 				46B29BB61ADB20F5000B9441 /* CoreLocation.framework in Frameworks */,
 				46B29BB71ADB20F5000B9441 /* MobileCoreServices.framework in Frameworks */,
@@ -252,6 +270,7 @@
 		46B29BC21ADB2187000B9441 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				462B68E01AEC80FC0040C7DD /* Alamofire.framework */,
 				46B29BC11ADB210C000B9441 /* Parse */,
 			);
 			name = External;
@@ -331,6 +350,7 @@
 				46B29B741ADB2067000B9441 /* Sources */,
 				46B29B751ADB2067000B9441 /* Frameworks */,
 				46B29B761ADB2067000B9441 /* Resources */,
+				462B68E31AEC80FD0040C7DD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -527,6 +547,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.7.1",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "The Mouve/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -544,6 +565,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/parse-library-1.7.1",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "The Mouve/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
