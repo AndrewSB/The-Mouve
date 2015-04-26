@@ -13,7 +13,17 @@ class ActivityPageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        LocalMessage.observe(.ActivityTitlePageOne, classFunction: "pageOne", inClass: self)
+        LocalMessage.observe(.ActivityTitlePageTwo, classFunction: "pageTwo", inClass: self)
+
+    }
+    
+    func pageOne() {
+        println("pageone")
+    }
+
+    func pageTwo() {
+        println("pagetwo")
     }
 
 }

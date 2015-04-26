@@ -23,9 +23,9 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJ6-5z-qEK">
-                    <rect key="frame" x="0.0" y="8" width="63" height="28"/>
+                    <rect key="frame" x="0.0" y="8" width="31" height="28"/>
                     <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
-                    <state key="normal" title="EXPLORE">
+                    <state key="normal" title="ONE">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -33,10 +33,14 @@
                         <action selector="leftButtonWasHit:" destination="-1" eventType="touchUpInside" id="39b-cS-x9x"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r2U-lk-K3H">
+                    <rect key="frame" x="0.0" y="32" width="0.0" height="2"/>
+                    <color key="backgroundColor" red="0.47384917736053467" green="0.86037606000900269" blue="0.75323015451431274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzF-W8-zLp">
-                    <rect key="frame" x="125" y="8" width="79" height="28"/>
+                    <rect key="frame" x="169" y="8" width="35" height="28"/>
                     <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
-                    <state key="normal" title="THE SCENE">
+                    <state key="normal" title="TWO">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -44,10 +48,6 @@
                         <action selector="rightButtonWasHit:" destination="-1" eventType="touchUpInside" id="v3W-ak-QCy"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r2U-lk-K3H">
-                    <rect key="frame" x="0.0" y="32" width="63" height="2"/>
-                    <color key="backgroundColor" red="0.47384917736053467" green="0.86037606000900269" blue="0.75323015451431274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>

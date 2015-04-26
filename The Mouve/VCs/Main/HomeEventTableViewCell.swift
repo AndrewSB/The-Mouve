@@ -30,7 +30,7 @@ class HomeEventTableViewCell: UITableViewCell {
         
         let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
         blurEffectView.frame = backgroundImageView.frame
-        blurEffectView.alpha = 0.85
+//        blurEffectView.alpha = 0.85
         
         backgroundImageView.addSubview(blurEffectView)
     

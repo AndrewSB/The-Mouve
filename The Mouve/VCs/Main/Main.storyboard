@@ -275,10 +275,10 @@
             </objects>
             <point key="canvasLocation" x="-839" y="-278"/>
         </scene>
-        <!--View Controller-->
+        <!--Activity View Controller-->
         <scene sceneID="k01-Ep-RyI">
             <objects>
-                <viewController id="pO5-T4-MiJ" sceneMemberID="viewController">
+                <viewController id="pO5-T4-MiJ" customClass="ActivityViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1fI-4R-nT3"/>
                         <viewControllerLayoutGuide type="bottom" id="ege-3y-JnL"/>
@@ -287,17 +287,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-4h-aNg" customClass="SceneTitleView" customModule="The_Mouve" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-4h-aNg">
                                 <rect key="frame" x="168" y="64" width="265" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="BjI-J8-7bn"/>
                                     <constraint firstAttribute="width" constant="265" id="h6v-3z-43d"/>
                                 </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="superVC" value="ActivityFeed"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="typeAsString" value="Newsfeed"/>
-                                </userDefinedRuntimeAttributes>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8as-wW-fgv">
                                 <rect key="frame" x="0.0" y="108" width="600" height="443"/>
@@ -317,6 +313,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9k9-2d-0ij"/>
+                    <connections>
+                        <outlet property="activityView" destination="Jat-4h-aNg" id="WQU-N2-ceq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AKw-8E-DxM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

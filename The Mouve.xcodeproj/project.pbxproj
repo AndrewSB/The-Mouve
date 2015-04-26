@@ -51,6 +51,7 @@
 		46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */; };
 		46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */; };
 		46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */; };
+		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -114,6 +115,7 @@
 		46B29BC61ADB219C000B9441 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		46B29BC71ADB219C000B9441 /* SceneFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneFeedViewController.swift; sourceTree = "<group>"; };
 		46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventTableViewCell.swift; sourceTree = "<group>"; };
+		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		462B68D91AEC57F50040C7DD /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */,
 				462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */,
 				462B68D71AEC57E40040C7DD /* ActivityTableViewController.swift */,
 			);
@@ -428,6 +431,7 @@
 				46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */,
 				462B68DB1AEC5CF90040C7DD /* NSUserDefaultHelper.swift in Sources */,
 				46B29BCB1ADB219C000B9441 /* TutorialViewController.swift in Sources */,
+				46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */,
 				462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */,
 				46B29BCA1ADB219C000B9441 /* LoginPageViewController.swift in Sources */,
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,

@@ -10,7 +10,7 @@ import UIKit
 
 enum SceneType: String {
     case Explore = "Explore"
-    case Scene = "Scene"
+    case Scene = "The Scene"
     
     case Newsfeed = "Newsfeed"
     case Invites = "Invites"
@@ -23,33 +23,23 @@ class SceneTitleView: UIView {
     @IBOutlet weak var rightButton: UIButton!
     @IBOutlet weak var underlineView: UIView!
     
-    @IBInspectable var typeAsString: String? {
-        didSet {
-            type = SceneType(rawValue: typeAsString!)
-        }
-    }
-    
     var type: SceneType? {
-        didSet {
-            if type != oldValue {
-                UIView.animateWithDuration(0.2, animations: {
-                    let animateToButton = self.type == self.buttonOne.0 ? self.leftButton : self.rightButton
+        willSet {
+            UIView.animateWithDuration(0.2, animations: {
+                let animateToButton = self.type == self.buttonOne.0 ? self.rightButton : self.leftButton
                     
-                    let origin = CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height - 4)
-                    self.underlineView.frame = CGRect(origin: origin, size: CGSize(width: animateToButton.frame.width, height: 2))
-                })
-            }
+                let origin = CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height - 4)
+                self.underlineView.frame = CGRect(origin: origin, size: CGSize(width: animateToButton.frame.width, height: 2))
+            })
         }
     }
     
     convenience init(type: SceneType, frame: CGRect) { //init from code
-        self.init()
+        self.init(frame: frame)
         
-        self.frame = frame
         self.type = type
         
-        LocalMessage.observe(buttonTwo.2, classFunction: "pageOne", inClass: self)
-        LocalMessage.observe(buttonTwo.2, classFunction: "pageTwo", inClass: self)
+        otherSetup()
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,10 +48,11 @@ class SceneTitleView: UIView {
     }
     
     required init(coder aDecoder: NSCoder) { //init from storyboard
-        println(view)
-        
         super.init(coder: aDecoder)
+        println(type?.rawValue)
+        
         xibSetup()
+        otherSetup()
     }
     
     func xibSetup() {
@@ -73,6 +64,21 @@ class SceneTitleView: UIView {
         addSubview(view)
     }
     
+    func otherSetup() {
+        
+        self.leftButton.setTitle(self.buttonOne.0.rawValue.uppercaseString, forState: .Normal)
+        self.leftButton.titleLabel?.sizeToFit()
+        
+        self.rightButton.setTitle(self.buttonTwo.0.rawValue.uppercaseString, forState: .Normal)
+        self.rightButton.titleLabel?.sizeToFit()
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            self.underlineView.frame = CGRect(origin: self.underlineView.frame.origin, size: CGSize(width: self.leftButton.frame.width, height: self.underlineView.frame.height))
+        })
+        
+        LocalMessage.observe(buttonTwo.2, classFunction: "pageOne", inClass: self)
+        LocalMessage.observe(buttonTwo.2, classFunction: "pageTwo", inClass: self)
+    }
 
     func pageOne() {type = buttonOne.0}
     func pageTwo() {type = buttonTwo.0}
