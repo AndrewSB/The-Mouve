@@ -29,12 +29,25 @@ class SceneFeedViewController: UIViewController {
         super.viewDidLoad()
         feedTableView.delegate = self
         feedTableView.dataSource = self
+        
+        feedTableView.contentInset.top = 44 + 22
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        println("will appear \(feedTableView.contentOffset.y)")
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        println(type.hashValue)
     }
 }
 
 extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 5
+        return 20
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -49,6 +62,10 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : 4
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

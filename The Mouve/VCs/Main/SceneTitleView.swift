@@ -45,43 +45,55 @@ class SceneTitleView: UIView {
         self.frame = frame
         self.superVC = superVC
         self.type = type
-        
-        xibSetup()
+                
+        LocalMessage.observe(.HomeFeedPageOne, classFunction: "pageOne", inClass: self)
+        LocalMessage.observe(.HomeFeedPageTwo, classFunction: "pageTwo", inClass: self)
     }
     
     func xibSetup() {
+        println("called xib setup")
         self.view = loadViewFromNib("SceneTitleView")
         
         view.frame = bounds
         view.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         
         addSubview(view)
-        
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pageOne", name: "\(superVC)DidGoToPageOne", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "pageTwo", name: "\(superVC)DidGoToPageTwo", object: nil)
+        //        LocalMessage.observe(.HomeFeedPageTwo, classFunction: pageTwo(), inClass: self)
     }
     
-    func pageOne() {
-        type = .Explore
+    override func didAddSubview(subview: UIView) {
+        println("didAddSubview")
     }
     
-    func pageTwo() {
-        type = .Scene
+    override func willRemoveSubview(subview: UIView) {
+        println("willRemoveSubview")
     }
+    
+    override func didMoveToWindow() {
+        println("didMoveToWindow")
+    }
+    
+    override func willMoveToWindow(newWindow: UIWindow?) {
+        println("didMoveToWindow")
+    }
+        
+    func pageOne() {println("did pageone");type = .Explore}
+    func pageTwo() {println("did pagetwo");type = .Scene}
 
     
     @IBAction func exploreButtonWasHit(sender: AnyObject) {
+        
         if type != .Explore {
-            NSNotificationCenter.defaultCenter().postNotificationName("TitleDidClickPageOne", object: self)
+            LocalMessage.post(.TitleHitPageOne)
+            type = .Explore
         }
-        pageOne()
     }
 
     @IBAction func theSceneButtonWasHit(sender: AnyObject) {
+        
         if type != .Scene {
-            NSNotificationCenter.defaultCenter().postNotificationName("TitleDidClickPageTwo", object: self)
+            LocalMessage.post(.TitleHitPageTwo)
+            type = .Scene
         }
-        pageTwo()
     }
 }

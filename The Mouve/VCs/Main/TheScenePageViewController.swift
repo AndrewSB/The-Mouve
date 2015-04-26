@@ -14,8 +14,8 @@ class TheScenePageViewController: UIPageViewController {
         self.delegate = self
         self.dataSource = self
         
-        LocalMessage.observe(.HomeFeedPageOne, classFunction: "pageOne", inClass: self)
-        LocalMessage.observe(.HomeFeedPageTwo, classFunction: "pageTwo", inClass: self)
+        LocalMessage.observe(.TitleHitPageOne, classFunction: "pageOne", inClass: self)
+        LocalMessage.observe(.TitleHitPageTwo, classFunction: "pageTwo", inClass: self)
         
         
         self.navigationItem.titleView = SceneTitleView(type: .Explore, superVC: "HomeFeed", frame: CGRect(origin: .zeroPoint, size: CGSize(width: 165, height: 44)))
@@ -29,17 +29,21 @@ class TheScenePageViewController: UIPageViewController {
     }
     
     func pageOne() {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
-        vc.type = .Explore
+        if (self.viewControllers[0] as! SceneFeedViewController).type == SceneType.Scene {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
+            vc.type = .Explore
         
-        self.setViewControllers([vc], direction: .Reverse, animated: true, completion: nil)
+            self.setViewControllers([vc], direction: .Reverse, animated: true, completion: nil)
+        }
     }
     
     func pageTwo() {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
-        vc.type = .Scene
-        
-        self.setViewControllers([vc], direction: .Forward, animated: true, completion: nil)
+        if (self.viewControllers[0] as! SceneFeedViewController).type == SceneType.Explore {
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
+            vc.type = .Scene
+            
+            self.setViewControllers([vc], direction: .Forward, animated: true, completion: nil)
+        }
     }
     
     @IBAction func hamburgerButtonWasHit(sender: AnyObject) {
@@ -68,10 +72,12 @@ extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewCo
     }
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
+        println("going to \((self.viewControllers[0] as! SceneFeedViewController).type.hashValue)")
+        
         if (self.viewControllers[0] as! SceneFeedViewController).type == .Explore {
-            NSNotificationCenter.defaultCenter().postNotificationName("HomeFeedDidGoToPageOne", object: self)
+            LocalMessage.post(.HomeFeedPageOne)
         } else {
-            NSNotificationCenter.defaultCenter().postNotificationName("HomeFeedDidGoToPageTwo", object: self)
+            LocalMessage.post(.HomeFeedPageTwo)
         }
     }
 }

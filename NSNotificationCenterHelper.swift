@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum notification: String {
+enum LocalMessageNotification: String {
     case HomeFeedPageOne = "HomeFeedDidGoToPageOne"
     case HomeFeedPageTwo = "HomeFeedDidGoToPageTwo"
     case ActivityFeedPageOne = "ActivityFeedDidGoToPageOne"
@@ -20,11 +20,13 @@ enum notification: String {
 }
 
 class LocalMessage {
-    class func post(message: notification) {
-        NSNotificationCenter.defaultCenter().postNotificationName(message.rawValue, object: nil)
+    class func post(message: LocalMessageNotification) {
+
+        NSNotificationCenter.defaultCenter().postNotificationName(message.rawValue, object: self)
     }
     
-    class func observe(message: notification, classFunction: String, inClass: AnyObject) {
+    class func observe(message: LocalMessageNotification, classFunction: String, inClass: AnyObject) {
+        
         NSNotificationCenter.defaultCenter().addObserver(inClass, selector: Selector(classFunction), name: message.rawValue, object: nil)
     }
 }
