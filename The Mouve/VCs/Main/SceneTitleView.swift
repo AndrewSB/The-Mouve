@@ -8,12 +8,23 @@
 
 import UIKit
 
+enum SceneType: String {
+    case Explore = "Explore"
+    case Scene = "Scene"
+}
+
 class SceneTitleView: UIView {
     @IBOutlet weak var exploreButton: UIButton!
     @IBOutlet weak var theSceneButton: UIButton!
     @IBOutlet weak var underlineView: UIView!
     
     var view: UIView!
+    
+    @IBInspectable var typeAsString: String? {
+        didSet {
+            type = SceneType(rawValue: typeAsString!)
+        }
+    }
     
     @IBInspectable var type: SceneType? {
         didSet {

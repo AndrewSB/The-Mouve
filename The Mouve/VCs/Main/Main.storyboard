@@ -23,7 +23,6 @@
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="44" navigationOrientation="horizontal" spineLocation="none" id="cod-pV-drU" customClass="TheScenePageViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="DWI-Kz-Jcl">
-                        <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" image="search-icon" style="plain" id="fMO-cS-xbg">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -54,9 +53,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="8Bz-Bc-hVp" kind="relationship" relationship="viewControllers" id="bh7-7Q-9dW"/>
+                        <segue destination="DEa-RY-vlW" kind="relationship" relationship="viewControllers" id="LNS-SJ-wzh"/>
                         <segue destination="iP5-16-uok" kind="relationship" relationship="viewControllers" id="Mlf-dD-H3F"/>
                         <segue destination="eld-JI-tMC" kind="relationship" relationship="viewControllers" id="ymj-fN-9vb"/>
-                        <segue destination="DEa-RY-vlW" kind="relationship" relationship="viewControllers" id="LNS-SJ-wzh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bC9-ME-prh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -297,9 +296,10 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="superVC" value="ActivityFeed"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeAsString" value="Explore"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8as-wW-fgv">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8as-wW-fgv">
                                 <rect key="frame" x="0.0" y="108" width="600" height="443"/>
                                 <connections>
                                     <segue destination="8Me-2q-df7" kind="embed" id="xOY-Nf-43g"/>
@@ -315,11 +315,6 @@
                             <constraint firstItem="ege-3y-JnL" firstAttribute="top" secondItem="8as-wW-fgv" secondAttribute="bottom" id="efb-4p-a0n"/>
                             <constraint firstAttribute="centerX" secondItem="Jat-4h-aNg" secondAttribute="centerX" id="jQ5-kF-UTg"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Jat-4h-aNg"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="9k9-2d-0ij"/>
                 </viewController>

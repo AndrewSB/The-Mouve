@@ -8,11 +8,6 @@
 
 import UIKit
 
-enum SceneType {
-    case Explore
-    case Scene
-}
-
 let data = ["people", "will", "go"]
 let otherData = ["out", "to", "shit"]
 
