@@ -296,7 +296,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="superVC" value="ActivityFeed"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="typeAsString" value="Explore"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="typeAsString" value="Newsfeed"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8as-wW-fgv">

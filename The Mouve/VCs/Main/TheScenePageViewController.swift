@@ -18,10 +18,10 @@ class TheScenePageViewController: UIPageViewController {
         assert(view.subviews[0] is UIScrollView, "s")
         (view.subviews[0] as! UIScrollView).delegate = self
         
-        LocalMessage.observe(.TitleHitPageOne, classFunction: "pageOne", inClass: self)
-        LocalMessage.observe(.TitleHitPageTwo, classFunction: "pageTwo", inClass: self)
+        LocalMessage.observe(.HomeTitlePageOne, classFunction: "pageOne", inClass: self)
+        LocalMessage.observe(.HomeTitlePageTwo, classFunction: "pageTwo", inClass: self)
         
-        navigationItem.titleView = SceneTitleView(type: .Explore, superVC: "HomeFeed", frame: CGRect(x: 0, y: 0, width: 180, height: 44))
+        navigationItem.titleView = SceneTitleView(type: .Explore, frame: CGRect(x: 0, y: 0, width: 180, height: 44))
 
         pageViewControllerDidLoad()
     }
@@ -98,8 +98,4 @@ extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewCo
     }
 }
 
-extension TheScenePageViewController: UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        println((scrollView.contentOffset.x - view.frame.width - 44)/view.frame.width)
-    }
-}
+extension TheScenePageViewController: UIScrollViewDelegate {}

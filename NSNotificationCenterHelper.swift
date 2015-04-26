@@ -15,8 +15,10 @@ enum LocalMessageNotification: String {
     case ActivityFeedPageOne = "ActivityFeedDidGoToPageOne"
     case ActivityFeedPageTwo = "ActivityFeedDidGoToPageTwo"
     
-    case TitleHitPageOne = "TitleDidClickPageOne"
-    case TitleHitPageTwo = "TitleDidClickPageTwo"
+    case HomeTitlePageOne = "HomeTitleDidClickPageOne"
+    case HomeTitlePageTwo = "HomeTitleDidClickPageTwo"
+    case ActivityTitlePageOne = "ActivityTitleDidClickPageOne"
+    case ActivityTitlePageTwo = "ActivityTitleDidClickPageTwo"
 }
 
 class LocalMessage {
