@@ -80,8 +80,8 @@ class SceneTitleView: UIView {
         LocalMessage.observe(buttonTwo.2, classFunction: "pageTwo", inClass: self)
     }
 
-    func pageOne() {type = buttonOne.0}
-    func pageTwo() {type = buttonTwo.0}
+    func pageOne() { type = buttonOne.0 }
+    func pageTwo() { type = buttonTwo.0 }
 
     
     @IBAction func leftButtonWasHit(sender: AnyObject) {
@@ -93,7 +93,9 @@ class SceneTitleView: UIView {
 
     @IBAction func rightButtonWasHit(sender: AnyObject) {
         if type != buttonTwo.0 {
+            println(buttonTwo.1)
             LocalMessage.post(buttonTwo.1)
+            
             type = buttonTwo.0
         }
     }

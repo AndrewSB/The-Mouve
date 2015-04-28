@@ -51,7 +51,8 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
-                
+        
+        
         return cell
     }
     

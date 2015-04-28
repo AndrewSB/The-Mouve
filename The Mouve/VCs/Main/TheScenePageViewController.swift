@@ -15,7 +15,6 @@ class TheScenePageViewController: UIPageViewController {
         self.delegate = self
         self.dataSource = self
         
-        assert(view.subviews[0] is UIScrollView, "s")
         (view.subviews[0] as! UIScrollView).delegate = self
         
         LocalMessage.observe(.HomeTitlePageOne, classFunction: "pageOne", inClass: self)
@@ -28,19 +27,13 @@ class TheScenePageViewController: UIPageViewController {
     
     func pageOne() {
         if (self.viewControllers[0] as! SceneFeedViewController).type == SceneType.Scene {
-            let vc = initVC("sceneFeedVC", storyboard: "Main") as! SceneFeedViewController
-            vc.type = .Explore
-        
-            self.setViewControllers([vc], direction: .Reverse, animated: true, completion: nil)
+            self.setViewControllers([sceneVCWithType(.Explore)], direction: .Reverse, animated: true, completion: nil)
         }
     }
     
     func pageTwo() {
         if (self.viewControllers[0] as! SceneFeedViewController).type == SceneType.Explore {
-            let vc = initVC("sceneFeedVC", storyboard: "Main") as! SceneFeedViewController
-            vc.type = .Scene
-            
-            self.setViewControllers([vc], direction: .Forward, animated: true, completion: nil)
+            self.setViewControllers([sceneVCWithType(.Scene)], direction: .Forward, animated: true, completion: nil)
         }
     }
     
@@ -53,10 +46,7 @@ class TheScenePageViewController: UIPageViewController {
 
 extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     func pageViewControllerDidLoad() {
-        let sceneFeedVC = initVC("sceneFeedVC", storyboard: "Main") as! SceneFeedViewController
-        sceneFeedVC.type = .Explore
-        
-        self.setViewControllers([sceneFeedVC], direction: .Forward, animated: true, completion: nil)
+        self.setViewControllers([sceneVCWithType(.Explore)], direction: .Forward, animated: true, completion: nil)
         
         self.view.backgroundColor = UIColor.whiteColor()
         if let url = UserDefaults.profilePictureURL {
@@ -82,19 +72,18 @@ extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewCo
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        let afterVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
-        
-        afterVC.type = .Explore
-        
-        return (viewController as! SceneFeedViewController).type == SceneType.Explore ? nil : afterVC
+        return (viewController as! SceneFeedViewController).type == SceneType.Explore ? nil : sceneVCWithType(.Explore)
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let beforeVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
+        return (viewController as! SceneFeedViewController).type == .Explore ? sceneVCWithType(.Scene) : nil
+    }
+    
+    func sceneVCWithType(type: SceneType) -> SceneFeedViewController {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
+        vc.type = type
         
-        beforeVC.type = .Scene
-        
-        return (viewController as! SceneFeedViewController).type == .Explore ? beforeVC : nil
+        return vc
     }
 }
 

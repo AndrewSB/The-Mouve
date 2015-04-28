@@ -21,7 +21,7 @@
         <!--The Scene Page View Controller-->
         <scene sceneID="4PI-ge-5fN">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="44" navigationOrientation="horizontal" spineLocation="none" id="cod-pV-drU" customClass="TheScenePageViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="22" navigationOrientation="horizontal" spineLocation="none" id="cod-pV-drU" customClass="TheScenePageViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="DWI-Kz-Jcl">
                         <barButtonItem key="leftBarButtonItem" image="search-icon" style="plain" id="fMO-cS-xbg">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -288,17 +288,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jat-4h-aNg">
-                                <rect key="frame" x="168" y="64" width="265" height="44"/>
+                                <rect key="frame" x="200" y="64" width="200" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="BjI-J8-7bn"/>
-                                    <constraint firstAttribute="width" constant="265" id="h6v-3z-43d"/>
+                                    <constraint firstAttribute="width" constant="200" id="h6v-3z-43d"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8as-wW-fgv">
                                 <rect key="frame" x="0.0" y="108" width="600" height="443"/>
                                 <connections>
-                                    <segue destination="8Me-2q-df7" kind="embed" id="xOY-Nf-43g"/>
+                                    <segue destination="8Me-2q-df7" kind="embed" id="yFT-rA-VPl"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -324,7 +324,7 @@
         <!--Activity Page View Controller-->
         <scene sceneID="dzR-uK-jQ2">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="8Me-2q-df7" customClass="ActivityPageViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="22" navigationOrientation="horizontal" spineLocation="none" id="8Me-2q-df7" customClass="ActivityPageViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ckf-JJ-di7"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKc-mD-Ydk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -340,14 +340,14 @@
                         <viewControllerLayoutGuide type="bottom" id="z3I-UB-2p6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="LFC-4D-auQ">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RtG-V0-JGm">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="52" id="88D-AL-Kle">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" rowHeight="52" id="88D-AL-Kle">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="88D-AL-Kle" id="Joe-ZJ-JYh">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -365,6 +365,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Activity" id="rU1-pS-Ch1"/>
+                    <connections>
+                        <outlet property="feedTableView" destination="RtG-V0-JGm" id="rwD-xq-1gd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CJk-Je-arS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

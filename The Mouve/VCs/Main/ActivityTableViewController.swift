@@ -9,15 +9,37 @@
 import UIKit
 
 class ActivityTableViewController: UIViewController {
+    var type: SceneType!
+    @IBOutlet weak var feedTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableViewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        LocalMessage.post(type.hashValue == 2 ? .ActivityFeedPageOne : .ActivityFeedPageTwo)
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension ActivityTableViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableViewDidLoad() {
+        self.feedTableView.delegate = self
+        self.feedTableView.dataSource = self
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! UITableViewCell
+
+        
+        return cell
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
