@@ -346,12 +346,32 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="52" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RtG-V0-JGm">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.43656939268112183" green="0.9325670599937439" blue="0.72956490516662598" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" rowHeight="52" id="88D-AL-Kle">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" rowHeight="52" id="88D-AL-Kle" customClass="ActivityTableViewCell" customModule="The_Mouve" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="88D-AL-Kle" id="Joe-ZJ-JYh">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swt-3D-uKB">
+                                                    <rect key="frame" x="528" y="5" width="42" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="swt-3D-uKB" secondAttribute="height" multiplier="21:23" id="jWv-nN-704"/>
+                                                    </constraints>
+                                                    <state key="normal" image="calendar-tick">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="swt-3D-uKB" secondAttribute="trailing" constant="11" id="Ovr-Xn-yBB"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="swt-3D-uKB" secondAttribute="bottom" constant="2" id="gdk-IS-Fhg"/>
+                                                <constraint firstItem="swt-3D-uKB" firstAttribute="top" secondItem="Joe-ZJ-JYh" secondAttribute="topMargin" constant="2" id="qb0-C9-SDW"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="calendarTickButton" destination="swt-3D-uKB" id="bYd-a1-f2f"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -469,6 +489,7 @@
         <image name="Line" width="6" height="244"/>
         <image name="bell-icon" width="24" height="24"/>
         <image name="calendar" width="37" height="39"/>
+        <image name="calendar-tick" width="42" height="46"/>
         <image name="list-background" width="749" height="244"/>
         <image name="profile-icon" width="23" height="23"/>
         <image name="search-icon" width="22" height="23"/>

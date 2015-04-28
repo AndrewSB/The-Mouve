@@ -19,7 +19,6 @@ class ActivityTableViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         LocalMessage.post(type.hashValue == 2 ? .ActivityFeedPageOne : .ActivityFeedPageTwo)
     }
 }
@@ -36,7 +35,7 @@ extension ActivityTableViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! ActivityTableViewCell
 
         
         return cell
