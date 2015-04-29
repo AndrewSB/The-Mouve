@@ -85,11 +85,7 @@
 				466A358E1AF062DC00E82FFD /* ViewController.swift */,
 				466A35901AF062DC00E82FFD /* Main.storyboard */,
 				466A35931AF062DC00E82FFD /* Images.xcassets */,
-				466A35951AF062DC00E82FFD /* LaunchScreen.xib */,
-				466A35AD1AF0669500E82FFD /* FXBlurView.h */,
-				466A35AE1AF0669500E82FFD /* FXBlurView.m */,
 				466A358A1AF062DC00E82FFD /* Supporting Files */,
-				466A35AC1AF0669500E82FFD /* Profile-Bridging-Header.h */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -97,6 +93,10 @@
 		466A358A1AF062DC00E82FFD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				466A35951AF062DC00E82FFD /* LaunchScreen.xib */,
+				466A35AD1AF0669500E82FFD /* FXBlurView.h */,
+				466A35AE1AF0669500E82FFD /* FXBlurView.m */,
+				466A35AC1AF0669500E82FFD /* Profile-Bridging-Header.h */,
 				466A358B1AF062DC00E82FFD /* Info.plist */,
 			);
 			name = "Supporting Files";
