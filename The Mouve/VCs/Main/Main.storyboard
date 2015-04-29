@@ -484,7 +484,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qi-b6-W0Q">
-                                        <rect key="frame" x="279" y="140" width="42" height="21"/>
+                                        <rect key="frame" x="279" y="120" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -492,7 +492,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="4qi-b6-W0Q" firstAttribute="top" secondItem="ViX-cS-fl9" secondAttribute="top" constant="140" id="VLt-9F-LyX"/>
+                                    <constraint firstItem="4qi-b6-W0Q" firstAttribute="top" secondItem="ViX-cS-fl9" secondAttribute="top" constant="120" id="VLt-9F-LyX"/>
                                     <constraint firstAttribute="height" constant="140" id="gEa-bX-1Df"/>
                                     <constraint firstAttribute="centerX" secondItem="4qi-b6-W0Q" secondAttribute="centerX" id="rpi-G1-tAx"/>
                                 </constraints>

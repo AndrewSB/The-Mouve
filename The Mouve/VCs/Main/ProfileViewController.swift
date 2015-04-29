@@ -10,9 +10,9 @@ import UIKit
 import Toucan
 
 class ProfileViewController: UIViewController, UITableViewDelegate {
-    let offset_HeaderStop:CGFloat = 100 // At this offset the Header stops its transformations
-    let offset_B_LabelHeader:CGFloat = 95.0 // At this offset the Black label reaches the Header
-    let distance_W_LabelHeader:CGFloat = 35.0 // The distance between the bottom of the Header and the top of the White Label
+    let offset_HeaderStop:CGFloat = 85 // At this offset the Header stops its transformations
+    let offset_B_LabelHeader:CGFloat = 80 // At this offset the Black label reaches the Header
+    let distance_W_LabelHeader:CGFloat = 35 // The distance between the bottom of the Header and the top of the White Label
     
     
     @IBOutlet weak var headerView: UIView!
