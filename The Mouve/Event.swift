@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class Event: BaseParseObject {
     var name: String
     var time: NSDate
-    var 
     
     var timeTillEvent: NSTimeInterval {
         get {
@@ -20,5 +20,12 @@ class Event: BaseParseObject {
         set {
             self.time = NSDate(timeIntervalSinceNow: newValue)
         }
+    }
+    
+    init(name: String, time: NSDate) {
+        self.name = name
+        self.time = time
+        
+        super.init(parseObject: PFObject(className: "Event"))
     }
 }
