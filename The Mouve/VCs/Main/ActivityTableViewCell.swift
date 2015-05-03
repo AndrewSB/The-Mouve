@@ -9,6 +9,8 @@
 import UIKit
 
 class ActivityTableViewCell: UITableViewCell {
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var attributedLabel: TTTAttributedLabel!
     @IBOutlet weak var calendarTickButton: UIButton!
 
     override func awakeFromNib() {

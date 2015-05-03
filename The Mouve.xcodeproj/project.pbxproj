@@ -19,11 +19,16 @@
 		462B68E21AEC80FD0040C7DD /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 462B68E01AEC80FC0040C7DD /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		466A35451AF04EDC00E82FFD /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A35441AF04EDC00E82FFD /* ActivityTableViewCell.swift */; };
 		466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A35461AF0506900E82FFD /* ProfileViewController.swift */; };
+		4673C10A1AF6A22F000C034A /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4673C1091AF6A22F000C034A /* BaseObject.swift */; };
+		4673C10C1AF6A885000C034A /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4673C10B1AF6A885000C034A /* Aliases.swift */; };
+		4673C10E1AF6B781000C034A /* FacebookIDExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4673C10D1AF6B781000C034A /* FacebookIDExtension.swift */; };
 		468D215B1AF06EE600CE6E19 /* Toucan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468D215A1AF06EE600CE6E19 /* Toucan.framework */; };
 		468D215C1AF06EEF00CE6E19 /* Toucan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468D215A1AF06EE600CE6E19 /* Toucan.framework */; };
 		468D215D1AF06EEF00CE6E19 /* Toucan.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 468D215A1AF06EE600CE6E19 /* Toucan.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		468D21601AF0821700CE6E19 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 468D215F1AF0821700CE6E19 /* TTTAttributedLabel.m */; };
 		468D21631AF0829C00CE6E19 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D21621AF0829C00CE6E19 /* SettingsTableViewController.swift */; };
+		468D21671AF085B300CE6E19 /* BaseParseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D21661AF085B300CE6E19 /* BaseParseObject.swift */; };
+		468D21691AF0864C00CE6E19 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D21681AF0864C00CE6E19 /* Event.swift */; };
 		469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */; };
 		469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */; };
 		469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */; };
@@ -89,10 +94,15 @@
 		462B68E01AEC80FC0040C7DD /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		466A35441AF04EDC00E82FFD /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		466A35461AF0506900E82FFD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		4673C1091AF6A22F000C034A /* BaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
+		4673C10B1AF6A885000C034A /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
+		4673C10D1AF6B781000C034A /* FacebookIDExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookIDExtension.swift; sourceTree = "<group>"; };
 		468D215A1AF06EE600CE6E19 /* Toucan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Toucan.framework; path = Carthage/Build/iOS/Toucan.framework; sourceTree = "<group>"; };
 		468D215E1AF0821700CE6E19 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTTAttributedLabel.h; path = Carthage/Checkouts/TTTAttributedLabel/TTTAttributedLabel/TTTAttributedLabel.h; sourceTree = "<group>"; };
 		468D215F1AF0821700CE6E19 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTTAttributedLabel.m; path = Carthage/Checkouts/TTTAttributedLabel/TTTAttributedLabel/TTTAttributedLabel.m; sourceTree = "<group>"; };
 		468D21621AF0829C00CE6E19 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		468D21661AF085B300CE6E19 /* BaseParseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseParseObject.swift; sourceTree = "<group>"; };
+		468D21681AF0864C00CE6E19 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGGeometeryExtension.swift; path = "The Mouve/CGGeometeryExtension.swift"; sourceTree = "<group>"; };
 		469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Medium.otf"; sourceTree = "<group>"; };
 		469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Book.otf"; sourceTree = "<group>"; };
@@ -207,6 +217,27 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		468D216A1AF086F800CE6E19 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
+				46042E561AEA1F6900089A5A /* UIColorExtension.swift */,
+				46042E581AEA230300089A5A /* UIViewExtension.swift */,
+				462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */,
+				4673C10D1AF6B781000C034A /* FacebookIDExtension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
+		468D216B1AF0870000CE6E19 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */,
+				462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		469C43791ADF10BA00D6A510 /* Master */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,7 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				46B29B7A1ADB2067000B9441 /* The Mouve */,
-				46B29BD61ADB221A000B9441 /* Libraries */,
+				46B29BD61ADB221A000B9441 /* Library */,
 				46B29B791ADB2067000B9441 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -256,6 +287,9 @@
 			isa = PBXGroup;
 			children = (
 				46B29B7D1ADB2067000B9441 /* AppDelegate.swift */,
+				468D21661AF085B300CE6E19 /* BaseParseObject.swift */,
+				4673C1091AF6A22F000C034A /* BaseObject.swift */,
+				468D21681AF0864C00CE6E19 /* Event.swift */,
 				46B29BD11ADB21AD000B9441 /* VCs */,
 				46B29BD21ADB21D3000B9441 /* Resources */,
 				46B29B7B1ADB2067000B9441 /* Supporting Files */,
@@ -327,10 +361,10 @@
 			isa = PBXGroup;
 			children = (
 				46B29BC61ADB219C000B9441 /* Main.storyboard */,
-				468D21641AF082A000CE6E19 /* Settings */,
-				466A35481AF0506E00E82FFD /* Profile */,
-				462B68D91AEC57F50040C7DD /* Activity */,
 				462B68D41AEC55CD0040C7DD /* The Scene */,
+				462B68D91AEC57F50040C7DD /* Activity */,
+				466A35481AF0506E00E82FFD /* Profile */,
+				468D21641AF082A000CE6E19 /* Settings */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -370,23 +404,20 @@
 		46B29BD51ADB2215000B9441 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
-				462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */,
-				462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */,
-				46042E561AEA1F6900089A5A /* UIColorExtension.swift */,
-				46042E581AEA230300089A5A /* UIViewExtension.swift */,
-				462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */,
+				4673C10B1AF6A885000C034A /* Aliases.swift */,
+				468D216A1AF086F800CE6E19 /* Extension */,
+				468D216B1AF0870000CE6E19 /* Helper */,
 			);
 			name = Internal;
 			sourceTree = "<group>";
 		};
-		46B29BD61ADB221A000B9441 /* Libraries */ = {
+		46B29BD61ADB221A000B9441 /* Library */ = {
 			isa = PBXGroup;
 			children = (
 				46B29BC21ADB2187000B9441 /* External */,
 				46B29BD51ADB2215000B9441 /* Internal */,
 			);
-			name = Libraries;
+			name = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,9 +509,13 @@
 				462B68DB1AEC5CF90040C7DD /* NSUserDefaultHelper.swift in Sources */,
 				46B29BCB1ADB219C000B9441 /* TutorialViewController.swift in Sources */,
 				46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */,
+				4673C10C1AF6A885000C034A /* Aliases.swift in Sources */,
+				4673C10A1AF6A22F000C034A /* BaseObject.swift in Sources */,
 				462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */,
+				4673C10E1AF6B781000C034A /* FacebookIDExtension.swift in Sources */,
 				46B29BCA1ADB219C000B9441 /* LoginPageViewController.swift in Sources */,
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
+				468D21691AF0864C00CE6E19 /* Event.swift in Sources */,
 				466A35451AF04EDC00E82FFD /* ActivityTableViewCell.swift in Sources */,
 				466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */,
 				46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */,
@@ -488,6 +523,7 @@
 				462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */,
 				46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */,
 				46042E571AEA1F6900089A5A /* UIColorExtension.swift in Sources */,
+				468D21671AF085B300CE6E19 /* BaseParseObject.swift in Sources */,
 				46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */,
 				46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */,
 				462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */,
