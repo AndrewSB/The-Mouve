@@ -9,7 +9,6 @@
 import UIKit
 
 class TutorialViewController: UIViewController {
-    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     
@@ -20,8 +19,12 @@ class TutorialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let backgroundImage = UIImageView(frame: CGRect(origin: CGPoint(x: 15, y: 0), size: CGSize(width: self.view.bounds.width, height: self.view.bounds.height + 50)))
         backgroundImage.image = pageImage
-        backgroundImage.frame = view.frame
+        backgroundImage.contentMode = .ScaleAspectFill
+        
+        self.view.insertSubview(backgroundImage, atIndex: 0)
+        
         pageLabel.text = title
         
         switch pageIndex {

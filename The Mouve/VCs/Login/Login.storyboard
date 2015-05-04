@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qbo-yh-dhS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HalisGR-Medium.otf">
@@ -21,13 +22,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsW-n1-L19">
-                                <rect key="frame" x="279" y="443" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tsW-n1-L19">
+                                <rect key="frame" x="38" y="108" width="524" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkc-yr-djp">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkc-yr-djp">
                                 <rect key="frame" x="220" y="514" width="160" height="29"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Medium" family="Halis GR" pointSize="15"/>
                                 <state key="normal" title="Getchor ass in the app">
@@ -40,29 +41,21 @@
                                     <action selector="loginButtonWasHit:" destination="gLX-tq-VTd" eventType="touchUpInside" id="tYl-NQ-sse"/>
                                 </connections>
                             </button>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ha5-Bq-VUd">
-                                <rect key="frame" x="62" y="20" width="18" height="48"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="800"/>
-                                </variation>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="Xkc-yr-djp" secondAttribute="centerX" id="6LX-8B-DSM"/>
-                            <constraint firstAttribute="centerX" secondItem="tsW-n1-L19" secondAttribute="centerX" id="R9o-g8-aqE"/>
-                            <constraint firstAttribute="centerY" secondItem="tsW-n1-L19" secondAttribute="centerY" constant="-153.5" id="Uq2-SI-d0k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tsW-n1-L19" secondAttribute="trailing" constant="22" id="7fy-5W-qJS"/>
+                            <constraint firstItem="tsW-n1-L19" firstAttribute="top" secondItem="eGf-Wh-oXJ" secondAttribute="bottom" constant="88" id="Cqw-Pm-3Nj"/>
+                            <constraint firstItem="tsW-n1-L19" firstAttribute="leading" secondItem="xFP-NZ-TZm" secondAttribute="leadingMargin" constant="22" id="LtV-SK-BDL"/>
                             <constraint firstItem="zGo-5P-61d" firstAttribute="top" secondItem="Xkc-yr-djp" secondAttribute="bottom" constant="57" id="dyU-EZ-ix3"/>
                         </constraints>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="tsW-n1-L19"/>
                                 <include reference="Xkc-yr-djp"/>
-                                <include reference="ha5-Bq-VUd"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="R9o-g8-aqE"/>
-                                <include reference="Uq2-SI-d0k"/>
                                 <include reference="6LX-8B-DSM"/>
                                 <include reference="dyU-EZ-ix3"/>
                             </mask>
@@ -70,14 +63,13 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
-                        <outlet property="backgroundImage" destination="ha5-Bq-VUd" id="Mk8-vQ-PmQ"/>
                         <outlet property="loginButton" destination="Xkc-yr-djp" id="PWR-MT-qfs"/>
                         <outlet property="pageLabel" destination="tsW-n1-L19" id="aXZ-FZ-AP1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeb-KE-suW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1278" y="709.5"/>
+            <point key="canvasLocation" x="1278" y="709"/>
         </scene>
         <!--Login Page View Controller-->
         <scene sceneID="5Is-tW-8d8">

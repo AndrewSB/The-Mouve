@@ -15,9 +15,9 @@ enum TopBottom {
 }
 
 extension CGRect {
-    static func CreateRectInCenterOfView(view: UIView, offset: CGFloat, height: CGFloat, width: CGFloat) -> CGRect {
+    static func CreateRectInCenterOfView(view: UIView, height: CGFloat, width: CGFloat) -> CGRect {
 
-        let rect = CGRectMake((view.frame.width / 2) - width/2, (view.frame.height) - height, width, height)
+        let rect = CGRectMake((view.frame.width / 2) - width/2, (view.frame.height / 2) - height / 2, width, height)
         
         return rect
     }

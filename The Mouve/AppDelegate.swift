@@ -17,26 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
         Parse.enableLocalDatastore()
-        
         Parse.setApplicationId("GvHu9jcqgsGp2zZkgsXwLOQJXNWCzl5janz4FAj1",
             clientKey: "5SqHFJOslPl9TB9CPbuowXkCpidAOfoIKIXgSqU4")
-        
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
-        let loggedIn = true//PFUser.currentUser() != nil
-        
-        UserDefaults.profilePictureURL = "https://pbs.twimg.com/profile_images/572841009575231488/7eDMmmpw.jpeg"
-        
-        println(self.window)
+        let loggedIn = PFUser.currentUser() != nil
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        
-        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as! UIViewController
-        
+        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
         window!.makeKeyAndVisible()
-
         
         return true
     }

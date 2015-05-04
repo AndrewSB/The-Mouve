@@ -8,17 +8,23 @@
 
 import UIKit
 
-class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-    var currentIndex: Int = Int()
+class LoginPageViewController: UIPageViewController {
+    var currentIndex: Int = Int()        {
+        willSet {
+            println("sup \(currentIndex)")
+            pageControl?.currentPage = currentIndex
+        }
+    }
+
     var showingIndex: Int = Int() {
-        didSet {
+        willSet {
             println("nah \(currentIndex)")
             pageControl?.currentPage = currentIndex
         }
     }
     
-    let pageTitles = ["dont", "fuck", "this", "please"]
-    let pageImages = [UIImage(named: "taylor-pic"), UIImage(named: "chelsea-pic"), UIImage(named: "noah-pic"), UIImage(named: "yoojin-pic")]
+    let pageTitles = ["dont", "fuck", "this"]
+    let pageImages = [UIImage(named: "background-1"), UIImage(named: "background-2"), UIImage(named: "background-3")]
     
     var pageControl: UIPageControl?
     
@@ -27,22 +33,17 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.dataSource = self
         self.delegate = self
         
-        pageControl  = UIPageControl(frame: CGRect.CreateRectInCenterOfView(view, offset: 20, height: 40, width: 100))
-        pageControl!.numberOfPages = 4
-        pageControl!.currentPage = currentIndex
+        let pageControl = UIPageControl(frame: CGRect.CreateRectInCenterOfView(self.view, height: 22, width: 40))
         
-        view.addSubview(pageControl!)
+        self.view.addSubview(pageControl)
         
         let startingViewController = (viewControllerAtIndex(0) as TutorialViewController!)
-        let viewControllers = [startingViewController]
+        self.setViewControllers([startingViewController], direction: .Forward, animated: true, completion: nil)
         
-        self.setViewControllers(viewControllers, direction: .Forward, animated: true, completion: nil)
         edgesForExtendedLayout = .None
-        
     }
 
     func viewControllerAtIndex(index: Int) -> TutorialViewController? {
@@ -56,8 +57,13 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
         
         return vc
     }
+}
+
+extension LoginPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    
+    /*
+        Data Source
+    */
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         var index = (viewController as! TutorialViewController).pageIndex
         
@@ -89,7 +95,11 @@ class LoginPageViewController: UIPageViewController, UIPageViewControllerDataSou
             return viewControllerAtIndex(index)
         }
     }
-
+    
+    
+    /*
+        Delegate
+    */
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
         println("at something")
         showingIndex = (pageViewController.viewControllers.last as! TutorialViewController).pageIndex
