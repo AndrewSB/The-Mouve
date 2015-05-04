@@ -9,17 +9,11 @@
 import UIKit
 
 class LoginPageViewController: UIPageViewController {
-    var currentIndex: Int = Int()        {
-        willSet {
-            println("sup \(currentIndex)")
-            pageControl?.currentPage = currentIndex
-        }
-    }
+    var currentIndex: Int = Int()
 
     var showingIndex: Int = Int() {
-        willSet {
-            println("nah \(currentIndex)")
-            pageControl?.currentPage = currentIndex
+        didSet {
+            pageControl?.currentPage = showingIndex
         }
     }
     
@@ -36,15 +30,14 @@ class LoginPageViewController: UIPageViewController {
         self.dataSource = self
         self.delegate = self
         
-        let pageControl = UIPageControl(frame: CGRect.CreateRectInCenterOfView(self.view, height: 22, width: 40))
+        self.pageControl = UIPageControl(frame: CGRect.CreateRectInCenterOfView(self.view, height: 22, width: 40))
+        pageControl!.numberOfPages = 3
+        pageControl!.currentPage = 0
         
-        self.view.addSubview(pageControl)
+        self.view.addSubview(pageControl!)
         
         let startingViewController = (viewControllerAtIndex(0) as TutorialViewController!)
         self.setViewControllers([startingViewController], direction: .Forward, animated: true, completion: nil)
-        
-        edgesForExtendedLayout = .None
-        automaticallyAdjustsScrollViewInsets = false
     }
 
     func viewControllerAtIndex(index: Int) -> TutorialViewController? {
@@ -103,6 +96,10 @@ extension LoginPageViewController: UIPageViewControllerDataSource, UIPageViewCon
     */
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
         println("at something")
-        showingIndex = (pageViewController.viewControllers.last as! TutorialViewController).pageIndex
+        if completed {
+            let vc = pageViewController.viewControllers[0] as! TutorialViewController
+            println("\(vc.title) \(vc.pageIndex)")
+            showingIndex = vc.pageIndex
+        }
     }
 }

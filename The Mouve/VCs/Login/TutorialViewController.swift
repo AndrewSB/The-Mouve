@@ -11,18 +11,15 @@ import UIKit
 class TutorialViewController: UIViewController {
     @IBOutlet weak var pageLabel: UILabel!
     
-    @IBOutlet weak var loginSignupScrollView: UIScrollView!
-    @IBOutlet weak var loginSignupConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
     
     var pageImage: UIImage = UIImage()
     var pageIndex: Int = Int()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loginSignupConstraint.constant = view.frame.height
-        loginSignupScrollView.contentSize.width = self.view.frame.width
+        super.viewDidAppear(false)
         
         let imageSize = CGSize(width: self.view.bounds.width, height: self.view.bounds.height + 50)
         
@@ -34,13 +31,18 @@ class TutorialViewController: UIViewController {
         
         pageLabel.text = title
         
-        switch pageIndex {
-        case 2:
-//            loginButton.hidden = false
-            pageLabel.hidden = true
-        default:
-//            loginButton.hidden = true
-            pageLabel.hidden = false
-        }
+        signUpButton.layer.cornerRadius = 10
+        loginButton.layer.cornerRadius = 10
+        loginButton.layer.borderColor = UIColor.seaFoamGreen().CGColor
+        loginButton.layer.borderWidth = 1
+        
+        self.automaticallyAdjustsScrollViewInsets = false
+    }
+
+    
+    @IBAction func signUpButtonWasHit(sender: AnyObject) {
+    }
+    
+    @IBAction func loginButtonWasHit(sender: AnyObject) {
     }
 }
