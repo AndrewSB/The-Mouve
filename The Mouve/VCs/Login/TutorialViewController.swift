@@ -10,8 +10,9 @@ import UIKit
 
 class TutorialViewController: UIViewController {
     @IBOutlet weak var pageLabel: UILabel!
-    @IBOutlet weak var loginButton: UIButton!
     
+    @IBOutlet weak var loginSignupScrollView: UIScrollView!
+    @IBOutlet weak var loginSignupConstraint: NSLayoutConstraint!
     
     
     var pageImage: UIImage = UIImage()
@@ -19,7 +20,13 @@ class TutorialViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let backgroundImage = UIImageView(frame: CGRect(origin: CGPoint(x: 15, y: 0), size: CGSize(width: self.view.bounds.width, height: self.view.bounds.height + 50)))
+        
+        loginSignupConstraint.constant = view.frame.height
+        loginSignupScrollView.contentSize.width = self.view.frame.width
+        
+        let imageSize = CGSize(width: self.view.bounds.width, height: self.view.bounds.height + 50)
+        
+        let backgroundImage = UIImageView(frame: CGRect(origin: CGPoint(x: 15, y: 0), size: imageSize))
         backgroundImage.image = pageImage
         backgroundImage.contentMode = .ScaleAspectFill
         
@@ -28,19 +35,12 @@ class TutorialViewController: UIViewController {
         pageLabel.text = title
         
         switch pageIndex {
-        case 3:
-            loginButton.hidden = false
+        case 2:
+//            loginButton.hidden = false
             pageLabel.hidden = true
         default:
-            loginButton.hidden = true
+//            loginButton.hidden = true
             pageLabel.hidden = false
         }
-    }
-    
-    
-    @IBAction func loginButtonWasHit(sender: AnyObject) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        presentViewController(storyboard.instantiateInitialViewController() as! UINavigationController, animated: true, completion: nil)
     }
 }

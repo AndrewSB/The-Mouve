@@ -44,6 +44,7 @@ class LoginPageViewController: UIPageViewController {
         self.setViewControllers([startingViewController], direction: .Forward, animated: true, completion: nil)
         
         edgesForExtendedLayout = .None
+        automaticallyAdjustsScrollViewInsets = false
     }
 
     func viewControllerAtIndex(index: Int) -> TutorialViewController? {
