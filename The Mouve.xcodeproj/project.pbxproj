@@ -19,7 +19,6 @@
 		462B68DB1AEC5CF90040C7DD /* NSUserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */; };
 		462B68DD1AEC5D010040C7DD /* NSNotificationCenterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */; };
 		462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */; };
-		466A35451AF04EDC00E82FFD /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A35441AF04EDC00E82FFD /* ActivityTableViewCell.swift */; };
 		466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A35461AF0506900E82FFD /* ProfileViewController.swift */; };
 		4673C10A1AF6A22F000C034A /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4673C1091AF6A22F000C034A /* BaseObject.swift */; };
 		4673C10C1AF6A885000C034A /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4673C10B1AF6A885000C034A /* Aliases.swift */; };
@@ -83,6 +82,7 @@
 		46B888CE1AF9552400D872E0 /* Toucan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4673C1321AF6CA36000C034A /* Toucan.framework */; };
 		46B888CF1AF9552400D872E0 /* Toucan.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4673C1321AF6CA36000C034A /* Toucan.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46B888D11AF95CD400D872E0 /* AddMouveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */; };
+		46B888D31AF9712F00D872E0 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888D21AF9712F00D872E0 /* ActivityTableViewCell.swift */; };
 		46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */; };
 		46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */; };
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
@@ -116,7 +116,6 @@
 		462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultHelper.swift; sourceTree = "<group>"; };
 		462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterHelper.swift; sourceTree = "<group>"; };
 		462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		466A35441AF04EDC00E82FFD /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		466A35461AF0506900E82FFD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4673C1091AF6A22F000C034A /* BaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
 		4673C10B1AF6A885000C034A /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
@@ -182,6 +181,7 @@
 		46B888C51AF94EE300D872E0 /* DetailViewControllerViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerViewExtension.swift; sourceTree = "<group>"; };
 		46B888C71AF9501300D872E0 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExtension.swift; sourceTree = "<group>"; };
 		46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMouveViewController.swift; path = "The Mouve/VCs/Main/The Scene/AddMouveViewController.swift"; sourceTree = SOURCE_ROOT; };
+		46B888D21AF9712F00D872E0 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,7 +250,7 @@
 				46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */,
 				462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */,
 				462B68D71AEC57E40040C7DD /* ActivityTableViewController.swift */,
-				466A35441AF04EDC00E82FFD /* ActivityTableViewCell.swift */,
+				46B888D21AF9712F00D872E0 /* ActivityTableViewCell.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -644,7 +644,6 @@
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
 				468D21691AF0864C00CE6E19 /* Event.swift in Sources */,
 				460FF5021AF87443007C6872 /* UIAlertControllerExtension.swift in Sources */,
-				466A35451AF04EDC00E82FFD /* ActivityTableViewCell.swift in Sources */,
 				466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */,
 				46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */,
 				46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */,
@@ -659,6 +658,7 @@
 				462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */,
 				468D21631AF0829C00CE6E19 /* SettingsTableViewController.swift in Sources */,
 				460FF5091AF87EA7007C6872 /* DetailViewController.swift in Sources */,
+				46B888D31AF9712F00D872E0 /* ActivityTableViewCell.swift in Sources */,
 				46AFB3671AF86CA1004D121A /* SignupViewController.swift in Sources */,
 				4673C1371AF6CA69000C034A /* TTTAttributedLabel.m in Sources */,
 			);

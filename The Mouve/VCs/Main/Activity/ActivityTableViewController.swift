@@ -11,6 +11,9 @@ import UIKit
 class ActivityTableViewController: UIViewController {
     var type: SceneType!
     @IBOutlet weak var feedTableView: UITableView!
+    
+    let labelData = ["adas", "sadas", "adsa", "htew", "gth"]
+    let imageData = ["andrew-pic", "yoojin-pic", "chelea-pic", "noah-pic", "taylor-pic"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +39,8 @@ extension ActivityTableViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! ActivityTableViewCell
-
+        
+        cell.type = self.type
         
         return cell
     }

@@ -8,6 +8,8 @@
 
 import UIKit
 
+enum 
+
 class GreyGreenButton: UIButton {
     var completed: Bool? {
         didSet {
@@ -38,6 +40,7 @@ class GreyGreenButton: UIButton {
         } else {
             layer.borderColor = UIColor.lightGrayColor().CGColor
             tintColor = UIColor.lightGrayColor()
+            backgroundColor =
         }
     }
 }

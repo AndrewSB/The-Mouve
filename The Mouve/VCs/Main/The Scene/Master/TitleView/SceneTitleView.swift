@@ -26,7 +26,7 @@ class SceneTitleView: UIView {
     var type: SceneType? {
         willSet {
             UIView.animateWithDuration(0.2, animations: {
-                let animateToButton = self.type == self.buttonOne.0 ? self.rightButton : self.leftButton
+                let animateToButton = self.type == self.buttonOne.0 ? self.leftButton : self.rightButton
                     
                 let origin = CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height - 4)
                 self.underlineView.frame = CGRect(origin: origin, size: CGSize(width: animateToButton.frame.width, height: 2))
@@ -76,7 +76,7 @@ class SceneTitleView: UIView {
             self.underlineView.frame = CGRect(origin: self.underlineView.frame.origin, size: CGSize(width: self.leftButton.frame.width, height: self.underlineView.frame.height))
         })
         
-        LocalMessage.observe(buttonTwo.2, classFunction: "pageOne", inClass: self)
+        LocalMessage.observe(buttonOne.2, classFunction: "pageOne", inClass: self)
         LocalMessage.observe(buttonTwo.2, classFunction: "pageTwo", inClass: self)
     }
 
@@ -92,6 +92,7 @@ class SceneTitleView: UIView {
     }
 
     @IBAction func rightButtonWasHit(sender: AnyObject) {
+        
         if type != buttonTwo.0 {
             println(buttonTwo.1)
             LocalMessage.post(buttonTwo.1)

@@ -3,22 +3,21 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "search-icon.png"
+      "filename" : "sf-image.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "search-icon@2x.png"
+      "filename" : "sf-image@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "search-icon@3x.png"
+      "filename" : "sf-image@3x.png"
     }
   ],
   "info" : {
     "version" : 1,
-    "author" : "xcode",
-    "template-rendering-intent" : "template"
+    "author" : "xcode"
   }
 }

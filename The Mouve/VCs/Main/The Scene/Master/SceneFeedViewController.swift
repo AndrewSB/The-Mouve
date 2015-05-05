@@ -30,13 +30,11 @@ class SceneFeedViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        println("will appear \(feedTableView.contentOffset.y)")
-        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        LocalMessage.post(type.hashValue == 0 ? .HomeFeedPageOne : .HomeFeedPageTwo)
+        LocalMessage.post(type.hashValue == 0 ? .HomeFeedPageTwo : .HomeFeedPageOne)
     }
 }
 
