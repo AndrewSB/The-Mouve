@@ -9,19 +9,28 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    @IBOutlet weak var emailTextField: UnderlinedTextField!
+    @IBOutlet weak var passwordTextField: UnderlinedTextField!
 
+    @IBOutlet weak var loginButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+                
+        loginButton.layer.borderWidth = 2
+        loginButton.layer.borderColor = UIColor.seaFoamGreen().CGColor
+        loginButton.layer.cornerRadius = 4
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+    @IBAction func loginButtonWasHit(sender: AnyObject) {
     }
     
-
+    @IBAction func signUpButtonWasHit(sender: AnyObject) {
+    }
+    
+    @IBAction func backButtonWasHit(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
     /*
     // MARK: - Navigation
 

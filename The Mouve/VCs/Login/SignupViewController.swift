@@ -9,19 +9,32 @@
 import UIKit
 
 class SignupViewController: UIViewController {
+    @IBOutlet weak var nameTextField: UnderlinedTextField!
+    @IBOutlet weak var usernameTextField: UnderlinedTextField!
+    @IBOutlet weak var passwordTextField: UnderlinedTextField!
+    @IBOutlet weak var emailTextField: UnderlinedTextField!
 
+    @IBOutlet weak var createAccountButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        createAccountButton.layer.borderColor = UIColor.seaFoamGreen().CGColor
+        createAccountButton.layer.borderWidth = 2
+        createAccountButton.layer.cornerRadius = 6
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func createAccountButtonWasHit(sender: AnyObject) {
     }
     
-
+    @IBAction func facebookButtonWasHit(sender: AnyObject) {
+    }
+    
+    @IBAction func backButtonWasHit(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

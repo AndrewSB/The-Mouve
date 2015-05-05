@@ -22,6 +22,7 @@
             <string>HalisGR-Regular</string>
             <string>HalisGR-Regular</string>
             <string>HalisGR-Regular</string>
+            <string>HalisGR-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -193,6 +194,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="loginButtonWasHit:" destination="Lf3-fd-A0O" eventType="touchUpInside" id="miJ-yA-qRO"/>
                                     <action selector="loginButtonWasHit:" destination="gLX-tq-VTd" eventType="touchUpInside" id="osS-9S-dQG"/>
                                 </connections>
                             </button>
@@ -203,6 +205,9 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpButtonWasHit:" destination="Lf3-fd-A0O" eventType="touchUpInside" id="MOc-Nq-i23"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2m-9T-wFS">
                                 <rect key="frame" x="193" y="491" width="154" height="16"/>
@@ -221,7 +226,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="dMH-44-i1C" kind="unwind" unwindAction="unwindToTutorialVC:" id="1fa-ZR-Pjg"/>
+                                    <action selector="backButtonWasHit:" destination="Lf3-fd-A0O" eventType="touchUpInside" id="giS-Ud-iRe"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5f-cu-RQj">
@@ -273,9 +278,13 @@
                             <constraint firstItem="E5f-cu-RQj" firstAttribute="height" secondItem="0oe-NT-TMt" secondAttribute="height" multiplier="2" id="ye7-YG-mPd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="3iL-SP-PT6" id="9aa-oM-IHL"/>
+                        <outlet property="loginButton" destination="3yH-bQ-9Bj" id="fch-sS-dnV"/>
+                        <outlet property="passwordTextField" destination="eVz-xe-P0o" id="fdf-ny-yMz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vt-vn-Q6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="dMH-44-i1C" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1770" y="1803"/>
         </scene>
@@ -354,6 +363,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="backButtonWasHit:" destination="yBD-hG-2Qi" eventType="touchUpInside" id="j6d-Cn-o2T"/>
                                     <segue destination="NT4-VP-hXL" kind="unwind" unwindAction="unwindToTutorialVC:" id="seN-Ps-f8g"/>
                                 </connections>
                             </button>
@@ -395,6 +405,9 @@
                                     <color key="titleColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="facebookButtonWasHit:" destination="yBD-hG-2Qi" eventType="touchUpInside" id="D8M-dD-ksH"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or fill out form with" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWo-I0-aFN">
                                 <rect key="frame" x="200" y="407" width="129" height="16"/>
@@ -422,11 +435,13 @@
                                     <constraint firstAttribute="height" constant="44" id="Tef-aG-Z3x"/>
                                     <constraint firstAttribute="width" constant="150" id="hdV-PE-44Q"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="15"/>
                                 <state key="normal" title="CREATE ACCOUNT">
                                     <color key="titleColor" red="0.4365693927" green="0.93256706" blue="0.72956490519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="createAccountButtonWasHit:" destination="yBD-hG-2Qi" eventType="touchUpInside" id="7b7-2w-0og"/>
                                     <action selector="loginButtonWasHit:" destination="gLX-tq-VTd" eventType="touchUpInside" id="AUn-pZ-uvS"/>
                                 </connections>
                             </button>
@@ -470,6 +485,13 @@
                             <constraint firstItem="rvi-10-BYt" firstAttribute="leading" secondItem="rj5-0d-F0D" secondAttribute="leadingMargin" constant="66" id="yzc-pU-8as"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="createAccountButton" destination="j0u-tb-T2e" id="RJs-ps-Kxd"/>
+                        <outlet property="emailTextField" destination="rvi-10-BYt" id="3zI-2p-jLM"/>
+                        <outlet property="nameTextField" destination="J8B-4m-WUW" id="QIZ-og-HCZ"/>
+                        <outlet property="passwordTextField" destination="8JL-AQ-7ag" id="vy0-ty-bYc"/>
+                        <outlet property="usernameTextField" destination="wlx-Z1-QQz" id="DJp-2c-t0K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFr-ds-rjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NT4-VP-hXL" userLabel="Exit" sceneMemberID="exit"/>
