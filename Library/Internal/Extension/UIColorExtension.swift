@@ -15,6 +15,10 @@ extension UIColor {
         return UIColor.colorWithHexString("#50E3C2")
     }
     
+    class func nicePaleBlue() -> UIColor {
+        return UIColor.colorWithHexString("#4A90E2")
+    }
+    
     class func colorWithHexString(hex:String) -> UIColor {
         var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
         

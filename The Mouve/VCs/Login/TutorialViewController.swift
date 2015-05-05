@@ -45,4 +45,6 @@ class TutorialViewController: UIViewController {
     
     @IBAction func loginButtonWasHit(sender: AnyObject) {
     }
+    
+    @IBAction func unwindToTutorialVC(segue: UIStoryboardSegue) {}
 }

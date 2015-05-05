@@ -51,6 +51,8 @@
 		469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C437A1ADF10D200D6A510 /* DetailViewController.swift */; };
 		46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */; };
 		46AFB3631AF86AD2004D121A /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFB3621AF86AD2004D121A /* UnderlinedTextField.swift */; };
+		46AFB3651AF86C9A004D121A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFB3641AF86C9A004D121A /* LoginViewController.swift */; };
+		46AFB3671AF86CA1004D121A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFB3661AF86CA1004D121A /* SignupViewController.swift */; };
 		46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29B7D1ADB2067000B9441 /* AppDelegate.swift */; };
 		46B29B851ADB2067000B9441 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B841ADB2067000B9441 /* Images.xcassets */; };
 		46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B29B861ADB2067000B9441 /* LaunchScreen.xib */; };
@@ -137,6 +139,8 @@
 		46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheScenePageViewController.swift; sourceTree = "<group>"; };
 		46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTitleView.swift; sourceTree = "<group>"; };
 		46AFB3621AF86AD2004D121A /* UnderlinedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
+		46AFB3641AF86C9A004D121A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		46AFB3661AF86CA1004D121A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		46B29B781ADB2067000B9441 /* The Mouve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Mouve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B29B7C1ADB2067000B9441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46B29B7D1ADB2067000B9441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -418,6 +422,8 @@
 				46B29BC31ADB219C000B9441 /* Login.storyboard */,
 				46B29BC41ADB219C000B9441 /* LoginPageViewController.swift */,
 				46B29BC51ADB219C000B9441 /* TutorialViewController.swift */,
+				46AFB3641AF86C9A004D121A /* LoginViewController.swift */,
+				46AFB3661AF86CA1004D121A /* SignupViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -552,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46AFB3651AF86C9A004D121A /* LoginViewController.swift in Sources */,
 				462B68DD1AEC5D010040C7DD /* NSNotificationCenterHelper.swift in Sources */,
 				46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */,
 				462B68DB1AEC5CF90040C7DD /* NSUserDefaultHelper.swift in Sources */,
@@ -578,6 +585,7 @@
 				462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */,
 				469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */,
 				468D21631AF0829C00CE6E19 /* SettingsTableViewController.swift in Sources */,
+				46AFB3671AF86CA1004D121A /* SignupViewController.swift in Sources */,
 				4673C1371AF6CA69000C034A /* TTTAttributedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

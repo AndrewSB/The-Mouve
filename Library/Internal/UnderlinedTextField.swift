@@ -13,6 +13,9 @@ class UnderlinedTextField: UITextField {
         super.awakeFromNib()
         
         let f = self.frame
-        let underlineView = UIView(frame: CGRect(x: f.height, y: 0, width: f.width, height: 3))
+        
+        let underlineView = UIView(frame: CGRect(x: 0, y: f.height-2, width: f.width, height: 2))
+        underlineView.backgroundColor = UIColor.nicePaleBlue()
+        self.addSubview(underlineView)
     }
 }
