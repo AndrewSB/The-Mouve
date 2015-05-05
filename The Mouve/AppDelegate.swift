@@ -12,7 +12,7 @@ import Bolts
 import Fabric
 import Crashlytics
 
-
+let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             clientKey: "5SqHFJOslPl9TB9CPbuowXkCpidAOfoIKIXgSqU4")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
-        let loggedIn = true//PFUser.currentUser() != nil
+        let loggedIn = PFUser.currentUser() != nil
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
@@ -64,5 +64,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     func changeNavBar() {
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont(name: "HalisGR-Regular", size: 16)!, NSForegroundColorAttributeName : UIColor.blackColor()]
+    }
+    
+    func checkLogin() {
+        let loggedIn = PFUser.currentUser() != nil
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
+        window!.makeKeyAndVisible()
+
     }
 }

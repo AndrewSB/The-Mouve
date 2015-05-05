@@ -43,10 +43,18 @@ extension UIViewController { //board bullets
     }
     
     func addLoadingView() -> UIActivityIndicatorView {
+        view.userInteractionEnabled = false
+        
         let aV = UIActivityIndicatorView(frame: CGRectMake(view.frame.width/2 - 11, view.frame.height/2 - 11, 11, 11))
         aV.startAnimating()
         aV.color = UIColor.grayColor()
         
         return aV
+    }
+    
+    func removeLoadingView(var spinner: UIActivityIndicatorView) {
+        spinner.removeFromSuperview()
+        spinner.delete(self)
+        view.userInteractionEnabled = true
     }
 }

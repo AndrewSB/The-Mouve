@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SettingsTableViewController: UITableViewController {
 
@@ -19,10 +20,26 @@ class SettingsTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        switch indexPath.section {
+        case 0:
+            switch indexPath.row {
+            case 0:
+                println("Contact us")
+            case 1:
+                println("Privacy Policy")
+            case 2:
+                println("Terms of use")
+            default: ()
+            }
+        case 1:
+            PFUser.logOut()
+            appDel.checkLogin()
+        default: ()
+        }
     }
 
     // MARK: - Table view data source

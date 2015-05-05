@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
     var headerImageView: UIImageView?
     var blurredHeaderImageView: UIImageView?
     
+    @IBOutlet weak var tableViewHeaderView: UIView!
+    
     @IBOutlet weak var calendarButton: UIButton!
     @IBOutlet weak var bookmarkButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
@@ -73,6 +75,9 @@ extension DetailViewController { // View code and actions
     }
     
     func styleViewProgrammatically() {
+        
+        tableViewHeaderView.frame.size.height = addPostButton.frame.origin.y + addPostButton.frame.height
+        
         for button in [calendarButton, bookmarkButton, shareButton] {
             button.layer.cornerRadius = button.frame.height
             button.layer.borderColor = UIColor.grayColor().CGColor

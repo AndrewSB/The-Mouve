@@ -25,15 +25,31 @@ class LoginViewController: UIViewController {
 
 
     @IBAction func loginButtonWasHit(sender: AnyObject) {
-        PFUser.logInWithUsernameInBackground(emailTextField.text.lowercaseString, password: passwordTextField.text, block: { (user: PFUser?, error: NSError?) -> Void in
-            if user != nil {
-                // Do stuff after successful login.
+        let loadingSpinnerView = addLoadingView()
+        view.addSubview(loadingSpinnerView)
+        
+        let emailQuery = PFQuery(className: "_User")
+        emailQuery.whereKey("email", equalTo: emailTextField.text.lowercaseString)
+        
+        emailQuery.getFirstObjectInBackgroundWithBlock({ (object, error) in
+            if let object = object {
+                PFUser.logInWithUsernameInBackground(object["username"] as! String, password: self.passwordTextField.text, block: { (user, error) in
+                    if user != nil {
+                        println("dun logged in")
+                        appDel.checkLogin()
+                    } else {
+                        if let error = error {
+                            self.removeLoadingView(loadingSpinnerView)
+                            let errorString = error.userInfo?["error"] as? NSString
+                            self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
+                        }
+                    }
+                })
             } else {
                 if let error = error {
-                    let errorString = error.userInfo?["error"] as? NSString
-                    self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
+                    self.removeLoadingView(loadingSpinnerView)
+                    self.presentViewController(UIAlertController(title: "Uh oh", message: error.localizedDescription), animated: true, completion: nil)
                 }
-                assert(true == false, "yo some login error ???")
             }
         })
     }
