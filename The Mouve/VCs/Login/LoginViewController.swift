@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UnderlinedTextField!
@@ -15,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        addTextDismiss()
                 
         loginButton.layer.borderWidth = 2
         loginButton.layer.borderColor = UIColor.seaFoamGreen().CGColor
@@ -23,6 +25,17 @@ class LoginViewController: UIViewController {
 
 
     @IBAction func loginButtonWasHit(sender: AnyObject) {
+        PFUser.logInWithUsernameInBackground(emailTextField.text.lowercaseString, password: passwordTextField.text, block: { (user: PFUser?, error: NSError?) -> Void in
+            if user != nil {
+                // Do stuff after successful login.
+            } else {
+                if let error = error {
+                    let errorString = error.userInfo?["error"] as? NSString
+                    self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
+                }
+                assert(true == false, "yo some login error ???")
+            }
+        })
     }
     
     @IBAction func signUpButtonWasHit(sender: AnyObject) {
@@ -31,14 +44,12 @@ class LoginViewController: UIViewController {
     @IBAction func backButtonWasHit(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
-    /*
+    
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        view.endEditing(true)
     }
-    */
 
 }

@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             clientKey: "5SqHFJOslPl9TB9CPbuowXkCpidAOfoIKIXgSqU4")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
-        let loggedIn = PFUser.currentUser() != nil
+        let loggedIn = true//PFUser.currentUser() != nil
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController

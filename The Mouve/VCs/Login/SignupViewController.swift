@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SignupViewController: UIViewController {
     @IBOutlet weak var nameTextField: UnderlinedTextField!
@@ -18,6 +19,7 @@ class SignupViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addTextDismiss()
 
         createAccountButton.layer.borderColor = UIColor.seaFoamGreen().CGColor
         createAccountButton.layer.borderWidth = 2
@@ -25,6 +27,22 @@ class SignupViewController: UIViewController {
     }
 
     @IBAction func createAccountButtonWasHit(sender: AnyObject) {
+        let newUser = PFUser()
+        
+        newUser["name"] = nameTextField.text
+        newUser.username = usernameTextField.text.lowercaseString
+        newUser.password = passwordTextField.text.lowercaseString
+        newUser.email = emailTextField.text.lowercaseString
+        
+        newUser.signUpInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo?["error"] as? NSString
+                self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
+            } else {
+                println("you done signed up")
+            }
+        }
+
     }
     
     @IBAction func facebookButtonWasHit(sender: AnyObject) {
@@ -35,14 +53,9 @@ class SignupViewController: UIViewController {
     }
     
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        view.endEditing(true)
     }
-    */
 
 }

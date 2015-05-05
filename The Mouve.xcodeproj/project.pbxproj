@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		46042E571AEA1F6900089A5A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46042E561AEA1F6900089A5A /* UIColorExtension.swift */; };
 		46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46042E581AEA230300089A5A /* UIViewExtension.swift */; };
+		460FF5021AF87443007C6872 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */; };
 		462B68C71AEB51E40040C7DD /* HalisGR-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */; };
 		462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */; };
 		462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68D71AEC57E40040C7DD /* ActivityTableViewController.swift */; };
@@ -93,6 +94,7 @@
 /* Begin PBXFileReference section */
 		46042E561AEA1F6900089A5A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		46042E581AEA230300089A5A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Light-Italic.otf"; sourceTree = "<group>"; };
 		462B68C61AEB4B1F0040C7DD /* The Mouve-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Mouve-Bridging-Header.h"; sourceTree = "<group>"; };
 		462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPageViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
+				460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */,
 				46042E561AEA1F6900089A5A /* UIColorExtension.swift */,
 				46042E581AEA230300089A5A /* UIViewExtension.swift */,
 				462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */,
@@ -572,6 +575,7 @@
 				46B29BCA1ADB219C000B9441 /* LoginPageViewController.swift in Sources */,
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
 				468D21691AF0864C00CE6E19 /* Event.swift in Sources */,
+				460FF5021AF87443007C6872 /* UIAlertControllerExtension.swift in Sources */,
 				466A35451AF04EDC00E82FFD /* ActivityTableViewCell.swift in Sources */,
 				466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */,
 				46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */,
