@@ -8,7 +8,10 @@
 
 import UIKit
 
-enum 
+enum GreyGreenType: String {
+    case Detail = "Detail"
+    case Activity = "Activity"
+}
 
 class GreyGreenButton: UIButton {
     var completed: Bool? {
@@ -22,6 +25,11 @@ class GreyGreenButton: UIButton {
                 tintColor = UIColor.lightGrayColor()
                 backgroundColor = UIColor.whiteColor()
             }
+        }
+    }
+    var type: GreyGreenType? {
+        didSet {
+            println("type of green grey is \(type!.rawValue)")
         }
     }
     
@@ -40,7 +48,6 @@ class GreyGreenButton: UIButton {
         } else {
             layer.borderColor = UIColor.lightGrayColor().CGColor
             tintColor = UIColor.lightGrayColor()
-            backgroundColor =
         }
     }
 }

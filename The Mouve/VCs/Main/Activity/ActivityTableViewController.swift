@@ -41,6 +41,9 @@ extension ActivityTableViewController: UITableViewDelegate, UITableViewDataSourc
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! ActivityTableViewCell
         
         cell.type = self.type
+        if type == .Newsfeed {
+            (cell.profileImageView as! GreyGreenButton).type = .Activity
+        }
         
         return cell
     }

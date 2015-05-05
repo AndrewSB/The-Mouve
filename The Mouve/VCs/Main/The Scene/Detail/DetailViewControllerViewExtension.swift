@@ -33,6 +33,10 @@ extension DetailViewController { // View code and actions
     
     func styleViewProgrammatically() {
         tableViewHeaderView.frame.size.height = addPostButton.frame.origin.y + addPostButton.frame.height
+        
+        [calendarButton, shareButton, bookmarkButton].map({
+            $0.type = .Detail
+        })
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
