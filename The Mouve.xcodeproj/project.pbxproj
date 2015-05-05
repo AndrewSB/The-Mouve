@@ -77,6 +77,8 @@
 		46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */; };
 		46B888C21AF8801000D872E0 /* DetailPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888C11AF8801000D872E0 /* DetailPostTableViewCell.swift */; };
 		46B888C41AF94C3E00D872E0 /* GreyGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888C31AF94C3E00D872E0 /* GreyGreenButton.swift */; };
+		46B888C61AF94EE300D872E0 /* DetailViewControllerViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888C51AF94EE300D872E0 /* DetailViewControllerViewExtension.swift */; };
+		46B888C81AF9501300D872E0 /* BoolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888C71AF9501300D872E0 /* BoolExtension.swift */; };
 		46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */; };
 		46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */; };
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
@@ -172,6 +174,8 @@
 		46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventTableViewCell.swift; sourceTree = "<group>"; };
 		46B888C11AF8801000D872E0 /* DetailPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPostTableViewCell.swift; sourceTree = "<group>"; };
 		46B888C31AF94C3E00D872E0 /* GreyGreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreyGreenButton.swift; sourceTree = "<group>"; };
+		46B888C51AF94EE300D872E0 /* DetailViewControllerViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerViewExtension.swift; sourceTree = "<group>"; };
+		46B888C71AF9501300D872E0 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExtension.swift; sourceTree = "<group>"; };
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -302,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
+				46B888C71AF9501300D872E0 /* BoolExtension.swift */,
 				460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */,
 				46042E561AEA1F6900089A5A /* UIColorExtension.swift */,
 				46042E581AEA230300089A5A /* UIViewExtension.swift */,
@@ -334,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				469C437A1ADF10D200D6A510 /* DetailViewController.swift */,
+				46B888C51AF94EE300D872E0 /* DetailViewControllerViewExtension.swift */,
 				46B888C11AF8801000D872E0 /* DetailPostTableViewCell.swift */,
 			);
 			path = Detail;
@@ -602,6 +608,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B888C61AF94EE300D872E0 /* DetailViewControllerViewExtension.swift in Sources */,
 				46AFB3651AF86C9A004D121A /* LoginViewController.swift in Sources */,
 				462B68DD1AEC5D010040C7DD /* NSNotificationCenterHelper.swift in Sources */,
 				46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */,
@@ -626,6 +633,7 @@
 				462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */,
 				46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */,
 				46042E571AEA1F6900089A5A /* UIColorExtension.swift in Sources */,
+				46B888C81AF9501300D872E0 /* BoolExtension.swift in Sources */,
 				468D21671AF085B300CE6E19 /* BaseParseObject.swift in Sources */,
 				46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */,
 				46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */,

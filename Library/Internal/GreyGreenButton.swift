@@ -9,9 +9,17 @@
 import UIKit
 
 class GreyGreenButton: UIButton {
-    var completed: Bool?
+    var completed: Bool? {
+        didSet {
+            
+        }
+    }
     
     override func awakeFromNib() {
+        if completed == nil {
+            completed = false
+        }
+        
         super.awakeFromNib()
         layer.cornerRadius = frame.height / 2
         layer.borderWidth = 1

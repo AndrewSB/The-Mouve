@@ -554,38 +554,44 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="611"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pb0-Tb-6Z5" customClass="GreyGreenButton" customModule="The_Mouve" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pb0-Tb-6Z5" customClass="GreyGreenButton" customModule="The_Mouve" customModuleProvider="target">
                                             <rect key="frame" x="434" y="166" width="44" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="44" id="K9V-NX-qEw"/>
                                                 <constraint firstAttribute="width" secondItem="Pb0-Tb-6Z5" secondAttribute="height" multiplier="1:1" id="s0O-p6-pU5"/>
                                             </constraints>
+                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <inset key="contentEdgeInsets" minX="11" minY="11" maxX="11" maxY="11"/>
-                                            <state key="normal" image="white-calendar">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
+                                            <state key="normal" image="white-calendar"/>
+                                            <connections>
+                                                <action selector="calendarButtonWasHit:" destination="HXA-ZS-heC" eventType="touchUpInside" id="l01-Yr-hGa"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbb-c2-446" customClass="GreyGreenButton" customModule="The_Mouve" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbb-c2-446" customClass="GreyGreenButton" customModule="The_Mouve" customModuleProvider="target">
                                             <rect key="frame" x="490" y="166" width="44" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Vbb-c2-446" secondAttribute="height" multiplier="1:1" id="GnC-ww-sTj"/>
                                                 <constraint firstAttribute="width" constant="44" id="VMs-K4-HQ8"/>
                                             </constraints>
+                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <inset key="contentEdgeInsets" minX="11" minY="11" maxX="11" maxY="11"/>
-                                            <state key="normal" image="white-bookmark">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
+                                            <state key="normal" image="white-bookmark"/>
+                                            <connections>
+                                                <action selector="bookmarkButtonWasHit:" destination="HXA-ZS-heC" eventType="touchUpInside" id="iAH-fW-Nvr"/>
+                                            </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rD2-ON-cIe" customClass="GreyGreenButton" customModule="The_Mouve" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rD2-ON-cIe" customClass="GreyGreenButton" customModule="The_Mouve" customModuleProvider="target">
                                             <rect key="frame" x="546" y="166" width="44" height="44"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="44" id="lrQ-Ki-94G"/>
                                                 <constraint firstAttribute="width" secondItem="rD2-ON-cIe" secondAttribute="height" multiplier="1:1" id="qxj-rS-zjk"/>
                                             </constraints>
+                                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <inset key="contentEdgeInsets" minX="11" minY="11" maxX="11" maxY="11"/>
-                                            <state key="normal" image="white-share">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
+                                            <state key="normal" image="white-share"/>
+                                            <connections>
+                                                <action selector="shareButtonWasHit:" destination="HXA-ZS-heC" eventType="touchUpInside" id="4P8-9K-pur"/>
+                                            </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9NG-m5-iQW">
                                             <rect key="frame" x="0.0" y="143" width="600" height="1"/>
@@ -729,17 +735,14 @@
                                     <constraint firstAttribute="height" constant="140" id="bD3-OU-Lsi"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAI-gF-Mrg">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAI-gF-Mrg">
                                 <rect key="frame" x="12" y="22" width="14" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="0NQ-HS-M9b"/>
                                     <constraint firstAttribute="width" secondItem="jAI-gF-Mrg" secondAttribute="height" multiplier="20:31" id="ovp-dx-lZR"/>
                                 </constraints>
-                                <color key="tintColor" red="0.64810353517532349" green="0.47402966022491455" blue="0.99041324853897095" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="back-button">
-                                    <color key="titleColor" red="0.047058823530000002" green="0.37254901959999998" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="back-button"/>
                                 <connections>
                                     <action selector="backButtonWasHit:" destination="HXA-ZS-heC" eventType="touchUpInside" id="j5e-5i-Ayl"/>
                                 </connections>
