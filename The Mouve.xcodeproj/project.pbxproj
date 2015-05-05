@@ -10,6 +10,8 @@
 		46042E571AEA1F6900089A5A /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46042E561AEA1F6900089A5A /* UIColorExtension.swift */; };
 		46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46042E581AEA230300089A5A /* UIViewExtension.swift */; };
 		460FF5021AF87443007C6872 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */; };
+		460FF5061AF87815007C6872 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460FF5041AF87815007C6872 /* Fabric.framework */; };
+		460FF5071AF87815007C6872 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460FF5051AF87815007C6872 /* Crashlytics.framework */; };
 		462B68C71AEB51E40040C7DD /* HalisGR-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */; };
 		462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */; };
 		462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68D71AEC57E40040C7DD /* ActivityTableViewController.swift */; };
@@ -95,6 +97,8 @@
 		46042E561AEA1F6900089A5A /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		46042E581AEA230300089A5A /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
+		460FF5041AF87815007C6872 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		460FF5051AF87815007C6872 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Light-Italic.otf"; sourceTree = "<group>"; };
 		462B68C61AEB4B1F0040C7DD /* The Mouve-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Mouve-Bridging-Header.h"; sourceTree = "<group>"; };
 		462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPageViewController.swift; sourceTree = "<group>"; };
@@ -191,8 +195,10 @@
 				46B29BB71ADB20F5000B9441 /* MobileCoreServices.framework in Frameworks */,
 				46B29BB81ADB20F5000B9441 /* QuartzCore.framework in Frameworks */,
 				4673C1211AF6C857000C034A /* FBSDKShareKit.framework in Frameworks */,
+				460FF5071AF87815007C6872 /* Crashlytics.framework in Frameworks */,
 				46B29BB91ADB20F5000B9441 /* Security.framework in Frameworks */,
 				46B29BBB1ADB20F5000B9441 /* SystemConfiguration.framework in Frameworks */,
+				460FF5061AF87815007C6872 /* Fabric.framework in Frameworks */,
 				4673C12B1AF6C951000C034A /* Bolts.framework in Frameworks */,
 				4673C11C1AF6C857000C034A /* FBAudienceNetwork.framework in Frameworks */,
 				468D215B1AF06EE600CE6E19 /* Toucan.framework in Frameworks */,
@@ -398,6 +404,8 @@
 		46B29BC21ADB2187000B9441 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				460FF5041AF87815007C6872 /* Fabric.framework */,
+				460FF5051AF87815007C6872 /* Crashlytics.framework */,
 				4673C1311AF6CA36000C034A /* Alamofire.framework */,
 				4673C1321AF6CA36000C034A /* Toucan.framework */,
 				4673C10F1AF6C857000C034A /* FacebookSDK */,
@@ -484,6 +492,7 @@
 				46B29B751ADB2067000B9441 /* Frameworks */,
 				46B29B761ADB2067000B9441 /* Resources */,
 				462B68E31AEC80FD0040C7DD /* Embed Frameworks */,
+				460FF5031AF877E6007C6872 /* Run Fabric */,
 			);
 			buildRules = (
 			);
@@ -555,6 +564,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		460FF5031AF877E6007C6872 /* Run Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Fabric";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run cf31bd871fb35d3e3e94b3732cd654bbde1f5b0c 33804315ff66b7966281403539d1d005fcf98139ee03282942a67832a10b0f8e";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		46B29B741ADB2067000B9441 /* Sources */ = {
@@ -702,6 +728,7 @@
 					"$(PROJECT_DIR)/Library/External/FacebookSDK",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/External/Parse/parse-library-1.7.2",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "The Mouve/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -723,6 +750,7 @@
 					"$(PROJECT_DIR)/Library/External/FacebookSDK",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/External/Parse/parse-library-1.7.2",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "The Mouve/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

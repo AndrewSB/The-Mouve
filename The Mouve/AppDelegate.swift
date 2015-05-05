@@ -9,6 +9,9 @@
 import UIKit
 import Parse
 import Bolts
+import Fabric
+import Crashlytics
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        Fabric.with([Crashlytics()])
+        
         Parse.enableLocalDatastore()
         Parse.setApplicationId("GvHu9jcqgsGp2zZkgsXwLOQJXNWCzl5janz4FAj1",
             clientKey: "5SqHFJOslPl9TB9CPbuowXkCpidAOfoIKIXgSqU4")
