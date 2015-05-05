@@ -12,6 +12,7 @@
 		460FF5021AF87443007C6872 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */; };
 		460FF5061AF87815007C6872 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460FF5041AF87815007C6872 /* Fabric.framework */; };
 		460FF5071AF87815007C6872 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460FF5051AF87815007C6872 /* Crashlytics.framework */; };
+		460FF5091AF87EA7007C6872 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C437A1ADF10D200D6A510 /* DetailViewController.swift */; };
 		462B68C71AEB51E40040C7DD /* HalisGR-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */; };
 		462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */; };
 		462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68D71AEC57E40040C7DD /* ActivityTableViewController.swift */; };
@@ -51,7 +52,6 @@
 		469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */; };
 		469C436D1ADEF96D00D6A510 /* HalisGR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */; };
 		469C436E1ADEF96F00D6A510 /* HalisGR-Regular-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */; };
-		469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C437A1ADF10D200D6A510 /* DetailViewController.swift */; };
 		46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */; };
 		46AFB3631AF86AD2004D121A /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFB3621AF86AD2004D121A /* UnderlinedTextField.swift */; };
 		46AFB3651AF86C9A004D121A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFB3641AF86C9A004D121A /* LoginViewController.swift */; };
@@ -622,8 +622,8 @@
 				46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */,
 				46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */,
 				462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */,
-				469C437B1ADF10D200D6A510 /* DetailViewController.swift in Sources */,
 				468D21631AF0829C00CE6E19 /* SettingsTableViewController.swift in Sources */,
+				460FF5091AF87EA7007C6872 /* DetailViewController.swift in Sources */,
 				46AFB3671AF86CA1004D121A /* SignupViewController.swift in Sources */,
 				4673C1371AF6CA69000C034A /* TTTAttributedLabel.m in Sources */,
 			);

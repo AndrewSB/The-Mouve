@@ -10,6 +10,24 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var calendarButton: UIButton!
+    @IBOutlet weak var bookmarkButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
+    
+    @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var addressButton: UIButton!
+    @IBOutlet weak var inviteButton: UIButton!
+    
+    @IBOutlet weak var photoCollectionView: UICollectionView!
+    
+    @IBOutlet weak var addPostButton: UIButton!
+    
+    @IBOutlet weak var postTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

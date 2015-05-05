@@ -535,10 +535,10 @@
             </objects>
             <point key="canvasLocation" x="-839" y="888"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="5Qv-OP-VlC">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="HXA-ZS-heC" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="HXA-ZS-heC" customClass="DetailViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gqy-A7-WCr"/>
                         <viewControllerLayoutGuide type="bottom" id="0bs-7N-BH9"/>
@@ -717,7 +717,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="o9O-6e-Sdg">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" id="o9O-6e-Sdg">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o9O-6e-Sdg" id="4qS-xy-AxA">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -738,6 +738,19 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <connections>
+                        <outlet property="addPostButton" destination="e2A-gn-HMl" id="6WG-TP-f5O"/>
+                        <outlet property="addressButton" destination="80K-AW-FfG" id="4jV-DA-BjC"/>
+                        <outlet property="bookmarkButton" destination="Vbb-c2-446" id="kmb-3a-KCZ"/>
+                        <outlet property="calendarButton" destination="Pb0-Tb-6Z5" id="6qf-6D-VF6"/>
+                        <outlet property="descriptionLabel" destination="yoO-kW-dp9" id="rV4-8c-vST"/>
+                        <outlet property="eventNameLabel" destination="ekG-ae-AMS" id="pr8-JM-2cb"/>
+                        <outlet property="inviteButton" destination="mMN-fl-cDi" id="Wvc-Sc-Tpb"/>
+                        <outlet property="photoCollectionView" destination="8Z6-Pv-ix8" id="lpx-yV-YjM"/>
+                        <outlet property="postTableView" destination="tPF-BD-Wjx" id="jp3-Qy-eT8"/>
+                        <outlet property="shareButton" destination="rD2-ON-cIe" id="wJG-6R-QF9"/>
+                        <outlet property="timeLabel" destination="xIf-rk-ZEb" id="pmY-7U-8RS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3A-1Y-p8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
