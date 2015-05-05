@@ -82,6 +82,7 @@
 		46B888CD1AF9550A00D872E0 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4673C1311AF6CA36000C034A /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46B888CE1AF9552400D872E0 /* Toucan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4673C1321AF6CA36000C034A /* Toucan.framework */; };
 		46B888CF1AF9552400D872E0 /* Toucan.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4673C1321AF6CA36000C034A /* Toucan.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		46B888D11AF95CD400D872E0 /* AddMouveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */; };
 		46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */; };
 		46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */; };
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
@@ -180,6 +181,7 @@
 		46B888C31AF94C3E00D872E0 /* GreyGreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreyGreenButton.swift; sourceTree = "<group>"; };
 		46B888C51AF94EE300D872E0 /* DetailViewControllerViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerViewExtension.swift; sourceTree = "<group>"; };
 		46B888C71AF9501300D872E0 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExtension.swift; sourceTree = "<group>"; };
+		46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMouveViewController.swift; path = "The Mouve/VCs/Main/The Scene/AddMouveViewController.swift"; sourceTree = SOURCE_ROOT; };
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -235,6 +237,7 @@
 		462B68D41AEC55CD0040C7DD /* The Scene */ = {
 			isa = PBXGroup;
 			children = (
+				46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */,
 				469C43791ADF10BA00D6A510 /* Master */,
 				469C437C1ADF10DC00D6A510 /* Detail */,
 			);
@@ -636,6 +639,7 @@
 				46B888C21AF8801000D872E0 /* DetailPostTableViewCell.swift in Sources */,
 				462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */,
 				4673C10E1AF6B781000C034A /* FacebookIDExtension.swift in Sources */,
+				46B888D11AF95CD400D872E0 /* AddMouveViewController.swift in Sources */,
 				46B29BCA1ADB219C000B9441 /* LoginPageViewController.swift in Sources */,
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
 				468D21691AF0864C00CE6E19 /* Event.swift in Sources */,

@@ -14,9 +14,11 @@ class GreyGreenButton: UIButton {
             if completed! {
                 layer.borderColor = UIColor.seaFoamGreen().CGColor
                 tintColor = UIColor.whiteColor()
+                backgroundColor = UIColor.seaFoamGreen()
             } else {
                 layer.borderColor = UIColor.lightGrayColor().CGColor
                 tintColor = UIColor.lightGrayColor()
+                backgroundColor = UIColor.whiteColor()
             }
         }
     }
