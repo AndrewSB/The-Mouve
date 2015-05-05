@@ -11,7 +11,13 @@ import UIKit
 class GreyGreenButton: UIButton {
     var completed: Bool? {
         didSet {
-            
+            if completed! {
+                layer.borderColor = UIColor.seaFoamGreen().CGColor
+                tintColor = UIColor.whiteColor()
+            } else {
+                layer.borderColor = UIColor.lightGrayColor().CGColor
+                tintColor = UIColor.lightGrayColor()
+            }
         }
     }
     
@@ -26,7 +32,7 @@ class GreyGreenButton: UIButton {
         
         if let completed = completed where completed {
             layer.borderColor = UIColor.seaFoamGreen().CGColor
-            tintColor = UIColor.seaFoamGreen()
+            tintColor = UIColor.whiteColor()
         } else {
             layer.borderColor = UIColor.lightGrayColor().CGColor
             tintColor = UIColor.lightGrayColor()
