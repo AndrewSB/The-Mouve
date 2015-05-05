@@ -209,6 +209,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		460FF5081AF8795A007C6872 /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				46AB30651AEA0FDA009724A2 /* TitleView */,
+				46AFB3621AF86AD2004D121A /* UnderlinedTextField.swift */,
+			);
+			name = "UI Elements";
+			sourceTree = "<group>";
+		};
 		462B68D41AEC55CD0040C7DD /* The Scene */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,7 +321,6 @@
 				46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */,
 				46B29BC71ADB219C000B9441 /* SceneFeedViewController.swift */,
 				46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */,
-				46AB30651AEA0FDA009724A2 /* TitleView */,
 			);
 			path = Master;
 			sourceTree = "<group>";
@@ -331,7 +339,8 @@
 				46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */,
 				46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */,
 			);
-			path = TitleView;
+			name = TitleView;
+			path = "../../The Mouve/VCs/Main/The Scene/Master/TitleView";
 			sourceTree = "<group>";
 		};
 		46B29B6F1ADB2067000B9441 = {
@@ -465,7 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				4673C10B1AF6A885000C034A /* Aliases.swift */,
-				46AFB3621AF86AD2004D121A /* UnderlinedTextField.swift */,
+				460FF5081AF8795A007C6872 /* UI Elements */,
 				468D216A1AF086F800CE6E19 /* Extension */,
 				468D216B1AF0870000CE6E19 /* Helper */,
 			);
