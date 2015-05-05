@@ -25,7 +25,7 @@ class SceneFeedViewController: UIViewController {
         feedTableView.delegate = self
         feedTableView.dataSource = self
         
-        feedTableView.contentInset.top = 44 + 22
+        feedTableView.contentInset = UIEdgeInsets(top: 44+22, left: 0, bottom: 44, right: 0)
     }
     
     override func viewWillAppear(animated: Bool) {

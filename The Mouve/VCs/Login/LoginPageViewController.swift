@@ -17,7 +17,7 @@ class LoginPageViewController: UIPageViewController {
         }
     }
     
-    let pageTitles = ["dont", "fuck", "this"]
+    let pageTitles = ["Discover events that are happening around you", "Create and attend events", "Live"]
     let pageImages = [UIImage(named: "background-1"), UIImage(named: "background-2"), UIImage(named: "background-3")]
     
     var pageControl: UIPageControl?

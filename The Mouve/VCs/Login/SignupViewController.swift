@@ -39,7 +39,7 @@ class SignupViewController: UIViewController {
                 let errorString = error.userInfo?["error"] as? NSString
                 self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
             } else {
-                println("you done signed up")
+                appDel.checkLogin()
             }
         }
 

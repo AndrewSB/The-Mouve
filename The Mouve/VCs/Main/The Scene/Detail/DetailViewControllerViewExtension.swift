@@ -12,7 +12,7 @@ import Toucan
 extension DetailViewController { // View code and actions
     func styleHeader() {
         headerImageView = UIImageView(frame: headerView.bounds)
-        headerImageView!.image = UIImage(named: "andrew-pic")
+        headerImageView!.image = UIImage(named: "list-background")
         headerImageView!.contentMode = .ScaleAspectFill
         headerView.addSubview(headerImageView!)
         
