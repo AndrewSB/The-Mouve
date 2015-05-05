@@ -31,8 +31,8 @@ class TutorialViewController: UIViewController {
         
         pageLabel.text = title
         
-        signUpButton.layer.cornerRadius = 10
-        loginButton.layer.cornerRadius = 10
+        signUpButton.layer.cornerRadius = 6
+        loginButton.layer.cornerRadius = 6
         loginButton.layer.borderColor = UIColor.seaFoamGreen().CGColor
         loginButton.layer.borderWidth = 1
         
