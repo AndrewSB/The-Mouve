@@ -67,4 +67,6 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
+    
+    @IBAction func unwindToHomeFeed(segue: UIStoryboardSegue) {}
 }

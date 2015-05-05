@@ -76,6 +76,7 @@
 		46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC71ADB219C000B9441 /* SceneFeedViewController.swift */; };
 		46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */; };
 		46B888C21AF8801000D872E0 /* DetailPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888C11AF8801000D872E0 /* DetailPostTableViewCell.swift */; };
+		46B888C41AF94C3E00D872E0 /* GreyGreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888C31AF94C3E00D872E0 /* GreyGreenButton.swift */; };
 		46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */; };
 		46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */; };
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
@@ -170,6 +171,7 @@
 		46B29BC71ADB219C000B9441 /* SceneFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneFeedViewController.swift; sourceTree = "<group>"; };
 		46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventTableViewCell.swift; sourceTree = "<group>"; };
 		46B888C11AF8801000D872E0 /* DetailPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPostTableViewCell.swift; sourceTree = "<group>"; };
+		46B888C31AF94C3E00D872E0 /* GreyGreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreyGreenButton.swift; sourceTree = "<group>"; };
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -216,6 +218,7 @@
 			children = (
 				46AB30651AEA0FDA009724A2 /* TitleView */,
 				46AFB3621AF86AD2004D121A /* UnderlinedTextField.swift */,
+				46B888C31AF94C3E00D872E0 /* GreyGreenButton.swift */,
 			);
 			name = "UI Elements";
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */,
 				46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */,
 				46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */,
+				46B888C41AF94C3E00D872E0 /* GreyGreenButton.swift in Sources */,
 				462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */,
 				46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */,
 				46042E571AEA1F6900089A5A /* UIColorExtension.swift in Sources */,

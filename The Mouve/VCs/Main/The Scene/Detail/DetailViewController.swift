@@ -10,15 +10,17 @@ import UIKit
 import Toucan
 
 class DetailViewController: UIViewController {
+    @IBOutlet weak var backButton: UIButton!
+    
     @IBOutlet weak var headerView: UIView!
     var headerImageView: UIImageView?
     var blurredHeaderImageView: UIImageView?
     
     @IBOutlet weak var tableViewHeaderView: UIView!
     
-    @IBOutlet weak var calendarButton: UIButton!
-    @IBOutlet weak var bookmarkButton: UIButton!
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var calendarButton: GreyGreenButton!
+    @IBOutlet weak var bookmarkButton: GreyGreenButton!
+    @IBOutlet weak var shareButton: GreyGreenButton!
     
     @IBOutlet weak var eventNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -60,9 +62,7 @@ extension DetailViewController { // View code and actions
         headerView.addSubview(headerImageView!)
         
         //Blurred header
-        
         let blurredImage = Toucan(image: UIImage(named: "andrew-pic")!).resize(headerView.frame.size, fitMode: .Crop)
-        
         
         blurredHeaderImageView = UIImageView(frame: headerView.bounds)
         blurredHeaderImageView!.image = blurredImage.image
@@ -72,17 +72,52 @@ extension DetailViewController { // View code and actions
         headerView.addSubview(blurredHeaderImageView!)
         
         headerView.clipsToBounds = true
+        
+        backButton.bringSubviewToFront(self.view)
     }
     
     func styleViewProgrammatically() {
-        
         tableViewHeaderView.frame.size.height = addPostButton.frame.origin.y + addPostButton.frame.height
         
         for button in [calendarButton, bookmarkButton, shareButton] {
-            button.layer.cornerRadius = button.frame.height
+            button.layer.cornerRadius = button.frame.height / 2
             button.layer.borderColor = UIColor.grayColor().CGColor
             button.layer.borderWidth = 1
         }
+        
+        addPostButton.layer.cornerRadius = 5
+    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let offset_HeaderStop:CGFloat = 85 // At this offset the Header stops its transformations
+        let offset_B_LabelHeader:CGFloat = 80 // At this offset the Black label reaches the Header
+        let distance_W_LabelHeader:CGFloat = 35 // The distance between the bottom of the Header and the top of the White Label
+        
+        var offset = scrollView.contentOffset.y
+        var headerTransform = CATransform3DIdentity
+        if offset < 0 { // PULL DOWN
+            
+            let headerScaleFactor:CGFloat = -(offset) / headerView.bounds.height
+            let headerSizevariation = ((headerView.bounds.height * (1.0 + headerScaleFactor)) - headerView.bounds.height)/2.0
+            headerTransform = CATransform3DTranslate(headerTransform, 0, headerSizevariation, 0)
+            headerTransform = CATransform3DScale(headerTransform, 1.0 + headerScaleFactor, 1.0 + headerScaleFactor, 0)
+            
+            headerView.layer.transform = headerTransform
+        }
+            
+        else { // PULL UP
+            
+            // Header -----------
+            
+            headerTransform = CATransform3DTranslate(headerTransform, 0, max(-offset_HeaderStop, -offset), 0)
+            
+            //  ------------ Blur
+            
+            blurredHeaderImageView?.alpha = min (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
+        }
+        
+        // Apply Transformations
+        headerView.layer.transform = headerTransform
     }
     
     @IBAction func backButtonWasHit(sender: AnyObject) {
