@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Toucan
 
 class DetailViewController: UIViewController {
-
+    @IBOutlet weak var headerView: UIView!
+    var headerImageView: UIImageView?
+    var blurredHeaderImageView: UIImageView?
+    
     @IBOutlet weak var calendarButton: UIButton!
     @IBOutlet weak var bookmarkButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
@@ -24,14 +28,15 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
     @IBOutlet weak var addPostButton: UIButton!
-    
+
     @IBOutlet weak var postTableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationController?.navigationBarHidden = true
+        
+        styleHeader()
+        styleViewProgrammatically()
+        tableViewDidLoad()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -45,8 +50,56 @@ class DetailViewController: UIViewController {
     }
 }
 
-extension DetailViewController {
+extension DetailViewController { // View code and actions
+    func styleHeader() {
+        headerImageView = UIImageView(frame: headerView.bounds)
+        headerImageView!.image = UIImage(named: "andrew-pic")
+        headerImageView!.contentMode = .ScaleAspectFill
+        headerView.addSubview(headerImageView!)
+        
+        //Blurred header
+        
+        let blurredImage = Toucan(image: UIImage(named: "andrew-pic")!).resize(headerView.frame.size, fitMode: .Crop)
+        
+        
+        blurredHeaderImageView = UIImageView(frame: headerView.bounds)
+        blurredHeaderImageView!.image = blurredImage.image
+        
+        blurredHeaderImageView!.contentMode = UIViewContentMode.ScaleAspectFill
+        blurredHeaderImageView!.alpha = 0.0
+        headerView.addSubview(blurredHeaderImageView!)
+        
+        headerView.clipsToBounds = true
+    }
+    
+    func styleViewProgrammatically() {
+        for button in [calendarButton, bookmarkButton, shareButton] {
+            button.layer.cornerRadius = button.frame.height
+            button.layer.borderColor = UIColor.grayColor().CGColor
+            button.layer.borderWidth = 1
+        }
+    }
+    
     @IBAction func backButtonWasHit(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
+    }
+}
+
+extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableViewDidLoad() {
+        self.postTableView.delegate = self
+        self.postTableView.dataSource = self
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! DetailPostTableViewCell
+        
+        cell.textLabel?.text = "sup"
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
     }
 }
