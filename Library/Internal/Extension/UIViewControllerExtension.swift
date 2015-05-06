@@ -51,10 +51,4 @@ extension UIViewController { //board bullets
         
         return aV
     }
-    
-    func removeLoadingView(var spinner: UIActivityIndicatorView) {
-        spinner.removeFromSuperview()
-        spinner.delete(self)
-        view.userInteractionEnabled = true
-    }
 }

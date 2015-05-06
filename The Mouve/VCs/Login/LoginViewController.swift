@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
 
 
     @IBAction func loginButtonWasHit(sender: AnyObject) {
+        view.userInteractionEnabled = false
         let loadingSpinnerView = addLoadingView()
         view.addSubview(loadingSpinnerView)
         
@@ -39,7 +40,9 @@ class LoginViewController: UIViewController {
                         appDel.checkLogin()
                     } else {
                         if let error = error {
-                            self.removeLoadingView(loadingSpinnerView)
+                            loadingSpinnerView.removeFromSuperview()
+                            self.view.userInteractionEnabled = true
+                            
                             let errorString = error.userInfo?["error"] as? NSString
                             self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
                         }
@@ -47,7 +50,9 @@ class LoginViewController: UIViewController {
                 })
             } else {
                 if let error = error {
-                    self.removeLoadingView(loadingSpinnerView)
+                    loadingSpinnerView.removeFromSuperview()
+                    self.view.userInteractionEnabled = true
+                    
                     self.presentViewController(UIAlertController(title: "Uh oh", message: error.localizedDescription), animated: true, completion: nil)
                 }
             }

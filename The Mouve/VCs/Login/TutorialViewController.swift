@@ -22,8 +22,10 @@ class TutorialViewController: UIViewController {
         super.viewDidAppear(false)
         
         let imageSize = CGSize(width: self.view.bounds.width, height: self.view.bounds.height + 50)
+                
+        let originX = UIDevice.currentDevice().model == "iPad" ? 0 : 15
         
-        let backgroundImage = UIImageView(frame: CGRect(origin: CGPoint(x: 15, y: 0), size: imageSize))
+        let backgroundImage = UIImageView(frame: CGRect(origin: CGPoint(x: originX, y: 0), size: imageSize))
         backgroundImage.image = pageImage
         backgroundImage.contentMode = .ScaleAspectFill
         
