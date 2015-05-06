@@ -10,7 +10,7 @@ import UIKit
 import Toucan
 
 class ProfileViewController: UIViewController, UITableViewDelegate {
-    let offset_HeaderStop:CGFloat = 85 // At this offset the Header stops its transformations
+    let offset_HeaderStop:CGFloat = 200 // At this offset the Header stops its transformations
     let offset_B_LabelHeader:CGFloat = 80 // At this offset the Black label reaches the Header
     let distance_W_LabelHeader:CGFloat = 35 // The distance between the bottom of the Header and the top of the White Label
     
@@ -38,14 +38,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         super.viewDidAppear(animated)
         
         //Header
-        headerImageView = UIImageView(frame: headerView.bounds)
-        headerImageView!.image = UIImage(named: "andrew-pic")
-        headerImageView!.contentMode = .ScaleAspectFill
-        headerView.insertSubview(headerImageView, belowSubview: headerLabel)
+//        headerImageView = UIImageView(frame: headerView.bounds)
+//        headerImageView!.image = UIImage(named: "yoojin-full-pic")
+//        headerImageView!.contentMode = .ScaleAspectFill
+//        headerView.insertSubview(headerImageView, belowSubview: headerLabel)
         
         //Blurred header
         
-        let blurredImage = Toucan(image: UIImage(named: "andrew-pic")!).resize(headerView.frame.size, fitMode: .Crop)
+        let blurredImage = Toucan(image: UIImage(named: "yoojin-full-pic")!).resize(headerView.frame.size, fitMode: .Crop)
         
         
         blurredHeaderImageView = UIImageView(frame: headerView.bounds)

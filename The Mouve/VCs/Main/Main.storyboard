@@ -922,8 +922,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViX-cS-fl9" userLabel="headerView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ViX-cS-fl9" userLabel="headerView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="222"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qi-b6-W0Q">
                                         <rect key="frame" x="279" y="120" width="42" height="21"/>
@@ -935,7 +935,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="4qi-b6-W0Q" firstAttribute="top" secondItem="ViX-cS-fl9" secondAttribute="top" constant="120" id="VLt-9F-LyX"/>
-                                    <constraint firstAttribute="height" constant="140" id="gEa-bX-1Df"/>
+                                    <constraint firstAttribute="height" constant="300" id="gEa-bX-1Df"/>
                                     <constraint firstAttribute="centerX" secondItem="4qi-b6-W0Q" secondAttribute="centerX" id="rpi-G1-tAx"/>
                                 </constraints>
                             </view>
@@ -943,7 +943,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="OFG-QZ-RyK">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yoojin-pic" translatesAutoresizingMaskIntoConstraints="NO" id="J1f-pm-mjf">
@@ -953,14 +953,15 @@
                                                 <constraint firstAttribute="height" constant="76" id="scz-CE-UKd"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN3-Qf-PmD">
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN3-Qf-PmD">
                                             <rect key="frame" x="279" y="134" width="43" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Mqu-WF-u7n">
-                                            <rect key="frame" x="0.0" y="156" width="200" height="44"/>
+                                            <rect key="frame" x="0.0" y="256" width="200" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="6D7-pt-74q"/>
                                             </constraints>
@@ -971,7 +972,8 @@
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="jhF-hL-Hkl">
-                                            <rect key="frame" x="400" y="156" width="200" height="44"/>
+                                            <rect key="frame" x="400" y="256" width="200" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="nmF-Oq-MLc"/>
                                             </constraints>
@@ -982,7 +984,8 @@
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HlO-XT-9yv">
-                                            <rect key="frame" x="200" y="156" width="200" height="44"/>
+                                            <rect key="frame" x="200" y="256" width="200" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="44" id="CZJ-t0-JPG"/>
                                             </constraints>
@@ -996,7 +999,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="centerX" secondItem="J1f-pm-mjf" secondAttribute="centerX" id="1H9-YX-WaE"/>
-                                        <constraint firstAttribute="centerX" secondItem="kN3-Qf-PmD" secondAttribute="centerX" constant="-0.5" id="EBh-hD-wmE"/>
+                                        <constraint firstAttribute="centerX" secondItem="kN3-Qf-PmD" secondAttribute="centerX" id="EBh-hD-wmE"/>
                                         <constraint firstItem="J1f-pm-mjf" firstAttribute="top" secondItem="OFG-QZ-RyK" secondAttribute="top" constant="50" placeholder="YES" id="HPn-Jn-COB"/>
                                         <constraint firstItem="Mqu-WF-u7n" firstAttribute="leading" secondItem="OFG-QZ-RyK" secondAttribute="leading" id="Qxq-7s-fLl"/>
                                         <constraint firstAttribute="bottom" secondItem="jhF-hL-Hkl" secondAttribute="bottom" id="TLs-Dm-m6L"/>

@@ -42,7 +42,7 @@ extension ActivityTableViewController: UITableViewDelegate, UITableViewDataSourc
         
         cell.type = self.type
         if type == .Newsfeed {
-            (cell.calendarButton as! GreyGreenButton).type = .Activity
+            (cell.calendarButton as? GreyGreenButton)?.type = .Activity
         }
         
         return cell
