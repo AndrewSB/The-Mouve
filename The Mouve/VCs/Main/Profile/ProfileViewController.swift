@@ -12,13 +12,17 @@ import Toucan
 class ProfileViewController: UIViewController, UITableViewDelegate {
     let offset_HeaderStop:CGFloat = 200 // At this offset the Header stops its transformations
     let offset_B_LabelHeader:CGFloat = 80 // At this offset the Black label reaches the Header
-    let distance_W_LabelHeader:CGFloat = 35 // The distance between the bottom of the Header and the top of the White Label
+    let distance_W_LabelHeader:CGFloat = 200 // The distance between the bottom of the Header and the top of the White Label
     
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var headerLabel: UILabel!
     var headerImageView: UIImageView!
     var blurredHeaderImageView: UIImageView!
+    
+    @IBOutlet weak var mouveButton: UIButton!
+    @IBOutlet weak var followersButton: UIButton!
+    @IBOutlet weak var followingButton: UIButton!
     
     @IBOutlet weak var profileTableView: UITableView!
     
@@ -29,9 +33,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        profileTableView.dataSource = self
         profileTableView.delegate = self
         
         avatarImage.layer.cornerRadius = avatarImage.frame.width/2
+        
+        for button in [mouveButton, followersButton, followingButton] {
+            button.titleLabel!.textAlignment = .Center
+            button.setTitle("271\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -52,8 +62,13 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         blurredHeaderImageView.image = blurredImage.image
 
         blurredHeaderImageView!.contentMode = UIViewContentMode.ScaleAspectFill
-        blurredHeaderImageView!.alpha = 0.0
+        blurredHeaderImageView!.alpha = 1.0
         headerView.insertSubview(blurredHeaderImageView, belowSubview: headerLabel)
+        
+        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+        blurView.frame = blurredHeaderImageView.frame
+        
+        blurredHeaderImageView.addSubview(blurView)
         
         headerView.clipsToBounds = true
     }
@@ -61,18 +76,42 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 20
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
         
-        cell.textLabel?.text = "dsad"
+        
         return cell
     }
     
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 0 : 4
+    }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 130
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 0 {
+            return nil
+        }
+        let v = UIView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 4))
+        v.backgroundColor = UIColor.whiteColor()
+        
+        return v
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 0
+    }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         var offset = scrollView.contentOffset.y
@@ -98,12 +137,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             
             //  ------------ Label
             
-            let labelTransform = CATransform3DMakeTranslation(0, max(-distance_W_LabelHeader, offset_B_LabelHeader - offset), 0)
-            headerLabel.layer.transform = labelTransform
+//            let labelTransform = CATransform3DMakeTranslation(0, max(-distance_W_LabelHeader, offset_B_LabelHeader - offset), 0)
+//            headerLabel.layer.transform = labelTransform
             
             //  ------------ Blur
             
-            blurredHeaderImageView?.alpha = min (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
+            blurredHeaderImageView?.alpha = max (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
             
             // Avatar -----------
             

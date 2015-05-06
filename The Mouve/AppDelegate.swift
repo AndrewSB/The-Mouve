@@ -33,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
         window!.makeKeyAndVisible()
         
+        changeNavBar()
+        
         return true
     }
 
@@ -63,7 +65,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     func changeNavBar() {
-        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont(name: "HalisGR-Regular", size: 16)!, NSForegroundColorAttributeName : UIColor.blackColor()]
+        UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont(name: "HalisGR-Regular", size: 14)!, NSForegroundColorAttributeName : UIColor.blackColor()]
     }
     
     func checkLogin() {

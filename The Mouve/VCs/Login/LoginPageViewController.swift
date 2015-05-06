@@ -17,7 +17,7 @@ class LoginPageViewController: UIPageViewController {
         }
     }
     
-    let pageTitles = ["Simply add the details and show case your event. It’s that simple.", "Discover events that are happening around you", "Create and attend events in a 24 hour period"]
+    let pageTitles = ["Discover events that are happening around you", "Create and attend events in a 24 hour period", "Simply add the details and show case your event. It’s that simple."]
     let pageImages = [UIImage(named: "background-1"), UIImage(named: "background-2"), UIImage(named: "background-3")]
     
     var pageControl: UIPageControl?
@@ -36,8 +36,16 @@ class LoginPageViewController: UIPageViewController {
         
         self.view.addSubview(pageControl!)
         
+        
         let startingViewController = (viewControllerAtIndex(0) as TutorialViewController!)
         self.setViewControllers([startingViewController], direction: .Forward, animated: true, completion: nil)
+        
+        
+        let signUpButton = startingViewController.signUpButton
+        let loginButton = startingViewController.loginButton
+        
+        view.addSubview(signUpButton)
+        view.addSubview(loginButton)
     }
 
     func viewControllerAtIndex(index: Int) -> TutorialViewController? {

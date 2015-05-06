@@ -17,14 +17,14 @@ extension DetailViewController { // View code and actions
         headerView.addSubview(headerImageView!)
         
         //Blurred header
-        let blurredImage = Toucan(image: UIImage(named: "andrew-pic")!).resize(headerView.frame.size, fitMode: .Crop)
-        
-        blurredHeaderImageView = UIImageView(frame: headerView.bounds)
-        blurredHeaderImageView!.image = blurredImage.image
-        
-        blurredHeaderImageView!.contentMode = UIViewContentMode.ScaleAspectFill
-        blurredHeaderImageView!.alpha = 0.5
-        headerView.addSubview(blurredHeaderImageView!)
+//        let blurredImage = Toucan(image: UIImage(named: "andrew-pic")!).resize(headerView.frame.size, fitMode: .Crop)
+//        
+//        blurredHeaderImageView = UIImageView(frame: headerView.bounds)
+//        blurredHeaderImageView!.image = blurredImage.image
+//        
+//        blurredHeaderImageView!.contentMode = UIViewContentMode.ScaleAspectFill
+//        blurredHeaderImageView!.alpha = 0.5
+//        headerView.addSubview(blurredHeaderImageView!)
         
         headerView.clipsToBounds = true
         
@@ -62,7 +62,7 @@ extension DetailViewController { // View code and actions
             headerTransform = CATransform3DTranslate(headerTransform, 0, max(-offset_HeaderStop, -offset), 0)
             
             //  ------------ Blur
-            blurredHeaderImageView?.alpha = min (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
+//            blurredHeaderImageView?.alpha = min (1.0, (offset - offset_B_LabelHeader)/distance_W_LabelHeader)
         }
         
         // Apply Transformations

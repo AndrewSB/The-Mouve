@@ -20,7 +20,7 @@ class TheScenePageViewController: UIPageViewController {
         LocalMessage.observe(.HomeTitlePageOne, classFunction: "pageOne", inClass: self)
         LocalMessage.observe(.HomeTitlePageTwo, classFunction: "pageTwo", inClass: self)
         
-        navigationItem.titleView = SceneTitleView(type: .Explore, frame: CGRect(x: 0, y: 0, width: 180, height: 44))
+        navigationItem.titleView = SceneTitleView(type: .Explore, frame: CGRect(x: 0, y: 0, width: 140, height: 44))
 
         pageViewControllerDidLoad()
     }
