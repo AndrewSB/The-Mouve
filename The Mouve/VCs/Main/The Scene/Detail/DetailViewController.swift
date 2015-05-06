@@ -12,6 +12,9 @@ import Toucan
 class DetailViewController: UIViewController {
     var event: Event!
     
+    let tableViewImages = [UIImage(named: "chelsea-pic"), UIImage(named: "noah-pic"), UIImage(named: "taylor-pic"), UIImage(named: "chelsea-pic"), UIImage(named: "chelsea-pic")]
+    let tableViewData = ["@troy posted a picture from the event on facebook and twitter.", "@noah There is still lots of food left!", "@tay posted a picture from the event on facebook and twitter.", "@chelsea this party is bumpin’"]
+    
     
     @IBOutlet weak var backButton: UIButton!
     
@@ -44,6 +47,7 @@ class DetailViewController: UIViewController {
         styleHeader()
         styleViewProgrammatically()
         tableViewDidLoad()
+        collectionViewDidLoad()
         
         
         headerImageView?.image = event.backgroundImage
@@ -75,12 +79,30 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! DetailPostTableViewCell
         
-        cell.textLabel?.text = "sup"
+        cell.textLabel?.text = tableViewData[indexPath.row]
+        cell.imageView?.image = tableViewImages[indexPath.row]
         
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return tableViewData.count
+    }
+}
+
+extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionViewDidLoad() {
+        photoCollectionView.delegate = self
+        photoCollectionView.dataSource = self
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellID", forIndexPath: indexPath) as! UICollectionViewCell
+        
+        return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
     }
 }

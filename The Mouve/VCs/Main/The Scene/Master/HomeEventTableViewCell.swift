@@ -20,6 +20,13 @@ class HomeEventTableViewCell: UITableViewCell {
             distanceLabel.text = "3.4 miles"
             
             backgroundImageView.image = event.backgroundImage
+            
+            let array = [UIImage(named: "yoojin-pic"),UIImage(named: "noah-pic"),UIImage(named: "chelsea-pic"),UIImage(named: "andrew-pic")]
+            
+            profileImageView.image = array[Int(arc4random_uniform(UInt32(array.count)))]
+            
+            profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
+            profileImageView.clipsToBounds = true
         }
     }
     

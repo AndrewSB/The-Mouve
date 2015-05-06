@@ -14,8 +14,8 @@ extension DetailViewController { // View code and actions
         headerImageView = UIImageView(frame: headerView.bounds)
         headerImageView!.image = UIImage(named: "list-background")
         headerImageView!.contentMode = .ScaleAspectFill
-        headerView.addSubview(headerImageView!)
-        
+        headerView.insertSubview(headerImageView!, atIndex: 0)
+            
         //Blurred header
 //        let blurredImage = Toucan(image: UIImage(named: "andrew-pic")!).resize(headerView.frame.size, fitMode: .Crop)
 //        
@@ -32,7 +32,8 @@ extension DetailViewController { // View code and actions
     }
     
     func styleViewProgrammatically() {
-        tableViewHeaderView.frame.size.height = addPostButton.frame.origin.y + addPostButton.frame.height
+        tableViewHeaderView.frame.size.height = addPostButton.frame.origin.y + addPostButton.frame.height + 40
+        addPostButton.layer.cornerRadius = 10
         
         [calendarButton, shareButton, bookmarkButton].map({
             $0.type = .Detail
@@ -40,9 +41,9 @@ extension DetailViewController { // View code and actions
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let offset_HeaderStop:CGFloat = 400 // At this offset the Header stops its transformations
-        let offset_B_LabelHeader:CGFloat = 400 // At this offset the Black label reaches the Header
-        let distance_W_LabelHeader:CGFloat = 400 // The distance between the bottom of the Header and the top of the White Label
+        let offset_HeaderStop:CGFloat = 70 // At this offset the Header stops its transformations
+        let offset_B_LabelHeader:CGFloat = 44 // At this offset the Black label reaches the Header
+        let distance_W_LabelHeader:CGFloat = 35 // The distance between the bottom of the Header and the top of the White Label
         
         var offset = scrollView.contentOffset.y
         var headerTransform = CATransform3DIdentity

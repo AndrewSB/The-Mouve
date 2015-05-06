@@ -12,8 +12,8 @@ class ActivityTableViewController: UIViewController {
     var type: SceneType!
     @IBOutlet weak var feedTableView: UITableView!
     
-    let labelData = ["adas", "sadas", "adsa", "htew", "gth"]
-    let imageData = ["andrew-pic", "yoojin-pic", "chelea-pic", "noah-pic", "taylor-pic"]
+    let labelData = ["you went to this event!", "you've been invited to espresso lessons", "chelsea liked your photo", "noah is attending surf lessons", "taylor sent you a PM"]
+    let imageData = ["andrew-pic", "yoojin-pic", "chelsea-pic", "noah-pic", "taylor-pic"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +39,9 @@ extension ActivityTableViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! ActivityTableViewCell
+        
+        cell.attributedLabel.text = labelData[indexPath.row]
+        cell.profileImageView.image = UIImage(named: imageData[indexPath.row])
         
         cell.type = self.type
         if type == .Newsfeed {
