@@ -39,13 +39,6 @@ class LoginPageViewController: UIPageViewController {
         
         let startingViewController = (viewControllerAtIndex(0) as TutorialViewController!)
         self.setViewControllers([startingViewController], direction: .Forward, animated: true, completion: nil)
-        
-        
-        let signUpButton = startingViewController.signUpButton
-        let loginButton = startingViewController.loginButton
-        
-        view.addSubview(signUpButton)
-        view.addSubview(loginButton)
     }
 
     func viewControllerAtIndex(index: Int) -> TutorialViewController? {

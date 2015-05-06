@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class Event: BaseParseObject {
+class Event: BaseObject {
     var name: String
     
     var time: NSDate
@@ -22,6 +22,8 @@ class Event: BaseParseObject {
     
     var invitees: [String]
     
+    var backgroundImage: UIImage
+    
     
     var timeTillEvent: NSTimeInterval {
         get {
@@ -32,7 +34,7 @@ class Event: BaseParseObject {
         }
     }
     
-    init(name: String, about: String, time: NSDate, length: NSTimeInterval, addressString: String, invitees: [String]) {
+    init(name: String, about: String, time: NSDate, length: NSTimeInterval, addressString: String, invitees: [String], backgroundImage: UIImage) {
         self.name = name
         self.about = about
         
@@ -42,6 +44,8 @@ class Event: BaseParseObject {
         self.addressString = addressString
         self.invitees = invitees
         
-        super.init(parseObject: PFObject(className: "Event"))
+        self.backgroundImage = backgroundImage
+        
+        super.init(className: "User")
     }
 }

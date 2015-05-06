@@ -8,8 +8,7 @@
 
 import UIKit
 
-let data = ["people", "will", "go"]
-let otherData = ["out", "to", "shit"]
+let data = [Event(name: "Beach Chillin", about: "Bring your swim suits! We will be chilling at the Lincoln Park Beach", time: NSDate(), length: 0, addressString: "Lincoln Beach", invitees: [43,43,43,43,43,43,4,3,4,343,43,34].map({"\($0)"}), backgroundImage: UIImage(named: "Beach-Chillin")!), Event(name: "Coffee Hour", about: "Let’s grab cup of coffee and discuss about fun things!", time: NSDate(), length: 3, addressString: "Cafe Kopi", invitees: [43,43,43,43,43,43,4,3,4,343,43,34].map({"\($0)"}), backgroundImage: UIImage(named: "Coffee-Hour")!)]
 
 class SceneFeedViewController: UIViewController {
     var type: SceneType!
@@ -40,7 +39,7 @@ class SceneFeedViewController: UIViewController {
 
 extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 20
+        return data.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,6 +49,7 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
         
+        cell.event = data[indexPath.section]
         
         return cell
     }
@@ -67,4 +67,12 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func unwindToHomeFeed(segue: UIStoryboardSegue) {}
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: self)
+        
+        if let des = segue.destinationViewController as? DetailViewController {
+            des.event = data[0]
+        }
+    }
 }

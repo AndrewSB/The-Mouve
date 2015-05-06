@@ -10,6 +10,9 @@ import UIKit
 import Toucan
 
 class DetailViewController: UIViewController {
+    var event: Event!
+    
+    
     @IBOutlet weak var backButton: UIButton!
     
     @IBOutlet weak var headerView: UIView!
@@ -41,6 +44,15 @@ class DetailViewController: UIViewController {
         styleHeader()
         styleViewProgrammatically()
         tableViewDidLoad()
+        
+        
+        headerImageView?.image = event.backgroundImage
+        blurredHeaderImageView?.image = event.backgroundImage
+        eventNameLabel.text = event.name
+        descriptionLabel.text = event.about
+        
+        addressButton.titleLabel?.text = event.addressString
+        inviteButton.titleLabel?.text = "\(event.invitees.count) Invited"
     }
     
     override func viewWillAppear(animated: Bool) {

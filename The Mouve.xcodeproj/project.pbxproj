@@ -83,6 +83,8 @@
 		46B888CF1AF9552400D872E0 /* Toucan.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4673C1321AF6CA36000C034A /* Toucan.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46B888D11AF95CD400D872E0 /* AddMouveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */; };
 		46B888D31AF9712F00D872E0 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888D21AF9712F00D872E0 /* ActivityTableViewCell.swift */; };
+		46C7AAB21AF9FBF9006B361E /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */; };
+		46C7AAB41AF9FEA1006B361E /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7AAB31AF9FEA1006B361E /* ArrayExtension.swift */; };
 		46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */; };
 		46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */; };
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
@@ -182,6 +184,8 @@
 		46B888C71AF9501300D872E0 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExtension.swift; sourceTree = "<group>"; };
 		46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMouveViewController.swift; path = "The Mouve/VCs/Main/The Scene/AddMouveViewController.swift"; sourceTree = SOURCE_ROOT; };
 		46B888D21AF9712F00D872E0 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		46C7AAB31AF9FEA1006B361E /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -315,11 +319,13 @@
 			children = (
 				468D216B1AF0870000CE6E19 /* Helper */,
 				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
+				46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */,
 				46B888C71AF9501300D872E0 /* BoolExtension.swift */,
 				460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */,
 				46042E561AEA1F6900089A5A /* UIColorExtension.swift */,
 				46042E581AEA230300089A5A /* UIViewExtension.swift */,
 				462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */,
+				46C7AAB31AF9FEA1006B361E /* ArrayExtension.swift */,
 				4673C10D1AF6B781000C034A /* FacebookIDExtension.swift */,
 			);
 			path = Extension;
@@ -650,11 +656,13 @@
 				46B888C41AF94C3E00D872E0 /* GreyGreenButton.swift in Sources */,
 				462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */,
 				46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */,
+				46C7AAB21AF9FBF9006B361E /* NSDateExtension.swift in Sources */,
 				46042E571AEA1F6900089A5A /* UIColorExtension.swift in Sources */,
 				46B888C81AF9501300D872E0 /* BoolExtension.swift in Sources */,
 				468D21671AF085B300CE6E19 /* BaseParseObject.swift in Sources */,
 				46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */,
 				46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */,
+				46C7AAB41AF9FEA1006B361E /* ArrayExtension.swift in Sources */,
 				462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */,
 				468D21631AF0829C00CE6E19 /* SettingsTableViewController.swift in Sources */,
 				460FF5091AF87EA7007C6872 /* DetailViewController.swift in Sources */,

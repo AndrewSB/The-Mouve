@@ -6,9 +6,23 @@
 //  Copyright (c) 2015 Andrew Breckenridge. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
 class HomeEventTableViewCell: UITableViewCell {
+    var event: Event! {
+        didSet {
+            nameLabel.text = event.name
+            descriptionLabel.text = event.about
+            
+            dateAndTimeLabel.text = "9pm-5pm"
+            
+            distanceLabel.text = "3.4 miles"
+            
+            backgroundImageView.image = event.backgroundImage
+        }
+    }
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var dateAndTimeLabel: UILabel!
@@ -32,7 +46,7 @@ class HomeEventTableViewCell: UITableViewCell {
         blurEffectView.frame = backgroundImageView.frame
 //        blurEffectView.alpha = 0.85
         
-        backgroundImageView.addSubview(blurEffectView)
+       // backgroundImageView.addSubview(blurEffectView)
     
     }
     
