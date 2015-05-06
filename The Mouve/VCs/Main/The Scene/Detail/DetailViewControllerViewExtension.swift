@@ -23,12 +23,12 @@ extension DetailViewController { // View code and actions
         blurredHeaderImageView!.image = blurredImage.image
         
         blurredHeaderImageView!.contentMode = UIViewContentMode.ScaleAspectFill
-        blurredHeaderImageView!.alpha = 0.0
+        blurredHeaderImageView!.alpha = 0.5
         headerView.addSubview(blurredHeaderImageView!)
         
         headerView.clipsToBounds = true
         
-        backButton.bringSubviewToFront(self.view)
+        backButton.bringSubviewToFront(view)
     }
     
     func styleViewProgrammatically() {
@@ -40,9 +40,9 @@ extension DetailViewController { // View code and actions
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let offset_HeaderStop:CGFloat = 85 // At this offset the Header stops its transformations
-        let offset_B_LabelHeader:CGFloat = 80 // At this offset the Black label reaches the Header
-        let distance_W_LabelHeader:CGFloat = 35 // The distance between the bottom of the Header and the top of the White Label
+        let offset_HeaderStop:CGFloat = 400 // At this offset the Header stops its transformations
+        let offset_B_LabelHeader:CGFloat = 400 // At this offset the Black label reaches the Header
+        let distance_W_LabelHeader:CGFloat = 400 // The distance between the bottom of the Header and the top of the White Label
         
         var offset = scrollView.contentOffset.y
         var headerTransform = CATransform3DIdentity
