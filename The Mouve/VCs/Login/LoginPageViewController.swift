@@ -9,56 +9,61 @@
 import UIKit
 
 class LoginPageViewController: UIPageViewController {
-    var currentIndex: Int = Int()
+    var pageControl: UIPageControl?
 
-    var showingIndex: Int = Int() {
-        didSet {
-            pageControl?.currentPage = showingIndex
-        }
+    var showingIndex: Int! {
+        didSet { pageControl?.currentPage = showingIndex }
     }
     
     let pageTitles = ["Discover events that are happening around you", "Create and attend events in a 24 hour period", "Simply add the details and show case your event. It’s that simple."]
     let pageImages = [UIImage(named: "background-1"), UIImage(named: "background-2"), UIImage(named: "background-3")]
     
-    var pageControl: UIPageControl?
-    
-    var pageViews = [TutorialViewController]()
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.dataSource = self
-        self.delegate = self
         
-        self.pageControl = UIPageControl(frame: CGRect.CreateRectInCenterOfView(self.view, height: 22, width: 40))
+        pageViewControllerDidLoad()
+        addStaticViewElements()
+    }
+    
+    
+    func addStaticViewElements() {
+        self.pageControl = UIPageControl(frame: CGRect(view: view, height: 22, width: 44))
         pageControl!.numberOfPages = 3
         pageControl!.currentPage = 0
         
+        let mouveImageView = UIImageView(frame: CGRect(view: view, height: 44, width: 38))
+        mouveImageView.frame.origin.y += 50
+        mouveImageView.image = UIImage(named: "mouve-icon")
+        
+        let loginButton = UIButton(frame: CGRect(view: view, height: 44, width: 38))
+        let signupButton = UIButton(frame: CGRect(view: view, height: 44, width: 38))
+        
         self.view.addSubview(pageControl!)
-        
-        
-        let startingViewController = (viewControllerAtIndex(0) as TutorialViewController!)
-        self.setViewControllers([startingViewController], direction: .Forward, animated: true, completion: nil)
-        
-        let childView = UIStoryboard(name: "Login", bundle: nil).instantiateViewControllerWithIdentifier("TutorialControllerController") as! TutorialViewControllerController
-
-        self.view.addSubview(childView.view)
-    }
-
-    func viewControllerAtIndex(index: Int) -> TutorialViewController? {
-        let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewControllerWithIdentifier("tutorialPageVC") as! TutorialViewController
-        
-        currentIndex = index
-        vc.pageIndex = currentIndex
-        
-        vc.title = pageTitles[currentIndex]
-        vc.pageImage = pageImages[currentIndex]!
-        
-        return vc
+        self.view.addSubview(mouveImageView)
     }
 }
 
 extension LoginPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+    func pageViewControllerDidLoad() {
+        self.dataSource = self
+        self.delegate = self
+        
+        let startingViewController = (viewControllerAtIndex(0) as TutorialViewController!)
+        self.setViewControllers([startingViewController], direction: .Forward, animated: true, completion: nil)
+    }
+    
+    func viewControllerAtIndex(index: Int) -> TutorialViewController? {
+        let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewControllerWithIdentifier("tutorialPageVC") as! TutorialViewController
+        
+        showingIndex = index
+        vc.pageIndex = showingIndex
+        
+        vc.title = pageTitles[showingIndex]
+        vc.pageImage = pageImages[showingIndex]!
+        
+        return vc
+    }
+
     
     /*
         Data Source
