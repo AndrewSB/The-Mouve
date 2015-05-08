@@ -39,6 +39,10 @@ class LoginPageViewController: UIPageViewController {
         
         let startingViewController = (viewControllerAtIndex(0) as TutorialViewController!)
         self.setViewControllers([startingViewController], direction: .Forward, animated: true, completion: nil)
+        
+        let childView = UIStoryboard(name: "Login", bundle: nil).instantiateViewControllerWithIdentifier("TutorialControllerController") as! TutorialViewControllerController
+
+        self.view.addSubview(childView.view)
     }
 
     func viewControllerAtIndex(index: Int) -> TutorialViewController? {

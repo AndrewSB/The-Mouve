@@ -7,13 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class TutorialViewController: UIViewController {
     @IBOutlet weak var pageLabel: UILabel!
-    
-    @IBOutlet weak var signUpButton: UIButton!
-    @IBOutlet weak var loginButton: UIButton!
-    
+        
     var pageImage: UIImage = UIImage()
     var pageIndex: Int = Int()
     
@@ -32,20 +30,8 @@ class TutorialViewController: UIViewController {
         self.view.insertSubview(backgroundImage, atIndex: 0)
         
         pageLabel.text = title
-        
-        signUpButton.layer.cornerRadius = 6
-        loginButton.layer.cornerRadius = 6
-        loginButton.layer.borderColor = UIColor.seaFoamGreen().CGColor
-        loginButton.layer.borderWidth = 1
-        
-        self.automaticallyAdjustsScrollViewInsets = false
-    }
-
-    
-    @IBAction func signUpButtonWasHit(sender: AnyObject) {
-    }
-    
-    @IBAction func loginButtonWasHit(sender: AnyObject) {
+        pageLabel.frame.origin.x = 44
+        pageLabel.frame.size.width = view.bounds.width - 88
     }
     
     @IBAction func unwindToTutorialVC(segue: UIStoryboardSegue) {}

@@ -79,10 +79,14 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! DetailPostTableViewCell
         
-        cell.textLabel?.text = tableViewData[indexPath.row]
-        cell.imageView?.image = tableViewImages[indexPath.row]
+        cell.attributedLabel.text = tableViewData[indexPath.row]
+        cell.profileImageView.image = tableViewImages[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 44
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

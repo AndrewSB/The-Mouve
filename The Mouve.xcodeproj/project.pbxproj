@@ -44,6 +44,7 @@
 		468D21631AF0829C00CE6E19 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D21621AF0829C00CE6E19 /* SettingsTableViewController.swift */; };
 		468D21671AF085B300CE6E19 /* BaseParseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D21661AF085B300CE6E19 /* BaseParseObject.swift */; };
 		468D21691AF0864C00CE6E19 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468D21681AF0864C00CE6E19 /* Event.swift */; };
+		469C04F81AFAD01700859B52 /* TutorialViewControllerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C04F71AFAD01700859B52 /* TutorialViewControllerController.swift */; };
 		469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */; };
 		469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */; };
 		469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */; };
@@ -145,6 +146,7 @@
 		468D21621AF0829C00CE6E19 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		468D21661AF085B300CE6E19 /* BaseParseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseParseObject.swift; sourceTree = "<group>"; };
 		468D21681AF0864C00CE6E19 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		469C04F71AFAD01700859B52 /* TutorialViewControllerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewControllerController.swift; sourceTree = "<group>"; };
 		469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGGeometeryExtension.swift; sourceTree = "<group>"; };
 		469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Medium.otf"; sourceTree = "<group>"; };
 		469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Book.otf"; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 			children = (
 				46B29BC31ADB219C000B9441 /* Login.storyboard */,
 				46B29BC41ADB219C000B9441 /* LoginPageViewController.swift */,
+				469C04F71AFAD01700859B52 /* TutorialViewControllerController.swift */,
 				46B29BC51ADB219C000B9441 /* TutorialViewController.swift */,
 				46AFB3641AF86C9A004D121A /* LoginViewController.swift */,
 				46AFB3661AF86CA1004D121A /* SignupViewController.swift */,
@@ -648,6 +651,7 @@
 				46B888D11AF95CD400D872E0 /* AddMouveViewController.swift in Sources */,
 				46B29BCA1ADB219C000B9441 /* LoginPageViewController.swift in Sources */,
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
+				469C04F81AFAD01700859B52 /* TutorialViewControllerController.swift in Sources */,
 				468D21691AF0864C00CE6E19 /* Event.swift in Sources */,
 				460FF5021AF87443007C6872 /* UIAlertControllerExtension.swift in Sources */,
 				466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */,

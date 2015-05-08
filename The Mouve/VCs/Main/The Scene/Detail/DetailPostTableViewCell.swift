@@ -9,5 +9,7 @@
 import UIKit
 
 class DetailPostTableViewCell: UITableViewCell {
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var attributedLabel: UILabel!
 
 }

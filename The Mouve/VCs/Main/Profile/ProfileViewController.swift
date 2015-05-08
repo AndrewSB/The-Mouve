@@ -91,8 +91,6 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        performSegueWithIdentifier("segueToDetail", sender: data[indexPath.section])
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

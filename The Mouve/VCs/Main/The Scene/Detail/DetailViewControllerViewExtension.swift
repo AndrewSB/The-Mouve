@@ -41,12 +41,14 @@ extension DetailViewController { // View code and actions
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let offset_HeaderStop:CGFloat = 70 // At this offset the Header stops its transformations
-        let offset_B_LabelHeader:CGFloat = 44 // At this offset the Black label reaches the Header
-        let distance_W_LabelHeader:CGFloat = 35 // The distance between the bottom of the Header and the top of the White Label
+        let offset_HeaderStop:CGFloat = 113 // At this offset the Header stops its transformations
+        let offset_B_LabelHeader:CGFloat = 113 // At this offset the Black label reaches the Header
+        let distance_W_LabelHeader:CGFloat = 97 // The distance between the bottom of the Header and the top of the White Label
         
         var offset = scrollView.contentOffset.y
         var headerTransform = CATransform3DIdentity
+        
+        println(offset)
         
         if offset < 0 { // PULL DOWN
             

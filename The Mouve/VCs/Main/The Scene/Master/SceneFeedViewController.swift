@@ -48,6 +48,8 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        performSegueWithIdentifier("segueToDetail", sender: data[indexPath.section])
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -70,4 +72,13 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
         return 0
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
+        if let des = segue.destinationViewController as? DetailViewController {
+            des.event = sender as! Event
+        }
+    }
+
+    @IBAction func unwindToTutorialVC(segue: UIStoryboardSegue) {}
 }
