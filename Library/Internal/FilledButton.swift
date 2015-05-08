@@ -14,7 +14,9 @@ class FilledButton: UIButton {
         
         self.layer.cornerRadius = 6
         self.backgroundColor = color
+        
         self.titleLabel?.textColor = UIColor.whiteColor()
+        self.titleLabel?.font = UIFont(name: "HalisGR-Regular", size: 16)
     }
     
     override init(frame: CGRect) {

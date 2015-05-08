@@ -15,11 +15,17 @@ class OutlinedButton: UIButton {
         self.layer.cornerRadius = 6
         self.layer.borderColor = color.CGColor
         self.layer.borderWidth = 4
+        
+        self.backgroundColor = UIColor.clearColor()
+        
         self.titleLabel?.textColor = color
+        self.titleLabel?.font = UIFont(name: "HalisGR-Regular", size: 16)
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.titleLabel?.text = "342"
+        
     }
 
     required init(coder aDecoder: NSCoder) {

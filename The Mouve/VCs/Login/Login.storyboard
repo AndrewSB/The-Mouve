@@ -55,9 +55,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="p91-Ku-kio" firstAttribute="leading" secondItem="xFP-NZ-TZm" secondAttribute="leadingMargin" constant="44" placeholder="YES" id="Nhv-0D-Pul"/>
+                            <constraint firstItem="p91-Ku-kio" firstAttribute="leading" secondItem="xFP-NZ-TZm" secondAttribute="leadingMargin" constant="44" id="Nhv-0D-Pul"/>
                             <constraint firstItem="RLU-KV-b8N" firstAttribute="top" secondItem="p91-Ku-kio" secondAttribute="bottom" constant="43" id="RGc-0g-be5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="p91-Ku-kio" secondAttribute="trailing" constant="44" placeholder="YES" id="XxT-CJ-j7w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p91-Ku-kio" secondAttribute="trailing" constant="44" id="XxT-CJ-j7w"/>
                             <constraint firstAttribute="centerY" secondItem="RLU-KV-b8N" secondAttribute="centerY" id="h6R-wx-45c"/>
                             <constraint firstAttribute="centerX" secondItem="RLU-KV-b8N" secondAttribute="centerX" id="r0M-kc-Cpe"/>
                         </constraints>

@@ -12,6 +12,7 @@ import Parse
 class LoginPageViewController: UIPageViewController {
     var pageControl: UIPageControl?
 
+    var currentIndex: Int!
     var showingIndex: Int! {
         didSet { pageControl?.currentPage = showingIndex }
     }
@@ -33,13 +34,19 @@ class LoginPageViewController: UIPageViewController {
         pageControl!.currentPage = 0
         
         let mouveImageView = UIImageView(frame: CGRect(view: view, height: 44, width: 38))
-        mouveImageView.frame.origin.y += 50
+        mouveImageView.frame.origin.y -= 150
         mouveImageView.image = UIImage(named: "mouve-icon")
         
-        let loginButton = OutlinedButton(frame: CGRect(view: view, height: 44, width: 38), color: UIColor.seaFoamGreen())
-        loginButton.addTarget(self, action: Selector("loginButtonWasHit"), forControlEvents: .TouchUpInside)
-        let signupButton = FilledButton(frame: CGRect(view: view, height: 44, width: 38), color: UIColor.seaFoamGreen())
-        signupButton.addTarget(self, action: Selector("signupButtonWasHit"), forControlEvents: .TouchUpInside)
+        let loginButton = OutlinedButton(frame: CGRect(view: view, height: 44, width: 200), color: UIColor.seaFoamGreen())
+        loginButton.addTarget(self, action: Selector("loginButtonWasHit:"), forControlEvents: .TouchUpInside)
+        loginButton.titleLabel?.text = "Login"
+        loginButton.frame.origin.y += (self.view.frame.height / 2) - 20
+        
+        
+        let signupButton = FilledButton(frame: CGRect(view: view, height: 44, width: 200), color: UIColor.seaFoamGreen())
+        signupButton.addTarget(self, action: Selector("signupButtonWasHit:"), forControlEvents: .TouchUpInside)
+        signupButton.titleLabel?.text = "Sign up"
+        signupButton.frame.origin.y += (self.view.frame.height / 2) + 20
         
         self.view.addSubview(pageControl!)
         self.view.addSubview(mouveImageView)
@@ -47,15 +54,15 @@ class LoginPageViewController: UIPageViewController {
         self.view.addSubview(signupButton)
     }
     
-    func loginButtonWasHit(sender: UIButton!) {
+    func loginButtonWasHit(sender: AnyObject) {
         performSegueWithIdentifier("segueToLogin", sender: self)
     }
     
-    func signupButtonWasHit(sender: UIButton!) {
+    func signupButtonWasHit(sender: AnyObject) {
         performSegueWithIdentifier("segueToSignup", sender: self)
     }
     
-    func skipButtonWasHit(sender: UIButton!) {
+    func skipButtonWasHit(sender: AnyObject) {
         PFAnonymousUtils.logInWithBlock {
             (user: PFUser?, error: NSError?) -> Void in
             if error != nil || user == nil {
@@ -81,11 +88,11 @@ extension LoginPageViewController: UIPageViewControllerDataSource, UIPageViewCon
     func viewControllerAtIndex(index: Int) -> TutorialViewController? {
         let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewControllerWithIdentifier("tutorialPageVC") as! TutorialViewController
         
-        showingIndex = index
-        vc.pageIndex = showingIndex
+        currentIndex = index
+        vc.pageIndex = currentIndex
         
-        vc.title = pageTitles[showingIndex]
-        vc.pageImage = pageImages[showingIndex]!
+        vc.title = pageTitles[currentIndex]
+        vc.pageImage = pageImages[currentIndex]!
         
         return vc
     }
