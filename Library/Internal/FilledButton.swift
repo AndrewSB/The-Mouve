@@ -12,8 +12,9 @@ class FilledButton: UIButton {
     convenience init(frame: CGRect, color: UIColor) {
         self.init(frame: frame)
         
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 6
         self.backgroundColor = color
+        self.titleLabel?.textColor = UIColor.whiteColor()
     }
     
     override init(frame: CGRect) {

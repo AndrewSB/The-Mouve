@@ -10,7 +10,6 @@
     <customFonts key="customFonts">
         <mutableArray key="HalisGR-Book.otf">
             <string>HalisGR-Book</string>
-            <string>HalisGR-Book</string>
         </mutableArray>
         <mutableArray key="HalisGR-Regular.otf">
             <string>HalisGR-Regular</string>
@@ -196,7 +195,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vt-vn-Q6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2712" y="809"/>
+            <point key="canvasLocation" x="2898" y="431"/>
         </scene>
         <!--Login Page View Controller-->
         <scene sceneID="5Is-tW-8d8">
@@ -204,6 +203,10 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="qbo-yh-dhS" customClass="LoginPageViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="jnr-77-MOd"/>
+                    <connections>
+                        <segue destination="yBD-hG-2Qi" kind="show" identifier="segueToSignup" id="iis-HU-QLD"/>
+                        <segue destination="Lf3-fd-A0O" kind="show" identifier="segueToLogin" id="fVg-Qx-Ghw"/>
+                    </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ryh-rM-PIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -414,125 +417,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFr-ds-rjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NT4-VP-hXL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3432" y="809"/>
-        </scene>
-        <!--Tutorial View Controller Controller-->
-        <scene sceneID="phy-oF-7AR">
-            <objects>
-                <viewController storyboardIdentifier="TutorialControllerController" automaticallyAdjustsScrollViewInsets="NO" id="bte-Wx-sLB" customClass="TutorialViewControllerController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="DPs-wU-l5s"/>
-                        <viewControllerLayoutGuide type="bottom" id="vdi-oj-1bY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="gDK-Fu-ddS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8X-Z6-MGd">
-                                <rect key="frame" x="300" y="225" width="0.0" height="144"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" id="67Y-sg-WCr"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xhf-8U-jeP">
-                                <rect key="frame" x="300" y="0.0" width="0.0" height="181"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" id="lkI-av-blr"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uDP-iB-j1a">
-                                <rect key="frame" x="245" y="420" width="110" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="acz-Md-ios"/>
-                                    <constraint firstAttribute="width" constant="110" id="ziX-Du-1pb"/>
-                                </constraints>
-                                <state key="normal" title="Log In">
-                                    <color key="titleColor" red="0.4365693927" green="0.93256706" blue="0.72956490519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginButtonWasHit:" destination="bte-Wx-sLB" eventType="touchUpInside" id="qTa-fT-hth"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gl-8O-Mg1">
-                                <rect key="frame" x="245" y="369" width="110" height="36"/>
-                                <color key="backgroundColor" red="0.4365693927" green="0.93256706" blue="0.72956490519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="pEl-gT-sCp"/>
-                                    <constraint firstAttribute="height" constant="36" id="qSL-HP-tpT"/>
-                                </constraints>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="signUpButtonWasHit:" destination="bte-Wx-sLB" eventType="touchUpInside" id="leg-tG-ns0"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mouve-icon" translatesAutoresizingMaskIntoConstraints="NO" id="bM9-fC-Qah">
-                                <rect key="frame" x="281" y="181" width="38" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="43j-Xc-ofy"/>
-                                    <constraint firstAttribute="width" secondItem="bM9-fC-Qah" secondAttribute="height" multiplier="76:88" id="6hw-Ft-Pxj"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kK-45-IJe">
-                                <rect key="frame" x="439" y="565" width="140" height="27"/>
-                                <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="13"/>
-                                <state key="normal" title="Try without an account">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="tryWithoutAnAccountWasHit:" destination="bte-Wx-sLB" eventType="touchUpInside" id="FFG-uC-eJc"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z4l-0Z-aHZ">
-                                <rect key="frame" x="300" y="456" width="0.0" height="144"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" id="nkM-cY-XW3"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="0Gl-8O-Mg1" secondAttribute="centerX" id="5SJ-iW-3Xf"/>
-                            <constraint firstAttribute="centerX" secondItem="bM9-fC-Qah" secondAttribute="centerX" id="ABV-bW-zlY"/>
-                            <constraint firstItem="xhf-8U-jeP" firstAttribute="top" secondItem="gDK-Fu-ddS" secondAttribute="top" id="GU5-wq-tUM"/>
-                            <constraint firstItem="vdi-oj-1bY" firstAttribute="top" secondItem="z4l-0Z-aHZ" secondAttribute="bottom" id="Oew-gu-LIS"/>
-                            <constraint firstItem="bM9-fC-Qah" firstAttribute="top" secondItem="xhf-8U-jeP" secondAttribute="bottom" id="RQe-Ac-XIa"/>
-                            <constraint firstItem="vdi-oj-1bY" firstAttribute="top" secondItem="6kK-45-IJe" secondAttribute="bottom" constant="8" id="bgr-JF-uN9"/>
-                            <constraint firstItem="uDP-iB-j1a" firstAttribute="top" secondItem="0Gl-8O-Mg1" secondAttribute="bottom" constant="15" id="ebW-oe-Gl8"/>
-                            <constraint firstItem="z8X-Z6-MGd" firstAttribute="height" secondItem="xhf-8U-jeP" secondAttribute="height" multiplier="0.8" id="fhB-tE-pMZ"/>
-                            <constraint firstAttribute="centerX" secondItem="z8X-Z6-MGd" secondAttribute="centerX" id="gHm-xg-MCj"/>
-                            <constraint firstItem="z8X-Z6-MGd" firstAttribute="top" secondItem="bM9-fC-Qah" secondAttribute="bottom" id="gc3-QM-avb"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="6kK-45-IJe" secondAttribute="trailing" constant="5" id="jFy-Xk-Sje"/>
-                            <constraint firstAttribute="centerX" secondItem="z4l-0Z-aHZ" secondAttribute="centerX" id="lRH-Bt-xPb"/>
-                            <constraint firstItem="z4l-0Z-aHZ" firstAttribute="top" secondItem="uDP-iB-j1a" secondAttribute="bottom" id="ma3-vE-Zmc"/>
-                            <constraint firstItem="0Gl-8O-Mg1" firstAttribute="top" secondItem="z8X-Z6-MGd" secondAttribute="bottom" id="nq9-9w-KoI"/>
-                            <constraint firstItem="z4l-0Z-aHZ" firstAttribute="height" secondItem="z8X-Z6-MGd" secondAttribute="height" id="s7U-yg-cel"/>
-                            <constraint firstAttribute="centerX" secondItem="uDP-iB-j1a" secondAttribute="centerX" id="sFi-SM-KNx"/>
-                            <constraint firstAttribute="centerX" secondItem="xhf-8U-jeP" secondAttribute="centerX" id="xYR-Zy-HTX"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="pgS-KO-3LF"/>
-                    <connections>
-                        <outlet property="loginButton" destination="uDP-iB-j1a" id="rEK-9t-VpG"/>
-                        <outlet property="signUpButton" destination="0Gl-8O-Mg1" id="F6b-ip-Okq"/>
-                        <segue destination="Lf3-fd-A0O" kind="show" identifier="segueToLogin" id="Khy-JT-oZh"/>
-                        <segue destination="yBD-hG-2Qi" kind="show" identifier="segueToSignup" id="aRM-mV-IbR"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sGt-yl-bkU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2748" y="-5"/>
+            <point key="canvasLocation" x="2898" y="-297"/>
         </scene>
     </scenes>
     <resources>
         <image name="back-button" width="20" height="31"/>
-        <image name="mouve-icon" width="76" height="88"/>
     </resources>
 </document>

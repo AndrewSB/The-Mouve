@@ -12,9 +12,10 @@ class OutlinedButton: UIButton {
     convenience init(frame: CGRect, color: UIColor) {
         self.init(frame: frame)
         
-        self.layer.cornerRadius = 10
+        self.layer.cornerRadius = 6
         self.layer.borderColor = color.CGColor
         self.layer.borderWidth = 4
+        self.titleLabel?.textColor = color
     }
     
     override init(frame: CGRect) {

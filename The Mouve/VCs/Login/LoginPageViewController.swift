@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class LoginPageViewController: UIPageViewController {
     var pageControl: UIPageControl?
@@ -35,13 +36,36 @@ class LoginPageViewController: UIPageViewController {
         mouveImageView.frame.origin.y += 50
         mouveImageView.image = UIImage(named: "mouve-icon")
         
-        let loginButton = UIButton(frame: CGRect(view: view, height: 44, width: 38))
-        let signupButton = UIButton(frame: CGRect(view: view, height: 44, width: 38))
+        let loginButton = OutlinedButton(frame: CGRect(view: view, height: 44, width: 38), color: UIColor.seaFoamGreen())
+        loginButton.addTarget(self, action: Selector("loginButtonWasHit"), forControlEvents: .TouchUpInside)
+        let signupButton = FilledButton(frame: CGRect(view: view, height: 44, width: 38), color: UIColor.seaFoamGreen())
+        signupButton.addTarget(self, action: Selector("signupButtonWasHit"), forControlEvents: .TouchUpInside)
         
         self.view.addSubview(pageControl!)
         self.view.addSubview(mouveImageView)
         self.view.addSubview(loginButton)
         self.view.addSubview(signupButton)
+    }
+    
+    func loginButtonWasHit(sender: UIButton!) {
+        performSegueWithIdentifier("segueToLogin", sender: self)
+    }
+    
+    func signupButtonWasHit(sender: UIButton!) {
+        performSegueWithIdentifier("segueToSignup", sender: self)
+    }
+    
+    func skipButtonWasHit(sender: UIButton!) {
+        PFAnonymousUtils.logInWithBlock {
+            (user: PFUser?, error: NSError?) -> Void in
+            if error != nil || user == nil {
+                println("Anonymous login failed.")
+            } else {
+                appDel.checkLogin()
+                println("Anonymous user logged in.")
+            }
+        }
+
     }
 }
 
