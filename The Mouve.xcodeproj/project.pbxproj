@@ -19,6 +19,8 @@
 		462B68DB1AEC5CF90040C7DD /* NSUserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */; };
 		462B68DD1AEC5D010040C7DD /* NSNotificationCenterHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */; };
 		462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */; };
+		464B2DC71AFD79890095FB83 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B2DC61AFD79890095FB83 /* OutlinedButton.swift */; };
+		464B2DC91AFD79960095FB83 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B2DC81AFD79960095FB83 /* FilledButton.swift */; };
 		466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A35461AF0506900E82FFD /* ProfileViewController.swift */; };
 		4673C10A1AF6A22F000C034A /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4673C1091AF6A22F000C034A /* BaseObject.swift */; };
 		4673C10C1AF6A885000C034A /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4673C10B1AF6A885000C034A /* Aliases.swift */; };
@@ -119,6 +121,8 @@
 		462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUserDefaultHelper.swift; sourceTree = "<group>"; };
 		462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNotificationCenterHelper.swift; sourceTree = "<group>"; };
 		462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		464B2DC61AFD79890095FB83 /* OutlinedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
+		464B2DC81AFD79960095FB83 /* FilledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
 		466A35461AF0506900E82FFD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4673C1091AF6A22F000C034A /* BaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
 		4673C10B1AF6A885000C034A /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				46AB30651AEA0FDA009724A2 /* TitleView */,
 				46AFB3621AF86AD2004D121A /* UnderlinedTextField.swift */,
 				46B888C31AF94C3E00D872E0 /* GreyGreenButton.swift */,
+				464B2DC61AFD79890095FB83 /* OutlinedButton.swift */,
+				464B2DC81AFD79960095FB83 /* FilledButton.swift */,
 			);
 			name = "UI Elements";
 			sourceTree = "<group>";
@@ -636,7 +642,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				46B888C61AF94EE300D872E0 /* DetailViewControllerViewExtension.swift in Sources */,
+				464B2DC91AFD79960095FB83 /* FilledButton.swift in Sources */,
 				46AFB3651AF86C9A004D121A /* LoginViewController.swift in Sources */,
+				464B2DC71AFD79890095FB83 /* OutlinedButton.swift in Sources */,
 				462B68DD1AEC5D010040C7DD /* NSNotificationCenterHelper.swift in Sources */,
 				46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */,
 				462B68DB1AEC5CF90040C7DD /* NSUserDefaultHelper.swift in Sources */,

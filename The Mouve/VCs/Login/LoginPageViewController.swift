@@ -40,6 +40,8 @@ class LoginPageViewController: UIPageViewController {
         
         self.view.addSubview(pageControl!)
         self.view.addSubview(mouveImageView)
+        self.view.addSubview(loginButton)
+        self.view.addSubview(signupButton)
     }
 }
 
