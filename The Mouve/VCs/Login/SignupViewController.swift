@@ -48,8 +48,6 @@ class SignupViewController: UIViewController {
                 if error != nil {
                     self.presentViewController(UIAlertController(title: "Whoops!", message: error!.localizedDescription), animated: true, completion: nil)
                 } else if result.isCancelled {
-                    println(result.description)
-                    println(result.facebookAccessToken)
                     self.presentViewController(UIAlertController(title: "Whoops!", message: "We couldn't access facebook! Did you hit cancel?"), animated: true, completion: nil)
                 } else {
                     FBSDKGraphRequest(graphPath: "email", parameters: nil).startWithCompletionHandler({ (connection, result, error) in
