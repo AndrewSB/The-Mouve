@@ -41,8 +41,22 @@ extension UIViewController { // Remote Loading heloer
 }
 
 extension UIViewController { // Keyboard
+    func setupForEntry(view: UIView) {
+        setupForEntry(view.frame.origin.y + view.frame.height - 224)
+    }
+    
+    private func setupForEntry(offset: CGFloat) {
+        UserDefaults.keyboardOffet = offset
+        setupForEntry()
+    }
+    
+    func setupForEntry() {
+        addTextDismiss()
+        registerForKeyboard()
+    }
+    
     func addTextDismiss() {
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "hideKeyboard:"))
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "hideKeyboard:"))} func hideKeyboard(id: AnyObject) { view.endEditing(true)
     }
     
     func registerForKeyboard() {
@@ -56,15 +70,15 @@ extension UIViewController { // Keyboard
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
     }
     
-    func hideKeyboard(sender: AnyObject) {
-        view.endEditing(true)
-    }
-    
     func keyboardWasShown(id: AnyObject) {
-        println("shown")
+            UIView.animateWithDuration(0.2, animations: {
+                self.view.frame.origin.y -= UserDefaults.keyboardOffet
+            })
     }
     
     func keyboardWillBeHidden(id: AnyObject) {
-        println("will hide")
+            UIView.animateWithDuration(0.2, animations: {
+                self.view.frame.origin.y = 0
+            })
     }
 }

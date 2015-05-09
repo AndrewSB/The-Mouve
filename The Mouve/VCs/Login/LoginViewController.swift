@@ -14,10 +14,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UnderlinedTextField!
 
     @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addTextDismiss()
-                
+        setupForEntry(loginButton)
+        
         loginButton.layer.borderWidth = 2
         loginButton.layer.borderColor = UIColor.seaFoamGreen().CGColor
         loginButton.layer.cornerRadius = 4
@@ -59,6 +61,11 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpButtonWasHit(sender: AnyObject) {
+        var navigationStack = self.navigationController!.viewControllers
+        navigationStack.insert(SignupViewController(), atIndex: navigationStack.count.👎🏽 - 1)
+        self.navigationController!.setViewControllers(navigationStack, animated: true)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func backButtonWasHit(sender: AnyObject) {

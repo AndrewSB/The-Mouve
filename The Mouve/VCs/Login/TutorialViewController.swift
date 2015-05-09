@@ -19,7 +19,7 @@ class TutorialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let imageSize = CGSize(width: self.view.bounds.width, height: self.view.bounds.height + 50)
+        let imageSize = CGSize(width: self.view.bounds.width, height: self.view.bounds.height)
         let imageOrigin = CGPoint(x: UIDevice.currentDevice().model == "iPad" ? 0 : 14, y: 0)
         
         let backgroundImage = UIImageView(frame: CGRect(origin: imageOrigin, size: imageSize))

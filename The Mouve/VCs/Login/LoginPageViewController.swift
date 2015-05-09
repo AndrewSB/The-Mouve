@@ -12,13 +12,12 @@ import Parse
 class LoginPageViewController: UIPageViewController {
     var pageControl: UIPageControl?
 
-    var currentIndex: Int!
+    var viewLoadedIndex: Int!
     var showingIndex: Int! {
         didSet { pageControl?.currentPage = showingIndex }
     }
     
-    let pageTitles = ["Discover events that are happening around you", "Create and attend events in a 24 hour period", "Simply add the details and show case your event. It’s that simple."]
-    let pageImages = [UIImage(named: "background-1"), UIImage(named: "background-2"), UIImage(named: "background-3")]
+    let pageData: [(copy: String, image: String)] = [("Discover events that are happening around you", "background-1"), ("Create and attend events in a 24 hour period", "background-2"), ("Simply add the details and show case your event. It’s that simple.","background-3")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,25 +26,16 @@ class LoginPageViewController: UIPageViewController {
         addStaticViewElements()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        self.navigationController?.navigationBarHidden = true
-    }
-    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
     }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-    }
-    
-    
+}
+
+extension LoginPageViewController { //View code
     func addStaticViewElements() {
         self.pageControl = UIPageControl(frame: CGRect(view: view, height: 22, width: 44))
         pageControl!.numberOfPages = 3
-        pageControl!.currentPage = 0
         
         let mouveImageView = UIImageView(frame: CGRect(view: view, height: 44, width: 38))
         mouveImageView.frame.origin.y -= (self.view.frame.height*3 / 9)
@@ -55,7 +45,6 @@ class LoginPageViewController: UIPageViewController {
         loginButton.addTarget(self, action: Selector("loginButtonWasHit:"), forControlEvents: .TouchUpInside)
         loginButton.setTitle("Login", forState: .Normal)
         loginButton.frame.origin.y += (self.view.frame.height / 4) - 50
-        
         
         let signupButton = FilledButton(frame: CGRect(view: view, height: 36, width: 200), color: UIColor.seaFoamGreen())
         signupButton.addTarget(self, action: Selector("signupButtonWasHit:"), forControlEvents: .TouchUpInside)
@@ -68,14 +57,11 @@ class LoginPageViewController: UIPageViewController {
         skipButton.setTitle("Try without an account", forState: .Normal)
         skipButton.sizeToFit()
         skipButton.frame = CGRect(origin: CGPoint(x: self.view.bounds.width  - skipButton.frame.width - 10, y: self.view.bounds.height - skipButton.frame.height), size: skipButton.frame.size)
-        
         skipButton.addTarget(self, action: Selector("skipButtonWasHit:"), forControlEvents: .TouchUpInside)
         
-        self.view.addSubview(pageControl!)
-        self.view.addSubview(mouveImageView)
-        self.view.addSubview(loginButton)
-        self.view.addSubview(signupButton)
-        self.view.addSubview(skipButton)
+        [pageControl!, mouveImageView, loginButton, signupButton, skipButton].map({
+            self.view.addSubview($0)
+        })
     }
     
     func loginButtonWasHit(sender: AnyObject) {
@@ -88,21 +74,15 @@ class LoginPageViewController: UIPageViewController {
     
     func skipButtonWasHit(sender: AnyObject) {
         let loader = addSpinnerAndStall()
-        PFAnonymousUtils.logInWithBlock {
-            (user: PFUser?, error: NSError?) -> Void in
+        
+        PFAnonymousUtils.logInWithBlock { (user, error) -> Void in
             if error != nil || user == nil {
                 self.presentViewController(UIAlertController(title: "Couldn't anonymously login", message: error!.localizedDescription), animated: true, completion: nil)
-            } else {
-                println("Anonymous user logged in.")
             }
             self.bringAliveAndRemove(loader)
             appDel.checkLogin()
         }
     }
-}
-
-extension LoginPageViewController { //View code
-    
 }
 
 extension LoginPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
@@ -117,11 +97,11 @@ extension LoginPageViewController: UIPageViewControllerDataSource, UIPageViewCon
     func viewControllerAtIndex(index: Int) -> TutorialViewController? {
         let vc = UIStoryboard(name: "Login", bundle: nil).instantiateViewControllerWithIdentifier("tutorialPageVC") as! TutorialViewController
         
-        currentIndex = index
-        vc.pageIndex = currentIndex
+        viewLoadedIndex = index
+        vc.pageIndex = viewLoadedIndex
         
-        vc.title = pageTitles[currentIndex]
-        vc.pageImage = pageImages[currentIndex]!
+        vc.title = pageData[viewLoadedIndex].copy
+        vc.pageImage = UIImage(named: pageData[viewLoadedIndex].image)!
         
         return vc
     }
@@ -131,34 +111,24 @@ extension LoginPageViewController: UIPageViewControllerDataSource, UIPageViewCon
         Data Source
     */
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as! TutorialViewController).pageIndex
+        let pageIndex = (viewController as! TutorialViewController).pageIndex
         
-        switch index {
-        case 0:
-            return nil
-        case NSNotFound:
-            fatalError("NSNotFound")
-        case pageTitles.count...Int.max-1:
-            return nil
+        switch pageIndex {
+        case 1..<pageData.count.👎🏽:
+            return viewControllerAtIndex(pageIndex - 1)
         default:
-            index--
-            return viewControllerAtIndex(index)
+            return nil
         }
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        var index = (viewController as! TutorialViewController).pageIndex
-        index++
+        let pageIndex = (viewController as! TutorialViewController).pageIndex
         
-        switch index {
-        case 0:
-            return nil
-        case NSNotFound:
-            fatalError("NSNotFound")
-        case pageTitles.count...Int.max-1:
-            return nil
+        switch pageIndex {
+        case 0..<pageData.count.👎🏽:
+            return viewControllerAtIndex(pageIndex + 1)
         default:
-            return viewControllerAtIndex(index)
+            return nil
         }
     }
     

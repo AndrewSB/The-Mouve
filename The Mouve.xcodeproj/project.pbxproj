@@ -90,6 +90,7 @@
 		46C7AAB41AF9FEA1006B361E /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7AAB31AF9FEA1006B361E /* ArrayExtension.swift */; };
 		46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */; };
 		46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */; };
+		46CC15C61AFDF6A1003E3D9E /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CC15C51AFDF6A1003E3D9E /* IntExtension.swift */; };
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -127,7 +128,7 @@
 		466A35461AF0506900E82FFD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4673C1091AF6A22F000C034A /* BaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
 		4673C10B1AF6A885000C034A /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
-		4673C10D1AF6B781000C034A /* FacebookIDExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookIDExtension.swift; sourceTree = "<group>"; };
+		4673C10D1AF6B781000C034A /* FacebookIDExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FacebookIDExtension.swift; path = ../Extension/FacebookIDExtension.swift; sourceTree = "<group>"; };
 		4673C1101AF6C857000C034A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		4673C1111AF6C857000C034A /* FacebookSDK.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = FacebookSDK.strings; sourceTree = "<group>"; };
 		4673C1121AF6C857000C034A /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 		46B888D21AF9712F00D872E0 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		46C7AAB31AF9FEA1006B361E /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		46CC15C51AFDF6A1003E3D9E /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -325,27 +327,21 @@
 		468D216A1AF086F800CE6E19 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				468D216B1AF0870000CE6E19 /* Helper */,
-				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
-				46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */,
-				46B888C71AF9501300D872E0 /* BoolExtension.swift */,
-				460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */,
-				46042E561AEA1F6900089A5A /* UIColorExtension.swift */,
-				46042E581AEA230300089A5A /* UIViewExtension.swift */,
-				462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */,
-				46C7AAB31AF9FEA1006B361E /* ArrayExtension.swift */,
-				4673C10D1AF6B781000C034A /* FacebookIDExtension.swift */,
+				468D216B1AF0870000CE6E19 /* Helper Extensions */,
+				46CC15C71AFDF6AD003E3D9E /* Primitive Extensions */,
+				46CC15C81AFDF6B3003E3D9E /* Constructed Extensions */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		468D216B1AF0870000CE6E19 /* Helper */ = {
+		468D216B1AF0870000CE6E19 /* Helper Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				4673C10D1AF6B781000C034A /* FacebookIDExtension.swift */,
 				462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */,
 				462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */,
 			);
-			name = Helper;
+			name = "Helper Extensions";
 			path = ../Helper;
 			sourceTree = "<group>";
 		};
@@ -535,6 +531,29 @@
 			path = "../../The Mouve";
 			sourceTree = "<group>";
 		};
+		46CC15C71AFDF6AD003E3D9E /* Primitive Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				46CC15C51AFDF6A1003E3D9E /* IntExtension.swift */,
+				46B888C71AF9501300D872E0 /* BoolExtension.swift */,
+				46042E561AEA1F6900089A5A /* UIColorExtension.swift */,
+				46C7AAB31AF9FEA1006B361E /* ArrayExtension.swift */,
+			);
+			name = "Primitive Extensions";
+			sourceTree = "<group>";
+		};
+		46CC15C81AFDF6B3003E3D9E /* Constructed Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
+				46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */,
+				460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */,
+				46042E581AEA230300089A5A /* UIViewExtension.swift */,
+				462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */,
+			);
+			name = "Constructed Extensions";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -655,6 +674,7 @@
 				4673C10C1AF6A885000C034A /* Aliases.swift in Sources */,
 				4673C10A1AF6A22F000C034A /* BaseObject.swift in Sources */,
 				46B888C21AF8801000D872E0 /* DetailPostTableViewCell.swift in Sources */,
+				46CC15C61AFDF6A1003E3D9E /* IntExtension.swift in Sources */,
 				462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */,
 				4673C10E1AF6B781000C034A /* FacebookIDExtension.swift in Sources */,
 				46B888D11AF95CD400D872E0 /* AddMouveViewController.swift in Sources */,
