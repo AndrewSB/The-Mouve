@@ -87,9 +87,7 @@ class LoginPageViewController: UIPageViewController {
     }
     
     func skipButtonWasHit(sender: AnyObject) {
-        let loader = addLoadingView()
-        self.view.addSubview(loader)
-        self.view.userInteractionEnabled = false
+        let loader = addSpinnerAndStall()
         PFAnonymousUtils.logInWithBlock {
             (user: PFUser?, error: NSError?) -> Void in
             if error != nil || user == nil {
@@ -97,12 +95,14 @@ class LoginPageViewController: UIPageViewController {
             } else {
                 println("Anonymous user logged in.")
             }
-            self.view.userInteractionEnabled = true
-            loader.removeFromSuperview()
+            self.bringAliveAndRemove(loader)
             appDel.checkLogin()
         }
-
     }
+}
+
+extension LoginPageViewController { //View code
+    
 }
 
 extension LoginPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {

@@ -14,7 +14,33 @@ extension UIViewController {
     }
 }
 
-extension UIViewController { //board bullets
+extension UIViewController { // Remote Loading heloer
+    func addLoadingView() -> UIActivityIndicatorView {
+        view.userInteractionEnabled = false
+        
+        let aV = UIActivityIndicatorView(frame: CGRectMake(view.frame.width/2 - 11, view.frame.height/2 - 11, 11, 11))
+        aV.startAnimating()
+        aV.color = UIColor.grayColor()
+        
+        return aV
+    }
+    
+    func addSpinnerAndStall() -> UIActivityIndicatorView {
+        let spinner = addLoadingView()
+        self.view.addSubview(spinner)
+        
+        self.view.userInteractionEnabled = false
+        
+        return spinner
+    }
+    
+    func bringAliveAndRemove(spinner: UIActivityIndicatorView) {
+        spinner.removeFromSuperview()
+        self.view.userInteractionEnabled = true
+    }
+}
+
+extension UIViewController { // Keyboard
     func addTextDismiss() {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "hideKeyboard:"))
     }
@@ -40,15 +66,5 @@ extension UIViewController { //board bullets
     
     func keyboardWillBeHidden(id: AnyObject) {
         println("will hide")
-    }
-    
-    func addLoadingView() -> UIActivityIndicatorView {
-        view.userInteractionEnabled = false
-        
-        let aV = UIActivityIndicatorView(frame: CGRectMake(view.frame.width/2 - 11, view.frame.height/2 - 11, 11, 11))
-        aV.startAnimating()
-        aV.color = UIColor.grayColor()
-        
-        return aV
     }
 }
