@@ -17,6 +17,8 @@ class SignupViewController: UIViewController {
 
     @IBOutlet weak var createAccountButton: UIButton!
     
+    let newUser = PFUser()
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -25,8 +27,6 @@ class SignupViewController: UIViewController {
     }
 
     @IBAction func createAccountButtonWasHit(sender: AnyObject) {
-        let newUser = PFUser()
-        
         newUser["name"] = nameTextField.text
         newUser.username = usernameTextField.text.lowercaseString
         newUser.password = passwordTextField.text.lowercaseString
@@ -43,7 +43,33 @@ class SignupViewController: UIViewController {
     }
     
     @IBAction func facebookButtonWasHit(sender: AnyObject) {
-        
+        let loginManager: Void = FBSDKLoginManager()
+            .logInWithReadPermissions(["email", "user_friends", "public_profile"], handler: { (result, error) in
+                if error != nil {
+                    self.presentViewController(UIAlertController(title: "Whoops!", message: error!.localizedDescription), animated: true, completion: nil)
+                } else if result.isCancelled {
+                    println(result.description)
+                    println(result.facebookAccessToken)
+                    self.presentViewController(UIAlertController(title: "Whoops!", message: "We couldn't access facebook! Did you hit cancel?"), animated: true, completion: nil)
+                } else {
+                    FBSDKGraphRequest(graphPath: "email", parameters: nil).startWithCompletionHandler({ (connection, result, error) in
+                        if error != nil {
+                            self.presentViewController(UIAlertController(title: "Whoops!", message: error!.localizedDescription), animated: true, completion: nil)
+                        } else {
+                            if let result = result as? String {
+                                dispatch_async(dispatch_get_main_queue(), {
+                                    self.emailTextField.text = result
+                                    self.usernameTextField.text = result.substringToIndex(result.rangeOfString("@", options: nil, range: nil, locale: nil)!.startIndex)
+                                })
+                            }
+                        }
+                    })
+                
+                    self.newUser["fbID"] = FBSDKAccessToken.currentAccessToken().userID
+                    
+                    self.nameTextField.text = FBSDKProfile.currentProfile().name
+                }
+            })
     }
     
     @IBAction func backButtonWasHit(sender: AnyObject) {
