@@ -67,7 +67,7 @@ class LoginPageViewController: UIPageViewController {
         skipButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         skipButton.setTitle("Try without an account", forState: .Normal)
         skipButton.sizeToFit()
-        skipButton.frame = CGRect(origin: CGPoint(x: self.view.bounds.width  - skipButton.frame.width - 5, y: self.view.bounds.height - skipButton.frame.height), size: skipButton.frame.size)
+        skipButton.frame = CGRect(origin: CGPoint(x: self.view.bounds.width  - skipButton.frame.width - 10, y: self.view.bounds.height - skipButton.frame.height), size: skipButton.frame.size)
         
         skipButton.addTarget(self, action: Selector("skipButtonWasHit:"), forControlEvents: .TouchUpInside)
         
@@ -169,7 +169,6 @@ extension LoginPageViewController: UIPageViewControllerDataSource, UIPageViewCon
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
         if completed {
             let vc = pageViewController.viewControllers[0] as! TutorialViewController
-            println("\(vc.title) \(vc.pageIndex)")
             showingIndex = vc.pageIndex
         }
     }

@@ -71,5 +71,4 @@ class LoginViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         view.endEditing(true)
     }
-
 }
