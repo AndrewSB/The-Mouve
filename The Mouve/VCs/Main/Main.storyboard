@@ -54,14 +54,14 @@
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" pageSpacing="22" navigationOrientation="horizontal" spineLocation="none" id="cod-pV-drU" customClass="TheScenePageViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="DWI-Kz-Jcl">
-                        <barButtonItem key="leftBarButtonItem" image="search-icon" style="plain" id="fMO-cS-xbg">
+                        <barButtonItem key="leftBarButtonItem" image="search-icon" id="fMO-cS-xbg">
                             <inset key="imageInsets" minX="0.0" minY="13" maxX="27" maxY="13"/>
                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="hamburgerButtonWasHit:" destination="cod-pV-drU" id="SDA-3k-Qlf"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="DCt-MI-E3O">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DCt-MI-E3O">
                             <color key="tintColor" red="0.43656939268112183" green="0.9325670599937439" blue="0.72956490516662598" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="activityButtonWasHit:" destination="cod-pV-drU" id="w2n-2D-JgR"/>
@@ -276,7 +276,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="2J6-Ts-xE1">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="trash" id="92R-np-SOh">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="92R-np-SOh">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </barButtonItem>
                     </navigationItem>

@@ -787,8 +787,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Library/External/parse-library-1.7.1",
-					"$(PROJECT_DIR)/Library/External/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Library/External/FacebookSDK",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/External/Parse/parse-library-1.7.2",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -809,8 +807,6 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Library/External/parse-library-1.7.1",
-					"$(PROJECT_DIR)/Library/External/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Library/External/FacebookSDK",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/External/Parse/parse-library-1.7.2",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
