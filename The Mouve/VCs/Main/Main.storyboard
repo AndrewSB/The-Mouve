@@ -26,6 +26,10 @@
             <string>HalisGR-LightItalic</string>
             <string>HalisGR-LightItalic</string>
         </mutableArray>
+        <mutableArray key="HalisGR-Light.otf">
+            <string>HalisGR-Light</string>
+            <string>HalisGR-Light</string>
+        </mutableArray>
         <mutableArray key="HalisGR-Medium.otf">
             <string>HalisGR-Medium</string>
             <string>HalisGR-Medium</string>
@@ -42,10 +46,6 @@
             <string>HalisGR-Regular</string>
             <string>HalisGR-Regular</string>
             <string>HalisGR-Regular</string>
-        </mutableArray>
-        <mutableArray key="HalisGR-light.otf">
-            <string>HalisGR-Light</string>
-            <string>HalisGR-Light</string>
         </mutableArray>
     </customFonts>
     <scenes>

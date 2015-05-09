@@ -29,7 +29,15 @@ class TutorialViewController: UIViewController {
         
         self.view.insertSubview(backgroundImage, atIndex: 0)
         
-        pageLabel.text = title
+        dispatch_async(dispatch_get_main_queue(), {
+            self.pageLabel.text = self.title
+            self.pageLabel.numberOfLines = 0
+            
+            self.pageLabel.frame.origin.x = 44
+            self.pageLabel.frame.size.width = self.view.bounds.width - 88
+            
+            println(self.pageLabel.frame)
+        })
     }
     
     @IBAction func unwindToTutorialVC(segue: UIStoryboardSegue) {}

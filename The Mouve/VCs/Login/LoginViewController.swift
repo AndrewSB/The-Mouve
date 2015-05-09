@@ -22,8 +22,7 @@ class LoginViewController: UIViewController {
         loginButton.layer.borderColor = UIColor.seaFoamGreen().CGColor
         loginButton.layer.cornerRadius = 4
     }
-
-
+    
     @IBAction func loginButtonWasHit(sender: AnyObject) {
         view.userInteractionEnabled = false
         let loadingSpinnerView = addLoadingView()
