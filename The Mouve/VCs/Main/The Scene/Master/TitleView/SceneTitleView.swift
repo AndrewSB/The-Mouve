@@ -49,7 +49,6 @@ class SceneTitleView: UIView {
     
     required init(coder aDecoder: NSCoder) { //init from storyboard
         super.init(coder: aDecoder)
-        println(type?.rawValue)
         
         xibSetup()
         otherSetup()

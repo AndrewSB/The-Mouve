@@ -91,6 +91,8 @@
 		46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */; };
 		46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */; };
 		46CC15C61AFDF6A1003E3D9E /* IntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CC15C51AFDF6A1003E3D9E /* IntExtension.swift */; };
+		46CC15CA1AFE1AAE003E3D9E /* AlertUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CC15C91AFE1AAE003E3D9E /* AlertUIView.swift */; };
+		46CC15CC1AFE1AB9003E3D9E /* AlertUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46CC15CB1AFE1AB9003E3D9E /* AlertUIView.xib */; };
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -194,6 +196,8 @@
 		46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		46C7AAB31AF9FEA1006B361E /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		46CC15C51AFDF6A1003E3D9E /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
+		46CC15C91AFE1AAE003E3D9E /* AlertUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUIView.swift; sourceTree = "<group>"; };
+		46CC15CB1AFE1AB9003E3D9E /* AlertUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertUIView.xib; sourceTree = "<group>"; };
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -240,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				46AB30651AEA0FDA009724A2 /* TitleView */,
+				46CC15CD1AFE1ABF003E3D9E /* AlertUIView */,
 				46AFB3621AF86AD2004D121A /* UnderlinedTextField.swift */,
 				46B888C31AF94C3E00D872E0 /* GreyGreenButton.swift */,
 				464B2DC61AFD79890095FB83 /* OutlinedButton.swift */,
@@ -554,6 +559,15 @@
 			name = "Constructed Extensions";
 			sourceTree = "<group>";
 		};
+		46CC15CD1AFE1ABF003E3D9E /* AlertUIView */ = {
+			isa = PBXGroup;
+			children = (
+				46CC15C91AFE1AAE003E3D9E /* AlertUIView.swift */,
+				46CC15CB1AFE1AB9003E3D9E /* AlertUIView.xib */,
+			);
+			name = AlertUIView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -620,6 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				464B2DCB1AFD79960095FB83 /* HalisGR-Light.otf in Resources */,
+				46CC15CC1AFE1AB9003E3D9E /* AlertUIView.xib in Resources */,
 				46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */,
 				469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */,
 				4673C1221AF6C857000C034A /* LICENSE in Resources */,
@@ -673,6 +688,7 @@
 				46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */,
 				4673C10C1AF6A885000C034A /* Aliases.swift in Sources */,
 				4673C10A1AF6A22F000C034A /* BaseObject.swift in Sources */,
+				46CC15CA1AFE1AAE003E3D9E /* AlertUIView.swift in Sources */,
 				46B888C21AF8801000D872E0 /* DetailPostTableViewCell.swift in Sources */,
 				46CC15C61AFDF6A1003E3D9E /* IntExtension.swift in Sources */,
 				462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */,
