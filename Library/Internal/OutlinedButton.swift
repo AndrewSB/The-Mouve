@@ -14,7 +14,7 @@ class OutlinedButton: UIButton {
         
         self.layer.cornerRadius = 6
         self.layer.borderColor = color.CGColor
-        self.layer.borderWidth = 4
+        self.layer.borderWidth = 1
         
         self.backgroundColor = UIColor.clearColor()
         

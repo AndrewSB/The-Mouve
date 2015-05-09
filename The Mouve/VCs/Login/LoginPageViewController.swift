@@ -87,14 +87,19 @@ class LoginPageViewController: UIPageViewController {
     }
     
     func skipButtonWasHit(sender: AnyObject) {
+        let loader = addLoadingView()
+        self.view.addSubview(loader)
+        self.view.userInteractionEnabled = false
         PFAnonymousUtils.logInWithBlock {
             (user: PFUser?, error: NSError?) -> Void in
             if error != nil || user == nil {
-                println("Anonymous login failed.")
+                self.presentViewController(UIAlertController(title: "Couldn't anonymously login", message: error!.localizedDescription), animated: true, completion: nil)
             } else {
-                appDel.checkLogin()
                 println("Anonymous user logged in.")
             }
+            self.view.userInteractionEnabled = true
+            loader.removeFromSuperview()
+            appDel.checkLogin()
         }
 
     }
