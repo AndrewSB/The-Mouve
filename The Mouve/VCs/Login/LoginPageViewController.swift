@@ -51,21 +51,31 @@ class LoginPageViewController: UIPageViewController {
         mouveImageView.frame.origin.y -= (self.view.frame.height*3 / 9)
         mouveImageView.image = UIImage(named: "mouve-icon")
         
-        let loginButton = OutlinedButton(frame: CGRect(view: view, height: 44, width: 200), color: UIColor.seaFoamGreen())
+        let loginButton = OutlinedButton(frame: CGRect(view: view, height: 36, width: 200), color: UIColor.seaFoamGreen())
         loginButton.addTarget(self, action: Selector("loginButtonWasHit:"), forControlEvents: .TouchUpInside)
-        loginButton.titleLabel!.text = "Login"
+        loginButton.setTitle("Login", forState: .Normal)
         loginButton.frame.origin.y += (self.view.frame.height / 4) - 50
         
         
-        let signupButton = FilledButton(frame: CGRect(view: view, height: 44, width: 200), color: UIColor.seaFoamGreen())
+        let signupButton = FilledButton(frame: CGRect(view: view, height: 36, width: 200), color: UIColor.seaFoamGreen())
         signupButton.addTarget(self, action: Selector("signupButtonWasHit:"), forControlEvents: .TouchUpInside)
-        signupButton.titleLabel!.text = "Sign up"
+        signupButton.setTitle("Sign up", forState: .Normal)
         signupButton.frame.origin.y += (self.view.frame.height / 4) + 15
+        
+        let skipButton = UIButton()
+        skipButton.titleLabel?.font = UIFont(name: "HalisGR-Book", size: 14)
+        skipButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        skipButton.setTitle("Try without an account", forState: .Normal)
+        skipButton.sizeToFit()
+        skipButton.frame = CGRect(origin: CGPoint(x: self.view.bounds.width  - skipButton.frame.width - 5, y: self.view.bounds.height - skipButton.frame.height), size: skipButton.frame.size)
+        
+        skipButton.addTarget(self, action: Selector("skipButtonWasHit:"), forControlEvents: .TouchUpInside)
         
         self.view.addSubview(pageControl!)
         self.view.addSubview(mouveImageView)
         self.view.addSubview(loginButton)
         self.view.addSubview(signupButton)
+        self.view.addSubview(skipButton)
     }
     
     func loginButtonWasHit(sender: AnyObject) {
@@ -152,7 +162,6 @@ extension LoginPageViewController: UIPageViewControllerDataSource, UIPageViewCon
         Delegate
     */
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
-        println("at something")
         if completed {
             let vc = pageViewController.viewControllers[0] as! TutorialViewController
             println("\(vc.title) \(vc.pageIndex)")

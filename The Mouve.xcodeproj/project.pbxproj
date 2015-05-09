@@ -21,6 +21,7 @@
 		462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */; };
 		464B2DC71AFD79890095FB83 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B2DC61AFD79890095FB83 /* OutlinedButton.swift */; };
 		464B2DC91AFD79960095FB83 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B2DC81AFD79960095FB83 /* FilledButton.swift */; };
+		464B2DCB1AFD79960095FB83 /* HalisGR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 464B2DCA1AFD79960095FB83 /* HalisGR-Light.otf */; };
 		466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A35461AF0506900E82FFD /* ProfileViewController.swift */; };
 		4673C10A1AF6A22F000C034A /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4673C1091AF6A22F000C034A /* BaseObject.swift */; };
 		4673C10C1AF6A885000C034A /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4673C10B1AF6A885000C034A /* Aliases.swift */; };
@@ -122,6 +123,7 @@
 		462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		464B2DC61AFD79890095FB83 /* OutlinedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
 		464B2DC81AFD79960095FB83 /* FilledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
+		464B2DCA1AFD79960095FB83 /* HalisGR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Light.otf"; sourceTree = "<group>"; };
 		466A35461AF0506900E82FFD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4673C1091AF6A22F000C034A /* BaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
 		4673C10B1AF6A885000C034A /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
@@ -493,6 +495,7 @@
 			children = (
 				469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */,
 				469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */,
+				464B2DCA1AFD79960095FB83 /* HalisGR-Light.otf */,
 				469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */,
 				469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */,
 				462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */,
@@ -597,6 +600,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				464B2DCB1AFD79960095FB83 /* HalisGR-Light.otf in Resources */,
 				46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */,
 				469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */,
 				4673C1221AF6C857000C034A /* LICENSE in Resources */,

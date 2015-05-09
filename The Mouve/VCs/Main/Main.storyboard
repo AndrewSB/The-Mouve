@@ -21,7 +21,6 @@
             <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
-            <string>HalisGR-Book</string>
         </mutableArray>
         <mutableArray key="HalisGR-Light-Italic.otf">
             <string>HalisGR-LightItalic</string>
@@ -43,7 +42,10 @@
             <string>HalisGR-Regular</string>
             <string>HalisGR-Regular</string>
             <string>HalisGR-Regular</string>
-            <string>HalisGR-Regular</string>
+        </mutableArray>
+        <mutableArray key="HalisGR-light.otf">
+            <string>HalisGR-Light</string>
+            <string>HalisGR-Light</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -375,30 +377,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RtG-V0-JGm">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="RtG-V0-JGm">
                                 <rect key="frame" x="10" y="0.0" width="580" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.43656939268112183" green="0.9325670599937439" blue="0.72956490516662598" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" rowHeight="60" id="88D-AL-Kle" customClass="ActivityTableViewCell" customModule="The_Mouve" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" id="88D-AL-Kle" customClass="ActivityTableViewCell" customModule="The_Mouve" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="88D-AL-Kle" id="Joe-ZJ-JYh">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jjm-Z5-3a0">
-                                                    <rect key="frame" x="12" y="7" width="45" height="45"/>
+                                                    <rect key="frame" x="12" y="7" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="jjm-Z5-3a0" secondAttribute="height" multiplier="1:1" id="yJJ-15-YuY"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crb-l9-qmO" customClass="TTTAttributedLabel">
-                                                    <rect key="frame" x="79" y="12" width="441" height="35"/>
-                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="15"/>
+                                                    <rect key="frame" x="64" y="9" width="470" height="26"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Light" family="Halis GR" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swt-3D-uKB">
-                                                    <rect key="frame" x="542" y="15" width="26" height="29"/>
+                                                    <rect key="frame" x="556" y="15" width="12" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="swt-3D-uKB" secondAttribute="height" multiplier="21:23" id="jWv-nN-704"/>
                                                     </constraints>
@@ -412,7 +414,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="jjm-Z5-3a0" firstAttribute="leading" secondItem="Joe-ZJ-JYh" secondAttribute="leading" constant="12" id="39Q-qT-ikG"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="crb-l9-qmO" secondAttribute="bottom" constant="4" id="Agr-ON-FAK"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="crb-l9-qmO" secondAttribute="bottom" constant="1" id="Agr-ON-FAK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="swt-3D-uKB" secondAttribute="trailing" constant="4" id="Ovr-Xn-yBB"/>
                                                 <constraint firstItem="crb-l9-qmO" firstAttribute="leading" secondItem="jjm-Z5-3a0" secondAttribute="trailing" constant="22" id="XYQ-4p-mXG"/>
                                                 <constraint firstItem="swt-3D-uKB" firstAttribute="leading" secondItem="crb-l9-qmO" secondAttribute="trailing" constant="22" id="ebr-l9-j9J"/>
@@ -420,7 +422,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="jjm-Z5-3a0" secondAttribute="bottom" constant="7" id="kpC-n6-iIP"/>
                                                 <constraint firstItem="jjm-Z5-3a0" firstAttribute="top" secondItem="Joe-ZJ-JYh" secondAttribute="top" constant="7" id="o2b-2M-qnm"/>
                                                 <constraint firstItem="swt-3D-uKB" firstAttribute="top" secondItem="Joe-ZJ-JYh" secondAttribute="topMargin" constant="7" id="qb0-C9-SDW"/>
-                                                <constraint firstItem="crb-l9-qmO" firstAttribute="top" secondItem="Joe-ZJ-JYh" secondAttribute="topMargin" constant="4" id="seh-RL-JTY"/>
+                                                <constraint firstItem="crb-l9-qmO" firstAttribute="top" secondItem="Joe-ZJ-JYh" secondAttribute="topMargin" constant="1" id="seh-RL-JTY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="80" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -874,7 +876,7 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jK5-XD-48N">
                                                     <rect key="frame" x="50" y="11" width="520" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Light" family="Halis GR" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

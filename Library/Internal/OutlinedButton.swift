@@ -18,8 +18,10 @@ class OutlinedButton: UIButton {
         
         self.backgroundColor = UIColor.clearColor()
         
-        self.titleLabel?.textColor = color
-        self.titleLabel?.font = UIFont(name: "HalisGR-Regular", size: 16)
+        self.titleLabel?.frame = CGRect(view: self, height: self.frame.height - 5, width: self.frame.width - 10)
+        
+        self.titleLabel?.font = UIFont(name: "HalisGR-Light", size: 16)
+        self.setTitleColor(color, forState: .Normal)
     }
     
     override init(frame: CGRect) {

@@ -30,8 +30,6 @@ class TutorialViewController: UIViewController {
         self.view.insertSubview(backgroundImage, atIndex: 0)
         
         pageLabel.text = title
-//        pageLabel.frame.origin.x = 44
-//        pageLabel.frame.size.width = view.bounds.width - 88
     }
     
     @IBAction func unwindToTutorialVC(segue: UIStoryboardSegue) {}

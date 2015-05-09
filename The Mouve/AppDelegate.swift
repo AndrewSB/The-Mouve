@@ -20,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        for familyName in UIFont.familyNames() {
+            println("------------------------------")
+            println("Font Family Name = [\(familyName)]")
+            let names = UIFont.fontNamesForFamilyName(familyName as! String)
+            println("Font Names = [\(names)]")
+        }
+ 
+        
         Fabric.with([Crashlytics()])
         
         Parse.enableLocalDatastore()

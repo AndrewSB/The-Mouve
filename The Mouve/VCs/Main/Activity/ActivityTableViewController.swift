@@ -51,4 +51,7 @@ extension ActivityTableViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
 
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView(frame: .zeroRect)
+    }
 }
