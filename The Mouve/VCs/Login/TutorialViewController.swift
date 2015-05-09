@@ -11,33 +11,25 @@ import Parse
 
 class TutorialViewController: UIViewController {
     @IBOutlet weak var pageLabel: UILabel!
+    @IBOutlet weak var pageLabelWidthConstraint: NSLayoutConstraint!
         
     var pageImage: UIImage = UIImage()
     var pageIndex: Int = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        super.viewDidAppear(false)
         
         let imageSize = CGSize(width: self.view.bounds.width, height: self.view.bounds.height + 50)
-                
-        let originX = UIDevice.currentDevice().model == "iPad" ? 0 : 15
+        let imageOrigin = CGPoint(x: UIDevice.currentDevice().model == "iPad" ? 0 : 14, y: 0)
         
-        let backgroundImage = UIImageView(frame: CGRect(origin: CGPoint(x: originX, y: 0), size: imageSize))
+        let backgroundImage = UIImageView(frame: CGRect(origin: imageOrigin, size: imageSize))
         backgroundImage.image = pageImage
         backgroundImage.contentMode = .ScaleAspectFill
         
         self.view.insertSubview(backgroundImage, atIndex: 0)
-        
-        dispatch_async(dispatch_get_main_queue(), {
-            self.pageLabel.text = self.title
-            self.pageLabel.numberOfLines = 0
-            
-            self.pageLabel.frame.origin.x = 44
-            self.pageLabel.frame.size.width = self.view.bounds.width - 88
-            
-            println(self.pageLabel.frame)
-        })
+ 
+        pageLabel.text = title
+        pageLabelWidthConstraint.constant = self.view.frame.width - 88
     }
     
     @IBAction func unwindToTutorialVC(segue: UIStoryboardSegue) {}

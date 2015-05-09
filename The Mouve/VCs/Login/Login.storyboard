@@ -39,7 +39,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simply add the details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p91-Ku-kio">
-                                <rect key="frame" x="60" y="238" width="480" height="19"/>
+                                <rect key="frame" x="212" y="238" width="176" height="19"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="176" id="m8n-gf-iib"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -55,9 +58,8 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="p91-Ku-kio" firstAttribute="leading" secondItem="xFP-NZ-TZm" secondAttribute="leadingMargin" constant="44" placeholder="YES" id="Nhv-0D-Pul"/>
+                            <constraint firstAttribute="centerX" secondItem="p91-Ku-kio" secondAttribute="centerX" id="3dP-LJ-2hG"/>
                             <constraint firstItem="RLU-KV-b8N" firstAttribute="top" secondItem="p91-Ku-kio" secondAttribute="bottom" constant="43" id="RGc-0g-be5"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="p91-Ku-kio" secondAttribute="trailing" constant="44" placeholder="YES" id="XxT-CJ-j7w"/>
                             <constraint firstAttribute="centerY" secondItem="RLU-KV-b8N" secondAttribute="centerY" id="h6R-wx-45c"/>
                             <constraint firstAttribute="centerX" secondItem="RLU-KV-b8N" secondAttribute="centerX" id="r0M-kc-Cpe"/>
                         </constraints>
@@ -65,6 +67,7 @@
                     <navigationItem key="navigationItem" id="5Ad-Wd-qTV"/>
                     <connections>
                         <outlet property="pageLabel" destination="p91-Ku-kio" id="LTN-ba-39L"/>
+                        <outlet property="pageLabelWidthConstraint" destination="m8n-gf-iib" id="MWJ-kC-0Fh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeb-KE-suW" userLabel="First Responder" sceneMemberID="firstResponder"/>
