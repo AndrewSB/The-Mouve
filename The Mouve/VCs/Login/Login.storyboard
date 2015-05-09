@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeb-KE-suW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2074" y="813"/>
+            <point key="canvasLocation" x="1931" y="1763"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="iBS-gu-PHw">
@@ -87,19 +87,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3iL-SP-PT6" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
-                                <rect key="frame" x="49" y="224" width="502" height="16"/>
+                                <rect key="frame" x="49" y="218" width="502" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="7tg-aI-oIS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yH-bQ-9Bj">
-                                <rect key="frame" x="245" y="374" width="110" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3yH-bQ-9Bj" customClass="OutlinedButton" customModule="The_Mouve" customModuleProvider="target">
+                                <rect key="frame" x="250" y="376" width="100" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="Qer-RW-1oo"/>
-                                    <constraint firstAttribute="height" constant="30" id="gXP-Pl-QHE"/>
+                                    <constraint firstAttribute="width" constant="100" id="Qer-RW-1oo"/>
+                                    <constraint firstAttribute="height" constant="33" id="gXP-Pl-QHE"/>
                                 </constraints>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="LOGIN">
-                                    <color key="titleColor" red="0.4365693927" green="0.93256706" blue="0.72956490519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleColor" red="0.47384917736053467" green="0.86037606000900269" blue="0.75323015451431274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="loginButtonWasHit:" destination="Lf3-fd-A0O" eventType="touchUpInside" id="miJ-yA-qRO"/>
@@ -107,7 +110,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dX-V2-x0j">
-                                <rect key="frame" x="352" y="408" width="50" height="28"/>
+                                <rect key="frame" x="352" y="414" width="50" height="28"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <state key="normal" title="Sign up">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -118,45 +121,47 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f2m-9T-wFS">
-                                <rect key="frame" x="193" y="414" width="154" height="16"/>
+                                <rect key="frame" x="193" y="420" width="154" height="16"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eVz-xe-P0o" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
-                                <rect key="frame" x="49" y="275" width="502" height="16"/>
+                                <rect key="frame" x="49" y="275" width="502" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Oz7-h5-TYV"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stP-2Z-fyy">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stP-2Z-fyy">
                                 <rect key="frame" x="13" y="30" width="19" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="5bQ-o4-KbP"/>
                                     <constraint firstAttribute="width" secondItem="stP-2Z-fyy" secondAttribute="height" multiplier="20:31" id="rqP-iy-FH5"/>
                                 </constraints>
-                                <state key="normal" image="back-button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <color key="tintColor" red="0.47384917736053467" green="0.86037606000900269" blue="0.75323015451431274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="back-button"/>
                                 <connections>
                                     <action selector="backButtonWasHit:" destination="Lf3-fd-A0O" eventType="touchUpInside" id="giS-Ud-iRe"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5f-cu-RQj">
-                                <rect key="frame" x="300" y="291" width="0.0" height="83"/>
+                                <rect key="frame" x="300" y="297" width="0.0" height="79"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="AND-tc-wEZ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0oe-NT-TMt">
-                                <rect key="frame" x="300" y="436" width="0.0" height="164"/>
+                                <rect key="frame" x="300" y="442" width="0.0" height="158"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="tqt-gx-4pI"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xn0-l9-UTW">
-                                <rect key="frame" x="300" y="60" width="0.0" height="164"/>
+                                <rect key="frame" x="300" y="60" width="0.0" height="158"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="0UF-5X-WG4"/>
@@ -171,7 +176,7 @@
                             <constraint firstAttribute="centerX" secondItem="3yH-bQ-9Bj" secondAttribute="centerX" id="3DC-Dq-OOu"/>
                             <constraint firstItem="stP-2Z-fyy" firstAttribute="leading" secondItem="Vj4-ao-p01" secondAttribute="leadingMargin" constant="-3" id="6aa-dw-w9W"/>
                             <constraint firstItem="E5f-cu-RQj" firstAttribute="top" secondItem="eVz-xe-P0o" secondAttribute="bottom" id="7dv-oz-oS9"/>
-                            <constraint firstItem="f2m-9T-wFS" firstAttribute="top" secondItem="3yH-bQ-9Bj" secondAttribute="bottom" constant="10" id="DrB-Es-MNU"/>
+                            <constraint firstItem="f2m-9T-wFS" firstAttribute="top" secondItem="3yH-bQ-9Bj" secondAttribute="bottom" constant="11" id="DrB-Es-MNU"/>
                             <constraint firstItem="3yH-bQ-9Bj" firstAttribute="top" secondItem="E5f-cu-RQj" secondAttribute="bottom" id="EmG-wt-HgL"/>
                             <constraint firstAttribute="centerX" secondItem="0oe-NT-TMt" secondAttribute="centerX" id="K4O-Fg-ZEo"/>
                             <constraint firstItem="f2m-9T-wFS" firstAttribute="centerY" secondItem="3dX-V2-x0j" secondAttribute="centerY" id="Lg7-K3-2jS"/>
@@ -200,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vt-vn-Q6D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2898" y="431"/>
+            <point key="canvasLocation" x="2914" y="2287"/>
         </scene>
         <!--Login Page View Controller-->
         <scene sceneID="5Is-tW-8d8">
@@ -215,7 +220,7 @@
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ryh-rM-PIC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2091" y="-5"/>
+            <point key="canvasLocation" x="1035" y="1763"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5qI-6z-Ux0">
@@ -234,30 +239,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzJ-vw-iMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1279" y="-5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="7GX-GA-fQG">
-            <objects>
-                <navigationController storyboardIdentifier="tutorialNavCon" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="7By-jU-PLn" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uzN-T0-hwV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="gLX-tq-VTd" kind="relationship" relationship="rootViewController" id="fq8-Dg-P5G"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i1h-63-Dea" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2083" y="989"/>
+            <point key="canvasLocation" x="319" y="1771"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="LDa-CZ-arX">
             <objects>
-                <viewController id="yBD-hG-2Qi" customClass="SignupViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="signUpVC" id="yBD-hG-2Qi" customClass="SignupViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j6l-aS-3B0"/>
                         <viewControllerLayoutGuide type="bottom" id="Fcu-pi-uaa"/>
@@ -267,66 +254,77 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J8B-4m-WUW" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
-                                <rect key="frame" x="49" y="189" width="502" height="16"/>
+                                <rect key="frame" x="49" y="180" width="502" height="22"/>
                                 <color key="tintColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="SWz-vq-Fuj"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wlx-Z1-QQz" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
-                                <rect key="frame" x="49" y="238" width="502" height="16"/>
+                                <rect key="frame" x="49" y="235" width="502" height="22"/>
                                 <color key="tintColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="3Gf-NK-RHP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgC-l0-m6s">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgC-l0-m6s">
                                 <rect key="frame" x="13" y="30" width="19" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fgC-l0-m6s" secondAttribute="height" multiplier="20:31" id="1KR-1c-cuY"/>
                                     <constraint firstAttribute="height" constant="30" id="mtT-Wq-yny"/>
                                 </constraints>
-                                <state key="normal" image="back-button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <color key="tintColor" red="0.47384917736053467" green="0.86037606000900269" blue="0.75323015451431274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="back-button"/>
                                 <connections>
                                     <action selector="backButtonWasHit:" destination="yBD-hG-2Qi" eventType="touchUpInside" id="j6d-Cn-o2T"/>
                                     <segue destination="NT4-VP-hXL" kind="unwind" unwindAction="unwindToTutorialVC:" id="seN-Ps-f8g"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vPA-c7-rTa">
-                                <rect key="frame" x="300" y="352" width="0.0" height="143"/>
+                                <rect key="frame" x="300" y="367" width="0.0" height="133"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="H7Y-oW-uWY"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZG-Qd-dFL">
-                                <rect key="frame" x="300" y="528" width="0.0" height="72"/>
+                                <rect key="frame" x="300" y="533" width="0.0" height="67"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="glg-GI-HW7"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cMk-z8-oJF">
-                                <rect key="frame" x="300" y="60" width="0.0" height="129"/>
+                                <rect key="frame" x="300" y="60" width="0.0" height="120"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="6D8-H4-ZCP"/>
                                 </constraints>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8JL-AQ-7ag" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
-                                <rect key="frame" x="49" y="287" width="502" height="16"/>
+                                <rect key="frame" x="49" y="290" width="502" height="22"/>
                                 <color key="tintColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="ajq-l2-vg3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rvi-10-BYt" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
-                                <rect key="frame" x="49" y="336" width="502" height="16"/>
+                                <rect key="frame" x="49" y="345" width="502" height="22"/>
                                 <color key="tintColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="AF3-LN-4ed"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5D6-Lm-tLQ">
-                                <rect key="frame" x="334" y="410" width="61" height="28"/>
+                                <rect key="frame" x="339" y="420" width="61" height="28"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <state key="normal" title="facebook">
                                     <color key="titleColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -337,32 +335,33 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or fill out form with" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWo-I0-aFN">
-                                <rect key="frame" x="200" y="416" width="129" height="16"/>
+                                <rect key="frame" x="205" y="426" width="129" height="16"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <color key="textColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ahr-Wm-6R1">
-                                <rect key="frame" x="300" y="352" width="0.0" height="58"/>
+                                <rect key="frame" x="300" y="367" width="0.0" height="53"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="cXO-K0-0dw"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eIo-N3-Ux4">
-                                <rect key="frame" x="300" y="438" width="0.0" height="57"/>
+                                <rect key="frame" x="300" y="448" width="0.0" height="52"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="cZe-Hs-EzO"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0u-tb-T2e">
-                                <rect key="frame" x="225" y="495" width="150" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j0u-tb-T2e" customClass="OutlinedButton" customModule="The_Mouve" customModuleProvider="target">
+                                <rect key="frame" x="220" y="500" width="160" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="Tef-aG-Z3x"/>
-                                    <constraint firstAttribute="width" constant="150" id="hdV-PE-44Q"/>
+                                    <constraint firstAttribute="width" constant="160" id="hdV-PE-44Q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="CREATE ACCOUNT">
                                     <color key="titleColor" red="0.4365693927" green="0.93256706" blue="0.72956490519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -424,7 +423,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jFr-ds-rjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="NT4-VP-hXL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2898" y="-297"/>
+            <point key="canvasLocation" x="2890" y="1519"/>
         </scene>
     </scenes>
     <resources>

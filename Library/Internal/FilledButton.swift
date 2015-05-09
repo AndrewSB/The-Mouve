@@ -12,11 +12,8 @@ class FilledButton: UIButton {
     convenience init(frame: CGRect, color: UIColor) {
         self.init(frame: frame)
         
-        self.layer.cornerRadius = 6
         self.backgroundColor = color
-        
-        self.titleLabel?.font = UIFont(name: "HalisGR-Light", size: 16)
-        self.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        viewSetup()
     }
     
     override init(frame: CGRect) {
@@ -24,7 +21,15 @@ class FilledButton: UIButton {
     }
     
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+        
+        viewSetup()
+    }
+    
+    func viewSetup() {
+        self.layer.cornerRadius = 6
+        self.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        self.titleLabel?.font = UIFont(name: "HalisGR-Light", size: 16)
     }
 
 }

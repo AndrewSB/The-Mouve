@@ -12,6 +12,10 @@ extension UIViewController {
     func initVC(vcID: String, storyboard: String) -> UIViewController {
         return UIStoryboard(name: storyboard, bundle: nil).instantiateViewControllerWithIdentifier(vcID) as! UIViewController
     }
+    
+    func statusBar(style: UIStatusBarStyle) {
+        UIApplication.sharedApplication().statusBarStyle = style
+    }
 }
 
 extension UIViewController { // Remote Loading heloer
@@ -42,11 +46,9 @@ extension UIViewController { // Remote Loading heloer
 
 extension UIViewController { // Keyboard
     func setupForEntry(view: UIView) {
-        setupForEntry(view.frame.origin.y + view.frame.height - 224)
-    }
-    
-    private func setupForEntry(offset: CGFloat) {
+        let offset = view.frame.origin.y + view.frame.height - 224
         UserDefaults.keyboardOffet = offset
+        
         setupForEntry()
     }
     

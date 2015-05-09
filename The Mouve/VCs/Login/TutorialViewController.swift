@@ -20,7 +20,7 @@ class TutorialViewController: UIViewController {
         super.viewDidLoad()
         
         let imageSize = CGSize(width: self.view.bounds.width, height: self.view.bounds.height)
-        let imageOrigin = CGPoint(x: UIDevice.currentDevice().model == "iPad" ? 0 : 14, y: 0)
+        let imageOrigin = CGPoint.zeroPoint //CGPoint(x: UIDevice.currentDevice().model == "iPad" ? 0 : 0, y: 0)
         
         let backgroundImage = UIImageView(frame: CGRect(origin: imageOrigin, size: imageSize))
         backgroundImage.image = pageImage
@@ -30,6 +30,11 @@ class TutorialViewController: UIViewController {
  
         pageLabel.text = title
         pageLabelWidthConstraint.constant = self.view.frame.width - 88
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        statusBar(.LightContent)
     }
     
     @IBAction func unwindToTutorialVC(segue: UIStoryboardSegue) {}

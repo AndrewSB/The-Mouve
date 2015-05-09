@@ -17,13 +17,11 @@ class SignupViewController: UIViewController {
 
     @IBOutlet weak var createAccountButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        addTextDismiss()
-
-        createAccountButton.layer.borderColor = UIColor.seaFoamGreen().CGColor
-        createAccountButton.layer.borderWidth = 2
-        createAccountButton.layer.cornerRadius = 6
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupForEntry(createAccountButton)
+        statusBar(.Default)
     }
 
     @IBAction func createAccountButtonWasHit(sender: AnyObject) {
@@ -38,24 +36,22 @@ class SignupViewController: UIViewController {
             if let error = error {
                 let errorString = error.userInfo?["error"] as? NSString
                 self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
-            } else {
-                appDel.checkLogin()
             }
+            appDel.checkLogin()
         }
 
     }
     
     @IBAction func facebookButtonWasHit(sender: AnyObject) {
+        
     }
     
     @IBAction func backButtonWasHit(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         view.endEditing(true)
     }
-
 }

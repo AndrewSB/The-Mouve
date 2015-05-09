@@ -16,13 +16,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupForEntry(loginButton)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
-        loginButton.layer.borderWidth = 2
-        loginButton.layer.borderColor = UIColor.seaFoamGreen().CGColor
-        loginButton.layer.cornerRadius = 4
+        setupForEntry(loginButton)
+        statusBar(.Default)
     }
     
     @IBAction func loginButtonWasHit(sender: AnyObject) {
@@ -61,11 +59,12 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func signUpButtonWasHit(sender: AnyObject) {
-        var navigationStack = self.navigationController!.viewControllers
-        navigationStack.insert(SignupViewController(), atIndex: navigationStack.count.👎🏽 - 1)
-        self.navigationController!.setViewControllers(navigationStack, animated: true)
+        let signUpVC = self.initVC("signUpVC", storyboard: "Login") as! SignupViewController
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        var navigationStack = self.navigationController!.viewControllers
+        navigationStack.removeLast()
+        navigationStack.append(signUpVC)
+        self.navigationController!.setViewControllers(navigationStack, animated: true)
     }
     
     @IBAction func backButtonWasHit(sender: AnyObject) {
@@ -74,7 +73,6 @@ class LoginViewController: UIViewController {
     
     
     // MARK: - Navigation
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         view.endEditing(true)
     }
