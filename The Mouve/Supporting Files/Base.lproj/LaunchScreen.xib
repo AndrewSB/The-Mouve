@@ -4,13 +4,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="HalisGR-Light.otf">
-            <string>HalisGR-Light</string>
-            <string>HalisGR-Light</string>
-            <string>HalisGR-Light</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -24,34 +17,16 @@
                         <constraint firstAttribute="width" secondItem="nji-Ib-YnZ" secondAttribute="height" multiplier="152:176" id="Cym-4f-bw1"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designed by Yoojin Hong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ai-CP-gNq">
-                    <rect key="frame" x="165" y="430" width="151" height="15"/>
-                    <fontDescription key="fontDescription" name="HalisGR-Light" family="Halis GR" pointSize="13"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invisioned by Uduimoh " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1M-9c-uQg">
-                    <rect key="frame" x="169" y="464" width="142" height="15"/>
-                    <fontDescription key="fontDescription" name="HalisGR-Light" family="Halis GR" pointSize="13"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed by Andrew Breckenridge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tws-oz-VlO">
-                    <rect key="frame" x="132" y="447" width="216" height="15"/>
-                    <fontDescription key="fontDescription" name="HalisGR-Light" family="Halis GR" pointSize="13"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempShot" translatesAutoresizingMaskIntoConstraints="NO" id="Zkr-8A-07m">
+                    <rect key="frame" x="147" y="279" width="187" height="50"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="centerX" secondItem="y1M-9c-uQg" secondAttribute="centerX" id="1p4-oK-Nlx"/>
-                <constraint firstItem="tws-oz-VlO" firstAttribute="top" secondItem="4Ai-CP-gNq" secondAttribute="bottom" constant="2" id="6K9-By-Wsy"/>
-                <constraint firstAttribute="centerX" secondItem="4Ai-CP-gNq" secondAttribute="centerX" id="8OL-2o-tcb"/>
                 <constraint firstAttribute="centerX" secondItem="nji-Ib-YnZ" secondAttribute="centerX" id="8hh-Br-HkC"/>
-                <constraint firstAttribute="centerX" secondItem="tws-oz-VlO" secondAttribute="centerX" id="9xM-ue-ej3"/>
-                <constraint firstItem="y1M-9c-uQg" firstAttribute="top" secondItem="tws-oz-VlO" secondAttribute="bottom" constant="2" id="PCz-Rb-Roq"/>
-                <constraint firstAttribute="bottom" secondItem="y1M-9c-uQg" secondAttribute="bottom" constant="2" id="VcN-wI-KVh"/>
+                <constraint firstItem="Zkr-8A-07m" firstAttribute="top" secondItem="nji-Ib-YnZ" secondAttribute="bottom" constant="16" id="9dr-A2-erp"/>
+                <constraint firstItem="Zkr-8A-07m" firstAttribute="width" secondItem="Zkr-8A-07m" secondAttribute="height" multiplier="187:50" id="VcP-7L-IKo"/>
+                <constraint firstAttribute="centerX" secondItem="Zkr-8A-07m" secondAttribute="centerX" id="hyo-yz-mXz"/>
                 <constraint firstAttribute="centerY" secondItem="nji-Ib-YnZ" secondAttribute="centerY" constant="22" id="llU-a3-npu"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
@@ -61,5 +36,6 @@
     </objects>
     <resources>
         <image name="mouve-icon" width="76" height="88"/>
+        <image name="tempShot" width="187" height="50"/>
     </resources>
 </document>
