@@ -18,13 +18,16 @@
                     </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempShot" translatesAutoresizingMaskIntoConstraints="NO" id="Zkr-8A-07m">
-                    <rect key="frame" x="147" y="279" width="187" height="50"/>
+                    <rect key="frame" x="179" y="274" width="123" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="zhz-Xr-p5n"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="nji-Ib-YnZ" secondAttribute="centerX" id="8hh-Br-HkC"/>
-                <constraint firstItem="Zkr-8A-07m" firstAttribute="top" secondItem="nji-Ib-YnZ" secondAttribute="bottom" constant="16" id="9dr-A2-erp"/>
+                <constraint firstItem="Zkr-8A-07m" firstAttribute="top" secondItem="nji-Ib-YnZ" secondAttribute="bottom" constant="11" id="9dr-A2-erp"/>
                 <constraint firstItem="Zkr-8A-07m" firstAttribute="width" secondItem="Zkr-8A-07m" secondAttribute="height" multiplier="187:50" id="VcP-7L-IKo"/>
                 <constraint firstAttribute="centerX" secondItem="Zkr-8A-07m" secondAttribute="centerX" id="hyo-yz-mXz"/>
                 <constraint firstAttribute="centerY" secondItem="nji-Ib-YnZ" secondAttribute="centerY" constant="22" id="llU-a3-npu"/>
