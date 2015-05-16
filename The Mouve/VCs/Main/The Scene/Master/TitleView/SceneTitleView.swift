@@ -20,7 +20,11 @@ class SceneTitleView: UIView {
     var view: UIView!
     
     @IBOutlet weak var leftButton: UIButton!
+    var leftAction: ()?
+    
     @IBOutlet weak var rightButton: UIButton!
+    var rightAction: ()?
+    
     @IBOutlet weak var underlineView: UIView!
     
     var type: SceneType? {
