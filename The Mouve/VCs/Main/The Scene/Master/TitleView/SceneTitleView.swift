@@ -20,23 +20,8 @@ class SceneTitleView: UIView {
     var view: UIView!
     
     @IBOutlet weak var leftButton: UIButton!
-    var leftAction: ()?
-    
     @IBOutlet weak var rightButton: UIButton!
-    var rightAction: ()?
-    
     @IBOutlet weak var underlineView: UIView!
-    
-    var type: SceneType? {
-        willSet {
-            UIView.animateWithDuration(0.2, animations: {
-                let animateToButton = self.type == self.buttonOne.0 ? self.rightButton : self.leftButton
-                    
-                let origin = CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height - 4)
-                self.underlineView.frame = CGRect(origin: origin, size: CGSize(width: animateToButton.frame.width, height: 2))
-            })
-        }
-    }
     
     convenience init(type: SceneType, frame: CGRect) { //init from code
         self.init(frame: frame)
@@ -76,16 +61,30 @@ class SceneTitleView: UIView {
         self.rightButton.titleLabel?.sizeToFit()
         
         dispatch_async(dispatch_get_main_queue(), {
-            self.underlineView.frame = CGRect(origin: self.underlineView.frame.origin, size: CGSize(width: self.leftButton.frame.width, height: self.underlineView.frame.height))
+            self.underlineView.frame.size.width = self.leftButton.frame.width
+            self.underlineView.frame.origin.y = self.leftButton.frame.origin.y + self.leftButton.bounds.height - 4
         })
         
         LocalMessage.observe(buttonOne.2, classFunction: "pageOne", inClass: self)
         LocalMessage.observe(buttonTwo.2, classFunction: "pageTwo", inClass: self)
     }
-
+    
+    
+    
+    var type: SceneType? {
+        willSet {
+            UIView.animateWithDuration(0.2, animations: {
+                let animateToButton = newValue == self.buttonOne.0 ? self.leftButton : self.rightButton
+                
+                let origin = CGPoint(x: animateToButton.frame.origin.x, y: animateToButton.frame.origin.y + animateToButton.frame.height - 4)
+                self.underlineView.frame = CGRect(origin: origin, size: CGSize(width: animateToButton.frame.width, height: 2))
+            })
+        }
+    }
+    
     func pageOne() { type = buttonOne.0 }
     func pageTwo() { type = buttonTwo.0 }
-
+    
     
     @IBAction func leftButtonWasHit(sender: AnyObject) {
         if type != buttonOne.0 {
@@ -93,13 +92,10 @@ class SceneTitleView: UIView {
             type = buttonOne.0
         }
     }
-
+    
     @IBAction func rightButtonWasHit(sender: AnyObject) {
-        
         if type != buttonTwo.0 {
-            println(buttonTwo.1)
             LocalMessage.post(buttonTwo.1)
-            
             type = buttonTwo.0
         }
     }
