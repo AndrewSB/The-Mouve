@@ -22,6 +22,7 @@
 		464B2DC71AFD79890095FB83 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B2DC61AFD79890095FB83 /* OutlinedButton.swift */; };
 		464B2DC91AFD79960095FB83 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B2DC81AFD79960095FB83 /* FilledButton.swift */; };
 		464B2DCB1AFD79960095FB83 /* HalisGR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 464B2DCA1AFD79960095FB83 /* HalisGR-Light.otf */; };
+		464E8E1C1B07E5FB00AF0ADD /* PaddedTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464E8E1B1B07E5FB00AF0ADD /* PaddedTableViewDelegate.swift */; };
 		466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A35461AF0506900E82FFD /* ProfileViewController.swift */; };
 		4673C10A1AF6A22F000C034A /* BaseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4673C1091AF6A22F000C034A /* BaseObject.swift */; };
 		4673C10C1AF6A885000C034A /* Aliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4673C10B1AF6A885000C034A /* Aliases.swift */; };
@@ -127,6 +128,7 @@
 		464B2DC61AFD79890095FB83 /* OutlinedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
 		464B2DC81AFD79960095FB83 /* FilledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
 		464B2DCA1AFD79960095FB83 /* HalisGR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Light.otf"; sourceTree = "<group>"; };
+		464E8E1B1B07E5FB00AF0ADD /* PaddedTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedTableViewDelegate.swift; sourceTree = "<group>"; };
 		466A35461AF0506900E82FFD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4673C1091AF6A22F000C034A /* BaseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseObject.swift; sourceTree = "<group>"; };
 		4673C10B1AF6A885000C034A /* Aliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aliases.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				46B888C31AF94C3E00D872E0 /* GreyGreenButton.swift */,
 				464B2DC61AFD79890095FB83 /* OutlinedButton.swift */,
 				464B2DC81AFD79960095FB83 /* FilledButton.swift */,
+				464E8E1B1B07E5FB00AF0ADD /* PaddedTableViewDelegate.swift */,
 			);
 			name = "UI Elements";
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				46CC15CA1AFE1AAE003E3D9E /* AlertUIView.swift in Sources */,
 				46B888C21AF8801000D872E0 /* DetailPostTableViewCell.swift in Sources */,
 				46CC15C61AFDF6A1003E3D9E /* IntExtension.swift in Sources */,
+				464E8E1C1B07E5FB00AF0ADD /* PaddedTableViewDelegate.swift in Sources */,
 				462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */,
 				4673C10E1AF6B781000C034A /* FacebookIDExtension.swift in Sources */,
 				46B888D11AF95CD400D872E0 /* AddMouveViewController.swift in Sources */,
