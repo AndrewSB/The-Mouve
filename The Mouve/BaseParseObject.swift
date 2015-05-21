@@ -9,22 +9,18 @@
 import UIKit
 import Parse
 
-class BaseParseObject: NSObject {
-    var className: String
-    var objectID: String
-    var createdAt: NSDate
-    var updatedAt: NSDate
-
-    var timeSinceCreation: NSTimeInterval {
-        get {
-            return createdAt.timeIntervalSinceNow
-        }
-    }
-    
-    init(parseObject: PFObject) {
-        self.objectID = parseObject.objectId!
-        self.createdAt = parseObject.createdAt!
-        self.updatedAt = parseObject.updatedAt!
-        self.className = parseObject.parseClassName
-    }
+class BaseParseObject: PFObject {
+//    var className: String
+//    var objectID: String
+//
+//    var timeSinceCreation: NSTimeInterval {
+//        get {
+//            return createdAt!.timeIntervalSinceNow
+//        }
+//    }
+//    
+//    init(parseObject: PFObject) {
+//        self.objectID = parseObject.objectId!
+//        self.className = parseObject.parseClassName
+//    }
 }

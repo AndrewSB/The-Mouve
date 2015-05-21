@@ -1,15 +1,16 @@
 //
-//  Event.swift
+//  RemoteEvent.swift
 //  The Mouve
 //
-//  Created by Andrew Breckenridge on 4/28/15.
+//  Created by Andrew Breckenridge on 5/19/15.
 //  Copyright (c) 2015 Andrew Breckenridge. All rights reserved.
 //
 
 import UIKit
 import Parse
+import CoreLocation
 
-class Event: BaseObject {
+class RemoteEvent: PFObject {
     var name: String
     
     var time: NSDate
@@ -46,6 +47,13 @@ class Event: BaseObject {
         
         self.backgroundImage = backgroundImage
         
-        super.init(className: "User")
+        super.init(className: "Event")
     }
+    
+    convenience init(event: Event) {
+        self.init(name: event.name, about: event.about, time: event.time, length: event.length, address: event.address, invitees: event.invitees, backgroundImage: event.backgroundImage)
+        
+        self.location = event.location
+    }
+
 }

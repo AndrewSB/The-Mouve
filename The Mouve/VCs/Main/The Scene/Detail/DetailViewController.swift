@@ -55,7 +55,7 @@ class DetailViewController: UIViewController {
         eventNameLabel.text = event.name
         descriptionLabel.text = event.about
         
-        addressButton.titleLabel?.text = event.addressString
+        addressButton.titleLabel?.text = event.address
         inviteButton.titleLabel?.text = "\(event.invitees.count) Invited"
     }
     
