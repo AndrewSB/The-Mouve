@@ -498,13 +498,13 @@
 		46B29BD21ADB21D3000B9441 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				46B29B841ADB2067000B9441 /* Images.xcassets */,
 				469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */,
 				469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */,
 				464B2DCA1AFD79960095FB83 /* HalisGR-Light.otf */,
 				469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */,
 				469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */,
 				462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */,
-				46B29B841ADB2067000B9441 /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -673,7 +673,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run cf31bd871fb35d3e3e94b3732cd654bbde1f5b0c 33804315ff66b7966281403539d1d005fcf98139ee03282942a67832a10b0f8e";
+			shellScript = "./Fabric.framework/run 6fd7ce723642bafd51f65d943c5959d75199e9f2 377e104991bf8ebb51b298482c09c74a762d57ec93af0b42cc2ae53e3048f9ec";
 		};
 /* End PBXShellScriptBuildPhase section */
 
