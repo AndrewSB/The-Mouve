@@ -36,21 +36,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         
-        let event = Event(name: "Beach Chillin", about: "Bring your swim suits! We will be chilling at the Lincoln Park Beach", time: NSDate(), length: 0, address: "Lincoln Beach", invitees: [43,43,43,43,43,43,4,3,4,343,43,34].map({"\($0)"}), backgroundImage: UIImage(named: "Beach-Chillin")!)
-        event.location = CLLocationCoordinate2DMake(37.04508, -122.017229)
-        
-        let parseEvent = PFObject(className: "Event")
-        
-        parseEvent["name"] = event.name
-        parseEvent["about"] = event.about
-        parseEvent["time"] = event.time
-        parseEvent["length"] = event.length
-        parseEvent["address"] = event.address
-        parseEvent["invitees"] = event.invitees
-        parseEvent["backgroundImage"] = event.backgroundImage
-        parseEvent["location"] = PFGeoPoint(latitude: event.location!.latitude, longitude: event.location!.longitude)
-        
-        parseEvent.save()
+//        let event = Event(name: "Beach Chillin", about: "Bring your swim suits! We will be chilling at the Lincoln Park Beach", time: NSDate(), length: 0, address: "Lincoln Beach", invitees: [43,43,43,43,43,43,4,3,4,343,43,34].map({"\($0)"}), backgroundImage: UIImage(named: "Beach-Chillin")!)
+//        event.location = CLLocationCoordinate2DMake(37.04508, -122.017229)
+//        
+//        let parseEvent = PFObject(className: "Event")
+//        
+//        parseEvent["name"] = event.name
+//        parseEvent["about"] = event.about
+//        parseEvent["time"] = event.time
+//        parseEvent["length"] = event.length
+//        parseEvent["address"] = event.address
+//        parseEvent["invitees"] = event.invitees
+//        parseEvent["backgroundImage"] = event.backgroundImage
+//        parseEvent["location"] = PFGeoPoint(latitude: event.location!.latitude, longitude: event.location!.longitude)
+//        
+//        parseEvent.save()
         
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
