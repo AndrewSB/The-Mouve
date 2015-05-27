@@ -96,6 +96,7 @@
 		46CC15CC1AFE1AB9003E3D9E /* AlertUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46CC15CB1AFE1AB9003E3D9E /* AlertUIView.xib */; };
 		46D788FE1B0BF86A00276696 /* RemoteEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D788FD1B0BF86A00276696 /* RemoteEvent.swift */; };
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
+		7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78A1B1575AB005A1AF1 /* addImage.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -203,6 +204,7 @@
 		46CC15CB1AFE1AB9003E3D9E /* AlertUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertUIView.xib; sourceTree = "<group>"; };
 		46D788FD1B0BF86A00276696 /* RemoteEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteEvent.swift; sourceTree = "<group>"; };
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		7832E78A1B1575AB005A1AF1 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addImage.png; path = ../VCs/Main/addImage.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -499,6 +501,7 @@
 			isa = PBXGroup;
 			children = (
 				46B29B841ADB2067000B9441 /* Images.xcassets */,
+				7832E78A1B1575AB005A1AF1 /* addImage.png */,
 				469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */,
 				469C43661ADEF7A200D6A510 /* HalisGR-Book.otf */,
 				464B2DCA1AFD79960095FB83 /* HalisGR-Light.otf */,
@@ -641,6 +644,7 @@
 			files = (
 				464B2DCB1AFD79960095FB83 /* HalisGR-Light.otf in Resources */,
 				46CC15CC1AFE1AB9003E3D9E /* AlertUIView.xib in Resources */,
+				7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */,
 				46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */,
 				469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */,
 				4673C1221AF6C857000C034A /* LICENSE in Resources */,
