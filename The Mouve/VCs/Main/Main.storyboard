@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u3Z-Xn-nCF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u3Z-Xn-nCF">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -38,6 +39,7 @@
             <string>HalisGR-RegularItalic</string>
         </mutableArray>
         <mutableArray key="HalisGR-Regular.otf">
+            <string>HalisGR-Regular</string>
             <string>HalisGR-Regular</string>
             <string>HalisGR-Regular</string>
             <string>HalisGR-Regular</string>
@@ -573,7 +575,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0FZ-f5-7e8" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0FZ-f5-7e8" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
                                 <rect key="frame" x="82" y="371" width="436" height="16"/>
                                 <color key="tintColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
@@ -588,41 +590,33 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQu-Sk-ei1">
-                                <rect key="frame" x="269" y="182" width="63" height="57"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="hQu-Sk-ei1" secondAttribute="height" multiplier="21:19" id="Pqb-We-Ep6"/>
-                                    <constraint firstAttribute="height" constant="57" id="xpf-YA-1Kj"/>
-                                </constraints>
-                            </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Details" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uxC-bo-1bP" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Details" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uxC-bo-1bP" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
                                 <rect key="frame" x="82" y="416" width="436" height="16"/>
                                 <color key="tintColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZyY-Yt-W3B" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZyY-Yt-W3B" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
                                 <rect key="frame" x="82" y="452" width="436" height="16"/>
                                 <color key="tintColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                             </textField>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ll-Bu-akC">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ll-Bu-akC">
                                 <rect key="frame" x="300" y="239" width="0.0" height="132"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="6SN-ZG-YDc"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJQ-Tw-wj9">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZJQ-Tw-wj9">
                                 <rect key="frame" x="300" y="468" width="0.0" height="132"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="EmE-A8-gfJ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e8N-vZ-aka">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8N-vZ-aka">
                                 <rect key="frame" x="300" y="50" width="0.0" height="132"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -641,6 +635,38 @@
                                     <segue destination="CZ1-NA-3C0" kind="unwind" unwindAction="unwindToTheSceneVC:" id="lPp-5e-va2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ri-s0-4XQ" customClass="OutlinedButton" customModule="The_Mouve" customModuleProvider="target">
+                                <rect key="frame" x="220" y="550" width="160" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="MSI-M9-ccb"/>
+                                    <constraint firstAttribute="height" constant="33" id="vYg-p3-fax"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Create Mouve">
+                                    <color key="titleColor" red="0.4365693927" green="0.93256706" blue="0.72956490519999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="postMouveButtonWasHit:" destination="FOw-hf-56g" eventType="touchUpInside" id="11M-S6-hMO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwK-E3-1FF" userLabel="Image Button">
+                                <rect key="frame" x="285" y="97" width="30" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="RyH-q1-QFI"/>
+                                    <constraint firstAttribute="width" constant="210" id="eqx-IY-Mre"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" backgroundImage="San-Francisco-Visit">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="switchImageMenu:" destination="FOw-hf-56g" eventType="touchUpInside" id="jZR-Hw-ND4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -648,29 +674,48 @@
                             <constraint firstItem="ZyY-Yt-W3B" firstAttribute="top" secondItem="uxC-bo-1bP" secondAttribute="bottom" constant="20" id="0vQ-Iy-B87"/>
                             <constraint firstItem="ZyY-Yt-W3B" firstAttribute="leading" secondItem="VoL-rW-eoz" secondAttribute="leadingMargin" constant="66" id="1ca-yq-XKf"/>
                             <constraint firstItem="uxC-bo-1bP" firstAttribute="leading" secondItem="VoL-rW-eoz" secondAttribute="leadingMargin" constant="66" id="28g-zK-2su"/>
-                            <constraint firstItem="1Ll-Bu-akC" firstAttribute="top" secondItem="hQu-Sk-ei1" secondAttribute="bottom" id="2hg-7D-RNi"/>
                             <constraint firstItem="7QP-nM-NUk" firstAttribute="leading" secondItem="VoL-rW-eoz" secondAttribute="leading" constant="11" id="6oR-BV-2Z7"/>
                             <constraint firstItem="e8N-vZ-aka" firstAttribute="top" secondItem="xmu-Jd-lW1" secondAttribute="bottom" id="6sn-Qg-BL2"/>
                             <constraint firstItem="0FZ-f5-7e8" firstAttribute="leading" secondItem="VoL-rW-eoz" secondAttribute="leadingMargin" constant="66" id="8Tc-Jb-0w5"/>
-                            <constraint firstAttribute="centerX" secondItem="hQu-Sk-ei1" secondAttribute="centerX" id="9yp-tX-y5R"/>
+                            <constraint firstAttribute="centerY" secondItem="5Ri-s0-4XQ" secondAttribute="top" id="8Xw-ws-mcw"/>
                             <constraint firstItem="NH9-N2-IwK" firstAttribute="top" secondItem="ZJQ-Tw-wj9" secondAttribute="bottom" id="A0V-Zf-phz"/>
                             <constraint firstItem="1Ll-Bu-akC" firstAttribute="height" secondItem="ZJQ-Tw-wj9" secondAttribute="height" id="Cmv-K9-hfk"/>
                             <constraint firstItem="xmu-Jd-lW1" firstAttribute="top" secondItem="7fY-Cs-z9m" secondAttribute="bottom" constant="11" id="EN0-iL-9h6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZyY-Yt-W3B" secondAttribute="trailing" constant="66" id="FgI-pi-vnD"/>
-                            <constraint firstItem="hQu-Sk-ei1" firstAttribute="top" secondItem="e8N-vZ-aka" secondAttribute="bottom" id="HTC-WP-5SO"/>
                             <constraint firstItem="ZJQ-Tw-wj9" firstAttribute="top" secondItem="ZyY-Yt-W3B" secondAttribute="bottom" id="KHU-aV-hYu"/>
                             <constraint firstAttribute="centerX" secondItem="ZJQ-Tw-wj9" secondAttribute="centerX" id="Lgo-Lh-yZR"/>
                             <constraint firstAttribute="centerX" secondItem="1Ll-Bu-akC" secondAttribute="centerX" id="Mo2-pc-fnr"/>
                             <constraint firstItem="7QP-nM-NUk" firstAttribute="top" secondItem="7fY-Cs-z9m" secondAttribute="bottom" constant="11" id="SYN-6k-4Ud"/>
                             <constraint firstItem="e8N-vZ-aka" firstAttribute="height" secondItem="1Ll-Bu-akC" secondAttribute="height" id="U0E-by-HTz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uxC-bo-1bP" secondAttribute="trailing" constant="66" id="U2V-72-55f"/>
+                            <constraint firstAttribute="centerX" secondItem="jwK-E3-1FF" secondAttribute="centerX" id="Ubd-d1-X9t"/>
+                            <constraint firstItem="5Ri-s0-4XQ" firstAttribute="top" secondItem="VoL-rW-eoz" secondAttribute="top" constant="550" id="Wrt-g7-YQ6"/>
+                            <constraint firstAttribute="centerX" secondItem="5Ri-s0-4XQ" secondAttribute="centerX" id="dBD-1Y-lJm"/>
                             <constraint firstItem="uxC-bo-1bP" firstAttribute="top" secondItem="0FZ-f5-7e8" secondAttribute="bottom" constant="29" id="ebc-SN-2gg"/>
                             <constraint firstItem="0FZ-f5-7e8" firstAttribute="top" secondItem="1Ll-Bu-akC" secondAttribute="bottom" id="fTr-Af-Pd9"/>
                             <constraint firstAttribute="centerX" secondItem="e8N-vZ-aka" secondAttribute="centerX" id="ih6-gY-wnR"/>
+                            <constraint firstAttribute="trailing" secondItem="5Ri-s0-4XQ" secondAttribute="trailing" constant="-46" id="mx5-rw-ssr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0FZ-f5-7e8" secondAttribute="trailing" constant="66" id="pcx-Rd-urF"/>
                             <constraint firstAttribute="centerX" secondItem="xmu-Jd-lW1" secondAttribute="centerX" id="vcR-e3-BvG"/>
+                            <constraint firstItem="5Ri-s0-4XQ" firstAttribute="leading" secondItem="VoL-rW-eoz" secondAttribute="leading" constant="220" id="yUC-g6-8ve"/>
+                            <constraint firstAttribute="bottom" secondItem="5Ri-s0-4XQ" secondAttribute="bottom" constant="20" symbolic="YES" id="z4g-K0-WID"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8Xw-ws-mcw"/>
+                                <exclude reference="mx5-rw-ssr"/>
+                                <exclude reference="yUC-g6-8ve"/>
+                                <exclude reference="z4g-K0-WID"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="detailInfoTextField" destination="uxC-bo-1bP" id="hXK-lu-s6Y"/>
+                        <outlet property="eventImageButton" destination="jwK-E3-1FF" id="5iU-SV-Sc6"/>
+                        <outlet property="locationTextField" destination="ZyY-Yt-W3B" id="p0G-G2-wZX"/>
+                        <outlet property="postMouveButton" destination="5Ri-s0-4XQ" id="Nxr-eG-J7e"/>
+                        <outlet property="titleEventTextField" destination="0FZ-f5-7e8" id="pis-t9-vvh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qpz-bf-diw" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="CZ1-NA-3C0" userLabel="Exit" sceneMemberID="exit"/>
@@ -1288,6 +1333,7 @@
     </scenes>
     <resources>
         <image name="Line" width="6" height="244"/>
+        <image name="San-Francisco-Visit" width="760" height="243"/>
         <image name="back-button" width="20" height="31"/>
         <image name="bell-icon" width="24" height="24"/>
         <image name="calendar" width="37" height="39"/>
