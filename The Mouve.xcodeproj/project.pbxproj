@@ -97,6 +97,9 @@
 		46D788FE1B0BF86A00276696 /* RemoteEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D788FD1B0BF86A00276696 /* RemoteEvent.swift */; };
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
 		7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78A1B1575AB005A1AF1 /* addImage.png */; };
+		7832E78D1B16C66F005A1AF1 /* Switch on image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78C1B16C66F005A1AF1 /* Switch on image.png */; };
+		78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */; };
+		78CFBD141B192F5D002AE6A2 /* TimeRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -205,6 +208,9 @@
 		46D788FD1B0BF86A00276696 /* RemoteEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteEvent.swift; sourceTree = "<group>"; };
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		7832E78A1B1575AB005A1AF1 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addImage.png; path = ../VCs/Main/addImage.png; sourceTree = "<group>"; };
+		7832E78C1B16C66F005A1AF1 /* Switch on image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Switch on image.png"; path = "../VCs/Main/Switch on image.png"; sourceTree = "<group>"; };
+		78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
+		78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRangeSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +269,8 @@
 			isa = PBXGroup;
 			children = (
 				46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */,
+				78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */,
+				78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */,
 				469C43791ADF10BA00D6A510 /* Master */,
 				469C437C1ADF10DC00D6A510 /* Detail */,
 			);
@@ -500,6 +508,7 @@
 		46B29BD21ADB21D3000B9441 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7832E78C1B16C66F005A1AF1 /* Switch on image.png */,
 				46B29B841ADB2067000B9441 /* Images.xcassets */,
 				7832E78A1B1575AB005A1AF1 /* addImage.png */,
 				469C43691ADEF84900D6A510 /* HalisGR-Regular.otf */,
@@ -646,6 +655,7 @@
 				46CC15CC1AFE1AB9003E3D9E /* AlertUIView.xib in Resources */,
 				7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */,
 				46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */,
+				7832E78D1B16C66F005A1AF1 /* Switch on image.png in Resources */,
 				469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */,
 				4673C1221AF6C857000C034A /* LICENSE in Resources */,
 				46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */,
@@ -699,9 +709,11 @@
 				4673C10C1AF6A885000C034A /* Aliases.swift in Sources */,
 				4673C10A1AF6A22F000C034A /* BaseObject.swift in Sources */,
 				46CC15CA1AFE1AAE003E3D9E /* AlertUIView.swift in Sources */,
+				78CFBD141B192F5D002AE6A2 /* TimeRangeSlider.swift in Sources */,
 				46B888C21AF8801000D872E0 /* DetailPostTableViewCell.swift in Sources */,
 				461659851B0CC98A00B06147 /* Imgur.swift in Sources */,
 				46CC15C61AFDF6A1003E3D9E /* IntExtension.swift in Sources */,
+				78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */,
 				462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */,
 				46D788FE1B0BF86A00276696 /* RemoteEvent.swift in Sources */,
 				4673C10E1AF6B781000C034A /* FacebookIDExtension.swift in Sources */,

@@ -21,6 +21,8 @@
             <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
         </mutableArray>
         <mutableArray key="HalisGR-Light-Italic.otf">
             <string>HalisGR-LightItalic</string>
@@ -31,6 +33,7 @@
             <string>HalisGR-Light</string>
         </mutableArray>
         <mutableArray key="HalisGR-Medium.otf">
+            <string>HalisGR-Medium</string>
             <string>HalisGR-Medium</string>
             <string>HalisGR-Medium</string>
         </mutableArray>
@@ -635,7 +638,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ri-s0-4XQ" customClass="OutlinedButton" customModule="The_Mouve" customModuleProvider="target">
-                                <rect key="frame" x="220" y="500" width="160" height="33"/>
+                                <rect key="frame" x="220" y="520" width="160" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="MSI-M9-ccb"/>
                                     <constraint firstAttribute="height" constant="33" id="vYg-p3-fax"/>
@@ -667,6 +670,34 @@
                                     <action selector="switchImageMenu:" destination="FOw-hf-56g" eventType="touchUpInside" id="jZR-Hw-ND4"/>
                                 </connections>
                             </button>
+                            <switch contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="34o-ML-Hh9">
+                                <rect key="frame" x="276" y="441" width="51" height="31"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="onTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="flipSwitch:" destination="FOw-hf-56g" eventType="valueChanged" id="9Iv-CY-JHg"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Public" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eim-p2-abQ">
+                                <rect key="frame" x="277" y="480" width="48" height="21"/>
+                                <fontDescription key="fontDescription" name="HalisGR-Medium" family="Halis GR" pointSize="14"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="From:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haI-iS-2ek">
+                                <rect key="frame" x="63" y="430" width="200" height="21"/>
+                                <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="13"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="To:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBd-1X-EJA">
+                                <rect key="frame" x="374" y="430" width="200" height="21"/>
+                                <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="13"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -679,28 +710,40 @@
                             <constraint firstItem="0FZ-f5-7e8" firstAttribute="leading" secondItem="VoL-rW-eoz" secondAttribute="leadingMargin" constant="66" id="8Tc-Jb-0w5"/>
                             <constraint firstItem="NH9-N2-IwK" firstAttribute="top" secondItem="ZJQ-Tw-wj9" secondAttribute="bottom" id="A0V-Zf-phz"/>
                             <constraint firstItem="xmu-Jd-lW1" firstAttribute="top" secondItem="7fY-Cs-z9m" secondAttribute="bottom" constant="11" id="EN0-iL-9h6"/>
+                            <constraint firstItem="haI-iS-2ek" firstAttribute="top" secondItem="VoL-rW-eoz" secondAttribute="top" constant="420" id="FVv-Fj-mdE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZyY-Yt-W3B" secondAttribute="trailing" constant="66" id="FgI-pi-vnD"/>
                             <constraint firstItem="uxC-bo-1bP" firstAttribute="top" secondItem="VoL-rW-eoz" secondAttribute="top" constant="290" id="IA3-Aa-KpX"/>
+                            <constraint firstItem="Eim-p2-abQ" firstAttribute="top" secondItem="VoL-rW-eoz" secondAttribute="top" constant="475" id="JVN-aM-obK"/>
                             <constraint firstItem="ZJQ-Tw-wj9" firstAttribute="top" secondItem="ZyY-Yt-W3B" secondAttribute="bottom" id="KHU-aV-hYu"/>
                             <constraint firstAttribute="centerX" secondItem="ZJQ-Tw-wj9" secondAttribute="centerX" id="Lgo-Lh-yZR"/>
                             <constraint firstAttribute="centerX" secondItem="1Ll-Bu-akC" secondAttribute="centerX" id="Mo2-pc-fnr"/>
+                            <constraint firstAttribute="centerX" secondItem="34o-ML-Hh9" secondAttribute="centerX" id="QQZ-4F-NcQ"/>
                             <constraint firstItem="7QP-nM-NUk" firstAttribute="top" secondItem="7fY-Cs-z9m" secondAttribute="bottom" constant="11" id="SYN-6k-4Ud"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uxC-bo-1bP" secondAttribute="trailing" constant="66" id="U2V-72-55f"/>
-                            <constraint firstItem="5Ri-s0-4XQ" firstAttribute="top" secondItem="VoL-rW-eoz" secondAttribute="top" constant="500" id="Wrt-g7-YQ6"/>
+                            <constraint firstItem="5Ri-s0-4XQ" firstAttribute="top" secondItem="VoL-rW-eoz" secondAttribute="top" constant="520" id="Wrt-g7-YQ6"/>
                             <constraint firstItem="0FZ-f5-7e8" firstAttribute="top" secondItem="VoL-rW-eoz" secondAttribute="top" constant="240" id="YoE-jV-x4N"/>
+                            <constraint firstItem="34o-ML-Hh9" firstAttribute="top" secondItem="VoL-rW-eoz" secondAttribute="top" constant="435" id="ZnH-jV-tdD"/>
+                            <constraint firstAttribute="centerX" secondItem="Eim-p2-abQ" secondAttribute="centerX" id="cIu-rg-h9I"/>
                             <constraint firstAttribute="centerX" secondItem="5Ri-s0-4XQ" secondAttribute="centerX" id="dBD-1Y-lJm"/>
+                            <constraint firstItem="gBd-1X-EJA" firstAttribute="top" secondItem="VoL-rW-eoz" secondAttribute="top" constant="420" id="dQo-sy-iTF"/>
                             <constraint firstItem="0FZ-f5-7e8" firstAttribute="top" secondItem="1Ll-Bu-akC" secondAttribute="bottom" id="fTr-Af-Pd9"/>
+                            <constraint firstAttribute="trailing" secondItem="gBd-1X-EJA" secondAttribute="trailing" constant="30" id="gDh-SI-O1o"/>
                             <constraint firstAttribute="centerX" secondItem="e8N-vZ-aka" secondAttribute="centerX" id="ih6-gY-wnR"/>
                             <constraint firstItem="ZyY-Yt-W3B" firstAttribute="top" secondItem="VoL-rW-eoz" secondAttribute="top" constant="340" id="oH4-sp-tpe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0FZ-f5-7e8" secondAttribute="trailing" constant="66" id="pcx-Rd-urF"/>
+                            <constraint firstItem="haI-iS-2ek" firstAttribute="leading" secondItem="VoL-rW-eoz" secondAttribute="leading" constant="30" id="te5-oF-IU0"/>
                             <constraint firstAttribute="centerX" secondItem="xmu-Jd-lW1" secondAttribute="centerX" id="vcR-e3-BvG"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="detailInfoTextField" destination="uxC-bo-1bP" id="hXK-lu-s6Y"/>
+                        <outlet property="endTime" destination="gBd-1X-EJA" id="xrY-PJ-dGD"/>
                         <outlet property="eventImageButton" destination="jwK-E3-1FF" id="5iU-SV-Sc6"/>
                         <outlet property="locationTextField" destination="ZyY-Yt-W3B" id="p0G-G2-wZX"/>
                         <outlet property="postMouveButton" destination="5Ri-s0-4XQ" id="Nxr-eG-J7e"/>
+                        <outlet property="publicPrivateLabel" destination="Eim-p2-abQ" id="fQO-er-vSN"/>
+                        <outlet property="publicPrivateSwitch" destination="34o-ML-Hh9" id="Ric-iW-bRL"/>
+                        <outlet property="startTime" destination="haI-iS-2ek" id="Paa-YV-1yC"/>
                         <outlet property="titleEventTextField" destination="0FZ-f5-7e8" id="pis-t9-vvh"/>
                     </connections>
                 </viewController>

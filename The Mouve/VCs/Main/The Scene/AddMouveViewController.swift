@@ -39,17 +39,58 @@ class AddMouveViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var locationTextField: UnderlinedTextField!
     @IBOutlet weak var postMouveButton: UIButton!
     @IBOutlet weak var eventImageButton: UIButton?
+    @IBOutlet weak var startTime: UILabel?
+    @IBOutlet weak var endTime: UILabel?
+    
     var imagePicker: UIImagePickerController?=UIImagePickerController()
     var popoverMenu: UIPopoverController?=nil
     
     let newMouve = PFObject(className: "mouveEvent")
+    let rangeSlider = TimeRangeSlider(frame: CGRectZero)
+
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        rangeSlider.trackHighlightTintColor = UIColor.seaFoamGreen()
+        rangeSlider.trackTintColor = UIColor.lightNicePaleBlue()
+        rangeSlider.curvaceousness = 0.2
+        rangeSlider.thumbThicknessPercent = 0.3
+        rangeSlider.thumbTintColor = UIColor.seaFoamGreen()
+        
         var eventPic = self.eventImageButton?.currentBackgroundImage
         self.eventImageButton?.setBackgroundImage(circleMyImage(eventPic!), forState: .Normal)
         setupForEntry(postMouveButton)
+        publicPrivateSwitch.tintColor = UIColor.lightSeaFoamGreen()
+        publicPrivateSwitch.onTintColor = UIColor.lightSeaFoamGreen()
+        publicPrivateSwitch.thumbTintColor = UIColor.seaFoamGreen()
+
+        view.addSubview(rangeSlider)
+        
+        rangeSlider.addTarget(self, action: "rangeSliderValueChanged:", forControlEvents: .ValueChanged)
+
     }
+    
+    // Alignments for the range-slider
+    override func viewDidLayoutSubviews() {
+        let margin: CGFloat = 20.0
+        let width = view.bounds.width - 2.0 * margin
+        rangeSlider.frame = CGRect(x: margin, y: margin + topLayoutGuide.length + 345,
+            width: width, height: 31.0)
+    }
+    
+    
+    // Changes labels as you drag slider
+    func rangeSliderValueChanged(rangeSlider: TimeRangeSlider) {
+        var currentTimes = rangeSlider.timeValues()
+        startTime!.text = currentTimes.startVal
+        endTime!.text = currentTimes.endVal
+        
+        //
+        println("Range slider value changed: (\(rangeSlider.lowerValue) , \(rangeSlider.upperValue))")
+    }
+    
+    
     
     //    Using Toucan to circle the images
     func circleMyImage(currentImage: UIImage) -> UIImage{
@@ -132,9 +173,29 @@ class AddMouveViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+//
+//  Switch to toggle between public and private
+    @IBOutlet weak var publicPrivateSwitch: UISwitch!
+        
+    
+    @IBOutlet weak var publicPrivateLabel: UILabel!
+    
+    
+    
+    @IBAction func flipSwitch(sender: AnyObject) {
+        
+        if publicPrivateSwitch.on
+        {
+            publicPrivateLabel.text = "Private"
+        }
+        else
+        {
+            publicPrivateLabel.text = "Public"
+        }
+    }
+    
+//
 //
 //
     @IBAction func postMouveButtonWasHit(sender: AnyObject) {
