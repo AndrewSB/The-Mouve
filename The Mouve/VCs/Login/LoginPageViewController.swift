@@ -56,7 +56,7 @@ extension LoginPageViewController { //View code
         skipButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
         skipButton.setTitle("Try without an account", forState: .Normal)
         skipButton.sizeToFit()
-        skipButton.frame = CGRect(origin: CGPoint(x: self.view.bounds.width  - skipButton.frame.width - 10, y: self.view.bounds.height - skipButton.frame.height), size: skipButton.frame.size)
+        skipButton.frame = CGRect(origin: CGPoint(x: self.view.bounds.width  - skipButton.frame.width - 15, y: self.view.bounds.height - skipButton.frame.height - 5), size: skipButton.frame.size)
         skipButton.addTarget(self, action: Selector("skipButtonWasHit:"), forControlEvents: .TouchUpInside)
         
         [pageControl!, mouveImageView, loginButton, signupButton, skipButton].map({

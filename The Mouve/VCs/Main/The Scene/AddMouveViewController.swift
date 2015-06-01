@@ -6,34 +6,11 @@
 //  Copyright (c) 2015 Samuel Ojogbo. All rights reserved.
 //
 
-//import UIKit
-//
-//class AddMouveViewController: UIViewController {
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        // Do any additional setup after loading the view.
-//    }
-//    
-//
-//    /*
-//    // MARK: - Navigation
-//
-//    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        // Get the new view controller using segue.destinationViewController.
-//        // Pass the selected object to the new view controller.
-//    }
-//    */
-//
-//}
-
 import UIKit
 import Parse
 import Toucan
 
-class AddMouveViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate {
+class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverControllerDelegate {
     @IBOutlet weak var titleEventTextField: UnderlinedTextField!
     @IBOutlet weak var detailInfoTextField: UnderlinedTextField!
     @IBOutlet weak var locationTextField: UnderlinedTextField!
@@ -45,12 +22,16 @@ class AddMouveViewController: UIViewController, UIImagePickerControllerDelegate,
     var imagePicker: UIImagePickerController?=UIImagePickerController()
     var popoverMenu: UIPopoverController?=nil
     
-    let newMouve = PFObject(className: "mouveEvent")
+    let newMouve = PFObject(className: "Event")
     let rangeSlider = TimeRangeSlider(frame: CGRectZero)
 
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        statusBar(.LightContent)
+        
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 44
+        
+        [titleEventTextField, detailInfoTextField, locationTextField].map({ $0.delegate = self })
         
         rangeSlider.trackHighlightTintColor = UIColor.seaFoamGreen()
         rangeSlider.trackTintColor = UIColor.lightNicePaleBlue()
@@ -64,11 +45,10 @@ class AddMouveViewController: UIViewController, UIImagePickerControllerDelegate,
         publicPrivateSwitch.tintColor = UIColor.lightSeaFoamGreen()
         publicPrivateSwitch.onTintColor = UIColor.lightSeaFoamGreen()
         publicPrivateSwitch.thumbTintColor = UIColor.seaFoamGreen()
-
+        
         view.addSubview(rangeSlider)
         
         rangeSlider.addTarget(self, action: "rangeSliderValueChanged:", forControlEvents: .ValueChanged)
-
     }
     
     // Alignments for the range-slider
@@ -85,18 +65,31 @@ class AddMouveViewController: UIViewController, UIImagePickerControllerDelegate,
         var currentTimes = rangeSlider.timeValues()
         startTime!.text = currentTimes.startVal
         endTime!.text = currentTimes.endVal
-        
-        //
-        println("Range slider value changed: (\(rangeSlider.lowerValue) , \(rangeSlider.upperValue))")
     }
     
     
+    //  Switch to toggle between public and private
+    @IBOutlet weak var publicPrivateSwitch: UISwitch!
+    @IBOutlet weak var publicPrivateLabel: UILabel!
     
+    @IBAction func flipSwitch(sender: AnyObject) {
+        publicPrivateLabel.text = publicPrivateSwitch.on ? "Private" : "Public"
+    }
+
+    @IBAction func postMouveButtonWasHit(sender: AnyObject) {
+        newMouve["title"]    = titleEventTextField.text
+        newMouve["detail"]   = detailInfoTextField.text
+        newMouve["location"] = locationTextField.text
+        newMouve.saveEventually()
+    }
+}
+
+
+extension AddMouveViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //    Using Toucan to circle the images
     func circleMyImage(currentImage: UIImage) -> UIImage{
         var roundedEventPic = Toucan(image: currentImage).resize(CGSize(width: 210, height: 210), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse()
         return roundedEventPic.image
-        //        return currentImage
     }
     //  Open Photo Library to upload photo (some code from theappguruz)
     
@@ -158,9 +151,9 @@ class AddMouveViewController: UIViewController, UIImagePickerControllerDelegate,
             popoverMenu!.presentPopoverFromRect(eventImageButton!.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
         }
     }
-    func imagePickerController(imagePicker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!)
+    func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
     {
-        imagePicker! .dismissViewControllerAnimated(true, completion: nil)
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
         var pickedPic = info[UIImagePickerControllerOriginalImage] as! UIImage
         println("Circling "+pickedPic.description);
         eventImageButton?.setBackgroundImage(circleMyImage(pickedPic), forState: .Normal)
@@ -171,41 +164,22 @@ class AddMouveViewController: UIViewController, UIImagePickerControllerDelegate,
         imagePicker .dismissViewControllerAnimated(true, completion: nil)
         println("picker cancel.")
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-//
-//  Switch to toggle between public and private
-    @IBOutlet weak var publicPrivateSwitch: UISwitch!
-        
-    
-    @IBOutlet weak var publicPrivateLabel: UILabel!
-    
-    
-    
-    @IBAction func flipSwitch(sender: AnyObject) {
-        
-        if publicPrivateSwitch.on
-        {
-            publicPrivateLabel.text = "Private"
-        }
-        else
-        {
-            publicPrivateLabel.text = "Public"
-        }
-    }
-    
-//
-//
-//
-    @IBAction func postMouveButtonWasHit(sender: AnyObject) {
-        newMouve["title"]    = titleEventTextField.text
-        newMouve["detail"]   = detailInfoTextField.text
-        newMouve["location"] = locationTextField.text
-        newMouve.pinInBackground()
-        newMouve.saveEventually()
+}
 
-//        Figure out how to segue
-//        performSegueWithIdentifier("segueToDetail", sender: self)
+extension AddMouveViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField {
+        case titleEventTextField:
+            titleEventTextField.resignFirstResponder()
+            detailInfoTextField.becomeFirstResponder()
+        case detailInfoTextField:
+            detailInfoTextField.resignFirstResponder()
+            locationTextField.becomeFirstResponder()
+        case locationTextField:
+            locationTextField.resignFirstResponder()
+        default: ()
+        }
+        
+        return true
     }
 }
