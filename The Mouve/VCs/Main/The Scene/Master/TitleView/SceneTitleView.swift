@@ -53,7 +53,6 @@ class SceneTitleView: UIView {
     }
     
     func otherSetup() {
-        
         self.leftButton.setTitle(self.buttonOne.0.rawValue.uppercaseString, forState: .Normal)
         self.leftButton.titleLabel?.sizeToFit()
         
@@ -61,7 +60,8 @@ class SceneTitleView: UIView {
         self.rightButton.titleLabel?.sizeToFit()
         
         dispatch_async(dispatch_get_main_queue(), {
-            self.underlineView.frame.size.width = self.leftButton.frame.width
+            println("didload")
+            self.underlineView.frame.size = CGSize(width: self.leftButton.frame.width, height: 2)
             self.underlineView.frame.origin.y = self.leftButton.frame.origin.y + self.leftButton.bounds.height - 4
         })
         

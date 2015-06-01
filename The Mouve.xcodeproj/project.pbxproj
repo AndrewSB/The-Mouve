@@ -255,6 +255,7 @@
 		460FF5081AF8795A007C6872 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
+				4685F89F1B1C182E004D77E9 /* Sliders */,
 				46AB30651AEA0FDA009724A2 /* TitleView */,
 				46CC15CD1AFE1ABF003E3D9E /* AlertUIView */,
 				46AFB3621AF86AD2004D121A /* UnderlinedTextField.swift */,
@@ -269,8 +270,6 @@
 			isa = PBXGroup;
 			children = (
 				46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */,
-				78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */,
-				78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */,
 				469C43791ADF10BA00D6A510 /* Master */,
 				469C437C1ADF10DC00D6A510 /* Detail */,
 			);
@@ -324,6 +323,16 @@
 				4673C12A1AF6C951000C034A /* ParseUI.framework */,
 			);
 			path = "parse-library-1.7.2";
+			sourceTree = "<group>";
+		};
+		4685F89F1B1C182E004D77E9 /* Sliders */ = {
+			isa = PBXGroup;
+			children = (
+				78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */,
+				78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */,
+			);
+			name = Sliders;
+			path = "../../The Mouve/VCs/Main/The Scene";
 			sourceTree = "<group>";
 		};
 		468D21611AF0821B00CE6E19 /* TTTAtributedLabel */ = {

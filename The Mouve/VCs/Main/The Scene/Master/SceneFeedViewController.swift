@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SceneFeedViewController: UIViewController {
-    var type: SceneType!
+
     @IBOutlet weak var feedTableView: UITableView!
     
+    var type: SceneType!
     var feedData: [Event]? {
         didSet {
             feedTableView.reloadData()
 //            feedTableView.contentInset = UIEdgeInsets(top: 44+22, left: 0, bottom: 44, right: 0)
         }
     }
+    lazy var locationStatus = CLLocationManager.authorizationStatus()
     
     convenience init(type: SceneType) {
         self.init()
@@ -30,7 +33,13 @@ class SceneFeedViewController: UIViewController {
         feedTableView.delegate = self
         feedTableView.dataSource = self
         
-        feedData = fakeEvents
+//        dispatch_async(DISPATCH_QUEUE_PRIORITY_BACKGROUND, {
+//            if self.type == SceneType.Scene {
+//                println("Scene")
+//            } else { // == .Explore
+//                println("Explore")
+//            }
+//        })
         
         feedTableView.contentInset = UIEdgeInsets(top: 44+22, left: 0, bottom: 44, right: 0)
     }
