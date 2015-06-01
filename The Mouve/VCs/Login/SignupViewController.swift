@@ -21,9 +21,12 @@ class SignupViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        setupForEntry(createAccountButton)
         statusBar(.Default)
+        addTextDismiss()
+        
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = ((createAccountButton.origin.y + createAccountButton.frame.height) - nameTextField.origin.y) + 5
+        
+        [nameTextField, usernameTextField, passwordTextField, emailTextField].map({ $0.delegate = self })
     }
 
     @IBAction func createAccountButtonWasHit(sender: AnyObject) {
@@ -77,5 +80,27 @@ class SignupViewController: UIViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         view.endEditing(true)
+    }
+}
+
+extension SignupViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField {
+        case nameTextField:
+            nameTextField.resignFirstResponder()
+            usernameTextField.becomeFirstResponder()
+        case usernameTextField:
+            usernameTextField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            passwordTextField.resignFirstResponder()
+            emailTextField.becomeFirstResponder()
+        case emailTextField:
+            emailTextField.resignFirstResponder()
+            createAccountButtonWasHit(self)
+        default: ()
+        }
+        
+        return true
     }
 }

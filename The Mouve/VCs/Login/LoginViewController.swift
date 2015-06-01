@@ -18,9 +18,12 @@ class LoginViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        setupForEntry(loginButton)
         statusBar(.Default)
+        addTextDismiss()
+        
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = ((signupButton.origin.y + signupButton.frame.height) - emailTextField.origin.y) + 5
+        
+        [emailTextField, passwordTextField].map({ $0.delegate = self })
     }
     
     @IBAction func loginButtonWasHit(sender: AnyObject) {
@@ -75,5 +78,21 @@ class LoginViewController: UIViewController {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         view.endEditing(true)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField:
+            emailTextField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            passwordTextField.resignFirstResponder()
+            loginButtonWasHit(self)
+        default: ()
+        }
+        
+        return true
     }
 }
