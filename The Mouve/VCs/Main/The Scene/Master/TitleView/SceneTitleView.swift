@@ -63,6 +63,7 @@ class SceneTitleView: UIView {
             println("didload")
             self.underlineView.frame.size = CGSize(width: self.leftButton.frame.width, height: 2)
             self.underlineView.frame.origin.y = self.leftButton.frame.origin.y + self.leftButton.bounds.height - 4
+            self.underlineView.frame.origin.x = self.leftButton.frame.origin.x
         })
         
         LocalMessage.observe(buttonOne.2, classFunction: "pageOne", inClass: self)
