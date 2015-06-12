@@ -1,0 +1,3 @@
+github "Alamofire/Alamofire" "1.2.2"
+github "TTTAttributedLabel/TTTAttributedLabel" "1.13.3"
+github "gavinbunney/Toucan" "0.2.0"
