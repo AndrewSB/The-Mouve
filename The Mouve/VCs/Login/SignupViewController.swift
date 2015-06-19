@@ -22,9 +22,8 @@ class SignupViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         statusBar(.Default)
-        addTextDismiss()
         
-        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = ((createAccountButton.origin.y + createAccountButton.frame.height) - nameTextField.origin.y) + 5
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = ((createAccountButton.frame.origin.y + createAccountButton.frame.height) - nameTextField.frame.origin.y) + 5
         
         [nameTextField, usernameTextField, passwordTextField, emailTextField].map({ $0.delegate = self })
     }

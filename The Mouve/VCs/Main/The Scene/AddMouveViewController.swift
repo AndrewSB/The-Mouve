@@ -41,7 +41,6 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
         
         var eventPic = self.eventImageButton?.currentBackgroundImage
         self.eventImageButton?.setBackgroundImage(circleMyImage(eventPic!), forState: .Normal)
-        setupForEntry(postMouveButton)
         publicPrivateSwitch.tintColor = UIColor.lightSeaFoamGreen()
         publicPrivateSwitch.onTintColor = UIColor.lightSeaFoamGreen()
         publicPrivateSwitch.thumbTintColor = UIColor.seaFoamGreen()

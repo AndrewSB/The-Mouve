@@ -15,8 +15,6 @@ class TheScenePageViewController: UIPageViewController {
         self.delegate = self
         self.dataSource = self
         
-        (view.subviews[0] as! UIScrollView).delegate = self
-        
         LocalMessage.observe(.HomeTitlePageOne, classFunction: "pageOne", inClass: self)
         LocalMessage.observe(.HomeTitlePageTwo, classFunction: "pageTwo", inClass: self)
         
@@ -88,5 +86,3 @@ extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewCo
     
     @IBAction func unwindToTheSceneVC(segue: UIStoryboardSegue) {}
 }
-
-extension TheScenePageViewController: UIScrollViewDelegate {}

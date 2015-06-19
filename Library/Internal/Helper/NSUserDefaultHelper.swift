@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import CoreLocation
 
 enum UserDefaultKeys: String {
-    case keyboardOffset = "keyboardOffset"
+    case lastLocation = "lastLocation"
     case profilePictureURL = "profilePictureURL"
 }
 
@@ -17,14 +18,12 @@ class UserDefaults {
     static let get = NSUserDefaults.standardUserDefaults().objectForKey
     static let set = NSUserDefaults.standardUserDefaults().setObject
     
-    class var keyboardOffet: CGFloat {
+    class var lastLocation: CLLocation? {
         get {
-            if let offset = get(UserDefaultKeys.keyboardOffset.rawValue) as? CGFloat {
-                return offset
-            } else { return 0 }
+            return get(UserDefaultKeys.lastLocation.rawValue) as? CLLocation
         }
         set {
-            set(newValue, forKey: UserDefaultKeys.keyboardOffset.rawValue)
+            set(newValue, forKey: UserDefaultKeys.lastLocation.rawValue)
         }
     }
     

@@ -13,7 +13,7 @@
 		460FF5061AF87815007C6872 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460FF5041AF87815007C6872 /* Fabric.framework */; };
 		460FF5071AF87815007C6872 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 460FF5051AF87815007C6872 /* Crashlytics.framework */; };
 		460FF5091AF87EA7007C6872 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469C437A1ADF10D200D6A510 /* DetailViewController.swift */; };
-		461659851B0CC98A00B06147 /* Imgur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461659841B0CC98A00B06147 /* Imgur.swift */; };
+		4610B7CA1B33DD3700377E1E /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4610B7C91B33DD3700377E1E /* Location.swift */; };
 		462B68C71AEB51E40040C7DD /* HalisGR-Light-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */; };
 		462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */; };
 		462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462B68D71AEC57E40040C7DD /* ActivityTableViewController.swift */; };
@@ -137,7 +137,7 @@
 		460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 		460FF5041AF87815007C6872 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		460FF5051AF87815007C6872 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
-		461659841B0CC98A00B06147 /* Imgur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Imgur.swift; sourceTree = "<group>"; };
+		4610B7C91B33DD3700377E1E /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		462B68AB1AEB46320040C7DD /* HalisGR-Light-Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Light-Italic.otf"; sourceTree = "<group>"; };
 		462B68C61AEB4B1F0040C7DD /* The Mouve-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "The Mouve-Bridging-Header.h"; sourceTree = "<group>"; };
 		462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityPageViewController.swift; sourceTree = "<group>"; };
@@ -455,21 +455,21 @@
 		468D216A1AF086F800CE6E19 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				468D216B1AF0870000CE6E19 /* Helper Extensions */,
-				46CC15C71AFDF6AD003E3D9E /* Primitive Extensions */,
-				46CC15C81AFDF6B3003E3D9E /* Constructed Extensions */,
+				468D216B1AF0870000CE6E19 /* Helper */,
+				46CC15C71AFDF6AD003E3D9E /* Primitive  */,
+				46CC15C81AFDF6B3003E3D9E /* Constructed */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		468D216B1AF0870000CE6E19 /* Helper Extensions */ = {
+		468D216B1AF0870000CE6E19 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
 				4673C10D1AF6B781000C034A /* FacebookIDExtension.swift */,
 				462B68DA1AEC5CF90040C7DD /* NSUserDefaultHelper.swift */,
 				462B68DC1AEC5D010040C7DD /* NSNotificationCenterHelper.swift */,
 			);
-			name = "Helper Extensions";
+			name = Helper;
 			path = ../Helper;
 			sourceTree = "<group>";
 		};
@@ -639,7 +639,7 @@
 				4673C10B1AF6A885000C034A /* Aliases.swift */,
 				460FF5081AF8795A007C6872 /* UI Elements */,
 				468D216A1AF086F800CE6E19 /* Extension */,
-				461659841B0CC98A00B06147 /* Imgur.swift */,
+				4610B7C91B33DD3700377E1E /* Location.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -665,7 +665,7 @@
 			path = "../../The Mouve";
 			sourceTree = "<group>";
 		};
-		46CC15C71AFDF6AD003E3D9E /* Primitive Extensions */ = {
+		46CC15C71AFDF6AD003E3D9E /* Primitive  */ = {
 			isa = PBXGroup;
 			children = (
 				46CC15C51AFDF6A1003E3D9E /* IntExtension.swift */,
@@ -673,10 +673,10 @@
 				46042E561AEA1F6900089A5A /* UIColorExtension.swift */,
 				46C7AAB31AF9FEA1006B361E /* ArrayExtension.swift */,
 			);
-			name = "Primitive Extensions";
+			name = "Primitive ";
 			sourceTree = "<group>";
 		};
-		46CC15C81AFDF6B3003E3D9E /* Constructed Extensions */ = {
+		46CC15C81AFDF6B3003E3D9E /* Constructed */ = {
 			isa = PBXGroup;
 			children = (
 				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
@@ -685,7 +685,7 @@
 				46042E581AEA230300089A5A /* UIViewExtension.swift */,
 				462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */,
 			);
-			name = "Constructed Extensions";
+			name = Constructed;
 			sourceTree = "<group>";
 		};
 		46CC15CD1AFE1ABF003E3D9E /* AlertUIView */ = {
@@ -828,7 +828,6 @@
 				78CFBD141B192F5D002AE6A2 /* TimeRangeSlider.swift in Sources */,
 				46B888C21AF8801000D872E0 /* DetailPostTableViewCell.swift in Sources */,
 				4685F8BA1B1C1FF3004D77E9 /* IQUIView+Hierarchy.swift in Sources */,
-				461659851B0CC98A00B06147 /* Imgur.swift in Sources */,
 				46CC15C61AFDF6A1003E3D9E /* IntExtension.swift in Sources */,
 				78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */,
 				462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */,
@@ -865,6 +864,7 @@
 				46B888D31AF9712F00D872E0 /* ActivityTableViewCell.swift in Sources */,
 				46AFB3671AF86CA1004D121A /* SignupViewController.swift in Sources */,
 				4673C1371AF6CA69000C034A /* TTTAttributedLabel.m in Sources */,
+				4610B7CA1B33DD3700377E1E /* Location.swift in Sources */,
 				4685F8BD1B1C1FF3004D77E9 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
