@@ -18,46 +18,47 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     @IBOutlet weak var eventImageButton: UIButton?
     @IBOutlet weak var startTime: UILabel?
     @IBOutlet weak var endTime: UILabel?
+
+    let rangeSlider = TimeRangeSlider()
     
     var imagePicker: UIImagePickerController?=UIImagePickerController()
     var popoverMenu: UIPopoverController?=nil
     
     let newMouve = PFObject(className: "Event")
-    let rangeSlider = TimeRangeSlider(frame: CGRectZero)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        statusBar(.LightContent)
+        addTextDismiss()
         
-        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 44
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 200
         
         [titleEventTextField, detailInfoTextField, locationTextField].map({ $0.delegate = self })
         
+        rangeSlider.frame = CGRect(x: 40, y: startTime!.frame.origin.y - 35, width: view.frame.width - 80, height: 31)
         rangeSlider.trackHighlightTintColor = UIColor.seaFoamGreen()
         rangeSlider.trackTintColor = UIColor.lightNicePaleBlue()
         rangeSlider.curvaceousness = 0.2
         rangeSlider.thumbThicknessPercent = 0.3
         rangeSlider.thumbTintColor = UIColor.seaFoamGreen()
         
-        var eventPic = self.eventImageButton?.currentBackgroundImage
-        self.eventImageButton?.setBackgroundImage(circleMyImage(eventPic!), forState: .Normal)
+        self.view.addSubview(rangeSlider)
+        
+        eventImageButton!.layer.cornerRadius = eventImageButton!.frame.height / 2
+
+        
         publicPrivateSwitch.tintColor = UIColor.lightSeaFoamGreen()
         publicPrivateSwitch.onTintColor = UIColor.lightSeaFoamGreen()
         publicPrivateSwitch.thumbTintColor = UIColor.seaFoamGreen()
         
-        view.addSubview(rangeSlider)
-        
         rangeSlider.addTarget(self, action: "rangeSliderValueChanged:", forControlEvents: .ValueChanged)
     }
     
-    // Alignments for the range-slider
-    override func viewDidLayoutSubviews() {
-        let margin: CGFloat = 20.0
-        let width = view.bounds.width - 2.0 * margin
-        rangeSlider.frame = CGRect(x: margin, y: margin + topLayoutGuide.length + 345,
-            width: width, height: 31.0)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        statusBar(.LightContent)
+        rangeSlider.lowerValue = 0.4
+        rangeSliderValueChanged(rangeSlider)
     }
-    
     
     // Changes labels as you drag slider
     func rangeSliderValueChanged(rangeSlider: TimeRangeSlider) {
@@ -80,6 +81,8 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
         newMouve["detail"]   = detailInfoTextField.text
         newMouve["location"] = locationTextField.text
         newMouve.saveEventually()
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
