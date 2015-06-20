@@ -28,6 +28,7 @@ class SceneFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        println("didLoad \(self.type)")
         LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
         
         feedTableView.delegate = self

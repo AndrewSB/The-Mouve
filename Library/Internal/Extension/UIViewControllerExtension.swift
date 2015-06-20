@@ -43,3 +43,20 @@ extension UIViewController { // Remote Loading heloer
         self.view.userInteractionEnabled = true
     }
 }
+
+extension UIViewController: UIGestureRecognizerDelegate {
+    func addTextDismiss() {
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "hideKeyboard:"))} func hideKeyboard(id: AnyObject) { view.endEditing(true)
+    }
+    
+    func addNavControllerLikePan() {
+        if self.navigationController!.respondsToSelector(Selector("interactivePopGestureRecognizer")) {
+            self.navigationController!.interactivePopGestureRecognizer.enabled = true
+            self.navigationController!.interactivePopGestureRecognizer.delegate = self
+        }
+    }
+    
+    public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}

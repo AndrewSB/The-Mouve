@@ -16,25 +16,28 @@ class TutorialViewController: UIViewController {
     var pageImage: UIImage = UIImage()
     var pageIndex: Int = Int()
     
+    var backgroundImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let imageSize = CGSize(width: self.view.bounds.width, height: self.view.bounds.height)
-        let imageOrigin = CGPoint.zeroPoint //CGPoint(x: UIDevice.currentDevice().model == "iPad" ? 0 : 0, y: 0)
-        
-        let backgroundImage = UIImageView(frame: CGRect(origin: imageOrigin, size: imageSize))
-        backgroundImage.image = pageImage
-        backgroundImage.contentMode = .ScaleAspectFill
-        
-        self.view.insertSubview(backgroundImage, atIndex: 0)
  
+        println("didload")
         pageLabel.text = title
         pageLabelWidthConstraint.constant = self.view.frame.width - 88
+        
+        backgroundImageView = UIImageView(image: pageImage)
+        backgroundImageView.contentMode = .ScaleAspectFill
+        backgroundImageView.frame.size = view.frame.size
+        
+        self.view.insertSubview(backgroundImageView, atIndex: 0)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        statusBar(.LightContent)
+        println("didappear")
+//        backgroundImageView.frame.size = view.frame.size
+//        
+//        self.view.insertSubview(backgroundImageView, atIndex: 0)
     }
     
     @IBAction func unwindToTutorialVC(segue: UIStoryboardSegue) {}

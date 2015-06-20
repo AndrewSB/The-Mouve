@@ -19,6 +19,8 @@ class LoginViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         statusBar(.Default)
+        addTextDismiss()
+        addNavControllerLikePan()
         
         IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = ((signupButton.frame.origin.y + signupButton.frame.height) - emailTextField.frame.origin.y) + 5
         

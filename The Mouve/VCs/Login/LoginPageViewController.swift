@@ -30,6 +30,11 @@ class LoginPageViewController: UIPageViewController {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        statusBar(.LightContent)
+    }
 }
 
 extension LoginPageViewController { //View code
