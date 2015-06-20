@@ -12,11 +12,11 @@ import Parse
 class TutorialViewController: UIViewController {
     @IBOutlet weak var pageLabel: UILabel!
     @IBOutlet weak var pageLabelWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var backgroundImageView: UIImageView!
         
     var pageImage: UIImage = UIImage()
     var pageIndex: Int = Int()
     
-    var backgroundImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,19 +25,9 @@ class TutorialViewController: UIViewController {
         pageLabel.text = title
         pageLabelWidthConstraint.constant = self.view.frame.width - 88
         
-        backgroundImageView = UIImageView(image: pageImage)
-        backgroundImageView.contentMode = .ScaleAspectFill
-        backgroundImageView.frame.size = view.frame.size
-        
-        self.view.insertSubview(backgroundImageView, atIndex: 0)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        println("didappear")
-//        backgroundImageView.frame.size = view.frame.size
-//        
-//        self.view.insertSubview(backgroundImageView, atIndex: 0)
+        backgroundImageView.image = pageImage
+        backgroundImageView.center = view.center
+        backgroundImageView.frame.size = CGSize(width: view.frame.width, height: view.frame.height)
     }
     
     @IBAction func unwindToTutorialVC(segue: UIStoryboardSegue) {}

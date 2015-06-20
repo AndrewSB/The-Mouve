@@ -55,17 +55,25 @@
                                     <constraint firstAttribute="width" constant="36" id="eVl-iw-Uja"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ic6-jO-Eav">
+                                <rect key="frame" x="69" y="156" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="p91-Ku-kio" secondAttribute="centerX" id="3dP-LJ-2hG"/>
+                            <constraint firstItem="RLU-KV-b8N" firstAttribute="top" secondItem="ic6-jO-Eav" secondAttribute="bottom" constant="16" placeholder="YES" id="6tJ-f3-Wwz"/>
                             <constraint firstItem="RLU-KV-b8N" firstAttribute="top" secondItem="p91-Ku-kio" secondAttribute="bottom" constant="43" id="RGc-0g-be5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ic6-jO-Eav" secondAttribute="trailing" constant="275" placeholder="YES" id="U4b-uv-cHX"/>
+                            <constraint firstItem="ic6-jO-Eav" firstAttribute="top" secondItem="eGf-Wh-oXJ" secondAttribute="bottom" constant="136" placeholder="YES" id="dVX-aU-wTl"/>
                             <constraint firstAttribute="centerY" secondItem="RLU-KV-b8N" secondAttribute="centerY" id="h6R-wx-45c"/>
+                            <constraint firstItem="ic6-jO-Eav" firstAttribute="leading" secondItem="xFP-NZ-TZm" secondAttribute="leadingMargin" constant="53" placeholder="YES" id="hbb-3e-xuM"/>
                             <constraint firstAttribute="centerX" secondItem="RLU-KV-b8N" secondAttribute="centerX" id="r0M-kc-Cpe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5Ad-Wd-qTV"/>
                     <connections>
+                        <outlet property="backgroundImageView" destination="ic6-jO-Eav" id="b10-Nk-OZM"/>
                         <outlet property="pageLabel" destination="p91-Ku-kio" id="LTN-ba-39L"/>
                         <outlet property="pageLabelWidthConstraint" destination="m8n-gf-iib" id="MWJ-kC-0Fh"/>
                     </connections>
