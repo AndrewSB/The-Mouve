@@ -9,6 +9,9 @@
 import UIKit
 import CoreLocation
 
+import Parse
+import Bolts
+
 class SceneFeedViewController: UIViewController {
 
     @IBOutlet weak var feedTableView: UITableView!
@@ -34,7 +37,23 @@ class SceneFeedViewController: UIViewController {
         feedTableView.delegate = self
         feedTableView.dataSource = self
         
-        feedData = fakeEvents
+        let feedQuery = PFQuery(className: "Events")
+        feedQuery.limit = 20
+        
+        switch type! {
+        case .Explore:
+            println("lol")
+        case .Scene:
+            println("nah")
+        default:
+            assert(true == false, "Type wasnt scene or explore")
+        }
+        
+        feedQuery.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+            println(results)
+            self.feedData = results as? [Event]
+        }
+        
         
         feedTableView.contentInset = UIEdgeInsets(top: 44+22, left: 0, bottom: 44, right: 0)
     }
