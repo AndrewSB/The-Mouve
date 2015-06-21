@@ -10,50 +10,63 @@ import UIKit
 import Parse
 import CoreLocation
 
-class RemoteEvent: PFObject {
-    var name: String
-    
-    var time: NSDate
-    var length: NSTimeInterval
-    
-    var about: String
-    
-    var address: String
-    var location: CLLocationCoordinate2D?
-    
-    var invitees: [String]
-    
-    var backgroundImage: UIImage
-    
-    
-    var timeTillEvent: NSTimeInterval {
-        get {
-            return NSDate().timeIntervalSinceDate(time)
-        }
-        set {
-            self.time = NSDate(timeIntervalSinceNow: newValue)
-        }
-    }
-    
-    init(name: String, about: String, time: NSDate, length: NSTimeInterval, address: String, invitees: [String], backgroundImage: UIImage) {
-        self.name = name
-        self.about = about
-        
-        self.time = time
-        self.length = length
-        
-        self.address = address
-        self.invitees = invitees
-        
-        self.backgroundImage = backgroundImage
-        
-        super.init(className: "Event")
-    }
-    
+extension PFObject {
     convenience init(event: Event) {
-        self.init(name: event.name, about: event.about, time: event.time, length: event.length, address: event.address, invitees: event.invitees, backgroundImage: event.backgroundImage)
+//    class func ObjectWithEvent(event: Event) -> PFObject {
+        self.init(className: "Event")
         
-        self.location = event.location
+        self["name"] = event.name
+        self["about"] = event.about
+        self["address"] = event.address
+        self["backgroundImage"] = PFFile(name: "bg.jpg", data: UIImageJPEGRepresentation(event.backgroundImage, 0.6), contentType: "jpg")
+        self["location"] = PFGeoPoint(location: event.location!)
     }
-
 }
+
+//class RemoteEvent: PFObject {
+//    var name: String
+//    
+//    var time: NSDate
+//    var length: NSTimeInterval
+//    
+//    var about: String
+//    
+//    var address: String
+//    var location: CLLocation?
+//    
+//    var invitees: [String]
+//    
+//    var backgroundImage: UIImage
+//    
+//    
+//    var timeTillEvent: NSTimeInterval {
+//        get {
+//            return NSDate().timeIntervalSinceDate(time)
+//        }
+//        set {
+//            self.time = NSDate(timeIntervalSinceNow: newValue)
+//        }
+//    }
+//    
+//    init(name: String, about: String, time: NSDate, length: NSTimeInterval, address: String, invitees: [String], backgroundImage: UIImage) {
+//        self.name = name
+//        self.about = about
+//        
+//        self.time = time
+//        self.length = length
+//        
+//        self.address = address
+//        self.invitees = invitees
+//        
+//        self.backgroundImage = backgroundImage
+//        
+//        super.init(className: "Event")
+//    }
+//    
+//    convenience init(event: Event) {
+//        self.init(name: event.name, about: event.about, time: event.time, length: event.length, address: event.address, invitees: event.invitees, backgroundImage: event.backgroundImage)
+//        
+//        self.location = event.location
+//    }
+//
+//}

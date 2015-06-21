@@ -101,6 +101,7 @@
 		46B888CF1AF9552400D872E0 /* Toucan.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4673C1321AF6CA36000C034A /* Toucan.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46B888D11AF95CD400D872E0 /* AddMouveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */; };
 		46B888D31AF9712F00D872E0 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888D21AF9712F00D872E0 /* ActivityTableViewCell.swift */; };
+		46BFFD541B36BF220060DF33 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BFFD531B36BF220060DF33 /* UIImageExtension.swift */; };
 		46C7AAB21AF9FBF9006B361E /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */; };
 		46C7AAB41AF9FEA1006B361E /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C7AAB31AF9FEA1006B361E /* ArrayExtension.swift */; };
 		46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */; };
@@ -229,6 +230,7 @@
 		46B888C71AF9501300D872E0 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExtension.swift; sourceTree = "<group>"; };
 		46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMouveViewController.swift; path = "The Mouve/VCs/Main/The Scene/AddMouveViewController.swift"; sourceTree = SOURCE_ROOT; };
 		46B888D21AF9712F00D872E0 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
+		46BFFD531B36BF220060DF33 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
 		46C7AAB31AF9FEA1006B361E /* ArrayExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		46CC15C51AFDF6A1003E3D9E /* IntExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtension.swift; sourceTree = "<group>"; };
@@ -680,6 +682,7 @@
 			isa = PBXGroup;
 			children = (
 				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
+				46BFFD531B36BF220060DF33 /* UIImageExtension.swift */,
 				46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */,
 				460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */,
 				46042E581AEA230300089A5A /* UIViewExtension.swift */,
@@ -818,6 +821,7 @@
 				462B68DD1AEC5D010040C7DD /* NSNotificationCenterHelper.swift in Sources */,
 				46B29B7E1ADB2067000B9441 /* AppDelegate.swift in Sources */,
 				462B68DB1AEC5CF90040C7DD /* NSUserDefaultHelper.swift in Sources */,
+				46BFFD541B36BF220060DF33 /* UIImageExtension.swift in Sources */,
 				46B29BCB1ADB219C000B9441 /* TutorialViewController.swift in Sources */,
 				46AFB3631AF86AD2004D121A /* UnderlinedTextField.swift in Sources */,
 				4685F8C01B1C1FF3004D77E9 /* IQTextView.swift in Sources */,

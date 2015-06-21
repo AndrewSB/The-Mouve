@@ -18,7 +18,7 @@ class Event: BaseObject {
     var about: String
     
     var address: String
-    var location: CLLocationCoordinate2D?
+    var location: CLLocation?
     
     var invitees: [String]
     

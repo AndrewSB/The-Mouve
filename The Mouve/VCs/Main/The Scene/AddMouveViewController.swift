@@ -24,8 +24,6 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     var imagePicker: UIImagePickerController?=UIImagePickerController()
     var popoverMenu: UIPopoverController?=nil
     
-    let newMouve = PFObject(className: "Event")
-
     override func viewDidLoad() {
         super.viewDidLoad()
         addTextDismiss()
@@ -77,10 +75,11 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     }
 
     @IBAction func postMouveButtonWasHit(sender: AnyObject) {
-        newMouve["title"]    = titleEventTextField.text
-        newMouve["detail"]   = detailInfoTextField.text
-        newMouve["location"] = locationTextField.text
-        newMouve.saveEventually()
+        let newMouve = Event(name: titleEventTextField.text, about: "", time: NSDate(timeInterval: 80, sinceDate: NSDate()), length: 100, address: locationTextField.text, invitees: ["lol"], backgroundImage: eventImageButton!.backgroundImageForState(.Normal)!)
+        newMouve.location = UserDefaults.lastLocation!
+        
+        let remoteMouve = PFObject(event: newMouve)
+        remoteMouve.saveEventually()
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }

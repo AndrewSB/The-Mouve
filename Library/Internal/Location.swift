@@ -12,6 +12,7 @@ import CoreLocation
 class Location: CLLocationManager, CLLocationManagerDelegate {
     var mostRecentLocation: CLLocation? {
         didSet {
+            UserDefaults.lastLocation = mostRecentLocation
             LocalMessage.post(.NewLocationRegistered)
         }
     }

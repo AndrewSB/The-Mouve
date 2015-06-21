@@ -20,10 +20,17 @@ class UserDefaults {
     
     class var lastLocation: CLLocation? {
         get {
-            return get(UserDefaultKeys.lastLocation.rawValue) as? CLLocation
+            let key = UserDefaultKeys.lastLocation.rawValue
+            if let lat = get("\(key)-latitude") as? Double, lon = get("\(key)-longitude") as? Double {
+                return CLLocation(latitude: lat, longitude: lon)
+            } else {
+                return nil
+            }
         }
         set {
-            set(newValue, forKey: UserDefaultKeys.lastLocation.rawValue)
+            let key = UserDefaultKeys.lastLocation.rawValue
+            set(newValue!.coordinate.latitude, forKey: "\(key)-latitude")
+            set(newValue!.coordinate.longitude, forKey: "\(key)-longitude")
         }
     }
     
