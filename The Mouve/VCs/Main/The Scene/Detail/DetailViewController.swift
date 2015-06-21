@@ -49,6 +49,7 @@ class DetailViewController: UIViewController {
         tableViewDidLoad()
         collectionViewDidLoad()
         
+        addNavControllerLikePan()
         
         headerImageView?.image = event.backgroundImage
         blurredHeaderImageView?.image = event.backgroundImage

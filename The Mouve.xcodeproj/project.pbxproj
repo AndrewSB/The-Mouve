@@ -68,6 +68,7 @@
 		469C436D1ADEF96D00D6A510 /* HalisGR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C43651ADEF79A00D6A510 /* HalisGR-Medium.otf */; };
 		469C436E1ADEF96F00D6A510 /* HalisGR-Regular-Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 469C436A1ADEF85E00D6A510 /* HalisGR-Regular-Italic.otf */; };
 		46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */; };
+		46AC422B1B36EDBB000BAB24 /* CollectionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AC422A1B36EDBB000BAB24 /* CollectionExtension.swift */; };
 		46AFB3631AF86AD2004D121A /* UnderlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFB3621AF86AD2004D121A /* UnderlinedTextField.swift */; };
 		46AFB3651AF86C9A004D121A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFB3641AF86C9A004D121A /* LoginViewController.swift */; };
 		46AFB3671AF86CA1004D121A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46AFB3661AF86CA1004D121A /* SignupViewController.swift */; };
@@ -200,6 +201,7 @@
 		46A1ACA81AEA005900EE5DD7 /* SceneTitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SceneTitleView.xib; sourceTree = "<group>"; };
 		46A1ACAA1AEA08E100EE5DD7 /* TheScenePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheScenePageViewController.swift; sourceTree = "<group>"; };
 		46AB30631AEA0FD4009724A2 /* SceneTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTitleView.swift; sourceTree = "<group>"; };
+		46AC422A1B36EDBB000BAB24 /* CollectionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		46AFB3621AF86AD2004D121A /* UnderlinedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 		46AFB3641AF86C9A004D121A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		46AFB3661AF86CA1004D121A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 				468D216B1AF0870000CE6E19 /* Helper */,
 				46CC15C71AFDF6AD003E3D9E /* Primitive  */,
 				46CC15C81AFDF6B3003E3D9E /* Constructed */,
+				46AC422A1B36EDBB000BAB24 /* CollectionExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 				4685F8C31B1C1FF3004D77E9 /* IQToolbar.swift in Sources */,
 				46AFB3651AF86C9A004D121A /* LoginViewController.swift in Sources */,
 				464B2DC71AFD79890095FB83 /* OutlinedButton.swift in Sources */,
+				46AC422B1B36EDBB000BAB24 /* CollectionExtension.swift in Sources */,
 				4685F8BE1B1C1FF3004D77E9 /* IQKeyboardManager.swift in Sources */,
 				4685F8B91B1C1FF3004D77E9 /* IQNSArray+Sort.swift in Sources */,
 				462B68DD1AEC5D010040C7DD /* NSNotificationCenterHelper.swift in Sources */,

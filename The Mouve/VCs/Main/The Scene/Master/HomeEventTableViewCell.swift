@@ -19,7 +19,9 @@ class HomeEventTableViewCell: UITableViewCell {
             
             distanceLabel.text = "3.4 miles"
             
-            backgroundImageView.image = event.backgroundImage
+            let places = ["Beach-Chillin", "Coffee-Hour", "Espresso-Lesson", "Fire-Works", "Food-Festival", "Football-Game", "San-Francisco-Visit", "State-Fair", "Study-Sesh", "Surf-Lesson"]
+            
+            backgroundImageView.image = UIImage(named: places.randomElement())
             
             let array = [UIImage(named: "yoojin-pic"),UIImage(named: "noah-pic"),UIImage(named: "chelsea-pic"),UIImage(named: "andrew-pic")]
             
@@ -54,14 +56,7 @@ class HomeEventTableViewCell: UITableViewCell {
 //        blurEffectView.alpha = 0.85
         
        // backgroundImageView.addSubview(blurEffectView)
-        backgroundImageView.contentMode = UIViewContentMode.Center
         
-        println(backgroundImageView.frame)
-        
-        backgroundImageView.frame = CGRect(x: 10, y: 10, width: 50, height: 50)
-        
-        self.addSubview(backgroundImageView)
-    
     }
     
     
