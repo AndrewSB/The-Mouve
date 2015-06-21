@@ -59,9 +59,11 @@ class SceneTitleView: UIView {
         self.rightButton.setTitle(self.buttonTwo.0.rawValue.uppercaseString, forState: .Normal)
         self.rightButton.titleLabel?.sizeToFit()
         
-        self.underlineView.frame.size = CGSize(width: self.leftButton.frame.width, height: 2)
-        self.underlineView.frame.origin.y = self.leftButton.frame.origin.y + self.leftButton.bounds.height - 4
-        self.underlineView.frame.origin.x = self.leftButton.frame.origin.x
+        dispatch_async(dispatch_get_main_queue(), {
+            self.underlineView.frame.size = CGSize(width: self.leftButton.frame.width, height: 2)
+            self.underlineView.frame.origin.y = self.leftButton.frame.origin.y + self.leftButton.bounds.height - 4
+            self.underlineView.frame.origin.x = self.leftButton.frame.origin.x
+        })
         
         LocalMessage.observe(buttonOne.2, classFunction: "pageOne", inClass: self)
         LocalMessage.observe(buttonTwo.2, classFunction: "pageTwo", inClass: self)

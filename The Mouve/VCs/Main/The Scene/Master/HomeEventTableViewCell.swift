@@ -49,11 +49,18 @@ class HomeEventTableViewCell: UITableViewCell {
         profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
         profileImageView.layer.borderWidth = 1
         
-        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-        blurEffectView.frame = backgroundImageView.frame
+//        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+//        blurEffectView.frame = backgroundImageView.frame
 //        blurEffectView.alpha = 0.85
         
        // backgroundImageView.addSubview(blurEffectView)
+        backgroundImageView.contentMode = UIViewContentMode.Center
+        
+        println(backgroundImageView.frame)
+        
+        backgroundImageView.frame = CGRect(x: 10, y: 10, width: 50, height: 50)
+        
+        self.addSubview(backgroundImageView)
     
     }
     
