@@ -46,6 +46,27 @@ class Event: BaseObject {
         
         self.backgroundImage = backgroundImage
         
-        super.init(className: "User")
+        super.init(className: "Events")
+    }
+    
+    init(parseObject: PFObject) {
+        self.name = parseObject["name"] as! String
+        
+        self.about = parseObject["about"] as! String
+        self.address = parseObject["address"] as! String
+        
+        if let data = parseObject["backgroundImage"] as? NSData {
+            self.backgroundImage = UIImage(data: data, scale: 1)!
+        } else {
+            self.backgroundImage = UIImage()
+        }
+        
+        self.location = parseObject["location"] as? CLLocation
+        self.time = parseObject["time"] as! NSDate
+        self.length = 100
+        
+        self.invitees = ["lol", "dsa", "dsaetd"]//parseObject["invitees"] as! [String]
+        
+        super.init(className: "Events")
     }
 }

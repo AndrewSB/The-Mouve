@@ -79,7 +79,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
         newMouve.location = UserDefaults.lastLocation!
         
         let remoteMouve = PFObject(event: newMouve)
-        remoteMouve.saveEventually()
+        remoteMouve.saveInBackground()
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }

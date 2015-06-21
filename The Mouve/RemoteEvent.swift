@@ -13,13 +13,14 @@ import CoreLocation
 extension PFObject {
     convenience init(event: Event) {
 //    class func ObjectWithEvent(event: Event) -> PFObject {
-        self.init(className: "Event")
+        self.init(className: "Events")
         
         self["name"] = event.name
         self["about"] = event.about
         self["address"] = event.address
         self["backgroundImage"] = PFFile(name: "bg.jpg", data: UIImageJPEGRepresentation(event.backgroundImage, 0.6), contentType: "jpg")
         self["location"] = PFGeoPoint(location: event.location!)
+        self["time"] = event.time
     }
 }
 

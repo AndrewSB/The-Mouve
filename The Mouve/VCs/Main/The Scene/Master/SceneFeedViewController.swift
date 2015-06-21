@@ -50,8 +50,16 @@ class SceneFeedViewController: UIViewController {
         }
         
         feedQuery.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+            var serverData = [Event]()
             println(results)
-            self.feedData = results as? [Event]
+            
+            if let results = results {
+                for result in results {
+                    serverData.append(Event(parseObject: result as! PFObject))
+                }
+            }
+            
+            self.feedData = serverData
         }
         
         
