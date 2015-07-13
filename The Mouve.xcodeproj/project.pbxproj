@@ -120,6 +120,8 @@
 		9AD259A91B547EA2003B5F57 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259A81B547EA2003B5F57 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9AD259AA1B547EF3003B5F57 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259A61B547CD7003B5F57 /* Realm.framework */; };
 		9AD259AB1B547EF3003B5F57 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259A81B547EA2003B5F57 /* RealmSwift.framework */; };
+		9AD259AD1B547F44003B5F57 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9AD259AE1B547F55003B5F57 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -129,6 +131,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9AD259AD1B547F44003B5F57 /* ObjectMapper.framework in Embed Frameworks */,
 				9AD259A91B547EA2003B5F57 /* RealmSwift.framework in Embed Frameworks */,
 				9AD259A71B547CD7003B5F57 /* Realm.framework in Embed Frameworks */,
 				46B888CF1AF9552400D872E0 /* Toucan.framework in Embed Frameworks */,
@@ -252,6 +255,7 @@
 		78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRangeSlider.swift; sourceTree = "<group>"; };
 		9AD259A61B547CD7003B5F57 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../../Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9AD259A81B547EA2003B5F57 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ../../Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +263,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AD259AE1B547F55003B5F57 /* ObjectMapper.framework in Frameworks */,
 				9AD259AA1B547EF3003B5F57 /* Realm.framework in Frameworks */,
 				9AD259AB1B547EF3003B5F57 /* RealmSwift.framework in Frameworks */,
 				46B888CC1AF9550A00D872E0 /* Alamofire.framework in Frameworks */,
@@ -521,6 +526,7 @@
 		46B29B6F1ADB2067000B9441 = {
 			isa = PBXGroup;
 			children = (
+				9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */,
 				46B29B7A1ADB2067000B9441 /* The Mouve */,
 				46B29BD61ADB221A000B9441 /* Library */,
 				46B29B791ADB2067000B9441 /* Products */,
