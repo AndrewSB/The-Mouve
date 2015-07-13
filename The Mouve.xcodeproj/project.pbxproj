@@ -116,6 +116,10 @@
 		7832E78D1B16C66F005A1AF1 /* Switch on image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78C1B16C66F005A1AF1 /* Switch on image.png */; };
 		78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */; };
 		78CFBD141B192F5D002AE6A2 /* TimeRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */; };
+		9AD259A71B547CD7003B5F57 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259A61B547CD7003B5F57 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9AD259A91B547EA2003B5F57 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259A81B547EA2003B5F57 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9AD259AA1B547EF3003B5F57 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259A61B547CD7003B5F57 /* Realm.framework */; };
+		9AD259AB1B547EF3003B5F57 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259A81B547EA2003B5F57 /* RealmSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -125,6 +129,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9AD259A91B547EA2003B5F57 /* RealmSwift.framework in Embed Frameworks */,
+				9AD259A71B547CD7003B5F57 /* Realm.framework in Embed Frameworks */,
 				46B888CF1AF9552400D872E0 /* Toucan.framework in Embed Frameworks */,
 				46B888CD1AF9550A00D872E0 /* Alamofire.framework in Embed Frameworks */,
 			);
@@ -244,6 +250,8 @@
 		7832E78C1B16C66F005A1AF1 /* Switch on image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Switch on image.png"; path = "../VCs/Main/Switch on image.png"; sourceTree = "<group>"; };
 		78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRangeSlider.swift; sourceTree = "<group>"; };
+		9AD259A61B547CD7003B5F57 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../../Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		9AD259A81B547EA2003B5F57 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ../../Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +259,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AD259AA1B547EF3003B5F57 /* Realm.framework in Frameworks */,
+				9AD259AB1B547EF3003B5F57 /* RealmSwift.framework in Frameworks */,
 				46B888CC1AF9550A00D872E0 /* Alamofire.framework in Frameworks */,
 				4673C12E1AF6C951000C034A /* ParseFacebookUtils.framework in Frameworks */,
 				46B29BBF1ADB20FF000B9441 /* libsqlite3.dylib in Frameworks */,
@@ -575,6 +585,8 @@
 		46B29BC21ADB2187000B9441 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				9AD259A81B547EA2003B5F57 /* RealmSwift.framework */,
+				9AD259A61B547CD7003B5F57 /* Realm.framework */,
 				4685F8A61B1C1FF3004D77E9 /* IQKeybordManagerSwift */,
 				4685F8A21B1C1FE0004D77E9 /* DZNEmptyDataSet */,
 				460FF5041AF87815007C6872 /* Fabric.framework */,
@@ -979,6 +991,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Library/External/FacebookSDK",
@@ -990,6 +1003,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "The Mouve/Supporting Files/The Mouve-Bridging-Header.h";
 			};
 			name = Debug;
@@ -999,6 +1013,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Library/External/FacebookSDK",
@@ -1010,6 +1025,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "The Mouve/Supporting Files/The Mouve-Bridging-Header.h";
 			};
 			name = Release;

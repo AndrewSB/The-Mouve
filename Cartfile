@@ -1,8 +1,13 @@
 github "Alamofire/Alamofire" "master"
 github "gavinbunney/Toucan"
+
 github "tristanhimmelman/AlamofireObjectMapper"
 
 #github "TTTAttributedLabel/TTTAttributedLabel"
 
 #github "hackiftekhar/IQKeyboardManager"
 #github "dzenbot/DZNEmptyDataSet"
+
+github "TTTAttributedLabel/TTTAttributedLabel"
+github "realm/realm-cocoa"
+github "Hearst-DD/ObjectMapper"
