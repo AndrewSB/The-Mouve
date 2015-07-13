@@ -122,6 +122,7 @@
 		9AD259AE1B547F55003B5F57 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */; };
 		9AD259AF1B547F90003B5F57 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259A81B547EA2003B5F57 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9AD259B01B547F90003B5F57 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259A61B547CD7003B5F57 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9AD259B31B5480C1003B5F57 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD259B21B5480C1003B5F57 /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -256,6 +257,7 @@
 		9AD259A61B547CD7003B5F57 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../../Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9AD259A81B547EA2003B5F57 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ../../Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		9AD259B21B5480C1003B5F57 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = Models/Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -544,6 +546,7 @@
 		46B29B7A1ADB2067000B9441 /* The Mouve */ = {
 			isa = PBXGroup;
 			children = (
+				9AD259B11B5480A0003B5F57 /* Models */,
 				46B29B7D1ADB2067000B9441 /* AppDelegate.swift */,
 				46B29BD11ADB21AD000B9441 /* VCs */,
 				46B29BD21ADB21D3000B9441 /* Resources */,
@@ -721,6 +724,14 @@
 			name = AlertUIView;
 			sourceTree = "<group>";
 		};
+		9AD259B11B5480A0003B5F57 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9AD259B21B5480C1003B5F57 /* Users.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -837,6 +848,7 @@
 				464B2DC91AFD79960095FB83 /* FilledButton.swift in Sources */,
 				4685F8C31B1C1FF3004D77E9 /* IQToolbar.swift in Sources */,
 				46AFB3651AF86C9A004D121A /* LoginViewController.swift in Sources */,
+				9AD259B31B5480C1003B5F57 /* Users.swift in Sources */,
 				464B2DC71AFD79890095FB83 /* OutlinedButton.swift in Sources */,
 				46AC422B1B36EDBB000BAB24 /* CollectionExtension.swift in Sources */,
 				4685F8BE1B1C1FF3004D77E9 /* IQKeyboardManager.swift in Sources */,
