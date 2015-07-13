@@ -1,5 +1,5 @@
 github "Alamofire/Alamofire" "1.2.3"
-github "dzenbot/DZNEmptyDataSet" "v1.5.2"
-github "hackiftekhar/IQKeyboardManager" "v3.2.4"
+github "Hearst-DD/ObjectMapper" "0.12"
 github "TTTAttributedLabel/TTTAttributedLabel" "1.13.4"
-github "gavinbunney/Toucan" "0.2.0"
+github "gavinbunney/Toucan" "0.2.1"
+github "realm/realm-cocoa" "null-string-beta-2"
