@@ -9,7 +9,15 @@
 import Foundation
 import RealmSwift
 
-class Person: Object{
+class Person: Object {
+    dynamic var username = "user"
+    dynamic var image = "http://localhost/image.jpg"
+    dynamic var createdAt = NSDate()
+    dynamic var updatedAt = NSDate()
+    let myMouves = List<Mouve>()
+    let memberOf = List<Mouve>()
+    let followers = List<Person>()
+    let following = List<Person>()
 }
 
 class Mouve: Object {
