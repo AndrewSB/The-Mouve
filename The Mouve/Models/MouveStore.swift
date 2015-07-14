@@ -12,7 +12,6 @@ import RealmSwift
 class RealmStore{
     let currentUser = Person()
     let currentRealm = Realm(inMemoryIdentifier: "currentRealm")
-    let currMouve = Mouve()
 
     var mouveArray: Results<Mouve>{
         get {
@@ -20,6 +19,7 @@ class RealmStore{
         }
     }
     func addMouve(name: String, details: String, image: String, startTime: NSDate, endTime: NSDate){
+            let currMouve = Mouve()
             currentRealm.beginWrite()
             
             //Mouve fields filled in
