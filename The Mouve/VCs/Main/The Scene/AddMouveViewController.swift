@@ -76,7 +76,9 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
 
     @IBAction func postMouveButtonWasHit(sender: AnyObject) {
 //        let newMouve = Event(name: titleEventTextField.text, about: "", time: NSDate(timeInterval: 80, sinceDate: NSDate()), length: 100, address: locationTextField.text, invitees: ["lol"], backgroundImage: eventImageButton!.backgroundImageForState(.Normal)!)
-        RealmStore.sharedInstance.addMouve(name: titleEventTextField.text, details: "", image: "http://google.com", startTime: NSDate(), endTime: NSDate(timeIntervalSinceNow: 10))
+                    println("current events num:\(RealmStore.sharedInstance.mouveArray.count)")
+        RealmStore.sharedInstance.addMouve(titleEventTextField.text, details: "", image: "http://google.com", startTime: NSDate(), endTime: NSDate(timeIntervalSinceNow: 10))
+            println("event created success:\(RealmStore.sharedInstance.mouveArray.count)")
 
 //        newMouve.location = UserDefaults.lastLocation!
         
