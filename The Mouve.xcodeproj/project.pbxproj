@@ -595,6 +595,7 @@
 		46B29BC21ADB2187000B9441 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */,
 				9AD259A81B547EA2003B5F57 /* RealmSwift.framework */,
 				9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */,
 				9AD259A61B547CD7003B5F57 /* Realm.framework */,
