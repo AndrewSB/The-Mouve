@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 class TheScenePageViewController: UIPageViewController {
     override func viewDidLoad() {
@@ -19,6 +20,8 @@ class TheScenePageViewController: UIPageViewController {
         LocalMessage.observe(.HomeTitlePageTwo, classFunction: "pageTwo", inClass: self)
         
         navigationItem.titleView = SceneTitleView(type: .Explore, frame: CGRect(x: 0, y: 0, width: 140, height: 44))
+        
+        let currentMouves = Realm().objects(Mouve)
 
         pageViewControllerDidLoad()
     }
