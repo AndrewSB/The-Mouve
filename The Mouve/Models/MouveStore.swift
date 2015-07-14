@@ -11,7 +11,7 @@ import RealmSwift
 
 class RealmStore{
     let currentUser = Person()
-    let currentRealm = Realm(inMemoryIdentifier: "currentRealm")
+    let currentRealm = Realm(path: Realm.defaultPath)
 
     var mouveArray: Results<Mouve>{
         get {
