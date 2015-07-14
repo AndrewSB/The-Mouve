@@ -20,17 +20,17 @@ class RealmStore{
         }
     }
     func addMouve(name: String, details: String, image: String, startTime: NSDate, endTime: NSDate){
-        currentRealm.beginWrite()
-        
-        //Mouve fields filled in
-        currMouve.name = name
-        currMouve.details = details
-        currMouve.image = image
-        currMouve.start = startTime
-        currMouve.end = endTime
-        
-        currentRealm.add(currMouve)
-        currentRealm.commitWrite()
+            currentRealm.beginWrite()
+            
+            //Mouve fields filled in
+            currMouve.name = name
+            currMouve.details = details
+            currMouve.image = image
+            currMouve.start = startTime
+            currMouve.end = endTime
+            
+            currentRealm.add(currMouve)
+            currentRealm.commitWrite()
     }
     
     func delMouve(currMouve: Mouve){
