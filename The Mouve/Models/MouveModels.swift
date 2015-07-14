@@ -9,6 +9,8 @@
 import Foundation
 import RealmSwift
 
+
+
 class Person: Object {
     dynamic var username = "user"
     dynamic var image = "http://localhost/image.jpg"
@@ -18,6 +20,10 @@ class Person: Object {
     let memberOf = List<Mouve>()
     let followers = List<Person>()
     let following = List<Person>()
+}
+
+class myUser: Person{
+    dynamic var authToken : String = ""
 }
 
 class Mouve: Object {

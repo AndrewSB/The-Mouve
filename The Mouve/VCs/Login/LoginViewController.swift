@@ -31,7 +31,6 @@ class LoginViewController: UIViewController {
         view.userInteractionEnabled = false
         let loadingSpinnerView = addLoadingView()
         view.addSubview(loadingSpinnerView)
-        
         let emailQuery = PFQuery(className: "_User")
         emailQuery.whereKey("email", equalTo: emailTextField.text.lowercaseString)
         
