@@ -114,6 +114,7 @@
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
 		7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78A1B1575AB005A1AF1 /* addImage.png */; };
 		7832E78D1B16C66F005A1AF1 /* Switch on image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78C1B16C66F005A1AF1 /* Switch on image.png */; };
+		78B33E0A1B5488E500F3327E /* Mouve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B33E091B5488E500F3327E /* Mouve.swift */; };
 		78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */; };
 		78CFBD141B192F5D002AE6A2 /* TimeRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */; };
 		9AD259AA1B547EF3003B5F57 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259A61B547CD7003B5F57 /* Realm.framework */; };
@@ -252,6 +253,7 @@
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		7832E78A1B1575AB005A1AF1 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addImage.png; path = ../VCs/Main/addImage.png; sourceTree = "<group>"; };
 		7832E78C1B16C66F005A1AF1 /* Switch on image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Switch on image.png"; path = "../VCs/Main/Switch on image.png"; sourceTree = "<group>"; };
+		78B33E091B5488E500F3327E /* Mouve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Mouve.swift; path = Models/Mouve.swift; sourceTree = "<group>"; };
 		78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRangeSlider.swift; sourceTree = "<group>"; };
 		9AD259A61B547CD7003B5F57 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../../Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 			children = (
 				9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */,
 				9AD259A81B547EA2003B5F57 /* RealmSwift.framework */,
+				9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */,
 				9AD259A61B547CD7003B5F57 /* Realm.framework */,
 				4685F8A61B1C1FF3004D77E9 /* IQKeybordManagerSwift */,
 				4685F8A21B1C1FE0004D77E9 /* DZNEmptyDataSet */,
@@ -728,6 +731,7 @@
 			isa = PBXGroup;
 			children = (
 				9AD259B21B5480C1003B5F57 /* Users.swift */,
+				78B33E091B5488E500F3327E /* Mouve.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -865,6 +869,7 @@
 				46CC15CA1AFE1AAE003E3D9E /* AlertUIView.swift in Sources */,
 				78CFBD141B192F5D002AE6A2 /* TimeRangeSlider.swift in Sources */,
 				46B888C21AF8801000D872E0 /* DetailPostTableViewCell.swift in Sources */,
+				78B33E0A1B5488E500F3327E /* Mouve.swift in Sources */,
 				4685F8BA1B1C1FF3004D77E9 /* IQUIView+Hierarchy.swift in Sources */,
 				46CC15C61AFDF6A1003E3D9E /* IntExtension.swift in Sources */,
 				78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */,
