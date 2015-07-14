@@ -256,7 +256,7 @@
 		78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRangeSlider.swift; sourceTree = "<group>"; };
 		9AD259A61B547CD7003B5F57 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../../Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9AD259A81B547EA2003B5F57 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ../../Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
-		9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
+		9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../../Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		9AD259B21B5480C1003B5F57 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Users.swift; path = Models/Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -528,7 +528,6 @@
 		46B29B6F1ADB2067000B9441 = {
 			isa = PBXGroup;
 			children = (
-				9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */,
 				46B29B7A1ADB2067000B9441 /* The Mouve */,
 				46B29BD61ADB221A000B9441 /* Library */,
 				46B29B791ADB2067000B9441 /* Products */,
@@ -594,6 +593,7 @@
 		46B29BC21ADB2187000B9441 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */,
 				9AD259A81B547EA2003B5F57 /* RealmSwift.framework */,
 				9AD259A61B547CD7003B5F57 /* Realm.framework */,
 				4685F8A61B1C1FF3004D77E9 /* IQKeybordManagerSwift */,
