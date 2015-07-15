@@ -50,11 +50,16 @@ class RealmStore{
         currentRealm.commitWrite()
     }
     
-    func fbRegister(fbId: String,name: String){
+    func fbRegister(username: String, email: String,
+        fbId: String,
+        name: String){
         let currUser = currentUser
         currentRealm.beginWrite()
-        currentUser.fbId = fbId
         currentUser.name = name
+        currentUser.username = username
+        currentUser.email = email
+        currentUser.fbId = fbId
+
         currentRealm.add(currUser)
         currentRealm.commitWrite()
     }

@@ -35,7 +35,13 @@ class SignupViewController: UIViewController {
 //        newUser.password = passwordTextField.text.lowercaseString
 //        newUser.email = emailTextField.text.lowercaseString
 //        
-        RealmStore.sharedInstance.registerUser(usernameTextField.text, email: emailTextField.text, password: passwordTextField.text, authToken: "demo", image: "http://google.com/")
+        RealmStore.sharedInstance.registerUser(
+            nameTextField.text,
+            username:usernameTextField.text,
+            email: emailTextField.text,
+            password: passwordTextField.text,
+            authToken: "demo",
+            image: "http://google.com/")
 
     }
     
