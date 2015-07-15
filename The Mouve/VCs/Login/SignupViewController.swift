@@ -17,7 +17,7 @@ class SignupViewController: UIViewController {
 
     @IBOutlet weak var createAccountButton: UIButton!
     
-    let newUser = PFUser()
+    let newUser = User()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,18 +31,11 @@ class SignupViewController: UIViewController {
     }
 
     @IBAction func createAccountButtonWasHit(sender: AnyObject) {
-        newUser["name"] = nameTextField.text
-        newUser.username = usernameTextField.text.lowercaseString
-        newUser.password = passwordTextField.text.lowercaseString
-        newUser.email = emailTextField.text.lowercaseString
-        
-        newUser.signUpInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
-            if let error = error {
-                let errorString = error.userInfo?["error"] as? NSString
-                self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
-            }
-            appDel.checkLogin()
-        }
+//        newUser.username = usernameTextField.text.lowercaseString
+//        newUser.password = passwordTextField.text.lowercaseString
+//        newUser.email = emailTextField.text.lowercaseString
+//        
+        RealmStore.sharedInstance.registerUser(usernameTextField.text, email: emailTextField.text, password: passwordTextField.text, authToken: "demo", image: "http://google.com/")
 
     }
     
@@ -82,7 +75,16 @@ class SignupViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         view.endEditing(true)
     }
+//    func usernameSuggester(fullname: String){
+//        var fullNameArr = split(fullname) {$0 == " "}
+//        var firstName: String = fullNameArr[0]
+//        var lastName: String? = fullNameArr.count > 1 ? fullNameArr[-1] : nil
+//        let username = firstName+lastName!
+//        return username.lowercaseString
+//    }
+
 }
+
 
 extension SignupViewController: UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
