@@ -35,19 +35,20 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         profileTableView.dataSource = self
         profileTableView.delegate = self
         
         avatarImage.layer.cornerRadius = avatarImage.frame.width/2
         
-        nameLabel.text! = RealmStore.sharedInstance.currentUser.username
-        usernameLabel.text! = "@" + RealmStore.sharedInstance.currentUser.username
+        nameLabel.text! = RealmStore.sharedInstance.currentUser.person.username
+        usernameLabel.text! = "@" + RealmStore.sharedInstance.currentUser.person.username
         
         for button in [mouveButton, followersButton, followingButton] {
             
             if button.titleLabel!.text! == "Mouves"{
             button.titleLabel!.textAlignment = .Center
-            button.setTitle("\(RealmStore.sharedInstance.currentUser.myMouves.count)\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+            button.setTitle("\(RealmStore.sharedInstance.currentUser.person.myMouves.count)\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
             }
             
             else if button.titleLabel!.text! == "Followers"{
@@ -60,6 +61,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
                 button.setTitle("\(RealmStore.sharedInstance.followingList.count)\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
             }
         }
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -135,6 +144,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         var offset = scrollView.contentOffset.y
         var avatarTransform = CATransform3DIdentity
         var headerTransform = CATransform3DIdentity
+        var nameLabelTransform = CATransform3DIdentity
         
         println(offset)
         
@@ -145,11 +155,13 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             let headerSizevariation = ((headerView.bounds.height * (1.0 + headerScaleFactor)) - headerView.bounds.height)/2.0
             headerTransform = CATransform3DTranslate(headerTransform, 0, headerSizevariation, 0)
             headerTransform = CATransform3DScale(headerTransform, 1.0 + headerScaleFactor, 1.0 + headerScaleFactor, 0)
-            
+            nameLabelTransform = CATransform3DMakeScale(1.0, 1.0, 0)
+
             headerView.layer.transform = headerTransform
+            nameLabel.layer.transform = nameLabelTransform
         }
             
-        else { // PULL UP
+        else { // PUSH UP
             
             // Header -----------
             
@@ -157,8 +169,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             
             //  ------------ Label
             
-//            let labelTransform = CATransform3DMakeTranslation(0, max(-distance_W_LabelHeader, offset_B_LabelHeader - offset), 0)
-//            headerLabel.layer.transform = labelTransform
+//            let nameScaleFactor = (min(offset_B_LabelHeader, offset)) / nameLabel.bounds.height / 1.4
+//            let nameSizeVariation = ((nameLabel.bounds.height * (1.0 + nameScaleFactor)) - nameLabel.bounds.height) / 2.0
+//            nameLabelTransform = CATransform3DMakeTranslation(0, 0, 0)
+//            headerLabel.layer.transform = nameLabelTransform
+            
+
             
             //  ------------ Blur
             
@@ -175,11 +191,18 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 if avatarImage.layer.zPosition < headerView.layer.zPosition{
                     headerView.layer.zPosition = 0
+                    // Makes the Fullname appear
+                    nameLabelTransform = CATransform3DMakeScale(1.0, 1.0, 0)
+                    nameLabel.layer.transform = nameLabelTransform
+
                 }
                 
             } else {
                 if avatarImage.layer.zPosition >= headerView.layer.zPosition{
                     headerView.layer.zPosition = 2
+                    // Makes the Fullname disappear
+                    nameLabelTransform = CATransform3DMakeScale(0, 0, 0)
+                    nameLabel.layer.transform = nameLabelTransform
                 }
             }
         }
