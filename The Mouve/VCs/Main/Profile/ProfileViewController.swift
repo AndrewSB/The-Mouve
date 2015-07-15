@@ -41,8 +41,21 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         avatarImage.layer.cornerRadius = avatarImage.frame.width/2
         
         for button in [mouveButton, followersButton, followingButton] {
+            
+            if button.titleLabel!.text! == "Mouves"{
             button.titleLabel!.textAlignment = .Center
-            button.setTitle("271\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+            button.setTitle("\(RealmStore.sharedInstance.currentUser.myMouves.count)\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+            }
+            
+            else if button.titleLabel!.text! == "Followers"{
+                button.titleLabel!.textAlignment = .Center
+                button.setTitle("\(RealmStore.sharedInstance.followersList.count)\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+            }
+            
+            else {
+                button.titleLabel!.textAlignment = .Center
+                button.setTitle("\(RealmStore.sharedInstance.followingList.count)\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+            }
         }
     }
     

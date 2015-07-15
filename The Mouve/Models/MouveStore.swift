@@ -18,6 +18,7 @@ class RealmStore{
             return currentRealm.objects(Mouve)
         }
     }
+    
     func addMouve(name: String, details: String, image: String, startTime: NSDate, endTime: NSDate){
             let currMouve = Mouve()
             currentRealm.beginWrite()
@@ -51,6 +52,7 @@ class RealmStore{
             return iFollow
         }
     }
+    
     class var sharedInstance: RealmStore{
         struct Static {
             static let instance = RealmStore()

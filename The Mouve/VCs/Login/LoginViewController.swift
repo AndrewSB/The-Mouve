@@ -31,34 +31,37 @@ class LoginViewController: UIViewController {
         view.userInteractionEnabled = false
         let loadingSpinnerView = addLoadingView()
         view.addSubview(loadingSpinnerView)
-        let emailQuery = PFQuery(className: "_User")
-        emailQuery.whereKey("email", equalTo: emailTextField.text.lowercaseString)
         
-        emailQuery.getFirstObjectInBackgroundWithBlock({ (object, error) in
-            if let object = object {
-                PFUser.logInWithUsernameInBackground(object["username"] as! String, password: self.passwordTextField.text, block: { (user, error) in
-                    if user != nil {
-                        println("dun logged in")
-                        appDel.checkLogin()
-                    } else {
-                        if let error = error {
-                            loadingSpinnerView.removeFromSuperview()
-                            self.view.userInteractionEnabled = true
-                            
-                            let errorString = error.userInfo?["error"] as? NSString
-                            self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
-                        }
-                    }
-                })
-            } else {
-                if let error = error {
-                    loadingSpinnerView.removeFromSuperview()
-                    self.view.userInteractionEnabled = true
-                    
-                    self.presentViewController(UIAlertController(title: "Uh oh", message: error.localizedDescription), animated: true, completion: nil)
-                }
-            }
-        })
+        // Andrew's Parse
+//        let emailQuery = PFQuery(className: "_User")
+//        emailQuery.whereKey("email", equalTo: emailTextField.text.lowercaseString)
+//        
+//        emailQuery.getFirstObjectInBackgroundWithBlock({ (object, error) in
+//            if let object = object {
+//                PFUser.logInWithUsernameInBackground(object["username"] as! String, password: self.passwordTextField.text, block: { (user, error) in
+//                    if user != nil {
+//                        println("dun logged in")
+//                        appDel.checkLogin()
+//                    } else {
+//                        if let error = error {
+//                            loadingSpinnerView.removeFromSuperview()
+//                            self.view.userInteractionEnabled = true
+//                            
+//                            let errorString = error.userInfo?["error"] as? NSString
+//                            self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
+//                        }
+//                    }
+//                })
+//            } else {
+//                if let error = error {
+//                    loadingSpinnerView.removeFromSuperview()
+//                    self.view.userInteractionEnabled = true
+//                    
+//                    self.presentViewController(UIAlertController(title: "Uh oh", message: error.localizedDescription), animated: true, completion: nil)
+//                }
+//            }
+//        })
+        //Parse Ends here
     }
     
     @IBAction func signUpButtonWasHit(sender: AnyObject) {
