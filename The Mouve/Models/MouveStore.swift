@@ -10,8 +10,20 @@ import Foundation
 import RealmSwift
 
 class RealmStore{
-    let currentUser = User()
+//    let currentUser = User()
+
     let currentRealm = Realm(path: Realm.defaultPath)
+    var currentUser: User{
+        get {
+            if let currU = currentRealm.objectForPrimaryKey(User.self, key: 0){
+                return currU
+            }
+            else{
+                return User()
+            }
+        }
+    }
+
 
     var mouveArray: Results<Mouve>{
         get {
@@ -40,14 +52,18 @@ class RealmStore{
         currentRealm.beginWrite()
         
         //Mouve fields filled in
-        currUser.name = name
-        currUser.username = username
+        currUser.person.name = name
+        currUser.person.username = username
         currUser.email = email
         currUser.password = password
-        currUser.image = image
+        currUser.person.image = image
         
         currentRealm.add(currUser)
         currentRealm.commitWrite()
+    }
+    
+    func isLogged(){
+        
     }
     
     func fbRegister(username: String, email: String,
@@ -55,8 +71,8 @@ class RealmStore{
         name: String){
         let currUser = currentUser
         currentRealm.beginWrite()
-        currentUser.name = name
-        currentUser.username = username
+        currentUser.person.name = name
+        currentUser.person.username = username
         currentUser.email = email
         currentUser.fbId = fbId
 
@@ -94,13 +110,13 @@ class RealmStore{
     
     var followersList: List<Person>{
         get {
-            var myFollowers = currentUser.followers
+            var myFollowers = currentUser.person.followers
             return myFollowers
         }
     }
     var followingList: List<Person>{
         get {
-            var iFollow = currentUser.following
+            var iFollow = currentUser.person.following
             return iFollow
         }
     }
