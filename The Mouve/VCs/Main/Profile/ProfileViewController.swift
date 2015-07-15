@@ -40,6 +40,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         
         avatarImage.layer.cornerRadius = avatarImage.frame.width/2
         
+        nameLabel.text! = RealmStore.sharedInstance.currentUser.username
+        dumbLabel.text! = "@" + RealmStore.sharedInstance.currentUser.username
+        
         for button in [mouveButton, followersButton, followingButton] {
             
             if button.titleLabel!.text! == "Mouves"{
