@@ -65,10 +65,9 @@ class SignupViewController: UIViewController {
                             }
                         }
                     })
-                
-                    self.newUser["fbID"] = FBSDKAccessToken.currentAccessToken().userID
-                    
                     self.nameTextField.text = FBSDKProfile.currentProfile().name
+                    
+                    RealmStore.sharedInstance.fbRegister(self.usernameTextField.text, email: self.emailTextField.text, fbId: FBSDKAccessToken.currentAccessToken().userID, name: self.nameTextField.text)
                 }
             })
     }
