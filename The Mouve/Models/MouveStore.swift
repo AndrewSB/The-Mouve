@@ -32,8 +32,7 @@ class RealmStore{
             currentRealm.add(currMouve)
             currentRealm.commitWrite()
     }
-    
-    func registerUser(username: String, email: String,
+    func registerUser(name: String, username: String, email: String,
         password: String,
         authToken: String,
         image: String){
@@ -41,11 +40,21 @@ class RealmStore{
         currentRealm.beginWrite()
         
         //Mouve fields filled in
+        currUser.name = name
         currUser.username = username
         currUser.email = email
         currUser.password = password
         currUser.image = image
         
+        currentRealm.add(currUser)
+        currentRealm.commitWrite()
+    }
+    
+    func fbRegister(fbId: String,name: String){
+        let currUser = currentUser
+        currentRealm.beginWrite()
+        currentUser.fbId = fbId
+        currentUser.name = name
         currentRealm.add(currUser)
         currentRealm.commitWrite()
     }
