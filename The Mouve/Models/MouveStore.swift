@@ -10,8 +10,20 @@ import Foundation
 import RealmSwift
 
 class RealmStore{
-    let currentUser = Person()
+//    let currentUser = User()
+
     let currentRealm = Realm(path: Realm.defaultPath)
+    var currentUser: User{
+        get {
+            if let currU = currentRealm.objectForPrimaryKey(User.self, key: 0){
+                return currU
+            }
+            else{
+                return User()
+            }
+        }
+    }
+
 
     var mouveArray: Results<Mouve>{
         get {
@@ -33,6 +45,63 @@ class RealmStore{
             currentRealm.add(currMouve)
             currentRealm.commitWrite()
     }
+    func registerUser(name: String, username: String, email: String,
+        password: String,
+        authToken: String,
+        image: String){
+        let currUser = currentUser
+        currentRealm.beginWrite()
+        
+        //Mouve fields filled in
+        currUser.person.name = name
+        currUser.person.username = username
+        currUser.email = email
+        currUser.password = password
+        currUser.person.image = image
+        
+        currentRealm.add(currUser)
+        currentRealm.commitWrite()
+    }
+    
+    func isLogged(){
+        
+    }
+    
+    func fbRegister(username: String, email: String,
+        fbId: String,
+        name: String){
+        let currUser = currentUser
+        currentRealm.beginWrite()
+        currentUser.person.name = name
+        currentUser.person.username = username
+        currentUser.email = email
+        currentUser.fbId = fbId
+
+        currentRealm.add(currUser)
+        currentRealm.commitWrite()
+    }
+    
+    func addPerson(username: String, image: String
+        ){
+            let currPerson = Person()
+            currentRealm.beginWrite()
+            
+            //Mouve fields filled in
+            currPerson.username = username
+            currPerson.image = image
+            currentRealm.add(currPerson)
+            currentRealm.commitWrite()
+    }
+    func delPerson(currPerson: Person){
+        currentRealm.beginWrite()
+        currentRealm.delete(currPerson)
+        currentRealm.commitWrite()
+    }
+    func logoutUser(){
+        currentRealm.beginWrite()
+        currentRealm.delete(currentUser)
+        currentRealm.commitWrite()
+    }
     
     func delMouve(currMouve: Mouve){
         currentRealm.beginWrite()
@@ -42,13 +111,13 @@ class RealmStore{
     
     var followersList: List<Person>{
         get {
-            var myFollowers = currentUser.followers
+            var myFollowers = currentUser.person.followers
             return myFollowers
         }
     }
     var followingList: List<Person>{
         get {
-            var iFollow = currentUser.following
+            var iFollow = currentUser.person.following
             return iFollow
         }
     }

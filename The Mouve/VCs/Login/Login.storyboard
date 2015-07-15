@@ -377,6 +377,7 @@
                                 <connections>
                                     <action selector="createAccountButtonWasHit:" destination="yBD-hG-2Qi" eventType="touchUpInside" id="7b7-2w-0og"/>
                                     <action selector="loginButtonWasHit:" destination="gLX-tq-VTd" eventType="touchUpInside" id="AUn-pZ-uvS"/>
+                                    <segue destination="QkP-fB-0CH" kind="custom" identifier="@Main" customClass="HHLinkStoryboards" id="aNi-kp-U6N"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -432,6 +433,24 @@
                 <exit id="NT4-VP-hXL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2890" y="1519"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yNn-zx-gkD">
+            <objects>
+                <viewController id="QkP-fB-0CH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="91Y-1e-bqm"/>
+                        <viewControllerLayoutGuide type="bottom" id="aJb-0C-GFK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zrf-DL-Nl7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xm3-Wu-VPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3767" y="1845"/>
         </scene>
     </scenes>
     <resources>

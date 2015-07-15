@@ -12,7 +12,8 @@ import RealmSwift
 
 
 class Person: Object {
-    dynamic var username = "user"
+    dynamic var name: String = ""
+    dynamic var username: String = "user"
     dynamic var image = "http://localhost/image.jpg"
     dynamic var createdAt = NSDate()
     dynamic var updatedAt = NSDate()
@@ -22,8 +23,16 @@ class Person: Object {
     let following = List<Person>()
 }
 
-class myUser: Person{
+class User: Object{
+    dynamic var person = Person()
+    dynamic var id = 0
     dynamic var authToken : String = ""
+    dynamic var email: String = "a@a.com"
+    dynamic var password: String = "password"
+    dynamic var fbId: String=""
+    override static func primaryKey() -> String? {
+        return "id"
+    }
 }
 
 class Mouve: Object {
