@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class RealmStore{
-    let currentUser = Person()
+    let currentUser = User()
     let currentRealm = Realm(path: Realm.defaultPath)
 
     var mouveArray: Results<Mouve>{
@@ -31,6 +31,45 @@ class RealmStore{
             
             currentRealm.add(currMouve)
             currentRealm.commitWrite()
+    }
+    
+    func registerUser(username: String, email: String,
+        password: String,
+        authToken: String,
+        image: String){
+        let currUser = currentUser
+        currentRealm.beginWrite()
+        
+        //Mouve fields filled in
+        currUser.username = username
+        currUser.email = email
+        currUser.password = password
+        currUser.image = image
+        
+        currentRealm.add(currUser)
+        currentRealm.commitWrite()
+    }
+    
+    func addPerson(username: String, image: String
+        ){
+            let currPerson = Person()
+            currentRealm.beginWrite()
+            
+            //Mouve fields filled in
+            currPerson.username = username
+            currPerson.image = image
+            currentRealm.add(currPerson)
+            currentRealm.commitWrite()
+    }
+    func delPerson(currPerson: Person){
+        currentRealm.beginWrite()
+        currentRealm.delete(currPerson)
+        currentRealm.commitWrite()
+    }
+    func logoutUser(){
+        currentRealm.beginWrite()
+        currentRealm.delete(currentUser)
+        currentRealm.commitWrite()
     }
     
     func delMouve(currMouve: Mouve){
