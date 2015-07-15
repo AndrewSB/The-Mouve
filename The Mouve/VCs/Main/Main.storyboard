@@ -1335,7 +1335,6 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="profile-icon" id="f8p-Wz-zBd"/>
                     <connections>
                         <outlet property="avatarImage" destination="J1f-pm-mjf" id="7XH-1A-xQq"/>
-                        <outlet property="dumbLabel" destination="Csc-pN-apC" id="0mP-lL-uL5"/>
                         <outlet property="followersButton" destination="HlO-XT-9yv" id="mcg-O2-mxI"/>
                         <outlet property="followingButton" destination="jhF-hL-Hkl" id="IeS-SZ-xfF"/>
                         <outlet property="headerLabel" destination="4qi-b6-W0Q" id="daS-8F-vPK"/>
@@ -1343,6 +1342,7 @@
                         <outlet property="mouveButton" destination="Mqu-WF-u7n" id="juJ-oV-bCS"/>
                         <outlet property="nameLabel" destination="kN3-Qf-PmD" id="Cgf-e8-wVG"/>
                         <outlet property="profileTableView" destination="ESq-sd-WwW" id="dXL-LL-iig"/>
+                        <outlet property="usernameLabel" destination="Csc-pN-apC" id="0mP-lL-uL5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BhQ-UX-IUw" sceneMemberID="firstResponder"/>

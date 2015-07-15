@@ -31,7 +31,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     
     var scrollView: UIScrollView!
     
-    @IBOutlet weak var dumbLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         avatarImage.layer.cornerRadius = avatarImage.frame.width/2
         
         nameLabel.text! = RealmStore.sharedInstance.currentUser.username
-        dumbLabel.text! = "@" + RealmStore.sharedInstance.currentUser.username
+        usernameLabel.text! = "@" + RealmStore.sharedInstance.currentUser.username
         
         for button in [mouveButton, followersButton, followingButton] {
             
@@ -81,7 +81,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
 
         blurredHeaderImageView!.contentMode = UIViewContentMode.ScaleAspectFill
         blurredHeaderImageView!.alpha = 1.0
-        headerView.insertSubview(blurredHeaderImageView, belowSubview: dumbLabel)
+        headerView.insertSubview(blurredHeaderImageView, belowSubview: usernameLabel)
         
         let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
         blurView.frame = blurredHeaderImageView.frame
@@ -90,7 +90,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         
         headerView.clipsToBounds = true
         
-        dumbLabel.bringSubviewToFront(headerView)
+        usernameLabel.bringSubviewToFront(headerView)
     }
 }
 
