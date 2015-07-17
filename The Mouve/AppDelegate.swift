@@ -79,7 +79,8 @@ extension AppDelegate {
     }
     
     func checkLogin() {
-        let loggedIn = PFUser.currentUser() != nil
+        //Checks that user is not nil
+        let loggedIn = (persistentData.sharedInstance.currentUser.isNil == false)
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
@@ -87,6 +88,6 @@ extension AppDelegate {
     }
     
     func logOut() {
-        PFUser.logOut()
+        RealmStologOut()
     }
 }

@@ -35,7 +35,7 @@ class SignupViewController: UIViewController {
 //        newUser.password = passwordTextField.text.lowercaseString
 //        newUser.email = emailTextField.text.lowercaseString
 //        
-        RealmStore.sharedInstance.registerUser(
+        persistentData.sharedInstance.registerUser(
             nameTextField.text,
             username:usernameTextField.text,
             email: emailTextField.text,
@@ -67,7 +67,7 @@ class SignupViewController: UIViewController {
                     })
                     self.nameTextField.text = FBSDKProfile.currentProfile().name
                     
-                    RealmStore.sharedInstance.fbRegister(self.usernameTextField.text, email: self.emailTextField.text, fbId: FBSDKAccessToken.currentAccessToken().userID, name: self.nameTextField.text)
+                    persistentData.sharedInstance.fbRegister(self.usernameTextField.text, email: self.emailTextField.text, fbId: FBSDKAccessToken.currentAccessToken().userID, name: self.nameTextField.text)
                 }
             })
     }

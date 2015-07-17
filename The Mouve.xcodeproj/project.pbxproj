@@ -117,6 +117,8 @@
 		78B33E0A1B5488E500F3327E /* MouveModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B33E091B5488E500F3327E /* MouveModels.swift */; };
 		78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */; };
 		78CFBD141B192F5D002AE6A2 /* TimeRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */; };
+		9A1799251B577C8C00548FEB /* PersistentModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A1799231B577C8C00548FEB /* PersistentModel.xcdatamodeld */; };
+		9A1799271B5797FF00548FEB /* CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1799261B5797FF00548FEB /* CoreDataExtension.swift */; };
 		9A8512101B55FBB300606BB1 /* HHLinkStoryboards.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85120F1B55FBB300606BB1 /* HHLinkStoryboards.m */; };
 		9ABA887A1B54B17F0014D459 /* MouveStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA88791B54B17F0014D459 /* MouveStore.swift */; };
 		9AD259AA1B547EF3003B5F57 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD259A61B547CD7003B5F57 /* Realm.framework */; };
@@ -216,10 +218,10 @@
 		46AC422A1B36EDBB000BAB24 /* CollectionExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExtension.swift; sourceTree = "<group>"; };
 		46AFB3621AF86AD2004D121A /* UnderlinedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlinedTextField.swift; sourceTree = "<group>"; };
 		46AFB3641AF86C9A004D121A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		46AFB3661AF86CA1004D121A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		46AFB3661AF86CA1004D121A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SignupViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46B29B781ADB2067000B9441 /* The Mouve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Mouve.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B29B7C1ADB2067000B9441 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46B29B7D1ADB2067000B9441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		46B29B7D1ADB2067000B9441 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46B29B841ADB2067000B9441 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		46B29B871ADB2067000B9441 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		46B29BAA1ADB20F5000B9441 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -242,7 +244,7 @@
 		46B888C31AF94C3E00D872E0 /* GreyGreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GreyGreenButton.swift; sourceTree = "<group>"; };
 		46B888C51AF94EE300D872E0 /* DetailViewControllerViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewControllerViewExtension.swift; sourceTree = "<group>"; };
 		46B888C71AF9501300D872E0 /* BoolExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolExtension.swift; sourceTree = "<group>"; };
-		46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddMouveViewController.swift; path = "The Mouve/VCs/Main/The Scene/AddMouveViewController.swift"; sourceTree = SOURCE_ROOT; };
+		46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = AddMouveViewController.swift; path = "The Mouve/VCs/Main/The Scene/AddMouveViewController.swift"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		46B888D21AF9712F00D872E0 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		46BFFD531B36BF220060DF33 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
@@ -257,9 +259,11 @@
 		78B33E091B5488E500F3327E /* MouveModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MouveModels.swift; path = Models/MouveModels.swift; sourceTree = "<group>"; };
 		78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRangeSlider.swift; sourceTree = "<group>"; };
+		9A1799241B577C8C00548FEB /* PersistentModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersistentModel.xcdatamodel; sourceTree = "<group>"; };
+		9A1799261B5797FF00548FEB /* CoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataExtension.swift; sourceTree = "<group>"; };
 		9A85120E1B55FBB300606BB1 /* HHLinkStoryboards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHLinkStoryboards.h; sourceTree = "<group>"; };
 		9A85120F1B55FBB300606BB1 /* HHLinkStoryboards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHLinkStoryboards.m; sourceTree = "<group>"; };
-		9ABA88791B54B17F0014D459 /* MouveStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MouveStore.swift; path = Models/MouveStore.swift; sourceTree = "<group>"; };
+		9ABA88791B54B17F0014D459 /* MouveStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MouveStore.swift; path = Models/MouveStore.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9AD259A61B547CD7003B5F57 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = ../../Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		9AD259A81B547EA2003B5F57 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = ../../Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		9AD259AC1B547F44003B5F57 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = ../../Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
@@ -714,6 +718,7 @@
 			children = (
 				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
 				46BFFD531B36BF220060DF33 /* UIImageExtension.swift */,
+				9A1799261B5797FF00548FEB /* CoreDataExtension.swift */,
 				46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */,
 				460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */,
 				46042E581AEA230300089A5A /* UIViewExtension.swift */,
@@ -736,6 +741,7 @@
 			children = (
 				78B33E091B5488E500F3327E /* MouveModels.swift */,
 				9ABA88791B54B17F0014D459 /* MouveStore.swift */,
+				9A1799231B577C8C00548FEB /* PersistentModel.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -881,6 +887,7 @@
 				46D788FE1B0BF86A00276696 /* RemoteEvent.swift in Sources */,
 				4685F8C11B1C1FF3004D77E9 /* IQBarButtonItem.swift in Sources */,
 				4673C10E1AF6B781000C034A /* FacebookIDExtension.swift in Sources */,
+				9A1799271B5797FF00548FEB /* CoreDataExtension.swift in Sources */,
 				46B888D11AF95CD400D872E0 /* AddMouveViewController.swift in Sources */,
 				46B29BCA1ADB219C000B9441 /* LoginPageViewController.swift in Sources */,
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
@@ -906,6 +913,7 @@
 				46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */,
 				46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */,
 				46C7AAB41AF9FEA1006B361E /* ArrayExtension.swift in Sources */,
+				9A1799251B577C8C00548FEB /* PersistentModel.xcdatamodeld in Sources */,
 				462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */,
 				468D21631AF0829C00CE6E19 /* SettingsTableViewController.swift in Sources */,
 				460FF5091AF87EA7007C6872 /* DetailViewController.swift in Sources */,
@@ -1080,6 +1088,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9A1799231B577C8C00548FEB /* PersistentModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9A1799241B577C8C00548FEB /* PersistentModel.xcdatamodel */,
+			);
+			currentVersion = 9A1799241B577C8C00548FEB /* PersistentModel.xcdatamodel */;
+			name = PersistentModel.xcdatamodeld;
+			path = Models/PersistentModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 46B29B701ADB2067000B9441 /* Project object */;
 }

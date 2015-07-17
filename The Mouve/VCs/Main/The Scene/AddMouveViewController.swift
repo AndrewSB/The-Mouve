@@ -83,9 +83,9 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
 
     @IBAction func postMouveButtonWasHit(sender: AnyObject) {
 //        let newMouve = Event(name: titleEventTextField.text, about: "", time: NSDate(timeInterval: 80, sinceDate: NSDate()), length: 100, address: locationTextField.text, invitees: ["lol"], backgroundImage: eventImageButton!.backgroundImageForState(.Normal)!)
-                    println("current events num:\(RealmStore.sharedInstance.mouveArray.count)")
-        RealmStore.sharedInstance.addMouve(titleEventTextField.text, details: "", image: "http://google.com", startTime: NSDate(), endTime: NSDate(timeIntervalSinceNow: 10))
-            println("event created success:\(RealmStore.sharedInstance.mouveArray.count)")
+                    println("current events num:\(persistentData.sharedInstance.mouveArray.count)")
+        persistentData.sharedInstance.addMouve(titleEventTextField.text, details: "", image: "http://google.com", startTime: NSDate(), endTime: NSDate(timeIntervalSinceNow: 10))
+            println("event created success:\(persistentData.sharedInstance.mouveArray.count)")
 
 //        newMouve.location = UserDefaults.lastLocation!
         
@@ -111,12 +111,12 @@ extension AddMouveViewController: UIImagePickerControllerDelegate, UINavigationC
         println("Popped up..")
         var alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
-        var cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.Default){
+        var cameraAction = UIAlertAction(title: "Take Photo", style: UIAlertActionStyle.Default){
             UIAlertAction in
             self.openCamera()
             
         }
-        var gallaryAction = UIAlertAction(title: "Gallary", style: UIAlertActionStyle.Default){
+        var gallaryAction = UIAlertAction(title: "Choose Existing Photo", style: UIAlertActionStyle.Default){
             UIAlertAction in
             self.openGallary()
         }
