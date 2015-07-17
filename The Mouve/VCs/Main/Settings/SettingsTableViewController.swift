@@ -37,7 +37,7 @@ class SettingsTableViewController: UITableViewController {
             }
         case 1:
             PFUser.logOut()
-            appDel.checkLogin()
+//            appDel.checkLogin()
         default: ()
         }
     }

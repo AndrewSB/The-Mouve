@@ -117,6 +117,10 @@
 		78B33E0A1B5488E500F3327E /* MouveModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B33E091B5488E500F3327E /* MouveModels.swift */; };
 		78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */; };
 		78CFBD141B192F5D002AE6A2 /* TimeRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */; };
+		9A0E64F01B5893250002547D /* AERecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E64EF1B5893250002547D /* AERecord.swift */; };
+		9A0E64F71B58C1360002547D /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 9A0E64F51B58C1360002547D /* Cartfile */; };
+		9A0E64F81B58C1360002547D /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 9A0E64F61B58C1360002547D /* Cartfile.resolved */; };
+		9A0E652F1B58CFB20002547D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E652E1B58CFB20002547D /* StringExtension.swift */; };
 		9A1799251B577C8C00548FEB /* PersistentModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A1799231B577C8C00548FEB /* PersistentModel.xcdatamodeld */; };
 		9A1799271B5797FF00548FEB /* CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1799261B5797FF00548FEB /* CoreDataExtension.swift */; };
 		9A8512101B55FBB300606BB1 /* HHLinkStoryboards.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85120F1B55FBB300606BB1 /* HHLinkStoryboards.m */; };
@@ -259,6 +263,10 @@
 		78B33E091B5488E500F3327E /* MouveModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MouveModels.swift; path = Models/MouveModels.swift; sourceTree = "<group>"; };
 		78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRangeSlider.swift; sourceTree = "<group>"; };
+		9A0E64EF1B5893250002547D /* AERecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AERecord.swift; path = ../../External/AERecord.swift; sourceTree = "<group>"; };
+		9A0E64F51B58C1360002547D /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
+		9A0E64F61B58C1360002547D /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = SOURCE_ROOT; };
+		9A0E652E1B58CFB20002547D /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9A1799241B577C8C00548FEB /* PersistentModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersistentModel.xcdatamodel; sourceTree = "<group>"; };
 		9A1799261B5797FF00548FEB /* CoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataExtension.swift; sourceTree = "<group>"; };
 		9A85120E1B55FBB300606BB1 /* HHLinkStoryboards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHLinkStoryboards.h; sourceTree = "<group>"; };
@@ -496,6 +504,7 @@
 		468D216B1AF0870000CE6E19 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				9A0E64EF1B5893250002547D /* AERecord.swift */,
 				9A85120E1B55FBB300606BB1 /* HHLinkStoryboards.h */,
 				9A85120F1B55FBB300606BB1 /* HHLinkStoryboards.m */,
 				4673C10D1AF6B781000C034A /* FacebookIDExtension.swift */,
@@ -568,6 +577,8 @@
 		46B29B7B1ADB2067000B9441 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9A0E64F51B58C1360002547D /* Cartfile */,
+				9A0E64F61B58C1360002547D /* Cartfile.resolved */,
 				46B29B861ADB2067000B9441 /* LaunchScreen.xib */,
 				46B29B7C1ADB2067000B9441 /* Info.plist */,
 				462B68C61AEB4B1F0040C7DD /* The Mouve-Bridging-Header.h */,
@@ -709,6 +720,7 @@
 				46B888C71AF9501300D872E0 /* BoolExtension.swift */,
 				46042E561AEA1F6900089A5A /* UIColorExtension.swift */,
 				46C7AAB31AF9FEA1006B361E /* ArrayExtension.swift */,
+				9A0E652E1B58CFB20002547D /* StringExtension.swift */,
 			);
 			name = "Primitive ";
 			sourceTree = "<group>";
@@ -812,6 +824,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				464B2DCB1AFD79960095FB83 /* HalisGR-Light.otf in Resources */,
+				9A0E64F81B58C1360002547D /* Cartfile.resolved in Resources */,
 				46CC15CC1AFE1AB9003E3D9E /* AlertUIView.xib in Resources */,
 				7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */,
 				46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */,
@@ -821,6 +834,7 @@
 				4685F8C51B1C1FF3004D77E9 /* IQKeyboardManager.bundle in Resources */,
 				46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */,
 				46B29B851ADB2067000B9441 /* Images.xcassets in Resources */,
+				9A0E64F71B58C1360002547D /* Cartfile in Resources */,
 				46B29BC91ADB219C000B9441 /* Login.storyboard in Resources */,
 				46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */,
 				4673C11D1AF6C857000C034A /* FBAudienceNetwork.README.txt in Resources */,
@@ -895,6 +909,7 @@
 				468D21691AF0864C00CE6E19 /* Event.swift in Sources */,
 				460FF5021AF87443007C6872 /* UIAlertControllerExtension.swift in Sources */,
 				4685F8BC1B1C1FF3004D77E9 /* IQKeyboardManagerConstants.swift in Sources */,
+				9A0E652F1B58CFB20002547D /* StringExtension.swift in Sources */,
 				466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */,
 				46A1ACAB1AEA08E100EE5DD7 /* TheScenePageViewController.swift in Sources */,
 				46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */,
@@ -911,6 +926,7 @@
 				4685F8A51B1C1FE0004D77E9 /* UIScrollView+EmptyDataSet.m in Sources */,
 				46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */,
 				46C7D0521AEA25F500E11AC2 /* SceneTitleView.swift in Sources */,
+				9A0E64F01B5893250002547D /* AERecord.swift in Sources */,
 				46C7AAB41AF9FEA1006B361E /* ArrayExtension.swift in Sources */,
 				9A1799251B577C8C00548FEB /* PersistentModel.xcdatamodeld in Sources */,
 				462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */,

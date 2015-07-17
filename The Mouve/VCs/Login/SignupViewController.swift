@@ -17,7 +17,7 @@ class SignupViewController: UIViewController {
 
     @IBOutlet weak var createAccountButton: UIButton!
     
-    let newUser = User()
+//    let newUser = User()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,14 +35,14 @@ class SignupViewController: UIViewController {
 //        newUser.password = passwordTextField.text.lowercaseString
 //        newUser.email = emailTextField.text.lowercaseString
 //        
-        persistentData.sharedInstance.registerUser(
-            nameTextField.text,
-            username:usernameTextField.text,
-            email: emailTextField.text,
-            password: passwordTextField.text,
-            authToken: "demo",
-            image: "http://google.com/")
-
+//        persistentData.sharedInstance.registerUser(
+//            nameTextField.text,
+//            username:usernameTextField.text,
+//            email: emailTextField.text,
+//            password: passwordTextField.text,
+//            authToken: "demo",
+//            image: "http://google.com/")
+//
     }
     
     @IBAction func facebookButtonWasHit(sender: AnyObject) {
@@ -66,8 +66,8 @@ class SignupViewController: UIViewController {
                         }
                     })
                     self.nameTextField.text = FBSDKProfile.currentProfile().name
-                    
-                    persistentData.sharedInstance.fbRegister(self.usernameTextField.text, email: self.emailTextField.text, fbId: FBSDKAccessToken.currentAccessToken().userID, name: self.nameTextField.text)
+//                    
+//                    persistentData.sharedInstance.fbRegister(self.usernameTextField.text, email: self.emailTextField.text, fbId: FBSDKAccessToken.currentAccessToken().userID, name: self.nameTextField.text)
                 }
             })
     }

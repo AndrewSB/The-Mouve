@@ -78,15 +78,16 @@ extension LoginPageViewController { //View code
     }
     
     func skipButtonWasHit(sender: AnyObject) {
-        let loader = addSpinnerAndStall()
-        
-        PFAnonymousUtils.logInWithBlock { (user, error) -> Void in
-            if error != nil || user == nil {
-                self.presentViewController(UIAlertController(title: "Couldn't anonymously login", message: error!.localizedDescription), animated: true, completion: nil)
-            }
-            self.bringAliveAndRemove(loader)
-            appDel.checkLogin()
-        }
+        UIAlertController(title: "The Mouve", message: "Sorry, but this feature isn't available")
+//        let loader = addSpinnerAndStall()
+//        
+//        PFAnonymousUtils.logInWithBlock { (user, error) -> Void in
+//            if error != nil || user == nil {
+//                self.presentViewController(UIAlertController(title: "Couldn't anonymously login", message: error!.localizedDescription), animated: true, completion: nil)
+//            }
+//            self.bringAliveAndRemove(loader)
+//            appDel.checkLogin()
+//        }
     }
 }
 
