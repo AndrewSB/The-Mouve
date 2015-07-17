@@ -28,6 +28,16 @@ class SettingsTableViewController: UITableViewController {
         case 0:
             switch indexPath.row {
             case 0:
+                println("FACEBOOK")
+            case 1:
+                println("TWITTER")
+            case 2:
+                println("INSTGRAM")
+            default: ()
+            }
+        case 1:
+            switch indexPath.row {
+            case 0:
                 println("Contact us")
             case 1:
                 println("Privacy Policy")
@@ -35,7 +45,7 @@ class SettingsTableViewController: UITableViewController {
                 println("Terms of use")
             default: ()
             }
-        case 1:
+        case 2:
             PFUser.logOut()
 //            appDel.checkLogin()
         default: ()
