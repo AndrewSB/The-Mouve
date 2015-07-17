@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     
     
     @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var separationLabel: UIView!
     @IBOutlet weak var headerLabel: UILabel!
     var headerImageView: UIImageView!
     var blurredHeaderImageView: UIImageView!
@@ -155,6 +156,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         var avatarTransform = CATransform3DIdentity
         var headerTransform = CATransform3DIdentity
         var nameLabelTransform = CATransform3DIdentity
+        var separationLabelTansform = CATransform3DIdentity
         
         println(offset)
         
@@ -167,8 +169,15 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             headerTransform = CATransform3DScale(headerTransform, 1.0 + headerScaleFactor, 1.0 + headerScaleFactor, 0)
             nameLabelTransform = CATransform3DMakeScale(1.0, 1.0, 0)
 
+            separationLabelTansform = CATransform3DTranslate(separationLabelTansform, 1.0, headerSizevariation, 0)
+            separationLabelTansform = CATransform3DScale(separationLabelTansform, 1.5 + headerScaleFactor, 1.5 + headerScaleFactor, 0)
+            
+            
             headerView.layer.transform = headerTransform
             nameLabel.layer.transform = nameLabelTransform
+            
+            separationLabel.layer.transform = separationLabelTansform
+
         }
             
         else { // PUSH UP
@@ -201,6 +210,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 if avatarImage.layer.zPosition < headerView.layer.zPosition{
                     headerView.layer.zPosition = 0
+
                     // Makes the Fullname appear
                     nameLabelTransform = CATransform3DMakeScale(1.0, 1.0, 0)
                     nameLabel.layer.transform = nameLabelTransform
@@ -210,9 +220,13 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 if avatarImage.layer.zPosition >= headerView.layer.zPosition{
                     headerView.layer.zPosition = 2
+
+                    
                     // Makes the Fullname disappear
                     nameLabelTransform = CATransform3DMakeScale(0, 0, 0)
                     nameLabel.layer.transform = nameLabelTransform
+                    
+
                 }
             }
         }
@@ -220,6 +234,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         // Apply Transformations
         headerView.layer.transform = headerTransform
         avatarImage.layer.transform = avatarTransform
+        separationLabel.layer.transform = headerTransform
+
         
     }
 }

@@ -2,11 +2,18 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u3Z-Xn-nCF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HalisGR-Book.otf">
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
@@ -476,7 +483,86 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxe-ah-qLC" id="HNq-6E-Ah5">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Contact Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pMR-gu-dAx">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Set Explore Radius" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pMR-gu-dAx">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="2 mi." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ao0-nc-DX9">
+                                                    <rect key="frame" x="540" y="0.0" width="45" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="QyX-MD-ZUR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ao0-nc-DX9" firstAttribute="trailing" secondItem="pMR-gu-dAx" secondAttribute="trailing" id="ZAD-eD-dLU"/>
+                                                <constraint firstItem="Ao0-nc-DX9" firstAttribute="firstBaseline" secondItem="pMR-gu-dAx" secondAttribute="firstBaseline" id="eXL-XP-Y9D"/>
+                                                <constraint firstItem="Ao0-nc-DX9" firstAttribute="baseline" secondItem="pMR-gu-dAx" secondAttribute="baseline" id="eip-gp-I4l"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Notifications" id="j8n-za-JDy">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="2NH-kI-VWX" style="IBUITableViewCellStyleDefault" id="byU-eh-SOi">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="byU-eh-SOi" id="gXS-H1-dmU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="New Followers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2NH-kI-VWX" userLabel="New Followers">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mwa-mS-8hk">
+                                                    <rect key="frame" x="533" y="6" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Mwa-mS-8hk" firstAttribute="centerY" secondItem="2NH-kI-VWX" secondAttribute="centerY" id="FMF-3p-6Od"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Mwa-mS-8hk" secondAttribute="trailing" constant="10" id="qtz-gR-vmP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="8IG-hr-Nlg" style="IBUITableViewCellStyleDefault" id="Qom-Ot-FuI">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="Qom-Ot-FuI" id="qeq-JZ-WWF" userLabel="New Invites">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="New Invites" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8IG-hr-Nlg">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eJm-u4-YLq">
+                                                    <rect key="frame" x="533" y="6" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.64999999999999969" height="1"/>
+                                            <constraints>
+                                                <constraint firstItem="eJm-u4-YLq" firstAttribute="centerY" secondItem="8IG-hr-Nlg" secondAttribute="centerY" id="Ccx-kX-d3I"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="eJm-u4-YLq" secondAttribute="trailing" constant="10" id="iqH-He-JPy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Linked accounts" id="ug7-Gu-BpJ">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ZCd-i9-lhO" style="IBUITableViewCellStyleDefault" id="ON6-rC-p9q">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ON6-rC-p9q" id="kMA-p8-vg4">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZCd-i9-lhO" userLabel="Facebook">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -485,12 +571,12 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="FcG-qE-bbk" style="IBUITableViewCellStyleDefault" id="vRB-uN-qDN">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="8lY-KY-9Jd" style="IBUITableViewCellStyleDefault" id="fEX-TS-Pe8">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vRB-uN-qDN" id="YTR-dO-WKc">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="fEX-TS-Pe8" id="95l-Wb-Co3">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Privacy Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FcG-qE-bbk">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8lY-KY-9Jd" userLabel="Twitter">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -499,12 +585,44 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Kid-5Y-Uxz" style="IBUITableViewCellStyleDefault" id="gmT-ev-lAA">
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="fCL-Ww-Ada">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="WSW-aV-cuA" style="IBUITableViewCellStyleDefault" id="6qQ-je-Gfc">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gmT-ev-lAA" id="MlR-e5-bdx">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6qQ-je-Gfc" id="eJe-l0-0Q7">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Terms of Use" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kid-5Y-Uxz">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Contact Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WSW-aV-cuA">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="rRS-Td-nGf" style="IBUITableViewCellStyleDefault" id="NVB-cZ-NKI">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NVB-cZ-NKI" id="Qlq-Li-uxy">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Privacy Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rRS-Td-nGf">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ZXW-3v-v7c" style="IBUITableViewCellStyleDefault" id="ezy-5v-gs3">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ezy-5v-gs3" id="EMt-JY-YWJ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Terms of Use" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZXW-3v-v7c">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -540,6 +658,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="2vP-JE-GEA"/>
+                    <connections>
+                        <outlet property="followersNotifySwitch" destination="Mwa-mS-8hk" id="7oZ-LT-Z97"/>
+                        <outlet property="inviteNotifySwitch" destination="eJm-u4-YLq" id="tWt-gk-1fm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvx-YC-HT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1055,6 +1177,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFl-5P-uoJ" userLabel="SeparationLine">
+                                <rect key="frame" x="0.0" y="242" width="600" height="2"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="hRq-4G-wAH"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViX-cS-fl9" userLabel="headerView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                                 <subviews>
@@ -1101,16 +1233,6 @@
                                     <constraint firstAttribute="height" constant="240" id="gEa-bX-1Df"/>
                                     <constraint firstAttribute="centerX" secondItem="YtG-xh-YEV" secondAttribute="centerX" id="he5-zH-FOq"/>
                                     <constraint firstAttribute="centerX" secondItem="4qi-b6-W0Q" secondAttribute="centerX" id="rpi-G1-tAx"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFl-5P-uoJ" userLabel="SeperationLine">
-                                <rect key="frame" x="0.0" y="242" width="600" height="2"/>
-                                <color key="backgroundColor" red="0.20000000000000001" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" image="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="hRq-4G-wAH"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ESq-sd-WwW">
@@ -1348,15 +1470,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="jFl-5P-uoJ" secondAttribute="trailing" id="Cun-RY-Abc"/>
+                            <constraint firstItem="jFl-5P-uoJ" firstAttribute="top" secondItem="ViX-cS-fl9" secondAttribute="bottom" constant="2" id="6Dr-bW-GWa"/>
                             <constraint firstAttribute="trailing" secondItem="ESq-sd-WwW" secondAttribute="trailing" id="RMS-dp-7nJ"/>
+                            <constraint firstItem="jFl-5P-uoJ" firstAttribute="leading" secondItem="6B4-oq-T2K" secondAttribute="leading" id="Wpp-zS-gEw"/>
                             <constraint firstItem="ESq-sd-WwW" firstAttribute="leading" secondItem="6B4-oq-T2K" secondAttribute="leading" id="Yay-L1-H73"/>
                             <constraint firstAttribute="trailing" secondItem="ViX-cS-fl9" secondAttribute="trailing" id="aR7-Nu-YIY"/>
-                            <constraint firstItem="jFl-5P-uoJ" firstAttribute="top" secondItem="ViX-cS-fl9" secondAttribute="bottom" constant="2" id="aqd-GE-6kO"/>
                             <constraint firstItem="ESq-sd-WwW" firstAttribute="top" secondItem="Y2r-Dh-orA" secondAttribute="bottom" id="cg2-Pc-9ra"/>
+                            <constraint firstAttribute="centerX" secondItem="jFl-5P-uoJ" secondAttribute="centerX" id="fFv-nz-2BV"/>
+                            <constraint firstAttribute="trailing" secondItem="jFl-5P-uoJ" secondAttribute="trailing" id="gVZ-Gy-u1u"/>
                             <constraint firstAttribute="bottom" secondItem="ESq-sd-WwW" secondAttribute="bottom" id="lxN-gg-zoE"/>
-                            <constraint firstItem="jFl-5P-uoJ" firstAttribute="leading" secondItem="6B4-oq-T2K" secondAttribute="leading" id="qVc-iu-SzM"/>
-                            <constraint firstAttribute="centerX" secondItem="jFl-5P-uoJ" secondAttribute="centerX" id="ulz-zK-UXF"/>
                             <constraint firstItem="ViX-cS-fl9" firstAttribute="leading" secondItem="6B4-oq-T2K" secondAttribute="leading" id="wo2-ve-tne"/>
                             <constraint firstItem="ViX-cS-fl9" firstAttribute="top" secondItem="Y2r-Dh-orA" secondAttribute="bottom" constant="-20" id="zQY-e7-0tC"/>
                         </constraints>
@@ -1371,6 +1493,7 @@
                         <outlet property="mouveButton" destination="Mqu-WF-u7n" id="juJ-oV-bCS"/>
                         <outlet property="nameLabel" destination="YtG-xh-YEV" id="dKK-Lg-TRp"/>
                         <outlet property="profileTableView" destination="ESq-sd-WwW" id="dXL-LL-iig"/>
+                        <outlet property="separationLabel" destination="jFl-5P-uoJ" id="rhv-xU-cgk"/>
                         <outlet property="usernameLabel" destination="Csc-pN-apC" id="0mP-lL-uL5"/>
                     </connections>
                 </viewController>

@@ -115,6 +115,7 @@
 		7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78A1B1575AB005A1AF1 /* addImage.png */; };
 		7832E78D1B16C66F005A1AF1 /* Switch on image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78C1B16C66F005A1AF1 /* Switch on image.png */; };
 		78B33E0A1B5488E500F3327E /* MouveModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B33E091B5488E500F3327E /* MouveModels.swift */; };
+		78BD5CB71B58D4900098B7D2 /* UISwitchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD5CB61B58D4900098B7D2 /* UISwitchExtension.swift */; };
 		78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */; };
 		78CFBD141B192F5D002AE6A2 /* TimeRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */; };
 		9A8512101B55FBB300606BB1 /* HHLinkStoryboards.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85120F1B55FBB300606BB1 /* HHLinkStoryboards.m */; };
@@ -255,6 +256,7 @@
 		7832E78A1B1575AB005A1AF1 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addImage.png; path = ../VCs/Main/addImage.png; sourceTree = "<group>"; };
 		7832E78C1B16C66F005A1AF1 /* Switch on image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Switch on image.png"; path = "../VCs/Main/Switch on image.png"; sourceTree = "<group>"; };
 		78B33E091B5488E500F3327E /* MouveModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MouveModels.swift; path = Models/MouveModels.swift; sourceTree = "<group>"; };
+		78BD5CB61B58D4900098B7D2 /* UISwitchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchExtension.swift; sourceTree = "<group>"; };
 		78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRangeSlider.swift; sourceTree = "<group>"; };
 		9A85120E1B55FBB300606BB1 /* HHLinkStoryboards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHLinkStoryboards.h; sourceTree = "<group>"; };
@@ -716,6 +718,7 @@
 				46BFFD531B36BF220060DF33 /* UIImageExtension.swift */,
 				46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */,
 				460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */,
+				78BD5CB61B58D4900098B7D2 /* UISwitchExtension.swift */,
 				46042E581AEA230300089A5A /* UIViewExtension.swift */,
 				462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */,
 			);
@@ -914,6 +917,7 @@
 				4673C1371AF6CA69000C034A /* TTTAttributedLabel.m in Sources */,
 				4610B7CA1B33DD3700377E1E /* Location.swift in Sources */,
 				4685F8BD1B1C1FF3004D77E9 /* IQKeyboardManagerConstantsInternal.swift in Sources */,
+				78BD5CB71B58D4900098B7D2 /* UISwitchExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
