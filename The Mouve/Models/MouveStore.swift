@@ -8,8 +8,9 @@
 
 import Foundation
 import RealmSwift
+import CoreData
 
-class RealmStore{
+class persistentData{
 //    let currentUser = User()
 
     let currentRealm = Realm(path: Realm.defaultPath)
@@ -31,8 +32,7 @@ class RealmStore{
         }
     }
     func addMouve(name: String, details: String, image: String, startTime: NSDate, endTime: NSDate){
-            let currMouve = Mouve()
-            currentRealm.beginWrite()
+
             
             //Mouve fields filled in
             currMouve.name = name
@@ -40,9 +40,9 @@ class RealmStore{
             currMouve.image = image
             currMouve.start = startTime
             currMouve.end = endTime
+        currMouve.createdAt
             
-            currentRealm.add(currMouve)
-            currentRealm.commitWrite()
+        saveContext()
     }
     func registerUser(name: String, username: String, email: String,
         password: String,
@@ -82,8 +82,8 @@ class RealmStore{
     
     func addPerson(username: String, image: String
         ){
-            let currPerson = Person()
-            currentRealm.beginWrite()
+let person = NSEntityDescription.insertNewObjectForEntityForName("Person", inManagedObjectContext: context) as! Person
+             
             
             //Mouve fields filled in
             currPerson.username = username
@@ -120,9 +120,9 @@ class RealmStore{
             return iFollow
         }
     }
-    class var sharedInstance: RealmStore{
+    class var sharedInstance: persistentData{
         struct Static {
-            static let instance = RealmStore()
+            static let instance = persistentData()
         }
         return Static.instance
     }

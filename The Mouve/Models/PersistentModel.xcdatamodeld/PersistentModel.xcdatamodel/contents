@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Comment" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="media" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="textContent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="author" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="comments" inverseEntity="Person" syncable="YES"/>
+        <relationship name="postedOn" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mouve" inverseName="comments" inverseEntity="Mouve" syncable="YES"/>
+    </entity>
+    <entity name="Mouve" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="details" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="privacy" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="attendees" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="attended" inverseEntity="Person" syncable="YES"/>
+        <relationship name="comments" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comment" inverseName="postedOn" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Person" inverseName="planned" inverseEntity="Person" syncable="YES"/>
+    </entity>
+    <entity name="Person" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attended" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mouve" inverseName="attendees" inverseEntity="Mouve" syncable="YES"/>
+        <relationship name="comments" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Comment" inverseName="author" inverseEntity="Comment" syncable="YES"/>
+        <relationship name="planned" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Mouve" inverseName="owner" inverseEntity="Mouve" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Person" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="Mouve" positionX="342" positionY="-42" width="128" height="208"/>
+        <element name="Comment" positionX="135" positionY="54" width="128" height="133"/>
+    </elements>
+</model>
