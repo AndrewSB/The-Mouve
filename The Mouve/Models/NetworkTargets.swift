@@ -43,12 +43,12 @@ public enum MouveREST {
     
 
     
-    case RegisterCard(stripeToken: String)
-    
-    case BidderDetailsNotification(auctionID: String, identifier: String)
-    
-    case LostPasswordNotification(email: String)
-    case FindExistingEmailRegistration(email: String)
+//    case RegisterCard(stripeToken: String)
+//    
+//    case BidderDetailsNotification(auctionID: String, identifier: String)
+//    
+//    case LostPasswordNotification(email: String)
+//    case FindExistingEmailRegistration(email: String)
 }
 
 extension MouveREST : MoyaPath {
@@ -137,7 +137,7 @@ extension MouveREST : MoyaPath {
     }
 }
 
-extension ArtsyAPI : MoyaTarget {
+extension MouveREST : MoyaTarget {
     
     public var base: String { return AppSetup.sharedState.useStaging ? "https://stagingapi.artsy.net" : "https://api.artsy.net" }
     public var baseURL: NSURL { return NSURL(string: base)! }
@@ -335,7 +335,7 @@ public func endpointResolver () -> ((endpoint: Endpoint<ArtsyAPI>) -> (NSURLRequ
     }
 }
 
-public class ArtsyProvider<T where T: MoyaTarget>: ReactiveMoyaProvider<T> {
+public class MouveProvider<T where T: MoyaTarget>: ReactiveMoyaProvider<T> {
     public typealias OnlineSignalClosure = () -> RACSignal
     
     // Closure that returns a signal which completes once the app is online.
@@ -364,19 +364,19 @@ public struct Provider {
         }
     }
     
-    public static func DefaultProvider() -> ArtsyProvider<ArtsyAPI> {
-        return ArtsyProvider(endpointsClosure: endpointsClosure, endpointResolver: endpointResolver(), stubResponses: APIKeys.sharedKeys.stubResponses)
+    public static func DefaultProvider() -> MouveProvider<MouveREST > {
+        return MouveProvider(endpointsClosure: endpointsClosure, endpointResolver: endpointResolver(), stubResponses: APIKeys.sharedKeys.stubResponses)
     }
     
-    public static func StubbingProvider() -> ArtsyProvider<ArtsyAPI> {
-        return ArtsyProvider(endpointsClosure: endpointsClosure, endpointResolver: endpointResolver(), stubResponses: true, onlineSignal: { RACSignal.empty() })
+    public static func StubbingProvider() -> MouveProvider<MouveREST > {
+        return MouveProvider(endpointsClosure: endpointsClosure, endpointResolver: endpointResolver(), stubResponses: true, onlineSignal: { RACSignal.empty() })
     }
     
     private struct SharedProvider {
         static var instance = Provider.DefaultProvider()
     }
     
-    public static var sharedProvider: ArtsyProvider<ArtsyAPI> {
+    public static var sharedProvider: MouveProvider<MouveREST> {
         get {
         return SharedProvider.instance
         }
