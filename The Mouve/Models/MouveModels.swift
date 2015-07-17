@@ -12,7 +12,7 @@ import CoreData
 
 @objc(Person)
 class Person: NSManagedObject {
-    let entityName = "Person"
+
     @NSManaged var name: String
     @NSManaged var username: String
     @NSManaged var createdAt: NSDate

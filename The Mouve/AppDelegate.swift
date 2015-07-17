@@ -18,10 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var location = Location()
+    let emailKey = "a@a.com"
+    let passwordKey = "123"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])
         
+        AERecord.loadCoreDataStack()
         Parse.enableLocalDatastore()
         Parse.setApplicationId("GvHu9jcqgsGp2zZkgsXwLOQJXNWCzl5janz4FAj1",
             clientKey: "5SqHFJOslPl9TB9CPbuowXkCpidAOfoIKIXgSqU4")
@@ -77,10 +80,13 @@ extension AppDelegate {
         
         //UITabBar.appearance().barTintColor = UIColor.darkGrayColor()
     }
+    func startLogin(email: String, password: String) {
     
-    func checkLogin() {
+    }
+    
+    func checkLogin(email: String, password: String) {
         //Checks that user is not nil
-        let loggedIn = (persistentData.sharedInstance.currentUser.isNil == false)
+        let loggedIn = (email == emailKey) && (password == passwordKey)
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
@@ -88,6 +94,6 @@ extension AppDelegate {
     }
     
     func logOut() {
-        RealmStologOut()
+//        RealmStologOut()
     }
 }

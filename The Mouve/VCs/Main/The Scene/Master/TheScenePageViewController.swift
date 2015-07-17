@@ -21,7 +21,7 @@ class TheScenePageViewController: UIPageViewController {
         
         navigationItem.titleView = SceneTitleView(type: .Explore, frame: CGRect(x: 0, y: 0, width: 140, height: 44))
         
-        let currentMouves = Realm().objects(Mouve)
+//        let currentMouves = Realm().objects(Mouve)
 
         pageViewControllerDidLoad()
     }
