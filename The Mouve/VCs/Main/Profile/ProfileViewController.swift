@@ -8,6 +8,8 @@
 
 import UIKit
 import Toucan
+import CoreGraphics
+
 
 class ProfileViewController: UIViewController, UITableViewDelegate {
     let offset_HeaderStop:CGFloat = 180 // At this offset the Header stops its transformations
@@ -61,6 +63,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
                 button.setTitle("\(RealmStore.sharedInstance.followingList.count)\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
             }
         }
+        
+        
         UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
     
@@ -69,6 +73,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.Default
         
+        
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -100,8 +106,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         headerView.clipsToBounds = true
         
         usernameLabel.bringSubviewToFront(headerView)
+
+        
     }
 }
+
+
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
