@@ -7,15 +7,16 @@
 //
 
 import Foundation
-import Moya
-//
+
 public enum MouveREST {
     // Auth
-    case XApp
-    case XAuth(email: String, password: String)
-    case TrustToken(number: String, auctionPIN: String)
+//    case XApp
+    case AuthUser(email: String, password: String)
+    case LogoutUser
+//    case TrustToken(number: String, auctionPIN: String)
         //Users
-    case Me
+//    case Me
+    case RetreiveUser(id: String)
     case UpdateMe(name: String, username: String, email: String, password: String)
     case CreateUser(email: String, password: String, phone: String, postCode: String, name: String)
     case FollowUser(user_id: String)
@@ -23,7 +24,7 @@ public enum MouveREST {
     case MyMouves
 
     //// Mouves --------------------------------------------------------------------
-    case AvailableMouves
+    case InvitedToMouves
     case MouveInfo(id: String)
     case CreateMouve(name: String, image: String, location: String, details: String, start: NSDate, end: NSDate, privacy: Bool)
     case UpdateMouve(id: String, name: String, location: String, details: String, start: NSDate, end: NSDate, privacy: Bool)
@@ -37,101 +38,145 @@ public enum MouveREST {
     case UpdateComment(mouve_id: String, id: String, comment: String, media: String)
     case DeleteComment(mouve_id: String, id: String)
     //// Mouves Invites ------------------------------------------------------------
-    case Invitees(mouve_id: String)
+    case Attendees(mouve_id: String)
     case InvitePerson(mouve_id: String, user_id: String)
     case DeleteInvite(mouve_id: String, user_id: String)
+    //
+    //// Search --------------------------------------------------------------------
+    //app.get('/api/mouves/nearby', mouves.query.nearby)
+    case NearbyMouves(location: String)
+    case RetreiveMouveScene
+    case SearchMouves(filter: String)
     
+    //app.get('/api/mouves/scene', mouves.query.scene)
+    //app.get('/api/mouves/search', mouves.query.search)
 
     
-//    case RegisterCard(stripeToken: String)
-//    
-//    case BidderDetailsNotification(auctionID: String, identifier: String)
-//    
-//    case LostPasswordNotification(email: String)
-//    case FindExistingEmailRegistration(email: String)
 }
 
 extension MouveREST : MoyaPath {
     public var path: String {
         switch self {
+        case AuthUser:
+            return "/api/users/auth"
+        case LogoutUser:
+            return "/api/users/auth"
             
-        case XApp:
-            return "/api/v1/xapp_token"
-            
-        case XAuth:
-            return "/oauth2/access_token"
-            
-        case MouveInfo(let id):
-            return "/api/v1/sale/\(id)"
-            
-        case AvailableMouves:
-            return "/api/v1/sales"
-            
-        case AuctionListings(let id, _, _):
-            return "/api/v1/sale/\(id)/sale_artworks"
-            
-        case MouveInfoForArtwork(let auctionID, let artworkID):
-            return "/api/v1/sale/\(auctionID)/sale_artwork/\(artworkID)"
-            
-        case SystemTime:
-            return "/api/v1/system/time"
-            
-        case Ping:
-            return "/api/v1/system/ping"
-            
-        case RegisterToBid:
-            return "/api/v1/bidder"
-            
-        case MyMouves:
-            return "/api/v1/me/credit_cards"
-            
-        case CreatePINForBidder(let bidderID):
-            return "/api/v1/bidder/\(bidderID)/pin"
-            
-        case ActiveAvailableMouves:
-            return "/api/v1/sales"
-            
-        case Me:
-            return "/api/v1/me"
-            
+//        case Me:
+//            return "/api/users"
+        case RetreiveUser(let id):
+            return "/api/users/\(id)"
         case UpdateMe:
-            return "/api/v1/me"
-            
+            return "/api/users"
         case CreateUser:
-            return "/api/v1/user"
-            
-        case MyBiddersForAuction:
-            return "/api/v1/me/bidders"
-            
-        case MyBidPositionsForAuctionArtwork:
-            return "/api/v1/me/bidder_positions"
-            
-        case Artwork(let id):
-            return "/api/v1/artwork/\(id)"
-            
-        case Artist(let id):
-            return "/api/v1/artist/\(id)"
-            
-        case FindBidderRegistration:
-            return "/api/v1/bidder"
-            
-        case PlaceABid:
-            return "/api/v1/me/bidder_position"
-            
-        case RegisterCard:
-            return "/api/v1/me/credit_cards"
-            
-        case TrustToken:
-            return "/api/v1/me/trust_token"
-            
-        case BidderDetailsNotification:
-            return "/api/v1/bidder/bidding_details_notification"
-            
-        case LostPasswordNotification:
-            return "/api/v1/users/send_reset_password_instructions"
-            
-        case FindExistingEmailRegistration:
-            return "/api/v1/user"
+            return "/api/users"
+        case FollowUser(let user_id):
+            return "/api/users/\(user_id)/follow"
+        case UnfollowUser(let user_id):
+            return "/api/users/\(user_id)/unfollow"
+        case MyMouves:
+            return "/api/users/mouves"
+
+            //// Mouves --------------------------------------------------------------------
+            //app.all('/api/mouves/*', users.middleware.isLoggedIn)
+            //
+            //app.get('/api/mouves/:id', mouves.middleware.canLook, mouves.crud.get)
+            //app.post('/api/mouves', mouves.crud.create)
+            //app.put('/api/mouves/:id', mouves.middleware.isUsers, mouves.crud.update)
+            //app.put('/api/mouves/:id/image', mouves.middleware.isUsers, mouves.crud.updateImage)
+            //app.delete('/api/mouves/:id', mouves.middleware.isUsers, mouves.crud.delete)
+            //
+            //// Mouves Comments
+            //app.all('/api/mouves/:id/comments', mouves.middleware.canLook)
+            //
+            //app.get('/api/mouves/:id/comments', mouves.comments.get)
+            //app.post('/api/mouves/:id/comments', mouves.comments.new)
+            //app.put('/api/mouves/:id/comments/:comment_id', mouves.middleware.isUsersComment, mouves.comments.edit)
+            //app.delete('/api/mouves/:id/comments/:comment_id', mouves.middleware.isUsersComment, mouves.comments.delete)
+            //
+            //// Mouves Invites ------------------------------------------------------------
+            //app.all('/api/mouves/:id/invites/*', mouves.middleware.isUsers, mouves.middleware.isPrivate)
+            //
+            //app.get('./api/mouves/:id/invites', mouves.invites.get)
+            //app.put('./api/mouves/:id/invites/:user_id', users.middleware.isValid, mouves.invites.new)
+            //app.delete("./api/mouves/:id/invites/:user_id", users.middleware.isValid, mouves.invites.delete)
+            //
+            //
+            //// Search --------------------------------------------------------------------
+            //app.get('/api/mouves/nearby', mouves.query.nearby)
+            //app.get('/api/mouves/scene', mouves.query.scene)
+            //app.get('/api/mouves/search', mouves.query.search)
+//        case MouveInfo(let id):
+//            return "/api/v1/sale/\(id)"
+//            
+//        case InvitedToMouves:
+//            return "/api/v1/sales"
+//            
+//        case AuctionListings(let id, _, _):
+//            return "/api/v1/sale/\(id)/sale_artworks"
+//            
+//        case MouveInfoForArtwork(let auctionID, let artworkID):
+//            return "/api/v1/sale/\(auctionID)/sale_artwork/\(artworkID)"
+//            
+//        case SystemTime:
+//            return "/api/v1/system/time"
+//            
+//        case Ping:
+//            return "/api/v1/system/ping"
+//            
+//        case RegisterToBid:
+//            return "/api/v1/bidder"
+//            
+//        case MyMouves:
+//            return "/api/v1/me/credit_cards"
+//            
+//        case CreatePINForBidder(let bidderID):
+//            return "/api/v1/bidder/\(bidderID)/pin"
+//            
+//        case ActiveAvailableMouves:
+//            return "/api/v1/sales"
+//            
+//        case Me:
+//            return "/api/v1/me"
+//            
+//        case UpdateMe:
+//            return "/api/v1/me"
+//            
+//        case CreateUser:
+//            return "/api/v1/user"
+//            
+//        case MyBiddersForAuction:
+//            return "/api/v1/me/bidders"
+//            
+//        case MyBidPositionsForAuctionArtwork:
+//            return "/api/v1/me/bidder_positions"
+//            
+//        case Artwork(let id):
+//            return "/api/v1/artwork/\(id)"
+//            
+//        case Artist(let id):
+//            return "/api/v1/artist/\(id)"
+//            
+//        case FindBidderRegistration:
+//            return "/api/v1/bidder"
+//            
+//        case PlaceABid:
+//            return "/api/v1/me/bidder_position"
+//            
+//        case RegisterCard:
+//            return "/api/v1/me/credit_cards"
+//            
+//        case TrustToken:
+//            return "/api/v1/me/trust_token"
+//            
+//        case BidderDetailsNotification:
+//            return "/api/v1/bidder/bidding_details_notification"
+//            
+//        case LostPasswordNotification:
+//            return "/api/v1/users/send_reset_password_instructions"
+//            
+//        case FindExistingEmailRegistration:
+//            return "/api/v1/user"
             
         }
     }
@@ -139,7 +184,7 @@ extension MouveREST : MoyaPath {
 
 extension MouveREST : MoyaTarget {
     
-    public var base: String { return AppSetup.sharedState.useStaging ? "https://stagingapi.artsy.net" : "https://api.artsy.net" }
+    public var base: String { return AppSetup.sharedState.useStaging ? "https://develop." : "https://api.artsy.net" }
     public var baseURL: NSURL { return NSURL(string: base)! }
     
     public var parameters: [String: AnyObject] {
@@ -238,6 +283,7 @@ extension MouveREST : MoyaTarget {
             return .GET
         }
     }
+
     
     public var sampleData: NSData {
         switch self {
@@ -325,129 +371,85 @@ extension MouveREST : MoyaTarget {
     }
 }
 
-// MARK: - Provider setup
-
-public func endpointResolver () -> ((endpoint: Endpoint<ArtsyAPI>) -> (NSURLRequest)) {
-    return { (endpoint: Endpoint<ArtsyAPI>) -> (NSURLRequest) in
-        let request: NSMutableURLRequest = endpoint.urlRequest.mutableCopy() as! NSMutableURLRequest
-        request.HTTPShouldHandleCookies = false
-        return request
-    }
-}
-
-public class MouveProvider<T where T: MoyaTarget>: ReactiveMoyaProvider<T> {
-    public typealias OnlineSignalClosure = () -> RACSignal
-    
-    // Closure that returns a signal which completes once the app is online.
-    public let onlineSignal: OnlineSignalClosure
-    
-    public init(endpointsClosure: MoyaEndpointsClosure = MoyaProvider.DefaultEndpointMapping(), endpointResolver: MoyaEndpointResolution = MoyaProvider.DefaultEnpointResolution(), stubResponses: Bool = false, stubBehavior: MoyaStubbedBehavior = MoyaProvider.DefaultStubBehavior, networkActivityClosure: Moya.NetworkActivityClosure? = nil, onlineSignal: OnlineSignalClosure = connectedToInternetSignal) {
-        self.onlineSignal = onlineSignal
-        super.init(endpointsClosure: endpointsClosure, endpointResolver: endpointResolver, stubResponses: stubResponses, networkActivityClosure: networkActivityClosure)
-    }
-}
-
-public struct Provider {
-    private static var endpointsClosure = { (target: ArtsyAPI) -> Endpoint<ArtsyAPI> in
-        
-        var endpoint: Endpoint<ArtsyAPI> = Endpoint<ArtsyAPI>(URL: url(target), sampleResponse: .Success(200, {target.sampleData}), method: target.method, parameters: target.parameters)
-        // Sign all non-XApp token requests
-        
-        switch target {
-        case .XApp:
-            return endpoint
-        case .XAuth:
-            return endpoint
-            
-        default:
-            return endpoint.endpointByAddingHTTPHeaderFields(["X-Xapp-Token": XAppToken().token ?? ""])
-        }
-    }
-    
-    public static func DefaultProvider() -> MouveProvider<MouveREST > {
-        return MouveProvider(endpointsClosure: endpointsClosure, endpointResolver: endpointResolver(), stubResponses: APIKeys.sharedKeys.stubResponses)
-    }
-    
-    public static func StubbingProvider() -> MouveProvider<MouveREST > {
-        return MouveProvider(endpointsClosure: endpointsClosure, endpointResolver: endpointResolver(), stubResponses: true, onlineSignal: { RACSignal.empty() })
-    }
-    
-    private struct SharedProvider {
-        static var instance = Provider.DefaultProvider()
-    }
-    
-    public static var sharedProvider: MouveProvider<MouveREST> {
-        get {
-        return SharedProvider.instance
-        }
-        
-        set (newSharedProvider) {
-            SharedProvider.instance = newSharedProvider
-        }
-    }
-}
-
-
-// MARK: - Provider support
-
-private func stubbedResponse(filename: String) -> NSData! {
-    @objc class TestClass { }
-    
-    let bundle = NSBundle(forClass: TestClass.self)
-    let path = bundle.pathForResource(filename, ofType: "json")
-    return NSData(contentsOfFile: path!)
-}
-
-private extension String {
-    var URLEscapedString: String {
-        return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
-    }
-}
-
-public func url(route: MoyaTarget) -> String {
-    return route.baseURL.URLByAppendingPathComponent(route.path).absoluteString!
-}
-//// Users ---------------------------------------------------------------------
-//app.get('/api/users/:id', users.crud.get)
-//app.post('/api/users', users.crud.create)
-//app.put('/api/users', users.middleware.isLoggedIn, users.crud.updatePassword)
-//app.get('/api/users/mouves', users.middleware.isLoggedIn, mouves.crud.all)
+//// MARK: - Provider setup
 //
-//// Auth ----------------------------------------------------------------------
-//app.post('/api/users/auth', users.auth.login)
-//app.delete('/api/users/auth', users.middleware.isLoggedIn, users.auth.logout)
+//public func endpointResolver () -> ((endpoint: Endpoint<ArtsyAPI>) -> (NSURLRequest)) {
+//    return { (endpoint: Endpoint<ArtsyAPI>) -> (NSURLRequest) in
+//        let request: NSMutableURLRequest = endpoint.urlRequest.mutableCopy() as! NSMutableURLRequest
+//        request.HTTPShouldHandleCookies = false
+//        return request
+//    }
+//}
 //
-//// Follow --------------------------------------------------------------------
-//app.put('/api/users/:user_id/follow', users.middleware.isLoggedIn, users.middleware.isValid, users.relations.follow)
-//app.put('/api/users/:user_id/unfollow', users.middleware.isLoggedIn, users.middleware.isValid, users.relations.unfollow)
+//public class MouveProvider<T where T: MoyaTarget>: ReactiveMoyaProvider<T> {
+//    public typealias OnlineSignalClosure = () -> RACSignal
+//    
+//    // Closure that returns a signal which completes once the app is online.
+//    public let onlineSignal: OnlineSignalClosure
+//    
+//    public init(endpointsClosure: MoyaEndpointsClosure = MoyaProvider.DefaultEndpointMapping(), endpointResolver: MoyaEndpointResolution = MoyaProvider.DefaultEnpointResolution(), stubResponses: Bool = false, stubBehavior: MoyaStubbedBehavior = MoyaProvider.DefaultStubBehavior, networkActivityClosure: Moya.NetworkActivityClosure? = nil, onlineSignal: OnlineSignalClosure = connectedToInternetSignal) {
+//        self.onlineSignal = onlineSignal
+//        super.init(endpointsClosure: endpointsClosure, endpointResolver: endpointResolver, stubResponses: stubResponses, networkActivityClosure: networkActivityClosure)
+//    }
+//}
 //
-//// Mouves --------------------------------------------------------------------
-//app.all('/api/mouves/*', users.middleware.isLoggedIn)
-//
-//app.get('/api/mouves/:id', mouves.middleware.canLook, mouves.crud.get)
-//app.post('/api/mouves', mouves.crud.create)
-//app.put('/api/mouves/:id', mouves.middleware.isUsers, mouves.crud.update)
-//app.put('/api/mouves/:id/image', mouves.middleware.isUsers, mouves.crud.updateImage)
-//app.delete('/api/mouves/:id', mouves.middleware.isUsers, mouves.crud.delete)
-//
-//// Mouves Comments
-//app.all('/api/mouves/:id/comments', mouves.middleware.canLook)
-//
-//app.get('/api/mouves/:id/comments', mouves.comments.get)
-//app.post('/api/mouves/:id/comments', mouves.comments.new)
-//app.put('/api/mouves/:id/comments/:comment_id', mouves.middleware.isUsersComment, mouves.comments.edit)
-//app.delete('/api/mouves/:id/comments/:comment_id', mouves.middleware.isUsersComment, mouves.comments.delete)
-//
-//// Mouves Invites ------------------------------------------------------------
-//app.all('/api/mouves/:id/invites/*', mouves.middleware.isUsers, mouves.middleware.isPrivate)
-//
-//app.get('./api/mouves/:id/invites', mouves.invites.get)
-//app.put('./api/mouves/:id/invites/:user_id', users.middleware.isValid, mouves.invites.new)
-//app.delete("./api/mouves/:id/invites/:user_id", users.middleware.isValid, mouves.invites.delete)
+//public struct Provider {
+//    private static var endpointsClosure = { (target: ArtsyAPI) -> Endpoint<ArtsyAPI> in
+//        
+//        var endpoint: Endpoint<ArtsyAPI> = Endpoint<ArtsyAPI>(URL: url(target), sampleResponse: .Success(200, {target.sampleData}), method: target.method, parameters: target.parameters)
+//        // Sign all non-XApp token requests
+//        
+//        switch target {
+//        case .XApp:
+//            return endpoint
+//        case .XAuth:
+//            return endpoint
+//            
+//        default:
+//            return endpoint.endpointByAddingHTTPHeaderFields(["X-Xapp-Token": XAppToken().token ?? ""])
+//        }
+//    }
+//    
+//    public static func DefaultProvider() -> MouveProvider<MouveREST > {
+//        return MouveProvider(endpointsClosure: endpointsClosure, endpointResolver: endpointResolver(), stubResponses: APIKeys.sharedKeys.stubResponses)
+//    }
+//    
+//    public static func StubbingProvider() -> MouveProvider<MouveREST > {
+//        return MouveProvider(endpointsClosure: endpointsClosure, endpointResolver: endpointResolver(), stubResponses: true, onlineSignal: { RACSignal.empty() })
+//    }
+//    
+//    private struct SharedProvider {
+//        static var instance = Provider.DefaultProvider()
+//    }
+//    
+//    public static var sharedProvider: MouveProvider<MouveREST> {
+//        get {
+//        return SharedProvider.instance
+//        }
+//        
+//        set (newSharedProvider) {
+//            SharedProvider.instance = newSharedProvider
+//        }
+//    }
+//}
 //
 //
-//// Search --------------------------------------------------------------------
-//app.get('/api/mouves/nearby', mouves.query.nearby)
-//app.get('/api/mouves/scene', mouves.query.scene)
-//app.get('/api/mouves/search', mouves.query.search)
-
+//// MARK: - Provider support
+//
+//private func stubbedResponse(filename: String) -> NSData! {
+//    @objc class TestClass { }
+//    
+//    let bundle = NSBundle(forClass: TestClass.self)
+//    let path = bundle.pathForResource(filename, ofType: "json")
+//    return NSData(contentsOfFile: path!)
+//}
+//
+//private extension String {
+//    var URLEscapedString: String {
+//        return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
+//    }
+//}
+//
+//public func url(route: MoyaTarget) -> String {
+//    return route.baseURL.URLByAppendingPathComponent(route.path).absoluteString!
+//}
