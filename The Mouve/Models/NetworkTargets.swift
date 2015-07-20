@@ -17,8 +17,8 @@ public enum MouveREST {
         //Users
 //    case Me
     case RetreiveUser(id: String)
-    case UpdateMe(name: String, username: String, email: String, password: String)
-    case CreateUser(email: String, password: String, phone: String, postCode: String, name: String)
+    case UpdateMe(name: String, username: String, email: String, password: String, image: String)
+    case CreateUser(name: String, username: String, email: String, password: String)
     case FollowUser(user_id: String)
     case UnfollowUser(user_id: String)
     case MyMouves
@@ -184,81 +184,32 @@ extension MouveREST : MoyaPath {
 
 extension MouveREST : MoyaTarget {
     
-    public var base: String { return AppSetup.sharedState.useStaging ? "https://develop." : "https://api.artsy.net" }
-    public var baseURL: NSURL { return NSURL(string: base)! }
-    
+//    public var base: String { return AppSetup.sharedState.useStaging ? "https://themouve.herokuapp.com" }
+//    public var base: String { return AppSetup.sharedState.useStaging ? "https://themouve.herokuapp.com" : "https://api.themouveapp.com" }
+//    public var baseURL: NSURL { return NSURL(string: base)! }
+    public var baseURL: NSURL { return NSURL(fileURLWithPath: "https://themouve.herokuapp.com")! }
     public var parameters: [String: AnyObject] {
         switch self {
-            
-        case XAuth(let email, let password):
+        case AuthUser(let email, let password):
             return [
-                "client_id": APIKeys.sharedKeys.key ?? "",
-                "client_secret": APIKeys.sharedKeys.secret ?? "",
                 "email": email,
-                "password":  password,
-                "grant_type": "credentials"
+                "password":  password
             ]
-            
-        case XApp:
-            return ["client_id": APIKeys.sharedKeys.key ?? "",
-                "client_secret": APIKeys.sharedKeys.secret ?? ""]
-            
-        case AvailableMouves:
-            return ["is_auction": "true"]
-            
-        case RegisterToBid(let auctionID):
-            return ["sale_id": auctionID]
-            
-        case MyBiddersForAuction(let auctionID):
-            return ["sale_id": auctionID]
-            
-        case PlaceABid(let auctionID, let artworkID, let maxBidCents):
+        case CreateUser(let name, let username, let email, let password):
             return [
-                "sale_id": auctionID,
-                "artwork_id":  artworkID,
-                "max_bid_amount_cents": maxBidCents
+                "name": name,
+                "username": username,
+                "email": email,
+                "password": password
             ]
-            
-        case TrustToken(let number, let auctionID):
-            return ["number": number, "auction_pin": auctionID]
-            
-        case CreateUser(let email, let password,let phone,let postCode, let name):
+        case UpdateMe(let name, let username, let email, let password, let image):
             return [
-                "email": email, "password": password,
-                "phone": phone, "name": name,
-                "location": [ "postal_code": postCode ]
+                "name": name,
+                "username": username,
+                "email": email,
+                "password": password,
+                "image": image
             ]
-            
-        case UpdateMe(let email, let phone,let postCode, let name):
-            return [
-                "email": email, "phone": phone,
-                "name": name, "location": [ "postal_code": postCode ]
-            ]
-            
-        case RegisterCard(let token):
-            return ["provider": "stripe", "token": token]
-            
-        case FindBidderRegistration(let auctionID, let phone):
-            return ["sale_id": auctionID, "number": phone]
-            
-        case BidderDetailsNotification(let auctionID, let identifier):
-            return ["sale_id": auctionID, "identifier": identifier]
-            
-        case LostPasswordNotification(let email):
-            return ["email": email]
-            
-        case FindExistingEmailRegistration(let email):
-            return ["email": email]
-            
-        case AuctionListings(_, let page, let pageSize):
-            return ["size": pageSize, "page": page]
-            
-        case ActiveAvailableMouves:
-            return ["is_auction": true, "live": true]
-            
-        case MyBidPositionsForAuctionArtwork(let auctionID, let artworkID):
-            return ["sale_id": auctionID, "artwork_id": artworkID]
-            
         default:
             return [:]
         }
@@ -267,18 +218,15 @@ extension MouveREST : MoyaTarget {
     public var method: Moya.Method {
         //TODO:
         switch self {
-        case .LostPasswordNotification,
-        .CreateUser,
-        .PlaceABid,
-        .RegisterCard,
-        .RegisterToBid,
-        .CreatePINForBidder:
+        case .CreateUser,
+             .AuthUser,
+             .FollowUser,
+             .UnfollowUser:
             return .POST
-        case .FindExistingEmailRegistration:
-            return .HEAD
-        case .UpdateMe,
-        .BidderDetailsNotification:
+        case .UpdateMe:
             return .PUT
+        case .LogoutUser:
+            return .DELETE
         default:
             return .GET
         }
@@ -287,85 +235,102 @@ extension MouveREST : MoyaTarget {
     
     public var sampleData: NSData {
         switch self {
-            
-        case XApp:
-            return stubbedResponse("XApp")
-            
-        case XAuth:
-            return stubbedResponse("XAuth")
-            
-        case TrustToken:
-            return stubbedResponse("XAuth")
-            
-        case AvailableMouves:
-            return stubbedResponse("AvailableMouves")
-            
-        case AuctionListings:
-            return stubbedResponse("AuctionListings")
-            
-        case SystemTime:
-            return stubbedResponse("SystemTime")
-            
-        case CreatePINForBidder:
-            return stubbedResponse("CreatePINForBidder")
-            
-        case ActiveAvailableMouves:
-            return stubbedResponse("ActiveAvailableMouves")
-            
-        case MyMouves:
-            return stubbedResponse("MyMouves")
-            
-        case RegisterToBid:
-            return stubbedResponse("RegisterToBid")
-            
-        case MyBiddersForAuction:
-            return stubbedResponse("MyBiddersForAuction")
-            
-        case Me:
-            return stubbedResponse("Me")
-            
+//            CHANGE TO ACTUAL EXAMPLE OF RESPONSES
+        case AuthUser:
+            return "/api/users/auth"
+        case LogoutUser:
+            return "/api/users/auth"
+        case RetreiveUser(let id):
+            return "/api/users/\(id)"
         case UpdateMe:
-            return stubbedResponse("Me")
-            
+            return "/api/users"
         case CreateUser:
-            return stubbedResponse("Me")
+            return "/api/users"
+        case FollowUser(let user_id):
+            return "/api/users/\(user_id)/follow"
+        case UnfollowUser(let user_id):
+            return "/api/users/\(user_id)/unfollow"
+        case MyMouves:
+            return "/api/users/mouves"
             
-            // This API returns a 302, so stubbed response isn't valid
-        case FindBidderRegistration:
-            return stubbedResponse("Me")
-            
-        case PlaceABid:
-            return stubbedResponse("CreateABid")
-            
-        case Artwork:
-            return stubbedResponse("Artwork")
-            
-        case Artist:
-            return stubbedResponse("Artist")
-            
-        case MouveInfo:
-            return stubbedResponse("MouveInfo")
-            
-        case RegisterCard:
-            return stubbedResponse("RegisterCard")
-            
-        case BidderDetailsNotification:
-            return stubbedResponse("RegisterToBid")
-            
-        case LostPasswordNotification:
-            return stubbedResponse("ForgotPassword")
-            
-        case FindExistingEmailRegistration:
-            return stubbedResponse("ForgotPassword")
-            
-        case MouveInfoForArtwork:
-            return stubbedResponse("MouveInfoForArtwork")
-            
-        case MyBidPositionsForAuctionArtwork:
-            return stubbedResponse("MyBidPositionsForAuctionArtwork")
-            
-        case Ping:
-            return stubbedResponse("Ping")
+//        case XApp:
+//            return stubbedResponse("XApp")
+//            
+//        case XAuth:
+//            return stubbedResponse("XAuth")
+//            
+//        case TrustToken:
+//            return stubbedResponse("XAuth")
+//            
+//        case AvailableMouves:
+//            return stubbedResponse("AvailableMouves")
+//            
+//        case AuctionListings:
+//            return stubbedResponse("AuctionListings")
+//            
+//        case SystemTime:
+//            return stubbedResponse("SystemTime")
+//            
+//        case CreatePINForBidder:
+//            return stubbedResponse("CreatePINForBidder")
+//            
+//        case ActiveAvailableMouves:
+//            return stubbedResponse("ActiveAvailableMouves")
+//            
+//        case MyMouves:
+//            return stubbedResponse("MyMouves")
+//            
+//        case RegisterToBid:
+//            return stubbedResponse("RegisterToBid")
+//            
+//        case MyBiddersForAuction:
+//            return stubbedResponse("MyBiddersForAuction")
+//            
+//        case Me:
+//            return stubbedResponse("Me")
+//            
+//        case UpdateMe:
+//            return stubbedResponse("Me")
+//            
+//        case CreateUser:
+//            return stubbedResponse("Me")
+//            
+//            // This API returns a 302, so stubbed response isn't valid
+//        case FindBidderRegistration:
+//            return stubbedResponse("Me")
+//            
+//        case PlaceABid:
+//            return stubbedResponse("CreateABid")
+//            
+//        case Artwork:
+//            return stubbedResponse("Artwork")
+//            
+//        case Artist:
+//            return stubbedResponse("Artist")
+//            
+//        case MouveInfo:
+//            return stubbedResponse("MouveInfo")
+//            
+//        case RegisterCard:
+//            return stubbedResponse("RegisterCard")
+//            
+//        case BidderDetailsNotification:
+//            return stubbedResponse("RegisterToBid")
+//            
+//        case LostPasswordNotification:
+//            return stubbedResponse("ForgotPassword")
+//            
+//        case FindExistingEmailRegistration:
+//            return stubbedResponse("ForgotPassword")
+//            
+//        case MouveInfoForArtwork:
+//            return stubbedResponse("MouveInfoForArtwork")
+//            
+//        case MyBidPositionsForAuctionArtwork:
+//            return stubbedResponse("MyBidPositionsForAuctionArtwork")
+//            
+//        case Ping:
+//            return stubbedResponse("Ping")
             
         }
     }
