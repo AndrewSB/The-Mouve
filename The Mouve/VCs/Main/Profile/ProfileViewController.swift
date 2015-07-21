@@ -172,11 +172,12 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             separationLabelTansform = CATransform3DTranslate(separationLabelTansform, 1.0, headerSizevariation, 0)
             separationLabelTansform = CATransform3DScale(separationLabelTansform, 1.5 + headerScaleFactor, 1.5 + headerScaleFactor, 0)
             
-            
+            separationLabel.layer.transform = separationLabelTansform
+
             headerView.layer.transform = headerTransform
             nameLabel.layer.transform = nameLabelTransform
             
-            separationLabel.layer.transform = separationLabelTansform
+            
 
         }
             
@@ -226,6 +227,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                     nameLabelTransform = CATransform3DMakeScale(0, 0, 0)
                     nameLabel.layer.transform = nameLabelTransform
                     
+//                    separationLabel.layer.transform = nameLabelTransform
+                    
 
                 }
             }
@@ -233,8 +236,9 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Apply Transformations
         headerView.layer.transform = headerTransform
-        avatarImage.layer.transform = avatarTransform
         separationLabel.layer.transform = headerTransform
+        
+        avatarImage.layer.transform = avatarTransform
 
         
     }
