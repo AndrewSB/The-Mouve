@@ -54,7 +54,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         statusBar(.LightContent)
-        rangeSlider.lowerValue = 0.4
+        rangeSlider.lowerValue = 2.5
         rangeSliderValueChanged(rangeSlider)
     }
     
