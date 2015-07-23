@@ -18,6 +18,13 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     @IBOutlet weak var eventImageButton: UIButton?
     @IBOutlet weak var startTime: UILabel?
     @IBOutlet weak var endTime: UILabel?
+    
+    // will result in a race condition. REFACTOR later
+    var compressedImage: (UIImage?, NSData?) {
+        didSet {
+            compressedImage.1 = UIImageJPEGRepresentation(compressedImage.0, 0.7)
+        }
+    }
 
     let rangeSlider = TimeRangeSlider()
     
@@ -75,7 +82,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     }
 
     @IBAction func postMouveButtonWasHit(sender: AnyObject) {
-        let newMouve = Event(name: titleEventTextField.text, about: "", time: NSDate(timeInterval: 80, sinceDate: NSDate()), length: 100, address: locationTextField.text, invitees: ["lol"], backgroundImage: eventImageButton!.backgroundImageForState(.Normal)!)
+        let newMouve = Event(name: titleEventTextField.text, about: "", time: NSDate(timeInterval: 80, sinceDate: NSDate()), length: 100, address: locationTextField.text, invitees: ["lol"], backgroundImage: UIImage(data: compressedImage.1!)!)
         newMouve.location = UserDefaults.lastLocation!
         
         let remoteMouve = PFObject(event: newMouve)
@@ -156,7 +163,9 @@ extension AddMouveViewController: UIImagePickerControllerDelegate, UINavigationC
     {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         var pickedPic = info[UIImagePickerControllerOriginalImage] as! UIImage
-        println("Circling "+pickedPic.description);
+
+        compressedImage.0 = pickedPic
+        
         eventImageButton?.setBackgroundImage(circleMyImage(pickedPic), forState: .Normal)
         //sets the selected image to image view
     }
