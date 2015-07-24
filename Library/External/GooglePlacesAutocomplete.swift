@@ -13,7 +13,7 @@ public struct LocationBias {
   public let longitude: Double
   public let radius: Int
   
-  public init(latitude: Double = 0, longitude: Double = 0, radius: Int = 20000000) {
+  public init(latitude: Double = 0, longitude: Double = 0, radius: Int = 20000) {
     self.latitude = latitude
     self.longitude = longitude
     self.radius = radius

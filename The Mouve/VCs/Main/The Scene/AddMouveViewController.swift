@@ -37,7 +37,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
         super.viewDidLoad()
         addTextDismiss()
         
-        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 200
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 150
         
         [titleEventTextField, detailInfoTextField, locationTextField].map({ $0.delegate = self })
         
@@ -92,7 +92,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     
     @IBAction func flipSwitch(sender: AnyObject) {
         publicPrivateLabel.text = publicPrivateSwitch.on ? "Private" : "Public"
-        var buttonLabel = publicPrivateSwitch.on ? "Invite" : "Create Mouve"
+        var buttonLabel = publicPrivateSwitch.on ? "Invite People" : "Create Mouve"
         postMouveButton.setTitle(buttonLabel, forState: UIControlState.Normal)
     }
     // Switch ends
@@ -141,7 +141,7 @@ extension AddMouveViewController: UIImagePickerControllerDelegate, UINavigationC
             self.openCamera()
             
         }
-        var gallaryAction = UIAlertAction(title: "Gallary", style: UIAlertActionStyle.Default){
+        var gallaryAction = UIAlertAction(title: "Gallery", style: UIAlertActionStyle.Default){
             UIAlertAction in
             self.openGallary()
         }
