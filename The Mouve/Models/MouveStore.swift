@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import RealmSwift
+//import RealmSwift
 import CoreData
 
 class persistentData{
 //    let currentUser = User()
-
-    let currentRealm = Realm(path: Realm.defaultPath)
+//
+//    let currentRealm = Realm(path: Realm.defaultPath)
 //    var currentUser: User{
 //        get {
 //            if let currU = currentRealm.objectForPrimaryKey(User.self, key: 0){

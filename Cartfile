@@ -11,3 +11,4 @@ github "tristanhimmelman/AlamofireObjectMapper"
 github "TTTAttributedLabel/TTTAttributedLabel"
 github "dzenbot/DZNEmptyDataSet"
 github "SwiftyJSON/SwiftyJSON" >= 2.2.0
+github "kishikawakatsumi/KeychainAccess"

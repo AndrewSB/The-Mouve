@@ -1,6 +1,7 @@
 import Alamofire
+import SwiftyJSON
 
-let rootURL = "http://test.fyshbowlapp.com"
+let rootURL = "http://mouve.ngrok.io"
 
 func getHTTPGetRequest(url: String, addURLToRoot: Bool) -> NSMutableURLRequest {
     var URL: NSURL?
@@ -15,7 +16,7 @@ func getHTTPGetRequest(url: String, addURLToRoot: Bool) -> NSMutableURLRequest {
     var err: NSError?
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.addValue("application/json", forHTTPHeaderField: "Accept")
-    request.addValue("Token "+getToken(), forHTTPHeaderField: "Authorization")
+    request.addValue(userCredentials.sharedInstance.getToken(), forHTTPHeaderField: "Authorization")
     return request
 }
 
@@ -27,7 +28,7 @@ func getHTTPPostRequest(url: String, parameters: [String: AnyObject]) -> NSMutab
     request.HTTPBody = NSJSONSerialization.dataWithJSONObject(parameters, options: nil, error: &err)
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.addValue("application/json", forHTTPHeaderField: "Accept")
-    request.addValue("Token "+getToken(), forHTTPHeaderField: "Authorization")
+    request.addValue(userCredentials.sharedInstance.getToken(), forHTTPHeaderField: "Authorization")
     return request
 }
 
@@ -39,7 +40,7 @@ func getHTTPPatchRequest(url: String, parameters: [String: AnyObject]) -> NSMuta
     request.HTTPBody = NSJSONSerialization.dataWithJSONObject(parameters, options: nil, error: &err)
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.addValue("application/json", forHTTPHeaderField: "Accept")
-    request.addValue("Token "+getToken(), forHTTPHeaderField: "Authorization")
+    request.addValue(userCredentials.sharedInstance.getToken(), forHTTPHeaderField: "Authorization")
     return request
 }
 
@@ -50,12 +51,12 @@ func getHTTPDeleteRequest(url: String) -> NSMutableURLRequest {
     var err: NSError?
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.addValue("application/json", forHTTPHeaderField: "Accept")
-    request.addValue("Token "+getToken(), forHTTPHeaderField: "Authorization")
+    request.addValue(userCredentials.sharedInstance.getToken(), forHTTPHeaderField: "Authorization")
     return request
 }
 
 func getJSONFromData(data: AnyObject) -> JSON {
-    let myNSData = data as NSData
+    let myNSData = data as! NSData
     let myNSString = NSString(data: myNSData, encoding: NSUTF8StringEncoding)
     let data = myNSString!.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
     let jsonObject = JSON(data: data!)
