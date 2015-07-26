@@ -8,7 +8,6 @@
 
 import UIKit
 import Alamofire
-import RealmSwift
 
 class TheScenePageViewController: UIPageViewController {
     override func viewDidLoad() {
@@ -52,7 +51,7 @@ extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewCo
         self.view.backgroundColor = UIColor.whiteColor()
         if let url = UserDefaults.profilePictureURL {
             Alamofire.request(.GET, url).response { (request, response, data, error) -> () in
-                if let data = data as? NSData {
+                if let data = data as NSData? {
                     let profileImage = UIImage(data: data)
                     if let profileImage = profileImage {
                         let imageView = UIImageView(image: profileImage)
