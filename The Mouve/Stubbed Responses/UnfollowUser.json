@@ -1,0 +1,19 @@
+{
+    "message": "User successfully unfollowed",
+    "data": {
+        "__v": 0,
+        "_id": "55b4a693eca8196939843a64",
+        "email": "uduimo@themouve.com",
+        "name": "Uduimo",
+        "username": "uduimo",
+        "updatedAt": "2015-07-26T09:21:23.426Z",
+        "createdAt": "2015-07-26T09:21:23.426Z",
+        "invitedTo": [],
+        "planned": [],
+        "memberOf": [],
+        "following": [],
+        "followers": [
+                      "55b2856dc171d2443a7c35f2"
+                      ]
+    }
+}

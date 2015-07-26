@@ -1,0 +1,25 @@
+{
+    "message": "User profile updated",
+    "data": {
+        "__v": 0,
+        "_id": "55b2856dc171d2443a7c35f2",
+        "email": "hilal@themouve.com",
+        "name": "Hilal Habashi",
+        "username": "okneedmymoney",
+        "updatedAt": "2015-07-26T09:18:42.911Z",
+        "createdAt": "2015-07-24T18:35:25.671Z",
+        "invitedTo": [],
+        "planned": [
+                    "55b305d819f2cf3c41c2b462",
+                    "55b325b14c7081562e7be60f"
+                    ],
+        "memberOf": [],
+        "following": [
+                      "55b2856dc171d2443a7c35f2",
+                      "55b335360355dc7e2f486f02"
+                      ],
+        "followers": [
+                      "55b2856dc171d2443a7c35f2"
+                      ]
+    }
+}
