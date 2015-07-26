@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Account.swift">
-   </FileRef>
-   <FileRef
-      location = "group:ServerRequests.swift">
-   </FileRef>
-   <FileRef
       location = "self:The Mouve.xcodeproj">
    </FileRef>
 </Workspace>

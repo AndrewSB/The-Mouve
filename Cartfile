@@ -9,7 +9,5 @@ github "tristanhimmelman/AlamofireObjectMapper"
 #github "dzenbot/DZNEmptyDataSet"
 
 github "TTTAttributedLabel/TTTAttributedLabel"
-github "realm/realm-cocoa"
 github "dzenbot/DZNEmptyDataSet"
-github "ashfurrow/Moya"
-github "thoughtbot/Argo"
+github "SwiftyJSON/SwiftyJSON" >= 2.2.0
