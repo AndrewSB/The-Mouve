@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController,UIAlertViewDelegate {
     @IBOutlet weak var emailTextField: UnderlinedTextField!
     @IBOutlet weak var passwordTextField: UnderlinedTextField!
 
@@ -32,6 +32,10 @@ class LoginViewController: UIViewController {
         let loadingSpinnerView = addLoadingView()
         view.addSubview(loadingSpinnerView)
         userRequestsController.sharedInstance.authUser(emailTextField.text, password: passwordTextField.text)
+                self.presentViewController(UIAlertController(title: "Ooops", message: "Wrong credentials... try again!"), animated: true, completion: nil)
+        loadingSpinnerView.removeFromSuperview()
+        
+        view.userInteractionEnabled = true
 //        Spinning Wheels...
 //        Step 1: Check email or username in backend based on input
 //            If wrong return wrong email/username

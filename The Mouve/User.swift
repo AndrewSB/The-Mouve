@@ -9,9 +9,9 @@ class userCredentials{
     let deviceID = UIDevice.currentDevice().identifierForVendor.UUIDString
 //    let defaults = NSUserDefaults.standardUserDefaults()
     
-    func getUsername() -> String {
-        if let username = keychain["username"] {
-            return username
+    func getEmail() -> String {
+        if let email = keychain["email"] {
+            return email
         }
         return "Anonymous"
     }
@@ -27,7 +27,7 @@ class userCredentials{
         if let token = keychain["token"] {
             return token
         }
-        return "Token"
+        return ""
     }
     
     
@@ -44,10 +44,10 @@ class userCredentials{
     }
     
     func clearKeychain() {
-        keychain.remove("username")
+        keychain.remove("email")
         keychain.remove("password")
         keychain.remove("token")
-//        keychain.remove("userid")
+        keychain.remove("userid")
     }
     
     func setUser(email: String,password: String, id:String, token: String) {
@@ -55,8 +55,6 @@ class userCredentials{
         keychain["password"] = password
         keychain["token"] = token
         keychain["userid"] = id
-//        var usernamesDict = NSMutableDictionary()
-//        defaults.setObject(usernamesDict, forKey: "usernamesDict")
     }
     
 
@@ -125,6 +123,8 @@ class userRequestsController{
                 {
                     let parsed = JSON(json)
                     println("Got the user")
+                    userCredentials.sharedInstance.clearKeychain()
+                    appDel.checkLogin()
                 }
         }
     }
@@ -133,14 +133,16 @@ class userRequestsController{
     func createUser(name: String,
                     username: String,
                     password: String,
-                    email: String) {
+                    email: String,
+                    fbId: String) {
         let URL:String = (rootURL + "/api/users")
             // JSON Body
         let bodyParameters = [
                 "username": username,
                 "password": password,
                 "email": email,
-                "name": name
+                "name": name,
+                "misc": (fbId.isEmpty) ? ["null"]:["fbId":fbId]
             ]
         let encoding = Alamofire.ParameterEncoding.JSON
         manager.request(.POST, URL, parameters: bodyParameters, encoding: encoding)
@@ -156,6 +158,7 @@ class userRequestsController{
                 {
                     let parsed = JSON(json)
                     println("Registered in \(email) successfully")
+                    self.authUser(email, password: password)
                 }
             }
         }
@@ -280,9 +283,6 @@ class userRequestsController{
     }
     
     func getFollowees(id: String) {
-        manager.session.configuration.HTTPAdditionalHeaders = [
-            "Authorization": userCredentials.sharedInstance.getToken()
-        ]
         let URL:String = rootURL + "/api/users/\(id)/following"
         manager.session.configuration.HTTPAdditionalHeaders = [
         "Authorization": userCredentials.sharedInstance.getToken()

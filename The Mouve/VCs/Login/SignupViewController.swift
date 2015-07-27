@@ -14,8 +14,8 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var usernameTextField: UnderlinedTextField!
     @IBOutlet weak var passwordTextField: UnderlinedTextField!
     @IBOutlet weak var emailTextField: UnderlinedTextField!
-
     @IBOutlet weak var createAccountButton: UIButton!
+    var fbId: String = ""
     
 //    let newUser = User()
     
@@ -31,18 +31,7 @@ class SignupViewController: UIViewController {
     }
 
     @IBAction func createAccountButtonWasHit(sender: AnyObject) {
-//        newUser.username = usernameTextField.text.lowercaseString
-//        newUser.password = passwordTextField.text.lowercaseString
-//        newUser.email = emailTextField.text.lowercaseString
-//        
-//        persistentData.sharedInstance.registerUser(
-//            nameTextField.text,
-//            username:usernameTextField.text,
-//            email: emailTextField.text,
-//            password: passwordTextField.text,
-//            authToken: "demo",
-//            image: "http://google.com/")
-//
+        userRequestsController.sharedInstance.createUser(nameTextField.text, username: usernameTextField.text, password: passwordTextField.text, email: emailTextField.text, fbId: fbId)
     }
     
     @IBAction func facebookButtonWasHit(sender: AnyObject) {
@@ -66,8 +55,8 @@ class SignupViewController: UIViewController {
                         }
                     })
                     self.nameTextField.text = FBSDKProfile.currentProfile().name
-//                    
-//                    persistentData.sharedInstance.fbRegister(self.usernameTextField.text, email: self.emailTextField.text, fbId: FBSDKAccessToken.currentAccessToken().userID, name: self.nameTextField.text)
+                    self.fbId = FBSDKAccessToken.currentAccessToken().userID
+                    self.nameTextField.text = FBSDKProfile.currentProfile().name
                 }
             })
     }

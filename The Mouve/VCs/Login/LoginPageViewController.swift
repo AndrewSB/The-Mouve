@@ -33,6 +33,7 @@ class LoginPageViewController: UIPageViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        
         statusBar(.LightContent)
     }
 }
