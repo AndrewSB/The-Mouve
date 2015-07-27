@@ -84,10 +84,9 @@ extension AppDelegate {
     
     }
     
-    func checkLogin(email: String, password: String) {
+    func checkLogin() {
         //Checks that user is not nil
-        let loggedIn = (email == emailKey) && (password == passwordKey)
-        
+        let loggedIn = !userCredentials.sharedInstance.getToken().isEmpty
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
         window!.makeKeyAndVisible()

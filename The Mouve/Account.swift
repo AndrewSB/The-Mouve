@@ -71,7 +71,7 @@
 //            "password2": "\(deviceID)"
 //        ]
 //        Alamofire.request(.POST, rootURL+"/auth/",parameters: parameters)
-//            .response {(request, response, data, error) in
+//            .responseJSON {(request, response, data, error) in
 //                let usernameNSData = data as NSData
 //                let usernameString = NSString(data: usernameNSData, encoding: NSUTF8StringEncoding)
 //                if(self.usernameIsTaken(data!)) {
@@ -93,7 +93,7 @@
 //    func getApiToken() {
 //        let parameters = ["username": "\(usernameField.text)","password": "\(deviceID)"]
 //        Alamofire.request(.POST, rootURL + "/auth/login/",parameters: parameters)
-//            .response {(request, response, data, error) in
+//            .responseJSON {(request, response, data, error) in
 //                let tokenNSData = data as NSData
 //                let tokenString = NSString(data: tokenNSData, encoding: NSUTF8StringEncoding)
 //                let tokenJSONData = tokenString?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
@@ -124,7 +124,7 @@
 //        }
 //        let request = getHTTPPostRequest("/Push/", parameters)
 //        Alamofire.request(request)
-//            .response {(request, response, data, error) in
+//            .responseJSON {(request, response, data, error) in
 //                dispatch_async(dispatch_get_main_queue()) {
 //                    self.goToApp()
 //                }
@@ -134,7 +134,7 @@
 //    func getUserID() {
 //        let request = getHTTPGetRequest("/Users/", true)
 //        Alamofire.request(request)
-//            .response {(request, response, data, error) in
+//            .responseJSON {(request, response, data, error) in
 //                let users = getJSONFromData(data!)
 //                self.getUserLinkFromData(users)
 //        }
