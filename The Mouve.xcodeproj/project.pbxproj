@@ -115,6 +115,8 @@
 		78BD5CB71B58D4900098B7D2 /* UISwitchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD5CB61B58D4900098B7D2 /* UISwitchExtension.swift */; };
 		78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */; };
 		78CFBD141B192F5D002AE6A2 /* TimeRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */; };
+		78FC24D71B661769004B65C3 /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FC24D51B661769004B65C3 /* GooglePlacesAutocomplete.swift */; };
+		78FC24D81B661769004B65C3 /* GooglePlacesAutocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FC24D61B661769004B65C3 /* GooglePlacesAutocomplete.xib */; };
 		9A0E64F01B5893250002547D /* AERecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E64EF1B5893250002547D /* AERecord.swift */; };
 		9A0E64F71B58C1360002547D /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 9A0E64F51B58C1360002547D /* Cartfile */; };
 		9A0E64F81B58C1360002547D /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 9A0E64F61B58C1360002547D /* Cartfile.resolved */; };
@@ -266,6 +268,8 @@
 		78BD5CB61B58D4900098B7D2 /* UISwitchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchExtension.swift; sourceTree = "<group>"; };
 		78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 		78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeRangeSlider.swift; sourceTree = "<group>"; };
+		78FC24D51B661769004B65C3 /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
+		78FC24D61B661769004B65C3 /* GooglePlacesAutocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete.xib; sourceTree = "<group>"; };
 		9A0E64EF1B5893250002547D /* AERecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AERecord.swift; path = ../../External/AERecord.swift; sourceTree = "<group>"; };
 		9A0E64F51B58C1360002547D /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		9A0E64F61B58C1360002547D /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = SOURCE_ROOT; };
@@ -364,7 +368,6 @@
 		466A35481AF0506E00E82FFD /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				78F697121B5B10F100D8ACE6 /* FollowersTableViewCell.swift */,
 				466A35461AF0506900E82FFD /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -613,6 +616,7 @@
 		46B29BC21ADB2187000B9441 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				78FC24D91B66177B004B65C3 /* GooglePlacesAutocomplete */,
 				9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */,
 				9A53E6E31B65932C00BBD5BC /* KeychainAccess.framework */,
 				9A4823361B58E40C004AD2BC /* DZNEmptyDataSet.framework */,
@@ -746,6 +750,15 @@
 			name = AlertUIView;
 			sourceTree = "<group>";
 		};
+		78FC24D91B66177B004B65C3 /* GooglePlacesAutocomplete */ = {
+			isa = PBXGroup;
+			children = (
+				78FC24D51B661769004B65C3 /* GooglePlacesAutocomplete.swift */,
+				78FC24D61B661769004B65C3 /* GooglePlacesAutocomplete.xib */,
+			);
+			name = GooglePlacesAutocomplete;
+			sourceTree = "<group>";
+		};
 		9AD259B11B5480A0003B5F57 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
@@ -830,7 +843,6 @@
 				46CC15CC1AFE1AB9003E3D9E /* AlertUIView.xib in Resources */,
 				7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */,
 				46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */,
-				78F697181B5DFCB200D8ACE6 /* GooglePlacesAutocomplete.xib in Resources */,
 				7832E78D1B16C66F005A1AF1 /* Switch on image.png in Resources */,
 				469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */,
 				4673C1221AF6C857000C034A /* LICENSE in Resources */,
@@ -840,6 +852,7 @@
 				9A0E64F71B58C1360002547D /* Cartfile in Resources */,
 				46B29BC91ADB219C000B9441 /* Login.storyboard in Resources */,
 				46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */,
+				78FC24D81B661769004B65C3 /* GooglePlacesAutocomplete.xib in Resources */,
 				4673C11D1AF6C857000C034A /* FBAudienceNetwork.README.txt in Resources */,
 				469C436E1ADEF96F00D6A510 /* HalisGR-Regular-Italic.otf in Resources */,
 				4673C11B1AF6C857000C034A /* FacebookSDK.strings in Resources */,
@@ -909,7 +922,6 @@
 				4673C10E1AF6B781000C034A /* FacebookIDExtension.swift in Sources */,
 				9A1799271B5797FF00548FEB /* CoreDataExtension.swift in Sources */,
 				46B888D11AF95CD400D872E0 /* AddMouveViewController.swift in Sources */,
-				78F697171B5DFCB200D8ACE6 /* GooglePlacesAutocomplete.swift in Sources */,
 				46B29BCA1ADB219C000B9441 /* LoginPageViewController.swift in Sources */,
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
 				9A8512101B55FBB300606BB1 /* HHLinkStoryboards.m in Sources */,
@@ -923,6 +935,7 @@
 				46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */,
 				46B888C41AF94C3E00D872E0 /* GreyGreenButton.swift in Sources */,
 				4685F8BF1B1C1FF3004D77E9 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				78FC24D71B661769004B65C3 /* GooglePlacesAutocomplete.swift in Sources */,
 				462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */,
 				46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */,
 				4685F8BB1B1C1FF3004D77E9 /* IQUIWindow+Hierarchy.swift in Sources */,
@@ -940,7 +953,6 @@
 				468D21631AF0829C00CE6E19 /* SettingsTableViewController.swift in Sources */,
 				460FF5091AF87EA7007C6872 /* DetailViewController.swift in Sources */,
 				46B888D31AF9712F00D872E0 /* ActivityTableViewCell.swift in Sources */,
-				78F697131B5B10F100D8ACE6 /* FollowersTableViewCell.swift in Sources */,
 				46AFB3671AF86CA1004D121A /* SignupViewController.swift in Sources */,
 				9ABA887A1B54B17F0014D459 /* MouveStore.swift in Sources */,
 				4673C1371AF6CA69000C034A /* TTTAttributedLabel.m in Sources */,
