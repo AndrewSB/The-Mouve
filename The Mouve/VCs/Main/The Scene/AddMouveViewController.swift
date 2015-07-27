@@ -75,7 +75,14 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     }
 
     @IBAction func postMouveButtonWasHit(sender: AnyObject) {
-//        let newMouve = Event(name: titleEventTextField.text, about: "", time: NSDate(timeInterval: 80, sinceDate: NSDate()), length: 100, address: locationTextField.text, invitees: ["lol"], backgroundImage: eventImageButton!.backgroundImageForState(.Normal)!)
+        
+        mouveRequestsController.sharedInstance.createMouve(
+            titleEventTextField.text,
+            details: detailInfoTextField.text,
+            privacy: publicPrivateSwitch.on,
+            startTime: startTime!.text!,
+            endTime: endTime!.text!,
+            location: locationTextField.text)//        let newMouve = Event(name: titleEventTextField.text, about: "", time: NSDate(timeInterval: 80, sinceDate: NSDate()), length: 100, address: locationTextField.text, invitees: ["lol"], backgroundImage: eventImageButton!.backgroundImageForState(.Normal)!)
 //                    println("current events num:\(persistentData.sharedInstance.mouveArray.count)")
 //        persistentData.sharedInstance.addMouve(titleEventTextField.text, details: "", image: "http://google.com", startTime: NSDate(), endTime: NSDate(timeIntervalSinceNow: 10))
 //            println("event created success:\(persistentData.sharedInstance.mouveArray.count)")

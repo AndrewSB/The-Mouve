@@ -7,8 +7,7 @@ import SwiftyJSON
 class userCredentials{
     let keychain = Keychain(service: "tm.The-Mouve")
     let deviceID = UIDevice.currentDevice().identifierForVendor.UUIDString
-//    defaults should be replaced with CoreData
-    let defaults = NSUserDefaults.standardUserDefaults()
+//    let defaults = NSUserDefaults.standardUserDefaults()
     
     func getUsername() -> String {
         if let username = keychain["username"] {
@@ -187,8 +186,8 @@ class userRequestsController{
 
     
     func updateMe(name: String,
-        username: String,
-        email: String) {
+                  username: String,
+                  email: String) {
             let URL:String = (rootURL + "/api/users")
             manager.session.configuration.HTTPAdditionalHeaders = [
                 "Authorization": userCredentials.sharedInstance.getToken()
