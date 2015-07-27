@@ -19,7 +19,16 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     @IBOutlet weak var startTime: UILabel?
     @IBOutlet weak var endTime: UILabel?
 
-    let rangeSlider = TimeRangeSlider()
+//    let rangeSlider = TimeRangeSlider()
+    let rangeSlider = TimeRangeSlider(frame: CGRectZero)
+
+
+    
+    let gpaViewController = GooglePlacesAutocomplete(
+        apiKey: "AIzaSyBhSL-vMg7MfAe4kXukMDlGy-nv8UMlOno",
+        placeType: .All
+    )
+
     
     var imagePicker: UIImagePickerController?=UIImagePickerController()
     var popoverMenu: UIPopoverController?=nil
@@ -28,34 +37,45 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
         super.viewDidLoad()
         addTextDismiss()
         
-        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 200
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 150
         
         [titleEventTextField, detailInfoTextField, locationTextField].map({ $0.delegate = self })
         
-        rangeSlider.frame = CGRect(x: 40, y: startTime!.frame.origin.y - 35, width: view.frame.width - 80, height: 31)
-        rangeSlider.trackHighlightTintColor = UIColor.seaFoamGreen()
-        rangeSlider.trackTintColor = UIColor.lightNicePaleBlue()
-        rangeSlider.curvaceousness = 0.2
-        rangeSlider.thumbThicknessPercent = 0.3
-        rangeSlider.thumbTintColor = UIColor.seaFoamGreen()
-        
-        self.view.addSubview(rangeSlider)
-        
         eventImageButton!.layer.cornerRadius = eventImageButton!.frame.height / 2
-
         
+        //Switch color
         publicPrivateSwitch.tintColor = UIColor.lightSeaFoamGreen()
         publicPrivateSwitch.onTintColor = UIColor.lightSeaFoamGreen()
         publicPrivateSwitch.thumbTintColor = UIColor.seaFoamGreen()
-        
-        rangeSlider.addTarget(self, action: "rangeSliderValueChanged:", forControlEvents: .ValueChanged)
+        //switch color ends
+//        self.locationTextField.becomeFirstResponder()
+    
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // Time slider
+        rangeSlider.trackHighlightTintColor = UIColor.seaFoamGreen()
+        rangeSlider.trackTintColor = UIColor.lightNicePaleBlue()
+        rangeSlider.curvaceousness = 0.3
+        rangeSlider.thumbThicknessPercent = 0.5
+        rangeSlider.thumbTintColor = UIColor.seaFoamGreen()
+        
+        rangeSlider.addTarget(self, action: "rangeSliderValueChanged:", forControlEvents: .ValueChanged)
+        
+        self.view.addSubview(rangeSlider)
+        // Time Slider ends
+        
         statusBar(.LightContent)
-        rangeSlider.lowerValue = 0.4
-        rangeSliderValueChanged(rangeSlider)
+    }
+    
+    
+    // Alignments for the range-slider
+    override func viewDidLayoutSubviews() {
+        let margin: CGFloat = 20.0
+        let width = view.bounds.width - 2.0 * margin
+        rangeSlider.frame = CGRect(x: 40, y: startTime!.frame.origin.y - 35, width: view.frame.width - 80, height: 31)
     }
     
     // Changes labels as you drag slider
@@ -72,8 +92,12 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     
     @IBAction func flipSwitch(sender: AnyObject) {
         publicPrivateLabel.text = publicPrivateSwitch.on ? "Private" : "Public"
+        var buttonLabel = publicPrivateSwitch.on ? "Invite People" : "Create Mouve"
+        postMouveButton.setTitle(buttonLabel, forState: UIControlState.Normal)
     }
-
+    // Switch ends
+    
+    
     @IBAction func postMouveButtonWasHit(sender: AnyObject) {
         
         mouveRequestsController.sharedInstance.createMouve(
@@ -179,6 +203,17 @@ extension AddMouveViewController: UIImagePickerControllerDelegate, UINavigationC
 }
 
 extension AddMouveViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(textField: UITextField){
+        
+        if textField == locationTextField{
+        // Google API for location field
+        gpaViewController.placeDelegate = self // Conforms to GooglePlacesAutocompleteDelegate
+        
+        presentViewController(gpaViewController, animated: true, completion: nil)
+        }
+        else{
+        }
+    }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         switch textField {
         case titleEventTextField:
@@ -193,5 +228,19 @@ extension AddMouveViewController: UITextFieldDelegate {
         }
         
         return true
+    }
+}
+extension AddMouveViewController: GooglePlacesAutocompleteDelegate {
+    func placeSelected(place: Place) {
+        println(place.description)
+        
+        place.getDetails { details in
+            self.locationTextField.text = details.name
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+    }
+    
+    func placeViewClosed() {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

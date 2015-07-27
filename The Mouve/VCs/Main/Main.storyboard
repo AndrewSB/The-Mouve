@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u3Z-Xn-nCF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u3Z-Xn-nCF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HalisGR-Book.otf">
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
@@ -28,6 +38,7 @@
             <string>HalisGR-LightItalic</string>
         </mutableArray>
         <mutableArray key="HalisGR-Light.otf">
+            <string>HalisGR-Light</string>
             <string>HalisGR-Light</string>
             <string>HalisGR-Light</string>
         </mutableArray>
@@ -124,7 +135,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="130"/>
                                                 </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yoojin-pic" translatesAutoresizingMaskIntoConstraints="NO" id="xva-GM-ydi">
-                                                    <rect key="frame" x="493" y="33" width="63" height="63"/>
+                                                    <rect key="frame" x="493" y="34" width="63" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="63" id="GN7-DX-uw8"/>
                                                         <constraint firstAttribute="width" secondItem="xva-GM-ydi" secondAttribute="height" multiplier="1:1" id="rA1-pR-cjL"/>
@@ -163,8 +174,8 @@
                                                         <action selector="shareButtonWasHit:" destination="N73-Mj-ygj" eventType="touchUpInside" id="t55-Fs-Rxe"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3.4 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-GB-5S5">
-                                                    <rect key="frame" x="22" y="99" width="60.5" height="17.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.4 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-GB-5S5">
+                                                    <rect key="frame" x="22" y="100" width="61" height="17"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -178,8 +189,8 @@
                                                         <constraint firstAttribute="width" constant="4" id="UmY-ZC-aPV"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MARGARITA PARTY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yP-PG-yHv">
-                                                    <rect key="frame" x="22" y="16" width="181.5" height="23.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MARGARITA PARTY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yP-PG-yHv">
+                                                    <rect key="frame" x="22" y="16" width="188" height="22"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -197,21 +208,21 @@
                                                     </variation>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpb-ol-NrW">
-                                                    <rect key="frame" x="525" y="96" width="0.0" height="25.5"/>
+                                                    <rect key="frame" x="525" y="97" width="0.0" height="25"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" id="B7V-V3-hzf"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xTY-Lt-Dp3">
-                                                    <rect key="frame" x="525" y="8" width="0.0" height="25.5"/>
+                                                    <rect key="frame" x="525" y="8" width="0.0" height="26"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" id="w5z-dg-Vva"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Don't forget to bring your swim suit! Also bring food and dranks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coP-Hn-gLS">
-                                                    <rect key="frame" x="24" y="41.5" width="369" height="15.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't forget to bring your swim suit! Also bring food and dranks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coP-Hn-gLS">
+                                                    <rect key="frame" x="24" y="40" width="383" height="15"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-LightItalic" family="Halis GR" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -473,7 +484,86 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cxe-ah-qLC" id="HNq-6E-Ah5">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Contact Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pMR-gu-dAx">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Set Explore Radius" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pMR-gu-dAx">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="2 mi." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ao0-nc-DX9">
+                                                    <rect key="frame" x="540" y="0.0" width="45" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="QyX-MD-ZUR"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ao0-nc-DX9" firstAttribute="trailing" secondItem="pMR-gu-dAx" secondAttribute="trailing" id="ZAD-eD-dLU"/>
+                                                <constraint firstItem="Ao0-nc-DX9" firstAttribute="firstBaseline" secondItem="pMR-gu-dAx" secondAttribute="firstBaseline" id="eXL-XP-Y9D"/>
+                                                <constraint firstItem="Ao0-nc-DX9" firstAttribute="baseline" secondItem="pMR-gu-dAx" secondAttribute="baseline" id="eip-gp-I4l"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Notifications" id="j8n-za-JDy">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="2NH-kI-VWX" style="IBUITableViewCellStyleDefault" id="byU-eh-SOi">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="byU-eh-SOi" id="gXS-H1-dmU">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="New Followers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2NH-kI-VWX" userLabel="New Followers">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Mwa-mS-8hk">
+                                                    <rect key="frame" x="533" y="6" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Mwa-mS-8hk" firstAttribute="centerY" secondItem="2NH-kI-VWX" secondAttribute="centerY" id="FMF-3p-6Od"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Mwa-mS-8hk" secondAttribute="trailing" constant="10" id="qtz-gR-vmP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="8IG-hr-Nlg" style="IBUITableViewCellStyleDefault" id="Qom-Ot-FuI">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="Qom-Ot-FuI" id="qeq-JZ-WWF" userLabel="New Invites">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="New Invites" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8IG-hr-Nlg">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eJm-u4-YLq">
+                                                    <rect key="frame" x="533" y="6" width="51" height="31"/>
+                                                </switch>
+                                            </subviews>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.64999999999999969" height="1"/>
+                                            <constraints>
+                                                <constraint firstItem="eJm-u4-YLq" firstAttribute="centerY" secondItem="8IG-hr-Nlg" secondAttribute="centerY" id="Ccx-kX-d3I"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="eJm-u4-YLq" secondAttribute="trailing" constant="10" id="iqH-He-JPy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Linked accounts" id="ug7-Gu-BpJ">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ZCd-i9-lhO" style="IBUITableViewCellStyleDefault" id="ON6-rC-p9q">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ON6-rC-p9q" id="kMA-p8-vg4">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Facebook" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZCd-i9-lhO" userLabel="Facebook">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -482,12 +572,12 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="FcG-qE-bbk" style="IBUITableViewCellStyleDefault" id="vRB-uN-qDN">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="8lY-KY-9Jd" style="IBUITableViewCellStyleDefault" id="fEX-TS-Pe8">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vRB-uN-qDN" id="YTR-dO-WKc">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" tableViewCell="fEX-TS-Pe8" id="95l-Wb-Co3">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Privacy Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FcG-qE-bbk">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8lY-KY-9Jd" userLabel="Twitter">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -496,12 +586,44 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Kid-5Y-Uxz" style="IBUITableViewCellStyleDefault" id="gmT-ev-lAA">
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="fCL-Ww-Ada">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="WSW-aV-cuA" style="IBUITableViewCellStyleDefault" id="6qQ-je-Gfc">
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gmT-ev-lAA" id="MlR-e5-bdx">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6qQ-je-Gfc" id="eJe-l0-0Q7">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Terms of Use" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kid-5Y-Uxz">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Contact Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WSW-aV-cuA">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="rRS-Td-nGf" style="IBUITableViewCellStyleDefault" id="NVB-cZ-NKI">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NVB-cZ-NKI" id="Qlq-Li-uxy">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Privacy Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rRS-Td-nGf">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="ZXW-3v-v7c" style="IBUITableViewCellStyleDefault" id="ezy-5v-gs3">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ezy-5v-gs3" id="EMt-JY-YWJ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Terms of Use" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZXW-3v-v7c">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -537,6 +659,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="2vP-JE-GEA"/>
+                    <connections>
+                        <outlet property="followersNotifySwitch" destination="Mwa-mS-8hk" id="7oZ-LT-Z97"/>
+                        <outlet property="inviteNotifySwitch" destination="eJm-u4-YLq" id="tWt-gk-1fm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvx-YC-HT0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -577,7 +703,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Event Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0FZ-f5-7e8" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
-                                <rect key="frame" x="82" y="236" width="436" height="16"/>
+                                <rect key="frame" x="82" y="241" width="436" height="16"/>
                                 <color key="tintColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
@@ -589,28 +715,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Details" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uxC-bo-1bP" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
-                                <rect key="frame" x="82" y="286" width="436" height="16"/>
+                                <rect key="frame" x="82" y="291" width="436" height="16"/>
                                 <color key="tintColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZyY-Yt-W3B" customClass="UnderlinedTextField" customModule="The_Mouve" customModuleProvider="target">
-                                <rect key="frame" x="82" y="336" width="436" height="16"/>
+                                <rect key="frame" x="82" y="341" width="436" height="16"/>
                                 <color key="tintColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJQ-Tw-wj9">
-                                <rect key="frame" x="300" y="352" width="0.0" height="248"/>
+                                <rect key="frame" x="300" y="357" width="0.0" height="243"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="EmE-A8-gfJ"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7QP-nM-NUk">
-                                <rect key="frame" x="12" y="30" width="22" height="22"/>
+                                <rect key="frame" x="12" y="28" width="25" height="25"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="22" id="LPU-eY-v4e"/>
+                                    <constraint firstAttribute="width" constant="25" id="LPU-eY-v4e"/>
                                     <constraint firstAttribute="width" secondItem="7QP-nM-NUk" secondAttribute="height" multiplier="1:1" id="XMx-D1-tx8"/>
                                 </constraints>
                                 <state key="normal" image="cross-cancel-icon">
@@ -621,7 +747,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ri-s0-4XQ" customClass="OutlinedButton" customModule="The_Mouve" customModuleProvider="target">
-                                <rect key="frame" x="220" y="520" width="160" height="33"/>
+                                <rect key="frame" x="220" y="522" width="160" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="MSI-M9-ccb"/>
                                     <constraint firstAttribute="height" constant="33" id="vYg-p3-fax"/>
@@ -637,7 +763,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwK-E3-1FF" userLabel="Image Button">
-                                <rect key="frame" x="250" y="93" width="100" height="100"/>
+                                <rect key="frame" x="250" y="96" width="100" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="WJK-jv-nHn"/>
@@ -654,7 +780,7 @@
                                 </connections>
                             </button>
                             <switch contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="right" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="34o-ML-Hh9">
-                                <rect key="frame" x="276" y="437" width="51" height="31"/>
+                                <rect key="frame" x="276" y="442" width="51" height="31"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="onTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -664,32 +790,32 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Public" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eim-p2-abQ">
-                                <rect key="frame" x="279" y="476" width="42" height="25"/>
+                                <rect key="frame" x="279" y="481" width="42" height="16"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Medium" family="Halis GR" pointSize="14"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haI-iS-2ek">
-                                <rect key="frame" x="30" y="420" width="36" height="15"/>
+                                <rect key="frame" x="30" y="427" width="36" height="15"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="13"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBd-1X-EJA">
-                                <rect key="frame" x="552" y="420" width="18" height="15"/>
+                                <rect key="frame" x="552" y="427" width="18" height="15"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="13"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BU5-0i-Djq">
-                                <rect key="frame" x="300" y="50" width="0.0" height="43"/>
+                                <rect key="frame" x="300" y="50" width="0.0" height="46"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="M0n-fu-Khe"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xsk-bR-CA2">
-                                <rect key="frame" x="300" y="193" width="0.0" height="43"/>
+                                <rect key="frame" x="300" y="196" width="0.0" height="45"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="Wfu-D2-ryF"/>
@@ -698,8 +824,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5Ri-s0-4XQ" firstAttribute="top" secondItem="Eim-p2-abQ" secondAttribute="bottom" constant="19" id="03Q-c1-LT3"/>
-                            <constraint firstItem="34o-ML-Hh9" firstAttribute="top" secondItem="haI-iS-2ek" secondAttribute="bottom" constant="2" id="0GN-HU-rUh"/>
+                            <constraint firstItem="5Ri-s0-4XQ" firstAttribute="top" secondItem="Eim-p2-abQ" secondAttribute="bottom" constant="25" id="03Q-c1-LT3"/>
                             <constraint firstItem="ZyY-Yt-W3B" firstAttribute="leading" secondItem="VoL-rW-eoz" secondAttribute="leadingMargin" constant="66" id="1ca-yq-XKf"/>
                             <constraint firstItem="uxC-bo-1bP" firstAttribute="leading" secondItem="VoL-rW-eoz" secondAttribute="leadingMargin" constant="66" id="28g-zK-2su"/>
                             <constraint firstItem="Xsk-bR-CA2" firstAttribute="height" secondItem="BU5-0i-Djq" secondAttribute="height" id="2g2-9B-To3"/>
@@ -711,27 +836,26 @@
                             <constraint firstAttribute="centerX" secondItem="Xsk-bR-CA2" secondAttribute="centerX" id="CVc-Ti-QZ7"/>
                             <constraint firstItem="uxC-bo-1bP" firstAttribute="top" secondItem="0FZ-f5-7e8" secondAttribute="bottom" constant="34" id="Dbj-66-VEC"/>
                             <constraint firstItem="xmu-Jd-lW1" firstAttribute="top" secondItem="7fY-Cs-z9m" secondAttribute="bottom" constant="11" id="EN0-iL-9h6"/>
-                            <constraint firstItem="haI-iS-2ek" firstAttribute="top" secondItem="VoL-rW-eoz" secondAttribute="top" constant="420" id="FVv-Fj-mdE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ZyY-Yt-W3B" secondAttribute="trailing" constant="66" id="FgI-pi-vnD"/>
+                            <constraint firstItem="5Ri-s0-4XQ" firstAttribute="top" secondItem="haI-iS-2ek" secondAttribute="bottom" constant="80" id="GdE-KP-TH4"/>
                             <constraint firstItem="ZJQ-Tw-wj9" firstAttribute="top" secondItem="ZyY-Yt-W3B" secondAttribute="bottom" id="KHU-aV-hYu"/>
                             <constraint firstAttribute="centerX" secondItem="ZJQ-Tw-wj9" secondAttribute="centerX" id="Lgo-Lh-yZR"/>
+                            <constraint firstItem="5Ri-s0-4XQ" firstAttribute="top" secondItem="gBd-1X-EJA" secondAttribute="bottom" constant="80" id="Pq6-BS-VLG"/>
                             <constraint firstAttribute="centerX" secondItem="34o-ML-Hh9" secondAttribute="centerX" id="QQZ-4F-NcQ"/>
-                            <constraint firstItem="34o-ML-Hh9" firstAttribute="top" secondItem="gBd-1X-EJA" secondAttribute="bottom" constant="2" id="SMp-qh-dTp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="uxC-bo-1bP" secondAttribute="trailing" constant="66" id="U2V-72-55f"/>
-                            <constraint firstItem="34o-ML-Hh9" firstAttribute="top" secondItem="ZyY-Yt-W3B" secondAttribute="bottom" constant="85" id="UU3-rt-Wn5"/>
-                            <constraint firstItem="Eim-p2-abQ" firstAttribute="top" secondItem="34o-ML-Hh9" secondAttribute="bottom" constant="8" id="bPj-gW-NWw"/>
                             <constraint firstAttribute="centerX" secondItem="Eim-p2-abQ" secondAttribute="centerX" id="cIu-rg-h9I"/>
                             <constraint firstAttribute="centerX" secondItem="5Ri-s0-4XQ" secondAttribute="centerX" id="dBD-1Y-lJm"/>
-                            <constraint firstItem="gBd-1X-EJA" firstAttribute="top" secondItem="VoL-rW-eoz" secondAttribute="top" constant="420" id="dQo-sy-iTF"/>
                             <constraint firstAttribute="trailing" secondItem="gBd-1X-EJA" secondAttribute="trailing" constant="30" id="gDh-SI-O1o"/>
                             <constraint firstItem="BU5-0i-Djq" firstAttribute="top" secondItem="xmu-Jd-lW1" secondAttribute="bottom" id="keo-45-WhI"/>
                             <constraint firstItem="jwK-E3-1FF" firstAttribute="top" secondItem="BU5-0i-Djq" secondAttribute="bottom" id="l5U-BB-bpD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0FZ-f5-7e8" secondAttribute="trailing" constant="66" id="pcx-Rd-urF"/>
+                            <constraint firstItem="haI-iS-2ek" firstAttribute="top" secondItem="ZyY-Yt-W3B" secondAttribute="bottom" constant="70" id="rc3-aj-RfS"/>
                             <constraint firstItem="xmu-Jd-lW1" firstAttribute="centerY" secondItem="7QP-nM-NUk" secondAttribute="centerY" id="tBS-Kc-cFR"/>
-                            <constraint firstItem="NH9-N2-IwK" firstAttribute="top" secondItem="5Ri-s0-4XQ" secondAttribute="bottom" constant="47" id="tLi-Bg-5WX"/>
+                            <constraint firstItem="NH9-N2-IwK" firstAttribute="top" secondItem="5Ri-s0-4XQ" secondAttribute="bottom" constant="45" id="tLi-Bg-5WX"/>
                             <constraint firstItem="haI-iS-2ek" firstAttribute="leading" secondItem="VoL-rW-eoz" secondAttribute="leading" constant="30" id="te5-oF-IU0"/>
                             <constraint firstAttribute="centerX" secondItem="BU5-0i-Djq" secondAttribute="centerX" id="urV-uX-Z5e"/>
                             <constraint firstAttribute="centerX" secondItem="xmu-Jd-lW1" secondAttribute="centerX" id="vcR-e3-BvG"/>
+                            <constraint firstItem="Eim-p2-abQ" firstAttribute="top" secondItem="34o-ML-Hh9" secondAttribute="bottom" constant="8" id="wdM-MI-8PQ"/>
                             <constraint firstItem="Xsk-bR-CA2" firstAttribute="top" secondItem="jwK-E3-1FF" secondAttribute="bottom" id="yca-qj-hWg"/>
                             <constraint firstItem="0FZ-f5-7e8" firstAttribute="top" secondItem="Xsk-bR-CA2" secondAttribute="bottom" id="zP3-Ff-Mtv"/>
                         </constraints>
@@ -818,40 +942,40 @@
                                                 <constraint firstAttribute="height" constant="1" id="ddg-pz-2j8"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Margarita Party" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekG-ae-AMS">
-                                            <rect key="frame" x="22" y="267" width="538" height="26"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Margarita Party" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekG-ae-AMS">
+                                            <rect key="frame" x="22" y="267" width="538" height="25"/>
                                             <fontDescription key="fontDescription" name="HalisGR-Medium" family="Halis GR" pointSize="22"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="5pm - 9pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-rk-ZEb">
-                                            <rect key="frame" x="22" y="297" width="79.5" height="19"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5pm - 9pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-rk-ZEb">
+                                            <rect key="frame" x="22" y="296" width="83" height="18"/>
                                             <fontDescription key="fontDescription" name="HalisGR-Medium" family="Halis GR" pointSize="16"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Don't forget to bring your swim suit! Also bring food and dranks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoO-kW-dp9">
-                                            <rect key="frame" x="22" y="321" width="548" height="19"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't forget to bring your swim suit! Also bring food and dranks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoO-kW-dp9">
+                                            <rect key="frame" x="22" y="319" width="548" height="18"/>
                                             <fontDescription key="fontDescription" name="HalisGR-RegularItalic" family="Halis GR" pointSize="16"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80K-AW-FfG">
-                                            <rect key="frame" x="22" y="362" width="239" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80K-AW-FfG">
+                                            <rect key="frame" x="22" y="359" width="240" height="29"/>
                                             <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="15"/>
                                             <state key="normal" title="1301 W Green St. Urbana, IL 61820">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMN-fl-cDi">
-                                            <rect key="frame" x="22" y="382" width="64" height="30"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMN-fl-cDi">
+                                            <rect key="frame" x="22" y="378" width="66" height="29"/>
                                             <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="15"/>
                                             <state key="normal" title="32 invites">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Z6-Pv-ix8">
-                                            <rect key="frame" x="22" y="424" width="556" height="88"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="8Z6-Pv-ix8">
+                                            <rect key="frame" x="22" y="419" width="556" height="88"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="88" id="oh1-HU-mAq"/>
@@ -874,8 +998,8 @@
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2A-gn-HMl">
-                                            <rect key="frame" x="22" y="520" width="80" height="33"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2A-gn-HMl">
+                                            <rect key="frame" x="22" y="515" width="80" height="33"/>
                                             <color key="backgroundColor" red="0.32373863458633423" green="0.58148479461669922" blue="0.87417244911193848" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="33" id="9yl-sr-7Zy"/>
@@ -886,8 +1010,8 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1LN-sB-Oyp">
-                                            <rect key="frame" x="104" y="536" width="496" height="1"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1LN-sB-Oyp">
+                                            <rect key="frame" x="104" y="531" width="496" height="1"/>
                                             <color key="backgroundColor" red="0.47384917736053467" green="0.86037606000900269" blue="0.75323015451431274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="XQj-qb-q12"/>
@@ -978,8 +1102,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vX-uy-YoX" userLabel="headerView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hack the world" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfI-gB-ALr">
-                                        <rect key="frame" x="243" y="180" width="115" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hack the world" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfI-gB-ALr">
+                                        <rect key="frame" x="240" y="180" width="121" height="19"/>
                                         <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -1052,17 +1176,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFl-5P-uoJ" userLabel="SeparationLine">
+                                <rect key="frame" x="0.0" y="242" width="600" height="2"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" image="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="hRq-4G-wAH"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViX-cS-fl9" userLabel="headerView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yoojin Hong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csc-pN-apC" userLabel="Yoojin Hong">
-                                        <rect key="frame" x="249" y="210" width="102" height="20"/>
-                                        <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csc-pN-apC" userLabel="@username">
+                                        <rect key="frame" x="273" y="211" width="54" height="19"/>
+                                        <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qi-b6-W0Q">
-                                        <rect key="frame" x="279" y="120" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fullname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtG-xh-YEV" userLabel="Full Name">
+                                        <rect key="frame" x="257" y="178" width="85" height="22"/>
+                                        <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qi-b6-W0Q">
+                                        <rect key="frame" x="279" y="120" width="42" height="5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1074,15 +1214,23 @@
                                             <constraint firstAttribute="width" constant="100" id="Roi-Xb-5hA"/>
                                         </constraints>
                                     </imageView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN3-Qf-PmD">
+                                        <rect key="frame" x="278" y="111" width="44" height="19"/>
+                                        <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerY" secondItem="xZb-K9-a6p" secondAttribute="centerY" id="C0t-kz-LAs"/>
                                     <constraint firstAttribute="centerX" secondItem="Csc-pN-apC" secondAttribute="centerX" id="GUt-cS-HMy"/>
                                     <constraint firstItem="4qi-b6-W0Q" firstAttribute="top" secondItem="ViX-cS-fl9" secondAttribute="top" constant="120" id="VLt-9F-LyX"/>
+                                    <constraint firstAttribute="bottom" secondItem="YtG-xh-YEV" secondAttribute="bottom" constant="40" id="YIs-A4-9aN"/>
                                     <constraint firstAttribute="centerX" secondItem="xZb-K9-a6p" secondAttribute="centerX" id="ZGA-cF-5Zm"/>
                                     <constraint firstAttribute="bottom" secondItem="Csc-pN-apC" secondAttribute="bottom" constant="10" id="fAj-Lh-Ad5"/>
                                     <constraint firstAttribute="height" constant="240" id="gEa-bX-1Df"/>
+                                    <constraint firstAttribute="centerX" secondItem="YtG-xh-YEV" secondAttribute="centerX" id="he5-zH-FOq"/>
                                     <constraint firstAttribute="centerX" secondItem="4qi-b6-W0Q" secondAttribute="centerX" id="rpi-G1-tAx"/>
                                 </constraints>
                             </view>
@@ -1090,55 +1238,61 @@
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="OFG-QZ-RyK">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="280"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="320"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yoojin-pic" translatesAutoresizingMaskIntoConstraints="NO" id="J1f-pm-mjf">
-                                            <rect key="frame" x="262" y="140" width="76" height="76"/>
+                                            <rect key="frame" x="262" y="120" width="76" height="76"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="76" id="QQL-33-KkR"/>
                                                 <constraint firstAttribute="height" constant="76" id="scz-CE-UKd"/>
                                             </constraints>
                                         </imageView>
-                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kN3-Qf-PmD">
-                                            <rect key="frame" x="279" y="224" width="43" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Mqu-WF-u7n">
-                                            <rect key="frame" x="0.0" y="225" width="200" height="55"/>
+                                            <rect key="frame" x="0.0" y="275" width="200" height="45"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="55" id="6D7-pt-74q"/>
+                                                <constraint firstAttribute="height" constant="45" id="6D7-pt-74q"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="13"/>
                                             <state key="normal" title="Mouves">
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="jhF-hL-Hkl">
-                                            <rect key="frame" x="400" y="225" width="200" height="55"/>
+                                            <rect key="frame" x="400" y="275" width="200" height="45"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="55" id="nmF-Oq-MLc"/>
+                                                <constraint firstAttribute="height" constant="45" id="nmF-Oq-MLc"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="13"/>
                                             <state key="normal" title="Following">
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HlO-XT-9yv">
-                                            <rect key="frame" x="200" y="225" width="200" height="55"/>
+                                            <rect key="frame" x="200" y="275" width="200" height="45"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="55" id="CZJ-t0-JPG"/>
+                                                <constraint firstAttribute="height" constant="45" id="CZJ-t0-JPG"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="18"/>
+                                            <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="13"/>
                                             <state key="normal" title="Followers">
                                                 <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hut-n9-7Ai" customClass="smallTextOutlinedButton" customModule="The_Mouve" customModuleProvider="target">
+                                            <rect key="frame" x="225" y="239" width="150" height="28"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="150" id="aEz-Bg-lrJ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="14"/>
+                                            <state key="normal" title="Edit Profile">
+                                                <color key="titleColor" red="0.20000000000000001" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
@@ -1146,15 +1300,15 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="centerX" secondItem="J1f-pm-mjf" secondAttribute="centerX" id="1H9-YX-WaE"/>
-                                        <constraint firstAttribute="centerX" secondItem="kN3-Qf-PmD" secondAttribute="centerX" id="EBh-hD-wmE"/>
-                                        <constraint firstItem="J1f-pm-mjf" firstAttribute="top" secondItem="OFG-QZ-RyK" secondAttribute="top" constant="140" placeholder="YES" id="HPn-Jn-COB"/>
+                                        <constraint firstItem="J1f-pm-mjf" firstAttribute="top" secondItem="OFG-QZ-RyK" secondAttribute="top" constant="120" placeholder="YES" id="HPn-Jn-COB"/>
                                         <constraint firstItem="Mqu-WF-u7n" firstAttribute="leading" secondItem="OFG-QZ-RyK" secondAttribute="leading" id="Qxq-7s-fLl"/>
+                                        <constraint firstItem="HlO-XT-9yv" firstAttribute="top" secondItem="hut-n9-7Ai" secondAttribute="bottom" constant="8" symbolic="YES" id="Rkc-P5-Chf"/>
                                         <constraint firstAttribute="bottom" secondItem="jhF-hL-Hkl" secondAttribute="bottom" id="TLs-Dm-m6L"/>
                                         <constraint firstItem="HlO-XT-9yv" firstAttribute="leading" secondItem="Mqu-WF-u7n" secondAttribute="trailing" id="XqP-Mx-58u"/>
                                         <constraint firstAttribute="bottom" secondItem="Mqu-WF-u7n" secondAttribute="bottom" id="bgd-B1-hA6"/>
                                         <constraint firstAttribute="bottom" secondItem="HlO-XT-9yv" secondAttribute="bottom" id="dg2-Hi-LtH"/>
-                                        <constraint firstItem="kN3-Qf-PmD" firstAttribute="top" secondItem="J1f-pm-mjf" secondAttribute="bottom" constant="8" id="f65-aZ-6At"/>
                                         <constraint firstItem="jhF-hL-Hkl" firstAttribute="leading" secondItem="HlO-XT-9yv" secondAttribute="trailing" id="iOd-sg-TSD"/>
+                                        <constraint firstAttribute="centerX" secondItem="hut-n9-7Ai" secondAttribute="centerX" id="lbs-jV-1O8"/>
                                         <constraint firstItem="Mqu-WF-u7n" firstAttribute="width" secondItem="HlO-XT-9yv" secondAttribute="width" id="pSz-6G-RY8"/>
                                         <constraint firstAttribute="trailing" secondItem="jhF-hL-Hkl" secondAttribute="trailing" id="pYH-kF-omf"/>
                                         <constraint firstItem="jhF-hL-Hkl" firstAttribute="width" secondItem="HlO-XT-9yv" secondAttribute="width" id="vhj-1b-lL9"/>
@@ -1233,7 +1387,7 @@
                                                         <rect key="frame" x="28" y="13" width="173" height="23"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Today | 5PM - 9PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndx-Z9-XQn">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today | 5PM - 9PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndx-Z9-XQn">
                                                     <rect key="frame" x="22" y="80" width="134" height="17"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1316,10 +1470,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jFl-5P-uoJ" firstAttribute="top" secondItem="ViX-cS-fl9" secondAttribute="bottom" constant="2" id="6Dr-bW-GWa"/>
                             <constraint firstAttribute="trailing" secondItem="ESq-sd-WwW" secondAttribute="trailing" id="RMS-dp-7nJ"/>
+                            <constraint firstItem="jFl-5P-uoJ" firstAttribute="leading" secondItem="6B4-oq-T2K" secondAttribute="leading" id="Wpp-zS-gEw"/>
                             <constraint firstItem="ESq-sd-WwW" firstAttribute="leading" secondItem="6B4-oq-T2K" secondAttribute="leading" id="Yay-L1-H73"/>
                             <constraint firstAttribute="trailing" secondItem="ViX-cS-fl9" secondAttribute="trailing" id="aR7-Nu-YIY"/>
                             <constraint firstItem="ESq-sd-WwW" firstAttribute="top" secondItem="Y2r-Dh-orA" secondAttribute="bottom" id="cg2-Pc-9ra"/>
+                            <constraint firstAttribute="centerX" secondItem="jFl-5P-uoJ" secondAttribute="centerX" id="fFv-nz-2BV"/>
+                            <constraint firstAttribute="trailing" secondItem="jFl-5P-uoJ" secondAttribute="trailing" id="gVZ-Gy-u1u"/>
                             <constraint firstAttribute="bottom" secondItem="ESq-sd-WwW" secondAttribute="bottom" id="lxN-gg-zoE"/>
                             <constraint firstItem="ViX-cS-fl9" firstAttribute="leading" secondItem="6B4-oq-T2K" secondAttribute="leading" id="wo2-ve-tne"/>
                             <constraint firstItem="ViX-cS-fl9" firstAttribute="top" secondItem="Y2r-Dh-orA" secondAttribute="bottom" constant="-20" id="zQY-e7-0tC"/>
@@ -1328,19 +1486,115 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="profile-icon" id="f8p-Wz-zBd"/>
                     <connections>
                         <outlet property="avatarImage" destination="J1f-pm-mjf" id="7XH-1A-xQq"/>
-                        <outlet property="dumbLabel" destination="Csc-pN-apC" id="0mP-lL-uL5"/>
                         <outlet property="followersButton" destination="HlO-XT-9yv" id="mcg-O2-mxI"/>
                         <outlet property="followingButton" destination="jhF-hL-Hkl" id="IeS-SZ-xfF"/>
                         <outlet property="headerLabel" destination="4qi-b6-W0Q" id="daS-8F-vPK"/>
                         <outlet property="headerView" destination="ViX-cS-fl9" id="Stc-eB-Am4"/>
                         <outlet property="mouveButton" destination="Mqu-WF-u7n" id="juJ-oV-bCS"/>
-                        <outlet property="nameLabel" destination="kN3-Qf-PmD" id="Cgf-e8-wVG"/>
+                        <outlet property="nameLabel" destination="YtG-xh-YEV" id="dKK-Lg-TRp"/>
                         <outlet property="profileTableView" destination="ESq-sd-WwW" id="dXL-LL-iig"/>
+                        <outlet property="separationLabel" destination="jFl-5P-uoJ" id="rhv-xU-cgk"/>
+                        <outlet property="usernameLabel" destination="Csc-pN-apC" id="0mP-lL-uL5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BhQ-UX-IUw" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-782" y="1794"/>
+        </scene>
+        <!--Followers-->
+        <scene sceneID="461-mb-BCd">
+            <objects>
+                <viewController title="Followers" id="HUv-9D-U1R" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="46H-Sh-UoH"/>
+                        <viewControllerLayoutGuide type="bottom" id="xvF-7b-Xfq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qas-mp-wSj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9MM-X7-SIX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" rowHeight="50" id="850-X2-kyF" customClass="ActivityTableViewCell" customModule="The_Mouve" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="278" width="580" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="850-X2-kyF" id="jdI-yI-45V">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jGp-fO-0Ei">
+                                                    <rect key="frame" x="12" y="7" width="35" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="jGp-fO-0Ei" secondAttribute="height" multiplier="1:1" id="RjJ-fy-yu5"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bE9-Tc-Hrm" customClass="TTTAttributedLabel">
+                                                    <rect key="frame" x="69" y="9" width="480" height="31"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Light" family="Halis GR" pointSize="14"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xak-Lx-LAJ">
+                                                    <rect key="frame" x="571" y="15" width="17" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="xak-Lx-LAJ" secondAttribute="height" multiplier="21:23" id="EfM-ZH-CdW"/>
+                                                    </constraints>
+                                                    <state key="normal" image="calendar-tick">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="calendarButtonWasHit:" destination="850-X2-kyF" eventType="touchUpInside" id="Xux-Dm-1GG"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xak-Lx-LAJ" secondAttribute="bottom" constant="7" id="2GR-Vk-mI5"/>
+                                                <constraint firstItem="jGp-fO-0Ei" firstAttribute="leading" secondItem="jdI-yI-45V" secondAttribute="leading" constant="12" id="6rZ-Lt-D3S"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bE9-Tc-Hrm" secondAttribute="bottom" constant="1" id="DIn-pe-YSH"/>
+                                                <constraint firstItem="bE9-Tc-Hrm" firstAttribute="leading" secondItem="jGp-fO-0Ei" secondAttribute="trailing" constant="22" id="Raj-2w-ahe"/>
+                                                <constraint firstItem="xak-Lx-LAJ" firstAttribute="leading" secondItem="bE9-Tc-Hrm" secondAttribute="trailing" constant="22" id="XlV-GM-3qf"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xak-Lx-LAJ" secondAttribute="trailing" constant="4" id="hOe-26-UPo"/>
+                                                <constraint firstItem="bE9-Tc-Hrm" firstAttribute="top" secondItem="jdI-yI-45V" secondAttribute="topMargin" constant="1" id="iRD-8A-jf0"/>
+                                                <constraint firstItem="jGp-fO-0Ei" firstAttribute="top" secondItem="jdI-yI-45V" secondAttribute="top" constant="7" id="loS-8P-nxD"/>
+                                                <constraint firstAttribute="bottom" secondItem="jGp-fO-0Ei" secondAttribute="bottom" constant="7" id="nMp-8n-5lK"/>
+                                                <constraint firstItem="xak-Lx-LAJ" firstAttribute="top" secondItem="jdI-yI-45V" secondAttribute="topMargin" constant="7" id="z9b-MV-R0l"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="80" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="attributedLabel" destination="bE9-Tc-Hrm" id="m6u-AP-uxe"/>
+                                            <outlet property="calendarButton" destination="xak-Lx-LAJ" id="K8v-mR-SHY"/>
+                                            <outlet property="profileImageView" destination="jGp-fO-0Ei" id="zVd-qb-qO0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kPp-SE-0rm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Followers" id="mmL-KH-tyG">
+                                        <barButtonItem key="backBarButtonItem" title="&quot;&quot;" id="alG-ln-OYx"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9MM-X7-SIX" firstAttribute="leading" secondItem="qas-mp-wSj" secondAttribute="leading" id="Dn9-eb-KtJ"/>
+                            <constraint firstItem="9MM-X7-SIX" firstAttribute="bottom" secondItem="xvF-7b-Xfq" secondAttribute="top" id="Q89-6B-UlO"/>
+                            <constraint firstItem="9MM-X7-SIX" firstAttribute="trailing" secondItem="kPp-SE-0rm" secondAttribute="trailing" id="TOL-hy-vmS"/>
+                            <constraint firstAttribute="trailing" secondItem="9MM-X7-SIX" secondAttribute="trailing" id="U0n-g1-9cb"/>
+                            <constraint firstItem="9MM-X7-SIX" firstAttribute="top" secondItem="qas-mp-wSj" secondAttribute="top" id="dBs-u3-Gbh"/>
+                            <constraint firstAttribute="centerX" secondItem="9MM-X7-SIX" secondAttribute="centerX" id="qdA-Tm-ml8"/>
+                            <constraint firstItem="9MM-X7-SIX" firstAttribute="leading" secondItem="kPp-SE-0rm" secondAttribute="leading" id="rbf-ll-f1T"/>
+                            <constraint firstItem="9MM-X7-SIX" firstAttribute="top" secondItem="kPp-SE-0rm" secondAttribute="top" id="zvZ-SL-HR9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Jy-I1-Ho1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-54" y="1794"/>
         </scene>
         <!--Settings-->
         <scene sceneID="p8S-sd-ChF">

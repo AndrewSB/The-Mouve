@@ -11,9 +11,20 @@ import Parse
 
 class SettingsTableViewController: UITableViewController {
 
+    @IBOutlet weak var followersNotifySwitch: UISwitch!
+    @IBOutlet weak var inviteNotifySwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        followersNotifySwitch.tintColor = UIColor.lightSeaFoamGreen()
+        followersNotifySwitch.onTintColor = UIColor.lightSeaFoamGreen()
+        followersNotifySwitch.thumbTintColor = UIColor.seaFoamGreen()
+        
+        inviteNotifySwitch.tintColor = UIColor.lightSeaFoamGreen()
+        inviteNotifySwitch.onTintColor = UIColor.lightSeaFoamGreen()
+        inviteNotifySwitch.thumbTintColor = UIColor.seaFoamGreen()
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

@@ -103,7 +103,7 @@ class SceneTitleView: UIView {
     var buttonOne: (SceneType, LocalMessageNotification, LocalMessageNotification) {
         get {
             if 0...1 ~= type!.hashValue {
-                return (.Explore, .HomeTitlePageOne, .HomeFeedPageOne)
+                return (.Scene, .HomeTitlePageOne, .HomeFeedPageOne)
             } else {
                 return (.Newsfeed, .ActivityTitlePageOne, .ActivityFeedPageOne)
             }
@@ -113,7 +113,7 @@ class SceneTitleView: UIView {
     var buttonTwo: (SceneType, LocalMessageNotification, LocalMessageNotification) {
         get {
             if 0...1 ~= type!.hashValue {
-                return (.Scene, .HomeTitlePageTwo, .HomeFeedPageTwo)
+                return (.Explore, .HomeTitlePageTwo, .HomeFeedPageTwo)
             } else {
                 return (.Invites, .ActivityTitlePageTwo, .ActivityFeedPageTwo)
             }
