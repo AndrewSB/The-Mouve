@@ -31,7 +31,7 @@ class SceneFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println("didLoad \(self.type)")
+//        println("didLoad \(self.type)")
         LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
         
         feedTableView.delegate = self
@@ -51,7 +51,7 @@ class SceneFeedViewController: UIViewController {
         
         feedQuery.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
             var serverData = [Event]()
-            println(results)
+//            println(results)
             
             if let results = results {
                 for result in results {
