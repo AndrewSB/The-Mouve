@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
         view.userInteractionEnabled = false
         let loadingSpinnerView = addLoadingView()
         view.addSubview(loadingSpinnerView)
-        appDel.checkLogin(self.emailTextField.text, password:self.passwordTextField.text)
+        userRequestsController.sharedInstance.authUser(emailTextField.text, password: passwordTextField.text)
 //        Spinning Wheels...
 //        Step 1: Check email or username in backend based on input
 //            If wrong return wrong email/username
