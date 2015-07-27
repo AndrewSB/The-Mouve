@@ -6,6 +6,7 @@ import Alamofire
 class userCredentials{
     let keychain = Keychain(service: "tm.The-Mouve")
     let deviceID = UIDevice.currentDevice().identifierForVendor.UUIDString
+//    defaults should be replaced with CoreData
     let defaults = NSUserDefaults.standardUserDefaults()
     
     func getUsername() -> String {
