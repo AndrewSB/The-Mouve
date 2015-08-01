@@ -7,7 +7,6 @@ import SwiftyJSON
 class userCredentials{
     let keychain = Keychain(service: "tm.The-Mouve")
     let deviceID = UIDevice.currentDevice().identifierForVendor.UUIDString
-//    let defaults = NSUserDefaults.standardUserDefaults()
     
     func getEmail() -> String {
         if let email = keychain["email"] {
@@ -303,10 +302,8 @@ class userRequestsController{
         }
     }
     
-    class var sharedInstance: userRequestsController{
-        struct Static {
-            static let instance = userRequestsController()
-        }
+    class var sharedInstance: userRequestsController {
+        struct Static { static let instance = userRequestsController() }
         return Static.instance
     }
 }

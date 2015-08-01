@@ -14,7 +14,7 @@ class UnderlinedTextField: UITextField {
         
         let f = self.frame
         
-        let underlineView = UIView(frame: CGRect(x: 0, y: f.height-2, width: f.width, height: 2))
+        let underlineView = UIView(frame: CGRect(x: 0, y: f.height - (f.height * 0.35), width: f.width, height: 2))
         underlineView.backgroundColor = tintColor
         self.addSubview(underlineView)
     }

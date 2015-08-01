@@ -16,16 +16,15 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var emailTextField: UnderlinedTextField!
     @IBOutlet weak var createAccountButton: UIButton!
     var fbId: String = ""
-    
-//    let newUser = User()
-    
+  
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         statusBar(.Default)
         addTextDismiss()
         addNavControllerLikePan()
         
-        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = ((createAccountButton.frame.origin.y + createAccountButton.frame.height) - nameTextField.frame.origin.y) + 5
+        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 120
+        IQKeyboardManager.sharedManager().enable = true
         
         [nameTextField, usernameTextField, passwordTextField, emailTextField].map({ $0.delegate = self })
     }
@@ -65,18 +64,12 @@ class SignupViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
-    // MARK: - Navigation
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        
         view.endEditing(true)
     }
-//    func usernameSuggester(fullname: String){
-//        var fullNameArr = split(fullname) {$0 == " "}
-//        var firstName: String = fullNameArr[0]
-//        var lastName: String? = fullNameArr.count > 1 ? fullNameArr[-1] : nil
-//        let username = firstName+lastName!
-//        return username.lowercaseString
-//    }
-
 }
 
 
