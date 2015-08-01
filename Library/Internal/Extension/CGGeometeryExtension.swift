@@ -15,7 +15,7 @@ enum TopBottom {
 }
 
 extension CGRect {
-    init(view: UIView, height: CGFloat, width: CGFloat) {
+    init(inCenterOf view: UIView, height: CGFloat, width: CGFloat) {
         self.init(x: (view.frame.width / 2) - (width / 2), y: (view.frame.height / 2) - (height / 2), width: width, height: height)
     }
 }

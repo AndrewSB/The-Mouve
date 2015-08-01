@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class Event: BaseObject {
+class Event {
     var name: String
     
     var time: NSDate

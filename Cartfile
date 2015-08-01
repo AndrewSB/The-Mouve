@@ -1,14 +1,13 @@
 github "Alamofire/Alamofire" "master"
 github "gavinbunney/Toucan"
 
-github "tristanhimmelman/AlamofireObjectMapper"
+# github "tristanhimmelman/AlamofireObjectMapper"
 
-#github "TTTAttributedLabel/TTTAttributedLabel"
+# github "TTTAttributedLabel/TTTAttributedLabel"
 
-#github "hackiftekhar/IQKeyboardManager"
-#github "dzenbot/DZNEmptyDataSet"
+# github "hackiftekhar/IQKeyboardManager"
+# github "dzenbot/DZNEmptyDataSet"
 
 github "TTTAttributedLabel/TTTAttributedLabel"
 github "dzenbot/DZNEmptyDataSet"
 github "SwiftyJSON/SwiftyJSON" >= 2.2.0
-github "kishikawakatsumi/KeychainAccess"
