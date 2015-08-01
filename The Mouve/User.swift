@@ -4,37 +4,24 @@ import Alamofire
 import SwiftyJSON
 
 
-class userCredentials{
+class userCredentials {
     let keychain = Keychain(service: "tm.The-Mouve")
-    let deviceID = UIDevice.currentDevice().identifierForVendor.UUIDString
     
-    func getEmail() -> String {
-        if let email = keychain["email"] {
-            return email
-        }
-        return "Anonymous"
+    func getEmail() -> String? {
+        return keychain["email"]
     }
-    func getPassword() -> String {
-        if let password = keychain["password"] {
-            return password
-        }
-        return "Password"
+    func getPassword() -> String? {
+        return keychain["password"]
     }
     
     
-    func getToken() -> String {
-        if let token = keychain["token"] {
-            return token
-        }
-        return ""
+    func getToken() -> String? {
+        return keychain["token"]
     }
     
     
-    func getUserId() -> String {
-        if let userLink = keychain["userid"] {
-            return userLink
-        }
-        return "NA"
+    func getUserId() -> String? {
+        return keychain["userid"]
     }
     
     
@@ -67,6 +54,7 @@ class userCredentials{
 }
 
 class userRequestsController{
+    static let sharedInstance = userRequestsController()
     let manager = Alamofire.Manager.sharedInstance
     func authUser(email: String,
         password: String) {
@@ -300,10 +288,5 @@ class userRequestsController{
                     let parsed = JSON(json)
                 }
         }
-    }
-    
-    class var sharedInstance: userRequestsController {
-        struct Static { static let instance = userRequestsController() }
-        return Static.instance
     }
 }

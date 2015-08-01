@@ -96,6 +96,6 @@ extension AppDelegate {
     }
     
     func logOut() {
-//        RealmStologOut()
+
     }
 }

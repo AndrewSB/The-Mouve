@@ -142,7 +142,7 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stP-2Z-fyy">
-                                <rect key="frame" x="16" y="42" width="66" height="66"/>
+                                <rect key="frame" x="0.0" y="42" width="66" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="5bQ-o4-KbP"/>
                                     <constraint firstAttribute="width" secondItem="stP-2Z-fyy" secondAttribute="height" multiplier="1:1" id="rqP-iy-FH5"/>
@@ -181,7 +181,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="3iL-SP-PT6" secondAttribute="trailing" constant="33" id="1W5-f4-rLu"/>
                             <constraint firstItem="eVz-xe-P0o" firstAttribute="leading" secondItem="Vj4-ao-p01" secondAttribute="leadingMargin" constant="33" id="1pM-Ea-UKh"/>
                             <constraint firstAttribute="centerX" secondItem="3yH-bQ-9Bj" secondAttribute="centerX" id="3DC-Dq-OOu"/>
-                            <constraint firstItem="stP-2Z-fyy" firstAttribute="leading" secondItem="Vj4-ao-p01" secondAttribute="leadingMargin" id="6aa-dw-w9W"/>
+                            <constraint firstItem="stP-2Z-fyy" firstAttribute="leading" secondItem="Vj4-ao-p01" secondAttribute="leadingMargin" constant="-16" id="6aa-dw-w9W"/>
                             <constraint firstItem="E5f-cu-RQj" firstAttribute="top" secondItem="eVz-xe-P0o" secondAttribute="bottom" id="7dv-oz-oS9"/>
                             <constraint firstItem="f2m-9T-wFS" firstAttribute="top" secondItem="3yH-bQ-9Bj" secondAttribute="bottom" constant="11" id="DrB-Es-MNU"/>
                             <constraint firstItem="3yH-bQ-9Bj" firstAttribute="top" secondItem="E5f-cu-RQj" secondAttribute="bottom" id="EmG-wt-HgL"/>
@@ -277,7 +277,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgC-l0-m6s">
-                                <rect key="frame" x="16" y="30" width="66" height="66"/>
+                                <rect key="frame" x="0.0" y="30" width="66" height="66"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fgC-l0-m6s" secondAttribute="height" multiplier="1:1" id="1KR-1c-cuY"/>
                                     <constraint firstAttribute="height" constant="66" id="mtT-Wq-yny"/>
@@ -390,7 +390,7 @@
                             <constraint firstItem="wlx-Z1-QQz" firstAttribute="leading" secondItem="rj5-0d-F0D" secondAttribute="leadingMargin" constant="33" id="Nui-KA-IMz"/>
                             <constraint firstItem="oWo-I0-aFN" firstAttribute="centerY" secondItem="5D6-Lm-tLQ" secondAttribute="centerY" id="OOz-ZQ-R5q"/>
                             <constraint firstItem="vPA-c7-rTa" firstAttribute="top" secondItem="rvi-10-BYt" secondAttribute="bottom" id="TIe-g4-wfo"/>
-                            <constraint firstItem="fgC-l0-m6s" firstAttribute="leading" secondItem="rj5-0d-F0D" secondAttribute="leadingMargin" id="W5L-LM-tng"/>
+                            <constraint firstItem="fgC-l0-m6s" firstAttribute="leading" secondItem="rj5-0d-F0D" secondAttribute="leadingMargin" constant="-16" id="W5L-LM-tng"/>
                             <constraint firstItem="cMk-z8-oJF" firstAttribute="top" secondItem="fgC-l0-m6s" secondAttribute="bottom" id="aKh-7t-n1m"/>
                             <constraint firstItem="8JL-AQ-7ag" firstAttribute="height" secondItem="rvi-10-BYt" secondAttribute="height" id="akj-0b-oWe"/>
                             <constraint firstItem="oWo-I0-aFN" firstAttribute="trailing" secondItem="j0u-tb-T2e" secondAttribute="trailing" constant="-46" id="dR4-w7-FjR"/>
