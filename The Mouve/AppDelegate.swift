@@ -17,19 +17,15 @@ let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var location = Location()
-    let emailKey = "a@a.com"
-    let passwordKey = "123"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])
         
-        AERecord.loadCoreDataStack()
         Parse.enableLocalDatastore()
         Parse.setApplicationId("GvHu9jcqgsGp2zZkgsXwLOQJXNWCzl5janz4FAj1",
             clientKey: "5SqHFJOslPl9TB9CPbuowXkCpidAOfoIKIXgSqU4")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
-        checkLogin()
+
 //        let loggedIn = PFUser.currentUser() != nil
 //        
 //        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -84,17 +80,23 @@ extension AppDelegate {
     
     }
     
-    func checkLogin() {
-        //Checks that user is not nil
-        let loggedIn = !userCredentials.sharedInstance.getToken().isEmpty
-        if(loggedIn){
-            println("logged in as \(userCredentials.sharedInstance.getEmail())")
+    class var loggedIn: Bool {
+        get {
+            return true
         }
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
-        window!.makeKeyAndVisible()
     }
     
+//    func checkLogin() {
+//        //Checks that user is not nil
+//        let loggedIn = !userCredentials.sharedInstance.getToken().isEmpty
+//        if(loggedIn){
+//            println("logged in as \(userCredentials.sharedInstance.getEmail())")
+//        }
+//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+//        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
+//        window!.makeKeyAndVisible()
+//    }
+//    
     func logOut() {
 
     }

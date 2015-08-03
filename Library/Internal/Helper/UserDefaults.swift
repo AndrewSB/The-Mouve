@@ -9,18 +9,33 @@
 import Foundation
 import CoreLocation
 
-enum UserDefaultKeys: String {
-    case lastLocation = "lastLocation"
-    case profilePictureURL = "profilePictureURL"
-}
-
 class UserDefaults {
     static let get = NSUserDefaults.standardUserDefaults().objectForKey
     static let set = NSUserDefaults.standardUserDefaults().setObject
     
+    enum UserDefaultKey {
+        case Default(DefaultRecords.DefaultKey)
+        case User(UserRecords.UserKey)
+    }
+    
+    class func keyFor(defaultKey: UserDefaultKey) -> String {
+        switch defaultKey {
+        case .Default(let key):
+            return "Default\(key.rawValue)"
+        case .User(let key):
+            return "User\(key.rawValue)"
+        }
+    }
+}
+
+class DefaultRecords: UserDefaults {
+    enum DefaultKey: String {
+        case LastLocation = "lastLocation"
+    }
+    
     class var lastLocation: CLLocation? {
         get {
-            let key = UserDefaultKeys.lastLocation.rawValue
+            let key = UserDefaults.keyFor(.Default(.LastLocation))
             if let lat = get("\(key)-latitude") as? Double, lon = get("\(key)-longitude") as? Double {
                 return CLLocation(latitude: lat, longitude: lon)
             } else {
@@ -28,18 +43,9 @@ class UserDefaults {
             }
         }
         set {
-            let key = UserDefaultKeys.lastLocation.rawValue
+            let key = UserDefaults.keyFor(.Default(.LastLocation))
             set(newValue!.coordinate.latitude, forKey: "\(key)-latitude")
             set(newValue!.coordinate.longitude, forKey: "\(key)-longitude")
-        }
-    }
-    
-    class var profilePictureURL: String? {
-        get {
-            return get(UserDefaultKeys.profilePictureURL.rawValue) as? String
-        }
-        set {
-            set(newValue, forKey: UserDefaultKeys.profilePictureURL.rawValue)
         }
     }
 }
