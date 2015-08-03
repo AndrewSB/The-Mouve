@@ -49,7 +49,7 @@ extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewCo
         self.setViewControllers([sceneVCWithType(.Explore)], direction: .Forward, animated: true, completion: nil)
         
         self.view.backgroundColor = UIColor.whiteColor()
-        if let url = UserDefaults.profilePictureURL {
+        if let url = UserModel.sharedInstance.profilePictureUrl {
             Alamofire.request(.GET, url).response { (request, response, data, error) -> () in
                 if let data = data as NSData? {
                     let profileImage = UIImage(data: data)

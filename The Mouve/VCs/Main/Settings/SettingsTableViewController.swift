@@ -36,7 +36,11 @@ class SettingsTableViewController: UITableViewController {
             default: ()
             }
         case 1:
-            userRequestsController.sharedInstance.requestLogout()
+            UserModel.sharedInstance.logout(retryNum: 1, success: {
+                println("logged out")
+            }, failure: {
+                println("failed to log out \($0)")
+            })
         default: ()
         }
     }

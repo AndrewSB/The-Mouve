@@ -83,17 +83,12 @@ extension AppDelegate {
         }
     }
     
-//    func checkLogin() {
-//        //Checks that user is not nil
-//        let loggedIn = !userCredentials.sharedInstance.getToken().isEmpty
-//        if(loggedIn){
-//            println("logged in as \(userCredentials.sharedInstance.getEmail())")
-//        }
-//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
-//        window!.makeKeyAndVisible()
-//    }
-//
+    func checkLogin() {
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
+        window!.makeKeyAndVisible()
+    }
+
     func logOut() {
 
     }

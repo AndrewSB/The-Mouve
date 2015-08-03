@@ -106,8 +106,8 @@
 		46CC15CA1AFE1AAE003E3D9E /* AlertUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CC15C91AFE1AAE003E3D9E /* AlertUIView.swift */; };
 		46CC15CC1AFE1AB9003E3D9E /* AlertUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46CC15CB1AFE1AB9003E3D9E /* AlertUIView.xib */; };
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
-		46F263331B6F639E0007ECB9 /* AlamofireExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F263321B6F639E0007ECB9 /* AlamofireExtension.swift */; };
 		46F263381B6F697A0007ECB9 /* UserNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F263371B6F697A0007ECB9 /* UserNetworking.swift */; };
+		46F2633A1B6F6E7B0007ECB9 /* DefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F263391B6F6E7B0007ECB9 /* DefaultModel.swift */; };
 		7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78A1B1575AB005A1AF1 /* addImage.png */; };
 		7832E78D1B16C66F005A1AF1 /* Switch on image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78C1B16C66F005A1AF1 /* Switch on image.png */; };
 		78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */; };
@@ -124,7 +124,6 @@
 		9A53E6E71B65933E00BBD5BC /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A53E6E81B65933E00BBD5BC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E31B65932C00BBD5BC /* KeychainAccess.framework */; };
 		9A53E6E91B65933E00BBD5BC /* KeychainAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E31B65932C00BBD5BC /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9ABA887A1B54B17F0014D459 /* MouveStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA88791B54B17F0014D459 /* MouveStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -247,8 +246,8 @@
 		46CC15C91AFE1AAE003E3D9E /* AlertUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUIView.swift; sourceTree = "<group>"; };
 		46CC15CB1AFE1AB9003E3D9E /* AlertUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertUIView.xib; sourceTree = "<group>"; };
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
-		46F263321B6F639E0007ECB9 /* AlamofireExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireExtension.swift; sourceTree = "<group>"; };
 		46F263371B6F697A0007ECB9 /* UserNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNetworking.swift; sourceTree = "<group>"; };
+		46F263391B6F6E7B0007ECB9 /* DefaultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultModel.swift; sourceTree = "<group>"; };
 		7832E78A1B1575AB005A1AF1 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addImage.png; path = ../VCs/Main/addImage.png; sourceTree = "<group>"; };
 		7832E78C1B16C66F005A1AF1 /* Switch on image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Switch on image.png"; path = "../VCs/Main/Switch on image.png"; sourceTree = "<group>"; };
 		78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
@@ -260,7 +259,6 @@
 		9A4823361B58E40C004AD2BC /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = ../../Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		9A53E6E31B65932C00BBD5BC /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = SOURCE_ROOT; };
-		9ABA88791B54B17F0014D459 /* MouveStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MouveStore.swift; path = Models/MouveStore.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -481,7 +479,6 @@
 				460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */,
 				46042E581AEA230300089A5A /* UIViewExtension.swift */,
 				462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */,
-				46F263321B6F639E0007ECB9 /* AlamofireExtension.swift */,
 			);
 			name = Extension;
 			path = Internal/Extension;
@@ -553,8 +550,7 @@
 				46B29B7D1ADB2067000B9441 /* AppDelegate.swift */,
 				46ABE34C1B6D48E000DAD93C /* RequestRouter.swift */,
 				468D21681AF0864C00CE6E19 /* Event.swift */,
-				46ABE34E1B6D777600DAD93C /* UserModel.swift */,
-				46F263371B6F697A0007ECB9 /* UserNetworking.swift */,
+				46F2633B1B6F6E810007ECB9 /* Model */,
 				46B29BD11ADB21AD000B9441 /* VCs */,
 				46B29BD21ADB21D3000B9441 /* Resources */,
 				46B29B7B1ADB2067000B9441 /* Supporting Files */,
@@ -687,12 +683,21 @@
 			name = AlertUIView;
 			sourceTree = "<group>";
 		};
+		46F2633B1B6F6E810007ECB9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46F263391B6F6E7B0007ECB9 /* DefaultModel.swift */,
+				46ABE34E1B6D777600DAD93C /* UserModel.swift */,
+				46F263371B6F697A0007ECB9 /* UserNetworking.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		9AD259B11B5480A0003B5F57 /* Backend */ = {
 			isa = PBXGroup;
 			children = (
 				9A26978A1B6587330009F267 /* ServerRequests.swift */,
 				9A2697901B658FFB0009F267 /* User.swift */,
-				9ABA88791B54B17F0014D459 /* MouveStore.swift */,
 			);
 			name = Backend;
 			sourceTree = "<group>";
@@ -826,7 +831,6 @@
 				46AFB3631AF86AD2004D121A /* UnderlinedTextField.swift in Sources */,
 				4685F8C01B1C1FF3004D77E9 /* IQTextView.swift in Sources */,
 				46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */,
-				46F263331B6F639E0007ECB9 /* AlamofireExtension.swift in Sources */,
 				9A26978C1B6587330009F267 /* ServerRequests.swift in Sources */,
 				46CC15CA1AFE1AAE003E3D9E /* AlertUIView.swift in Sources */,
 				9A2697911B658FFB0009F267 /* User.swift in Sources */,
@@ -845,6 +849,7 @@
 				460FF5021AF87443007C6872 /* UIAlertControllerExtension.swift in Sources */,
 				4685F8BC1B1C1FF3004D77E9 /* IQKeyboardManagerConstants.swift in Sources */,
 				466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */,
+				46F2633A1B6F6E7B0007ECB9 /* DefaultModel.swift in Sources */,
 				46ABE34D1B6D48E000DAD93C /* RequestRouter.swift in Sources */,
 				46F263381B6F697A0007ECB9 /* UserNetworking.swift in Sources */,
 				46ABE34F1B6D777600DAD93C /* UserModel.swift in Sources */,
@@ -867,7 +872,6 @@
 				46B888D31AF9712F00D872E0 /* ActivityTableViewCell.swift in Sources */,
 				46AFB3671AF86CA1004D121A /* SignupViewController.swift in Sources */,
 				465AC9221B6F126300F76795 /* UIStoryboardExtension.swift in Sources */,
-				9ABA887A1B54B17F0014D459 /* MouveStore.swift in Sources */,
 				4673C1371AF6CA69000C034A /* TTTAttributedLabel.m in Sources */,
 				4610B7CA1B33DD3700377E1E /* Location.swift in Sources */,
 				4685F8BD1B1C1FF3004D77E9 /* IQKeyboardManagerConstantsInternal.swift in Sources */,

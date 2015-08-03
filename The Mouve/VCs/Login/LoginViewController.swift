@@ -31,8 +31,17 @@ class LoginViewController: UIViewController,UIAlertViewDelegate {
         view.userInteractionEnabled = false
         let loadingSpinnerView = addLoadingView()
         view.addSubview(loadingSpinnerView)
-        userRequestsController.sharedInstance.authUser(emailTextField.text, password: passwordTextField.text)
-                self.presentViewController(UIAlertController(title: "Ooops", message: "Wrong credentials... try again!"), animated: true, completion: nil)
+        
+        let email = emailTextField.text.lowercaseString
+        let password = passwordTextField.text
+        
+        UserModel.sharedInstance.login(email, password: password, retryNum: 3, success: {
+            println("success")
+            appDel.checkLogin()
+        }, failure: {
+            self.presentViewController(UIAlertController(title: "Couldn't login!", message: $0.message), animated: true, completion: nil)
+        })
+
         loadingSpinnerView.removeFromSuperview()
         
         view.userInteractionEnabled = true

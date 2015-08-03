@@ -11,7 +11,7 @@ import Alamofire
 
 class UserModel {
     static let sharedInstance = UserModel()
-    private lazy var records = UserRecords.self
+    lazy var records = UserRecords.self
     let defaultErrorMessage = "Looking for network..."
     
     var name: String? {
@@ -38,6 +38,12 @@ class UserModel {
         }
     }
     
+    var profilePictureUrl: String? {
+        get {
+            return records.profilePictureUrl
+        }
+    }
+    
     var loggedIn: Bool {
         get {
             return records.token != nil
@@ -56,13 +62,14 @@ internal class UserRecords: UserDefaults {
         case Token = "Token"
         case Password = "Password"
         case Id = "UserId"
+        case ProfilePictureUrl = "ProfilePictureUrl"
         
         static let allValues: [UserKey] = [.Name, .Email, .Token, .Password, .Id]
     }
     
     class var name: String? {
         get {
-        return get(UserDefaults.keyFor(.User(.Name))) as? String
+            return get(UserDefaults.keyFor(.User(.Name))) as? String
         }
         set {
             set(newValue, forKey: UserDefaults.keyFor(.User(.Name)))
@@ -71,7 +78,7 @@ internal class UserRecords: UserDefaults {
     
     class var email: String? {
         get {
-        return get(UserDefaults.keyFor(.User(.Email))) as? String
+            return get(UserDefaults.keyFor(.User(.Email))) as? String
         }
         set {
             set(newValue, forKey: UserDefaults.keyFor(.User(.Email)))
@@ -80,7 +87,7 @@ internal class UserRecords: UserDefaults {
     
     class var token: String? {
         get {
-        return get(UserDefaults.keyFor(.User(.Token))) as? String
+            return get(UserDefaults.keyFor(.User(.Token))) as? String
         }
         set {
             set(newValue, forKey: UserDefaults.keyFor(.User(.Token)))
@@ -89,7 +96,7 @@ internal class UserRecords: UserDefaults {
     
     class var password: String? {
         get {
-        return get(UserDefaults.keyFor(.User(.Password))) as? String
+            return get(UserDefaults.keyFor(.User(.Password))) as? String
         }
         set {
             set(newValue, forKey: UserDefaults.keyFor(.User(.Password)))
@@ -98,12 +105,22 @@ internal class UserRecords: UserDefaults {
     
     class var id: String? {
         get {
-        return get(UserDefaults.keyFor(.User(.Id))) as? String
+            return get(UserDefaults.keyFor(.User(.Id))) as? String
         }
         set {
             set(newValue, forKey: UserDefaults.keyFor(.User(.Id)))
         }
     }
+    
+    class var profilePictureUrl: String? {
+        get {
+            return get(UserDefaults.keyFor(.User(.ProfilePictureUrl))) as? String
+        }
+        set {
+            set(newValue, forKey: UserDefaults.keyFor(.User(.ProfilePictureUrl)))
+        }
+    }
+    
     
     class func nuke() {
         UserKey.allValues.map {

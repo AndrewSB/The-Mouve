@@ -45,8 +45,6 @@ class Event {
         self.invitees = invitees
         
         self.backgroundImage = backgroundImage
-        
-        super.init(className: "Events")
     }
     
     init(parseObject: PFObject) {
@@ -66,7 +64,5 @@ class Event {
         self.length = 100
         
         self.invitees = ["lol", "dsa", "dsaetd"]//parseObject["invitees"] as! [String]
-        
-        super.init(className: "Events")
     }
 }

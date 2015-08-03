@@ -30,7 +30,7 @@ class SignupViewController: UIViewController {
     }
 
     @IBAction func createAccountButtonWasHit(sender: AnyObject) {
-        userRequestsController.sharedInstance.createUser(nameTextField.text, username: usernameTextField.text, password: passwordTextField.text, email: emailTextField.text, fbId: fbId)
+//        userRequestsController.sharedInstance.createUser(nameTextField.text, username: usernameTextField.text, password: passwordTextField.text, email: emailTextField.text, fbId: fbId)
     }
     
     @IBAction func facebookButtonWasHit(sender: AnyObject) {

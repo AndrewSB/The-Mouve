@@ -11,23 +11,25 @@ import Alamofire
 
 extension UserModel {
     func login(email: String, password: String, retryNum: Int = 3, success: (() -> ()), failure: ((title: String, message : String, code : Int) -> ())) {
-        Alamofire.request(.UserAuth(["email": email, "password": password])).responseJSON { (_, _, JSON, error) in
-            if let response = JSON as [String: AnyObject]? {
-                if let userId = response["userid"], sessionId = response["session_id"] {
-                    self.userId = userId
-                    self.token = sessionId
-                    success()
-                    return
+        let params = ["email": email as AnyObject, "password": password as AnyObject]
+        request(RequestRouter.UserAuth(params)).responseJSON { _, _, JSON, error in
+            if let response = JSON as? [String: AnyObject] {
+                if let uID = response["userid"] as? String,
+                    sID = response["session_id"] as? String {
+                        self.records.id = uID
+                        self.records.token = sID
+                        success()
+                        return
                 }
-            }
-            
-            // TODO: HILAL: Get hilal to actually pass errors to me like this
-            // otherwise legit failure
-            if let message = response["userMsg"] as? String {
-                if let errorCode = response["code"] as? Int {
-                    let errorTitle = response["title"] ?? self.defaultErrorMessage
-                    failure(title: errorTitle, message: message, code: errorCode)
-                    return
+                
+                // TODO: HILAL: Get hilal to actually pass errors to me like this
+                // otherwise legit failure
+                if let message = response["userMsg"] as? String {
+                    if let errorCode = response["code"] as? Int {
+                        let errorTitle = response["title"] as? String ?? self.defaultErrorMessage
+                        failure(title: errorTitle, message: message, code: errorCode)
+                        return
+                    }
                 }
             }
             
@@ -50,19 +52,22 @@ extension UserModel {
     }
     
     func logout(retryNum: Int = 3, success: (() -> ()), failure: ((title: String, message : String, code : Int) -> ())) {
-        Alamofire.request(.UserLogout).responseJSON { (_, _, JSON, error) in
-            if let response = JSON as? [String: AnyObject]? {
+        
+        Alamofire.request(RequestRouter.UserLogout).responseJSON { _, _, JSON, error in
+            if let response = JSON as? [String: AnyObject] {
+                // legitFailure
+                if let message = response["userMsg"] as? String {
+                    if let errorCode = response["code"] as? Int {
+                        let errorTitle = response["title"] as? String ?? self.defaultErrorMessage
+                        failure(title: errorTitle, message: message, code: errorCode)
+                        return
+                    }
+                }
+                
+                // TODO: one more check - tell hilal to give me some response
                 UserModel.sharedInstance.nuke()
                 return
-            }
             
-            // legitFailure
-            if let message = response["userMsg"] as? String {
-                if let errorCode = response["code"] as? Int {
-                    let errorTitle = response["title"] ?? self.defaultErrorMessage
-                    failure(title: errorTitle, message: message, code: errorCode)
-                    return
-                }
             }
     
             
