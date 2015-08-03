@@ -16,11 +16,14 @@ enum RequestRouter: URLRequestConvertible {
     static let baseURLString = "http://mouve.ngrok.io"
     
     case UserAuth([String: AnyObject])
+    case UserLogout
     
     var authRequired: Bool {
         switch self {
         case .UserAuth:
             return true
+        case .UserLogout:
+            return false
         }
     }
     
@@ -28,12 +31,14 @@ enum RequestRouter: URLRequestConvertible {
         switch self {
         case .UserAuth:
             return .POST
+        case .UserLogout:
+            return .DELETE
         }
     }
     
     var contentType: String {
         switch self {
-        case .UserAuth:
+        case .UserAuth, .UserLogout:
             return "application/json"
         }
     }
@@ -42,6 +47,8 @@ enum RequestRouter: URLRequestConvertible {
         switch self {
         case .UserAuth:
             return "/api/users/login"
+        case .UserLogout:
+            return "api/users/logout"
         }
     }
     
@@ -67,6 +74,9 @@ enum RequestRouter: URLRequestConvertible {
         case .UserAuth(let parameters):
             mutableURLRequest.timeoutInterval = 15
             return ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
+        case .UserLogout:
+            mutableURLRequest.timeoutInterval = 15
+            return ParameterEncoding.URL.encode(mutableURLRequest, parameters: nil).0
         }
         
     }
