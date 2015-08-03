@@ -26,17 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             clientKey: "5SqHFJOslPl9TB9CPbuowXkCpidAOfoIKIXgSqU4")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
 
-//        let loggedIn = PFUser.currentUser() != nil
-//        
-//        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-//        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
-//        window!.makeKeyAndVisible()
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window!.rootViewController = UIStoryboard.initialIn(storyboard: loggedIn ? .Main : .Login)
+        window!.makeKeyAndVisible()
         
         IQKeyboardManager.sharedManager().enable = true
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
         
-        changeNavBar()
-        
+        tintNavBar()
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
@@ -66,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate {
-    func changeNavBar() {
+    func tintNavBar() {
         UINavigationBar.appearance().titleTextAttributes = [NSFontAttributeName : UIFont(name: "HalisGR-Regular", size: 14)!, NSForegroundColorAttributeName : UIColor.blackColor()]
         
         // Added code here to change Tab Bar Tint & Text Colour. Delete to restore default settings.
@@ -80,9 +77,9 @@ extension AppDelegate {
     
     }
     
-    class var loggedIn: Bool {
+    var loggedIn: Bool {
         get {
-            return true
+            return UserModel.token == nil
         }
     }
     
@@ -96,7 +93,7 @@ extension AppDelegate {
 //        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
 //        window!.makeKeyAndVisible()
 //    }
-//    
+//
     func logOut() {
 
     }

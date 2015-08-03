@@ -23,6 +23,7 @@
 		464B2DC71AFD79890095FB83 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B2DC61AFD79890095FB83 /* OutlinedButton.swift */; };
 		464B2DC91AFD79960095FB83 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464B2DC81AFD79960095FB83 /* FilledButton.swift */; };
 		464B2DCB1AFD79960095FB83 /* HalisGR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 464B2DCA1AFD79960095FB83 /* HalisGR-Light.otf */; };
+		465AC9221B6F126300F76795 /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465AC9211B6F126300F76795 /* UIStoryboardExtension.swift */; };
 		466A35471AF0506900E82FFD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466A35461AF0506900E82FFD /* ProfileViewController.swift */; };
 		4673C11A1AF6C857000C034A /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4673C1101AF6C857000C034A /* Bolts.framework */; };
 		4673C11B1AF6C857000C034A /* FacebookSDK.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4673C1111AF6C857000C034A /* FacebookSDK.strings */; };
@@ -159,6 +160,7 @@
 		464B2DC61AFD79890095FB83 /* OutlinedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
 		464B2DC81AFD79960095FB83 /* FilledButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
 		464B2DCA1AFD79960095FB83 /* HalisGR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HalisGR-Light.otf"; sourceTree = "<group>"; };
+		465AC9211B6F126300F76795 /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
 		466A35461AF0506900E82FFD /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4673C1101AF6C857000C034A /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		4673C1111AF6C857000C034A /* FacebookSDK.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = FacebookSDK.strings; sourceTree = "<group>"; };
@@ -470,6 +472,7 @@
 				46AC422A1B36EDBB000BAB24 /* CollectionExtension.swift */,
 				469C43631ADEEB4900D6A510 /* CGGeometeryExtension.swift */,
 				46BFFD531B36BF220060DF33 /* UIImageExtension.swift */,
+				465AC9211B6F126300F76795 /* UIStoryboardExtension.swift */,
 				46C7AAB11AF9FBF9006B361E /* NSDateExtension.swift */,
 				460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */,
 				46042E581AEA230300089A5A /* UIViewExtension.swift */,
@@ -855,6 +858,7 @@
 				460FF5091AF87EA7007C6872 /* DetailViewController.swift in Sources */,
 				46B888D31AF9712F00D872E0 /* ActivityTableViewCell.swift in Sources */,
 				46AFB3671AF86CA1004D121A /* SignupViewController.swift in Sources */,
+				465AC9221B6F126300F76795 /* UIStoryboardExtension.swift in Sources */,
 				9ABA887A1B54B17F0014D459 /* MouveStore.swift in Sources */,
 				4673C1371AF6CA69000C034A /* TTTAttributedLabel.m in Sources */,
 				4610B7CA1B33DD3700377E1E /* Location.swift in Sources */,

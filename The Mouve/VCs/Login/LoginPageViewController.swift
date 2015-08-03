@@ -40,19 +40,19 @@ class LoginPageViewController: UIPageViewController {
 
 extension LoginPageViewController { //View code
     func addStaticViewElements() {
-        self.pageControl = UIPageControl(frame: CGRect(view: view, height: 22, width: 44))
+        self.pageControl = UIPageControl(frame: CGRect(inCenterOf: view, height: 22, width: 44))
         pageControl!.numberOfPages = 3
-        
-        let mouveImageView = UIImageView(frame: CGRect(view: view, height: 44, width: 38))
+                
+        let mouveImageView = UIImageView(frame: CGRect(inCenterOf: view, height: 44, width: 38))
         mouveImageView.frame.origin.y -= (self.view.frame.height*3 / 9)
         mouveImageView.image = UIImage(named: "mouve-icon")
         
-        let loginButton = OutlinedButton(frame: CGRect(view: view, height: 36, width: 200), color: UIColor.seaFoamGreen())
+        let loginButton = OutlinedButton(frame: CGRect(inCenterOf: view, height: 36, width: 200), color: UIColor.seaFoamGreen())
         loginButton.addTarget(self, action: Selector("loginButtonWasHit:"), forControlEvents: .TouchUpInside)
         loginButton.setTitle("Login", forState: .Normal)
         loginButton.frame.origin.y += (self.view.frame.height / 4) - 50
         
-        let signupButton = FilledButton(frame: CGRect(view: view, height: 36, width: 200), color: UIColor.seaFoamGreen())
+        let signupButton = FilledButton(frame: CGRect(inCenterOf: view, height: 36, width: 200), color: UIColor.seaFoamGreen())
         signupButton.addTarget(self, action: Selector("signupButtonWasHit:"), forControlEvents: .TouchUpInside)
         signupButton.setTitle("Sign up", forState: .Normal)
         signupButton.frame.origin.y += (self.view.frame.height / 4) + 15
@@ -80,15 +80,6 @@ extension LoginPageViewController { //View code
     
     func skipButtonWasHit(sender: AnyObject) {
         UIAlertController(title: "The Mouve", message: "Sorry, but this feature isn't available")
-//        let loader = addSpinnerAndStall()
-//        
-//        PFAnonymousUtils.logInWithBlock { (user, error) -> Void in
-//            if error != nil || user == nil {
-//                self.presentViewController(UIAlertController(title: "Couldn't anonymously login", message: error!.localizedDescription), animated: true, completion: nil)
-//            }
-//            self.bringAliveAndRemove(loader)
-//            appDel.checkLogin()
-//        }
     }
 }
 
