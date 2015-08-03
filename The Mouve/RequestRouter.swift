@@ -9,36 +9,39 @@
 import UIKit
 import Alamofire
 
+typealias success = (() -> ())
+typealias failure = ((title: String, message : String, code : Int) -> ())
+
 enum RequestRouter: URLRequestConvertible {
     static let baseURLString = "http://mouve.ngrok.io"
     
-    case LoginUser(String)
+    case UserAuth([String: AnyObject])
     
     var authRequired: Bool {
         switch self {
-        case .LoginUser(let parameters):
+        case .UserAuth:
             return true
         }
     }
     
     var method: Alamofire.Method {
         switch self {
-        case .LoginUser(let parameters):
-            return .GET
+        case .UserAuth:
+            return .POST
         }
     }
     
     var contentType: String {
         switch self {
-        case .LoginUser(let parameters):
+        case .UserAuth:
             return "application/json"
         }
     }
     
     var path: String {
         switch self {
-        case .LoginUser(let parameters):
-            return "/login"
+        case .UserAuth:
+            return "/api/users/login"
         }
     }
     
@@ -46,16 +49,6 @@ enum RequestRouter: URLRequestConvertible {
         let URL = NSURL(string: RequestRouter.baseURLString)!
         var timeout: NSTimeInterval = 25
         var pathURL = URL.URLByAppendingPathComponent(path)
-        
-        switch self {
-        case .LoginUser(let parameters):
-            if let pathURLString = pathURL.absoluteString {
-                var finalURLString = pathURLString // + other path params
-                if let finalURL = NSURL(string: finalURLString) {
-                    pathURL = finalURL
-                }
-            }
-        }
     
         
         let mutableURLRequest = NSMutableURLRequest(URL: pathURL)
@@ -66,8 +59,15 @@ enum RequestRouter: URLRequestConvertible {
         mutableURLRequest.setValue(contentType, forHTTPHeaderField: "Content-Type")
         
         if authRequired {
-            let token = UserModel.sharedInstance.userRecord.accessToken
-            mutableURLRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            let token = UserModel.sharedInstance.token!
+            mutableURLRequest.setValue(token, forHTTPHeaderField: "Authorization")
         }
+        
+        switch self {
+        case .UserAuth(let parameters):
+            mutableURLRequest.timeoutInterval = 15
+            return ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
+        }
+        
     }
 }

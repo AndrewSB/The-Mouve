@@ -106,6 +106,7 @@
 		46CC15CA1AFE1AAE003E3D9E /* AlertUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CC15C91AFE1AAE003E3D9E /* AlertUIView.swift */; };
 		46CC15CC1AFE1AB9003E3D9E /* AlertUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46CC15CB1AFE1AB9003E3D9E /* AlertUIView.xib */; };
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
+		46F263331B6F639E0007ECB9 /* AlamofireExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F263321B6F639E0007ECB9 /* AlamofireExtension.swift */; };
 		7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78A1B1575AB005A1AF1 /* addImage.png */; };
 		7832E78D1B16C66F005A1AF1 /* Switch on image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78C1B16C66F005A1AF1 /* Switch on image.png */; };
 		78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */; };
@@ -245,6 +246,7 @@
 		46CC15C91AFE1AAE003E3D9E /* AlertUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertUIView.swift; sourceTree = "<group>"; };
 		46CC15CB1AFE1AB9003E3D9E /* AlertUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertUIView.xib; sourceTree = "<group>"; };
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		46F263321B6F639E0007ECB9 /* AlamofireExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireExtension.swift; sourceTree = "<group>"; };
 		7832E78A1B1575AB005A1AF1 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addImage.png; path = ../VCs/Main/addImage.png; sourceTree = "<group>"; };
 		7832E78C1B16C66F005A1AF1 /* Switch on image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Switch on image.png"; path = "../VCs/Main/Switch on image.png"; sourceTree = "<group>"; };
 		78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
@@ -477,6 +479,7 @@
 				460FF5011AF87443007C6872 /* UIAlertControllerExtension.swift */,
 				46042E581AEA230300089A5A /* UIViewExtension.swift */,
 				462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */,
+				46F263321B6F639E0007ECB9 /* AlamofireExtension.swift */,
 			);
 			name = Extension;
 			path = Internal/Extension;
@@ -820,6 +823,7 @@
 				46AFB3631AF86AD2004D121A /* UnderlinedTextField.swift in Sources */,
 				4685F8C01B1C1FF3004D77E9 /* IQTextView.swift in Sources */,
 				46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */,
+				46F263331B6F639E0007ECB9 /* AlamofireExtension.swift in Sources */,
 				9A26978C1B6587330009F267 /* ServerRequests.swift in Sources */,
 				46CC15CA1AFE1AAE003E3D9E /* AlertUIView.swift in Sources */,
 				9A2697911B658FFB0009F267 /* User.swift in Sources */,

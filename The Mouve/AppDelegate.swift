@@ -79,7 +79,7 @@ extension AppDelegate {
     
     var loggedIn: Bool {
         get {
-            return UserModel.token == nil
+            return UserModel.sharedInstance.token == nil
         }
     }
     

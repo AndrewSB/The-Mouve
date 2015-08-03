@@ -80,7 +80,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return fakeEvents.count
+        return 0 // fakeEvents.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -94,7 +94,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
         
-        cell.event = fakeEvents[indexPath.section]
+//        cell.event = fakeEvents[indexPath.section]
         
         return cell
     }
