@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enableAutoToolbar = false
         
         tintNavBar()
+        println("token is \(UserModel.sharedInstance.token)")
         
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
@@ -79,7 +80,7 @@ extension AppDelegate {
     
     var loggedIn: Bool {
         get {
-            return UserModel.sharedInstance.token == nil
+            return UserModel.sharedInstance.token != nil
         }
     }
     

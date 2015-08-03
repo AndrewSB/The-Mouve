@@ -31,7 +31,7 @@ extension UserModel {
                         return
                     }
                 }
-            }
+            } else { println("mother fuck") }
             
             //remove after implementing retries
             return

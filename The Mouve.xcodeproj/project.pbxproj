@@ -108,6 +108,8 @@
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
 		46F263381B6F697A0007ECB9 /* UserNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F263371B6F697A0007ECB9 /* UserNetworking.swift */; };
 		46F2633A1B6F6E7B0007ECB9 /* DefaultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F263391B6F6E7B0007ECB9 /* DefaultModel.swift */; };
+		46F2633D1B6F728B0007ECB9 /* MouveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2633C1B6F728B0007ECB9 /* MouveModel.swift */; };
+		46F2633F1B6F72C90007ECB9 /* MouveNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F2633E1B6F72C90007ECB9 /* MouveNetworking.swift */; };
 		7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78A1B1575AB005A1AF1 /* addImage.png */; };
 		7832E78D1B16C66F005A1AF1 /* Switch on image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78C1B16C66F005A1AF1 /* Switch on image.png */; };
 		78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */; };
@@ -248,6 +250,8 @@
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		46F263371B6F697A0007ECB9 /* UserNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserNetworking.swift; sourceTree = "<group>"; };
 		46F263391B6F6E7B0007ECB9 /* DefaultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultModel.swift; sourceTree = "<group>"; };
+		46F2633C1B6F728B0007ECB9 /* MouveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouveModel.swift; sourceTree = "<group>"; };
+		46F2633E1B6F72C90007ECB9 /* MouveNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouveNetworking.swift; sourceTree = "<group>"; };
 		7832E78A1B1575AB005A1AF1 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addImage.png; path = ../VCs/Main/addImage.png; sourceTree = "<group>"; };
 		7832E78C1B16C66F005A1AF1 /* Switch on image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Switch on image.png"; path = "../VCs/Main/Switch on image.png"; sourceTree = "<group>"; };
 		78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
@@ -465,7 +469,7 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		468D216A1AF086F800CE6E19 /* Extension */ = {
+		468D216A1AF086F800CE6E19 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				46CC15C51AFDF6A1003E3D9E /* IntExtension.swift */,
@@ -480,18 +484,18 @@
 				46042E581AEA230300089A5A /* UIViewExtension.swift */,
 				462B68DE1AEC77900040C7DD /* UIViewControllerExtension.swift */,
 			);
-			name = Extension;
+			name = Extensions;
 			path = Internal/Extension;
 			sourceTree = "<group>";
 		};
-		468D216B1AF0870000CE6E19 /* Helper */ = {
+		468D216B1AF0870000CE6E19 /* Singletons */ = {
 			isa = PBXGroup;
 			children = (
 				4610B7C91B33DD3700377E1E /* Location.swift */,
 				462B68DA1AEC5CF90040C7DD /* UserDefaults.swift */,
 				462B68DC1AEC5D010040C7DD /* LocalMessage.swift */,
 			);
-			name = Helper;
+			name = Singletons;
 			path = Internal/Helper;
 			sourceTree = "<group>";
 		};
@@ -546,12 +550,12 @@
 		46B29B7A1ADB2067000B9441 /* The Mouve */ = {
 			isa = PBXGroup;
 			children = (
-				9AD259B11B5480A0003B5F57 /* Backend */,
+				9AD259B11B5480A0003B5F57 /* to be deleted */,
 				46B29B7D1ADB2067000B9441 /* AppDelegate.swift */,
 				46ABE34C1B6D48E000DAD93C /* RequestRouter.swift */,
 				468D21681AF0864C00CE6E19 /* Event.swift */,
 				46F2633B1B6F6E810007ECB9 /* Model */,
-				46B29BD11ADB21AD000B9441 /* VCs */,
+				46B29BD11ADB21AD000B9441 /* Views */,
 				46B29BD21ADB21D3000B9441 /* Resources */,
 				46B29B7B1ADB2067000B9441 /* Supporting Files */,
 			);
@@ -639,12 +643,13 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		46B29BD11ADB21AD000B9441 /* VCs */ = {
+		46B29BD11ADB21AD000B9441 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				46B29BD01ADB21A8000B9441 /* Login */,
 				46B29BCF1ADB21A4000B9441 /* Main */,
 			);
+			name = Views;
 			path = VCs;
 			sourceTree = "<group>";
 		};
@@ -667,9 +672,9 @@
 		46B29BD61ADB221A000B9441 /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				468D216B1AF0870000CE6E19 /* Helper */,
+				468D216B1AF0870000CE6E19 /* Singletons */,
 				460FF5081AF8795A007C6872 /* UI Elements */,
-				468D216A1AF086F800CE6E19 /* Extension */,
+				468D216A1AF086F800CE6E19 /* Extensions */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -689,17 +694,19 @@
 				46F263391B6F6E7B0007ECB9 /* DefaultModel.swift */,
 				46ABE34E1B6D777600DAD93C /* UserModel.swift */,
 				46F263371B6F697A0007ECB9 /* UserNetworking.swift */,
+				46F2633C1B6F728B0007ECB9 /* MouveModel.swift */,
+				46F2633E1B6F72C90007ECB9 /* MouveNetworking.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
 		};
-		9AD259B11B5480A0003B5F57 /* Backend */ = {
+		9AD259B11B5480A0003B5F57 /* to be deleted */ = {
 			isa = PBXGroup;
 			children = (
 				9A26978A1B6587330009F267 /* ServerRequests.swift */,
 				9A2697901B658FFB0009F267 /* User.swift */,
 			);
-			name = Backend;
+			name = "to be deleted";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -821,6 +828,7 @@
 				46AFB3651AF86C9A004D121A /* LoginViewController.swift in Sources */,
 				464B2DC71AFD79890095FB83 /* OutlinedButton.swift in Sources */,
 				46AC422B1B36EDBB000BAB24 /* CollectionExtension.swift in Sources */,
+				46F2633D1B6F728B0007ECB9 /* MouveModel.swift in Sources */,
 				4685F8BE1B1C1FF3004D77E9 /* IQKeyboardManager.swift in Sources */,
 				4685F8B91B1C1FF3004D77E9 /* IQNSArray+Sort.swift in Sources */,
 				462B68DD1AEC5D010040C7DD /* LocalMessage.swift in Sources */,
@@ -858,6 +866,7 @@
 				46B888C41AF94C3E00D872E0 /* GreyGreenButton.swift in Sources */,
 				4685F8BF1B1C1FF3004D77E9 /* IQKeyboardReturnKeyHandler.swift in Sources */,
 				462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */,
+				46F2633F1B6F72C90007ECB9 /* MouveNetworking.swift in Sources */,
 				46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */,
 				4685F8BB1B1C1FF3004D77E9 /* IQUIWindow+Hierarchy.swift in Sources */,
 				46C7AAB21AF9FBF9006B361E /* NSDateExtension.swift in Sources */,

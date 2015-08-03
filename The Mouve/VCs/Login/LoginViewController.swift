@@ -39,6 +39,7 @@ class LoginViewController: UIViewController,UIAlertViewDelegate {
             println("success")
             appDel.checkLogin()
         }, failure: {
+            println("failed")
             self.presentViewController(UIAlertController(title: "Couldn't login!", message: $0.message), animated: true, completion: nil)
         })
 
