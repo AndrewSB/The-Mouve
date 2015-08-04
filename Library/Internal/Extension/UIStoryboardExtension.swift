@@ -11,11 +11,15 @@ import UIKit
 extension UIStoryboard {
     
     enum Named: String {
-        case Main = "Main"
         case Login = "Login"
+        
+        case TheScene = "Scene"
+        case Activity = "Activity"
+        case Profile = "Profile"
+        case Settings = "Settings"
     }
     
-    class func initialIn(storyboard storyboardEnum: Named) -> UIViewController {
+    class func initialIn(storyboardEnum: Named) -> UIViewController {
         let storyboardName = storyboardEnum.rawValue
         return UIStoryboard.initialIn(storyboard: storyboardName)
     }

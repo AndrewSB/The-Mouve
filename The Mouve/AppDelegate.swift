@@ -17,7 +17,11 @@ let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    // added as psuedo singletons; for restoration and memory management
+    lazy var loginView = UIStoryboard.initialIn(.Login)
+    lazy var homeView = HomeTabBarController()
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])
         
@@ -27,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.rootViewController = UIStoryboard.initialIn(storyboard: loggedIn ? .Main : .Login)
+        window!.rootViewController = loggedIn ? homeView : loginView
         window!.makeKeyAndVisible()
         
         IQKeyboardManager.sharedManager().enable = true
@@ -86,7 +90,7 @@ extension AppDelegate {
     
     func checkLogin() {
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
+        window!.rootViewController = loggedIn ? homeView : loginView
         window!.makeKeyAndVisible()
     }
 

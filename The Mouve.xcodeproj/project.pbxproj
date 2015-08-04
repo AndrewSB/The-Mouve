@@ -42,6 +42,11 @@
 		4673C1301AF6C951000C034A /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4673C12A1AF6C951000C034A /* ParseUI.framework */; };
 		4673C1341AF6CA36000C034A /* Toucan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4673C1321AF6CA36000C034A /* Toucan.framework */; };
 		4673C1371AF6CA69000C034A /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4673C1361AF6CA69000C034A /* TTTAttributedLabel.m */; };
+		4678B9621B706F7C004F241F /* Scene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4678B9611B706F7C004F241F /* Scene.storyboard */; };
+		4678B9641B706F86004F241F /* Activity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4678B9631B706F86004F241F /* Activity.storyboard */; };
+		4678B9661B706F8F004F241F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4678B9651B706F8F004F241F /* Profile.storyboard */; };
+		4678B9681B706F97004F241F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4678B9671B706F97004F241F /* Settings.storyboard */; };
+		4678B96A1B706FB6004F241F /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4678B9691B706FB6004F241F /* HomeTabBarController.swift */; };
 		4685F8B91B1C1FF3004D77E9 /* IQNSArray+Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4685F8A81B1C1FF3004D77E9 /* IQNSArray+Sort.swift */; };
 		4685F8BA1B1C1FF3004D77E9 /* IQUIView+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4685F8A91B1C1FF3004D77E9 /* IQUIView+Hierarchy.swift */; };
 		4685F8BB1B1C1FF3004D77E9 /* IQUIWindow+Hierarchy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4685F8AA1B1C1FF3004D77E9 /* IQUIWindow+Hierarchy.swift */; };
@@ -85,7 +90,6 @@
 		46B29BC91ADB219C000B9441 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B29BC31ADB219C000B9441 /* Login.storyboard */; };
 		46B29BCA1ADB219C000B9441 /* LoginPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC41ADB219C000B9441 /* LoginPageViewController.swift */; };
 		46B29BCB1ADB219C000B9441 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC51ADB219C000B9441 /* TutorialViewController.swift */; };
-		46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46B29BC61ADB219C000B9441 /* Main.storyboard */; };
 		46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC71ADB219C000B9441 /* SceneFeedViewController.swift */; };
 		46B29BCE1ADB219C000B9441 /* HomeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */; };
 		46B888C21AF8801000D872E0 /* DetailPostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B888C11AF8801000D872E0 /* DetailPostTableViewCell.swift */; };
@@ -185,6 +189,11 @@
 		4673C1321AF6CA36000C034A /* Toucan.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Toucan.framework; path = Carthage/Build/iOS/Toucan.framework; sourceTree = SOURCE_ROOT; };
 		4673C1351AF6CA69000C034A /* TTTAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTTAttributedLabel.h; path = Carthage/Checkouts/TTTAttributedLabel/TTTAttributedLabel/TTTAttributedLabel.h; sourceTree = SOURCE_ROOT; };
 		4673C1361AF6CA69000C034A /* TTTAttributedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TTTAttributedLabel.m; path = Carthage/Checkouts/TTTAttributedLabel/TTTAttributedLabel/TTTAttributedLabel.m; sourceTree = SOURCE_ROOT; };
+		4678B9611B706F7C004F241F /* Scene.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Scene.storyboard; sourceTree = "<group>"; };
+		4678B9631B706F86004F241F /* Activity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Activity.storyboard; sourceTree = "<group>"; };
+		4678B9651B706F8F004F241F /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		4678B9671B706F97004F241F /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		4678B9691B706FB6004F241F /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		4685F8A81B1C1FF3004D77E9 /* IQNSArray+Sort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQNSArray+Sort.swift"; sourceTree = "<group>"; };
 		4685F8A91B1C1FF3004D77E9 /* IQUIView+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIView+Hierarchy.swift"; sourceTree = "<group>"; };
 		4685F8AA1B1C1FF3004D77E9 /* IQUIWindow+Hierarchy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IQUIWindow+Hierarchy.swift"; sourceTree = "<group>"; };
@@ -233,7 +242,6 @@
 		46B29BC31ADB219C000B9441 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		46B29BC41ADB219C000B9441 /* LoginPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPageViewController.swift; sourceTree = "<group>"; };
 		46B29BC51ADB219C000B9441 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
-		46B29BC61ADB219C000B9441 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		46B29BC71ADB219C000B9441 /* SceneFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneFeedViewController.swift; sourceTree = "<group>"; };
 		46B29BC81ADB219C000B9441 /* HomeEventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEventTableViewCell.swift; sourceTree = "<group>"; };
 		46B888C11AF8801000D872E0 /* DetailPostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPostTableViewCell.swift; sourceTree = "<group>"; };
@@ -325,6 +333,7 @@
 		462B68D41AEC55CD0040C7DD /* The Scene */ = {
 			isa = PBXGroup;
 			children = (
+				4678B9611B706F7C004F241F /* Scene.storyboard */,
 				46B888D01AF95CD400D872E0 /* AddMouveViewController.swift */,
 				469C43791ADF10BA00D6A510 /* Master */,
 				469C437C1ADF10DC00D6A510 /* Detail */,
@@ -335,6 +344,7 @@
 		462B68D91AEC57F50040C7DD /* Activity */ = {
 			isa = PBXGroup;
 			children = (
+				4678B9631B706F86004F241F /* Activity.storyboard */,
 				46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */,
 				462B68D51AEC55E60040C7DD /* ActivityPageViewController.swift */,
 				462B68D71AEC57E40040C7DD /* ActivityTableViewController.swift */,
@@ -346,6 +356,7 @@
 		466A35481AF0506E00E82FFD /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				4678B9651B706F8F004F241F /* Profile.storyboard */,
 				466A35461AF0506900E82FFD /* ProfileViewController.swift */,
 			);
 			path = Profile;
@@ -464,6 +475,7 @@
 		468D21641AF082A000CE6E19 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				4678B9671B706F97004F241F /* Settings.storyboard */,
 				468D21621AF0829C00CE6E19 /* SettingsTableViewController.swift */,
 			);
 			path = Settings;
@@ -622,7 +634,7 @@
 		46B29BCF1ADB21A4000B9441 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				46B29BC61ADB219C000B9441 /* Main.storyboard */,
+				4678B9691B706FB6004F241F /* HomeTabBarController.swift */,
 				462B68D41AEC55CD0040C7DD /* The Scene */,
 				462B68D91AEC57F50040C7DD /* Activity */,
 				466A35481AF0506E00E82FFD /* Profile */,
@@ -777,19 +789,22 @@
 				464B2DCB1AFD79960095FB83 /* HalisGR-Light.otf in Resources */,
 				9A0E64F81B58C1360002547D /* Cartfile.resolved in Resources */,
 				46CC15CC1AFE1AB9003E3D9E /* AlertUIView.xib in Resources */,
+				4678B9641B706F86004F241F /* Activity.storyboard in Resources */,
 				7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */,
 				46B29B881ADB2067000B9441 /* LaunchScreen.xib in Resources */,
 				7832E78D1B16C66F005A1AF1 /* Switch on image.png in Resources */,
 				469C436C1ADEF96A00D6A510 /* HalisGR-Book.otf in Resources */,
+				4678B9621B706F7C004F241F /* Scene.storyboard in Resources */,
 				4673C1221AF6C857000C034A /* LICENSE in Resources */,
 				4685F8C51B1C1FF3004D77E9 /* IQKeyboardManager.bundle in Resources */,
 				46C7D0511AEA25F200E11AC2 /* SceneTitleView.xib in Resources */,
 				46B29B851ADB2067000B9441 /* Images.xcassets in Resources */,
 				9A0E64F71B58C1360002547D /* Cartfile in Resources */,
 				46B29BC91ADB219C000B9441 /* Login.storyboard in Resources */,
-				46B29BCC1ADB219C000B9441 /* Main.storyboard in Resources */,
 				4673C11D1AF6C857000C034A /* FBAudienceNetwork.README.txt in Resources */,
 				469C436E1ADEF96F00D6A510 /* HalisGR-Regular-Italic.otf in Resources */,
+				4678B9661B706F8F004F241F /* Profile.storyboard in Resources */,
+				4678B9681B706F97004F241F /* Settings.storyboard in Resources */,
 				4673C11B1AF6C857000C034A /* FacebookSDK.strings in Resources */,
 				469C436D1ADEF96D00D6A510 /* HalisGR-Medium.otf in Resources */,
 				469C436B1ADEF96700D6A510 /* HalisGR-Regular.otf in Resources */,
@@ -845,6 +860,7 @@
 				78CFBD141B192F5D002AE6A2 /* TimeRangeSlider.swift in Sources */,
 				46B888C21AF8801000D872E0 /* DetailPostTableViewCell.swift in Sources */,
 				4685F8BA1B1C1FF3004D77E9 /* IQUIView+Hierarchy.swift in Sources */,
+				4678B96A1B706FB6004F241F /* HomeTabBarController.swift in Sources */,
 				46CC15C61AFDF6A1003E3D9E /* IntExtension.swift in Sources */,
 				78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */,
 				462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */,
