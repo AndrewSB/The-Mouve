@@ -94,6 +94,11 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        super.prepareForSegue(segue, sender: sender)
+        println("segueing with sender \(sender)")
+    }
 }
 
 

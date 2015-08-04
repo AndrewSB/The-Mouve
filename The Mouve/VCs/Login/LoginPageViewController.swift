@@ -79,7 +79,10 @@ extension LoginPageViewController { //View code
     }
     
     func skipButtonWasHit(sender: AnyObject) {
-        UIAlertController(title: "The Mouve", message: "Sorry, but this feature isn't available")
+        self.presentViewController(UIAlertController(title: "Say thank you to Andrew", message: "I made this instead of bypassing it"), animated: true) {
+            UserModel.sharedInstance.records.token = "dummy"
+            appDel.checkLogin()
+        }
     }
 }
 
