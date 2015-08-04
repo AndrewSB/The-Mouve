@@ -82,22 +82,27 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     }
 
     @IBAction func postMouveButtonWasHit(sender: AnyObject) {
-//        let newMouve = Event(name: titleEventTextField.text, about: "", time: NSDate(timeInterval: 80, sinceDate: NSDate()), length: 100, address: locationTextField.text, invitees: ["lol"], backgroundImage: eventImageButton!.backgroundImageForState(.Normal)!)
-//                    println("current events num:\(persistentData.sharedInstance.mouveArray.count)")
-//        persistentData.sharedInstance.addMouve(titleEventTextField.text, details: "", image: "http://google.com", startTime: NSDate(), endTime: NSDate(timeIntervalSinceNow: 10))
-//            println("event created success:\(persistentData.sharedInstance.mouveArray.count)")
+        let newMouve = Event(name: titleEventTextField.text, about: "", time: NSDate(timeInterval: 80, sinceDate: NSDate()), length: 100, address: locationTextField.text, invitees: ["lol"], backgroundImage: eventImageButton!.backgroundImageForState(.Normal)!)
 
-//        newMouve.location = UserDefaults.lastLocation!
+        newMouve.location = DefaultModel.sharedInstance.lastLocation
         
-//        let remoteMouve = PFObject(event: newMouve)
-//        remoteMouve.saveInBackground()
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.performSegueWithIdentifier("unwindToTheScene", sender: newMouve)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-        println("segueing with sender \(sender)")
+        
+        if let des = segue.destinationViewController as? TheScenePageViewController {
+            if let sender = sender as? Event {
+                let sceneVC = des.viewControllers[0] as! SceneFeedViewController
+                
+                if sceneVC.feedData != nil {
+                    sceneVC.feedData!.insert(sender, atIndex: 0)
+                } else {
+                    sceneVC.feedData = [sender]
+                }
+            }
+        }
     }
 }
 
