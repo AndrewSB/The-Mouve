@@ -11,15 +11,16 @@ class TimeRangeSlider: RangeSlider {
     lazy var timeShift: Double = self.timeToDouble()
     var timeDuration: Double = 24.0
     var timeIncrements: Int = 30
+    
     override init(frame: CGRect){
         super.init(frame: frame)
-//
-        self.lowerValue = timeShift + 0.5
+
+        self.lowerValue = 0//timeShift + 8
         self.maximumValue = timeShift + timeDuration
         self.minimumValue = floor(timeShift)
-        self.upperValue = self.lowerValue + 22.5
+        self.upperValue = 8//self.lowerValue + 18 - 8
 
-//        self.upperValue = 29.0
+
         println(self.lowerValue)
         println(self.upperValue)
     }

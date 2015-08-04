@@ -48,7 +48,7 @@ extension ActivityPageViewController: UIPageViewControllerDelegate, UIPageViewCo
     }
     
     func activityVCWithType(type: SceneType) -> ActivityTableViewController {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("activityTableVC") as! ActivityTableViewController
+        let vc = UIStoryboard.idIn("activityTableVC", inStoryboard: .Activity) as! ActivityTableViewController
         vc.type = type
         
         return vc

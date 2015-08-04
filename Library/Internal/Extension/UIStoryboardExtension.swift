@@ -29,4 +29,12 @@ extension UIStoryboard {
         return storyboard.instantiateInitialViewController() as! UIViewController
     }
     
+    class func idIn(id: String, inStoryboard: Named) -> UIViewController {
+        return idIn(id, inStoryboard: inStoryboard.rawValue)
+    }
+    
+    class func idIn(id: String, inStoryboard: String) -> UIViewController {
+        let storyboard = UIStoryboard(name: inStoryboard, bundle: NSBundle.mainBundle())
+        return storyboard.instantiateViewControllerWithIdentifier(id) as! UIViewController
+    }
 }

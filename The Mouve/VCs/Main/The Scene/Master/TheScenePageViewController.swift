@@ -78,7 +78,7 @@ extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewCo
     }
     
     func sceneVCWithType(type: SceneType) -> SceneFeedViewController {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController
+        let vc = UIStoryboard.idIn("sceneFeedVC", inStoryboard: .TheScene) as! SceneFeedViewController
         vc.type = type
         
         return vc
