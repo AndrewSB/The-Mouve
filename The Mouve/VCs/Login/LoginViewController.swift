@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
         view.userInteractionEnabled = false
         let loadingSpinnerView = addLoadingView()
         view.addSubview(loadingSpinnerView)
-        userRequestsController.sharedInstance.authUser(emailTextField.text, password: passwordTextField.text)
+        
 //        Spinning Wheels...
 //        Step 1: Check email or username in backend based on input
 //            If wrong return wrong email/username
@@ -39,34 +39,34 @@ class LoginViewController: UIViewController {
 //              If wrong return wrong password
 //        Step 3: If all passed remove spiining wheels
 
-//        let emailQuery = PFQuery(className: "_User")
-//        emailQuery.whereKey("email", equalTo: emailTextField.text.lowercaseString)
-//        
-//        emailQuery.getFirstObjectInBackgroundWithBlock({ (object, error) in
-//            if let object = object {
-//                PFUser.logInWithUsernameInBackground(object["username"] as! String, password: self.passwordTextField.text, block: { (user, error) in
-//                    if user != nil {
-//                        println("dun logged in")
-//                        appDel.checkLogin(self.emailTextField.text, password:self.passwordTextField.text)
-//                    } else {
-//                        if let error = error {
-//                            loadingSpinnerView.removeFromSuperview()
-//                            self.view.userInteractionEnabled = true
-//                            
-//                            let errorString = error.userInfo?["error"] as? NSString
-//                            self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
-//                        }
-//                    }
-//                })
-//            } else {
-//                if let error = error {
-//                    loadingSpinnerView.removeFromSuperview()
-//                    self.view.userInteractionEnabled = true
-//                    
-//                    self.presentViewController(UIAlertController(title: "Uh oh", message: error.localizedDescription), animated: true, completion: nil)
-//                }
-//            }
-//        })
+        let emailQuery = PFQuery(className: "_User")
+        emailQuery.whereKey("email", equalTo: emailTextField.text.lowercaseString)
+//
+        emailQuery.getFirstObjectInBackgroundWithBlock({ (object, error) in
+            if let object = object {
+                PFUser.logInWithUsernameInBackground(object["username"] as! String, password: self.passwordTextField.text, block: { (user, error) in
+                    if user != nil {
+                        println("dun logged in")
+                        appDel.checkLogin()
+                    } else {
+                        if let error = error {
+                            loadingSpinnerView.removeFromSuperview()
+                            self.view.userInteractionEnabled = true
+                            
+                            let errorString = error.userInfo?["error"] as? NSString
+                            self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
+                        }
+                    }
+                })
+            } else {
+                if let error = error {
+                    loadingSpinnerView.removeFromSuperview()
+                    self.view.userInteractionEnabled = true
+                    
+                    self.presentViewController(UIAlertController(title: "Uh oh", message: error.localizedDescription), animated: true, completion: nil)
+                }
+            }
+        })
     }
     
     @IBAction func signUpButtonWasHit(sender: AnyObject) {

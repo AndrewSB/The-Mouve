@@ -18,6 +18,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     @IBOutlet weak var eventImageButton: UIButton?
     @IBOutlet weak var startTime: UILabel?
     @IBOutlet weak var endTime: UILabel?
+    var pickedPic: UIImage?
 
 //    let rangeSlider = TimeRangeSlider()
     let rangeSlider = TimeRangeSlider(frame: CGRectZero)
@@ -100,14 +101,34 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     
     @IBAction func postMouveButtonWasHit(sender: AnyObject) {
         
-        mouveRequestsController.sharedInstance.createMouve(
-            titleEventTextField.text,
-            details: detailInfoTextField.text,
-            privacy: publicPrivateSwitch.on,
-            startTime: startTime!.text!,
-            endTime: endTime!.text!,
-            location: locationTextField.text)//        let newMouve = Event(name: titleEventTextField.text, about: "", time: NSDate(timeInterval: 80, sinceDate: NSDate()), length: 100, address: locationTextField.text, invitees: ["lol"], backgroundImage: eventImageButton!.backgroundImageForState(.Normal)!)
-//                    println("current events num:\(persistentData.sharedInstance.mouveArray.count)")
+//        mouveRequestsController.sharedInstance.createMouve(
+//            titleEventTextField.text,
+//            details: detailInfoTextField.text,
+//            privacy: publicPrivateSwitch.on,
+//            startTime: startTime!.text!,
+//            endTime: endTime!.text!,
+//            location: locationTextField.text)
+        let newMouve = Events()
+        
+            newMouve.name  = titleEventTextField.text
+            newMouve.about = detailInfoTextField.text
+            newMouve.startTime = NSDate()
+            newMouve.endTime = NSDate()
+            newMouve.address = locationTextField.text
+//            location UserDefaults.lastLocation,
+            newMouve.privacy = publicPrivateSwitch.on
+            newMouve.backgroundImage = PFFile(data:UIImageJPEGRepresentation(pickedPic!,1.0))
+        
+        newMouve.saveInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo?["error"] as? NSString
+                self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
+            }
+            self.presentViewController(TheScenePageViewController(), animated: true, completion: nil)
+        }
+        
+        
+//        println("current events num:\(persistentData.sharedInstance.mouveArray.count)")
 //        persistentData.sharedInstance.addMouve(titleEventTextField.text, details: "", image: "http://google.com", startTime: NSDate(), endTime: NSDate(timeIntervalSinceNow: 10))
 //            println("event created success:\(persistentData.sharedInstance.mouveArray.count)")
 
@@ -119,7 +140,6 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
-
 
 extension AddMouveViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //    Using Toucan to circle the images
@@ -190,9 +210,9 @@ extension AddMouveViewController: UIImagePickerControllerDelegate, UINavigationC
     func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
     {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
-        var pickedPic = info[UIImagePickerControllerOriginalImage] as! UIImage
-        println("Circling "+pickedPic.description);
-        eventImageButton?.setBackgroundImage(circleMyImage(pickedPic), forState: .Normal)
+        self.pickedPic = info[UIImagePickerControllerOriginalImage] as? UIImage
+        println("Circling "+pickedPic!.description);
+        eventImageButton?.setBackgroundImage(circleMyImage(pickedPic!), forState: .Normal)
         //sets the selected image to image view
     }
     func imagePickerControllerDidCancel(imagePicker: UIImagePickerController)

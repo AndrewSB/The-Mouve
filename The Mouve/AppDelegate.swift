@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AERecord.loadCoreDataStack()
         Parse.enableLocalDatastore()
-        Parse.setApplicationId("GvHu9jcqgsGp2zZkgsXwLOQJXNWCzl5janz4FAj1",
-            clientKey: "5SqHFJOslPl9TB9CPbuowXkCpidAOfoIKIXgSqU4")
+        Parse.setApplicationId("IZoLJQny5gNws6JDI7NPw5qHzY7qsRJ4KzptN621",
+            clientKey: "b9kDXenYH1Jhs01qNnp1li1C8mdoArM255ZGJ6pt")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         let loggedIn = PFUser.currentUser() != nil
@@ -85,14 +85,13 @@ extension AppDelegate {
     }
     
     func checkLogin() {
-        //Checks that user is not nil
-        let loggedIn = !userCredentials.sharedInstance.getToken().isEmpty
+        let loggedIn = PFUser.currentUser() != nil
+        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
         window!.makeKeyAndVisible()
     }
-    
     func logOut() {
-//        RealmStologOut()
+        PFUser.logOut()
     }
 }

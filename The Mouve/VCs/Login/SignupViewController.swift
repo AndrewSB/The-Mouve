@@ -17,7 +17,6 @@ class SignupViewController: UIViewController {
 
     @IBOutlet weak var createAccountButton: UIButton!
     
-//    let newUser = User()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -31,10 +30,21 @@ class SignupViewController: UIViewController {
     }
 
     @IBAction func createAccountButtonWasHit(sender: AnyObject) {
-//        newUser.username = usernameTextField.text.lowercaseString
-//        newUser.password = passwordTextField.text.lowercaseString
-//        newUser.email = emailTextField.text.lowercaseString
-//        
+        
+        var fullName = nameTextField.text
+        var username = usernameTextField.text
+        var password = passwordTextField.text
+        var email = emailTextField.text.lowercaseString
+        
+        
+        if fullName != "" && username != "" && password != "" && email != ""{
+            userSignUp()
+        } else {
+            println("All Fields Required")
+        }
+        
+        
+//
 //        persistentData.sharedInstance.registerUser(
 //            nameTextField.text,
 //            username:usernameTextField.text,
@@ -42,7 +52,7 @@ class SignupViewController: UIViewController {
 //            password: passwordTextField.text,
 //            authToken: "demo",
 //            image: "http://google.com/")
-//
+//ß
     }
     
     @IBAction func facebookButtonWasHit(sender: AnyObject) {
@@ -87,6 +97,23 @@ class SignupViewController: UIViewController {
 //        let username = firstName+lastName!
 //        return username.lowercaseString
 //    }
+    func userSignUp() {
+        let newUser = PFUser()
+        newUser["fullName"] = nameTextField.text
+        newUser.username = usernameTextField.text
+        newUser.password = passwordTextField.text
+        newUser.email = emailTextField.text.lowercaseString
+        
+        newUser.signUpInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
+            if let error = error {
+                let errorString = error.userInfo?["error"] as? NSString
+                self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
+            }
+            appDel.checkLogin()
+        }
+
+        
+    }
 
 }
 

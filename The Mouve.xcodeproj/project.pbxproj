@@ -111,6 +111,7 @@
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
 		7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78A1B1575AB005A1AF1 /* addImage.png */; };
 		7832E78D1B16C66F005A1AF1 /* Switch on image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78C1B16C66F005A1AF1 /* Switch on image.png */; };
+		788296221B8400B000063710 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788296211B8400B000063710 /* Events.swift */; };
 		78B33E0A1B5488E500F3327E /* MouveModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B33E091B5488E500F3327E /* MouveModels.swift */; };
 		78BD5CB71B58D4900098B7D2 /* UISwitchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BD5CB61B58D4900098B7D2 /* UISwitchExtension.swift */; };
 		78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */; };
@@ -264,6 +265,7 @@
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		7832E78A1B1575AB005A1AF1 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addImage.png; path = ../VCs/Main/addImage.png; sourceTree = "<group>"; };
 		7832E78C1B16C66F005A1AF1 /* Switch on image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Switch on image.png"; path = "../VCs/Main/Switch on image.png"; sourceTree = "<group>"; };
+		788296211B8400B000063710 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Events.swift; path = Library/Internal/Events.swift; sourceTree = SOURCE_ROOT; };
 		78B33E091B5488E500F3327E /* MouveModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MouveModels.swift; path = Models/MouveModels.swift; sourceTree = "<group>"; };
 		78BD5CB61B58D4900098B7D2 /* UISwitchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchExtension.swift; sourceTree = "<group>"; };
 		78CFBD111B192F5D002AE6A2 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
@@ -709,6 +711,7 @@
 				4673C1091AF6A22F000C034A /* BaseObject.swift */,
 				46D788FD1B0BF86A00276696 /* RemoteEvent.swift */,
 				468D21681AF0864C00CE6E19 /* Event.swift */,
+				788296211B8400B000063710 /* Events.swift */,
 			);
 			name = Entities;
 			path = "../../The Mouve";
@@ -935,6 +938,7 @@
 				46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */,
 				46B888C41AF94C3E00D872E0 /* GreyGreenButton.swift in Sources */,
 				4685F8BF1B1C1FF3004D77E9 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				788296221B8400B000063710 /* Events.swift in Sources */,
 				78FC24D71B661769004B65C3 /* GooglePlacesAutocomplete.swift in Sources */,
 				462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */,
 				46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */,
