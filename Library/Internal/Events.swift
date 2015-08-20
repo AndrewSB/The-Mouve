@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class Events: PFObject {
-    @NSManaged var author: PFUser
+    @NSManaged var creator: PFUser
     @NSManaged var name: String
     @NSManaged var about: String
     @NSManaged var address: String
@@ -31,13 +31,14 @@ class Events: PFObject {
         }
     }
     override init(){
-        super.init(className: "Events")
+        super.init()
         println("Initialized empty event")
     }
     init(name: String, about: String, startTime: NSDate, endTime: NSDate, address: String,
         invitees: [String],
         privacy: Bool, backgroundImage: UIImage) {
         super.init(className: "Events")
+        self.creator = PFUser.currentUser()!
         self.name = name
         self.about = about
         
@@ -49,7 +50,7 @@ class Events: PFObject {
             
         self.privacy = privacy
         
-        self.backgroundImage = PFFile(data:UIImageJPEGRepresentation(backgroundImage,1.0))
+        self.backgroundImage = PFFile(name: "\(self.creator.username)_\(self.objectId).png", data:UIImagePNGRepresentation(backgroundImage))
         
 
     }

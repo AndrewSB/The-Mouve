@@ -20,6 +20,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     @IBOutlet weak var endTime: UILabel?
     var pickedPic: UIImage?
     var pickedPoint: PFGeoPoint?
+    var actualAddress: String?
 
 //    let rangeSlider = TimeRangeSlider()
     let rangeSlider = TimeRangeSlider(frame: CGRectZero)
@@ -110,18 +111,20 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
 //            endTime: endTime!.text!,
 //            location: locationTextField.text)
         let newMouve = Events()
-        
+            newMouve.creator = PFUser.currentUser()!
             newMouve.name  = titleEventTextField.text
             newMouve.about = detailInfoTextField.text
+            newMouve.address = self.actualAddress!
+            newMouve.location = pickedPoint!
             newMouve.startTime = rangeSlider.timeDates().startDate
             newMouve.endTime = rangeSlider.timeDates().endDate
-            newMouve.address = locationTextField.text
-            newMouve.location = pickedPoint!
             newMouve.privacy = publicPrivateSwitch.on
-            newMouve.backgroundImage = PFFile(data:UIImageJPEGRepresentation(pickedPic!,1.0))
+            if ((pickedPic) != nil){
+                newMouve.backgroundImage = PFFile(name: "bg.png", data:UIImagePNGRepresentation(pickedPic))
+            }
         
-        let remoteMouve = PFObject(event: newMouve)
-        remoteMouve.saveInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
+//        let remoteMouve = PFObject(event: newMouve)
+        newMouve.saveInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
                 let errorString = error.userInfo?["error"] as? NSString
                 self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
@@ -248,8 +251,7 @@ extension AddMouveViewController: GooglePlacesAutocompleteDelegate {
         
         place.getDetails { details in
             self.locationTextField.text = details.name
-            println(details.longitude)
-            println(details.latitude)
+            self.actualAddress = place.description
             self.pickedPoint = PFGeoPoint(latitude: details.latitude, longitude: details.longitude)
             self.dismissViewControllerAnimated(true, completion: nil)
         }
