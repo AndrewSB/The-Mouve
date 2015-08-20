@@ -19,6 +19,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     @IBOutlet weak var startTime: UILabel?
     @IBOutlet weak var endTime: UILabel?
     var pickedPic: UIImage?
+    var pickedPoint: PFGeoPoint?
 
 //    let rangeSlider = TimeRangeSlider()
     let rangeSlider = TimeRangeSlider(frame: CGRectZero)
@@ -81,9 +82,9 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     
     // Changes labels as you drag slider
     func rangeSliderValueChanged(rangeSlider: TimeRangeSlider) {
-        var currentTimes = rangeSlider.timeValues()
-        startTime!.text = currentTimes.startVal
-        endTime!.text = currentTimes.endVal
+        var currentTimes = rangeSlider.timeDates()
+        startTime!.text = currentTimes.startDate.toShortTimeString()
+        endTime!.text = currentTimes.endDate.toShortTimeString()
     }
     
     
@@ -112,31 +113,22 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
         
             newMouve.name  = titleEventTextField.text
             newMouve.about = detailInfoTextField.text
-            newMouve.startTime = NSDate()
-            newMouve.endTime = NSDate()
+            newMouve.startTime = rangeSlider.timeDates().startDate
+            newMouve.endTime = rangeSlider.timeDates().endDate
             newMouve.address = locationTextField.text
-//            location UserDefaults.lastLocation,
+            newMouve.location = pickedPoint!
             newMouve.privacy = publicPrivateSwitch.on
             newMouve.backgroundImage = PFFile(data:UIImageJPEGRepresentation(pickedPic!,1.0))
         
-        newMouve.saveInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
+        let remoteMouve = PFObject(event: newMouve)
+        remoteMouve.saveInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
                 let errorString = error.userInfo?["error"] as? NSString
                 self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
+                }
             }
-            self.presentViewController(TheScenePageViewController(), animated: true, completion: nil)
-        }
-        
-        
-//        println("current events num:\(persistentData.sharedInstance.mouveArray.count)")
-//        persistentData.sharedInstance.addMouve(titleEventTextField.text, details: "", image: "http://google.com", startTime: NSDate(), endTime: NSDate(timeIntervalSinceNow: 10))
-//            println("event created success:\(persistentData.sharedInstance.mouveArray.count)")
 
-//        newMouve.location = UserDefaults.lastLocation!
-        
-//        let remoteMouve = PFObject(event: newMouve)
-//        remoteMouve.saveInBackground()
-        
+
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
@@ -256,10 +248,14 @@ extension AddMouveViewController: GooglePlacesAutocompleteDelegate {
         
         place.getDetails { details in
             self.locationTextField.text = details.name
+            println(details.longitude)
+            println(details.latitude)
+            self.pickedPoint = PFGeoPoint(latitude: details.latitude, longitude: details.longitude)
             self.dismissViewControllerAnimated(true, completion: nil)
         }
-    }
     
+        
+    }
     func placeViewClosed() {
         dismissViewControllerAnimated(true, completion: nil)
     }

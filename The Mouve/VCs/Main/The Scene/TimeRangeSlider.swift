@@ -8,108 +8,35 @@
 import UIKit
 
 class TimeRangeSlider: RangeSlider {
-    lazy var timeShift: Double = self.timeToDouble()
-    var timeDuration: Double = 24.0
+    //    let startDateComp = NSDateComponents()
+    //    lazy var timeShift: Double = self.timeToDouble()
+    var totalMinutes: Int = 24*60
     var timeIncrements: Int = 30
+    var minDate: NSDate?
+    var maxDate: NSDate?
     override init(frame: CGRect){
         super.init(frame: frame)
-//
-        self.lowerValue = timeShift + 0.5
-        self.maximumValue = timeShift + timeDuration
-        self.minimumValue = floor(timeShift)
-        self.upperValue = self.lowerValue + 22.5
-
-//        self.upperValue = 29.0
+        minDate = NSDate().shiftedDate(timeIncrements)
+        maxDate =  minDate!.tomorrowDate()
+        self.lowerValue = (Double(totalMinutes)*0.118)
+        self.minimumValue = 0
+        self.maximumValue = Double(totalMinutes)
+        self.upperValue = (Double(totalMinutes)*0.882)
+        
+        //        self.upperValue = 29.0
         println(self.lowerValue)
         println(self.upperValue)
     }
     required init(coder: NSCoder) {
         super.init(coder: coder)
     }
-    func timeValues() -> (startVal:String, endVal:String){
-        var startTimeString: String  = wholeDayTimeConverter(self.lowerValue)
-        var endTimeString: String = wholeDayTimeConverter(self.upperValue)
-        return(startTimeString, endTimeString)
+    func timeDates() -> (startDate: NSDate, endDate: NSDate ){
+        let startDate = minDate!.shiftByMins(Int(self.lowerValue)).shiftedDate(timeIncrements)
+        let endDate = minDate!.shiftByMins(Int(self.upperValue)).shiftedDate(timeIncrements)
+        return (startDate, endDate)
     }
-    func timeToDouble() -> Double{
-        var doubleTime:Double = 0.0
-        var currentTime = NSDate()
-        doubleTime+=Double(currentTime.hour())
-        doubleTime+=Double(currentTime.minute())/60.0
-        return doubleTime
-    }
-    func wholeDayTimeConverter(sliderValue: Double) -> String{
-        var processedInterval = intervalsAndShits(sliderValue)
-        var processedTime = amPMOrNah(sliderValue)
-        return processedTime.flatHour+processedInterval+processedTime.suffix
-        }
-        func amPMOrNah(timeValue: Double) -> (flatHour: String, suffix: String){
-            let locale = NSLocale.currentLocale()
-            let dateFormat = NSDateFormatter.dateFormatFromTemplate("j", options: 0, locale: locale)!
-            var flatHour = ""
-            var timeString = ""
-            var rawTimeOnScale = Double(timeValue)
-            // AM-PM Support
-            if dateFormat.rangeOfString("a") != nil {
-                while ((rawTimeOnScale/12.0) >= (13.0/12.0)){
-                    rawTimeOnScale-=12.0
-                }
-                if((Int(timeValue)%24) >= 12){
-                    timeString+="PM"
-                }
-                else{
-                    timeString+="AM"
-                }
-            }
-            //      Military Time Support
-            else {
-                if(rawTimeOnScale >= 24.0){
-                    rawTimeOnScale-=24
-                }
-            }
-            
-            // To indicate the next day (Not been decided yet)
-            if(timeValue > 24.0){
-                //timeString+="(ND)"
-            }
-            flatHour = Int(rawTimeOnScale).toString()
-            return (flatHour, timeString)
-        }
-    func intervalsAndShits(timeValue: Double) -> String{
-        //Half-Hour Intervals
-        var rawTimeOnScale = timeValue
-        var flatHour = Int(rawTimeOnScale)
-        var timeString = ""
-        var incTime = 0
-        var timeDelta = (rawTimeOnScale-Double(flatHour))
-        let propOfInc = Double(timeIncrements)/(60.0)
-        while(timeDelta >= propOfInc){
-            timeDelta-=propOfInc
-            incTime++
-        }
-        if(incTime*timeIncrements > 0){
-            timeString=":"+(incTime*timeIncrements).toString()
-        }
-        else{
-            
-            timeString=":00"
-        }
-            //Detect whether next today or today
-
-            //        Output Final String
-            return timeString
-        }
-
-
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
-
+    
+    
 }
 extension Int {
     func toString() -> String {
@@ -123,6 +50,39 @@ extension Double {
 }
 extension NSDate
 {
+    func shiftedDate(minInterval: Int) -> NSDate{
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components(.CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitYear | .CalendarUnitHour | .CalendarUnitMinute, fromDate: self)
+        var tempMinutes = 0
+        while (components.minute - minInterval > -minInterval){
+            components.minute = components.minute-minInterval
+            tempMinutes += minInterval
+        }
+        if (tempMinutes + minInterval > 60){
+            components.hour++
+            tempMinutes=0
+        }
+        
+        components.minute = tempMinutes
+        
+        return calendar.dateFromComponents(components)!
+    }
+    
+    func shiftByMins(minsToAdd: Int) -> NSDate{
+        let calendar = NSCalendar.currentCalendar()
+        let components = NSDateComponents()
+        components.minute=minsToAdd
+        return calendar.dateByAddingComponents(components, toDate: self, options: nil)!
+    }
+    
+    func tomorrowDate() -> NSDate{
+        let calendar = NSCalendar.currentCalendar()
+        let components = NSDateComponents()
+        
+        components.day=1
+        return calendar.dateByAddingComponents(components, toDate: self, options: nil)!
+    }
+    
     func hour() -> Int
     {
         //Get Hour
@@ -148,9 +108,16 @@ extension NSDate
     
     func toShortTimeString() -> String
     {
+        let locale = NSLocale.currentLocale()
+        var formatter = NSDateFormatter()
+        var localDateFormat = NSDateFormatter.dateFormatFromTemplate("j", options: 0, locale: locale)!
+        if localDateFormat.rangeOfString("a") != nil {
+            formatter.dateFormat = "h:mm a"
+        }
+        else{
+            formatter.dateFormat = "HH:mm"
+        }
         //Get Short Time String
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "HH:mm"
         let timeString = formatter.stringFromDate(self)
         
         //Return Short Time String
