@@ -67,6 +67,14 @@ extension NSDate
         
         return calendar.dateFromComponents(components)!
     }
+    func isToday() -> Bool{
+        let currentDate = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let currComp = calendar.components(.CalendarUnitDay, fromDate: currentDate)
+        let selfComp = calendar.components(.CalendarUnitDay, fromDate: self)
+        return (selfComp.day == currComp.day)
+        
+    }
     
     func shiftByMins(minsToAdd: Int) -> NSDate{
         let calendar = NSCalendar.currentCalendar()

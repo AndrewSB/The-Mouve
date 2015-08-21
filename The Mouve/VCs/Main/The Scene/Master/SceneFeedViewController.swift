@@ -31,6 +31,49 @@ class SceneFeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //uncomment starts here
+
+        LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
+        
+        feedTableView.delegate = self
+        feedTableView.dataSource = self
+        
+        //        let feedQuery = PFQuery(className: "Events")
+        let feedQuery = Events.query()
+        appDel.location.startUpdatingLocation()
+        
+        switch type! {
+        case .Explore:
+            //            println("lol")
+            feedQuery?.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
+            
+        case .Scene:
+            //            First query the people we follow
+            //            let followingPeople = PFUser.currentUser()?.query()?.whereKey("username", containedIn: "following")
+            //            Then query all the events made by them
+            feedQuery?.whereKey("creator", equalTo: PFUser.currentUser()!)
+            
+        default:
+            assert(true == false, "Type wasnt scene or explore")
+        }
+        
+        feedQuery!.limit = 20
+        feedQuery!.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+            var serverData = [Events]()
+            //            println(results)
+            
+            if ((results) != nil) {
+                self.feedData = results as? [Events]
+                //uncomment stops here
+                
+                
+                //                for result in results {
+                ////                    serverData.append(Event(parseObject: result as! PFObject))
+                //                }
+            }
+            
+            //            self.feedData = serverData
+        }
         
 //        println("didLoad \(self.type)")
 //        LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
@@ -69,45 +112,46 @@ class SceneFeedViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
-        
-        feedTableView.delegate = self
-        feedTableView.dataSource = self
-        
-//        let feedQuery = PFQuery(className: "Events")
-        let feedQuery = Events.query()
-        appDel.location.startUpdatingLocation()
-        
-        switch type! {
-        case .Explore:
-//            println("lol")
-            feedQuery?.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
-            
-        case .Scene:
-//            First query the people we follow
-//            let followingPeople = PFUser.currentUser()?.query()?.whereKey("username", containedIn: "following")
-//            Then query all the events made by them
-            feedQuery?.whereKey("creator", equalTo: PFUser.currentUser()!)
-            
-        default:
-            assert(true == false, "Type wasnt scene or explore")
-        }
         LocalMessage.post(type.hashValue == 0 ? .HomeFeedPageOne : .HomeFeedPageTwo)
-
-        feedQuery!.limit = 20
-        feedQuery!.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
-            var serverData = [Events]()
-            //            println(results)
-            
-            if ((results) != nil) {
-                self.feedData = results as? [Events]
-                //                for result in results {
-                ////                    serverData.append(Event(parseObject: result as! PFObject))
-                //                }
-            }
-            
-            //            self.feedData = serverData
-        }
+//        LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
+//        
+//        feedTableView.delegate = self
+//        feedTableView.dataSource = self
+//        
+////        let feedQuery = PFQuery(className: "Events")
+//        let feedQuery = Events.query()
+//        appDel.location.startUpdatingLocation()
+//        
+//        switch type! {
+//        case .Explore:
+////            println("lol")
+//            feedQuery?.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
+//            
+//        case .Scene:
+////            First query the people we follow
+////            let followingPeople = PFUser.currentUser()?.query()?.whereKey("username", containedIn: "following")
+////            Then query all the events made by them
+//            feedQuery?.whereKey("creator", equalTo: PFUser.currentUser()!)
+//            
+//        default:
+//            assert(true == false, "Type wasnt scene or explore")
+//        }
+//        LocalMessage.post(type.hashValue == 0 ? .HomeFeedPageOne : .HomeFeedPageTwo)
+//
+//        feedQuery!.limit = 20
+//        feedQuery!.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+//            var serverData = [Events]()
+//            //            println(results)
+//            
+//            if ((results) != nil) {
+//                self.feedData = results as? [Events]
+////                for result in results {
+//////                    serverData.append(Event(parseObject: result as! PFObject))
+////                }
+//            }
+//            
+//            //            self.feedData = serverData
+//        }
         
     }
     

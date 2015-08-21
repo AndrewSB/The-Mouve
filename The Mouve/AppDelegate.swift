@@ -18,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var location = Location()
-    let emailKey = "a@a.com"
-    let passwordKey = "123"
     let placeHolderBg = UIImage(named: "addImage")
 
 
