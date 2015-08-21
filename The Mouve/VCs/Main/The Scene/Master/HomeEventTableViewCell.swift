@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Toucan
 
 class HomeEventTableViewCell: UITableViewCell {
     var event: Events! {
@@ -22,17 +23,26 @@ class HomeEventTableViewCell: UITableViewCell {
             let places = ["Beach-Chillin", "Coffee-Hour", "Espresso-Lesson", "Fire-Works", "Food-Festival", "Football-Game", "San-Francisco-Visit", "State-Fair", "Study-Sesh", "Surf-Lesson"]
             
 //            event.backgroundImage = UIImage(named: places.randomElement())!
-            backgroundImageView.image = event.getBgImg()
+//
             
-            let array = [UIImage(named: "yoojin-pic"),UIImage(named: "noah-pic"),UIImage(named: "chelsea-pic"),UIImage(named: "andrew-pic")]
-            profileImageView.image = event.creator.getProfilePic()
+            backgroundImageView.image = Toucan(image: event.getBgImg()!).resize(CGSize(width: self.contentView.frame.width, height: self.contentView.frame.height), fitMode: Toucan.Resize.FitMode.Crop).image
+
+            let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+            blurView.frame = self.contentView.frame
+            backgroundImageView.addSubview(blurView)
             
-//            profileImageView.image = array[Int(arc4random_uniform(UInt32(array.count)))]
             
+//            let array = [UIImage(named: "yoojin-pic"),UIImage(named: "noah-pic"),UIImage(named: "chelsea-pic"),UIImage(named: "andrew-pic")]
+            
+//
+            
+            
+            profileImageView.image = Toucan(image: event.creator.getProfilePic()!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).image
             profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
             profileImageView.clipsToBounds = true
         }
     }
+    
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -48,6 +58,8 @@ class HomeEventTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
         
         profileImageView.layer.cornerRadius = (profileImageView.frame.width / CGFloat(2))
         profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
