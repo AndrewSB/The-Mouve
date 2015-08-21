@@ -100,22 +100,22 @@ class SceneTitleView: UIView {
         }
     }
     
+    
     var buttonOne: (SceneType, LocalMessageNotification, LocalMessageNotification) {
         get {
             if 0...1 ~= type!.hashValue {
-                return (.Scene, .HomeTitlePageOne, .HomeFeedPageOne)
+                return (.Scene, .HomeTitlePageTwo, .HomeFeedPageTwo)
             } else {
-                return (.Newsfeed, .ActivityTitlePageOne, .ActivityFeedPageOne)
+                return (.Invites, .ActivityTitlePageTwo, .ActivityFeedPageTwo)
             }
         }
     }
-    
     var buttonTwo: (SceneType, LocalMessageNotification, LocalMessageNotification) {
         get {
             if 0...1 ~= type!.hashValue {
-                return (.Explore, .HomeTitlePageTwo, .HomeFeedPageTwo)
+                return (.Explore, .HomeTitlePageOne, .HomeFeedPageOne)
             } else {
-                return (.Invites, .ActivityTitlePageTwo, .ActivityFeedPageTwo)
+                return (.Newsfeed, .ActivityTitlePageOne, .ActivityFeedPageOne)
             }
         }
     }
