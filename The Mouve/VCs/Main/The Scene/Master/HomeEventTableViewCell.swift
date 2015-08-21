@@ -18,7 +18,7 @@ class HomeEventTableViewCell: UITableViewCell {
             
             dateAndTimeLabel.text = "\(event.startTime.toShortTimeString()) - \(event.endTime.toShortTimeString())"
 
-            distanceLabel.text = "\(Int(event.location.distanceInMilesTo(PFGeoPoint(location: UserDefaults.lastLocation)))) Miles"
+            distanceLabel.text = (String(format: "%.2f",event.location.distanceInMilesTo(PFGeoPoint(location: UserDefaults.lastLocation))))+" Miles"
             
             let places = ["Beach-Chillin", "Coffee-Hour", "Espresso-Lesson", "Fire-Works", "Food-Festival", "Football-Game", "San-Francisco-Visit", "State-Fair", "Study-Sesh", "Surf-Lesson"]
             

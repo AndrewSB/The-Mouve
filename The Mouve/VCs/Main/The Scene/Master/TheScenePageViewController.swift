@@ -27,13 +27,13 @@ class TheScenePageViewController: UIPageViewController {
     
     func pageOne() {
         if (self.viewControllers[0] as! SceneFeedViewController).type == SceneType.Scene {
-            self.setViewControllers([sceneVCWithType(.Explore)], direction: .Reverse, animated: true, completion: nil)
+            self.setViewControllers([sceneVCWithType(.Explore)], direction: .Forward, animated: true, completion: nil)
         }
     }
     
     func pageTwo() {
         if (self.viewControllers[0] as! SceneFeedViewController).type == SceneType.Explore {
-            self.setViewControllers([sceneVCWithType(.Scene)], direction: .Forward, animated: true, completion: nil)
+            self.setViewControllers([sceneVCWithType(.Scene)], direction: .Reverse, animated: true, completion: nil)
         }
     }
     
@@ -46,7 +46,7 @@ class TheScenePageViewController: UIPageViewController {
 
 extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     func pageViewControllerDidLoad() {
-        self.setViewControllers([sceneVCWithType(.Explore)], direction: .Forward, animated: true, completion: nil)
+        self.setViewControllers([sceneVCWithType(.Scene)], direction: .Reverse, animated: true, completion: nil)
         
         self.view.backgroundColor = UIColor.whiteColor()
         if let url = UserDefaults.profilePictureURL {
@@ -71,13 +71,14 @@ extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewCo
         }
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        return (viewController as! SceneFeedViewController).type == SceneType.Explore ? nil : sceneVCWithType(.Explore)
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+        return (viewController as! SceneFeedViewController).type == .Scene ? sceneVCWithType(.Explore) : nil
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        return (viewController as! SceneFeedViewController).type == .Explore ? sceneVCWithType(.Scene) : nil
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        return (viewController as! SceneFeedViewController).type == SceneType.Explore ? nil : sceneVCWithType(.Scene)
     }
+    
     
     func sceneVCWithType(type: SceneType) -> SceneFeedViewController {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("sceneFeedVC") as! SceneFeedViewController

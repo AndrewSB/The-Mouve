@@ -16,6 +16,7 @@ class SceneFeedViewController: UIViewController {
 
     @IBOutlet weak var feedTableView: UITableView!
     
+    
     var type: SceneType!
     var feedData: [Events]? {
         didSet {
@@ -75,29 +76,37 @@ class SceneFeedViewController: UIViewController {
         
 //        let feedQuery = PFQuery(className: "Events")
         let feedQuery = Events.query()
-        feedQuery!.limit = 20
+        appDel.location.startUpdatingLocation()
         
         switch type! {
         case .Explore:
-            println("lol")
+//            println("lol")
+            feedQuery?.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
+            
         case .Scene:
-            println("nah")
+//            First query the people we follow
+//            let followingPeople = PFUser.currentUser()?.query()?.whereKey("username", containedIn: "following")
+//            Then query all the events made by them
+            feedQuery?.whereKey("creator", equalTo: PFUser.currentUser()!)
+            
         default:
             assert(true == false, "Type wasnt scene or explore")
         }
         LocalMessage.post(type.hashValue == 0 ? .HomeFeedPageOne : .HomeFeedPageTwo)
+
+        feedQuery!.limit = 20
         feedQuery!.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
             var serverData = [Events]()
             //            println(results)
             
             if ((results) != nil) {
                 self.feedData = results as? [Events]
-//                for result in results {
-////                    serverData.append(Event(parseObject: result as! PFObject))
-//                }
+                //                for result in results {
+                ////                    serverData.append(Event(parseObject: result as! PFObject))
+                //                }
             }
             
-//            self.feedData = serverData
+            //            self.feedData = serverData
         }
         
     }

@@ -137,4 +137,14 @@ extension PFUser{
             }
         return UIImage(data: imgData!)
     }
+    func query() -> PFQuery? {
+        //1
+        let query = PFQuery(className: Events.parseClassName())
+        //        query.cachePolicy = PFCachePolicy.CacheElseNetwork
+        //2
+        query.includeKey("username")
+        //3
+        query.orderByDescending("username")
+        return query
+    }
 }
