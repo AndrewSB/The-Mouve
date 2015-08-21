@@ -11,8 +11,8 @@ import Parse
 
 class Event: BaseObject {
     var name: String
-    var startDate: NSDate?
-    var endDate: NSDate?
+    var startTime: NSDate?
+    var endTime: NSDate?
     var length: NSTimeInterval
     var about: String
     
@@ -26,10 +26,10 @@ class Event: BaseObject {
     
     var timeTillEvent: NSTimeInterval {
         get {
-            return NSDate().timeIntervalSinceDate(startDate!)
+            return NSDate().timeIntervalSinceDate(startTime!)
         }
         set {
-            self.startDate = NSDate(timeIntervalSinceNow: newValue)
+            self.startTime = NSDate(timeIntervalSinceNow: newValue)
         }
     }
     
@@ -37,8 +37,8 @@ class Event: BaseObject {
         self.name = name
         self.about = about
         
-        self.startDate = time
-        self.endDate = time
+        self.startTime = time
+        self.endTime = time
         self.length = length
         
         self.address = address
@@ -62,8 +62,8 @@ class Event: BaseObject {
         }
         
         self.location = parseObject["location"] as? CLLocation
-        self.startDate = parseObject["time"] as? NSDate
-        self.endDate = parseObject["time"] as? NSDate
+        self.startTime = parseObject["time"] as? NSDate
+        self.endTime = parseObject["time"] as? NSDate
         self.length = 100
         
         self.invitees = ["lol", "dsa", "dsaetd"]//parseObject["invitees"] as! [String]

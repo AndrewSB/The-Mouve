@@ -9,24 +9,24 @@
 import UIKit
 import Parse
 import CoreLocation
-
-extension PFObject {
-    convenience init(event: Events) {
-//    class func ObjectWithEvent(event: Event) -> PFObject {
-        self.init(className: "Events")
-        
-        self["name"] = event.name
-        self["about"] = event.about
-        self["address"] = event.address
-        self["backgroundImage"] = event.backgroundImage
-        //        PFFile(data:UIImageJPEGRepresentation(pickedPic!,1.0))
-        self["location"] = event.location
-        self["startTime"] = event.startTime
-        self["privacy"] = event.privacy
-        self["endTime"] = event.endTime
-    }
-}
-
+//
+//extension PFObject {
+//    convenience init(event: Event) {
+////    class func ObjectWithEvent(event: Event) -> PFObject {
+//        self.init(className: "Events")
+//        
+//        self["name"] = event.name
+//        self["about"] = event.about
+//        self["address"] = event.address
+//        self["backgroundImage"] = event.backgroundImage
+//        //        PFFile(data:UIImageJPEGRepresentation(pickedPic!,1.0))
+//        self["location"] = event.location
+//        self["startTime"] = event.startTime
+////        self["privacy"] = event.privacy
+//        self["endTime"] = event.endTime
+//    }
+//}
+//
 //class RemoteEvent: PFObject {
 //    var name: String
 //    

@@ -8,9 +8,10 @@
 
 import UIKit
 import Toucan
+import Parse
 
 class DetailViewController: UIViewController {
-    var event: Event!
+    var event: Events?
     
     let tableViewImages = [UIImage(named: "chelsea-pic"), UIImage(named: "noah-pic"), UIImage(named: "taylor-pic"), UIImage(named: "chelsea-pic"), UIImage(named: "chelsea-pic")]
     let tableViewData = ["@troy posted a picture from the event on facebook and twitter.", "@noah There is still lots of food left!", "@tay posted a picture from the event on facebook and twitter.", "@chelsea this party is bumpin’"]
@@ -51,13 +52,13 @@ class DetailViewController: UIViewController {
         
         addNavControllerLikePan()
         
-        headerImageView?.image = event.backgroundImage
-        blurredHeaderImageView?.image = event.backgroundImage
-        eventNameLabel.text = event.name
-        descriptionLabel.text = event.about
+        headerImageView?.image = event?.getBgImg()
+        blurredHeaderImageView?.image = event?.getBgImg()
+        eventNameLabel.text = event!.name
+        descriptionLabel.text = event!.about
         
-        addressButton.titleLabel?.text = event.address
-        inviteButton.titleLabel?.text = "\(event.invitees.count) Invited"
+        addressButton.titleLabel?.text = event!.address
+        inviteButton.titleLabel?.text = "\(event!.invitees?.count) Invited"
     }
     
     override func viewWillAppear(animated: Bool) {

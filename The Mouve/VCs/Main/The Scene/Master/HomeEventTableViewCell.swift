@@ -10,23 +10,24 @@ import Foundation
 import UIKit
 
 class HomeEventTableViewCell: UITableViewCell {
-    var event: Event! {
+    var event: Events! {
         didSet {
             nameLabel.text = event.name
             descriptionLabel.text = event.about
             
-            dateAndTimeLabel.text = "9pm-5pm"
+            dateAndTimeLabel.text = "\(event.startTime.toShortTimeString()) - \(event.endTime.toShortTimeString())"
             
             distanceLabel.text = "3.4 miles"
             
             let places = ["Beach-Chillin", "Coffee-Hour", "Espresso-Lesson", "Fire-Works", "Food-Festival", "Football-Game", "San-Francisco-Visit", "State-Fair", "Study-Sesh", "Surf-Lesson"]
             
-            event.backgroundImage = UIImage(named: places.randomElement())!
-            backgroundImageView.image = event.backgroundImage
+//            event.backgroundImage = UIImage(named: places.randomElement())!
+            backgroundImageView.image = event.getBgImg()
             
             let array = [UIImage(named: "yoojin-pic"),UIImage(named: "noah-pic"),UIImage(named: "chelsea-pic"),UIImage(named: "andrew-pic")]
+            profileImageView.image = event.creator.getProfilePic()
             
-            profileImageView.image = array[Int(arc4random_uniform(UInt32(array.count)))]
+//            profileImageView.image = array[Int(arc4random_uniform(UInt32(array.count)))]
             
             profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
             profileImageView.clipsToBounds = true

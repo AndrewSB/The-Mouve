@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var location = Location()
     let emailKey = "a@a.com"
     let passwordKey = "123"
+    let placeHolderBg = UIImage(named: "addImage")
+
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])

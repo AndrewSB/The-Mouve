@@ -9,7 +9,7 @@
 import UIKit
 import Toucan
 import CoreGraphics
-
+import Parse
 
 class ProfileViewController: UIViewController, UITableViewDelegate {
     let offset_HeaderStop:CGFloat = 180 // At this offset the Header stops its transformations
@@ -128,9 +128,13 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
+//        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! UITableViewCell
         
-        cell.event = fakeEvents[indexPath.section]
+//        cell.event = Events.query()[indexPath.section]
+        let cellText = UILabel()
+        cellText.text = "Nothing"
+       cell.addSubview(cellText)
         
         return cell
     }

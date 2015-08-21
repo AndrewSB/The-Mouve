@@ -18,9 +18,10 @@ class Events: PFObject {
     @NSManaged var startTime: NSDate
     @NSManaged var endTime: NSDate
     @NSManaged var privacy: Bool
-    @NSManaged var invitees: [String]
-    @NSManaged var backgroundImage: PFFile
-    
+    @NSManaged var invitees: [String]?
+    @NSManaged var backgroundImage: PFFile?
+    var actualImage: UIImage?
+     
     
     var timeTillEvent: NSTimeInterval {
         get {
@@ -54,6 +55,33 @@ class Events: PFObject {
         
 
     }
+//    func downloadBgImg(){
+//        self.backgroundImage?.getDataInBackgroundWithBlock { (data: NSData?, error: NSError?) -> Void in
+//            if(!(error != nil)){
+//                if let data: AnyObject = data, image = UIImage(data: data as! NSData) {
+//                    self.actualImage = image
+//                    println("\(self.backgroundImage?.url)")
+//                }
+//            }
+//            else{
+//                self.actualImage = appDel.placeHolderBg
+//            }
+//        }
+//    }
+    func getBgImg() -> UIImage?{
+        var imgData = self.backgroundImage?.getData()
+        if(!(imgData != nil)){
+            return appDel.placeHolderBg
+        }
+        return UIImage(data: imgData!)
+    }
+//    func getBgImg() -> UIImage?
+//    {
+//        downloadBgImg()
+//        return self.actualImage
+//    }
+
+
 //    init(parseObject: PFObject) {
 //        self.name = parseObject["name"] as! String
 //        
@@ -77,10 +105,11 @@ class Events: PFObject {
     override class func query() -> PFQuery? {
         //1
         let query = PFQuery(className: Events.parseClassName())
+//        query.cachePolicy = PFCachePolicy.CacheElseNetwork
         //2
-        query.includeKey("author")
+        query.includeKey("creator")
         //3
-        query.orderByDescending("createdAt")
+        query.orderByAscending("startDate")
         return query
     }
     
@@ -98,5 +127,14 @@ extension Events: PFSubclassing {
         dispatch_once(&onceToken) {
             self.registerSubclass()
         }
+    }
+}
+extension PFUser{
+    func getProfilePic() -> UIImage?{
+        var imgData = self["profileImage"]?.getData()
+            if(!(imgData != nil)){
+                return appDel.placeHolderBg
+            }
+        return UIImage(data: imgData!)
     }
 }

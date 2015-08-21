@@ -17,7 +17,7 @@ class SceneFeedViewController: UIViewController {
     @IBOutlet weak var feedTableView: UITableView!
     
     var type: SceneType!
-    var feedData: [Event]? {
+    var feedData: [Events]? {
         didSet {
             feedTableView.reloadData()
         }
@@ -32,13 +32,50 @@ class SceneFeedViewController: UIViewController {
         super.viewDidLoad()
         
 //        println("didLoad \(self.type)")
+//        LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
+//        
+//        feedTableView.delegate = self
+//        feedTableView.dataSource = self
+//        
+//        let feedQuery = PFQuery(className: "Events")
+//        feedQuery.limit = 20
+//        
+//        switch type! {
+//        case .Explore:
+//            println("lol")
+//        case .Scene:
+//            println("nah")
+//        default:
+//            assert(true == false, "Type wasnt scene or explore")
+//        }
+        
+//        feedQuery.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+//            var serverData = [Event]()
+////            println(results)
+//            
+//            if let results = results {
+//                for result in results {
+//                    serverData.append(Event(parseObject: result as! PFObject))
+//                }
+//            }
+//            
+//            self.feedData = serverData
+//        }
+        
+        
+        feedTableView.contentInset = UIEdgeInsets(top: 44+22, left: 0, bottom: 44, right: 0)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
         
         feedTableView.delegate = self
         feedTableView.dataSource = self
         
-        let feedQuery = PFQuery(className: "Events")
-        feedQuery.limit = 20
+//        let feedQuery = PFQuery(className: "Events")
+        let feedQuery = Events.query()
+        feedQuery!.limit = 20
         
         switch type! {
         case .Explore:
@@ -48,34 +85,28 @@ class SceneFeedViewController: UIViewController {
         default:
             assert(true == false, "Type wasnt scene or explore")
         }
-        
-        feedQuery.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
-            var serverData = [Event]()
-//            println(results)
+        LocalMessage.post(type.hashValue == 0 ? .HomeFeedPageOne : .HomeFeedPageTwo)
+        feedQuery!.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+            var serverData = [Events]()
+            //            println(results)
             
-            if let results = results {
-                for result in results {
-                    serverData.append(Event(parseObject: result as! PFObject))
-                }
+            if ((results) != nil) {
+                self.feedData = results as? [Events]
+//                for result in results {
+////                    serverData.append(Event(parseObject: result as! PFObject))
+//                }
             }
             
-            self.feedData = serverData
+//            self.feedData = serverData
         }
         
-        
-        feedTableView.contentInset = UIEdgeInsets(top: 44+22, left: 0, bottom: 44, right: 0)
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        LocalMessage.post(type.hashValue == 0 ? .HomeFeedPageOne : .HomeFeedPageTwo)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
         
         if let des = segue.destinationViewController as? DetailViewController {
-            des.event = sender as! Event
+            des.event = sender as? Events
         }
     }
     

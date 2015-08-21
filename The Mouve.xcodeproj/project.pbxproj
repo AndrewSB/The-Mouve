@@ -131,9 +131,7 @@
 		9A4823391B58E40C004AD2BC /* DZNEmptyDataSet.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4823361B58E40C004AD2BC /* DZNEmptyDataSet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A53E6E41B65932C00BBD5BC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */; };
 		9A53E6E51B65932C00BBD5BC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E31B65932C00BBD5BC /* KeychainAccess.framework */; };
-		9A53E6E61B65933E00BBD5BC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */; };
 		9A53E6E71B65933E00BBD5BC /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9A53E6E81B65933E00BBD5BC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E31B65932C00BBD5BC /* KeychainAccess.framework */; };
 		9A53E6E91B65933E00BBD5BC /* KeychainAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E31B65932C00BBD5BC /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A53E6EB1B659E9B00BBD5BC /* Mouve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A53E6EA1B659E9B00BBD5BC /* Mouve.swift */; };
 		9A8512101B55FBB300606BB1 /* HHLinkStoryboards.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85120F1B55FBB300606BB1 /* HHLinkStoryboards.m */; };
@@ -309,7 +307,6 @@
 				4673C1201AF6C857000C034A /* FBSDKMessengerShareKit.framework in Frameworks */,
 				46B29BB41ADB20F5000B9441 /* CFNetwork.framework in Frameworks */,
 				46B888CA1AF9550200D872E0 /* Parse.framework in Frameworks */,
-				9A53E6E61B65933E00BBD5BC /* SwiftyJSON.framework in Frameworks */,
 				4673C1341AF6CA36000C034A /* Toucan.framework in Frameworks */,
 				4673C11F1AF6C857000C034A /* FBSDKLoginKit.framework in Frameworks */,
 				46B29BB51ADB20F5000B9441 /* CoreGraphics.framework in Frameworks */,
@@ -325,7 +322,6 @@
 				4673C12B1AF6C951000C034A /* Bolts.framework in Frameworks */,
 				4673C11C1AF6C857000C034A /* FBAudienceNetwork.framework in Frameworks */,
 				4673C11A1AF6C857000C034A /* Bolts.framework in Frameworks */,
-				9A53E6E81B65933E00BBD5BC /* KeychainAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,12 +800,13 @@
 		46B29B701ADB2067000B9441 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Andrew Breckenridge";
 				TargetAttributes = {
 					46B29B771ADB2067000B9441 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = 2Z475Y2H59;
+						DevelopmentTeam = Y92JPPG79K;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -1002,6 +999,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1078,6 +1076,7 @@
 				INFOPLIST_FILE = "The Mouve/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tm.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "The Mouve/Supporting Files/The Mouve-Bridging-Header.h";
@@ -1100,6 +1099,7 @@
 				INFOPLIST_FILE = "The Mouve/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tm.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "The Mouve/Supporting Files/The Mouve-Bridging-Header.h";
