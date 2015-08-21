@@ -112,7 +112,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
 //            location: locationTextField.text)
         let newMouve = Events()
             newMouve.creator = PFUser.currentUser()!
-            newMouve.name  = titleEventTextField.text
+            newMouve.name  = titleEventTextField.text.uppercaseString
             newMouve.about = detailInfoTextField.text
             newMouve.address = self.actualAddress!
             newMouve.location = pickedPoint!
@@ -120,7 +120,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
             newMouve.endTime = rangeSlider.timeDates().endDate
             newMouve.privacy = publicPrivateSwitch.on
             if ((pickedPic) != nil){
-                newMouve.backgroundImage = PFFile(name: "bg.png", data:UIImagePNGRepresentation(pickedPic))
+                newMouve.backgroundImage = PFFile(name: "bg.png", data:UIImageJPEGRepresentation(pickedPic, 0.7))
             }
         
 //        let remoteMouve = PFObject(event: newMouve)
