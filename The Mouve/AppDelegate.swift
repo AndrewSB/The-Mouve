@@ -28,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         AERecord.loadCoreDataStack()
         Parse.enableLocalDatastore()
-        Parse.setApplicationId("IZoLJQny5gNws6JDI7NPw5qHzY7qsRJ4KzptN621",
-            clientKey: "b9kDXenYH1Jhs01qNnp1li1C8mdoArM255ZGJ6pt")
+        Parse.setApplicationId("h5smZAkhhQ8MYAFJY3P4U9rFs6kjz0MLSurD76tL",
+            clientKey: "8A4eqYwOATOIxM634S2Hf3oTVvbbjnUYclcFjhrT")
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         let loggedIn = PFUser.currentUser() != nil
