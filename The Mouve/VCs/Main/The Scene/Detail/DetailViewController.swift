@@ -52,12 +52,14 @@ class DetailViewController: UIViewController {
         
         addNavControllerLikePan()
         
+        
         headerImageView?.image = event?.getBgImg()
         blurredHeaderImageView?.image = event?.getBgImg()
         eventNameLabel.text = event!.name
         descriptionLabel.text = event!.about
+        timeLabel.text = "\(event!.startTime.toShortTimeString())-\(event!.endTime.toShortTimeString())"
         
-        addressButton.titleLabel?.text = event!.address
+        addressButton.titleLabel?.text = event?.address
         inviteButton.titleLabel?.text = "\(event!.invitees?.count) Invited"
     }
     

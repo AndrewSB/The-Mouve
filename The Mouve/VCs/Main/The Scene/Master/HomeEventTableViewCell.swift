@@ -16,21 +16,31 @@ class HomeEventTableViewCell: UITableViewCell {
             nameLabel.text = event.name
             descriptionLabel.text = event.about
             
-            dateAndTimeLabel.text = "\(event.startTime.toShortTimeString()) - \(event.endTime.toShortTimeString())"
+            
+            var todayOrNot:String
+            if (event.startTime.isToday() == true){
+                todayOrNot = "Today"
+            }
+            else{
+                todayOrNot = "Tomorrow"
+            }
+            
+            dateAndTimeLabel.text = "\(todayOrNot) | \(event.startTime.toShortTimeString())-\(event.endTime.toShortTimeString())"
 
-            distanceLabel.text = (String(format: "%.2f",event.location.distanceInMilesTo(PFGeoPoint(location: UserDefaults.lastLocation))))+" Miles"
+            distanceLabel.text = (String(format: "%.2f",event.location.distanceInMilesTo(PFGeoPoint(location: UserDefaults.lastLocation))))+" Miles Away"
             
             let places = ["Beach-Chillin", "Coffee-Hour", "Espresso-Lesson", "Fire-Works", "Food-Festival", "Football-Game", "San-Francisco-Visit", "State-Fair", "Study-Sesh", "Surf-Lesson"]
             
 //            event.backgroundImage = UIImage(named: places.randomElement())!
 //
             
-            
-            backgroundImageView.image = Toucan(image: event.getBgImg()!).resize(CGSize(width: self.contentView.frame.width, height: self.contentView.frame.height), fitMode: Toucan.Resize.FitMode.Crop).image
-
+            // blur Mouve background image for each cell
             let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+            blurView.alpha = 0.75
             blurView.frame = self.contentView.frame
+            // Crop and set Mouve background image for each cell
             backgroundImageView.addSubview(blurView)
+
             
             
 //            let array = [UIImage(named: "yoojin-pic"),UIImage(named: "noah-pic"),UIImage(named: "chelsea-pic"),UIImage(named: "andrew-pic")]
@@ -41,6 +51,9 @@ class HomeEventTableViewCell: UITableViewCell {
             profileImageView.image = Toucan(image: event.creator.getProfilePic()!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).image
             profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
             profileImageView.clipsToBounds = true
+            
+            backgroundImageView.image = Toucan(image: event.getBgImg()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height + 105)), fitMode: Toucan.Resize.FitMode.Crop).image
+//            backgroundImageView.clipsToBounds = true
         }
     }
     
