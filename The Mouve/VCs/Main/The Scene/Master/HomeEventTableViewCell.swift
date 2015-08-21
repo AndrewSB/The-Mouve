@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Toucan
-
+import Parse
 class HomeEventTableViewCell: UITableViewCell {
     var event: Events! {
         didSet {
@@ -17,13 +17,14 @@ class HomeEventTableViewCell: UITableViewCell {
             descriptionLabel.text = event.about
             
             dateAndTimeLabel.text = "\(event.startTime.toShortTimeString()) - \(event.endTime.toShortTimeString())"
-            
-            distanceLabel.text = "3.4 miles"
+
+            distanceLabel.text = "\(Int(event.location.distanceInMilesTo(PFGeoPoint(location: UserDefaults.lastLocation)))) Miles"
             
             let places = ["Beach-Chillin", "Coffee-Hour", "Espresso-Lesson", "Fire-Works", "Food-Festival", "Football-Game", "San-Francisco-Visit", "State-Fair", "Study-Sesh", "Surf-Lesson"]
             
 //            event.backgroundImage = UIImage(named: places.randomElement())!
 //
+            
             
             backgroundImageView.image = Toucan(image: event.getBgImg()!).resize(CGSize(width: self.contentView.frame.width, height: self.contentView.frame.height), fitMode: Toucan.Resize.FitMode.Crop).image
 

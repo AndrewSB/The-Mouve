@@ -35,7 +35,6 @@
         </mutableArray>
         <mutableArray key="HalisGR-Light-Italic.otf">
             <string>HalisGR-LightItalic</string>
-            <string>HalisGR-LightItalic</string>
         </mutableArray>
         <mutableArray key="HalisGR-Light.otf">
             <string>HalisGR-Light</string>
@@ -48,6 +47,7 @@
             <string>HalisGR-Medium</string>
         </mutableArray>
         <mutableArray key="HalisGR-Regular-Italic.otf">
+            <string>HalisGR-RegularItalic</string>
             <string>HalisGR-RegularItalic</string>
         </mutableArray>
         <mutableArray key="HalisGR-Regular.otf">
@@ -177,8 +177,8 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.4 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-GB-5S5">
-                                                    <rect key="frame" x="22" y="100" width="61" height="17"/>
-                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="15"/>
+                                                    <rect key="frame" x="22" y="102" width="53" height="15"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
@@ -201,8 +201,8 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today | 5PM - 9PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-F7-9dh">
-                                                    <rect key="frame" x="22" y="81" width="134" height="17"/>
-                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="15"/>
+                                                    <rect key="frame" x="22" y="86" width="108" height="14"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
@@ -224,8 +224,8 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't forget to bring your swim suit! Also bring food and dranks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coP-Hn-gLS">
-                                                    <rect key="frame" x="24" y="40" width="383" height="15"/>
-                                                    <fontDescription key="fontDescription" name="HalisGR-LightItalic" family="Halis GR" pointSize="13"/>
+                                                    <rect key="frame" x="24" y="40" width="361" height="14"/>
+                                                    <fontDescription key="fontDescription" name="HalisGR-RegularItalic" family="Halis GR" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
