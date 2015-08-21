@@ -129,6 +129,7 @@
 		9A2697911B658FFB0009F267 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2697901B658FFB0009F267 /* User.swift */; };
 		9A4823381B58E40C004AD2BC /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4823361B58E40C004AD2BC /* DZNEmptyDataSet.framework */; };
 		9A4823391B58E40C004AD2BC /* DZNEmptyDataSet.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4823361B58E40C004AD2BC /* DZNEmptyDataSet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A51E4B81B87824B00A34028 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A51E4B71B87824B00A34028 /* Activity.swift */; };
 		9A53E6E41B65932C00BBD5BC /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */; };
 		9A53E6E51B65932C00BBD5BC /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E31B65932C00BBD5BC /* KeychainAccess.framework */; };
 		9A53E6E71B65933E00BBD5BC /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -280,6 +281,7 @@
 		9A26978A1B6587330009F267 /* ServerRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRequests.swift; sourceTree = "<group>"; };
 		9A2697901B658FFB0009F267 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9A4823361B58E40C004AD2BC /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = ../../Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
+		9A51E4B71B87824B00A34028 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		9A53E6E31B65932C00BBD5BC /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = SOURCE_ROOT; };
 		9A53E6EA1B659E9B00BBD5BC /* Mouve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mouve.swift; sourceTree = "<group>"; };
@@ -708,6 +710,7 @@
 				46D788FD1B0BF86A00276696 /* RemoteEvent.swift */,
 				468D21681AF0864C00CE6E19 /* Event.swift */,
 				788296211B8400B000063710 /* Events.swift */,
+				9A51E4B71B87824B00A34028 /* Activity.swift */,
 			);
 			name = Entities;
 			path = "../../The Mouve";
@@ -806,7 +809,7 @@
 				TargetAttributes = {
 					46B29B771ADB2067000B9441 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = 2Z475Y2H59;
+						DevelopmentTeam = Y92JPPG79K;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -935,6 +938,7 @@
 				46B29BCD1ADB219C000B9441 /* SceneFeedViewController.swift in Sources */,
 				46B888C41AF94C3E00D872E0 /* GreyGreenButton.swift in Sources */,
 				4685F8BF1B1C1FF3004D77E9 /* IQKeyboardReturnKeyHandler.swift in Sources */,
+				9A51E4B81B87824B00A34028 /* Activity.swift in Sources */,
 				788296221B8400B000063710 /* Events.swift in Sources */,
 				78FC24D71B661769004B65C3 /* GooglePlacesAutocomplete.swift in Sources */,
 				462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */,

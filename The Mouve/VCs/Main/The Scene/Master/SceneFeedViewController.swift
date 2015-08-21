@@ -76,6 +76,7 @@ class SceneFeedViewController: UIViewController {
         
 //        let feedQuery = PFQuery(className: "Events")
         let feedQuery = Events.query()
+        appDel.location.startUpdatingLocation()
         
         switch type! {
         case .Explore:
