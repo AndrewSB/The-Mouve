@@ -98,12 +98,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
                 (imageData: NSData?, error: NSError?) -> Void in
                 if (error == nil) {
                     let image = UIImage(data:imageData!)
-                    self.avatarImage.image = image
-                    let blurredImage = Toucan(image: self.avatarImage.image!).resize(self.headerView.frame.size, fitMode: .Crop)
+//                    self.avatarImage.image = image
+                    let blurredImage = Toucan(image: image!).resize(self.headerView.frame.size, fitMode: .Crop).image
                     
                     
                     self.blurredHeaderImageView = UIImageView(frame: self.headerView.bounds)
-                    self.blurredHeaderImageView.image = blurredImage.image
+                    self.blurredHeaderImageView.image = blurredImage
 
                     self.blurredHeaderImageView!.contentMode = UIViewContentMode.ScaleAspectFill
                     self.blurredHeaderImageView!.alpha = 1.0
@@ -114,10 +114,14 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
                     
                     self.blurredHeaderImageView.addSubview(blurView)
                     
-                    self.headerView.clipsToBounds = true
+//                    self.headerView.clipsToBounds = true
                     
                     self.usernameLabel.bringSubviewToFront(self.headerView)
-                    self.profilePicView.image = image
+                    self.profilePicView.image = Toucan(image: image!).resize(CGSize(width: self.profilePicView.bounds.width, height: self.profilePicView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).image
+                    
+                    self.profilePicView.layer.cornerRadius = self.profilePicView.frame.height / 2
+                    self.profilePicView.clipsToBounds = true
+
                 }
                 
             })
