@@ -34,4 +34,7 @@ class LocalMessage {
         
         NSNotificationCenter.defaultCenter().addObserver(inClass, selector: Selector(classFunction), name: message.rawValue, object: nil)
     }
+    class func deallocLM(){
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 }

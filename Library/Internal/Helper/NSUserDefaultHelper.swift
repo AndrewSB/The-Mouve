@@ -45,5 +45,6 @@ class UserDefaults {
     class func resetUD(){
         let appDomain = NSBundle.mainBundle().bundleIdentifier!
         NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain)
+
     }
 }
