@@ -25,6 +25,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         
     }
     
+    @IBOutlet weak var profilePicView: UIImageView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var separationLabel: UIView!
     @IBOutlet weak var headerLabel: UILabel!
@@ -52,8 +53,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         
         avatarImage.layer.cornerRadius = avatarImage.frame.width/2
         
-        nameLabel.text! = "\(PFUser.currentUser()!.fullName)"
-        usernameLabel.text! = "@" + PFUser.currentUser()!.username!
+
         self.getUserMouves()
         
         for button in [mouveButton, followersButton, followingButton] {
@@ -90,32 +90,46 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        nameLabel.text! = "\(appDel.currentUser!.fullName)"
+        usernameLabel.text! = "@" + appDel.currentUser!.username!
+        let userImageFile = appDel.currentUser?["profileImage"] as? PFFile
+        if(userImageFile != nil){
+            userImageFile!.getDataInBackgroundWithBlock({
+                (imageData: NSData?, error: NSError?) -> Void in
+                if (error == nil) {
+                    let image = UIImage(data:imageData!)
+                    self.avatarImage.image = image
+                    let blurredImage = Toucan(image: self.avatarImage.image!).resize(self.headerView.frame.size, fitMode: .Crop)
+                    
+                    
+                    self.blurredHeaderImageView = UIImageView(frame: self.headerView.bounds)
+                    self.blurredHeaderImageView.image = blurredImage.image
+
+                    self.blurredHeaderImageView!.contentMode = UIViewContentMode.ScaleAspectFill
+                    self.blurredHeaderImageView!.alpha = 1.0
+                    self.headerView.insertSubview(self.blurredHeaderImageView, belowSubview: self.usernameLabel)
+                    
+                    let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+                    blurView.frame = self.blurredHeaderImageView.frame
+                    
+                    self.blurredHeaderImageView.addSubview(blurView)
+                    
+                    self.headerView.clipsToBounds = true
+                    
+                    self.usernameLabel.bringSubviewToFront(self.headerView)
+                    self.profilePicView.image = image
+                }
+                
+            })
+        }
         //Header
 //        headerImageView = UIImageView(frame: headerView.bounds)
-//        headerImageView!.image = UIImage(named: "yoojin-full-pic")
+//        headerImageView!.image = avatarImage.image
 //        headerImageView!.contentMode = .ScaleAspectFill
 //        headerView.insertSubview(headerImageView, belowSubview: headerLabel)
         
         //Blurred header
         
-        let blurredImage = Toucan(image: UIImage(named: "yoojin-full-pic")!).resize(headerView.frame.size, fitMode: .Crop)
-        
-        
-        blurredHeaderImageView = UIImageView(frame: headerView.bounds)
-        blurredHeaderImageView.image = blurredImage.image
-
-        blurredHeaderImageView!.contentMode = UIViewContentMode.ScaleAspectFill
-        blurredHeaderImageView!.alpha = 1.0
-        headerView.insertSubview(blurredHeaderImageView, belowSubview: usernameLabel)
-        
-        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-        blurView.frame = blurredHeaderImageView.frame
-        
-        blurredHeaderImageView.addSubview(blurView)
-        
-        headerView.clipsToBounds = true
-        
-        usernameLabel.bringSubviewToFront(headerView)
 
         
     }

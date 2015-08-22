@@ -15,7 +15,7 @@ import Crashlytics
 let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var currentUser: PFUser?
     var window: UIWindow?
     var location = Location()
     let placeHolderBg = UIImage(named: "addImage")
@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
         
         let loggedIn = PFUser.currentUser() != nil
+        self.currentUser = PFUser.currentUser()
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
