@@ -93,7 +93,9 @@ extension AppDelegate {
         window!.makeKeyAndVisible()
     }
     func logOut() {
-        UserDefaults.resetUD()
+//        UserDefaults.resetUD()
         PFUser.logOut()
+//        LocalMessage.deallocLM()
+        self.checkLogin()
     }
 }

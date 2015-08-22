@@ -71,8 +71,7 @@ class SettingsTableViewController: UITableViewController {
         case 4:
             switch indexPath.row {
             case 0:
-                PFUser.logOut()
-                appDel.checkLogin()
+               appDel.logOut()
             default: ()
             }
         default: ()

@@ -90,7 +90,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        nameLabel.text! = "\(appDel.currentUser!.fullName)"
+        nameLabel.text! = "\(appDel.currentUser?.fullName)"
         usernameLabel.text! = "@" + appDel.currentUser!.username!
         let userImageFile = appDel.currentUser?["profileImage"] as? PFFile
         if(userImageFile != nil){
