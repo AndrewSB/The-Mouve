@@ -13,6 +13,7 @@ enum typeKeyEnum:String {
     case Follow = "follow"
     case Comment = "comment"
     case Attend = "attend"
+    case Invite = "invite"
 }
 
 class Activity: PFObject {
