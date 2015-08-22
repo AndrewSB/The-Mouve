@@ -59,8 +59,8 @@ class DetailViewController: UIViewController {
         descriptionLabel.text = event!.about
         timeLabel.text = "\(event!.startTime.toShortTimeString())-\(event!.endTime.toShortTimeString())"
         
-        addressButton.titleLabel?.text = event?.address
-        inviteButton.titleLabel?.text = "\(event!.invitees?.count) Invited"
+        addressButton.setTitle(event!.address, forState: .Normal)
+        inviteButton.setTitle(((event!.invitees == nil) ? "Nobody invited" : "\(event?.invitees) invited"), forState: .Normal)
     }
     
     override func viewWillAppear(animated: Bool) {
