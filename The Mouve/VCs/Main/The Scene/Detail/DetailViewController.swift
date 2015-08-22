@@ -9,6 +9,7 @@
 import UIKit
 import Toucan
 import Parse
+import MapKit
 
 class DetailViewController: UIViewController {
     var event: Events?
@@ -58,11 +59,30 @@ class DetailViewController: UIViewController {
         eventNameLabel.text = event!.name
         descriptionLabel.text = event!.about
         timeLabel.text = "\(event!.startTime.toShortTimeString())-\(event!.endTime.toShortTimeString())"
-        
+ 
         addressButton.setTitle(event!.address, forState: .Normal)
+        addressButton.titleLabel!.numberOfLines = 0 // Dynamic number of lines
+        addressButton.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        addressButton.addTarget(self, action: "openMapForPlace:", forControlEvents: UIControlEvents.TouchUpInside)
         inviteButton.setTitle(((event!.invitees == nil) ? "Nobody invited" : "\(event?.invitees) invited"), forState: .Normal)
     }
-    
+    @IBAction func openMapForPlace(sender: UIButton) {
+        var latitute:CLLocationDegrees! =  event?.location.latitude
+        var longitute:CLLocationDegrees! =  event?.location.longitude
+        
+        let regionDistance:CLLocationDistance = 10000
+        var coordinates = CLLocationCoordinate2DMake(latitute, longitute)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        var options = [
+            MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span)
+        ]
+        var placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        var mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "\(event!.name)"
+        mapItem.openInMapsWithLaunchOptions(options)
+        
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
