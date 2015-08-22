@@ -988,22 +988,14 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="fI9-Yj-gII"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HalisGR-RegularItalic" family="Halis GR" pointSize="16"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="HalisGR-RegularItalic" family="Halis GR" pointSize="14"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80K-AW-FfG">
-                                            <rect key="frame" x="22" y="359" width="568" height="40"/>
-                                            <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="14"/>
-                                            <state key="normal" title="Address">
-                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMN-fl-cDi">
-                                            <rect key="frame" x="22" y="393" width="66" height="29"/>
+                                            <rect key="frame" x="22" y="359" width="568" height="29"/>
                                             <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="15"/>
-                                            <state key="normal" title="32 invites">
+                                            <state key="normal" title="Address">
                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -1059,43 +1051,55 @@
                                                 <constraint firstAttribute="height" constant="210" id="ump-1X-Mou"/>
                                             </constraints>
                                         </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMN-fl-cDi">
+                                            <rect key="frame" x="22" y="406" width="110" height="25"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="110" id="6ZN-1J-9fu"/>
+                                                <constraint firstAttribute="height" constant="25" id="U2v-6R-hVg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="13"/>
+                                            <state key="normal" title="32 invites">
+                                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="yoO-kW-dp9" firstAttribute="leading" secondItem="xIf-rk-ZEb" secondAttribute="leading" id="247-jW-n8w"/>
-                                        <constraint firstItem="yoO-kW-dp9" firstAttribute="leading" secondItem="80K-AW-FfG" secondAttribute="leading" id="2mF-bl-iQq"/>
                                         <constraint firstItem="e2A-gn-HMl" firstAttribute="leading" secondItem="jNa-dh-FZU" secondAttribute="leading" constant="22" id="3aZ-1D-Fto"/>
                                         <constraint firstItem="Vbb-c2-446" firstAttribute="top" secondItem="9NG-m5-iQW" secondAttribute="bottom" constant="16" id="4Sx-A7-xV9"/>
                                         <constraint firstAttribute="trailing" secondItem="9NG-m5-iQW" secondAttribute="trailing" id="4bX-iL-iLN"/>
+                                        <constraint firstItem="80K-AW-FfG" firstAttribute="trailing" secondItem="rD2-ON-cIe" secondAttribute="trailing" id="4pz-J2-AyO"/>
+                                        <constraint firstItem="80K-AW-FfG" firstAttribute="top" secondItem="yoO-kW-dp9" secondAttribute="bottom" constant="20" id="5xz-gP-e9l"/>
                                         <constraint firstItem="rD2-ON-cIe" firstAttribute="leading" secondItem="Vbb-c2-446" secondAttribute="trailing" constant="12" id="Apw-1u-l6n"/>
-                                        <constraint firstItem="80K-AW-FfG" firstAttribute="top" secondItem="yoO-kW-dp9" secondAttribute="bottom" constant="20" id="BHe-P1-ASX"/>
-                                        <constraint firstItem="8Z6-Pv-ix8" firstAttribute="top" secondItem="mMN-fl-cDi" secondAttribute="bottom" constant="12" id="DDy-ck-Xe8"/>
                                         <constraint firstItem="Vbb-c2-446" firstAttribute="leading" secondItem="Pb0-Tb-6Z5" secondAttribute="trailing" constant="12" id="DQg-uz-dzw"/>
                                         <constraint firstAttribute="trailing" secondItem="1LN-sB-Oyp" secondAttribute="trailing" id="EnS-Ib-d5Q"/>
                                         <constraint firstItem="ekG-ae-AMS" firstAttribute="leading" secondItem="jNa-dh-FZU" secondAttribute="leading" constant="22" id="FwY-lb-rwM"/>
+                                        <constraint firstItem="mMN-fl-cDi" firstAttribute="top" secondItem="80K-AW-FfG" secondAttribute="bottom" constant="18" id="HRB-ey-Upp"/>
                                         <constraint firstItem="e2A-gn-HMl" firstAttribute="top" secondItem="8Z6-Pv-ix8" secondAttribute="bottom" constant="8" symbolic="YES" id="Iqq-uu-uat"/>
                                         <constraint firstItem="8Z6-Pv-ix8" firstAttribute="centerX" secondItem="9NG-m5-iQW" secondAttribute="centerX" id="It2-mj-Eck"/>
+                                        <constraint firstItem="mMN-fl-cDi" firstAttribute="leading" secondItem="8Z6-Pv-ix8" secondAttribute="leading" id="Jrj-y2-goP"/>
                                         <constraint firstItem="yoO-kW-dp9" firstAttribute="top" secondItem="xIf-rk-ZEb" secondAttribute="bottom" constant="5" id="KcK-2h-hZh"/>
+                                        <constraint firstItem="8Z6-Pv-ix8" firstAttribute="top" secondItem="mMN-fl-cDi" secondAttribute="bottom" constant="3" id="Plr-nA-xpM"/>
                                         <constraint firstAttribute="trailing" secondItem="yoO-kW-dp9" secondAttribute="trailing" constant="15" id="TFQ-pB-Lpi"/>
                                         <constraint firstAttribute="bottom" secondItem="8Z6-Pv-ix8" secondAttribute="bottom" constant="89" id="UfG-pm-nAO"/>
                                         <constraint firstItem="9NG-m5-iQW" firstAttribute="leading" secondItem="jNa-dh-FZU" secondAttribute="leading" id="XmL-xe-r0k"/>
                                         <constraint firstItem="ekG-ae-AMS" firstAttribute="leading" secondItem="xIf-rk-ZEb" secondAttribute="leading" id="cQn-ez-yjw"/>
-                                        <constraint firstItem="mMN-fl-cDi" firstAttribute="top" secondItem="80K-AW-FfG" secondAttribute="bottom" constant="-6" id="e7Y-e6-JkE"/>
                                         <constraint firstItem="rD2-ON-cIe" firstAttribute="top" secondItem="9NG-m5-iQW" secondAttribute="bottom" constant="16" id="env-bS-nQV"/>
                                         <constraint firstItem="1LN-sB-Oyp" firstAttribute="leading" secondItem="e2A-gn-HMl" secondAttribute="trailing" constant="2" id="f5R-1O-qsY"/>
                                         <constraint firstItem="9NG-m5-iQW" firstAttribute="top" secondItem="tax-em-Tnc" secondAttribute="bottom" constant="2" id="fpW-Jx-h9d"/>
-                                        <constraint firstAttribute="trailing" secondItem="80K-AW-FfG" secondAttribute="trailing" constant="10" id="g7S-7f-nMI"/>
-                                        <constraint firstItem="80K-AW-FfG" firstAttribute="leading" secondItem="mMN-fl-cDi" secondAttribute="leading" id="gd0-KP-FDf"/>
                                         <constraint firstItem="tax-em-Tnc" firstAttribute="leading" secondItem="jNa-dh-FZU" secondAttribute="leading" id="hYB-YJ-MnE"/>
                                         <constraint firstItem="tax-em-Tnc" firstAttribute="top" secondItem="jNa-dh-FZU" secondAttribute="top" constant="-20" id="iLY-6P-YYR"/>
                                         <constraint firstAttribute="trailing" secondItem="ekG-ae-AMS" secondAttribute="trailing" constant="40" id="ioR-4Z-9Uh"/>
                                         <constraint firstItem="1LN-sB-Oyp" firstAttribute="centerY" secondItem="e2A-gn-HMl" secondAttribute="centerY" id="mLq-En-g9u"/>
+                                        <constraint firstItem="80K-AW-FfG" firstAttribute="leading" secondItem="yoO-kW-dp9" secondAttribute="leading" id="oz4-VC-8Xd"/>
+                                        <constraint firstItem="mMN-fl-cDi" firstAttribute="leading" secondItem="80K-AW-FfG" secondAttribute="leading" id="piE-0X-Xlf"/>
                                         <constraint firstAttribute="trailing" secondItem="rD2-ON-cIe" secondAttribute="trailing" constant="10" id="sCO-QO-1L1"/>
                                         <constraint firstItem="Pb0-Tb-6Z5" firstAttribute="top" secondItem="9NG-m5-iQW" secondAttribute="bottom" constant="16" id="uwL-WY-xaZ"/>
                                         <constraint firstItem="ekG-ae-AMS" firstAttribute="top" secondItem="Pb0-Tb-6Z5" secondAttribute="bottom" constant="18" id="uwS-zE-bVT"/>
                                         <constraint firstAttribute="trailing" secondItem="tax-em-Tnc" secondAttribute="trailing" id="vkd-M7-4iY"/>
                                         <constraint firstItem="xIf-rk-ZEb" firstAttribute="top" secondItem="ekG-ae-AMS" secondAttribute="bottom" constant="4" id="wuc-06-CL2"/>
-                                        <constraint firstItem="8Z6-Pv-ix8" firstAttribute="leading" secondItem="mMN-fl-cDi" secondAttribute="leading" id="xH6-em-kzf"/>
                                     </constraints>
                                 </view>
                                 <prototypes>

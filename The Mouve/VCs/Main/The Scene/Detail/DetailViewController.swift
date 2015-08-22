@@ -60,6 +60,9 @@ class DetailViewController: UIViewController {
         timeLabel.text = "\(event!.startTime.toShortTimeString())-\(event!.endTime.toShortTimeString())"
         
         addressButton.setTitle(event!.address, forState: .Normal)
+        addressButton.titleLabel!.numberOfLines = 0 // Dynamic number of lines
+        addressButton.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
+//        addressButton.titleLabel?.adjustsFontSizeToFitWidth = true
         inviteButton.setTitle(((event!.invitees == nil) ? "Nobody invited" : "\(event?.invitees) invited"), forState: .Normal)
     }
     
