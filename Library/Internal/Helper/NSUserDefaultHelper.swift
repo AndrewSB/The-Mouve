@@ -42,4 +42,8 @@ class UserDefaults {
             set(newValue, forKey: UserDefaultKeys.profilePictureURL.rawValue)
         }
     }
+    class func resetUD(){
+        let appDomain = NSBundle.mainBundle().bundleIdentifier!
+        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain)
+    }
 }

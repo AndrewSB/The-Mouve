@@ -130,6 +130,13 @@ extension Events: PFSubclassing {
     }
 }
 extension PFUser{
+    var fullName:String {
+        
+        get { return (self["fullName"] != nil ? (rawValue: self["fullName"] as? String) : nil)! }
+        
+        set { return self["fullName"] = newValue }
+        
+    }
     func getProfilePic() -> UIImage?{
         var imgData = self["profileImage"]?.getData()
             if(!(imgData != nil)){

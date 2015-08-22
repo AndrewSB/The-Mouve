@@ -15,7 +15,15 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     let offset_HeaderStop:CGFloat = 180 // At this offset the Header stops its transformations
     let offset_B_LabelHeader:CGFloat = 120 // At this offset the Black label reaches the Header
     let distance_W_LabelHeader:CGFloat = 180 // The distance between the bottom of the Header and the top of the White Label
-    
+    var myMouves: [Events]? {
+        
+        didSet {
+            
+            profileTableView.reloadData()
+            
+        }
+        
+    }
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var separationLabel: UIView!
@@ -44,8 +52,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         
         avatarImage.layer.cornerRadius = avatarImage.frame.width/2
         
-        nameLabel.text! = userCredentials.sharedInstance.getUsername()
-        usernameLabel.text! = "@" + userCredentials.sharedInstance.getUsername()
+        nameLabel.text! = "\(PFUser.currentUser()!.fullName)"
+        usernameLabel.text! = "@" + PFUser.currentUser()!.username!
+        self.getUserMouves()
         
         for button in [mouveButton, followersButton, followingButton] {
             
@@ -110,13 +119,29 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
 
         
     }
+
+    func getUserMouves(){
+        let newUser = PFUser.currentUser()
+        var feedQuery = PFQuery(className: "Events")
+        feedQuery.whereKey("creator", equalTo:PFUser.currentUser()!)
+        //feedQuery.whereKey("email", equalTo: newUser!.email!)  //PFObject(withoutDataWithClassName:"User", objectId:newUser!.email!))
+        
+        feedQuery.limit = 20
+        feedQuery.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+            var serverData = [Events]()
+            //            println(results)
+            
+            if ((results) != nil) {
+                self.myMouves = results as? [Events]
+            }
+            self.mouveButton.setTitle("\(self.myMouves!.count)\nMouves", forState: UIControlState.Normal)
+        }
+    }
 }
-
-
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return fakeEvents.count
+        return myMouves == nil ? 0 : myMouves!.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -128,13 +153,9 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
-        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
         
-//        cell.event = Events.query()[indexPath.section]
-        let cellText = UILabel()
-        cellText.text = "Nothing"
-       cell.addSubview(cellText)
+        cell.event = self.myMouves![indexPath.section]
         
         return cell
     }

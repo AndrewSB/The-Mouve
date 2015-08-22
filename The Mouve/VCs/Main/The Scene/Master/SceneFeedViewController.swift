@@ -33,6 +33,7 @@ class SceneFeedViewController: UIViewController {
         super.viewDidLoad()
         //uncomment starts here
 
+        LocalMessage.post(type.hashValue == 0 ? .HomeFeedPageOne : .HomeFeedPageTwo)
         LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
         
         feedTableView.delegate = self
@@ -64,55 +65,14 @@ class SceneFeedViewController: UIViewController {
             
             if ((results) != nil) {
                 self.feedData = results as? [Events]
-                //uncomment stops here
-                
-                
-                //                for result in results {
-                ////                    serverData.append(Event(parseObject: result as! PFObject))
-                //                }
             }
-            
-            //            self.feedData = serverData
         }
-        
-//        println("didLoad \(self.type)")
-//        LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
-//        
-//        feedTableView.delegate = self
-//        feedTableView.dataSource = self
-//        
-//        let feedQuery = PFQuery(className: "Events")
-//        feedQuery.limit = 20
-//        
-//        switch type! {
-//        case .Explore:
-//            println("lol")
-//        case .Scene:
-//            println("nah")
-//        default:
-//            assert(true == false, "Type wasnt scene or explore")
-//        }
-        
-//        feedQuery.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
-//            var serverData = [Event]()
-////            println(results)
-//            
-//            if let results = results {
-//                for result in results {
-//                    serverData.append(Event(parseObject: result as! PFObject))
-//                }
-//            }
-//            
-//            self.feedData = serverData
-//        }
-        
         
         feedTableView.contentInset = UIEdgeInsets(top: 44+22, left: 0, bottom: 44, right: 0)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        LocalMessage.post(type.hashValue == 0 ? .HomeFeedPageOne : .HomeFeedPageTwo)
 //        LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
 //        
 //        feedTableView.delegate = self
