@@ -76,9 +76,9 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     
     // Alignments for the range-slider
     override func viewDidLayoutSubviews() {
-        let margin: CGFloat = 20.0
-        let width = view.bounds.width - 2.0 * margin
-        rangeSlider.frame = CGRect(x: 40, y: startTime!.frame.origin.y - 35, width: view.frame.width - 80, height: 31)
+//        let margin: CGFloat = 20.0
+//        let width = view.bounds.width - 2.0 //* margin
+        rangeSlider.frame = CGRect(x: 40, y: startTime!.frame.origin.y - 35, width: view.frame.width - 80, height: 30)
     }
     
     // Changes labels as you drag slider
@@ -120,7 +120,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
             newMouve.endTime = rangeSlider.timeDates().endDate
             newMouve.privacy = publicPrivateSwitch.on
             if ((pickedPic) != nil){
-                newMouve.backgroundImage = PFFile(name: "bg.png", data:UIImageJPEGRepresentation(pickedPic, 0.7))
+                newMouve.backgroundImage = PFFile(name: "bg.jpg", data:UIImageJPEGRepresentation(pickedPic, 0.7))
             }
         
 //        let remoteMouve = PFObject(event: newMouve)
@@ -139,7 +139,9 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
 extension AddMouveViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //    Using Toucan to circle the images
     func circleMyImage(currentImage: UIImage) -> UIImage{
-        var roundedEventPic = Toucan(image: currentImage).resize(CGSize(width: 210, height: 210), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse()
+        var croppedEventPic = Toucan(image: currentImage).resize(CGSize(width: eventImageButton!.frame.width, height: eventImageButton!.frame.height), fitMode: Toucan.Resize.FitMode.Crop).image
+        
+        var roundedEventPic = Toucan(image: croppedEventPic).resize(CGSize(width: 210, height: 210), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse()
         return roundedEventPic.image
     }
     //  Open Photo Library to upload photo (some code from theappguruz)

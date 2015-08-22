@@ -58,8 +58,9 @@ class DetailViewController: UIViewController {
         blurredHeaderImageView?.image = event?.getBgImg()
         eventNameLabel.text = event!.name
         descriptionLabel.text = event!.about
-        timeLabel.text = "\(event!.startTime.toShortTimeString())-\(event!.endTime.toShortTimeString())"
- 
+        timeLabel.text = "\(event!.startTime.toShortTimeString()) - \(event!.endTime.toShortTimeString())"
+        
+        
         addressButton.setTitle(event!.address, forState: .Normal)
         addressButton.titleLabel!.numberOfLines = 0 // Dynamic number of lines
         addressButton.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -82,11 +83,6 @@ class DetailViewController: UIViewController {
         mapItem.name = "\(event!.name)"
         mapItem.openInMapsWithLaunchOptions(options)
         
-        addressButton.setTitle(event!.address, forState: .Normal)
-        addressButton.titleLabel!.numberOfLines = 0 // Dynamic number of lines
-        addressButton.titleLabel!.lineBreakMode = NSLineBreakMode.ByWordWrapping
-//        addressButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        inviteButton.setTitle(((event!.invitees == nil) ? "Nobody invited" : "\(event?.invitees) invited"), forState: .Normal)
     }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

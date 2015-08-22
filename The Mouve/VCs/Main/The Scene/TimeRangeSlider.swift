@@ -120,7 +120,7 @@ extension NSDate
         var formatter = NSDateFormatter()
         var localDateFormat = NSDateFormatter.dateFormatFromTemplate("j", options: 0, locale: locale)!
         if localDateFormat.rangeOfString("a") != nil {
-            formatter.dateFormat = "h:mm a"
+            formatter.dateFormat = "h:mma"
         }
         else{
             formatter.dateFormat = "HH:mm"

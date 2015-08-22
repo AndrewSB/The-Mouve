@@ -11,6 +11,7 @@ import UIKit
 import Toucan
 import Parse
 class HomeEventTableViewCell: UITableViewCell {
+    var isBlurred:Bool = false
     var event: Events! {
         didSet {
             nameLabel.text = event.name
@@ -25,7 +26,7 @@ class HomeEventTableViewCell: UITableViewCell {
                 todayOrNot = "Tomorrow"
             }
             
-            dateAndTimeLabel.text = "\(todayOrNot) | \(event.startTime.toShortTimeString())-\(event.endTime.toShortTimeString())"
+            dateAndTimeLabel.text = "\(todayOrNot) | \(event.startTime.toShortTimeString()) - \(event.endTime.toShortTimeString())"
 
             distanceLabel.text = (String(format: "%.2f",event.location.distanceInMilesTo(PFGeoPoint(location: UserDefaults.lastLocation))))+" Miles Away"
             
@@ -35,12 +36,15 @@ class HomeEventTableViewCell: UITableViewCell {
 //
             
             // blur Mouve background image for each cell
+            if (isBlurred == false){
             let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
             blurView.alpha = 0.75
             blurView.frame = self.contentView.frame
             // Crop and set Mouve background image for each cell
             backgroundImageView.addSubview(blurView)
-
+                
+                isBlurred = true
+            }
             
             
 //            let array = [UIImage(named: "yoojin-pic"),UIImage(named: "noah-pic"),UIImage(named: "chelsea-pic"),UIImage(named: "andrew-pic")]
