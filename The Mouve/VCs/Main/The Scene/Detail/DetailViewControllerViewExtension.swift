@@ -74,7 +74,31 @@ extension DetailViewController { // View code and actions
     
     
     @IBAction func calendarButtonWasHit(sender: AnyObject) {
-        calendarButton.completed!.toggle()
+//        calendarButton.completed!.toggle()
+        if (self.calendarButton.selected) {
+            // Unattend
+            self.calendarButton.selected = false;
+            ParseUtility.unattendMouveInBackground(self.event){(success: Bool, error: NSError?) -> () in
+                if((error) != nil){
+                    println("Cannot unattend event")
+                }
+                else{
+                    println("Unattended  successfully")
+                }
+            }
+        } else {
+            // Attend
+            self.calendarButton.selected = true;
+            ParseUtility.attendMouveInBackground(self.event!){(success: Bool, error: NSError?) -> () in
+                if((error) != nil){
+                    println("Cannot attend \(self.event!.name)")
+                }
+                else{
+                    println("Attending \(self.event!.name) successfully")
+                }
+            }
+        }
+
     }
     
     @IBAction func bookmarkButtonWasHit(sender: AnyObject) {

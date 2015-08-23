@@ -117,12 +117,13 @@ class SceneFeedViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         super.prepareForSegue(segue, sender: sender)
-        
         if let des = segue.destinationViewController as? DetailViewController {
             des.event = sender as? Events
         }
+        
     }
-    
+    @IBAction func unwindToVC(segue: UIStoryboardSegue) {
+    }
     func newLocation() {
         println("now somewhere else")
     }

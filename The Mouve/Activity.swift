@@ -20,8 +20,36 @@ class Activity: PFObject {
     @NSManaged var typeKey: String
     @NSManaged var fromUser: PFUser
     @NSManaged var toUser: PFUser
-    @NSManaged var content: String
-    @NSManaged var event: Events
+    @NSManaged var stringContent: String
+    @NSManaged var mediaFile: PFFile
+    @NSManaged var onMouve: Events
+    
+    override init(){
+        super.init()
+        println("Initialized empty event")
+    }
+    init(type: typeKeyEnum, targetUser: PFUser, stringContent: String, mediaFile: UIImage, targetMouve: Events) {
+            super.init(className: "Activity")
+            self.fromUser = PFUser.currentUser()!
+            self.toUser = targetUser
+            self.stringContent = stringContent
+            self.onMouve = targetMouve
+        
+            self.mediaFile = PFFile(name: "\(self.fromUser.username)_\(self.onMouve.objectId)_\(self.objectId).jpg", data:UIImageJPEGRepresentation(mediaFile, 0.7))
+            
+            
+    }
+    override class func query() -> PFQuery? {
+        //1
+        let query = PFQuery(className: Activity.parseClassName())
+        //        query.cachePolicy = PFCachePolicy.CacheElseNetwork
+        //2
+        query.includeKey("fromUser")
+        query.includeKey("onMouve")
+        //3
+        query.orderByAscending("createdAt")
+        return query
+    }
 }
 
 extension Activity: PFSubclassing{
