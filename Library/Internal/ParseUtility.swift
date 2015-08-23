@@ -11,7 +11,7 @@ import Parse
 import UIKit
 
 class ParseUtility{
-    class func attendMouveInBackground(targetEvent: Events ,onCompletion: ((success: Bool, error: NSError?) -> ())?){
+    class func attendMouveInBackground(targetEvent: Events ,onCompletion: ((succeeded: Bool, error: NSError?) -> ())?){
 //        Check if invited if private
         let query = Activity.query()
 //        if (targetEvent.privacy){
@@ -46,15 +46,15 @@ class ParseUtility{
         activity.ACL = activityACL
 //        targetEvent.ACL = eventACL
         
-        activity.saveInBackgroundWithBlock(){(success: Bool, error: NSError?) -> Void in
+        activity.saveInBackgroundWithBlock(){(succeeded: Bool, error: NSError?) -> Void in
 //            if((error) == nil){
             if((onCompletion) != nil){
-                onCompletion!(success: success, error: error)
+                onCompletion!(succeeded: succeeded, error: error)
             }
             //        Save the ACL for event
-//                targetEvent.saveInBackgroundWithBlock(){(success: Bool, error: NSError?) -> Void in
+//                targetEvent.saveInBackgroundWithBlock(){(succeeded: Bool, error: NSError?) -> Void in
 //                    if((onCompletion) != nil){
-//                        onCompletion!(success: success, error: error)
+//                        onCompletion!(succeeded: succeeded, error: error)
 //                    }
 //                }
             }
@@ -63,7 +63,7 @@ class ParseUtility{
         //        [[PAPCache sharedCache] setFollowStatus:YES user:user];
     }
 
-    class func unattendMouveInBackground(targetEvent: Events! ,onCompletion: ((success: Bool, error: NSError?) -> ())?){
+    class func unattendMouveInBackground(targetEvent: Events! ,onCompletion: ((succeeded: Bool, error: NSError?) -> ())?){
         let query = Activity.query()
         //        query?.whereKey(appDel.currentUser, )
         query?.whereKey("fromUser", equalTo: appDel.currentUser!)
@@ -75,8 +75,8 @@ class ParseUtility{
         query?.findObjectsInBackgroundWithBlock(){(data:[AnyObject]?, error: NSError?) -> Void in
 //            var serverData = [Activity]()
 //            //            println(results)
-        if let followActivities = data as? [Activity]{
-            for  activity in followActivities{
+        if let attendActivities = data as? [Activity]{
+            for  activity in attendActivities{
                 println("deleting \(activity.objectId)")
                 activity.deleteEventually()
             }
@@ -97,7 +97,7 @@ class ParseUtility{
         }
         
     }
-    class func inviteUserToMouveInBackground(targetEvent: Events, targetUser: PFUser ,onCompletion: ((success: Bool, error: NSError?) -> ())?){
+    class func inviteUserToMouveInBackground(targetEvent: Events, targetUser: PFUser ,onCompletion: ((succeeded: Bool, error: NSError?) -> ())?){
         if ((targetUser.objectId) == (appDel.currentUser?.objectId)) {
             return;
         }
@@ -121,12 +121,12 @@ class ParseUtility{
         activity.ACL = activityACL
         targetEvent.ACL = eventACL
         
-        activity.saveInBackgroundWithBlock(){(success: Bool, error: NSError?) -> Void in
+        activity.saveInBackgroundWithBlock(){(succeeded: Bool, error: NSError?) -> Void in
             if((error) == nil){
                 //        Save the ACL for event
-                targetEvent.saveInBackgroundWithBlock(){(success: Bool, error: NSError?) -> Void in
+                targetEvent.saveInBackgroundWithBlock(){(succeeded: Bool, error: NSError?) -> Void in
                     if((onCompletion) != nil){
-                        onCompletion!(success: success, error: error)
+                        onCompletion!(succeeded: succeeded, error: error)
                     }
                 }
             }
@@ -136,7 +136,7 @@ class ParseUtility{
         //        [[PAPCache sharedCache] setFollowStatus:YES user:user];
     }
     
-    class func inviteUserToMouveEventually(targetEvent: Events, targetUser: PFUser,onCompletion: ((success: Bool, error: NSError?) -> ())?){
+    class func inviteUserToMouveEventually(targetEvent: Events, targetUser: PFUser,onCompletion: ((succeeded: Bool, error: NSError?) -> ())?){
 //        Check if inviting self or trying to invite to someone elses event
         if (((targetUser.objectId) == (appDel.currentUser?.objectId)) || ((targetEvent.creator.objectId) != (appDel.currentUser?.objectId))) {
             return;
@@ -168,7 +168,7 @@ class ParseUtility{
         }
         
     }
-    class func inviteUsersToMouveEventually(targetEvent: Events, targetUsers: [PFUser],onCompletion: ((success: Bool, error: NSError?) -> ())?){
+    class func inviteUsersToMouveEventually(targetEvent: Events, targetUsers: [PFUser],onCompletion: ((succeeded: Bool, error: NSError?) -> ())?){
         for user in targetUsers{
             inviteUserToMouveEventually(targetEvent, targetUser:user, onCompletion: onCompletion)
 
@@ -176,7 +176,7 @@ class ParseUtility{
         //        Set cache
         //        [[PAPCache sharedCache] setFollowStatus:YES user:user];
     }
-    class func inviteUsersToMouveInBackground(targetEvent: Events, targetUsers: [PFUser],onCompletion: ((success: Bool, error: NSError?) -> ())?){
+    class func inviteUsersToMouveInBackground(targetEvent: Events, targetUsers: [PFUser],onCompletion: ((succeeded: Bool, error: NSError?) -> ())?){
         for user in targetUsers{
             inviteUserToMouveInBackground(targetEvent, targetUser:user, onCompletion: onCompletion)
             
@@ -192,8 +192,7 @@ class ParseUtility{
         query?.whereKey("typeKey", equalTo: typeKeyEnum.Invite.rawValue)
         query?.findObjectsInBackgroundWithBlock(){(data:[AnyObject]?, error: NSError?) -> Void in
             // While normally there should only be one follow activity returned, we can't guarantee that.
-            let inviteActivities = data as! [Activity]
-            if ((error) != nil) {
+        if let inviteActivities = data as? [Activity]{
                 for  activity in inviteActivities{
                     activity.deleteEventually()
                 }
@@ -203,7 +202,7 @@ class ParseUtility{
         //        [[PAPCache sharedCache] setFollowStatus:YES user:user];
     }
 
-    class func followUserInBackground(targetUser: PFUser,onCompletion: ((success: Bool, error: NSError?) -> ())?){
+    class func followUserInBackground(targetUser: PFUser,onCompletion: ((succeeded: Bool, error: NSError?) -> ())?){
         if ((targetUser.objectId) == (appDel.currentUser?.objectId)) {
             return;
         }
@@ -219,13 +218,13 @@ class ParseUtility{
         
         activity.saveInBackgroundWithBlock(){(succeeded: Bool, error: NSError?) -> Void in
             if((onCompletion) != nil){
-                onCompletion!(success: succeeded,error: error)
+                onCompletion!(succeeded: succeeded,error: error)
             }
         }
 //        Set cache
 //        [[PAPCache sharedCache] setFollowStatus:YES user:user];
     }
-    class func followUserEventually(targetUser: PFUser,onCompletion: ((success: Bool, error: NSError?) -> ())?){
+    class func followUserEventually(targetUser: PFUser,onCompletion: ((succeeded: Bool, error: NSError?) -> ())?){
         if ((targetUser.objectId) == (appDel.currentUser?.objectId)) {
             return;
         }
@@ -241,13 +240,50 @@ class ParseUtility{
         
         activity.saveEventually(onCompletion)
     }
-    class func followUsersEventually(targetUsers: [PFUser],onCompletion: ((success: Bool, error: NSError?) -> ())?){
+    class func followUsersEventually(targetUsers: [PFUser],onCompletion: ((succeeded: Bool, error: NSError?) -> ())?){
         for user in targetUsers{
             self.followUserEventually(user, onCompletion: onCompletion)
         //        Set cache
         //        [[PAPCache sharedCache] setFollowStatus:YES user:user];
         }
         
+    }
+    class func findFollowersInBackground(targetUser: PFUser,onCompletion: ((data:[AnyObject]?, error: NSError?) -> ())?){
+        let query = Activity.query()
+        query?.whereKey("toUser", equalTo: targetUser)
+        query?.whereKey("typeKey", equalTo: typeKeyEnum.Follow.rawValue)
+        query?.findObjectsInBackgroundWithBlock(){(data:[AnyObject]?, error: NSError?) -> Void in
+            // While normally there should only be one follow activity returned, we can't guarantee that.
+            var userResultList = [PFUser]()
+            if let followActivities = data as? [Activity]{
+                for  activity in followActivities{
+                    userResultList.append(activity.fromUser)
+                }
+                onCompletion!(data: userResultList, error: nil)
+            }
+            else{
+                onCompletion!(data: nil, error: error)
+            }
+            
+        }
+    }
+    class func findFolloweesInBackground(targetUser: PFUser,onCompletion: ((data:[AnyObject]?, error: NSError?) -> ())?){
+        let query = Activity.query()
+        query?.whereKey("fromUser", equalTo: targetUser)
+        query?.whereKey("typeKey", equalTo: typeKeyEnum.Follow.rawValue)
+        query?.findObjectsInBackgroundWithBlock(){(data:[AnyObject]?, error: NSError?) -> Void in
+            // While normally there should only be one follow activity returned, we can't guarantee that.
+            var userResultList = [PFUser]()
+            if let followActivities = data as? [Activity]{
+                for  activity in followActivities{
+                    userResultList.append(activity.toUser)
+                }
+                onCompletion!(data: userResultList, error: nil)
+            }
+            else{
+                onCompletion!(data: nil, error: error)
+            }
+        }
     }
     class func unfollowUserEventually(targetUser: PFUser){
         let query = Activity.query()
@@ -261,7 +297,7 @@ class ParseUtility{
         query?.findObjectsInBackgroundWithBlock(){(data:[AnyObject]?, error: NSError?) -> Void in
             // While normally there should only be one follow activity returned, we can't guarantee that.
             let followActivities = data as! [Activity]
-            if ((error) != nil) {
+            if ((error) == nil) {
                 for  activity in followActivities{
                     activity.deleteEventually()
                 }

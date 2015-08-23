@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     let offset_HeaderStop:CGFloat = 180 // At this offset the Header stops its transformations
     let offset_B_LabelHeader:CGFloat = 120 // At this offset the Black label reaches the Header
     let distance_W_LabelHeader:CGFloat = 180 // The distance between the bottom of the Header and the top of the White Label
-    var myMouves: [Events]? {
+    var userMouves: [Events]? {
         
         didSet {
             
@@ -24,6 +24,8 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         }
         
     }
+    var user: PFUser?
+
     
     @IBOutlet weak var profilePicView: UIImageView!
     @IBOutlet weak var headerView: UIView!
@@ -47,6 +49,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if user == nil{
+            println("Going with your profile since nothing was passed")
+            user = appDel.currentUser
+        }
         
         profileTableView.dataSource = self
         profileTableView.delegate = self
@@ -55,22 +61,24 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         
 
         self.getUserMouves()
+        self.countFollowees()
+        self.countFollowers()
         
         for button in [mouveButton, followersButton, followingButton] {
             
             if button.titleLabel!.text! == "Mouves"{
             button.titleLabel!.textAlignment = .Center
-            button.setTitle("6\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+//            button.setTitle("\(userMouves?.count)\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
             }
             
             else if button.titleLabel!.text! == "Followers"{
                 button.titleLabel!.textAlignment = .Center
-                button.setTitle("1.4m\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+//                button.setTitle("\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
             }
             
             else {
                 button.titleLabel!.textAlignment = .Center
-                button.setTitle("6\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+//                button.setTitle("6\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
             }
         }
         
@@ -90,9 +98,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        nameLabel.text! = "\(appDel.currentUser!.fullName)"
-        usernameLabel.text! = "@" + appDel.currentUser!.username!
-        let userImageFile = appDel.currentUser?["profileImage"] as? PFFile
+        nameLabel.text! = "\(user!.fullName)"
+        usernameLabel.text! = "@" + user!.username!
+        let userImageFile = user?["profileImage"] as? PFFile
         if(userImageFile != nil){
             userImageFile!.getDataInBackgroundWithBlock({
                 (imageData: NSData?, error: NSError?) -> Void in
@@ -139,27 +147,50 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     }
 
     func getUserMouves(){
-        let newUser = PFUser.currentUser()
-        var feedQuery = PFQuery(className: "Events")
-        feedQuery.whereKey("creator", equalTo:PFUser.currentUser()!)
+        let feedQuery = Events.query()
+        feedQuery!.whereKey("creator", equalTo:user!)
         //feedQuery.whereKey("email", equalTo: newUser!.email!)  //PFObject(withoutDataWithClassName:"User", objectId:newUser!.email!))
         
-        feedQuery.limit = 20
-        feedQuery.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+        feedQuery!.limit = 20
+        feedQuery!.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
             var serverData = [Events]()
             //            println(results)
             
             if ((results) != nil) {
-                self.myMouves = results as? [Events]
+                self.userMouves = results as? [Events]
             }
-            self.mouveButton.setTitle("\(self.myMouves!.count)\nMouves", forState: UIControlState.Normal)
+            self.mouveButton.setTitle("\(self.userMouves!.count)\nMouves", forState: UIControlState.Normal)
+        }
+    }
+    func countFollowers(){
+        let query = Activity.query()
+        query!.whereKey("typeKey", equalTo:typeKeyEnum.Follow.rawValue)
+        query!.whereKey("toUser", equalTo:user!)
+        query!.countObjectsInBackgroundWithBlock(){(count: Int32, error: NSError?) -> Void in
+            if ((error) == nil) {
+                self.followersButton.setTitle("\(count)\nFollowers", forState: UIControlState.Normal)
+            }
+
+        }
+    }
+    func countFollowees(){
+        let query = Activity.query()
+        query!.whereKey("typeKey", equalTo:typeKeyEnum.Follow.rawValue)
+        query!.whereKey("fromUser", equalTo:user!)
+        query!.countObjectsInBackgroundWithBlock(){(count: Int32, error: NSError?) -> Void in
+            if ((error) == nil) {
+                self.followingButton.setTitle("\(count)\nFollowing", forState: UIControlState.Normal)
+            }
         }
     }
 }
 
+    
+
+
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return myMouves == nil ? 0 : myMouves!.count
+        return userMouves == nil ? 0 : userMouves!.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -172,8 +203,8 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
-        
-        cell.event = self.myMouves![indexPath.section]
+//        cell.parentVC = self
+        cell.event = self.userMouves![indexPath.section]
         
         return cell
     }

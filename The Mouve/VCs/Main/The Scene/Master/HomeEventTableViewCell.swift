@@ -11,6 +11,7 @@ import UIKit
 import Toucan
 import Parse
 class HomeEventTableViewCell: UITableViewCell {
+//    var parentVC: UIViewController?
     var event: Events! {
         didSet {
             nameLabel.text = event.name
@@ -51,6 +52,9 @@ class HomeEventTableViewCell: UITableViewCell {
             profileImageView.image = Toucan(image: event.creator.getProfilePic()!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).image
             profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
             profileImageView.clipsToBounds = true
+            profileImageView.userInteractionEnabled = true
+            var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("profileImageWasTapped:"))
+            profileImageView.addGestureRecognizer(tapGestureRecognizer)
             
             backgroundImageView.image = Toucan(image: event.getBgImg()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height + 105)), fitMode: Toucan.Resize.FitMode.Crop).image
 //            backgroundImageView.clipsToBounds = true
@@ -87,7 +91,15 @@ class HomeEventTableViewCell: UITableViewCell {
         
     }
     
-    
+    @IBAction func profileImageWasTapped(recognizer: UITapGestureRecognizer){
+        println("Jumping to \(self.event!.creator.username!)'s profile")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileViewController    //VC1 refers to destinationVC source file and "VC1" refers to destinationVC Storyboard ID
+        vc.user = event!.creator
+//        self.window?.rootViewController?.presentViewController(vc, animated: true, completion: nil)
+        self.window?.rootViewController!.presentViewController(vc, animated: true, completion: nil)
+        
+    }
     @IBAction func goingButtonWasHit(sender: AnyObject) {
         if (self.goingButton.selected) {
             // Unattend

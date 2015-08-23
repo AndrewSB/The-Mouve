@@ -1201,7 +1201,7 @@
         <!--Profile-->
         <scene sceneID="FGs-9K-51x">
             <objects>
-                <viewController id="Nqe-Gn-hQj" customClass="ProfileViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" id="Nqe-Gn-hQj" customClass="ProfileViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y2r-Dh-orA"/>
                         <viewControllerLayoutGuide type="bottom" id="tJV-nO-W3p"/>
