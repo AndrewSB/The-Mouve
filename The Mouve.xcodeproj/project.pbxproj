@@ -135,6 +135,7 @@
 		9A53E6E71B65933E00BBD5BC /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A53E6E91B65933E00BBD5BC /* KeychainAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A53E6E31B65932C00BBD5BC /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A53E6EB1B659E9B00BBD5BC /* Mouve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A53E6EA1B659E9B00BBD5BC /* Mouve.swift */; };
+		9A81C4731B892A92005236BA /* ParseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A81C4721B892A92005236BA /* ParseUtility.swift */; };
 		9A8512101B55FBB300606BB1 /* HHLinkStoryboards.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85120F1B55FBB300606BB1 /* HHLinkStoryboards.m */; };
 		9ABA887A1B54B17F0014D459 /* MouveStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA88791B54B17F0014D459 /* MouveStore.swift */; };
 /* End PBXBuildFile section */
@@ -285,6 +286,7 @@
 		9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
 		9A53E6E31B65932C00BBD5BC /* KeychainAccess.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeychainAccess.framework; path = Carthage/Build/iOS/KeychainAccess.framework; sourceTree = SOURCE_ROOT; };
 		9A53E6EA1B659E9B00BBD5BC /* Mouve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mouve.swift; sourceTree = "<group>"; };
+		9A81C4721B892A92005236BA /* ParseUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUtility.swift; sourceTree = "<group>"; };
 		9A85120E1B55FBB300606BB1 /* HHLinkStoryboards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHLinkStoryboards.h; sourceTree = "<group>"; };
 		9A85120F1B55FBB300606BB1 /* HHLinkStoryboards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHLinkStoryboards.m; sourceTree = "<group>"; };
 		9ABA88791B54B17F0014D459 /* MouveStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MouveStore.swift; path = Models/MouveStore.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -689,6 +691,7 @@
 				460FF5081AF8795A007C6872 /* UI Elements */,
 				468D216A1AF086F800CE6E19 /* Extension */,
 				4610B7C91B33DD3700377E1E /* Location.swift */,
+				9A81C4721B892A92005236BA /* ParseUtility.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -893,6 +896,7 @@
 				46B888C61AF94EE300D872E0 /* DetailViewControllerViewExtension.swift in Sources */,
 				464B2DC91AFD79960095FB83 /* FilledButton.swift in Sources */,
 				4685F8C31B1C1FF3004D77E9 /* IQToolbar.swift in Sources */,
+				9A81C4731B892A92005236BA /* ParseUtility.swift in Sources */,
 				46AFB3651AF86C9A004D121A /* LoginViewController.swift in Sources */,
 				464B2DC71AFD79890095FB83 /* OutlinedButton.swift in Sources */,
 				46AC422B1B36EDBB000BAB24 /* CollectionExtension.swift in Sources */,

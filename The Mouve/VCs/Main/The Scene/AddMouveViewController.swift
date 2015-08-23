@@ -119,6 +119,10 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
             newMouve.startTime = rangeSlider.timeDates().startDate
             newMouve.endTime = rangeSlider.timeDates().endDate
             newMouve.privacy = publicPrivateSwitch.on
+        if (newMouve.privacy){
+            let eventACL = PFACL(user: newMouve.creator)
+            newMouve.ACL = eventACL
+        }
             if ((pickedPic) != nil){
                 newMouve.backgroundImage = PFFile(name: "bg.png", data:UIImageJPEGRepresentation(pickedPic, 0.7))
             }

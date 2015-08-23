@@ -51,7 +51,7 @@ class Events: PFObject {
             
         self.privacy = privacy
         
-        self.backgroundImage = PFFile(name: "\(self.creator.username)_\(self.objectId).png", data:UIImagePNGRepresentation(backgroundImage))
+        self.backgroundImage = PFFile(name: "\(self.creator.username)_\(self.objectId).jpg", data:UIImageJPEGRepresentation(backgroundImage,0.7))
         
 
     }

@@ -89,6 +89,29 @@ class HomeEventTableViewCell: UITableViewCell {
     
     
     @IBAction func goingButtonWasHit(sender: AnyObject) {
+        if (self.goingButton.selected) {
+            // Unattend
+                    self.goingButton.selected = false;
+            ParseUtility.unattendMouveInBackground(self.event){(success: Bool, error: NSError?) -> () in
+                if((error) != nil){
+                    println("Cannot unattend event")
+                }
+                else{
+                    println("Unattended  successfully")
+                }
+            }
+        } else {
+            // Attend
+                    self.goingButton.selected = true;
+            ParseUtility.attendMouveInBackground(self.event){(success: Bool, error: NSError?) -> () in
+                if((error) != nil){
+                    println("Cannot attend \(self.event!.name)")
+                }
+                else{
+                    println("Attending \(self.event!.name) successfully")
+                }
+            }
+        }
     }
     
     
