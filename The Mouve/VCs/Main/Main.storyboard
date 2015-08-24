@@ -1337,6 +1337,9 @@
                                                 <color key="titleColor" red="0.20000000000000001" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="editProfileOrFollowButtonWasHit:" destination="Nqe-Gn-hQj" eventType="touchUpInside" id="zaT-gy-oxY"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1530,6 +1533,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="profile-icon" id="f8p-Wz-zBd"/>
                     <connections>
                         <outlet property="avatarImage" destination="J1f-pm-mjf" id="7XH-1A-xQq"/>
+                        <outlet property="editProfileOrFollow" destination="hut-n9-7Ai" id="sQc-H8-aRP"/>
                         <outlet property="followersButton" destination="HlO-XT-9yv" id="mcg-O2-mxI"/>
                         <outlet property="followingButton" destination="jhF-hL-Hkl" id="IeS-SZ-xfF"/>
                         <outlet property="headerLabel" destination="4qi-b6-W0Q" id="daS-8F-vPK"/>

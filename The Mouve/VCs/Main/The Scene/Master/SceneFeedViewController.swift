@@ -49,16 +49,37 @@ class SceneFeedViewController: UIViewController {
             feedQuery?.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
             
         case .Scene:
-            //            First query the people we follow
-            //            let followingPeople = PFUser.currentUser()?.query()?.whereKey("username", containedIn: "following")
-            //            Then query all the events made by them
-            feedQuery?.whereKey("creator", equalTo: PFUser.currentUser()!)
+            
+//            First query the people we follow
+//            Then query all the mouves made by them
+            let followingQuery = Activity.query()
+            followingQuery?.whereKey("typeKey", equalTo: typeKeyEnum.Follow.rawValue)
+            followingQuery?.whereKey("fromUser", equalTo: appDel.currentUser!)
+            
+            // Using the activities from the query above, we find all of the photos taken by
+            // the friends the current user is following
+            let followingMouvesQuery = Events.query()
+            followingMouvesQuery?.whereKey("creator", matchesKey: "toUser", inQuery: followingQuery!)
+//            followingMouvesQuery?.whereKeyExists("Events")
+            
+            // We create a second query for the current user's mouves
+            let mouvesFromCurrentUserQuery = Events.query()
+            mouvesFromCurrentUserQuery?.whereKey("creator", equalTo: appDel.currentUser!)
+//            mouvesFromCurrentUserQuery?.whereKeyExists("Events")
+            
+            // We create a final compound query that will find all of the photos that were
+            // taken by the user's friends or by the user
+            let feedQuery = PFQuery.orQueryWithSubqueries([mouvesFromCurrentUserQuery!, followingMouvesQuery!])
+            feedQuery.includeKey("creator")
+            feedQuery.orderByAscending("startTime")
+            
+            
             
         default:
             assert(true == false, "Type wasnt scene or explore")
         }
         
-        feedQuery!.limit = 20
+//        feedQuery!.limit = 20
         feedQuery!.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
             var serverData = [Events]()
             //            println(results)

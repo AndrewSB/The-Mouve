@@ -31,6 +31,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var separationLabel: UIView!
     @IBOutlet weak var headerLabel: UILabel!
+    @IBOutlet weak var editProfileOrFollow: smallTextOutlinedButton!
     var headerImageView: UIImageView!
     var blurredHeaderImageView: UIImageView!
     
@@ -52,6 +53,11 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         if user == nil{
             println("Going with your profile since nothing was passed")
             user = appDel.currentUser
+        }
+        
+        if(user != appDel.currentUser){
+            editProfileOrFollow.setTitle("Follow", forState: UIControlState.Normal)
+
         }
         
         profileTableView.dataSource = self
@@ -84,6 +90,33 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
+    }
+    
+    @IBAction func editProfileOrFollowButtonWasHit(sender: AnyObject) {
+        
+        if (user != appDel.currentUser){
+            if (self.editProfileOrFollow.selected) {
+                // Unattend
+                self.editProfileOrFollow.selected = false;
+                ParseUtility.unfollowUserEventually(self.user!)
+                }
+             else {
+                // Attend
+                self.editProfileOrFollow.selected = true;
+                ParseUtility.followUserInBackground (self.user!){(success: Bool, error: NSError?) -> () in
+                    if((error) != nil){
+                        println("Cannot follow \(self.user!.username)")
+                    }
+                    else{
+                        println("Following \(self.user!.username) successfully")
+                    }
+                }
+            }
+        }
+        else {
+            
+        }
+        
     }
     
     override func viewWillDisappear(animated: Bool) {
