@@ -52,7 +52,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         if user == nil{
             println("Going with your profile since nothing was passed")
-            user = appDel.currentUser
+            user = appDel.currentUser!
         }
         
         if(user != appDel.currentUser){
@@ -180,12 +180,36 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     }
 
     func getUserMouves(){
-        let feedQuery = Events.query()
-        feedQuery!.whereKey("creator", equalTo:user!)
-        //feedQuery.whereKey("email", equalTo: newUser!.email!)  //PFObject(withoutDataWithClassName:"User", objectId:newUser!.email!))
+        self.user = appDel.currentUser
+        let attendingQuery = Activity.query()
+        attendingQuery?.whereKey("typeKey", equalTo: typeKeyEnum.Attend.rawValue)
+        attendingQuery?.whereKey("fromUser", equalTo: self.user!)
         
-        feedQuery!.limit = 20
-        feedQuery!.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+        // Using the activities from the query above, we find all of the photos taken by
+        // the friends the current user is following
+        let attendingMouvesQuery = Events.query()
+        attendingMouvesQuery?.whereKey("creator", matchesKey: "toUser", inQuery: attendingQuery!)
+        attendingMouvesQuery?.whereKeyExists("Events")
+        
+        // We create a second query for the current user's mouves
+        let mouvesFromUserQuery = Events.query()
+        mouvesFromUserQuery?.whereKey("creator", equalTo: self.user!)
+        mouvesFromUserQuery?.whereKeyExists("Events")
+        
+        // We create a final compound query that will find all of the photos that were
+        // taken by the user's friends or by the user
+        
+        let feedQuery = PFQuery.orQueryWithSubqueries([mouvesFromUserQuery!, attendingMouvesQuery!])
+        feedQuery.includeKey("creator")
+        feedQuery.orderByAscending("startTime")
+
+        
+//        let feedQuery = Events.query()
+//        feedQuery!.whereKey("creator", equalTo:user!)
+//        feedQuery.whereKey("email", equalTo: newUser!.email!)  //PFObject(withoutDataWithClassName:"User", objectId:newUser!.email!))
+        
+        feedQuery.limit = 20
+        feedQuery.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
             var serverData = [Events]()
             //            println(results)
             
