@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v3S-g5-PP9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="v3S-g5-PP9">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -380,6 +380,22 @@
                                     <segue destination="QkP-fB-0CH" kind="custom" identifier="@Main" customClass="HHLinkStoryboards" id="aNi-kp-U6N"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-pY-jMY" userLabel="profileImageButton">
+                                <rect key="frame" x="250" y="50" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="3ln-xP-gJ8"/>
+                                    <constraint firstAttribute="width" constant="100" id="xEF-bX-orQ"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Button" backgroundImage="addImage">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeProfileImageClicked:" destination="yBD-hG-2Qi" eventType="touchUpInside" id="uzU-Sz-rzb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -391,6 +407,8 @@
                             <constraint firstItem="8JL-AQ-7ag" firstAttribute="top" secondItem="wlx-Z1-QQz" secondAttribute="bottom" constant="33" id="8Nk-H8-ZbY"/>
                             <constraint firstItem="J8B-4m-WUW" firstAttribute="top" secondItem="cMk-z8-oJF" secondAttribute="bottom" id="944-l2-Wx8"/>
                             <constraint firstItem="ahr-Wm-6R1" firstAttribute="height" secondItem="eIo-N3-Ux4" secondAttribute="height" id="9j6-PR-lFv"/>
+                            <constraint firstAttribute="centerX" secondItem="tyn-pY-jMY" secondAttribute="centerX" id="FO9-3a-5KH"/>
+                            <constraint firstItem="tyn-pY-jMY" firstAttribute="top" secondItem="rj5-0d-F0D" secondAttribute="top" constant="50" id="HT8-Sf-FIj"/>
                             <constraint firstAttribute="centerX" secondItem="eIo-N3-Ux4" secondAttribute="centerX" id="HxZ-ds-KFy"/>
                             <constraint firstItem="j0u-tb-T2e" firstAttribute="top" secondItem="vPA-c7-rTa" secondAttribute="bottom" id="J9K-Vb-JCA"/>
                             <constraint firstAttribute="centerX" secondItem="vPA-c7-rTa" secondAttribute="centerX" id="N2h-zX-peV"/>
@@ -424,8 +442,10 @@
                     <connections>
                         <outlet property="createAccountButton" destination="j0u-tb-T2e" id="RJs-ps-Kxd"/>
                         <outlet property="emailTextField" destination="rvi-10-BYt" id="3zI-2p-jLM"/>
+                        <outlet property="facebookBtn" destination="5D6-Lm-tLQ" id="RC8-xL-zyJ"/>
                         <outlet property="nameTextField" destination="J8B-4m-WUW" id="QIZ-og-HCZ"/>
                         <outlet property="passwordTextField" destination="8JL-AQ-7ag" id="vy0-ty-bYc"/>
+                        <outlet property="profileImageButton" destination="tyn-pY-jMY" id="5vE-Us-GJL"/>
                         <outlet property="usernameTextField" destination="wlx-Z1-QQz" id="DJp-2c-t0K"/>
                     </connections>
                 </viewController>
@@ -454,6 +474,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addImage" width="320" height="320"/>
         <image name="back-button" width="20" height="31"/>
     </resources>
 </document>
