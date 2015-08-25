@@ -64,29 +64,26 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         profileTableView.delegate = self
         
         avatarImage.layer.cornerRadius = avatarImage.frame.width/2
-        
-
-        self.getUserMouves()
-        self.countFollowees()
-        self.countFollowers()
-        
         for button in [mouveButton, followersButton, followingButton] {
             
             if button.titleLabel!.text! == "Mouves"{
             button.titleLabel!.textAlignment = .Center
-//            button.setTitle("\(userMouves?.count)\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+            button.setTitle("0\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
             }
             
             else if button.titleLabel!.text! == "Followers"{
                 button.titleLabel!.textAlignment = .Center
-//                button.setTitle("\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+            button.setTitle("0\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
             }
             
             else {
                 button.titleLabel!.textAlignment = .Center
-//                button.setTitle("6\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+            button.setTitle("0\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
             }
         }
+        self.getUserMouves()
+        self.countFollowees()
+        self.countFollowers()
         
         
         UIApplication.sharedApplication().statusBarStyle = .LightContent
@@ -180,43 +177,30 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     }
 
     func getUserMouves(){
-        self.user = appDel.currentUser
-        let attendingQuery = Activity.query()
-        attendingQuery?.whereKey("typeKey", equalTo: typeKeyEnum.Attend.rawValue)
-        attendingQuery?.whereKey("fromUser", equalTo: self.user!)
-        
-        // Using the activities from the query above, we find all of the photos taken by
-        // the friends the current user is following
-        let attendingMouvesQuery = Events.query()
-        attendingMouvesQuery?.whereKey("creator", matchesKey: "toUser", inQuery: attendingQuery!)
-        attendingMouvesQuery?.whereKeyExists("Events")
-        
-        // We create a second query for the current user's mouves
+        var mouvesAttended = NSMutableArray()
+// Step 1: Query made events and find objects
         let mouvesFromUserQuery = Events.query()
-        mouvesFromUserQuery?.whereKey("creator", equalTo: self.user!)
-        mouvesFromUserQuery?.whereKeyExists("Events")
-        
-        // We create a final compound query that will find all of the photos that were
-        // taken by the user's friends or by the user
-        
-        let feedQuery = PFQuery.orQueryWithSubqueries([mouvesFromUserQuery!, attendingMouvesQuery!])
-        feedQuery.includeKey("creator")
-        feedQuery.orderByAscending("startTime")
-
-        
-//        let feedQuery = Events.query()
-//        feedQuery!.whereKey("creator", equalTo:user!)
-//        feedQuery.whereKey("email", equalTo: newUser!.email!)  //PFObject(withoutDataWithClassName:"User", objectId:newUser!.email!))
-        
-        feedQuery.limit = 20
-        feedQuery.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
-            var serverData = [Events]()
-            //            println(results)
-            
+        mouvesFromUserQuery!.whereKey("creator", equalTo: self.user!)
+        mouvesFromUserQuery!.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
             if ((results) != nil) {
-                self.userMouves = results as? [Events]
+                mouvesAttended.addObjectsFromArray(results!)
+// Step 2: Query attended events, find objects , and add objects to previous array
+                let attendingQuery = Activity.query()
+                attendingQuery!.whereKey("typeKey", equalTo: typeKeyEnum.Attend.rawValue)
+                attendingQuery!.whereKey("fromUser", equalTo: self.user!)
+                attendingQuery!.whereKeyExists("onMouve")
+                attendingQuery!.findObjectsInBackgroundWithBlock{ (results: [AnyObject]?, error: NSError?) -> Void in
+                    if ((results) != nil) {
+                        for act in results as! [Activity]{
+                            mouvesAttended.addObject(act.onMouve)
+                        }
+// Step 3: Sort attended events and fill up data into global variable
+                        let startTimeSorter = NSSortDescriptor(key: "startTime", ascending:true )
+                        self.userMouves = mouvesAttended.sortedArrayUsingDescriptors([startTimeSorter]) as? [Events]
+                        self.mouveButton.setTitle("\(self.userMouves!.count)\nMouves", forState: UIControlState.Normal)
+                    }
+                }
             }
-            self.mouveButton.setTitle("\(self.userMouves!.count)\nMouves", forState: UIControlState.Normal)
         }
     }
     func countFollowers(){

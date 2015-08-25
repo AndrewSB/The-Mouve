@@ -71,6 +71,7 @@ class HomeEventTableViewCell: UITableViewCell {
     @IBOutlet weak var distanceLabel: UILabel!
   
     @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profileImageButton: UIButton!
     
     @IBOutlet weak var goingButton: UIButton!
     @IBOutlet weak var shareButton: UIButton!
@@ -99,8 +100,14 @@ class HomeEventTableViewCell: UITableViewCell {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileViewController    //VC1 refers to destinationVC source file and "VC1" refers to destinationVC Storyboard ID
         vc.user = event!.creator
+        
+        self.window?.rootViewController?.tabBarController?.selectedViewController?.performSegueWithIdentifier("segueToProfile", sender: event!.creator)
+
 //        self.window?.rootViewController?.presentViewController(vc, animated: true, completion: nil)
-        self.window?.rootViewController!.presentViewController(vc, animated: true, completion: nil)
+//        self.window?.rootViewController!.presentViewController(vc, animated: true, completion: nil)
+//        println(currVc?.title)
+//        currVc!.performSegueWithIdentifier("segueToProfile", sender: event!.creator)
+//        self.window?.rootViewController!.performSegueWithIdentifier("segueToProfile", sender: vc.user)
         
     }
     @IBAction func goingButtonWasHit(sender: AnyObject) {

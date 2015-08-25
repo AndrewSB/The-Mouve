@@ -34,10 +34,11 @@ class ParseUtility{
 //        }
         
         let activity = Activity()
+        activity.type = typeKeyEnum.Attend
         activity.fromUser = appDel.currentUser!
         activity.toUser = targetEvent.creator
         activity.onMouve = targetEvent
-        activity.type = typeKeyEnum.Attend
+
         
         let activityACL = PFACL(user: appDel.currentUser!)
         activityACL.setPublicReadAccess(true)
