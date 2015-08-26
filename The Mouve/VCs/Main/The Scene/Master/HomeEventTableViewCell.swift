@@ -11,7 +11,7 @@ import UIKit
 import Toucan
 import Parse
 class HomeEventTableViewCell: UITableViewCell {
-    var isBlurred:Bool = false
+//    var isBlurred:Bool = false
     var event: Events! {
         didSet {
             nameLabel.text = event.name
@@ -52,6 +52,20 @@ class HomeEventTableViewCell: UITableViewCell {
             
 //
             
+            ParseUtility.getEventBgImg(event){(imgObj, error) in
+                if ((error) != nil){
+                    println("been dat niqqa")
+                    self.backgroundImageView.image = appDel.placeHolderBg
+                    println(error)
+                    self.backgroundImageView.image = Toucan(image: self.backgroundImageView.image!.applyLightEffect()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height + 105)), fitMode: Toucan.Resize.FitMode.Crop).image
+                    self.backgroundImageView.clipsToBounds = true
+                }
+                if((imgObj) != nil){
+                    self.backgroundImageView.image = imgObj
+                    self.backgroundImageView.image = Toucan(image: self.backgroundImageView.image!.applyLightEffect()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height + 105)), fitMode: Toucan.Resize.FitMode.Crop).image
+                    self.backgroundImageView.clipsToBounds = true
+                }
+            }
             ParseUtility.getProfileImg(event.creator){(imageObj, error) in
                 if((imageObj) != nil){
                     self.profileImageView.image = imageObj
@@ -66,20 +80,6 @@ class HomeEventTableViewCell: UITableViewCell {
                 self.profileImageView.userInteractionEnabled = true
                 var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("profileImageWasTapped:"))
                 self.profileImageView.addGestureRecognizer(tapGestureRecognizer)
-            }
-            ParseUtility.getEventBgImg(event!){(imgData, error) in
-                if((imgData) != nil){
-                    self.backgroundImageView.image = imgData
-
-                }
-                else{
-                    self.backgroundImageView.image = appDel.placeHolderBg
-                    println(error)
-                }
-                self.backgroundImageView.image = Toucan(image: self.backgroundImageView.image!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height + 105)), fitMode: Toucan.Resize.FitMode.Crop).image
-                self.backgroundImageView.clipsToBounds = true
-                self.backgroundImageView.image = self.backgroundImageView.image?.applyLightEffect()
-
             }
 
 //

@@ -205,11 +205,11 @@ class ParseUtility{
     
     class func getEventBgImg(targetEvent: Events,onCompletion: ((data: UIImage?, error: NSError?) -> ())?){
         targetEvent.backgroundImage?.getDataInBackgroundWithBlock(){(imgData:NSData?, error: NSError?) -> Void in
+            if(((error)) != nil){
+                onCompletion!(data: nil, error: error)
+            }
             if((imgData) != nil){
                 onCompletion!(data: UIImage(data: imgData!), error: nil)
-            }
-            else{
-                onCompletion!(data: nil, error: error)
             }
         }
     }
