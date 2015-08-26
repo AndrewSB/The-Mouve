@@ -12,7 +12,7 @@ import CoreLocation
 import Parse
 import Bolts
 
-class SceneFeedViewController: UIViewController {
+class SceneFeedViewController: UIViewController{
 
     @IBOutlet weak var feedTableView: UITableView!
     
@@ -159,8 +159,17 @@ class SceneFeedViewController: UIViewController {
 
 
 
-extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
-    
+extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource, HomeEventTVCDelegate {
+    func didTapProfileImage(cell: HomeEventTableViewCell) {
+        println("Jumping to \(cell.event!.creator.username!)'s profile")
+        performSegueWithIdentifier("segueToProfile", sender: cell.event.creator)
+    }
+    func didTapAttendEvent(cell: HomeEventTableViewCell) {
+        
+    }
+    func didTapShareEvent(cell: HomeEventTableViewCell) {
+        
+    }
     // MARK: UITableViewDataSource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return feedData == nil ? 0 : feedData!.count
@@ -173,7 +182,7 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
-        
+        cell.delegate = self
         cell.event = feedData![indexPath.section]
         return cell
     }
@@ -185,6 +194,7 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         performSegueWithIdentifier("segueToDetail", sender: feedData![indexPath.section])
     }
+    
 //    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
 //        println("segueing to profile")
 //        performSegueWithIdentifier("segueToProfile", sender: feedData![indexPath.section].creator)

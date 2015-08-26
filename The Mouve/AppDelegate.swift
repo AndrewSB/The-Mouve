@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var currentUser: PFUser?
     var window: UIWindow?
     var location = Location()
-    let placeHolderBg = UIImage(named: "addImage")
+    let placeHolderBg = UIImage(named: "addImage.png")
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
