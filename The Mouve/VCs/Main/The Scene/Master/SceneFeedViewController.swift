@@ -185,6 +185,10 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         performSegueWithIdentifier("segueToDetail", sender: feedData![indexPath.section])
     }
+//    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+//        println("segueing to profile")
+//        performSegueWithIdentifier("segueToProfile", sender: feedData![indexPath.section].creator)
+//    }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : 4

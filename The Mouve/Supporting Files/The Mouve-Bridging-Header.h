@@ -10,3 +10,5 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
 #import "TTTAttributedLabel.h"
+#import "UIImage+ImageEffects.h"
+#import "UIColor+Additions.h"

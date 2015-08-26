@@ -35,32 +35,55 @@ class HomeEventTableViewCell: UITableViewCell {
 //            event.backgroundImage = UIImage(named: places.randomElement())!
 //
             
-            // blur Mouve background image for each cell
-            if (isBlurred == false){
-            let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-            blurView.alpha = 0.75
-            blurView.frame = self.contentView.frame
-            // Crop and set Mouve background image for each cell
-            backgroundImageView.addSubview(blurView)
-                
-                isBlurred = true
-            }
+//            // blur Mouve background image for each cell
+//            if (isBlurred == false){
+////            let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+////            blurView.alpha = 0.75
+////            blurView.frame = self.contentView.frame
+//            // Crop and set Mouve background image for each cell
+////            backgroundImageView.image = CIImage.blur(backgroundImageView.image!, radius: 30)
+////            backgroundImageView.addSubview(blurView)
+//                
+//                isBlurred = true
+//            }
             
             
 //            let array = [UIImage(named: "yoojin-pic"),UIImage(named: "noah-pic"),UIImage(named: "chelsea-pic"),UIImage(named: "andrew-pic")]
             
 //
             
-            
-            profileImageView.image = Toucan(image: event.creator.getProfilePic()!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).image
-            profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
-            profileImageView.clipsToBounds = true
-            profileImageView.userInteractionEnabled = true
-            var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("profileImageWasTapped:"))
-            profileImageView.addGestureRecognizer(tapGestureRecognizer)
-            
-            backgroundImageView.image = Toucan(image: event.getBgImg()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height + 105)), fitMode: Toucan.Resize.FitMode.Crop).image
-//            backgroundImageView.clipsToBounds = true
+            ParseUtility.getProfileImg(event.creator){(imageObj, error) in
+                if((imageObj) != nil){
+                    self.profileImageView.image = imageObj
+                }
+                else{
+                    self.profileImageView.image = appDel.placeHolderBg
+                    println(error)
+                }
+                self.profileImageView.image = Toucan(image: self.profileImageView!.image!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).image
+                self.profileImageView.layer.cornerRadius = self.profileImageView.frame.height / 2
+                self.profileImageView.clipsToBounds = true
+                self.profileImageView.userInteractionEnabled = true
+                var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("profileImageWasTapped:"))
+                self.profileImageView.addGestureRecognizer(tapGestureRecognizer)
+            }
+            ParseUtility.getEventBgImg(event!){(imgData, error) in
+                if((imgData) != nil){
+                    self.backgroundImageView.image = imgData
+
+                }
+                else{
+                    self.backgroundImageView.image = appDel.placeHolderBg
+                    println(error)
+                }
+                self.backgroundImageView.image = Toucan(image: self.backgroundImageView.image!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height + 105)), fitMode: Toucan.Resize.FitMode.Crop).image
+                self.backgroundImageView.clipsToBounds = true
+                self.backgroundImageView.image = self.backgroundImageView.image?.applyLightEffect()
+
+            }
+
+//
+
         }
     }
     
@@ -100,9 +123,9 @@ class HomeEventTableViewCell: UITableViewCell {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileViewController    //VC1 refers to destinationVC source file and "VC1" refers to destinationVC Storyboard ID
         vc.user = event!.creator
-        
-        self.window?.rootViewController?.tabBarController?.selectedViewController?.performSegueWithIdentifier("segueToProfile", sender: event!.creator)
-
+//        
+//        self.window?.rootViewController?.tabBarController?.selectedViewController?.performSegueWithIdentifier("segueToProfile", sender: event!.creator)
+//
 //        self.window?.rootViewController?.presentViewController(vc, animated: true, completion: nil)
 //        self.window?.rootViewController!.presentViewController(vc, animated: true, completion: nil)
 //        println(currVc?.title)

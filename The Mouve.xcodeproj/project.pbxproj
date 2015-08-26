@@ -124,6 +124,8 @@
 		9A0E652F1B58CFB20002547D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E652E1B58CFB20002547D /* StringExtension.swift */; };
 		9A1799251B577C8C00548FEB /* PersistentModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A1799231B577C8C00548FEB /* PersistentModel.xcdatamodeld */; };
 		9A1799271B5797FF00548FEB /* CoreDataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1799261B5797FF00548FEB /* CoreDataExtension.swift */; };
+		9A1A70371B8D41C8006C8452 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A70361B8D41C8006C8452 /* UIImage+ImageEffects.m */; };
+		9A1A703A1B8D46F5006C8452 /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A1A70391B8D46F5006C8452 /* UIColor+Additions.m */; };
 		9A26978B1B6587330009F267 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2697891B6587330009F267 /* Account.swift */; };
 		9A26978C1B6587330009F267 /* ServerRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26978A1B6587330009F267 /* ServerRequests.swift */; };
 		9A2697911B658FFB0009F267 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2697901B658FFB0009F267 /* User.swift */; };
@@ -278,6 +280,10 @@
 		9A0E652E1B58CFB20002547D /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9A1799241B577C8C00548FEB /* PersistentModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PersistentModel.xcdatamodel; sourceTree = "<group>"; };
 		9A1799261B5797FF00548FEB /* CoreDataExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataExtension.swift; sourceTree = "<group>"; };
+		9A1A70351B8D41C8006C8452 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		9A1A70361B8D41C8006C8452 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		9A1A70381B8D46F5006C8452 /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		9A1A70391B8D46F5006C8452 /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		9A2697891B6587330009F267 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		9A26978A1B6587330009F267 /* ServerRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRequests.swift; sourceTree = "<group>"; };
 		9A2697901B658FFB0009F267 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -618,6 +624,10 @@
 		46B29BC21ADB2187000B9441 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				9A1A70381B8D46F5006C8452 /* UIColor+Additions.h */,
+				9A1A70391B8D46F5006C8452 /* UIColor+Additions.m */,
+				9A1A70351B8D41C8006C8452 /* UIImage+ImageEffects.h */,
+				9A1A70361B8D41C8006C8452 /* UIImage+ImageEffects.m */,
 				78FC24D91B66177B004B65C3 /* GooglePlacesAutocomplete */,
 				9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */,
 				9A53E6E31B65932C00BBD5BC /* KeychainAccess.framework */,
@@ -933,6 +943,7 @@
 				469C43641ADEEB4900D6A510 /* CGGeometeryExtension.swift in Sources */,
 				9A8512101B55FBB300606BB1 /* HHLinkStoryboards.m in Sources */,
 				4685F8C41B1C1FF3004D77E9 /* IQUIView+IQKeyboardToolbar.swift in Sources */,
+				9A1A70371B8D41C8006C8452 /* UIImage+ImageEffects.m in Sources */,
 				468D21691AF0864C00CE6E19 /* Event.swift in Sources */,
 				460FF5021AF87443007C6872 /* UIAlertControllerExtension.swift in Sources */,
 				4685F8BC1B1C1FF3004D77E9 /* IQKeyboardManagerConstants.swift in Sources */,
@@ -949,6 +960,7 @@
 				46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */,
 				4685F8BB1B1C1FF3004D77E9 /* IQUIWindow+Hierarchy.swift in Sources */,
 				46C7AAB21AF9FBF9006B361E /* NSDateExtension.swift in Sources */,
+				9A1A703A1B8D46F5006C8452 /* UIColor+Additions.m in Sources */,
 				4685F8C21B1C1FF3004D77E9 /* IQTitleBarButtonItem.swift in Sources */,
 				46042E571AEA1F6900089A5A /* UIColorExtension.swift in Sources */,
 				46B888C81AF9501300D872E0 /* BoolExtension.swift in Sources */,

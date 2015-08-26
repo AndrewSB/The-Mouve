@@ -54,8 +54,18 @@ class DetailViewController: UIViewController {
         addNavControllerLikePan()
         
         
-        headerImageView?.image = event?.getBgImg()
-        blurredHeaderImageView?.image = event?.getBgImg()
+        ParseUtility.getEventBgImg(event!){(bgImg, error) in
+            if((bgImg) != nil){
+                self.headerImageView?.image = bgImg
+                self.blurredHeaderImageView?.image = self.headerImageView?.image
+            }
+            else{
+                self.headerImageView?.image = appDel.placeHolderBg
+                self.blurredHeaderImageView?.image = self.headerImageView?.image
+                println(error)
+            }
+        }
+
         eventNameLabel.text = event!.name
         descriptionLabel.text = event!.about
         timeLabel.text = "\(event!.startTime.toShortTimeString()) - \(event!.endTime.toShortTimeString())"
@@ -107,8 +117,13 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         cell.attributedLabel.text = tableViewData[indexPath.row]
         cell.profileImageView.image = tableViewImages[indexPath.row]
         
+        
         return cell
     }
+    
+//    func profileImageTapped(sender: self){
+//        performSegueWithIdentifier(, sender: <#AnyObject?#>)
+//    }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 44

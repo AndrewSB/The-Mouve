@@ -202,6 +202,27 @@ class ParseUtility{
         //        Set cache
         //        [[PAPCache sharedCache] setFollowStatus:YES user:user];
     }
+    
+    class func getEventBgImg(targetEvent: Events,onCompletion: ((data: UIImage?, error: NSError?) -> ())?){
+        targetEvent.backgroundImage?.getDataInBackgroundWithBlock(){(imgData:NSData?, error: NSError?) -> Void in
+            if((imgData) != nil){
+                onCompletion!(data: UIImage(data: imgData!), error: nil)
+            }
+            else{
+                onCompletion!(data: nil, error: error)
+            }
+        }
+    }
+    class func getProfileImg(targetUser: PFUser,onCompletion: ((data: UIImage?, error: NSError?) -> ())?){
+        targetUser["profileImage"]!.getDataInBackgroundWithBlock(){(imgData:NSData?, error: NSError?) -> Void in
+            if((imgData) != nil){
+                onCompletion!(data: UIImage(data: imgData!), error: nil)
+            }
+            else{
+                onCompletion!(data: nil, error: error)
+            }
+        }
+    }
 
     class func followUserInBackground(targetUser: PFUser,onCompletion: ((succeeded: Bool, error: NSError?) -> ())?){
         if ((targetUser.objectId) == (appDel.currentUser?.objectId)) {

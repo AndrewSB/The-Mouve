@@ -68,13 +68,13 @@ class Events: PFObject {
 //            }
 //        }
 //    }
-    func getBgImg() -> UIImage?{
-        var imgData = self.backgroundImage?.getData()
-        if(!(imgData != nil)){
-            return appDel.placeHolderBg
-        }
-        return UIImage(data: imgData!)
-    }
+//    func getBgImg() -> UIImage?{
+//        var imgData = self.backgroundImage?.getData()
+//        if(!(imgData != nil)){
+//            return appDel.placeHolderBg
+//        }
+//        return UIImage(data: imgData!)
+//    }
 //    func getBgImg() -> UIImage?
 //    {
 //        downloadBgImg()
@@ -137,13 +137,13 @@ extension PFUser{
         set { return self["fullName"] = newValue }
         
     }
-    func getProfilePic() -> UIImage?{
-        var imgData = self["profileImage"]?.getData()
-            if(!(imgData != nil)){
-                return appDel.placeHolderBg
-            }
-        return UIImage(data: imgData!)
-    }
+//    func getProfilePic() -> UIImage?{
+//        var imgData = self["profileImage"]?.getData()
+//            if(!(imgData != nil)){
+//                return appDel.placeHolderBg
+//            }
+//        return UIImage(data: imgData!)
+//    }
     func query() -> PFQuery? {
         //1
         let query = PFQuery(className: Events.parseClassName())
