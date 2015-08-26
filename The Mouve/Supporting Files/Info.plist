@@ -50,7 +50,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>To find yo Mouves, yo gone have to tell us where you reside. And where yo girl is.</string>
+	<string>To find yo Mouves, yo gone have to tell us where you reside. And where yo girl stay at.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>HalisGR-Light.otf</string>

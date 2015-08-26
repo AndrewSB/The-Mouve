@@ -106,9 +106,9 @@ class HomeEventTableViewCell: UITableViewCell {
         
         
         
-        profileImageView.layer.cornerRadius = (profileImageView.frame.width / CGFloat(2))
-        profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
-        profileImageView.layer.borderWidth = 1
+//        profileImageView.layer.cornerRadius = (profileImageView.frame.width / CGFloat(2))
+//        profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
+//        profileImageView.layer.borderWidth = 1
         
 //        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
 //        blurEffectView.frame = backgroundImageView.frame
