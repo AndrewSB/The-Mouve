@@ -11,7 +11,6 @@ import UIKit
 import Toucan
 import Parse
 class HomeEventTableViewCell: UITableViewCell {
-    var isBlurred:Bool = false
     var event: Events! {
         didSet {
             nameLabel.text = event.name
@@ -36,15 +35,15 @@ class HomeEventTableViewCell: UITableViewCell {
 //
             
             // blur Mouve background image for each cell
-            if (isBlurred == false){
-            let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-            blurView.alpha = 0.75
-            blurView.frame = self.contentView.frame
-            // Crop and set Mouve background image for each cell
-            backgroundImageView.addSubview(blurView)
-                
-                isBlurred = true
-            }
+//            if (isBlurred == false){
+//            let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+//            blurView.alpha = 0.75
+//            blurView.frame = self.contentView.frame
+//            // Crop and set Mouve background image for each cell
+//            backgroundImageView.addSubview(blurView)
+//                
+//                isBlurred = true
+//            }
             
             
 //            let array = [UIImage(named: "yoojin-pic"),UIImage(named: "noah-pic"),UIImage(named: "chelsea-pic"),UIImage(named: "andrew-pic")]
@@ -52,14 +51,12 @@ class HomeEventTableViewCell: UITableViewCell {
 //
             
             
-            profileImageView.image = Toucan(image: event.creator.getProfilePic()!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).image
-            profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
-            profileImageView.clipsToBounds = true
+            profileImageView.image = Toucan(image: event.creator.getProfilePic()!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 1.5, borderColor: UIColor.whiteColor()).image
             profileImageView.userInteractionEnabled = true
             var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("profileImageWasTapped:"))
             profileImageView.addGestureRecognizer(tapGestureRecognizer)
             
-            backgroundImageView.image = Toucan(image: event.getBgImg()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height + 105)), fitMode: Toucan.Resize.FitMode.Crop).image
+            backgroundImageView.image = Toucan(image: event.getBgImg()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height)), fitMode: Toucan.Resize.FitMode.Crop).image
 //            backgroundImageView.clipsToBounds = true
         }
     }
@@ -82,9 +79,9 @@ class HomeEventTableViewCell: UITableViewCell {
         
         
         
-        profileImageView.layer.cornerRadius = (profileImageView.frame.width / CGFloat(2))
-        profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
-        profileImageView.layer.borderWidth = 1
+//        profileImageView.layer.cornerRadius = (profileImageView.frame.width / CGFloat(2))
+//        profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
+//        profileImageView.layer.borderWidth = 1
         
 //        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
 //        blurEffectView.frame = backgroundImageView.frame
