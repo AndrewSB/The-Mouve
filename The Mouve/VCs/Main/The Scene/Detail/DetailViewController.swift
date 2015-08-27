@@ -54,8 +54,8 @@ class DetailViewController: UIViewController {
         setEventData()
     }
         func setEventData(){
-        headerImageView?.image = event?.getBgImg()
-        blurredHeaderImageView?.image = event?.getBgImg()
+//        headerImageView?.image = event?.getBgImg()
+//        blurredHeaderImageView?.image = event?.getBgImg()
         eventNameLabel.text = event!.name
         descriptionLabel.text = event!.about
         timeLabel.text = "\(event!.startTime.toShortTimeString()) - \(event!.endTime.toShortTimeString())"

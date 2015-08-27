@@ -109,6 +109,8 @@
 		46CC15CC1AFE1AB9003E3D9E /* AlertUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46CC15CB1AFE1AB9003E3D9E /* AlertUIView.xib */; };
 		46D788FE1B0BF86A00276696 /* RemoteEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D788FD1B0BF86A00276696 /* RemoteEvent.swift */; };
 		46D7FA681AED9C1500A978F3 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */; };
+		7826922D1B8FBA800081AB26 /* PeopleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7826922C1B8FBA800081AB26 /* PeopleTableViewCell.swift */; };
+		7826922F1B8FBB490081AB26 /* PeopleFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7826922E1B8FBB490081AB26 /* PeopleFeedViewController.swift */; };
 		7832E78B1B1575AB005A1AF1 /* addImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78A1B1575AB005A1AF1 /* addImage.png */; };
 		7832E78D1B16C66F005A1AF1 /* Switch on image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7832E78C1B16C66F005A1AF1 /* Switch on image.png */; };
 		788296221B8400B000063710 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788296211B8400B000063710 /* Events.swift */; };
@@ -265,6 +267,8 @@
 		46CC15CB1AFE1AB9003E3D9E /* AlertUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertUIView.xib; sourceTree = "<group>"; };
 		46D788FD1B0BF86A00276696 /* RemoteEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteEvent.swift; sourceTree = "<group>"; };
 		46D7FA671AED9C1500A978F3 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		7826922C1B8FBA800081AB26 /* PeopleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleTableViewCell.swift; sourceTree = "<group>"; };
+		7826922E1B8FBB490081AB26 /* PeopleFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleFeedViewController.swift; sourceTree = "<group>"; };
 		7832E78A1B1575AB005A1AF1 /* addImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = addImage.png; path = ../VCs/Main/addImage.png; sourceTree = "<group>"; };
 		7832E78C1B16C66F005A1AF1 /* Switch on image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Switch on image.png"; path = "../VCs/Main/Switch on image.png"; sourceTree = "<group>"; };
 		788296211B8400B000063710 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Events.swift; path = Library/Internal/Events.swift; sourceTree = SOURCE_ROOT; };
@@ -377,6 +381,8 @@
 			isa = PBXGroup;
 			children = (
 				466A35461AF0506900E82FFD /* ProfileViewController.swift */,
+				7826922C1B8FBA800081AB26 /* PeopleTableViewCell.swift */,
+				7826922E1B8FBB490081AB26 /* PeopleFeedViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -956,6 +962,7 @@
 				9A51E4B81B87824B00A34028 /* Activity.swift in Sources */,
 				788296221B8400B000063710 /* Events.swift in Sources */,
 				78FC24D71B661769004B65C3 /* GooglePlacesAutocomplete.swift in Sources */,
+				7826922D1B8FBA800081AB26 /* PeopleTableViewCell.swift in Sources */,
 				462B68D61AEC55E60040C7DD /* ActivityPageViewController.swift in Sources */,
 				46042E591AEA230300089A5A /* UIViewExtension.swift in Sources */,
 				4685F8BB1B1C1FF3004D77E9 /* IQUIWindow+Hierarchy.swift in Sources */,
@@ -971,6 +978,7 @@
 				46C7AAB41AF9FEA1006B361E /* ArrayExtension.swift in Sources */,
 				9A1799251B577C8C00548FEB /* PersistentModel.xcdatamodeld in Sources */,
 				462B68D81AEC57E40040C7DD /* ActivityTableViewController.swift in Sources */,
+				7826922F1B8FBB490081AB26 /* PeopleFeedViewController.swift in Sources */,
 				468D21631AF0829C00CE6E19 /* SettingsTableViewController.swift in Sources */,
 				460FF5091AF87EA7007C6872 /* DetailViewController.swift in Sources */,
 				46B888D31AF9712F00D872E0 /* ActivityTableViewCell.swift in Sources */,
