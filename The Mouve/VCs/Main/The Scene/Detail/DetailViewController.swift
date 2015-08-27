@@ -141,6 +141,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         cell.attributedLabel.text = tableViewData[indexPath.row]
         cell.profileImageView.image = tableViewImages[indexPath.row]
         
+        
         return cell
     }
     

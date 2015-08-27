@@ -34,10 +34,11 @@ class ParseUtility{
 //        }
         
         let activity = Activity()
+        activity.type = typeKeyEnum.Attend
         activity.fromUser = appDel.currentUser!
         activity.toUser = targetEvent.creator
         activity.onMouve = targetEvent
-        activity.type = typeKeyEnum.Attend
+
         
         let activityACL = PFACL(user: appDel.currentUser!)
         activityACL.setPublicReadAccess(true)
@@ -200,6 +201,27 @@ class ParseUtility{
         }
         //        Set cache
         //        [[PAPCache sharedCache] setFollowStatus:YES user:user];
+    }
+    
+    class func getEventBgImg(targetEvent: Events,onCompletion: ((data: UIImage?, error: NSError?) -> ())?){
+        if(targetEvent.backgroundImage == nil){
+            onCompletion!(data: nil, error: nil)
+        }
+        else{
+            targetEvent.backgroundImage!.getDataInBackgroundWithBlock(){(imgData:NSData?, error: NSError?) -> Void in
+                onCompletion!(data: UIImage(data: imgData! as NSData), error: nil)
+            }
+        }
+    }
+    class func getProfileImg(targetUser: PFUser,onCompletion: ((data: UIImage?, error: NSError?) -> ())?){
+        targetUser["profileImage"]!.getDataInBackgroundWithBlock(){(imgData:NSData?, error: NSError?) -> Void in
+            if((imgData) != nil){
+                onCompletion!(data: UIImage(data: imgData!), error: nil)
+            }
+            else{
+                onCompletion!(data: nil, error: error)
+            }
+        }
     }
 
     class func followUserInBackground(targetUser: PFUser,onCompletion: ((succeeded: Bool, error: NSError?) -> ())?){

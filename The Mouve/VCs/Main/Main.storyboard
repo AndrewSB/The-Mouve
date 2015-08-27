@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u3Z-Xn-nCF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u3Z-Xn-nCF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -191,7 +191,7 @@
                                                         <rect key="frame" x="28" y="13" width="173" height="23"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today | 5PM - 9PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-F7-9dh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Today | 5PM - 9PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-F7-9dh">
                                                     <rect key="frame" x="22" y="66" width="108" height="14"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -306,11 +306,12 @@
                     <connections>
                         <outlet property="feedTableView" destination="UsO-b9-XOW" id="OlG-nb-rnK"/>
                         <segue destination="HXA-ZS-heC" kind="show" identifier="segueToDetail" id="Tsj-6r-6V9"/>
+                        <segue destination="Nqe-Gn-hQj" kind="show" identifier="segueToProfile" id="bqa-xR-QvG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-208" y="17"/>
+            <point key="canvasLocation" x="-332" y="53"/>
         </scene>
         <!--The Scene-->
         <scene sceneID="iAh-ix-ATF">
@@ -1277,7 +1278,7 @@
         <!--Profile-->
         <scene sceneID="FGs-9K-51x">
             <objects>
-                <viewController storyboardIdentifier="ProfileVC" id="Nqe-Gn-hQj" customClass="ProfileViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" automaticallyAdjustsScrollViewInsets="NO" id="Nqe-Gn-hQj" customClass="ProfileViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y2r-Dh-orA"/>
                         <viewControllerLayoutGuide type="bottom" id="tJV-nO-W3p"/>
@@ -1326,7 +1327,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yoojin-pic" translatesAutoresizingMaskIntoConstraints="NO" id="xZb-K9-a6p" userLabel="profilePic">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImage" translatesAutoresizingMaskIntoConstraints="NO" id="xZb-K9-a6p" userLabel="profilePic">
                                         <rect key="frame" x="250" y="70" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="xZb-K9-a6p" secondAttribute="height" multiplier="1:1" id="IjW-xo-lHB"/>
@@ -1453,7 +1454,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list-background" translatesAutoresizingMaskIntoConstraints="NO" id="W4D-Up-daJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="129"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yoojin-pic" translatesAutoresizingMaskIntoConstraints="NO" id="iWn-Hr-qzY">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addImage" translatesAutoresizingMaskIntoConstraints="NO" id="iWn-Hr-qzY">
                                                     <rect key="frame" x="493" y="33" width="63" height="63"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="iWn-Hr-qzY" secondAttribute="height" multiplier="1:1" id="LOh-V3-Tj5"/>
@@ -1523,7 +1524,7 @@
                                                         <rect key="frame" x="28" y="13" width="173" height="23"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today | 5PM - 9PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndx-Z9-XQn">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Today | 5PM - 9PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ndx-Z9-XQn">
                                                     <rect key="frame" x="22" y="80" width="134" height="17"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1625,6 +1626,7 @@
                             <constraint firstItem="ViX-cS-fl9" firstAttribute="top" secondItem="Y2r-Dh-orA" secondAttribute="bottom" constant="-20" id="zQY-e7-0tC"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile-icon" id="f8p-Wz-zBd"/>
                     <connections>
                         <outlet property="avatarImage" destination="J1f-pm-mjf" id="7XH-1A-xQq"/>
@@ -1859,4 +1861,7 @@
         <image name="white-share" width="30" height="44"/>
         <image name="yoojin-pic" width="114" height="114"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="bqa-xR-QvG"/>
+    </inferredMetricsTieBreakers>
 </document>

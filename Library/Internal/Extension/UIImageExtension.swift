@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreGraphics
 
 extension UIImage {
     func compressed(percent: CGFloat) -> UIImage {
@@ -23,5 +25,17 @@ extension UIImage {
         UIGraphicsEndImageContext();
         
         return compressedImage;
+    }
+    
+}
+extension CIImage{
+    class func blur(input: UIImage, radius: Int) -> UIImage{
+        var filter = CIFilter(name:"CIGaussianBlur")
+        filter.setDefaults()
+        filter.setValue(CIImage(image: input), forKey: kCIInputImageKey)
+        filter.setValue(radius, forKey: kCIInputRadiusKey)
+        var outputImage = filter.outputImage;
+        var finalImage :UIImage = UIImage(CIImage: outputImage)!
+        return finalImage
     }
 }

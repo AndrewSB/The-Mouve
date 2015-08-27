@@ -12,12 +12,13 @@ import CoreLocation
 import Parse
 import Bolts
 
-class SceneFeedViewController: UIViewController {
+class SceneFeedViewController: UIViewController{
 
     @IBOutlet weak var feedTableView: UITableView!
     
     
     var type: SceneType!
+    var clickedOnType: String!
     var feedData: [Events]? {
         didSet {
             feedTableView.reloadData()
@@ -40,38 +41,39 @@ class SceneFeedViewController: UIViewController {
         feedTableView.dataSource = self
         
         //        let feedQuery = PFQuery(className: "Events")
-        let feedQuery = Events.query()
+        var feedQuery: PFQuery?
         appDel.location.startUpdatingLocation()
         
         switch type! {
         case .Explore:
             //            println("lol")
+            feedQuery = Events.query()
             feedQuery?.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
             
         case .Scene:
             
 //            First query the people we follow
 //            Then query all the mouves made by them
-            let followingQuery = Activity.query()
-            followingQuery?.whereKey("typeKey", equalTo: typeKeyEnum.Follow.rawValue)
-            followingQuery?.whereKey("fromUser", equalTo: appDel.currentUser!)
+            let followingQuery = PFQuery(className: Activity.parseClassName())
+            followingQuery.whereKey("typeKey", equalTo: typeKeyEnum.Follow.rawValue)
+            followingQuery.whereKey("fromUser", equalTo: appDel.currentUser!)
             
             // Using the activities from the query above, we find all of the photos taken by
             // the friends the current user is following
-            let followingMouvesQuery = Events.query()
-            followingMouvesQuery?.whereKey("creator", matchesKey: "toUser", inQuery: followingQuery!)
-//            followingMouvesQuery?.whereKeyExists("Events")
+            let followingMouvesQuery = PFQuery(className: Events.parseClassName())
+            followingMouvesQuery.whereKey("creator", matchesKey: "toUser", inQuery: followingQuery)
+            followingMouvesQuery.whereKeyExists("name")
             
             // We create a second query for the current user's mouves
-            let mouvesFromCurrentUserQuery = Events.query()
-            mouvesFromCurrentUserQuery?.whereKey("creator", equalTo: appDel.currentUser!)
-//            mouvesFromCurrentUserQuery?.whereKeyExists("Events")
+            let mouvesFromCurrentUserQuery = PFQuery(className: Events.parseClassName())
+            mouvesFromCurrentUserQuery.whereKey("creator", equalTo: appDel.currentUser!)
+            followingMouvesQuery.whereKeyExists("name")
             
             // We create a final compound query that will find all of the photos that were
             // taken by the user's friends or by the user
-            let feedQuery = PFQuery.orQueryWithSubqueries([mouvesFromCurrentUserQuery!, followingMouvesQuery!])
-            feedQuery.includeKey("creator")
-            feedQuery.orderByAscending("startTime")
+            feedQuery = PFQuery.orQueryWithSubqueries([mouvesFromCurrentUserQuery, followingMouvesQuery])
+            feedQuery!.includeKey("creator")
+            feedQuery!.orderByAscending("startTime")
             
             
             
@@ -80,8 +82,8 @@ class SceneFeedViewController: UIViewController {
         }
         
 //        feedQuery!.limit = 20
-        feedQuery!.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
-            var serverData = [Events]()
+        feedQuery?.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+//            var serverData = [Events]()
             //            println(results)
             
             if ((results) != nil) {
@@ -141,6 +143,9 @@ class SceneFeedViewController: UIViewController {
         if let des = segue.destinationViewController as? DetailViewController {
             des.event = sender as? Events
         }
+        if let des = segue.destinationViewController as? ProfileViewController {
+            des.user = sender as? PFUser
+        }
         
     }
     @IBAction func unwindToVC(segue: UIStoryboardSegue) {
@@ -154,8 +159,17 @@ class SceneFeedViewController: UIViewController {
 
 
 
-extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
-    
+extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource, HomeEventTVCDelegate {
+    func didTapProfileImage(cell: HomeEventTableViewCell) {
+        println("Jumping to \(cell.event!.creator.username!)'s profile")
+        performSegueWithIdentifier("segueToProfile", sender: cell.event.creator)
+    }
+    func didTapAttendEvent(cell: HomeEventTableViewCell) {
+        
+    }
+    func didTapShareEvent(cell: HomeEventTableViewCell) {
+        
+    }
     // MARK: UITableViewDataSource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return feedData == nil ? 0 : feedData!.count
@@ -168,9 +182,8 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
-        
+        cell.delegate = self
         cell.event = feedData![indexPath.section]
-        
         return cell
     }
     
@@ -181,6 +194,11 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource {
         
         performSegueWithIdentifier("segueToDetail", sender: feedData![indexPath.section])
     }
+    
+//    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
+//        println("segueing to profile")
+//        performSegueWithIdentifier("segueToProfile", sender: feedData![indexPath.section].creator)
+//    }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : 4
