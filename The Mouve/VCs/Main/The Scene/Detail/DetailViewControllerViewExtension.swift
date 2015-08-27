@@ -35,7 +35,7 @@ extension DetailViewController { // View code and actions
         tableViewHeaderView.frame.size.height = addPostButton.frame.origin.y + addPostButton.frame.height + 40
         addPostButton.layer.cornerRadius = 10
         
-        [calendarButton, shareButton, bookmarkButton].map({
+        [calendarButton, shareButton].map({
             $0.type = .Detail
         })
     }
@@ -101,9 +101,6 @@ extension DetailViewController { // View code and actions
 
     }
     
-    @IBAction func bookmarkButtonWasHit(sender: AnyObject) {
-        bookmarkButton.completed!.toggle()
-    }
     
     @IBAction func shareButtonWasHit(sender: AnyObject) {
         shareButton.completed!.toggle()

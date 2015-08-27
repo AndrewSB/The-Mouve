@@ -10,6 +10,7 @@ import UIKit
 import Parse
 
 class Events: PFObject {
+    @NSManaged var objectID: String
     @NSManaged var creator: PFUser
     @NSManaged var name: String
     @NSManaged var about: String

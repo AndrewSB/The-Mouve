@@ -12,7 +12,7 @@ import Parse
 import MapKit
 
 class DetailViewController: UIViewController {
-    var event: Events?
+    var event: Events!
     
     let tableViewImages = [UIImage(named: "chelsea-pic"), UIImage(named: "noah-pic"), UIImage(named: "taylor-pic"), UIImage(named: "chelsea-pic"), UIImage(named: "chelsea-pic")]
     let tableViewData = ["@troy posted a picture from the event on facebook and twitter.", "@noah There is still lots of food left!", "@tay posted a picture from the event on facebook and twitter.", "@chelsea this party is bumpin’"]
@@ -26,8 +26,8 @@ class DetailViewController: UIViewController {
     
     @IBOutlet weak var tableViewHeaderView: UIView!
     
+    @IBOutlet var editButton: smallTextOutlinedButton!
     @IBOutlet weak var calendarButton: GreyGreenButton!
-    @IBOutlet weak var bookmarkButton: GreyGreenButton!
     @IBOutlet weak var shareButton: GreyGreenButton!
     
     @IBOutlet weak var eventNameLabel: UILabel!
@@ -50,10 +50,10 @@ class DetailViewController: UIViewController {
         styleViewProgrammatically()
         tableViewDidLoad()
         collectionViewDidLoad()
-        
         addNavControllerLikePan()
-        
-        
+        setEventData()
+    }
+        func setEventData(){
         headerImageView?.image = event?.getBgImg()
         blurredHeaderImageView?.image = event?.getBgImg()
         eventNameLabel.text = event!.name
@@ -67,6 +67,39 @@ class DetailViewController: UIViewController {
         addressButton.addTarget(self, action: "openMapForPlace:", forControlEvents: UIControlEvents.TouchUpInside)
         inviteButton.setTitle(((event!.invitees == nil) ? "Nobody invited" : "\(event?.invitees) invited"), forState: .Normal)
     }
+//    func updateIfModified(){
+//        var query = PFQuery(className:"Events")
+//        query.whereKey("objectId", equalTo:event!.objectID)
+//        query.findObjectsInBackgroundWithBlock {
+//            (objects:[AnyObject]?, error:NSError?) -> Void in
+//            if error == nil {
+//                // The find succeeded.
+//                println("Successfully retrieved \(objects!.count) objects.")
+//                if let objects = objects {
+//                    for object in objects{
+//                        self.event = Events()
+//                        self.setEventData();
+//                    }
+//                }
+//            }
+//        }
+//        
+//    }
+//    func checkMouveDeleted(){
+//        var query = PFQuery(className:"Events")
+//        query.whereKey("objectId", equalTo:event!.objectID)
+//        query.findObjectsInBackgroundWithBlock {
+//            (objects:[AnyObject]?, error:NSError?) -> Void in
+//            if error == nil {
+//                // The find succeeded.
+//                println("Successfully retrieved \(objects!.count) objects.")
+//                if(objects?.count <= 0){
+//                    self.navigationController?.popViewControllerAnimated(true)
+//                }
+//            }
+//        }
+//    }
+    
     @IBAction func openMapForPlace(sender: UIButton) {
         var latitute:CLLocationDegrees! =  event?.location.latitude
         var longitute:CLLocationDegrees! =  event?.location.longitude
@@ -87,6 +120,7 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBarHidden = true
+//        checkMouveDeleted()
     }
     
     override func viewWillDisappear(animated: Bool) {

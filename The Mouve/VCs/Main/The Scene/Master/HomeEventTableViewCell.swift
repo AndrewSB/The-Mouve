@@ -31,24 +31,6 @@ class HomeEventTableViewCell: UITableViewCell {
             
             let places = ["Beach-Chillin", "Coffee-Hour", "Espresso-Lesson", "Fire-Works", "Food-Festival", "Football-Game", "San-Francisco-Visit", "State-Fair", "Study-Sesh", "Surf-Lesson"]
             
-//            event.backgroundImage = UIImage(named: places.randomElement())!
-//
-            
-            // blur Mouve background image for each cell
-//            if (isBlurred == false){
-//            let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-//            blurView.alpha = 0.75
-//            blurView.frame = self.contentView.frame
-//            // Crop and set Mouve background image for each cell
-//            backgroundImageView.addSubview(blurView)
-//                
-//                isBlurred = true
-//            }
-            
-            
-//            let array = [UIImage(named: "yoojin-pic"),UIImage(named: "noah-pic"),UIImage(named: "chelsea-pic"),UIImage(named: "andrew-pic")]
-            
-//
             
             
             profileImageView.image = Toucan(image: event.creator.getProfilePic()!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 1.5, borderColor: UIColor.whiteColor()).image

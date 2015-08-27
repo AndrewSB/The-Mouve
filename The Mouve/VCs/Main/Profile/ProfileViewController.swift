@@ -36,9 +36,9 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     var blurredHeaderImageView: UIImageView!
     
     @IBOutlet weak var mouveButton: UIButton!
-    @IBOutlet weak var followersButton: UIButton!
     @IBOutlet weak var followingButton: UIButton!
     
+    @IBOutlet weak var followersButton: UIButton!
     @IBOutlet weak var profileTableView: UITableView!
     
     @IBOutlet weak var avatarImage: UIImageView!
