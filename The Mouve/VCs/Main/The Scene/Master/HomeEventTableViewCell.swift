@@ -66,7 +66,6 @@ class HomeEventTableViewCell: UITableViewCell {
                     currImg = imgObj
                 }
                 else{
-                    println(error)
                     currImg = appDel.placeHolderBg
                 }
                 self.backgroundImageView.image = Toucan(image: currImg!.applyLightEffect()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height)), fitMode: Toucan.Resize.FitMode.Crop).image

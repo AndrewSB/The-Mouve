@@ -62,7 +62,7 @@ class DetailViewController: UIViewController {
             else{
                 self.headerImageView?.image = appDel.placeHolderBg
                 self.blurredHeaderImageView?.image = self.headerImageView?.image
-                println(error)
+//                println(error)
             }
         }
 
