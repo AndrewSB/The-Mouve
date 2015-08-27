@@ -181,7 +181,7 @@
                                                         <constraint firstAttribute="width" constant="4" id="UmY-ZC-aPV"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MARGARITA PARTY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yP-PG-yHv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MARGARITA PARTY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yP-PG-yHv">
                                                     <rect key="frame" x="22" y="16" width="188" height="22"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,7 +190,7 @@
                                                         <rect key="frame" x="28" y="13" width="173" height="23"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today | 5PM - 9PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-F7-9dh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Today | 5PM - 9PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJQ-F7-9dh">
                                                     <rect key="frame" x="22" y="66" width="108" height="14"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -213,7 +213,7 @@
                                                         <constraint firstAttribute="width" id="w5z-dg-Vva"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't forget to bring your swim suit! Also bring food and dranks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coP-Hn-gLS">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Don't forget to bring your swim suit! Also bring food and dranks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coP-Hn-gLS">
                                                     <rect key="frame" x="24" y="40" width="361" height="14"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-RegularItalic" family="Halis GR" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1214,7 +1214,7 @@
         <!--Profile-->
         <scene sceneID="FGs-9K-51x">
             <objects>
-                <viewController storyboardIdentifier="ProfileVC" id="Nqe-Gn-hQj" customClass="ProfileViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" automaticallyAdjustsScrollViewInsets="NO" id="Nqe-Gn-hQj" customClass="ProfileViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y2r-Dh-orA"/>
                         <viewControllerLayoutGuide type="bottom" id="tJV-nO-W3p"/>
@@ -1535,6 +1535,7 @@
                             <constraint firstItem="ViX-cS-fl9" firstAttribute="top" secondItem="Y2r-Dh-orA" secondAttribute="bottom" constant="-20" id="zQY-e7-0tC"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile-icon" id="f8p-Wz-zBd"/>
                     <connections>
                         <outlet property="avatarImage" destination="J1f-pm-mjf" id="7XH-1A-xQq"/>

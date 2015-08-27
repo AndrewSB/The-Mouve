@@ -121,10 +121,6 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-//    func profileImageTapped(sender: self){
-//        performSegueWithIdentifier(, sender: <#AnyObject?#>)
-//    }
-    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 44
     }
