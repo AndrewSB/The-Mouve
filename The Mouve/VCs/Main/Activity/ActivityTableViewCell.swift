@@ -35,9 +35,9 @@ class ActivityTableViewCell: UITableViewCell {
                         case typeKeyEnum.Comment.rawValue:
                             self.attributedLabel.text = "\(self.activity!.stringContent)"
                         case typeKeyEnum.Follow.rawValue:
-                            self.attributedLabel.text = "@\(self.activity!.fromUser.username) follows you!"
+                            self.attributedLabel.text = "@\(self.activity!.fromUser.username!) follows you!"
                         case typeKeyEnum.Attend.rawValue:
-                            self.attributedLabel.text = "\(self.activity?.fromUser) is attending \(self.activity!.onMouve.name)"
+                            self.attributedLabel.text = "@\(self.activity!.fromUser.username!) is attending \(self.activity!.onMouve.name)"
                         default:
                             self.attributedLabel.text = "unknown activity type"
                     }
@@ -65,7 +65,7 @@ class ActivityTableViewCell: UITableViewCell {
                     }
                     else{
                         activity.eventBg = img
-                        self.calendarButton.addSubview(UIImageView(image: Toucan(image: self.activity!.eventBg!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 1.5, borderColor: UIColor.whiteColor()).image))
+                        self.calendarButton.addSubview(UIImageView(image: Toucan(image: self.activity!.eventBg!).resize(CGSize(width: self.profileImageView.bounds.width+10, height: self.profileImageView.bounds.height+10), fitMode: Toucan.Resize.FitMode.Crop).image))
                         self.profileImageView.image = self.activity!.profilePic
                         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.height / 2
                         self.profileImageView.clipsToBounds = true

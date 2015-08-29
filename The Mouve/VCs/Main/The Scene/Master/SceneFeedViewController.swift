@@ -22,8 +22,6 @@ class SceneFeedViewController: UIViewController{
     var clickedOnType: String!
     var feedData: [Events]? {
         didSet {
-            feedTableView.delegate = self
-            feedTableView.dataSource = self
             self.feedTableView.reloadData()
             
         }
@@ -33,6 +31,7 @@ class SceneFeedViewController: UIViewController{
     convenience init(type: SceneType) {
         self.init()
         self.type = type
+
     }
     
     override func viewDidLoad() {
@@ -44,140 +43,76 @@ class SceneFeedViewController: UIViewController{
         
         feedTableView.delegate = self
         feedTableView.dataSource = self
-        self.loadingSpinnerView = addLoadingView()
-        self.view.addSubview(loadingSpinnerView)
-//
-//
-//
-//        //        let feedQuery = PFQuery(className: "Events")
-//        var feedQuery: PFQuery?
-//        appDel.location.startUpdatingLocation()
-//        loadingSpinnerView = addLoadingView()
-//        view.addSubview(loadingSpinnerView)
-//        switch type! {
-//        case .Explore:
-//            //            println("lol")
-//            feedQuery = Events.query()
-//            feedQuery?.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
-//            
-//        case .Scene:
-//            
-////            First query the people we follow
-////            Then query all the mouves made by them
-//            let followingQuery = PFQuery(className: Activity.parseClassName())
-//            followingQuery.whereKey("typeKey", equalTo: typeKeyEnum.Follow.rawValue)
-//            followingQuery.whereKey("fromUser", equalTo: appDel.currentUser!)
-//            
-//            // Using the activities from the query above, we find all of the photos taken by
-//            // the friends the current user is following
-//            let followingMouvesQuery = PFQuery(className: Events.parseClassName())
-//            followingMouvesQuery.whereKey("creator", matchesKey: "toUser", inQuery: followingQuery)
-//            followingMouvesQuery.whereKeyExists("name")
-//            
-//            // We create a second query for the current user's mouves
-//            let mouvesFromCurrentUserQuery = PFQuery(className: Events.parseClassName())
-//            mouvesFromCurrentUserQuery.whereKey("creator", equalTo: appDel.currentUser!)
-//            followingMouvesQuery.whereKeyExists("name")
-//            
-//            // We create a final compound query that will find all of the photos that were
-//            // taken by the user's friends or by the user
-//            feedQuery = PFQuery.orQueryWithSubqueries([mouvesFromCurrentUserQuery, followingMouvesQuery])
-//            feedQuery!.includeKey("creator")
-//            feedQuery!.orderByAscending("startTime")
-//            
-//            
-//            
-//        default:
-//            assert(true == false, "Type wasnt scene or explore")
-//        }
-//        
-//
-////        feedQuery!.limit = 20
-//        feedQuery?.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
-////            var serverData = [Events]()
-//            //            println(results)
-//            
-//            if let loadedData  = results as? [Events] {
-//                self.feedData = loadedData
-//            }
-//            if self.feedData?.count == 0 {
-//                self.loadingSpinnerView.removeFromSuperview()
-//                self.feedTableView.emptyDataSetSource = self;
-//                self.feedTableView.emptyDataSetDelegate = self;
-//                self.feedTableView.reloadEmptyDataSet()
-//            }
-//            
-//        }
-//        
-//        feedTableView.contentInset = UIEdgeInsets(top: 44+22, left: 0, bottom: 44, right: 0)
+//        self.loadingSpinnerView = addLoadingView()
+//        self.view.addSubview(loadingSpinnerView)
+
+            
+            //        let feedQuery = PFQuery(className: "Events")
+            dispatch_async(dispatch_get_main_queue(), {
+            var feedQuery: PFQuery?
+            appDel.location.startUpdatingLocation()
+            switch self.type! {
+            case .Explore:
+                //            println("lol")
+                feedQuery = Events.query()
+                feedQuery?.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
+                
+            case .Scene:
+                
+    //            First query the people we follow
+    //            Then query all the mouves made by them
+                let followingQuery = PFQuery(className: Activity.parseClassName())
+                followingQuery.whereKey("typeKey", equalTo: typeKeyEnum.Follow.rawValue)
+                followingQuery.whereKey("fromUser", equalTo: appDel.currentUser!)
+                
+                // Using the activities from the query above, we find all of the photos taken by
+                // the friends the current user is following
+                let followingMouvesQuery = PFQuery(className: Events.parseClassName())
+                followingMouvesQuery.whereKey("creator", matchesKey: "toUser", inQuery: followingQuery)
+                followingMouvesQuery.whereKeyExists("name")
+                
+                // We create a second query for the current user's mouves
+                let mouvesFromCurrentUserQuery = PFQuery(className: Events.parseClassName())
+                mouvesFromCurrentUserQuery.whereKey("creator", equalTo: appDel.currentUser!)
+                followingMouvesQuery.whereKeyExists("name")
+                
+                // We create a final compound query that will find all of the photos that were
+                // taken by the user's friends or by the user
+                feedQuery = PFQuery.orQueryWithSubqueries([mouvesFromCurrentUserQuery, followingMouvesQuery])
+                feedQuery!.includeKey("creator")
+                feedQuery!.orderByAscending("startTime")
+                
+                
+                
+            default:
+                assert(true == false, "Type wasnt scene or explore")
+            }
+            
+
+    //        feedQuery!.limit = 20
+            feedQuery?.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+    //            var serverData = [Events]()
+                //            println(results)
+                
+                if let loadedData  = results as? [Events] {
+                    self.feedData = loadedData
+                }
+                if self.feedData?.count == 0 {
+                    self.feedTableView.emptyDataSetSource = self;
+                    self.feedTableView.emptyDataSetDelegate = self;
+                    self.feedTableView.reloadEmptyDataSet()
+                }
+                
+            }
+        
+        self.feedTableView.contentInset = UIEdgeInsets(top: 44+22, left: 0, bottom: 44, right: 0)
+        })
     }
+    
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        
-        //        let feedQuery = PFQuery(className: "Events")
-
-        var feedQuery: PFQuery?
-        appDel.location.startUpdatingLocation()
-        
-        
-        switch type! {
-        case .Explore:
-            //            println("lol")
-            feedQuery = Events.query()
-            feedQuery?.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
-            
-        case .Scene:
-            
-            //            First query the people we follow
-            //            Then query all the mouves made by them
-            let followingQuery = PFQuery(className: Activity.parseClassName())
-            followingQuery.whereKey("typeKey", equalTo: typeKeyEnum.Follow.rawValue)
-            followingQuery.whereKey("fromUser", equalTo: appDel.currentUser!)
-            
-            // Using the activities from the query above, we find all of the photos taken by
-            // the friends the current user is following
-            let followingMouvesQuery = PFQuery(className: Events.parseClassName())
-            followingMouvesQuery.whereKey("creator", matchesKey: "toUser", inQuery: followingQuery)
-            followingMouvesQuery.whereKeyExists("name")
-            
-            // We create a second query for the current user's mouves
-            let mouvesFromCurrentUserQuery = PFQuery(className: Events.parseClassName())
-            mouvesFromCurrentUserQuery.whereKey("creator", equalTo: appDel.currentUser!)
-            followingMouvesQuery.whereKeyExists("name")
-            
-            // We create a final compound query that will find all of the photos that were
-            // taken by the user's friends or by the user
-            feedQuery = PFQuery.orQueryWithSubqueries([mouvesFromCurrentUserQuery, followingMouvesQuery])
-            feedQuery!.includeKey("creator")
-            feedQuery!.orderByAscending("startTime")
-            
-            
-            
-        default:
-            assert(true == false, "Type wasnt scene or explore")
-        }
-        
-        
-        //        feedQuery!.limit = 20
-        feedQuery?.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
-            //            var serverData = [Events]()
-            //            println(results)
-            
-            if let loadedData  = results as? [Events] {
-                self.feedData = loadedData
-            }
-            if self.feedData?.count == 0 {
-                self.loadingSpinnerView.removeFromSuperview()
-                self.feedTableView.emptyDataSetSource = self;
-                self.feedTableView.emptyDataSetDelegate = self;
-                self.feedTableView.reloadEmptyDataSet()
-            }
-            
-        }
-        
-        feedTableView.contentInset = UIEdgeInsets(top: 44+22, left: 0, bottom: 44, right: 0)
-
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -262,7 +197,7 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource, H
         
     }
     func didFinishLoadingCell(cell: HomeEventTableViewCell) {
-        self.loadingSpinnerView.removeFromSuperview()
+//        self.loadingSpinnerView.removeFromSuperview()
     }
     
     // MARK: UITableViewDataSource
