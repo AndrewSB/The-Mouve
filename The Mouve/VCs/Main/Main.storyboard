@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u3Z-Xn-nCF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u3Z-Xn-nCF">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -8,6 +8,11 @@
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="HalisGR-Book.otf">
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
+            <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
             <string>HalisGR-Book</string>
@@ -166,7 +171,7 @@
                                                         <action selector="shareButtonWasHit:" destination="N73-Mj-ygj" eventType="touchUpInside" id="t55-Fs-Rxe"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3.4 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-GB-5S5">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.4 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic1-GB-5S5">
                                                     <rect key="frame" x="22" y="82" width="53" height="15"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -670,7 +675,7 @@
                                     <rect key="frame" x="76" y="237" width="248" height="17"/>
                                 </variation>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Create Mouve" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmu-Jd-lW1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Mouve" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmu-Jd-lW1">
                                 <rect key="frame" x="244" y="31" width="112" height="19"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -697,7 +702,7 @@
                                     <rect key="frame" x="76" y="339" width="248" height="17"/>
                                 </variation>
                             </textField>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZJQ-Tw-wj9">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJQ-Tw-wj9">
                                 <rect key="frame" x="300" y="357" width="0.0" height="243"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -707,7 +712,7 @@
                                     <rect key="frame" x="200" y="356" width="0.0" height="244"/>
                                 </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7QP-nM-NUk">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7QP-nM-NUk">
                                 <rect key="frame" x="12" y="28" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="D7u-Tr-Mdi"/>
@@ -752,7 +757,7 @@
                                     <action selector="postMouveButtonWasHit:" destination="FOw-hf-56g" eventType="touchUpInside" id="11M-S6-hMO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwK-E3-1FF" userLabel="Image Button">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwK-E3-1FF" userLabel="Image Button">
                                 <rect key="frame" x="250" y="96" width="100" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -772,7 +777,7 @@
                                     <action selector="switchImageMenu:" destination="FOw-hf-56g" eventType="touchUpInside" id="jZR-Hw-ND4"/>
                                 </connections>
                             </button>
-                            <switch contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="34o-ML-Hh9">
+                            <switch contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="right" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="34o-ML-Hh9">
                                 <rect key="frame" x="276" y="442" width="51" height="31"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -785,7 +790,7 @@
                                     <action selector="flipSwitch:" destination="FOw-hf-56g" eventType="valueChanged" id="9Iv-CY-JHg"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Public" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eim-p2-abQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Public" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eim-p2-abQ">
                                 <rect key="frame" x="279" y="481" width="42" height="16"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Medium" family="Halis GR" pointSize="14"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -794,7 +799,7 @@
                                     <rect key="frame" x="181" y="480" width="39" height="17"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="From:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haI-iS-2ek">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haI-iS-2ek">
                                 <rect key="frame" x="30" y="427" width="36" height="15"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="13"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -803,7 +808,7 @@
                                     <rect key="frame" x="30" y="426" width="34" height="16"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="To:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBd-1X-EJA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gBd-1X-EJA">
                                 <rect key="frame" x="552" y="427" width="18" height="15"/>
                                 <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="13"/>
                                 <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -812,7 +817,7 @@
                                     <rect key="frame" x="352" y="426" width="18" height="16"/>
                                 </variation>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BU5-0i-Djq">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BU5-0i-Djq">
                                 <rect key="frame" x="300" y="50" width="0.0" height="46"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -822,7 +827,7 @@
                                     <rect key="frame" x="200" y="51" width="0.0" height="43"/>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xsk-bR-CA2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xsk-bR-CA2">
                                 <rect key="frame" x="300" y="196" width="0.0" height="45"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -956,17 +961,17 @@
                                                 <constraint firstAttribute="height" constant="1" id="ddg-pz-2j8"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Margarita Party" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekG-ae-AMS">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Margarita Party" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekG-ae-AMS">
                                             <rect key="frame" x="22" y="267" width="538" height="22"/>
                                             <fontDescription key="fontDescription" name="HalisGR-Medium" family="Halis GR" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="5pm - 9pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-rk-ZEb">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5pm - 9pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIf-rk-ZEb">
                                             <rect key="frame" x="22" y="293" width="83" height="18"/>
                                             <fontDescription key="fontDescription" name="HalisGR-Medium" family="Halis GR" pointSize="16"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Don't forget to bring your swim suit! Also bring food and dranks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoO-kW-dp9">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't forget to bring your swim suit! Also bring food and dranks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoO-kW-dp9">
                                             <rect key="frame" x="22" y="316" width="563" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="fI9-Yj-gII"/>
@@ -975,7 +980,7 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80K-AW-FfG">
+                                        <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80K-AW-FfG">
                                             <rect key="frame" x="22" y="356" width="568" height="29"/>
                                             <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="15"/>
                                             <state key="normal" title="Address">
@@ -1184,7 +1189,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9vX-uy-YoX" userLabel="headerView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="180"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hack the world" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfI-gB-ALr">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hack the world" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfI-gB-ALr">
                                         <rect key="frame" x="240" y="180" width="121" height="19"/>
                                         <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1274,7 +1279,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViX-cS-fl9" userLabel="headerView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csc-pN-apC" userLabel="@username">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csc-pN-apC" userLabel="@username">
                                         <rect key="frame" x="273" y="211" width="54" height="19"/>
                                         <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1286,7 +1291,7 @@
                                             <rect key="frame" x="174" y="211" width="54" height="19"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Fullname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtG-xh-YEV" userLabel="Full Name">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fullname" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtG-xh-YEV" userLabel="Full Name">
                                         <rect key="frame" x="257" y="178" width="85" height="22"/>
                                         <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1381,7 +1386,7 @@
                                                 <segue destination="HUv-9D-U1R" kind="show" id="GHy-GH-ZdU"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hut-n9-7Ai" customClass="smallTextOutlinedButton" customModule="The_Mouve" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hut-n9-7Ai" customClass="smallTextOutlinedButton" customModule="The_Mouve" customModuleProvider="target">
                                             <rect key="frame" x="225" y="239" width="150" height="28"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -1468,7 +1473,7 @@
                                                         <action selector="shareButtonWasHit:" destination="usd-QT-SDM" eventType="touchUpInside" id="QM9-qi-exZ"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3.4 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEg-n3-8Af">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.4 miles" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEg-n3-8Af">
                                                     <rect key="frame" x="22" y="99" width="61" height="17"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1486,7 +1491,7 @@
                                                         <constraint firstAttribute="width" constant="4" id="NPM-wF-JLj"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="MARGARITA PARTY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6n0-Dr-Bae">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MARGARITA PARTY" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6n0-Dr-Bae">
                                                     <rect key="frame" x="22" y="16" width="188" height="22"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-Regular" family="Halis GR" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1524,7 +1529,7 @@
                                                         <constraint firstAttribute="width" id="pG9-Ga-TbF"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Don't forget to bring your swim suit! Also bring food and dranks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suL-Q6-10H">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't forget to bring your swim suit! Also bring food and dranks" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suL-Q6-10H">
                                                     <rect key="frame" x="24" y="40" width="383" height="15"/>
                                                     <fontDescription key="fontDescription" name="HalisGR-LightItalic" family="Halis GR" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1661,7 +1666,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="usernameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eq-jg-x1w">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="usernameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eq-jg-x1w">
                                                     <rect key="frame" x="92" y="5" width="150" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="TaX-dx-kiE"/>
@@ -1673,7 +1678,7 @@
                                                         <rect key="frame" x="90" y="5" width="150" height="18"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="fullNameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3U-lr-55m">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fullNameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K3U-lr-55m">
                                                     <rect key="frame" x="92" y="32" width="150" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="CVf-VD-AuZ"/>
@@ -1783,7 +1788,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="usernameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YC-IN-trq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="usernameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YC-IN-trq">
                                                     <rect key="frame" x="92" y="5" width="150" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="MRo-ne-xXX"/>
@@ -1795,7 +1800,7 @@
                                                         <rect key="frame" x="90" y="5" width="150" height="18"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="fullNameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dih-zt-NSB">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fullNameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dih-zt-NSB">
                                                     <rect key="frame" x="92" y="32" width="150" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="gl6-TD-qul"/>
@@ -1883,7 +1888,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="usernameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qi-KL-7jr">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="usernameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Qi-KL-7jr">
                                                     <rect key="frame" x="92" y="5" width="150" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="hg6-JM-bcz"/>
@@ -1895,7 +1900,7 @@
                                                         <rect key="frame" x="90" y="5" width="150" height="18"/>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="fullNameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2H-oi-JUT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fullNameLabel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2H-oi-JUT">
                                                     <rect key="frame" x="92" y="32" width="150" height="17"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="hd1-xj-DPV"/>
@@ -1941,7 +1946,109 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MTc-Pd-hVt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1212" y="1802"/>
+            <point key="canvasLocation" x="1256" y="1802"/>
+        </scene>
+        <!--Activity Table-->
+        <scene sceneID="1dv-0h-iL8">
+            <objects>
+                <viewController storyboardIdentifier="activityTableVC" title="Activity Table" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MbE-dI-kgG" userLabel="Activity Table" customClass="ActivityTableViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e3R-as-Krp"/>
+                        <viewControllerLayoutGuide type="bottom" id="OZw-Oc-8dQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vU2-pI-rOh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DHw-r9-y4f">
+                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellID" rowHeight="70" id="CKE-uJ-fF0" customClass="ActivityTableViewCell" customModule="The_Mouve" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="600" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CKE-uJ-fF0" id="FOn-XI-9mT">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C9O-tN-hgp" userLabel="Profile Image">
+                                                    <rect key="frame" x="12" y="7" width="55" height="55"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="55" id="Qii-Gi-pIw"/>
+                                                        <constraint firstAttribute="width" secondItem="C9O-tN-hgp" secondAttribute="height" multiplier="1:1" id="jcL-Tm-EdY"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HwT-YP-4ym" customClass="smallTextOutlinedButton" customModule="The_Mouve" customModuleProvider="target">
+                                                    <rect key="frame" x="540" y="12" width="42" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="iV0-Id-To5"/>
+                                                    </constraints>
+                                                    <state key="normal" image="calendar-tick">
+                                                        <color key="titleColor" red="0.20000000000000001" green="1" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Juc-qK-VL2" customClass="TTTAttributedLabel">
+                                                    <rect key="frame" x="91" y="26" width="150" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="73h-8G-ZCK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="15"/>
+                                                    <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="90" y="33" width="150" height="18"/>
+                                                    </variation>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IJ7-8J-9NE" userLabel="Event Image">
+                                                    <rect key="frame" x="466" y="0.0" width="74" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="nIk-OA-HbA"/>
+                                                        <constraint firstAttribute="width" secondItem="IJ7-8J-9NE" secondAttribute="height" multiplier="1:1" constant="4" id="v1Y-pz-g9C"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Juc-qK-VL2" firstAttribute="leading" secondItem="C9O-tN-hgp" secondAttribute="trailing" constant="24" id="1a5-Bq-pXu"/>
+                                                <constraint firstItem="HwT-YP-4ym" firstAttribute="leading" secondItem="IJ7-8J-9NE" secondAttribute="trailing" id="3Xu-cC-9B6"/>
+                                                <constraint firstAttribute="centerY" secondItem="C9O-tN-hgp" secondAttribute="centerY" id="5CO-Dp-9gu"/>
+                                                <constraint firstItem="C9O-tN-hgp" firstAttribute="top" secondItem="FOn-XI-9mT" secondAttribute="topMargin" constant="-1" id="EXt-Pm-KfZ"/>
+                                                <constraint firstItem="IJ7-8J-9NE" firstAttribute="top" secondItem="FOn-XI-9mT" secondAttribute="top" id="KWE-2G-TVI"/>
+                                                <constraint firstItem="IJ7-8J-9NE" firstAttribute="centerY" secondItem="HwT-YP-4ym" secondAttribute="centerY" id="LNq-9Y-dhd"/>
+                                                <constraint firstItem="C9O-tN-hgp" firstAttribute="leading" secondItem="FOn-XI-9mT" secondAttribute="leading" constant="12" id="MM0-0x-1YH">
+                                                    <variation key="widthClass=compact" constant="10"/>
+                                                </constraint>
+                                                <constraint firstItem="Juc-qK-VL2" firstAttribute="centerY" secondItem="C9O-tN-hgp" secondAttribute="centerY" id="YE8-VA-pWb"/>
+                                                <constraint firstItem="IJ7-8J-9NE" firstAttribute="width" secondItem="IJ7-8J-9NE" secondAttribute="height" multiplier="1:1" constant="4" id="jxb-aP-JvC"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="HwT-YP-4ym" secondAttribute="trailing" constant="10" id="z33-iK-0eb"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="80" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="attributedLabel" destination="Juc-qK-VL2" id="L37-7f-s3a"/>
+                                            <outlet property="calendarButton" destination="HwT-YP-4ym" id="x6F-bd-lvs"/>
+                                            <outlet property="eventBgImageView" destination="IJ7-8J-9NE" id="mgE-cp-mPB"/>
+                                            <outlet property="profileImageView" destination="C9O-tN-hgp" id="Uzn-tE-0vm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DHw-r9-y4f" firstAttribute="bottom" secondItem="OZw-Oc-8dQ" secondAttribute="top" id="Fn3-3R-8Yg"/>
+                            <constraint firstItem="DHw-r9-y4f" firstAttribute="top" secondItem="e3R-as-Krp" secondAttribute="bottom" constant="8" symbolic="YES" id="NqT-kh-UeU"/>
+                            <constraint firstAttribute="trailing" secondItem="DHw-r9-y4f" secondAttribute="trailing" id="gf6-av-FAN"/>
+                            <constraint firstItem="DHw-r9-y4f" firstAttribute="leading" secondItem="vU2-pI-rOh" secondAttribute="leading" id="zZZ-3d-Qp4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="feedTableView" destination="DHw-r9-y4f" id="rif-wt-gAe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dEn-uL-Hjx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1404" y="1024"/>
         </scene>
     </scenes>
     <resources>
@@ -1950,6 +2057,7 @@
         <image name="back-button" width="20" height="31"/>
         <image name="bell-icon" width="24" height="24"/>
         <image name="calendar" width="37" height="39"/>
+        <image name="calendar-tick" width="42" height="46"/>
         <image name="cross-cancel-icon" width="30" height="30"/>
         <image name="list-background" width="749" height="244"/>
         <image name="profile-icon" width="23" height="23"/>

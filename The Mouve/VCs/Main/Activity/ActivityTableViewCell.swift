@@ -11,8 +11,9 @@ import Toucan
 
 class ActivityTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var attributedLabel: TTTAttributedLabel!
     @IBOutlet weak var calendarButton: UIButton!
+    @IBOutlet weak var eventBgImageView: UIImageView!
+    @IBOutlet weak var attributedLabel: TTTAttributedLabel!
     var activity: Activity?
     
     var type: SceneType? {
@@ -26,9 +27,9 @@ class ActivityTableViewCell: UITableViewCell {
                 })
                 
             } else { //type is Activity
+                self.calendarButton.hidden = true
                 dispatch_async(dispatch_get_main_queue(), {
                     self.calendarButton.userInteractionEnabled = false
-                    
                     switch self.activity!.typeKey{
                         case typeKeyEnum.AddImage.rawValue:
                             self.attributedLabel.text = "\(self.activity?.fromUser) have added an image on your event!"
@@ -65,7 +66,7 @@ class ActivityTableViewCell: UITableViewCell {
                     }
                     else{
                         activity.eventBg = img
-                        self.calendarButton.addSubview(UIImageView(image: Toucan(image: self.activity!.eventBg!).resize(CGSize(width: self.profileImageView.bounds.width+10, height: self.profileImageView.bounds.height+10), fitMode: Toucan.Resize.FitMode.Crop).image))
+                        self.eventBgImageView.image = Toucan(image: self.activity!.eventBg!).resize(CGSize(width: self.profileImageView.bounds.width+10, height: self.profileImageView.bounds.height+10), fitMode: Toucan.Resize.FitMode.Crop).image
                         self.profileImageView.image = self.activity!.profilePic
                         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.height / 2
                         self.profileImageView.clipsToBounds = true
