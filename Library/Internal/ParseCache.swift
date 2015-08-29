@@ -11,7 +11,6 @@ import Parse
 
 class ParseCache{
     var cache: NSCache?
-    //- (void)clear;
     class var sharedCache: ParseCache{
         struct Static {
             static let instance = ParseCache()
@@ -127,9 +126,9 @@ class ParseCache{
         self.setAttributes(attributes, forMouve: mouve)
     }    //
     
-    func setAttributesForMouve(user: PFUser, followers: [PFUser], following: [PFUser], mouves: [Events], isFollowing: Bool){
-        let attributes = NSDictionary(objectsAndKeys: [["isAttending": isAttending],["postsOnMouve":posts],["postsCount":posts.count],["mouveAttendees":attendees],["attendeesCount":attendees.count], ["invitedToMouve":invited],["invitedCount":invited.count]])
-        self.setAttributes(attributes, forMouve: mouve)
+    func setAttributesForMouve(user: PFUser, mouveCount: Int,followersCount: Int,followingCount:Int, isFollowing: Bool){
+        let attributes = NSDictionary(objectsAndKeys: [["isFollowing": isFollowing],["mouveCount":mouveCount],["followersCount":followersCount],["followingCount":followingCount]])
+        self.setAttributes(attributes, forUser: user)
     }
 
     //- (NSDictionary *)attributesForUser:(PFUser *)user;
@@ -146,15 +145,23 @@ class ParseCache{
     }
     //- (BOOL)followStatusForUser:(PFUser *)user;
     func followStatusForUser(user: PFUser) -> Bool{
-        return true
+        let attributes = self.attributesForUser(user)
+        if let status: AnyObject = attributes.objectForKey("isFollowing"){
+            return status as! Bool
+        }
+        return false
     }
     //- (void)setPhotoCount:(NSNumber *)count user:(PFUser *)user;
     func setMouveCount(user: PFUser,count:Int ) {
-        
+        let attributes = self.attributesForUser(user)
+        attributes.setValue(count, forKey: "mouvesCount")
+        self.setAttributes(attributes, forUser: user)
     }
     //- (void)setFollowStatus:(BOOL)following user:(PFUser *)user;
     func setFollowStatus(user: PFUser,following: Bool ) {
-        
+        let attributes = self.attributesForUser(user)
+        attributes.setValue(following, forKey: "isFollowing")
+        self.setAttributes(attributes, forUser: user)
     }
     //
     //- (void)setFacebookFriends:(NSArray *)friends;
