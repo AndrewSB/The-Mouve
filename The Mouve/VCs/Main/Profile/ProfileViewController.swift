@@ -18,9 +18,10 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     var userMouves: [Events]? {
         
         didSet {
-            
+            self.tableViewDidLoad()
             profileTableView.reloadData()
             
+
         }
         
     }
@@ -50,7 +51,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
 //        addNavControllerLikePan()
         super.viewDidLoad()
-        self.navigationController!.navigationBar
 //        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
 //        self.navigationController?.navigationBar.shadowImage = UIImage()
 //        self.navigationController?.navigationBar.translucent = true
@@ -244,6 +244,11 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         return userMouves == nil ? 0 : userMouves!.count
     }
     
+    func tableViewDidLoad() {
+        self.profileTableView.delegate = self
+        self.profileTableView.dataSource = self
+    }
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }

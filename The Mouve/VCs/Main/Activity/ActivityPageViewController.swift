@@ -19,15 +19,15 @@ class ActivityPageViewController: UIPageViewController {
     }
     
     func pageOne() {
-        if (self.viewControllers[0] as! ActivityTableViewController).type == SceneType.Invites {
-            self.setViewControllers([activityVCWithType(.Newsfeed)], direction: .Reverse, animated: true, completion: nil)
+        if (self.viewControllers[0] as! ActivityTableViewController).type == SceneType.Newsfeed {
+            self.setViewControllers([activityVCWithType(.Invites)], direction: .Forward, animated: true, completion: nil)
         }
     }
 
     func pageTwo() {
         
-        if (self.viewControllers[0] as! ActivityTableViewController).type == SceneType.Newsfeed {
-            self.setViewControllers([activityVCWithType(.Invites)], direction: .Forward, animated: true, completion: nil)
+        if (self.viewControllers[0] as! ActivityTableViewController).type == SceneType.Invites {
+            self.setViewControllers([activityVCWithType(.Newsfeed)], direction: .Reverse, animated: true, completion: nil)
         }
 
     }
@@ -44,7 +44,7 @@ extension ActivityPageViewController: UIPageViewControllerDelegate, UIPageViewCo
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        return (viewController as! SceneFeedViewController).type == .Newsfeed ? activityVCWithType(.Invites) : nil
+        return (viewController as! ActivityTableViewController).type == .Newsfeed ? activityVCWithType(.Invites) : nil
     }
     
     func activityVCWithType(type: SceneType) -> ActivityTableViewController {

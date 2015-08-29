@@ -33,59 +33,8 @@ class HomeEventTableViewCell: UITableViewCell {
             distanceLabel.text = (String(format: "%.2f",event.location.distanceInMilesTo(PFGeoPoint(location: UserDefaults.lastLocation))))+" Miles Away"
             
             let places = ["Beach-Chillin", "Coffee-Hour", "Espresso-Lesson", "Fire-Works", "Food-Festival", "Football-Game", "San-Francisco-Visit", "State-Fair", "Study-Sesh", "Surf-Lesson"]
+            loadImages(event)
             
-//            event.backgroundImage = UIImage(named: places.randomElement())!
-//
-            
-//            // blur Mouve background image for each cell
-//            if (isBlurred == false){
-////            let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-////            blurView.alpha = 0.75
-////            blurView.frame = self.contentView.frame
-//            // Crop and set Mouve background image for each cell
-////            backgroundImageView.image = CIImage.blur(backgroundImageView.image!, radius: 30)
-////            backgroundImageView.addSubview(blurView)
-//                
-//                isBlurred = true
-//            }
-            
-            
-//            let array = [UIImage(named: "yoojin-pic"),UIImage(named: "noah-pic"),UIImage(named: "chelsea-pic"),UIImage(named: "andrew-pic")]
-            
-//
-            
-            
-//            profileImageView.image = Toucan(image: event.creator.getProfilePic()!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 1.5, borderColor: UIColor.whiteColor()).image
-//
-//            
-//            backgroundImageView.image = Toucan(image: event.getBgImg()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height)), fitMode: Toucan.Resize.FitMode.Crop).image
-//            backgroundImageView.clipsToBounds = true
-            ParseUtility.getEventBgImg(event){(imgObj, error) in
-                var currImg: UIImage?
-                if((imgObj) != nil){
-                    currImg = imgObj
-                }
-                else{
-                    currImg = appDel.placeHolderBg
-                }
-                self.backgroundImageView.image = Toucan(image: currImg!.applyLightEffect()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height)), fitMode: Toucan.Resize.FitMode.Crop).image
-                self.backgroundImageView.clipsToBounds = true
-            }
-            ParseUtility.getProfileImg(event.creator){(imageObj, error) in
-                if((imageObj) != nil){
-                    self.profileImageView.image = imageObj
-                }
-                else{
-                    self.profileImageView.image = appDel.placeHolderBg
-                    appDel.placeHolderBg
-                    println(error)
-                }
-                self.profileImageView.image = Toucan(image: self.profileImageView!.image!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 1.5, borderColor: UIColor.whiteColor()).image
-                self.profileImageView.userInteractionEnabled = true
-                var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("profileImageWasTapped:"))
-                self.profileImageView.addGestureRecognizer(tapGestureRecognizer)
-            }
-
         }
     }
 
@@ -107,63 +56,43 @@ class HomeEventTableViewCell: UITableViewCell {
     @IBAction func buttonTapped(sender: AnyObject) {
 
     }
+    func loadImages(event: Events){
     
+        ParseUtility.getEventBgImg(event){(imgObj, error) in
+            if let currImg = imgObj{
+                self.backgroundImageView.image = Toucan(image: currImg.applyLightEffect()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height)), fitMode: Toucan.Resize.FitMode.Crop).image
+                self.backgroundImageView.clipsToBounds = true
+                ParseUtility.getProfileImg(event.creator){(imgObj, error) in
+                    if let currImg = imgObj{
+                        self.profileImageView.image = Toucan(image: currImg).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 1.5, borderColor: UIColor.whiteColor()).image
+                        self.profileImageView.userInteractionEnabled = true
+                        var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("profileImageWasTapped:"))
+                        self.profileImageView.addGestureRecognizer(tapGestureRecognizer)
+//                        Unhide once everything is ready
+                        self.hidden = false
+                        self.delegate?.didFinishLoadingCell(self)
+                        
+                    }
+                }
+            }
+            else{
+                println(error)
+                
+            }
+            
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
-        
-//        profileImageView.layer.cornerRadius = (profileImageView.frame.width / CGFloat(2))
-//        profileImageView.layer.borderColor = UIColor.whiteColor().CGColor
-//        profileImageView.layer.borderWidth = 1
-        
-//        let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-//        blurEffectView.frame = backgroundImageView.frame
-//        blurEffectView.alpha = 0.85
-        
-       // backgroundImageView.addSubview(blurEffectView)
-        
+//        Hide at first all cells
+        self.hidden = true
     }
     
     @IBAction func profileImageWasTapped(recognizer: UITapGestureRecognizer){
         delegate?.didTapProfileImage(self)
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewControllerWithIdentifier("ProfileVC") as! ProfileViewController    //VC1 refers to destinationVC source file and "VC1" refers to destinationVC Storyboard ID
-//        vc.user = event!.creator
-//
-//        self.window?.rootViewController?.tabBarController?.selectedViewController?.performSegueWithIdentifier("segueToProfile", sender: event!.creator)
-//
-//        self.window?.rootViewController?.presentViewController(vc, animated: true, completion: nil)
-//        self.window?.rootViewController!.presentViewController(vc, animated: true, completion: nil)
-//        println(currVc?.title)
-//        currVc!.performSegueWithIdentifier("segueToProfile", sender: event!.creator)
-//        self.window?.rootViewController!.performSegueWithIdentifier("segueToProfile", sender: vc.user)
-        
     }
     @IBAction func goingButtonWasHit(sender: AnyObject) {
-        if (self.goingButton.selected) {
-            // Unattend
-                    self.goingButton.selected = false;
-            ParseUtility.unattendMouveInBackground(self.event){(success: Bool, error: NSError?) -> () in
-                if((error) != nil){
-                    println("Cannot unattend event")
-                }
-                else{
-                    println("Unattended  successfully")
-                }
-            }
-        } else {
-            // Attend
-                    self.goingButton.selected = true;
-            ParseUtility.attendMouveInBackground(self.event){(success: Bool, error: NSError?) -> () in
-                if((error) != nil){
-                    println("Cannot attend \(self.event!.name)")
-                }
-                else{
-                    println("Attending \(self.event!.name) successfully")
-                }
-            }
-        }
+        delegate?.didTapAttendEvent(self)
     }
     
     
@@ -174,4 +103,5 @@ protocol HomeEventTVCDelegate {
     func didTapProfileImage(cell: HomeEventTableViewCell)
     func didTapAttendEvent(cell: HomeEventTableViewCell)
     func didTapShareEvent(cell: HomeEventTableViewCell)
+    func didFinishLoadingCell(cell: HomeEventTableViewCell)
 }

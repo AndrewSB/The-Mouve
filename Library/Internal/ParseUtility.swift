@@ -205,8 +205,8 @@ class ParseUtility{
     
     class func getEventBgImg(targetEvent: Events,onCompletion: ((data: UIImage?, error: NSError?) -> ())?){
         if(targetEvent.backgroundImage == nil){
-            onCompletion!(data: nil, error: nil)
-            println("error'd out")
+            onCompletion!(data: appDel.placeHolderBg, error: nil)
+            println("error'd out on bg pic")
         }
         targetEvent.backgroundImage?.getDataInBackgroundWithBlock(){(imgData:NSData?, error: NSError?) -> Void in
             if((imgData) != nil){
@@ -217,7 +217,8 @@ class ParseUtility{
     }
     class func getProfileImg(targetUser: PFUser,onCompletion: ((data: UIImage?, error: NSError?) -> ())?){
         if(targetUser.profileImage == nil){
-            onCompletion!(data: nil, error: nil)
+            onCompletion!(data: appDel.placeHolderBg, error: nil)
+            println("error'd out on profile pic")
         }
         targetUser.profileImage?.getDataInBackgroundWithBlock(){(imgData:NSData?, error: NSError?) -> Void in
             if((imgData) != nil){

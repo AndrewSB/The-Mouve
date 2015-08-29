@@ -17,6 +17,8 @@ enum typeKeyEnum:String {
 }
 
 class Activity: PFObject {
+    var profilePic: UIImage?
+    var eventBg: UIImage?
     @NSManaged var typeKey: String
     @NSManaged var fromUser: PFUser
     @NSManaged var toUser: PFUser
@@ -26,7 +28,6 @@ class Activity: PFObject {
     
     override init(){
         super.init()
-        println("Initialized empty event")
     }
     init(type: typeKeyEnum, targetUser: PFUser, stringContent: String, mediaFile: UIImage, targetMouve: Events) {
             super.init(className: "Activity")

@@ -20,7 +20,8 @@ class Events: PFObject {
     @NSManaged var privacy: Bool
     @NSManaged var invitees: [String]?
     @NSManaged var backgroundImage: PFFile?
-    var actualImage: UIImage?
+    var localBgImg: UIImage?
+    var creatorPfImg: UIImage?
      
     
     var timeTillEvent: NSTimeInterval {
@@ -33,7 +34,6 @@ class Events: PFObject {
     }
     override init(){
         super.init()
-        println("Initialized empty event")
     }
     init(name: String, about: String, startTime: NSDate, endTime: NSDate, address: String,
         invitees: [String],

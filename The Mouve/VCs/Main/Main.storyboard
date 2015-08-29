@@ -79,7 +79,7 @@
                             <color key="tintColor" red="0.43656939268112183" green="0.9325670599937439" blue="0.72956490516662598" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="activityButtonWasHit:" destination="cod-pV-drU" id="w2n-2D-JgR"/>
-                                <segue destination="FOw-hf-56g" kind="presentation" id="9lm-qh-fTt"/>
+                                <segue destination="FOw-hf-56g" kind="presentation" identifier="addMouve" id="9lm-qh-fTt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

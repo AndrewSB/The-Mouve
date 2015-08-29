@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import Toucan
 
 class ActivityTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var attributedLabel: TTTAttributedLabel!
     @IBOutlet weak var calendarButton: UIButton!
+    var activity: Activity?
     
     var type: SceneType? {
         didSet {
@@ -19,13 +21,27 @@ class ActivityTableViewCell: UITableViewCell {
             
             if type == .Invites {
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.calendarButton = GreyGreenButton(frame: self.calendarButton.frame)
+//                    self.calendarButton = GreyGreenButton(frame: self.calendarButton.frame)
+                    
                 })
                 
             } else { //type is Activity
                 dispatch_async(dispatch_get_main_queue(), {
                     self.calendarButton.userInteractionEnabled = false
-                    self.calendarButton.imageView!.image = UIImage(named: "sf-image")
+                    
+                    switch self.activity!.typeKey{
+                        case typeKeyEnum.AddImage.rawValue:
+                            self.attributedLabel.text = "\(self.activity?.fromUser) have added an image on your event!"
+                        case typeKeyEnum.Comment.rawValue:
+                            self.attributedLabel.text = "\(self.activity!.stringContent)"
+                        case typeKeyEnum.Follow.rawValue:
+                            self.attributedLabel.text = "@\(self.activity!.fromUser.username) follows you!"
+                        case typeKeyEnum.Attend.rawValue:
+                            self.attributedLabel.text = "\(self.activity?.fromUser) is attending \(self.activity!.onMouve.name)"
+                        default:
+                            self.attributedLabel.text = "unknown activity type"
+                    }
+                    self.loadImages(self.activity!)
                 })
             }
         }
@@ -33,9 +49,31 @@ class ActivityTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         profileImageView.layer.cornerRadius = profileImageView.frame.height / 2
         profileImageView.clipsToBounds = true
+    }
+    func loadImages(activity: Activity){
+        ParseUtility.getProfileImg(activity.fromUser){(img: UIImage?,error: NSError?) in
+            if((error) != nil){
+                println("sorry")
+            }
+            else{
+                activity.profilePic = img
+                ParseUtility.getEventBgImg(activity.onMouve){(img: UIImage?,error: NSError?) in
+                    if((error) != nil){
+                        println("sorry")
+                    }
+                    else{
+                        activity.eventBg = img
+                        self.calendarButton.addSubview(UIImageView(image: Toucan(image: self.activity!.eventBg!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 1.5, borderColor: UIColor.whiteColor()).image))
+                        self.profileImageView.image = self.activity!.profilePic
+                        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.height / 2
+                        self.profileImageView.clipsToBounds = true
+                        self.hidden = false
+                    }
+                }
+            }
+        }
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
