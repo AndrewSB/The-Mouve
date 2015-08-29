@@ -90,6 +90,14 @@ extension NSDate
         components.day=1
         return calendar.dateByAddingComponents(components, toDate: self, options: nil)!
     }
+    func yesterday() -> NSDate{
+        let calendar = NSCalendar.currentCalendar()
+        let components = NSDateComponents()
+        
+        components.day = -1
+        return calendar.dateByAddingComponents(components, toDate: self, options: nil)!
+    }
+
     
     func hour() -> Int
     {
