@@ -139,6 +139,7 @@
 		9A53E6EB1B659E9B00BBD5BC /* Mouve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A53E6EA1B659E9B00BBD5BC /* Mouve.swift */; };
 		9A81C4731B892A92005236BA /* ParseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A81C4721B892A92005236BA /* ParseUtility.swift */; };
 		9A8512101B55FBB300606BB1 /* HHLinkStoryboards.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A85120F1B55FBB300606BB1 /* HHLinkStoryboards.m */; };
+		9AB9B95B1B8FE4F200949867 /* ParseCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB9B95A1B8FE4F200949867 /* ParseCache.swift */; };
 		9ABA887A1B54B17F0014D459 /* MouveStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA88791B54B17F0014D459 /* MouveStore.swift */; };
 /* End PBXBuildFile section */
 
@@ -295,6 +296,7 @@
 		9A81C4721B892A92005236BA /* ParseUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseUtility.swift; sourceTree = "<group>"; };
 		9A85120E1B55FBB300606BB1 /* HHLinkStoryboards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHLinkStoryboards.h; sourceTree = "<group>"; };
 		9A85120F1B55FBB300606BB1 /* HHLinkStoryboards.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHLinkStoryboards.m; sourceTree = "<group>"; };
+		9AB9B95A1B8FE4F200949867 /* ParseCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseCache.swift; sourceTree = "<group>"; };
 		9ABA88791B54B17F0014D459 /* MouveStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MouveStore.swift; path = Models/MouveStore.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
@@ -702,6 +704,7 @@
 				468D216A1AF086F800CE6E19 /* Extension */,
 				4610B7C91B33DD3700377E1E /* Location.swift */,
 				9A81C4721B892A92005236BA /* ParseUtility.swift */,
+				9AB9B95A1B8FE4F200949867 /* ParseCache.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -933,6 +936,7 @@
 				46CC15C61AFDF6A1003E3D9E /* IntExtension.swift in Sources */,
 				78CFBD131B192F5D002AE6A2 /* RangeSlider.swift in Sources */,
 				462B68DF1AEC77900040C7DD /* UIViewControllerExtension.swift in Sources */,
+				9AB9B95B1B8FE4F200949867 /* ParseCache.swift in Sources */,
 				46D788FE1B0BF86A00276696 /* RemoteEvent.swift in Sources */,
 				9A53E6EB1B659E9B00BBD5BC /* Mouve.swift in Sources */,
 				4685F8C11B1C1FF3004D77E9 /* IQBarButtonItem.swift in Sources */,

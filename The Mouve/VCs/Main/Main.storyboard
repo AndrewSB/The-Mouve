@@ -305,17 +305,18 @@
                     <connections>
                         <outlet property="feedTableView" destination="UsO-b9-XOW" id="OlG-nb-rnK"/>
                         <segue destination="HXA-ZS-heC" kind="show" identifier="segueToDetail" id="Tsj-6r-6V9"/>
-                        <segue destination="Nqe-Gn-hQj" kind="show" identifier="segueToProfile" id="bqa-xR-QvG"/>
+                        <segue destination="Nqe-Gn-hQj" kind="show" identifier="segueToProfile" id="RWc-Ea-FT4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-332" y="53"/>
+            <point key="canvasLocation" x="480" y="53"/>
         </scene>
         <!--The Scene-->
         <scene sceneID="iAh-ix-ATF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Bz-Bc-hVp" sceneMemberID="viewController">
+                <navigationController id="8Bz-Bc-hVp" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="The Scene" image="thescene-icon" id="OXp-4V-OE8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="VYm-nu-0L0">
@@ -1209,18 +1210,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3A-1Y-p8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="519" y="1"/>
+            <point key="canvasLocation" x="1331" y="1"/>
         </scene>
         <!--Profile-->
         <scene sceneID="FGs-9K-51x">
             <objects>
-                <viewController storyboardIdentifier="ProfileVC" automaticallyAdjustsScrollViewInsets="NO" id="Nqe-Gn-hQj" customClass="ProfileViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="Nqe-Gn-hQj" customClass="ProfileViewController" customModule="The_Mouve" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y2r-Dh-orA"/>
                         <viewControllerLayoutGuide type="bottom" id="tJV-nO-W3p"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6B4-oq-T2K">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jFl-5P-uoJ" userLabel="SeparationLine">
@@ -1237,7 +1238,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="240"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Csc-pN-apC" userLabel="@username">
-                                        <rect key="frame" x="273" y="211" width="54" height="19"/>
+                                        <rect key="frame" x="273" y="211" width="53.5" height="19"/>
                                         <fontDescription key="fontDescription" name="HalisGR-Book" family="Halis GR" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -1535,7 +1536,7 @@
                             <constraint firstItem="ViX-cS-fl9" firstAttribute="top" secondItem="Y2r-Dh-orA" secondAttribute="bottom" constant="-20" id="zQY-e7-0tC"/>
                         </constraints>
                     </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile-icon" id="f8p-Wz-zBd"/>
                     <connections>
                         <outlet property="avatarImage" destination="J1f-pm-mjf" id="7XH-1A-xQq"/>
@@ -1692,6 +1693,6 @@
         <image name="yoojin-pic" width="114" height="114"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bqa-xR-QvG"/>
+        <segue reference="RWc-Ea-FT4"/>
     </inferredMetricsTieBreakers>
 </document>

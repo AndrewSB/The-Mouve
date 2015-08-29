@@ -26,7 +26,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     }
     var user: PFUser?
 
-    
     @IBOutlet weak var profilePicView: UIImageView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var separationLabel: UIView!
@@ -49,10 +48,12 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewDidLoad() {
+//        addNavControllerLikePan()
         super.viewDidLoad()
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.translucent = true
+        self.navigationController!.navigationBar
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage()
+//        self.navigationController?.navigationBar.translucent = true
         if user == nil{
             println("Going with your profile since nothing was passed")
             user = appDel.currentUser!
@@ -88,8 +89,6 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         self.countFollowees()
         self.countFollowers()
         
-        
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
     }
     
     @IBAction func editProfileOrFollowButtonWasHit(sender: AnyObject) {
@@ -127,9 +126,16 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         
 
     }
-    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+//        let navigationBarAppearance = UINavigationBar.appearance()
+//        navigationBarAppearance.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        navigationBarAppearance.shadowImage = UIImage()
+//        navigationBarAppearance.translucent = true
+
         
         nameLabel.text! = "\(user!.fullName)"
         usernameLabel.text! = "@" + user!.username!
@@ -167,6 +173,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
                 
             })
         }
+        self.edgesForExtendedLayout = UIRectEdge.None
         //Header
 //        headerImageView = UIImageView(frame: headerView.bounds)
 //        headerImageView!.image = avatarImage.image
@@ -268,6 +275,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
+    
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
         var offset = scrollView.contentOffset.y

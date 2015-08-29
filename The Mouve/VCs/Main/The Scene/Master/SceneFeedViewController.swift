@@ -142,9 +142,12 @@ class SceneFeedViewController: UIViewController{
         super.prepareForSegue(segue, sender: sender)
         if let des = segue.destinationViewController as? DetailViewController {
             des.event = sender as? Events
+            des.hidesBottomBarWhenPushed = true;
         }
         if let des = segue.destinationViewController as? ProfileViewController {
             des.user = sender as? PFUser
+            des.hidesBottomBarWhenPushed = true;
+            
         }
         
     }
@@ -193,6 +196,7 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource, H
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         performSegueWithIdentifier("segueToDetail", sender: feedData![indexPath.section])
+        
     }
     
 //    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {

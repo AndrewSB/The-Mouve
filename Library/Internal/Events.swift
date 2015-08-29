@@ -137,13 +137,11 @@ extension PFUser{
         set { return self["fullName"] = newValue }
         
     }
-//    func getProfilePic() -> UIImage?{
-//        var imgData = self["profileImage"]?.getData()
-//            if(!(imgData != nil)){
-//                return appDel.placeHolderBg
-//            }
-//        return UIImage(data: imgData!)
-//    }
+    var profileImage: PFFile?{
+        get { return (self["profileImage"] != nil ? (rawValue: self["profileImage"] as? PFFile) : nil)! }
+        
+        set { return self["profileImage"] = newValue }
+    }
     func query() -> PFQuery? {
         //1
         let query = PFQuery(className: Events.parseClassName())
