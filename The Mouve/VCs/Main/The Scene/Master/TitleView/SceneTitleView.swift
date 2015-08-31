@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum SceneType: String {
+public enum SceneType: String {
     case Explore = "Explore"
     case Scene = "The Scene"
     

@@ -343,20 +343,42 @@ class ParseUtility{
     class func queryForActivitiesOnMouve(targetEvent: Events, cachePolicy: PFCachePolicy){
         
     }
-//    + (void)unlikePhotoInBackground:(id)photo block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
-//    
-//    + (void)processFacebookProfilePictureData:(NSData *)data;
-//    
-//    + (BOOL)userHasValidFacebookData:(PFUser *)user;
-//    + (BOOL)userHasProfilePictures:(PFUser *)user;
-//    + (UIImage *)defaultProfilePicture;
-//    
-//    + (NSString *)firstNameForDisplayName:(NSString *)displayName;
-//    
-//    + (void)followUserInBackground:(PFUser *)user block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
-//    + (void)followUserEventually:(PFUser *)user block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
-//    + (void)followUsersEventually:(NSArray *)users block:(void (^)(BOOL succeeded, NSError *error))completionBlock;
-//    + (void)unfollowUserEventually:(PFUser *)user;
-//    + (void)unfollowUsersEventually:(NSArray *)users;
-
+    class func queryFeed(sceneType: SceneType,range: Range<Int>, completionBlock: PFArrayResultBlock){
+        //            First query the people we follow
+        //            Then query all the mouves made by them
+        var feedQuery: PFQuery?
+        switch sceneType {
+        case .Explore:
+            //            println("lol")
+            feedQuery = Events.query()
+            feedQuery?.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
+            
+        case .Scene:
+            let followingQuery = PFQuery(className: Activity.parseClassName())
+            followingQuery.whereKey("typeKey", equalTo: typeKeyEnum.Follow.rawValue)
+            followingQuery.whereKey("fromUser", equalTo: appDel.currentUser!)
+            
+            // Using the activities from the query above, we find all of the photos taken by
+            // the friends the current user is following
+            let followingMouvesQuery = PFQuery(className: Events.parseClassName())
+            followingMouvesQuery.whereKey("creator", matchesKey: "toUser", inQuery: followingQuery)
+            followingMouvesQuery.whereKeyExists("name")
+            
+            // We create a second query for the current user's mouves
+            let mouvesFromCurrentUserQuery = PFQuery(className: Events.parseClassName())
+            mouvesFromCurrentUserQuery.whereKey("creator", equalTo: appDel.currentUser!)
+            followingMouvesQuery.whereKeyExists("name")
+            
+            // We create a final compound query that will find all of the photos that were
+            // taken by the user's friends or by the user
+            feedQuery = PFQuery.orQueryWithSubqueries([mouvesFromCurrentUserQuery, followingMouvesQuery])
+        default:
+            println("Nada")
+        }
+        feedQuery!.skip = range.startIndex
+        feedQuery!.limit = range.endIndex - range.startIndex
+        feedQuery!.includeKey("creator")
+        feedQuery!.orderByAscending("startTime")
+        feedQuery?.findObjectsInBackgroundWithBlock(completionBlock)
+    }
 }

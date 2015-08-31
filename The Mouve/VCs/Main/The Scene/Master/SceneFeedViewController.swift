@@ -13,21 +13,31 @@ import Parse
 import Bolts
 import DZNEmptyDataSet
 
-class SceneFeedViewController: UIViewController{
+
+class SceneFeedViewController: UIViewController, FeedComponentTarget{
 
     @IBOutlet weak var feedTableView: UITableView!
-    
-    var loadingSpinnerView: UIView!
+    let defaultRange = 0...4
+    let additionalRangeSize = 5
     var type: SceneType!
     var clickedOnType: String!
     var feedData = [Events]()
     let pendingOperations = PendingOperations()
+    var feedComponent: FeedComponent<Events, SceneFeedViewController>!
 
 
     convenience init(type: SceneType) {
         self.init()
         self.type = type
 
+    }
+    func loadInRange(sceneType: SceneType,range: Range<Int>, completionBlock: ([Events]?) -> Void) {
+        // 1
+        ParseUtility.queryFeed(self.type,range: range){(result: [AnyObject]?, error: NSError?) -> Void in
+            let feedData = result as? [Events] ?? []
+            // 3
+            completionBlock(feedData)
+        }
     }
     
     override func viewDidLoad() {
@@ -45,61 +55,26 @@ class SceneFeedViewController: UIViewController{
             
             //        let feedQuery = PFQuery(className: "Events")
 //            dispatch_async(dispatch_get_main_queue(), {
-            var feedQuery: PFQuery?
+
             appDel.location.startUpdatingLocation()
-            switch self.type! {
-            case .Explore:
-                //            println("lol")
-                feedQuery = Events.query()
-                feedQuery?.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
-                
-            case .Scene:
-                
-    //            First query the people we follow
-    //            Then query all the mouves made by them
-                let followingQuery = PFQuery(className: Activity.parseClassName())
-                followingQuery.whereKey("typeKey", equalTo: typeKeyEnum.Follow.rawValue)
-                followingQuery.whereKey("fromUser", equalTo: appDel.currentUser!)
-                
-                // Using the activities from the query above, we find all of the photos taken by
-                // the friends the current user is following
-                let followingMouvesQuery = PFQuery(className: Events.parseClassName())
-                followingMouvesQuery.whereKey("creator", matchesKey: "toUser", inQuery: followingQuery)
-                followingMouvesQuery.whereKeyExists("name")
-                
-                // We create a second query for the current user's mouves
-                let mouvesFromCurrentUserQuery = PFQuery(className: Events.parseClassName())
-                mouvesFromCurrentUserQuery.whereKey("creator", equalTo: appDel.currentUser!)
-                followingMouvesQuery.whereKeyExists("name")
-                
-                // We create a final compound query that will find all of the photos that were
-                // taken by the user's friends or by the user
-                feedQuery = PFQuery.orQueryWithSubqueries([mouvesFromCurrentUserQuery, followingMouvesQuery])
-                feedQuery!.includeKey("creator")
-                feedQuery!.orderByAscending("startTime")
-                
-                
-                
-            default:
-                assert(true == false, "Type wasnt scene or explore")
-            }
 
-            feedQuery!.limit = 20
-            feedQuery?.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
-                if error != nil {
-                    let alert = UIAlertView(title:"Oops!",message:error!.localizedDescription, delegate:nil, cancelButtonTitle:"OK")
-                    alert.show()
-                }
-                else if let loadedData  = results as? [Events] {
-                    self.feedData = loadedData
-                }
-                if self.feedData.count == 0 {
-                    self.feedTableView.emptyDataSetSource = self;
-                    self.feedTableView.emptyDataSetDelegate = self;
-                }
-                self.feedTableView.reloadData()
 
-            }
+
+//            feedQuery?.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
+//                if error != nil {
+//                    let alert = UIAlertView(title:"Oops!",message:error!.localizedDescription, delegate:nil, cancelButtonTitle:"OK")
+//                    alert.show()
+//                }
+//                else if let loadedData  = results as? [Events] {
+//                    self.feedData = loadedData
+//                }
+//                if self.feedData.count == 0 {
+//                    self.feedTableView.emptyDataSetSource = self;
+//                    self.feedTableView.emptyDataSetDelegate = self;
+//                }
+//                self.feedTableView.reloadData()
+//
+//            }
         
 
     }
@@ -107,6 +82,7 @@ class SceneFeedViewController: UIViewController{
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        feedComponent.loadInitialIfRequired()
         
     }
     
@@ -127,14 +103,22 @@ class SceneFeedViewController: UIViewController{
         }
         
     }
-    @IBAction func unwindToVC(segue: UIStoryboardSegue) {
-    }
-    func newLocation() {
-        println("now somewhere else")
-    }
+//    @IBAction func unwindToVC(segue: UIStoryboardSegue) {
+//    }
+//    func newLocation() {
+//        println("now somewhere else")
+//    }
     
-    @IBAction func unwindToTutorialVC(segue: UIStoryboardSegue) {}
+//    @IBAction func unwindToTutorialVC(segue: UIStoryboardSegue) {}
 }
+//public protocol FeedComponentTarget: class {
+//    typealias ContentType
+//    
+//    var defaultRange: Range<Int> { get }
+//    var additionalRangeSize: Int { get }
+//    var feedTableView: UITableView! { get }
+//    func loadInRange(sceneType: SceneType, range: Range<Int>, completionBlock: ([ContentType]?) -> Void)
+//}
 
 extension SceneFeedViewController : DZNEmptyDataSetSource,DZNEmptyDataSetDelegate {
     func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
@@ -208,6 +192,9 @@ extension SceneFeedViewController{
             }
             dispatch_async(dispatch_get_main_queue(), {
                 self.pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
+                var currCell = (self.feedTableView.cellForRowAtIndexPath(indexPath) as! HomeEventTableViewCell)
+//                currCell.backgroundImageView.image = currCell.event.localBgImg
+//                currCell.hidden = false
                 self.feedTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             })
         }
@@ -268,7 +255,6 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource, H
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
         let mouveDetails = feedData[indexPath.section]
         cell.event = mouveDetails
-
         cell.delegate = self
         //4
 
@@ -276,7 +262,6 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource, H
             case .FilteredAll:
                 cell.backgroundImageView?.image = cell.event.localBgImg
                 cell.profileImageView?.image = cell.event.creatorPfImg
-                cell.hidden = false
                 
                 println("Displaying \(cell.event.name)")
             case .Failed:
@@ -315,5 +300,70 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource, H
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
+    }
+}
+extension SceneFeedViewController{
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        //1
+        suspendAllOperations()
+    }
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        // 2
+        if !decelerate {
+            loadImagesForOnscreenCells()
+            resumeAllOperations()
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        // 3
+        loadImagesForOnscreenCells()
+        resumeAllOperations()
+    }
+    func suspendAllOperations () {
+        pendingOperations.downloadQueue.suspended = true
+        pendingOperations.filtrationQueue.suspended = true
+    }
+    
+    func resumeAllOperations () {
+        pendingOperations.downloadQueue.suspended = false
+        pendingOperations.filtrationQueue.suspended = false
+    }
+    
+    func loadImagesForOnscreenCells () {
+        //1
+        if let pathsArray = feedTableView.indexPathsForVisibleRows() {
+            //2
+            var allPendingOperations = Set(pendingOperations.downloadsInProgress.keys.array)
+            allPendingOperations.unionInPlace(pendingOperations.filtrationsInProgress.keys.array)
+            
+            //3
+            var toBeCancelled = allPendingOperations
+            let visiblePaths = Set(pathsArray as! [NSIndexPath])
+            toBeCancelled.subtractInPlace(visiblePaths)
+            
+            //4
+            var toBeStarted = visiblePaths
+            toBeStarted.subtractInPlace(allPendingOperations)
+            
+            // 5
+            for indexPath in toBeCancelled {
+                if let pendingDownload = pendingOperations.downloadsInProgress[indexPath] {
+                    pendingDownload.cancel()
+                }
+                pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
+                if let pendingFiltration = pendingOperations.filtrationsInProgress[indexPath] {
+                    pendingFiltration.cancel()
+                }
+                pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
+            }
+            
+            // 6
+            for indexPath in toBeStarted {
+                let indexPath = indexPath as NSIndexPath
+                startOperationsForPhotoRecord(feedTableView.cellForRowAtIndexPath(indexPath) as! HomeEventTableViewCell, indexPath: indexPath)
+            }
+        }
     }
 }
