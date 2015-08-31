@@ -59,7 +59,7 @@ class DetailViewController: UIViewController {
         eventNameLabel.text = event!.name
         descriptionLabel.text = event!.about
         timeLabel.text = "\(event!.startTime.toShortTimeString()) - \(event!.endTime.toShortTimeString())"
-        
+        headerImageView?.image = event.localBgImg
         
         addressButton.setTitle(event!.address, forState: .Normal)
         addressButton.titleLabel!.numberOfLines = 0 // Dynamic number of lines

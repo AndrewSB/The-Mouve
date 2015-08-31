@@ -10,8 +10,12 @@ import UIKit
 import Toucan
 import CoreGraphics
 import Parse
+import DZNEmptyDataSet
+enum ProfileType{
+    case MyProfile, OtherUser
+}
 
-class ProfileViewController: UIViewController, UITableViewDelegate {
+class ProfileViewController: UIViewController{
     let offset_HeaderStop:CGFloat = 180 // At this offset the Header stops its transformations
     let offset_B_LabelHeader:CGFloat = 120 // At this offset the Black label reaches the Header
     let distance_W_LabelHeader:CGFloat = 180 // The distance between the bottom of the Header and the top of the White Label
@@ -26,7 +30,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
         
     }
     var user: PFUser?
-
+    var pfType = ProfileType.MyProfile
     @IBOutlet weak var profilePicView: UIImageView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var separationLabel: UIView!
@@ -49,46 +53,52 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewDidLoad() {
-//        addNavControllerLikePan()
         super.viewDidLoad()
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage()
-//        self.navigationController?.navigationBar.translucent = true
-        if user == nil{
+        if pfType == ProfileType.MyProfile{
             println("Going with your profile since nothing was passed")
             user = appDel.currentUser!
         }
-        
-        if(user != appDel.currentUser){
+        else{
             editProfileOrFollow.setTitle("Follow", forState: UIControlState.Normal)
 
         }
         
         profileTableView.dataSource = self
         profileTableView.delegate = self
-        
-        avatarImage.layer.cornerRadius = avatarImage.frame.width/2
-        for button in [mouveButton, followersButton, followingButton] {
-            
-            if button.titleLabel!.text! == "Mouves"{
-            button.titleLabel!.textAlignment = .Center
-            button.setTitle("0\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
-            }
-            
-            else if button.titleLabel!.text! == "Followers"{
-                button.titleLabel!.textAlignment = .Center
-            button.setTitle("0\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
-            }
-            
-            else {
-                button.titleLabel!.textAlignment = .Center
-            button.setTitle("0\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
-            }
-        }
         self.getUserMouves()
         self.countFollowees()
         self.countFollowers()
-        
+//        avatarImage.layer.cornerRadius = avatarImage.frame.width/2
+//        for button in [mouveButton, followersButton, followingButton] {
+//            
+//            if button.titleLabel!.text! == "Mouves"{
+//            button.titleLabel!.textAlignment = .Center
+//            button.setTitle("0\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+//            }
+//            
+//            else if button.titleLabel!.text! == "Followers"{
+//                button.titleLabel!.textAlignment = .Center
+//            button.setTitle("0\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+//            }
+//            
+//            else {
+//                button.titleLabel!.textAlignment = .Center
+//            button.setTitle("0\n\(button.titleLabel!.text!)", forState: UIControlState.Normal)
+//            }
+//        }
+
+        nameLabel.text! = "\(user!.fullName)"
+        usernameLabel.text! = "@" + user!.username!
+        ParseUtility.getProfileImg(user!){(image, error) -> () in
+                    let blurredImage = Toucan(image: image!.applyDarkEffect()).resize(self.headerView.frame.size, fitMode: .Crop).image
+                    
+                    
+                    self.blurredHeaderImageView = UIImageView(frame: self.headerView.bounds)
+                    self.blurredHeaderImageView.image = blurredImage
+                    self.headerView.insertSubview(self.blurredHeaderImageView, belowSubview: self.usernameLabel)
+                    self.usernameLabel.bringSubviewToFront(self.headerView)
+                    self.profilePicView.image = Toucan(image: image!).resize(CGSize(width: self.profilePicView.bounds.width, height: self.profilePicView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 3, borderColor: UIColor.seaFoamGreen()).image
+        }
     }
     
     @IBAction func editProfileOrFollowButtonWasHit(sender: AnyObject) {
@@ -137,43 +147,43 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
 //        navigationBarAppearance.translucent = true
 
         
-        nameLabel.text! = "\(user!.fullName)"
-        usernameLabel.text! = "@" + user!.username!
-        let userImageFile = user?["profileImage"] as? PFFile
-        if(userImageFile != nil){
-            userImageFile!.getDataInBackgroundWithBlock({
-                (imageData: NSData?, error: NSError?) -> Void in
-                if (error == nil) {
-                    let image = UIImage(data:imageData!)
-//                    self.avatarImage.image = image
-                    let blurredImage = Toucan(image: image!).resize(self.headerView.frame.size, fitMode: .Crop).image
-                    
-                    
-                    self.blurredHeaderImageView = UIImageView(frame: self.headerView.bounds)
-                    self.blurredHeaderImageView.image = blurredImage
-
-                    self.blurredHeaderImageView!.contentMode = UIViewContentMode.ScaleAspectFill
-                    self.blurredHeaderImageView!.alpha = 1.0
-                    self.headerView.insertSubview(self.blurredHeaderImageView, belowSubview: self.usernameLabel)
-                    
-                    let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-                    blurView.frame = self.blurredHeaderImageView.frame
-                    
-                    self.blurredHeaderImageView.addSubview(blurView)
-                    
-//                    self.headerView.clipsToBounds = true
-                    
-                    self.usernameLabel.bringSubviewToFront(self.headerView)
-                    self.profilePicView.image = Toucan(image: image!).resize(CGSize(width: self.profilePicView.bounds.width, height: self.profilePicView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).image
-                    
-                    self.profilePicView.layer.cornerRadius = self.profilePicView.frame.height / 2
-                    self.profilePicView.clipsToBounds = true
-
-                }
-                
-            })
-        }
-        self.edgesForExtendedLayout = UIRectEdge.None
+//        nameLabel.text! = "\(user!.fullName)"
+//        usernameLabel.text! = "@" + user!.username!
+//        let userImageFile = user?["profileImage"] as? PFFile
+//        if(userImageFile != nil){
+//            userImageFile!.getDataInBackgroundWithBlock({
+//                (imageData: NSData?, error: NSError?) -> Void in
+//                if (error == nil) {
+//                    let image = UIImage(data:imageData!)
+////                    self.avatarImage.image = image
+//                    let blurredImage = Toucan(image: image!).resize(self.headerView.frame.size, fitMode: .Crop).image
+//                    
+//                    
+//                    self.blurredHeaderImageView = UIImageView(frame: self.headerView.bounds)
+//                    self.blurredHeaderImageView.image = blurredImage
+//
+//                    self.blurredHeaderImageView!.contentMode = UIViewContentMode.ScaleAspectFill
+//                    self.blurredHeaderImageView!.alpha = 1.0
+//                    self.headerView.insertSubview(self.blurredHeaderImageView, belowSubview: self.usernameLabel)
+//                    
+//                    let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+//                    blurView.frame = self.blurredHeaderImageView.frame
+//                    
+//                    self.blurredHeaderImageView.addSubview(blurView)
+//                    
+////                    self.headerView.clipsToBounds = true
+//                    
+//                    self.usernameLabel.bringSubviewToFront(self.headerView)
+//                    self.profilePicView.image = Toucan(image: image!).resize(CGSize(width: self.profilePicView.bounds.width, height: self.profilePicView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).image
+//                    
+//                    self.profilePicView.layer.cornerRadius = self.profilePicView.frame.height / 2
+//                    self.profilePicView.clipsToBounds = true
+//
+//                }
+//                
+//            })
+//        }
+//        self.edgesForExtendedLayout = UIRectEdge.None
         //Header
 //        headerImageView = UIImageView(frame: headerView.bounds)
 //        headerImageView!.image = avatarImage.image
@@ -236,7 +246,29 @@ class ProfileViewController: UIViewController, UITableViewDelegate {
     }
 }
 
+extension ProfileViewController : DZNEmptyDataSetSource,DZNEmptyDataSetDelegate {
+    func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
+        println("trying to add mouve")
+        performSegueWithIdentifier("addMouve", sender: self)
+    }
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = (self.pfType == .MyProfile ? "Are you new?" : "Hmm...")
+            return NSAttributedString(string:text)
+
+    }
     
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = (self.pfType == .MyProfile ? "Create more mouves now!" : "It seems like @\(user?.username) isn't a part of any public events")
+        
+        return NSAttributedString(string: text, attributes: [
+            NSForegroundColorAttributeName: UIColor.grayColor()
+            ])
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "mouve-icon")
+    }
+}
 
 
 extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {

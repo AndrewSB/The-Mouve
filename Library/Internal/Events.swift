@@ -8,6 +8,30 @@
 
 import UIKit
 import Parse
+import Toucan
+
+enum MouveRecordState {
+    case New, DownloadedAll, FilteredAll, Failed
+}
+class PendingOperations {
+    lazy var downloadsInProgress = [NSIndexPath:NSOperation]()
+    lazy var downloadQueue:NSOperationQueue = {
+        var queue = NSOperationQueue()
+        queue.name = "Download queue"
+//        Change to hire number to improve perf
+        queue.maxConcurrentOperationCount = 1
+        return queue
+        }()
+    
+    lazy var filtrationsInProgress = [NSIndexPath:NSOperation]()
+    lazy var filtrationQueue:NSOperationQueue = {
+        var queue = NSOperationQueue()
+        queue.name = "Image Filtration queue"
+//        Change to hire number to improve perf
+        queue.maxConcurrentOperationCount = 1
+        return queue
+        }()
+}
 
 class Events: PFObject {
     @NSManaged var objectID: String
@@ -21,9 +45,11 @@ class Events: PFObject {
     @NSManaged var privacy: Bool
     @NSManaged var invitees: [String]?
     @NSManaged var backgroundImage: PFFile?
-    var localBgImg: UIImage?
-    var creatorPfImg: UIImage?
-     
+    var localBgImg:UIImage?
+    var creatorPfImg:UIImage?
+    var state: MouveRecordState
+    var invitedUsers =  [PFUser]()
+    
     
     var timeTillEvent: NSTimeInterval {
         get {
@@ -34,11 +60,16 @@ class Events: PFObject {
         }
     }
     override init(){
+        self.state = .New
+        self.localBgImg = UIImage(named: "mouve-icon")
+        self.creatorPfImg = UIImage(named: "mouve-icon")
         super.init()
+
     }
     init(name: String, about: String, startTime: NSDate, endTime: NSDate, address: String,
         invitees: [String],
         privacy: Bool, backgroundImage: UIImage) {
+        self.state = .New
         super.init(className: "Events")
         self.creator = PFUser.currentUser()!
         self.name = name
@@ -56,53 +87,7 @@ class Events: PFObject {
         
 
     }
-//    func downloadBgImg(){
-//        self.backgroundImage?.getDataInBackgroundWithBlock { (data: NSData?, error: NSError?) -> Void in
-//            if(!(error != nil)){
-//                if let data: AnyObject = data, image = UIImage(data: data as! NSData) {
-//                    self.actualImage = image
-//                    println("\(self.backgroundImage?.url)")
-//                }
-//            }
-//            else{
-//                self.actualImage = appDel.placeHolderBg
-//            }
-//        }
-//    }
-//    func getBgImg() -> UIImage?{
-//        var imgData = self.backgroundImage?.getData()
-//        if(!(imgData != nil)){
-//            return appDel.placeHolderBg
-//        }
-//        return UIImage(data: imgData!)
-//    }
-//    func getBgImg() -> UIImage?
-//    {
-//        downloadBgImg()
-//        return self.actualImage
-//    }
 
-
-//    init(parseObject: PFObject) {
-//        self.name = parseObject["name"] as! String
-//        
-//        self.about = parseObject["about"] as! String
-//        self.address = parseObject["address"] as! String
-//        
-//        if let data = parseObject["backgroundImage"] as? NSData {
-//            self.backgroundImage = UIImage(data: data, scale: 1)!
-//        } else {
-//            self.backgroundImage = UIImage()
-//        }
-//        self.privacy = parseObject["privacy"] as! Bool
-//        self.location = parseObject["location"] as? CLLocation
-//        self.startTime = parseObject["start time"] as! NSDate
-//        self.endTime = parseObject["end time"] as! NSDate
-//        
-//        self.invitees = parseObject["invitees"] as! [String]//["lol", "dsa", "dsaetd"]
-//        
-//        super.init(className: "Events")
-//    }
     override class func query() -> PFQuery? {
         //1
         let query = PFQuery(className: Events.parseClassName())
@@ -128,6 +113,102 @@ extension Events: PFSubclassing {
         dispatch_once(&onceToken) {
             self.registerSubclass()
         }
+    }
+}
+
+class ImageDownloader: NSOperation {
+    //1
+    let eventRecord: Events
+    
+    //2
+    init(eventRecord: Events) {
+        self.eventRecord = eventRecord
+    }
+    
+    //3
+    override func main() {
+        //4
+        if self.cancelled {
+            return
+        }
+        //5
+
+        ParseUtility.getEventBgImg(self.eventRecord){(img: UIImage?,error: NSError?) in
+            if(((error) != nil) || (img == nil)){
+                println("sorry")
+                self.eventRecord.localBgImg = appDel.placeHolderBg!
+                self.eventRecord.state = .Failed
+            }
+            else{
+                self.eventRecord.localBgImg = img!
+                println("Download BG for \(self.eventRecord.name)")
+            }
+            if self.cancelled {
+                return
+            }
+            ParseUtility.getProfileImg(self.eventRecord.creator){(img: UIImage?,error: NSError?) in
+                if(((error) != nil) || (img == nil)){
+                    println("sorry")
+                    self.eventRecord.localBgImg = appDel.placeHolderBg!
+                    self.eventRecord.state = .Failed
+                }
+                else{
+                    println("Download Prof Pic for \(self.eventRecord.name)")
+                    self.eventRecord.creatorPfImg = img!
+                }
+                if self.cancelled {
+                    return
+                }
+                if self.eventRecord.state != .Failed{
+                    self.eventRecord.state = .DownloadedAll
+                    println("Downloaded \(self.eventRecord.name)")
+                }
+            }
+            
+
+        }
+
+
+    }
+}
+
+
+class ImageFiltration: NSOperation {
+    let cell: HomeEventTableViewCell
+    
+    init(cell: HomeEventTableViewCell) {
+        self.cell = cell
+        println("Filteration started on \(self.cell.event.name)")
+    }
+    
+    //3
+    func filterPfImage(onCompletion:(img: UIImage) -> ()){
+                onCompletion(img: Toucan(image: self.cell.event.creatorPfImg!).resize(CGSize(width: self.cell.profileImageView.bounds.width, height: self.cell.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 1.5, borderColor: UIColor.whiteColor()).image)
+    }
+    func filterBgImage(onCompletion:(img: UIImage) -> ()){
+                onCompletion(img: Toucan(image: self.cell.event.localBgImg!.applyLightEffect()!).resize(CGSize(width: self.cell.backgroundImageView.bounds.width, height: self.cell.backgroundImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).image)
+    }
+    override func main() {
+        //4
+        if self.cancelled {
+            return
+        }
+        //5
+        if self.cell.event.state != .DownloadedAll {
+            return
+        }
+//        Filter Bg Img
+        filterBgImage(){(bgImg: UIImage) -> () in
+            self.cell.event.localBgImg = bgImg
+            self.filterPfImage(){(pfImg: UIImage) -> () in
+                self.cell.event.creatorPfImg = pfImg
+                if self.cell.event.state != .Failed{
+                    self.cell.event.state = .FilteredAll
+                    println("Filtered \(self.cell.event.name)")
+                }
+            }
+        }
+
     }
 }
 extension PFUser{

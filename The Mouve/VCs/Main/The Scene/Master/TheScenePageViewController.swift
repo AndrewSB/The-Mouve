@@ -48,28 +48,6 @@ class TheScenePageViewController: UIPageViewController {
 extension TheScenePageViewController: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     func pageViewControllerDidLoad() {
         self.setViewControllers([sceneVCWithType(.Scene)], direction: .Reverse, animated: true, completion: nil)
-        
-//        self.view.backgroundColor = UIColor.whiteColor()
-//        if let url = UserDefaults.profilePictureURL {
-//            Alamofire.request(.GET, url).response { (request, response, data, error) -> () in
-//                if let data = data as NSData? {
-//                    let profileImage = UIImage(data: data)
-//                    if let profileImage = profileImage {
-//                        let imageView = UIImageView(image: profileImage)
-//                        imageView.frame = self.view.frame
-//                        
-//                        let blurView = UIVisualEffectView(effect: UIBlurEffect(style: .Light))
-//                        blurView.frame = self.view.frame
-//                        
-//                        imageView.addSubview(blurView)
-//                        
-//                        dispatch_async(dispatch_get_main_queue(), {
-//                            self.view.insertSubview(imageView, atIndex: 0)
-//                        })
-//                    }
-//                }
-//            }
-//        }
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {

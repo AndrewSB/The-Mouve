@@ -38,7 +38,7 @@ class ActivityTableViewCell: UITableViewCell {
                         case typeKeyEnum.Follow.rawValue:
                             self.attributedLabel.text = "@\(self.activity!.fromUser.username!) follows you!"
                         case typeKeyEnum.Attend.rawValue:
-                            self.attributedLabel.text = "@\(self.activity!.fromUser.username!) is attending \(self.activity!.onMouve.name)"
+                            self.attributedLabel.text = "@\(self.activity!.fromUser.username!) is attending '\(self.activity!.onMouve.name)'"
                         default:
                             self.attributedLabel.text = "unknown activity type"
                     }

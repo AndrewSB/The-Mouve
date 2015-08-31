@@ -20,12 +20,8 @@ class SceneFeedViewController: UIViewController{
     var loadingSpinnerView: UIView!
     var type: SceneType!
     var clickedOnType: String!
-    var feedData: [Events]? {
-        didSet {
-            self.feedTableView.reloadData()
-            
-        }
-    }
+    var feedData = [Events]()
+    let pendingOperations = PendingOperations()
 
 
     convenience init(type: SceneType) {
@@ -48,7 +44,7 @@ class SceneFeedViewController: UIViewController{
 
             
             //        let feedQuery = PFQuery(className: "Events")
-            dispatch_async(dispatch_get_main_queue(), {
+//            dispatch_async(dispatch_get_main_queue(), {
             var feedQuery: PFQuery?
             appDel.location.startUpdatingLocation()
             switch self.type! {
@@ -87,26 +83,25 @@ class SceneFeedViewController: UIViewController{
             default:
                 assert(true == false, "Type wasnt scene or explore")
             }
-            
 
-    //        feedQuery!.limit = 20
+            feedQuery!.limit = 20
             feedQuery?.findObjectsInBackgroundWithBlock { (results: [AnyObject]?, error: NSError?) -> Void in
-    //            var serverData = [Events]()
-                //            println(results)
-                
-                if let loadedData  = results as? [Events] {
+                if error != nil {
+                    let alert = UIAlertView(title:"Oops!",message:error!.localizedDescription, delegate:nil, cancelButtonTitle:"OK")
+                    alert.show()
+                }
+                else if let loadedData  = results as? [Events] {
                     self.feedData = loadedData
                 }
-                if self.feedData?.count == 0 {
+                if self.feedData.count == 0 {
                     self.feedTableView.emptyDataSetSource = self;
                     self.feedTableView.emptyDataSetDelegate = self;
-                    self.feedTableView.reloadEmptyDataSet()
                 }
-                
+                self.feedTableView.reloadData()
+
             }
         
-        self.feedTableView.contentInset = UIEdgeInsets(top: 44+22, left: 0, bottom: 44, right: 0)
-        })
+
     }
     
     
@@ -123,6 +118,7 @@ class SceneFeedViewController: UIViewController{
         }
         if let des = segue.destinationViewController as? ProfileViewController {
             des.user = sender as? PFUser
+            des.pfType = ((des.user == appDel.currentUser) ? ProfileType.MyProfile : ProfileType.OtherUser)
             des.hidesBottomBarWhenPushed = true;
             
         }
@@ -161,7 +157,65 @@ extension SceneFeedViewController : DZNEmptyDataSetSource,DZNEmptyDataSetDelegat
         return UIImage(named: "mouve-icon")
     }
 }
+//Defining operations that we would like to perform on the SceneFeedViewController in background
+extension SceneFeedViewController{
+    func startOperationsForPhotoRecord(cell: HomeEventTableViewCell, indexPath: NSIndexPath){
+        switch (cell.event.state) {
+        case .New:
+            startDownloadForRecord(cell.event, indexPath: indexPath)
+        case .DownloadedAll:
+            startFiltrationForRecord(cell, indexPath: indexPath)
+        default:
+            NSLog("do nothing")
+        }
+    }
+    func startDownloadForRecord(mouveDetails: Events, indexPath: NSIndexPath){
+        //1
+        if let downloadOperation = pendingOperations.downloadsInProgress[indexPath] {
+            return
+        }
+        
+        //2
+        let downloader = ImageDownloader(eventRecord: mouveDetails)
+        //3
+        downloader.completionBlock = {
+            if downloader.cancelled {
+                return
+            }
+            dispatch_async(dispatch_get_main_queue(), {
+                self.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
+                self.feedTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            })
+        }
+        //4
+        pendingOperations.downloadsInProgress[indexPath] = downloader
+        //5
+        pendingOperations.downloadQueue.addOperation(downloader)
+        
+        
+        
+    }
+    
+    func startFiltrationForRecord(cellDetails: HomeEventTableViewCell, indexPath: NSIndexPath){
+        if let filterOperation = pendingOperations.filtrationsInProgress[indexPath]{
+            return
+        }
+        
+        let filterer = ImageFiltration(cell: cellDetails)
+        filterer.completionBlock = {
+            if filterer.cancelled {
+                return
+            }
+            dispatch_async(dispatch_get_main_queue(), {
+                self.pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
+                self.feedTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            })
+        }
+        pendingOperations.filtrationsInProgress[indexPath] = filterer
+        pendingOperations.filtrationQueue.addOperation(filterer)
+    }
 
+}
 extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource, HomeEventTVCDelegate {
 
     func didTapProfileImage(cell: HomeEventTableViewCell) {
@@ -202,7 +256,7 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource, H
     
     // MARK: UITableViewDataSource
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return feedData == nil ? 0 : feedData!.count
+        return feedData.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -212,25 +266,45 @@ extension SceneFeedViewController: UITableViewDelegate, UITableViewDataSource, H
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
+        let mouveDetails = feedData[indexPath.section]
+        cell.event = mouveDetails
+
         cell.delegate = self
-        cell.event = feedData![indexPath.section]
+        //4
+
+        switch (cell.event.state){
+            case .FilteredAll:
+                cell.backgroundImageView?.image = cell.event.localBgImg
+                cell.profileImageView?.image = cell.event.creatorPfImg
+                cell.hidden = false
+                
+                println("Displaying \(cell.event.name)")
+            case .Failed:
+                cell.nameLabel.text = "Failed to load"
+                cell.hidden = false
+            case .New, .DownloadedAll:
+
+                if (!tableView.dragging && !tableView.decelerating) {
+                    cell.hidden = true
+                    self.startOperationsForPhotoRecord(cell,indexPath:indexPath)
+                }
+            
+        }
+        
         return cell
     }
+
     
     
     //MARK: UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        performSegueWithIdentifier("segueToDetail", sender: feedData![indexPath.section])
+        performSegueWithIdentifier("segueToDetail", sender: feedData[indexPath.section])
         
     }
     
-//    func tableView(tableView: UITableView, accessoryButtonTappedForRowWithIndexPath indexPath: NSIndexPath) {
-//        println("segueing to profile")
-//        performSegueWithIdentifier("segueToProfile", sender: feedData![indexPath.section].creator)
-//    }
-    
+
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return section == 0 ? 0 : 4
     }
