@@ -12,7 +12,7 @@ import UIKit
 import Toucan
 import Parse
 class HomeEventTableViewCell: UITableViewCell {
-//    var isBlurred:Bool = false
+    var isFinished:Bool = false
     
     var event: Events! {
         didSet {
@@ -38,37 +38,6 @@ class HomeEventTableViewCell: UITableViewCell {
             var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("profileImageWasTapped:"))
             self.profileImageView.addGestureRecognizer(tapGestureRecognizer)
         }
-        
-//            profileImageView.image = Toucan(image: event.creator.getProfilePic()!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 1.5, borderColor: UIColor.whiteColor()).image
-//
-//            
-//            backgroundImageView.image = Toucan(image: event.getBgImg()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height)), fitMode: Toucan.Resize.FitMode.Crop).image
-//            backgroundImageView.clipsToBounds = true
-//            ParseUtility.getEventBgImg(event){(imgObj, error) in
-//                var currImg: UIImage?
-//                if((imgObj) != nil){
-//                    currImg = imgObj
-//                }
-//                else{
-//                    currImg = appDel.placeHolderBg
-//                }
-//                self.backgroundImageView.image = Toucan(image: currImg!.applyLightEffect()!).resize(CGSize(width: self.backgroundImageView.bounds.width, height: (self.backgroundImageView.bounds.height)), fitMode: Toucan.Resize.FitMode.Crop).image
-//                self.backgroundImageView.clipsToBounds = true
-//            }
-//            ParseUtility.getProfileImg(event.creator){(imageObj, error) in
-//                if((imageObj) != nil){
-//                    self.profileImageView.image = imageObj
-//                }
-//                else{
-//                    self.profileImageView.image = appDel.placeHolderBg
-//                    appDel.placeHolderBg
-//                    println(error)
-//                }
-//                self.profileImageView.image = Toucan(image: self.profileImageView!.image!).resize(CGSize(width: self.profileImageView.bounds.width, height: self.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 1.5, borderColor: UIColor.whiteColor()).image
-//                self.profileImageView.userInteractionEnabled = true
-//            }
-//
-//        }
     }
 
     
@@ -94,7 +63,17 @@ class HomeEventTableViewCell: UITableViewCell {
 //        Hide at first all cells
 
     }
-    
+
+    func processEvent(event: Events!){
+        if (!self.isFinished){
+            self.event = event
+            let downloadImages: NSOperation = ImageDownloader(eventRecord: self.event)
+            let resizeImagesToCell: NSOperation = ImageFiltration(cell: self)
+            resizeImagesToCell.addDependency(downloadImages)
+            let operationQueue = NSOperationQueue.mainQueue()
+            operationQueue.addOperations([downloadImages, resizeImagesToCell], waitUntilFinished: false)
+        }
+    }
     @IBAction func profileImageWasTapped(recognizer: UITapGestureRecognizer){
         delegate?.didTapProfileImage(self)
     }
@@ -106,6 +85,9 @@ class HomeEventTableViewCell: UITableViewCell {
     @IBAction func shareButtonWasHit(sender: AnyObject) {
     }
 }
+
+
+
 protocol HomeEventTVCDelegate {
     func didTapProfileImage(cell: HomeEventTableViewCell)
     func didTapAttendEvent(cell: HomeEventTableViewCell)

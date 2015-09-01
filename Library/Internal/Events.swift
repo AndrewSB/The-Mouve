@@ -137,32 +137,27 @@ class ImageDownloader: NSOperation {
             if(((error) != nil) || (img == nil)){
                 println("sorry")
                 self.eventRecord.localBgImg = appDel.placeHolderBg!
-                self.eventRecord.state = .Failed
+            }
+            else if self.cancelled {
+                return
             }
             else{
                 self.eventRecord.localBgImg = img!
                 println("Download BG for \(self.eventRecord.name)")
             }
-            if self.cancelled {
-                return
-            }
             ParseUtility.getProfileImg(self.eventRecord.creator){(img: UIImage?,error: NSError?) in
                 if(((error) != nil) || (img == nil)){
                     println("sorry")
                     self.eventRecord.localBgImg = appDel.placeHolderBg!
-                    self.eventRecord.state = .Failed
+                }
+                else if self.cancelled{
+                    return
                 }
                 else{
                     println("Download Prof Pic for \(self.eventRecord.name)")
                     self.eventRecord.creatorPfImg = img!
                 }
-                if self.cancelled {
-                    return
-                }
-                if self.eventRecord.state != .Failed{
-                    self.eventRecord.state = .DownloadedAll
-                    println("Downloaded \(self.eventRecord.name)")
-                }
+                return
             }
             
 
@@ -189,23 +184,11 @@ class ImageFiltration: NSOperation {
                 onCompletion(img: Toucan(image: self.cell.event.localBgImg!.applyLightEffect()!).resize(CGSize(width: self.cell.backgroundImageView.bounds.width, height: self.cell.backgroundImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).image)
     }
     override func main() {
-        //4
-        if self.cancelled {
-            return
-        }
-        //5
-        if self.cell.event.state != .DownloadedAll  {
-            return
-        }
-//        Filter Bg Img
         filterBgImage(){(bgImg: UIImage) -> () in
-            self.cell.event.localBgImg = bgImg
+            self.cell.backgroundImageView.image = bgImg
             self.filterPfImage(){(pfImg: UIImage) -> () in
-                self.cell.event.creatorPfImg = pfImg
-                if self.cell.event.state != .Failed{
-                    self.cell.event.state = .FilteredAll
-                    println("Filtered \(self.cell.event.name)")
-                }
+                self.cell.profileImageView.image = pfImg
+                return
             }
         }
 

@@ -20,7 +20,6 @@ class SceneFeedViewController: UIViewController, FeedComponentTarget{
     let defaultRange = 0...4
     let additionalRangeSize = 5
     var type: SceneType!
-    let pendingOperations = PendingOperations()
     var feedComponent: FeedComponent<Events, SceneFeedViewController>!
 
 
@@ -44,15 +43,14 @@ class SceneFeedViewController: UIViewController, FeedComponentTarget{
 
         LocalMessage.post(type.hashValue == 0 ? .HomeFeedPageOne : .HomeFeedPageTwo)
         LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
+//        appDel.location.startUpdatingLocation()
         feedComponent = FeedComponent(target: self)
-            appDel.location.startUpdatingLocation()
     }
     
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         feedComponent.loadInitialIfRequired()
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -95,67 +93,6 @@ extension SceneFeedViewController : DZNEmptyDataSetSource,DZNEmptyDataSetDelegat
     }
 }
 //Defining operations that we would like to perform on the SceneFeedViewController in background
-extension SceneFeedViewController{
-    func startOperationsForPhotoRecord(cell: HomeEventTableViewCell, indexPath: NSIndexPath){
-        switch (cell.event.state) {
-        case .New:
-            startDownloadForRecord(cell.event, indexPath: indexPath)
-        case .DownloadedAll:
-            startFiltrationForRecord(cell, indexPath: indexPath)
-//        case .FilteredAll:
-////            cell.backgroundImageView.image = cell.event.localBgImg
-////            cell.profileImageView.image = cell.event.creatorPfImg
-        default:
-            NSLog("do nothing")
-        }
-    }
-    func startDownloadForRecord(mouveDetails: Events, indexPath: NSIndexPath){
-        //1
-        if let downloadOperation = pendingOperations.downloadsInProgress[indexPath] {
-            return
-        }
-        
-        //2
-        let downloader = ImageDownloader(eventRecord: mouveDetails)
-        //3
-        downloader.completionBlock = {
-            if downloader.cancelled {
-                return
-            }
-            dispatch_async(dispatch_get_main_queue(), {
-                self.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
-//                self.feedTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-            })
-        }
-        //4
-        pendingOperations.downloadsInProgress[indexPath] = downloader
-        //5
-        pendingOperations.downloadQueue.addOperation(downloader)
-        
-        
-        
-    }
-    
-    func startFiltrationForRecord(cellDetails: HomeEventTableViewCell, indexPath: NSIndexPath){
-        if let filterOperation = pendingOperations.filtrationsInProgress[indexPath]{
-            return
-        }
-        
-        let filterer = ImageFiltration(cell: cellDetails)
-        filterer.completionBlock = {
-            if filterer.cancelled {
-                return
-            }
-            dispatch_async(dispatch_get_main_queue(), {
-                self.pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
-                self.feedTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-            })
-        }
-        pendingOperations.filtrationsInProgress[indexPath] = filterer
-        pendingOperations.filtrationQueue.addOperation(filterer)
-    }
-
-}
 extension SceneFeedViewController: HomeEventTVCDelegate {
 
     func didTapProfileImage(cell: HomeEventTableViewCell) {
@@ -207,27 +144,9 @@ extension SceneFeedViewController: UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
-        cell.event = feedComponent.content[indexPath.row]
-//        ParseUtility.getEventBgImg(cell.event){(data: UIImage?, error: NSError?) in
-//                        cell.backgroundImageView?.image = data
-//                        ParseUtility.getProfileImg(cell.event.creator){(data: UIImage?, error: NSError?) in
-//                            cell.profileImageView?.image = data
-//
-//            }
-//        }
-
-        cell.backgroundImageView?.image = cell.event.localBgImg
-        cell.profileImageView?.image = cell.event.creatorPfImg
-        switch (cell.event.state){
-            case .FilteredAll:
-                println("Displaying \(cell.event.name)")
-            case .Failed:
-                cell.nameLabel.text = "Failed to load"
-            case .New, .DownloadedAll:
-                if (!tableView.dragging && !tableView.decelerating) {
-                    self.startOperationsForPhotoRecord(cell,indexPath:indexPath)
-                }
-        }
+        cell.delegate = self
+        let event = feedComponent.content[indexPath.row]
+        cell.processEvent(event)
         return cell
         
 
@@ -261,68 +180,68 @@ extension SceneFeedViewController:  UITableViewDelegate{
         return 0
     }
 }
-extension SceneFeedViewController: UIScrollViewDelegate{
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        //1
-        suspendAllOperations()
-    }
-    
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        // 2
-        if !decelerate {
-            loadImagesForOnscreenCells()
-            resumeAllOperations()
-        }
-    }
-    
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        // 3
-        loadImagesForOnscreenCells()
-        resumeAllOperations()
-    }
-    func suspendAllOperations () {
-        pendingOperations.downloadQueue.suspended = true
-        pendingOperations.filtrationQueue.suspended = true
-    }
-    
-    func resumeAllOperations () {
-        pendingOperations.downloadQueue.suspended = false
-        pendingOperations.filtrationQueue.suspended = false
-    }
-    
-    func loadImagesForOnscreenCells () {
-        //1
-        if let pathsArray = feedTableView.indexPathsForVisibleRows() {
-            //2
-            var allPendingOperations = Set(pendingOperations.downloadsInProgress.keys.array)
-            allPendingOperations.unionInPlace(pendingOperations.filtrationsInProgress.keys.array)
-            
-            //3
-            var toBeCancelled = allPendingOperations
-            let visiblePaths = Set(pathsArray as! [NSIndexPath])
-            toBeCancelled.subtractInPlace(visiblePaths)
-            
-            //4
-            var toBeStarted = visiblePaths
-            toBeStarted.subtractInPlace(allPendingOperations)
-            
-            // 5
-            for indexPath in toBeCancelled {
-                if let pendingDownload = pendingOperations.downloadsInProgress[indexPath] {
-                    pendingDownload.cancel()
-                }
-                pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
-                if let pendingFiltration = pendingOperations.filtrationsInProgress[indexPath] {
-                    pendingFiltration.cancel()
-                }
-                pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
-            }
-            
-            // 6
-            for indexPath in toBeStarted {
-                let indexPath = indexPath as NSIndexPath
-                startOperationsForPhotoRecord(feedTableView.cellForRowAtIndexPath(indexPath) as! HomeEventTableViewCell, indexPath: indexPath)
-            }
-        }
-    }
-}
+//extension SceneFeedViewController: UIScrollViewDelegate{
+//    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+//        //1
+//        suspendAllOperations()
+//    }
+//    
+//    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+//        // 2
+//        if !decelerate {
+//            loadImagesForOnscreenCells()
+//            resumeAllOperations()
+//        }
+//    }
+//    
+//    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+//        // 3
+//        loadImagesForOnscreenCells()
+//        resumeAllOperations()
+//    }
+//    func suspendAllOperations () {
+//        pendingOperations.downloadQueue.suspended = true
+//        pendingOperations.filtrationQueue.suspended = true
+//    }
+//    
+//    func resumeAllOperations () {
+//        pendingOperations.downloadQueue.suspended = false
+//        pendingOperations.filtrationQueue.suspended = false
+//    }
+//    
+//    func loadImagesForOnscreenCells () {
+//        //1
+//        if let pathsArray = feedTableView.indexPathsForVisibleRows() {
+//            //2
+//            var allPendingOperations = Set(pendingOperations.downloadsInProgress.keys.array)
+//            allPendingOperations.unionInPlace(pendingOperations.filtrationsInProgress.keys.array)
+//            
+//            //3
+//            var toBeCancelled = allPendingOperations
+//            let visiblePaths = Set(pathsArray as! [NSIndexPath])
+//            toBeCancelled.subtractInPlace(visiblePaths)
+//            
+//            //4
+//            var toBeStarted = visiblePaths
+//            toBeStarted.subtractInPlace(allPendingOperations)
+//            
+//            // 5
+//            for indexPath in toBeCancelled {
+//                if let pendingDownload = pendingOperations.downloadsInProgress[indexPath] {
+//                    pendingDownload.cancel()
+//                }
+//                pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
+//                if let pendingFiltration = pendingOperations.filtrationsInProgress[indexPath] {
+//                    pendingFiltration.cancel()
+//                }
+//                pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
+//            }
+//            
+//            // 6
+//            for indexPath in toBeStarted {
+//                let indexPath = indexPath as NSIndexPath
+//                startOperationsForPhotoRecord(feedTableView.cellForRowAtIndexPath(indexPath) as! HomeEventTableViewCell, indexPath: indexPath)
+//            }
+//        }
+//    }
+//}
