@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var location = Location()
     let placeHolderBg = UIImage(named: "addImage.png")
     let pendingOperations = PendingOperations()
+//    let pendingOperations = NSOperationQueue()
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

@@ -18,8 +18,7 @@ class PendingOperations {
     lazy var downloadQueue:NSOperationQueue = {
         var queue = NSOperationQueue()
         queue.name = "Download queue"
-//        Change to hire number to improve perf
-        queue.maxConcurrentOperationCount = 1
+//        queue.maxConcurrentOperationCount = 1
         return queue
         }()
     
@@ -27,14 +26,13 @@ class PendingOperations {
     lazy var filtrationQueue:NSOperationQueue = {
         var queue = NSOperationQueue()
         queue.name = "Image Filtration queue"
-//        Change to hire number to improve perf
-        queue.maxConcurrentOperationCount = 1
+////        Change to hire number to improve perf
+//        queue.maxConcurrentOperationCount = 1
         return queue
         }()
 }
 
 class Events: PFObject {
-    @NSManaged var objectID: String
     @NSManaged var creator: PFUser
     @NSManaged var name: String
     @NSManaged var about: String
@@ -135,7 +133,6 @@ class ImageDownloader: NSOperation {
 
         ParseUtility.getEventBgImg(self.eventRecord){(img: UIImage?,error: NSError?) in
             if(((error) != nil) || (img == nil)){
-                println("sorry")
                 self.eventRecord.localBgImg = appDel.placeHolderBg!
             }
             else if self.cancelled {
@@ -147,7 +144,6 @@ class ImageDownloader: NSOperation {
             }
             ParseUtility.getProfileImg(self.eventRecord.creator){(img: UIImage?,error: NSError?) in
                 if(((error) != nil) || (img == nil)){
-                    println("sorry")
                     self.eventRecord.localBgImg = appDel.placeHolderBg!
                 }
                 else if self.cancelled{

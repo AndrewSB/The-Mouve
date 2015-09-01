@@ -12,8 +12,7 @@ import UIKit
 import Toucan
 import Parse
 class HomeEventTableViewCell: UITableViewCell {
-    var isFinished:Bool = false
-    
+    var dataFillingOp: NSOperation!
     var event: Events! {
         didSet {
             nameLabel.text = event.name
@@ -65,14 +64,18 @@ class HomeEventTableViewCell: UITableViewCell {
     }
 
     func processEvent(event: Events!){
-        if (!self.isFinished){
-            self.event = event
+    
+        
+        self.event = event
+        dataFillingOp = NSBlockOperation(){
             let downloadImages: NSOperation = ImageDownloader(eventRecord: self.event)
+            appDel.pendingOperations.downloadQueue.addOperation(downloadImages)
             let resizeImagesToCell: NSOperation = ImageFiltration(cell: self)
-            resizeImagesToCell.addDependency(downloadImages)
-            let operationQueue = NSOperationQueue.mainQueue()
-            operationQueue.addOperations([downloadImages, resizeImagesToCell], waitUntilFinished: false)
+            downloadImages.completionBlock = {
+                NSOperationQueue.mainQueue().addOperation(resizeImagesToCell)
+            }
         }
+        appDel.pendingOperations.filtrationQueue.addOperation(dataFillingOp)
     }
     @IBAction func profileImageWasTapped(recognizer: UITapGestureRecognizer){
         delegate?.didTapProfileImage(self)
