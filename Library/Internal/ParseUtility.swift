@@ -205,8 +205,8 @@ class ParseUtility{
     
     class func getEventBgImg(targetEvent: Events,onCompletion: ((data: UIImage?, error: NSError?) -> ())?){
         if(targetEvent.backgroundImage == nil){
-            onCompletion!(data: UIImage(named: "mouve-icon"), error: nil)
-//            onCompletion!(data: nil, error: nil)
+//            onCompletion!(data: UIImage(named: "mouve-icon"), error: nil)
+            onCompletion!(data: nil, error: nil)
             println("error'd out on bg pic")
         }
         targetEvent.backgroundImage?.getDataInBackgroundWithBlock(){(imgData:NSData?, error: NSError?) -> Void in
@@ -346,12 +346,17 @@ class ParseUtility{
     class func queryFeed(sceneType: SceneType,range: Range<Int>, completionBlock: PFArrayResultBlock){
         //            First query the people we follow
         //            Then query all the mouves made by them
-        var feedQuery: PFQuery?
+        var feedQuery: PFQuery
         switch sceneType {
         case .Explore:
             //            println("lol")
-            feedQuery = Events.query()
-            feedQuery?.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
+            feedQuery = Events.query()!
+            feedQuery.whereKey("location", nearGeoPoint: PFGeoPoint(location: UserDefaults.lastLocation), withinMiles: 5.0)
+            feedQuery.includeKey("creator")
+            feedQuery.orderByAscending("startTime")
+            feedQuery.skip = range.startIndex
+            feedQuery.limit = range.endIndex - range.startIndex
+            feedQuery.findObjectsInBackgroundWithBlock(completionBlock)
             
         case .Scene:
             let followingQuery = PFQuery(className: Activity.parseClassName())
@@ -372,13 +377,14 @@ class ParseUtility{
             // We create a final compound query that will find all of the photos that were
             // taken by the user's friends or by the user
             feedQuery = PFQuery.orQueryWithSubqueries([mouvesFromCurrentUserQuery, followingMouvesQuery])
+            feedQuery.includeKey("creator")
+            feedQuery.orderByAscending("startTime")
+            feedQuery.skip = range.startIndex
+            feedQuery.limit = range.endIndex - range.startIndex
+            feedQuery.findObjectsInBackgroundWithBlock(completionBlock)
         default:
             println("Nada")
         }
-        feedQuery!.skip = range.startIndex
-        feedQuery!.limit = range.endIndex - range.startIndex
-        feedQuery!.includeKey("creator")
-        feedQuery!.orderByAscending("startTime")
-        feedQuery?.findObjectsInBackgroundWithBlock(completionBlock)
+
     }
 }

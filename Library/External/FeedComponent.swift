@@ -28,6 +28,7 @@ public protocol FeedComponentTarget: class {
   Defines the additional amount of items that get loaded
   subsequently when a user reaches the last entry.
   */
+  var type: SceneType! {get}
   var additionalRangeSize: Int { get }
   /// A reference to the TableView to which the Timeline Component is applied.
   var feedTableView: UITableView! { get }
@@ -59,7 +60,7 @@ public class FeedComponent <T: Equatable, S: FeedComponentTarget where S.Content
   
   weak var target: S?
   var refreshControl: UIRefreshControl
-  var type: SceneType?
+  var type: SceneType
   var currentRange: Range<Int> = 0...0
   var loadedAllContent = false
   var targetTrampoline: TargetTrampoline!
@@ -77,7 +78,7 @@ public class FeedComponent <T: Equatable, S: FeedComponentTarget where S.Content
   */
     public init(target: S) {
     self.target = target
-//    self.sceneType = sceneType
+    self.type = target.type
     
     refreshControl = UIRefreshControl()
     target.feedTableView.insertSubview(refreshControl, atIndex:0)
@@ -106,7 +107,7 @@ public class FeedComponent <T: Equatable, S: FeedComponentTarget where S.Content
     public func loadInitialIfRequired() {
     // if no posts are currently loaded, load the default range
     if (content == []) {
-        target!.loadInRange(type!,range: target!.defaultRange) { posts in
+        target!.loadInRange(self.type,range: target!.defaultRange) { posts in
         self.content = posts ?? []
         self.currentRange.endIndex = self.content.count
         self.target!.feedTableView.reloadData()
@@ -121,7 +122,7 @@ public class FeedComponent <T: Equatable, S: FeedComponentTarget where S.Content
   :param: entryIndex The index of the cell that became visible
   */
   public func targetWillDisplayEntry(entryIndex: Int) {
-    if (entryIndex == (currentRange.endIndex - 1) && !loadedAllContent) {
+    if (entryIndex == (currentRange.endIndex-1) && !loadedAllContent) {
       loadMore()
     }
   }
@@ -129,7 +130,7 @@ public class FeedComponent <T: Equatable, S: FeedComponentTarget where S.Content
   public func refresh(sender: AnyObject) {
     currentRange = target!.defaultRange
     
-    target!.loadInRange(type!, range: target!.defaultRange) { content in
+    target!.loadInRange(type, range: target!.defaultRange) { content in
       self.loadedAllContent = false
       self.content = content! as [T]
       self.refreshControl.endRefreshing()
@@ -153,7 +154,7 @@ public class FeedComponent <T: Equatable, S: FeedComponentTarget where S.Content
   func loadMore() {
     let additionalRange = Range(start: currentRange.endIndex, end: currentRange.endIndex + target!.additionalRangeSize)
     
-    target!.loadInRange(type!, range: additionalRange) { posts in
+    target!.loadInRange(type, range: additionalRange) { posts in
       let newPosts = posts
       
       if (newPosts!.count == 0) {
