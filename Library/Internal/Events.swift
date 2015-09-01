@@ -194,7 +194,7 @@ class ImageFiltration: NSOperation {
             return
         }
         //5
-        if self.cell.event.state != .DownloadedAll {
+        if self.cell.event.state != .DownloadedAll  {
             return
         }
 //        Filter Bg Img

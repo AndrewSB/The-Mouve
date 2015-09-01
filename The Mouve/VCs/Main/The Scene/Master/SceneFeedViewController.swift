@@ -124,7 +124,7 @@ extension SceneFeedViewController{
             }
             dispatch_async(dispatch_get_main_queue(), {
                 self.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
-                self.feedTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+//                self.feedTableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             })
         }
         //4
@@ -208,6 +208,14 @@ extension SceneFeedViewController: UITableViewDataSource{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
         cell.event = feedComponent.content[indexPath.row]
+//        ParseUtility.getEventBgImg(cell.event){(data: UIImage?, error: NSError?) in
+//                        cell.backgroundImageView?.image = data
+//                        ParseUtility.getProfileImg(cell.event.creator){(data: UIImage?, error: NSError?) in
+//                            cell.profileImageView?.image = data
+//
+//            }
+//        }
+
         cell.backgroundImageView?.image = cell.event.localBgImg
         cell.profileImageView?.image = cell.event.creatorPfImg
         switch (cell.event.state){
@@ -220,8 +228,9 @@ extension SceneFeedViewController: UITableViewDataSource{
                     self.startOperationsForPhotoRecord(cell,indexPath:indexPath)
                 }
         }
-        
         return cell
+        
+
     }
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
