@@ -63,19 +63,43 @@ class HomeEventTableViewCell: UITableViewCell {
 
     }
 
-    func processEvent(event: Events!){
+    func processEvent(event: Events!,indexPath: NSIndexPath){
     
         
         self.event = event
+
         dataFillingOp = NSBlockOperation(){
-            let downloadImages: NSOperation = ImageDownloader(eventRecord: self.event)
-            appDel.pendingOperations.downloadQueue.addOperation(downloadImages)
-            let resizeImagesToCell: NSOperation = ImageFiltration(cell: self)
-            downloadImages.completionBlock = {
-                NSOperationQueue.mainQueue().addOperation(resizeImagesToCell)
+            if((appDel.pendingOperations.downloadsInProgress[indexPath]) != nil){
+                return
             }
+            let downloadImages: NSOperation = ImageDownloader(eventRecord: self.event)
+            let resizeImagesToCell: NSOperation = ImageFiltration(cell: self)
+            appDel.pendingOperations.downloadsInProgress[indexPath] = downloadImages
+            appDel.pendingOperations.downloadQueue.addOperation(downloadImages)
+            downloadImages.completionBlock = {
+                appDel.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
+                if(appDel.pendingOperations.filtrationsInProgress[indexPath] != nil){
+                    return
+                }
+                appDel.pendingOperations.filtrationsInProgress[indexPath] = resizeImagesToCell
+                resizeImagesToCell.completionBlock = {
+                    appDel.pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
+                }
+                NSOperationQueue.mainQueue().addOperation(resizeImagesToCell)
+                
+            }
+
         }
         appDel.pendingOperations.filtrationQueue.addOperation(dataFillingOp)
+        dataFillingOp.completionBlock = {
+
+            self.hidden = false
+            
+        }
+    }
+    func cancelProcess(){
+        self.dataFillingOp.cancel()
+        
     }
     @IBAction func profileImageWasTapped(recognizer: UITapGestureRecognizer){
         delegate?.didTapProfileImage(self)
