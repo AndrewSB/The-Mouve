@@ -18,7 +18,7 @@ class ActivityTableViewCell: UITableViewCell {
     
     var type: SceneType? {
         didSet {
-            println("didset to \(type!.rawValue)")
+            print("didset to \(type!.rawValue)")
             
             if type == .Invites {
                 dispatch_async(dispatch_get_main_queue(), {
@@ -56,13 +56,13 @@ class ActivityTableViewCell: UITableViewCell {
     func loadImages(activity: Activity){
         ParseUtility.getProfileImg(activity.fromUser){(img: UIImage?,error: NSError?) in
             if((error) != nil){
-                println("sorry")
+                print("sorry")
             }
             else{
                 activity.profilePic = img
                 ParseUtility.getEventBgImg(activity.onMouve){(img: UIImage?,error: NSError?) in
                     if((error) != nil){
-                        println("sorry")
+                        print("sorry")
                     }
                     else{
                         activity.eventBg = img
@@ -84,6 +84,6 @@ class ActivityTableViewCell: UITableViewCell {
     }
 
     @IBAction func calendarButtonWasHit(sender: AnyObject) {
-        println("youre going")
+        print("youre going")
     }
 }

@@ -14,6 +14,6 @@ class ActivityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityView.addSubview(SceneTitleView(type: .Newsfeed, frame: CGRect(origin: .zeroPoint, size: CGSize(width: activityView.frame.width, height: activityView.frame.height))))
+        activityView.addSubview(SceneTitleView(type: .Newsfeed, frame: CGRect(origin: .zero, size: CGSize(width: activityView.frame.width, height: activityView.frame.height))))
     }
 }

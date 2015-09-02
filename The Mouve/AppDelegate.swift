@@ -11,6 +11,7 @@ import Parse
 import Bolts
 import Fabric
 import Crashlytics
+import IQKeyboardManager
 
 let appDel = UIApplication.sharedApplication().delegate as! AppDelegate
 @UIApplicationMain
@@ -24,8 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])
-        
-        AERecord.loadCoreDataStack()
+//        AERecord.loadCoreDataStack()
         Parse.enableLocalDatastore()
         Parse.setApplicationId("h5smZAkhhQ8MYAFJY3P4U9rFs6kjz0MLSurD76tL",
             clientKey: "8A4eqYwOATOIxM634S2Hf3oTVvbbjnUYclcFjhrT")
@@ -35,11 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.currentUser = PFUser.currentUser()
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
+        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as UIViewController?
         window!.makeKeyAndVisible()
-        
-        IQKeyboardManager.sharedManager().enable = true
-        IQKeyboardManager.sharedManager().enableAutoToolbar = false
+//        
+//        IQKeyboardManager.sharedManager().enable = true
+//        IQKeyboardManager.sharedManager().enableAutoToolbar = false
         
         changeNavBar()
         
@@ -90,7 +90,7 @@ extension AppDelegate {
         let loggedIn = PFUser.currentUser() != nil
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as? UIViewController
+        window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as UIViewController?
         window!.makeKeyAndVisible()
     }
     func logOut() {

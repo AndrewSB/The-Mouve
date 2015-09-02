@@ -142,9 +142,9 @@ extension LoginPageViewController: UIPageViewControllerDataSource, UIPageViewCon
     /*
         Delegate
     */
-    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [AnyObject], transitionCompleted completed: Bool) {
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
-            let vc = pageViewController.viewControllers[0] as! TutorialViewController
+            let vc = pageViewController.viewControllers![0] as! TutorialViewController
             showingIndex = vc.pageIndex
         }
     }

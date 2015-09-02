@@ -28,7 +28,7 @@ class Mouve: NSManagedObject {
     @NSManaged var name: String
     @NSManaged var details: String
     @NSManaged var image: String
-    @NSManaged var privacy: Boolean
+    @NSManaged var privacy: DarwinBoolean
     @NSManaged var owner: Person
     @NSManaged var comments: [Comment]
     @NSManaged var attendees: [Person]

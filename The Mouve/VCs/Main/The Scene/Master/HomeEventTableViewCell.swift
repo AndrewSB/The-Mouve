@@ -31,10 +31,10 @@ class HomeEventTableViewCell: UITableViewCell {
 
             distanceLabel.text = (String(format: "%.2f",event.location.distanceInMilesTo(PFGeoPoint(location: UserDefaults.lastLocation))))+" Miles Away"
             
-            let places = ["Beach-Chillin", "Coffee-Hour", "Espresso-Lesson", "Fire-Works", "Food-Festival", "Football-Game", "San-Francisco-Visit", "State-Fair", "Study-Sesh", "Surf-Lesson"]
+            _ = ["Beach-Chillin", "Coffee-Hour", "Espresso-Lesson", "Fire-Works", "Food-Festival", "Football-Game", "San-Francisco-Visit", "State-Fair", "Study-Sesh", "Surf-Lesson"]
 //            loadImages(event)
             self.profileImageView.userInteractionEnabled = true
-            var tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("profileImageWasTapped:"))
+            let tapGestureRecognizer = UITapGestureRecognizer(target:self, action:Selector("profileImageWasTapped:"))
             self.profileImageView.addGestureRecognizer(tapGestureRecognizer)
         }
     }
@@ -68,37 +68,34 @@ class HomeEventTableViewCell: UITableViewCell {
         
         self.event = event
 
-        dataFillingOp = NSBlockOperation(){
-            if((appDel.pendingOperations.downloadsInProgress[indexPath]) != nil){
-                return
-            }
+//        dataFillingOp = NSBlockOperation(){
+//            if((appDel.pendingOperations.downloadsInProgress[indexPath]) != nil){
+//                return
+//            }
             let downloadImages: NSOperation = ImageDownloader(eventRecord: self.event)
             let resizeImagesToCell: NSOperation = ImageFiltration(cell: self)
-            appDel.pendingOperations.downloadsInProgress[indexPath] = downloadImages
-            appDel.pendingOperations.downloadQueue.addOperation(downloadImages)
-            downloadImages.completionBlock = {
-                appDel.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
-                if(appDel.pendingOperations.filtrationsInProgress[indexPath] != nil){
-                    return
-                }
-                appDel.pendingOperations.filtrationsInProgress[indexPath] = resizeImagesToCell
-                resizeImagesToCell.completionBlock = {
-                    appDel.pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
-                }
-                NSOperationQueue.mainQueue().addOperation(resizeImagesToCell)
-                
-            }
+            resizeImagesToCell.addDependency(downloadImages)
+//            downloadImages.qualityOfService = NSQualityOfService.Utility
+//            appDel.pendingOperations.downloadsInProgress[indexPath] = downloadImages
+//            appDel.pendingOperations.downloadQueue.addOperation(downloadImages)
+//            downloadImages.completionBlock = {
+//                appDel.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
+//                if(appDel.pendingOperations.filtrationsInProgress[indexPath] != nil){
+//                    return
+//                }
+//                appDel.pendingOperations.filtrationsInProgress[indexPath] = resizeImagesToCell
+//                resizeImagesToCell.completionBlock = {
+//                    appDel.pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
+//                }
+                NSOperationQueue.mainQueue().addOperations([downloadImages,resizeImagesToCell], waitUntilFinished: false)
 
-        }
-        appDel.pendingOperations.filtrationQueue.addOperation(dataFillingOp)
-        dataFillingOp.completionBlock = {
-
-            self.hidden = false
-            
-        }
+//        appDel.pendingOperations.filtrationQueue.addOperation(dataFillingOp)
+//        dataFillingOp.completionBlock = {
+//    
+//        }
     }
     func cancelProcess(){
-        self.dataFillingOp.cancel()
+//        self.dataFillingOp.cancel()
         
     }
     @IBAction func profileImageWasTapped(recognizer: UITapGestureRecognizer){

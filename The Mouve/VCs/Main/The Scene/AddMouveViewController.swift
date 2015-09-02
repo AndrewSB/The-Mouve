@@ -40,7 +40,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
         super.viewDidLoad()
         addTextDismiss()
         
-        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 150
+//        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = 150
         
         [titleEventTextField, detailInfoTextField, locationTextField].map({ $0.delegate = self })
         
@@ -83,7 +83,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     
     // Changes labels as you drag slider
     func rangeSliderValueChanged(rangeSlider: TimeRangeSlider) {
-        var currentTimes = rangeSlider.timeDates()
+        let currentTimes = rangeSlider.timeDates()
         startTime!.text = currentTimes.startDate.toShortTimeString()
         endTime!.text = currentTimes.endDate.toShortTimeString()
     }
@@ -95,7 +95,7 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
     
     @IBAction func flipSwitch(sender: AnyObject) {
         publicPrivateLabel.text = publicPrivateSwitch.on ? "Private" : "Public"
-        var buttonLabel = publicPrivateSwitch.on ? "Invite People" : "Create Mouve"
+        let buttonLabel = publicPrivateSwitch.on ? "Invite People" : "Create Mouve"
         postMouveButton.setTitle(buttonLabel, forState: UIControlState.Normal)
     }
     // Switch ends
@@ -112,8 +112,8 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
 //            location: locationTextField.text)
         let newMouve = Events()
             newMouve.creator = PFUser.currentUser()!
-            newMouve.name  = titleEventTextField.text.uppercaseString
-            newMouve.about = detailInfoTextField.text
+            newMouve.name  = titleEventTextField.text!.uppercaseString
+            newMouve.about = detailInfoTextField.text!
             newMouve.address = self.actualAddress!
             newMouve.location = pickedPoint!
             newMouve.startTime = rangeSlider.timeDates().startDate
@@ -124,13 +124,13 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
             newMouve.ACL = eventACL
         }
             if ((pickedPic) != nil){
-                newMouve.backgroundImage = PFFile(name: "bg.jpg", data:UIImageJPEGRepresentation(pickedPic, 0.7))
+                newMouve.backgroundImage = PFFile(name: "bg.jpg", data:UIImageJPEGRepresentation(pickedPic!, 0.7)!)
             }
         
 //        let remoteMouve = PFObject(event: newMouve)
         newMouve.saveInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
-                let errorString = error.userInfo?["error"] as? NSString
+                let errorString = error.userInfo["error"] as? NSString
                 self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
                 }
             }
@@ -143,9 +143,9 @@ class AddMouveViewController: UIViewController, UIAlertViewDelegate, UIPopoverCo
 extension AddMouveViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //    Using Toucan to circle the images
     func circleMyImage(currentImage: UIImage) -> UIImage{
-        var croppedEventPic = Toucan(image: currentImage).resize(CGSize(width: eventImageButton!.frame.width, height: eventImageButton!.frame.height), fitMode: Toucan.Resize.FitMode.Crop).image
+        let croppedEventPic = Toucan(image: currentImage).resize(CGSize(width: eventImageButton!.frame.width, height: eventImageButton!.frame.height), fitMode: Toucan.Resize.FitMode.Crop).image
         
-        var roundedEventPic = Toucan(image: croppedEventPic).resize(CGSize(width: 210, height: 210), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse()
+        let roundedEventPic = Toucan(image: croppedEventPic).resize(CGSize(width: 210, height: 210), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse()
         return roundedEventPic.image
     }
     //  Open Photo Library to upload photo (some code from theappguruz)
@@ -153,19 +153,19 @@ extension AddMouveViewController: UIImagePickerControllerDelegate, UINavigationC
     @IBAction func switchImageMenu(sender: AnyObject)
     {
         imagePicker!.delegate = self
-        println("Popped up..")
-        var alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        print("Popped up..")
+        let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
-        var cameraAction = UIAlertAction(title: "Take Photo", style: UIAlertActionStyle.Default){
+        let cameraAction = UIAlertAction(title: "Take Photo", style: UIAlertActionStyle.Default){
             UIAlertAction in
             self.openCamera()
             
         }
-        var gallaryAction = UIAlertAction(title: "Choose Existing Photo", style: UIAlertActionStyle.Default){
+        let gallaryAction = UIAlertAction(title: "Choose Existing Photo", style: UIAlertActionStyle.Default){
             UIAlertAction in
             self.openGallary()
         }
-        var cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){
             UIAlertAction in
         }
         // Add the actions
@@ -208,18 +208,18 @@ extension AddMouveViewController: UIImagePickerControllerDelegate, UINavigationC
             popoverMenu!.presentPopoverFromRect(eventImageButton!.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
         }
     }
-    func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
+    func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         self.pickedPic = info[UIImagePickerControllerOriginalImage] as? UIImage
-        println("Circling "+pickedPic!.description);
+        print("Circling "+pickedPic!.description);
         eventImageButton?.setBackgroundImage(circleMyImage(pickedPic!), forState: .Normal)
         //sets the selected image to image view
     }
     func imagePickerControllerDidCancel(imagePicker: UIImagePickerController)
     {
         imagePicker .dismissViewControllerAnimated(true, completion: nil)
-        println("picker cancel.")
+        print("picker cancel.")
     }
 }
 
@@ -253,7 +253,7 @@ extension AddMouveViewController: UITextFieldDelegate {
 }
 extension AddMouveViewController: GooglePlacesAutocompleteDelegate {
     func placeSelected(place: Place) {
-        println(place.description)
+        print(place.description)
         
         place.getDetails { details in
             self.locationTextField.text = details.name

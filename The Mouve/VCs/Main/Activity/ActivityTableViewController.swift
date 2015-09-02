@@ -40,17 +40,17 @@ class ActivityTableViewController: UIViewController {
                 feedQuery?.whereKey("typeKey", equalTo: typeKeyEnum.Invite.rawValue)
                 feedQuery?.whereKey("toUser", equalTo: appDel.currentUser!)
             default:
-                println("No option passed")
+                print("No option passed")
         }
         feedQuery?.findObjectsInBackgroundWithBlock(){(data: [AnyObject]?,error: NSError?) in
             if((error) != nil){
-                println("Cannot create table")
+                print("Cannot create table")
             }
             else if let results = data as? [Activity]{
                 self.feedData = results
             }
             else{
-                println("Feed is empty move on")
+                print("Feed is empty move on")
             }
 
         }
@@ -87,6 +87,6 @@ extension ActivityTableViewController: UITableViewDelegate, UITableViewDataSourc
     }
 
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView(frame: .zeroRect)
+        return UIView(frame: .zero)
     }
 }

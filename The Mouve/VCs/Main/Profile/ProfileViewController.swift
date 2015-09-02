@@ -55,7 +55,7 @@ class ProfileViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         if pfType == ProfileType.MyProfile{
-            println("Going with your profile since nothing was passed")
+            print("Going with your profile since nothing was passed")
             user = appDel.currentUser!
         }
         else{
@@ -97,7 +97,7 @@ class ProfileViewController: UIViewController{
                     self.blurredHeaderImageView.image = blurredImage
                     self.headerView.insertSubview(self.blurredHeaderImageView, belowSubview: self.usernameLabel)
                     self.usernameLabel.bringSubviewToFront(self.headerView)
-                    self.profilePicView.image = Toucan(image: image!).resize(CGSize(width: self.profilePicView.bounds.width, height: self.profilePicView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 3, borderColor: UIColor.seaFoamGreen()).image
+                    self.profilePicView.image = Toucan(image: image!).resize(CGSize(width: self.profilePicView.bounds.width, height: self.profilePicView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(3, borderColor: UIColor.seaFoamGreen()).image
         }
     }
     
@@ -114,10 +114,10 @@ class ProfileViewController: UIViewController{
                 self.editProfileOrFollow.selected = true;
                 ParseUtility.followUserInBackground (self.user!){(success: Bool, error: NSError?) -> () in
                     if((error) != nil){
-                        println("Cannot follow \(self.user!.username)")
+                        print("Cannot follow \(self.user!.username)")
                     }
                     else{
-                        println("Following \(self.user!.username) successfully")
+                        print("Following \(self.user!.username) successfully")
                     }
                 }
             }
@@ -197,7 +197,7 @@ class ProfileViewController: UIViewController{
     }
 
     func getUserMouves(){
-        var mouvesAttended = NSMutableArray()
+        let mouvesAttended = NSMutableArray()
 // Step 1: Query made events and find objects
         let mouvesFromUserQuery = Events.query()
         mouvesFromUserQuery!.whereKey("creator", equalTo: self.user!)
@@ -248,7 +248,7 @@ class ProfileViewController: UIViewController{
 
 extension ProfileViewController : DZNEmptyDataSetSource,DZNEmptyDataSetDelegate {
     func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
-        println("trying to add mouve")
+        print("trying to add mouve")
         performSegueWithIdentifier("addMouve", sender: self)
     }
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
@@ -315,13 +315,13 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        var offset = scrollView.contentOffset.y
+        let offset = scrollView.contentOffset.y
         var avatarTransform = CATransform3DIdentity
         var headerTransform = CATransform3DIdentity
         var nameLabelTransform = CATransform3DIdentity
         var separationLabelTansform = CATransform3DIdentity
         
-        println(offset)
+        print(offset)
         
         
         if offset < 0 { // PULL DOWN

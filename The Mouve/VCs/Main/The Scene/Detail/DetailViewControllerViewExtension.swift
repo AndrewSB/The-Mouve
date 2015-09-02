@@ -45,10 +45,10 @@ extension DetailViewController { // View code and actions
         let offset_B_LabelHeader:CGFloat = 113 // At this offset the Black label reaches the Header
         let distance_W_LabelHeader:CGFloat = 97 // The distance between the bottom of the Header and the top of the White Label
         
-        var offset = scrollView.contentOffset.y
+        let offset = scrollView.contentOffset.y
         var headerTransform = CATransform3DIdentity
         
-        println(offset)
+        print(offset)
         
         if offset < 0 { // PULL DOWN
             
@@ -80,10 +80,10 @@ extension DetailViewController { // View code and actions
             self.calendarButton.selected = false;
             ParseUtility.unattendMouveInBackground(self.event){(success: Bool, error: NSError?) -> () in
                 if((error) != nil){
-                    println("Cannot unattend event")
+                    print("Cannot unattend event")
                 }
                 else{
-                    println("Unattended  successfully")
+                    print("Unattended  successfully")
                 }
             }
         } else {
@@ -91,10 +91,10 @@ extension DetailViewController { // View code and actions
             self.calendarButton.selected = true;
             ParseUtility.attendMouveInBackground(self.event!){(success: Bool, error: NSError?) -> () in
                 if((error) != nil){
-                    println("Cannot attend \(self.event!.name)")
+                    print("Cannot attend \(self.event!.name)")
                 }
                 else{
-                    println("Attending \(self.event!.name) successfully")
+                    print("Attending \(self.event!.name) successfully")
                 }
             }
         }

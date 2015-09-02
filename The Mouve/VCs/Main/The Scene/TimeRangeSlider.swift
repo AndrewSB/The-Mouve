@@ -24,10 +24,10 @@ class TimeRangeSlider: RangeSlider {
         self.upperValue = (Double(totalMinutes)*0.882)
         
         //        self.upperValue = 29.0
-        println(self.lowerValue)
-        println(self.upperValue)
+        print(self.lowerValue)
+        print(self.upperValue)
     }
-    required init(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     func timeDates() -> (startDate: NSDate, endDate: NSDate ){
@@ -52,7 +52,7 @@ extension NSDate
 {
     func shiftedDate(minInterval: Int) -> NSDate{
         let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.CalendarUnitMonth | .CalendarUnitDay | .CalendarUnitYear | .CalendarUnitHour | .CalendarUnitMinute, fromDate: self)
+        let components = calendar.components([.Month, .Day, .Year, .Hour, .Minute], fromDate: self)
         var tempMinutes = 0
         while (components.minute - minInterval > -minInterval){
             components.minute = components.minute-minInterval
@@ -70,8 +70,8 @@ extension NSDate
     func isToday() -> Bool{
         let currentDate = NSDate()
         let calendar = NSCalendar.currentCalendar()
-        let currComp = calendar.components(.CalendarUnitDay, fromDate: currentDate)
-        let selfComp = calendar.components(.CalendarUnitDay, fromDate: self)
+        let currComp = calendar.components(.Day, fromDate: currentDate)
+        let selfComp = calendar.components(.Day, fromDate: self)
         return (selfComp.day == currComp.day)
         
     }
@@ -80,7 +80,7 @@ extension NSDate
         let calendar = NSCalendar.currentCalendar()
         let components = NSDateComponents()
         components.minute=minsToAdd
-        return calendar.dateByAddingComponents(components, toDate: self, options: nil)!
+        return calendar.dateByAddingComponents(components, toDate: self, options: [])!
     }
     
     func tomorrowDate() -> NSDate{
@@ -88,14 +88,14 @@ extension NSDate
         let components = NSDateComponents()
         
         components.day=1
-        return calendar.dateByAddingComponents(components, toDate: self, options: nil)!
+        return calendar.dateByAddingComponents(components, toDate: self, options: [])!
     }
     func yesterday() -> NSDate{
         let calendar = NSCalendar.currentCalendar()
         let components = NSDateComponents()
         
         components.day = -1
-        return calendar.dateByAddingComponents(components, toDate: self, options: nil)!
+        return calendar.dateByAddingComponents(components, toDate: self, options: [])!
     }
 
     
@@ -103,7 +103,7 @@ extension NSDate
     {
         //Get Hour
         let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.CalendarUnitHour, fromDate: self)
+        let components = calendar.components(.Hour, fromDate: self)
         let hour = components.hour
         
         //Return Hour
@@ -115,7 +115,7 @@ extension NSDate
     {
         //Get Minute
         let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.CalendarUnitMinute, fromDate: self)
+        let components = calendar.components(.Minute, fromDate: self)
         let minute = components.minute
         
         //Return Minute
@@ -125,8 +125,8 @@ extension NSDate
     func toShortTimeString() -> String
     {
         let locale = NSLocale.currentLocale()
-        var formatter = NSDateFormatter()
-        var localDateFormat = NSDateFormatter.dateFormatFromTemplate("j", options: 0, locale: locale)!
+        let formatter = NSDateFormatter()
+        let localDateFormat = NSDateFormatter.dateFormatFromTemplate("j", options: 0, locale: locale)!
         if localDateFormat.rangeOfString("a") != nil {
             formatter.dateFormat = "h:mma"
         }

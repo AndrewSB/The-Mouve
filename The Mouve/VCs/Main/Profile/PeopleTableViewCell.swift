@@ -24,6 +24,6 @@ class PeopleTableViewCell: UITableViewCell {
     }
     
     @IBAction func followerButtonWasHit(sender: AnyObject) {
-        println("you're following")
+        print("you're following")
     }
 }

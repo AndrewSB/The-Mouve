@@ -101,18 +101,18 @@ class DetailViewController: UIViewController {
 //    }
     
     @IBAction func openMapForPlace(sender: UIButton) {
-        var latitute:CLLocationDegrees! =  event?.location.latitude
-        var longitute:CLLocationDegrees! =  event?.location.longitude
+        let latitute:CLLocationDegrees! =  event?.location.latitude
+        let longitute:CLLocationDegrees! =  event?.location.longitude
         
         let regionDistance:CLLocationDistance = 10000
-        var coordinates = CLLocationCoordinate2DMake(latitute, longitute)
+        let coordinates = CLLocationCoordinate2DMake(latitute, longitute)
         let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
-        var options = [
+        let options = [
             MKLaunchOptionsMapCenterKey: NSValue(MKCoordinate: regionSpan.center),
             MKLaunchOptionsMapSpanKey: NSValue(MKCoordinateSpan: regionSpan.span)
         ]
-        var placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
-        var mapItem = MKMapItem(placemark: placemark)
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
         mapItem.name = "\(event!.name)"
         mapItem.openInMapsWithLaunchOptions(options)
         
@@ -161,7 +161,7 @@ extension DetailViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellID", forIndexPath: indexPath) as! UICollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cellID", forIndexPath: indexPath) 
         
         return cell
     }

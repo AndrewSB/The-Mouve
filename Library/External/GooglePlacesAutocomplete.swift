@@ -24,7 +24,7 @@ public struct LocationBias {
   }
 }
 
-public enum PlaceType: Printable {
+public enum PlaceType: CustomStringConvertible {
   case All
 //  case Geocode
   case Address
@@ -72,14 +72,14 @@ public class Place: NSObject {
   
     Requires that Place#apiKey be set
   
-    :param: result Callback on successful completion with detailed place information
+    - parameter result: Callback on successful completion with detailed place information
   */
   public func getDetails(result: PlaceDetails -> ()) {
     GooglePlaceDetailsRequest(place: self).request(result)
   }
 }
 
-public class PlaceDetails: Printable {
+public class PlaceDetails: CustomStringConvertible {
   public let name: String
   public let latitude: Double
   public let longitude: Double
@@ -197,7 +197,7 @@ public class GooglePlacesAutocompleteContainer: UIViewController {
   func keyboardWasShown(notification: NSNotification) {
     if isViewLoaded() && view.window != nil {
       let info: Dictionary = notification.userInfo!
-      let keyboardSize: CGSize = (info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size)!
+      let keyboardSize: CGSize = (info[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue.size)!
       let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0)
 
       tableView.contentInset = contentInsets;
@@ -220,7 +220,7 @@ extension GooglePlacesAutocompleteContainer: UITableViewDataSource, UITableViewD
   }
 
   public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) 
 
     // Get the corresponding candy from our candies array
     let place = self.places[indexPath.row]
@@ -251,7 +251,7 @@ extension GooglePlacesAutocompleteContainer: UISearchBarDelegate {
   /**
     Call the Google Places API and update the view with results.
 
-    :param: searchString The search query
+    - parameter searchString: The search query
   */
   private func getPlaces(searchString: String) {
     var params = [
@@ -308,17 +308,17 @@ class GooglePlacesRequestHelpers {
   /**
   Build a query string from a dictionary
 
-  :param: parameters Dictionary of query string parameters
-  :returns: The properly escaped query string
+  - parameter parameters: Dictionary of query string parameters
+  - returns: The properly escaped query string
   */
   private class func query(parameters: [String: AnyObject]) -> String {
     var components: [(String, String)] = []
-    for key in sorted(Array(parameters.keys), <) {
+    for key in Array(parameters.keys).sort(<) {
       let value: AnyObject! = parameters[key]
       components += [(escape(key), escape("\(value)"))]
     }
 
-    return join("&", components.map{"\($0)=\($1)"} as [String])
+    return (components.map{"\($0)=\($1)"} as [String]).joinWithSeparator("&")
   }
 
   private class func escape(string: String) -> String {
@@ -327,12 +327,12 @@ class GooglePlacesRequestHelpers {
   }
 
   private class func doRequest(url: String, params: [String: String], success: NSDictionary -> ()) {
-    var request = NSMutableURLRequest(
+    let request = NSMutableURLRequest(
       URL: NSURL(string: "\(url)?\(query(params))")!
     )
 
-    var session = NSURLSession.sharedSession()
-    var task = session.dataTaskWithRequest(request) { data, response, error in
+    let session = NSURLSession.sharedSession()
+    let task = session.dataTaskWithRequest(request) { data, response, error in
       self.handleResponse(data, response: response as? NSHTTPURLResponse, error: error, success: success)
     }
 
@@ -341,44 +341,42 @@ class GooglePlacesRequestHelpers {
 
   private class func handleResponse(data: NSData!, response: NSHTTPURLResponse!, error: NSError!, success: NSDictionary -> ()) {
     if let error = error {
-      println("GooglePlaces Error: \(error.localizedDescription)")
+      print("GooglePlaces Error: \(error.localizedDescription)")
       return
     }
 
     if response == nil {
-      println("GooglePlaces Error: No response from API")
+      print("GooglePlaces Error: No response from API")
       return
     }
 
     if response.statusCode != 200 {
-      println("GooglePlaces Error: Invalid status code \(response.statusCode) from API")
+      print("GooglePlaces Error: Invalid status code \(response.statusCode) from API")
       return
     }
 
-    var serializationError: NSError?
-    var json: NSDictionary = NSJSONSerialization.JSONObjectWithData(
-      data,
-      options: NSJSONReadingOptions.MutableContainers,
-      error: &serializationError
-      ) as! NSDictionary
-
-    if let error = serializationError {
-      println("GooglePlaces Error: \(error.localizedDescription)")
-      return
+    do {
+        if let myData = data, let json = try NSJSONSerialization.JSONObjectWithData(myData,options: NSJSONReadingOptions.MutableContainers) as? NSDictionary{
+                if let status = json["status"] as? String {
+                    if status != "OK" {
+                        print("GooglePlaces API Error: \(status)")
+                        return
+                    }
+                }
+            
+            // Perform table updates on UI thread
+                dispatch_async(dispatch_get_main_queue(), {
+                    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                    
+                    success(json)
+                    })
+            }
     }
-
-    if let status = json["status"] as? String {
-      if status != "OK" {
-        println("GooglePlaces API Error: \(status)")
-        return
-      }
+    catch {
+          print("GooglePlaces Error: \(error)")
+          return
     }
-
-    // Perform table updates on UI thread
-    dispatch_async(dispatch_get_main_queue(), {
-      UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-
-      success(json)
-    })
-  }
+ }
 }
+
+

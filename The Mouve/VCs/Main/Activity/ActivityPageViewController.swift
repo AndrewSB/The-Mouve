@@ -19,14 +19,14 @@ class ActivityPageViewController: UIPageViewController {
     }
     
     func pageOne() {
-        if (self.viewControllers[0] as! ActivityTableViewController).type == SceneType.Newsfeed {
+        if (self.viewControllers![0] as! ActivityTableViewController).type == SceneType.Newsfeed {
             self.setViewControllers([activityVCWithType(.Invites)], direction: .Forward, animated: true, completion: nil)
         }
     }
 
     func pageTwo() {
         
-        if (self.viewControllers[0] as! ActivityTableViewController).type == SceneType.Invites {
+        if (self.viewControllers![0] as! ActivityTableViewController).type == SceneType.Invites {
             self.setViewControllers([activityVCWithType(.Newsfeed)], direction: .Reverse, animated: true, completion: nil)
         }
 

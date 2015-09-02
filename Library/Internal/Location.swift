@@ -29,11 +29,11 @@ class Location: CLLocationManager, CLLocationManagerDelegate {
             self.startUpdatingLocation()
         case .Denied, .NotDetermined, .Restricted:
             self.requestWhenInUseAuthorization()
-            print("you can't see me")
+            print("you can't see me", terminator: "")
         }
     }
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        self.mostRecentLocation = locations.last as? CLLocation
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.mostRecentLocation = (locations.last as CLLocation?)!
     }
 }

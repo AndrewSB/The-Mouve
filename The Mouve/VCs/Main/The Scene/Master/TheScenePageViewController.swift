@@ -27,13 +27,13 @@ class TheScenePageViewController: UIPageViewController {
     }
     
     func pageOne() {
-        if (self.viewControllers[0] as! SceneFeedViewController).type == SceneType.Scene {
+        if (self.viewControllers![0] as! SceneFeedViewController).type == SceneType.Scene {
             self.setViewControllers([sceneVCWithType(.Explore)], direction: .Forward, animated: true, completion: nil)
         }
     }
     
     func pageTwo() {
-        if (self.viewControllers[0] as! SceneFeedViewController).type == SceneType.Explore {
+        if (self.viewControllers![0] as! SceneFeedViewController).type == SceneType.Explore {
             self.setViewControllers([sceneVCWithType(.Scene)], direction: .Reverse, animated: true, completion: nil)
         }
     }

@@ -78,7 +78,7 @@ class ParseUtility{
 //            //            println(results)
         if let attendActivities = data as? [Activity]{
             for  activity in attendActivities{
-                println("deleting \(activity.objectId)")
+                print("deleting \(activity.objectId)")
                 activity.deleteEventually()
             }
         }
@@ -93,7 +93,7 @@ class ParseUtility{
 //                }
 //            }
             else{
-                println("data cant be found")
+                print("data cant be found")
             }
         }
         
@@ -207,7 +207,7 @@ class ParseUtility{
         if(targetEvent.backgroundImage == nil){
 //            onCompletion!(data: UIImage(named: "mouve-icon"), error: nil)
             onCompletion!(data: nil, error: nil)
-            println("error'd out on bg pic")
+            print("error'd out on bg pic")
         }
         targetEvent.backgroundImage?.getDataInBackgroundWithBlock(){(imgData:NSData?, error: NSError?) -> Void in
             if((imgData) != nil){
@@ -220,7 +220,7 @@ class ParseUtility{
         if(targetUser.profileImage == nil){
             onCompletion!(data: nil, error: nil)
 //            onCompletion!(data: nil, error: nil)
-            println("error'd out on profile pic")
+            print("error'd out on profile pic")
         }
         targetUser.profileImage?.getDataInBackgroundWithBlock(){(imgData:NSData?, error: NSError?) -> Void in
             if((imgData) != nil){
@@ -383,7 +383,7 @@ class ParseUtility{
             feedQuery.limit = range.endIndex - range.startIndex
             feedQuery.findObjectsInBackgroundWithBlock(completionBlock)
         default:
-            println("Nada")
+            print("Nada")
         }
 
     }

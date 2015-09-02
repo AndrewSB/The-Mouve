@@ -81,7 +81,7 @@ class Events: PFObject {
             
         self.privacy = privacy
         
-        self.backgroundImage = PFFile(name: "\(self.creator.username)_\(self.objectId).jpg", data:UIImageJPEGRepresentation(backgroundImage,0.7))
+        self.backgroundImage = PFFile(name: "\(self.creator.username)_\(self.objectId).jpg", data:UIImageJPEGRepresentation(backgroundImage,0.7)!)
         
 
     }
@@ -140,7 +140,7 @@ class ImageDownloader: NSOperation {
             }
             else{
                 self.eventRecord.localBgImg = img!
-                println("Download BG for \(self.eventRecord.name)")
+                print("Download BG for \(self.eventRecord.name)")
             }
             ParseUtility.getProfileImg(self.eventRecord.creator){(img: UIImage?,error: NSError?) in
                 if(((error) != nil) || (img == nil)){
@@ -150,7 +150,7 @@ class ImageDownloader: NSOperation {
                     return
                 }
                 else{
-                    println("Download Prof Pic for \(self.eventRecord.name)")
+                    print("Download Prof Pic for \(self.eventRecord.name)")
                     self.eventRecord.creatorPfImg = img!
                 }
                 return
@@ -169,12 +169,12 @@ class ImageFiltration: NSOperation {
     
     init(cell: HomeEventTableViewCell) {
         self.cell = cell
-        println("Filteration started on \(self.cell.event.name)")
+        print("Filteration started on \(self.cell.event.name)")
     }
     
     //3
     func filterPfImage(onCompletion:(img: UIImage) -> ()){
-                onCompletion(img: Toucan(image: self.cell.event.creatorPfImg!).resize(CGSize(width: self.cell.profileImageView.bounds.width, height: self.cell.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(borderWidth: 1.5, borderColor: UIColor.whiteColor()).image)
+                onCompletion(img: Toucan(image: self.cell.event.creatorPfImg!).resize(CGSize(width: self.cell.profileImageView.bounds.width, height: self.cell.profileImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse(1.5, borderColor: UIColor.whiteColor()).image)
     }
     func filterBgImage(onCompletion:(img: UIImage) -> ()){
                 onCompletion(img: Toucan(image: self.cell.event.localBgImg!.applyLightEffect()!).resize(CGSize(width: self.cell.backgroundImageView.bounds.width, height: self.cell.backgroundImageView.bounds.height), fitMode: Toucan.Resize.FitMode.Crop).image)

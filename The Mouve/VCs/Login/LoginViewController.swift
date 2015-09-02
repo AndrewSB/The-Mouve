@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import IQKeyboardManager
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UnderlinedTextField!
@@ -22,7 +23,7 @@ class LoginViewController: UIViewController {
         addTextDismiss()
         addNavControllerLikePan()
         
-        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = ((signupButton.frame.origin.y + signupButton.frame.height) - emailTextField.frame.origin.y) + 5
+//        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = ((signupButton.frame.origin.y + signupButton.frame.height) - emailTextField.frame.origin.y) + 5
         
         [emailTextField, passwordTextField].map({ $0.delegate = self })
     }
@@ -40,20 +41,20 @@ class LoginViewController: UIViewController {
 //        Step 3: If all passed remove spiining wheels
 
         let emailQuery = PFQuery(className: "_User")
-        emailQuery.whereKey("email", equalTo: emailTextField.text.lowercaseString)
+        emailQuery.whereKey("email", equalTo: emailTextField.text!.lowercaseString)
 //
         emailQuery.getFirstObjectInBackgroundWithBlock({ (object, error) in
             if let object = object {
-                PFUser.logInWithUsernameInBackground(object["username"] as! String, password: self.passwordTextField.text, block: { (user, error) in
+                PFUser.logInWithUsernameInBackground(object["username"] as! String, password: self.passwordTextField.text!, block: { (user, error) in
                     if user != nil {
-                        println("dun logged in")
+                        print("dun logged in")
                         appDel.checkLogin()
                     } else {
                         if let error = error {
                             loadingSpinnerView.removeFromSuperview()
                             self.view.userInteractionEnabled = true
                             
-                            let errorString = error.userInfo?["error"] as? NSString
+                            let errorString = error.userInfo["error"] as? NSString
                             self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
                         }
                     }

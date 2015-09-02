@@ -29,7 +29,7 @@ class GreyGreenButton: UIButton {
     }
     var type: GreyGreenType? {
         didSet {
-            println("type of green grey is \(type!.rawValue)")
+            print("type of green grey is \(type!.rawValue)")
         }
     }
     

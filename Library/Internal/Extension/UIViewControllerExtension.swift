@@ -10,7 +10,7 @@ import UIKit
 
 extension UIViewController {
     func initVC(vcID: String, storyboard: String) -> UIViewController {
-        return UIStoryboard(name: storyboard, bundle: nil).instantiateViewControllerWithIdentifier(vcID) as! UIViewController
+        return UIStoryboard(name: storyboard, bundle: nil).instantiateViewControllerWithIdentifier(vcID) 
     }
     
     func statusBar(style: UIStatusBarStyle) {
@@ -51,8 +51,8 @@ extension UIViewController: UIGestureRecognizerDelegate {
     
     func addNavControllerLikePan() {
         if self.navigationController!.respondsToSelector(Selector("interactivePopGestureRecognizer")) {
-            self.navigationController!.interactivePopGestureRecognizer.enabled = true
-            self.navigationController!.interactivePopGestureRecognizer.delegate = self
+            self.navigationController!.interactivePopGestureRecognizer!.enabled = true
+            self.navigationController!.interactivePopGestureRecognizer!.delegate = self
         }
     }
     

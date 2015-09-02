@@ -36,7 +36,7 @@ class SceneTitleView: UIView {
         xibSetup()
     }
     
-    required init(coder aDecoder: NSCoder) { //init from storyboard
+    required init?(coder aDecoder: NSCoder) { //init from storyboard
         super.init(coder: aDecoder)
         
         xibSetup()
@@ -47,7 +47,7 @@ class SceneTitleView: UIView {
         self.view = loadViewFromNib("SceneTitleView")
         
         view.frame = bounds
-        view.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        view.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         
         addSubview(view)
     }

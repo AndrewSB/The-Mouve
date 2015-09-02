@@ -36,7 +36,7 @@ class Activity: PFObject {
             self.stringContent = stringContent
             self.onMouve = targetMouve
         
-            self.mediaFile = PFFile(name: "\(self.fromUser.username)_\(self.onMouve.objectId)_\(self.objectId).jpg", data:UIImageJPEGRepresentation(mediaFile, 0.7))
+            self.mediaFile = PFFile(name: "\(self.fromUser.username)_\(self.onMouve.objectId)_\(self.objectId).jpg", data:UIImageJPEGRepresentation(mediaFile, 0.7)!)
             
             
     }

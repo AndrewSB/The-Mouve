@@ -72,7 +72,7 @@ extension SceneFeedViewController: HomeEventTVCDelegate {
         
     }
     func didTapProfileImage(cell: HomeEventTableViewCell) {
-        println("Jumping to \(cell.event!.creator.username!)'s profile")
+        print("Jumping to \(cell.event!.creator.username!)'s profile")
         performSegueWithIdentifier("segueToProfile", sender: cell.event.creator)
     }
     func didTapAttendEvent(cell: HomeEventTableViewCell) {
@@ -81,10 +81,10 @@ extension SceneFeedViewController: HomeEventTVCDelegate {
             cell.goingButton.selected = false;
             ParseUtility.unattendMouveInBackground(cell.event){(success: Bool, error: NSError?) -> () in
                 if((error) != nil){
-                    println("Cannot unattend event")
+                    print("Cannot unattend event")
                 }
                 else{
-                    println("Unattended  successfully")
+                    print("Unattended  successfully")
                 }
             }
         } else {
@@ -92,10 +92,10 @@ extension SceneFeedViewController: HomeEventTVCDelegate {
             cell.goingButton.selected = true;
             ParseUtility.attendMouveInBackground(cell.event){(success: Bool, error: NSError?) -> () in
                 if((error) != nil){
-                    println("Cannot attend \(cell.event!.name)")
+                    print("Cannot attend \(cell.event!.name)")
                 }
                 else{
-                    println("Attending \(cell.event!.name) successfully")
+                    print("Attending \(cell.event!.name) successfully")
                 }
             }
         }
@@ -106,17 +106,17 @@ extension SceneFeedViewController: HomeEventTVCDelegate {
     func didFinishLoadingCell(cell: HomeEventTableViewCell) {
         //        self.loadingSpinnerView.removeFromSuperview()
     }
-    override func viewWillDisappear(animated: Bool) {
-        appDel.pendingOperations.filtrationQueue.cancelAllOperations()
-        appDel.pendingOperations.filtrationsInProgress.removeAll(keepCapacity: false)
-        appDel.pendingOperations.downloadQueue.cancelAllOperations()
-        appDel.pendingOperations.downloadsInProgress.removeAll(keepCapacity: false)
-
-    }
+//    override func viewWillDisappear(animated: Bool) {
+//        appDel.pendingOperations.filtrationQueue.cancelAllOperations()
+//        appDel.pendingOperations.filtrationsInProgress.removeAll(keepCapacity: false)
+//        appDel.pendingOperations.downloadQueue.cancelAllOperations()
+//        appDel.pendingOperations.downloadsInProgress.removeAll(keepCapacity: false)
+//
+//    }
 }
 extension SceneFeedViewController : DZNEmptyDataSetSource,DZNEmptyDataSetDelegate {
     func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
-        println("trying to add mouve")
+        print("trying to add mouve")
         performSegueWithIdentifier("addMouve", sender: self)
     }
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
@@ -148,9 +148,9 @@ extension SceneFeedViewController: UITableViewDataSource{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
         let event = feedComponent.content[indexPath.row]
-        if (!tableView.dragging && !tableView.decelerating) {
+//        if (!tableView.dragging && !tableView.decelerating) {
             cell.processEvent(event, indexPath: indexPath)
-        }
+//        }
         return cell
         
 
@@ -183,9 +183,9 @@ extension SceneFeedViewController:  UITableViewDelegate{
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
-    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        (cell as! HomeEventTableViewCell).cancelProcess()
-    }
+//    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+//        (cell as! HomeEventTableViewCell).cancelProcess()
+//    }
 
 }
 //extension SceneFeedViewController: UIScrollViewDelegate{

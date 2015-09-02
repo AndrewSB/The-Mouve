@@ -20,7 +20,7 @@ extension UIImage {
     
     func compressedAtScale(scale: CGSize) -> UIImage {
         UIGraphicsBeginImageContext(scale)
-        self.drawInRect(CGRect(origin: .zeroPoint, size: scale))
+        self.drawInRect(CGRect(origin: .zero, size: scale))
         let compressedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext();
         
@@ -31,11 +31,11 @@ extension UIImage {
 extension CIImage{
     class func blur(input: UIImage, radius: Int) -> UIImage{
         var filter = CIFilter(name:"CIGaussianBlur")
-        filter.setDefaults()
-        filter.setValue(CIImage(image: input), forKey: kCIInputImageKey)
-        filter.setValue(radius, forKey: kCIInputRadiusKey)
-        var outputImage = filter.outputImage;
-        var finalImage :UIImage = UIImage(CIImage: outputImage)!
+        filter!.setDefaults()
+        filter!.setValue(CIImage(image: input), forKey: kCIInputImageKey)
+        filter!.setValue(radius, forKey: kCIInputRadiusKey)
+        var outputImage = filter!.outputImage;
+        var finalImage :UIImage = UIImage(CIImage: outputImage!)
         return finalImage
     }
 }

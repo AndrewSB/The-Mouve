@@ -39,33 +39,33 @@ class SettingsTableViewController: UITableViewController {
         case 0:
             switch indexPath.row {
             case 0:
-                println("Radius")
+                print("Radius")
             default: ()
             }
         case 1:
             switch indexPath.row {
             case 0:
-                println("New Followers")
+                print("New Followers")
             case 1:
-                println("New Invites")
+                print("New Invites")
             default: ()
             }
         case 2:
             switch indexPath.row {
             case 0:
-                println("FACEBOOK")
+                print("FACEBOOK")
             case 1:
-                println("TWITTER")
+                print("TWITTER")
             default: ()
             }
         case 3:
             switch indexPath.row {
             case 0:
-                println("Contact us")
+                print("Contact us")
             case 1:
-                println("Privacy Policy")
+                print("Privacy Policy")
             case 2:
-                println("Terms of use")
+                print("Terms of use")
             default: ()
             }
         case 4:

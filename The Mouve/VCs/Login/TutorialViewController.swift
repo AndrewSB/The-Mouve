@@ -21,7 +21,7 @@ class TutorialViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
  
-        println("didload")
+        print("didload")
         pageLabel.text = title
         pageLabelWidthConstraint.constant = self.view.frame.width - 88
         

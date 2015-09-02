@@ -15,7 +15,7 @@ of the Timeline Component.
 class ConvenienceKit{
     class func removeObject<T : Equatable>(object: T, inout fromArray array: [T])
     {
-        var index = find(array, object)
+        let index = array.indexOf(object)
         array.removeAtIndex(index!)
     }
 }
@@ -74,7 +74,7 @@ public class FeedComponent <T: Equatable, S: FeedComponentTarget where S.Content
   /**
   Creates a Timeline Component and connects it to its target.
   
-  :param: target The class on which the Timeline Component shall operate
+  - parameter target: The class on which the Timeline Component shall operate
   */
     public init(target: S) {
     self.target = target
@@ -93,7 +93,7 @@ public class FeedComponent <T: Equatable, S: FeedComponentTarget where S.Content
   /**
   Removes an object from the `content` of the Timeline Component
   
-  :param: object The object that shall be removed.
+  - parameter object: The object that shall be removed.
   */
   public func removeObject(object: T) {
     ConvenienceKit.removeObject(object, fromArray: &self.content)
@@ -119,7 +119,7 @@ public class FeedComponent <T: Equatable, S: FeedComponentTarget where S.Content
   Should be called whenever a cell becomes visible. This allows the Timeline Component
   to decide when to load additional items.
   
-  :param: entryIndex The index of the cell that became visible
+  - parameter entryIndex: The index of the cell that became visible
   */
   public func targetWillDisplayEntry(entryIndex: Int) {
     if (entryIndex == (currentRange.endIndex-1) && !loadedAllContent) {

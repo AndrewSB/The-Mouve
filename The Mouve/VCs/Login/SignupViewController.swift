@@ -33,7 +33,7 @@ class SignupViewController: UIViewController {
         addTextDismiss()
         addNavControllerLikePan()
         
-        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = ((createAccountButton.frame.origin.y + createAccountButton.frame.height) - nameTextField.frame.origin.y) + 5
+//        IQKeyboardManager.sharedManager().keyboardDistanceFromTextField = ((createAccountButton.frame.origin.y + createAccountButton.frame.height) - nameTextField.frame.origin.y) + 5
         
         [nameTextField, usernameTextField, passwordTextField, emailTextField].map({ $0.delegate = self })
         self.profileImageButton!.layer.cornerRadius = self.profileImageButton!.frame.height / 2
@@ -55,13 +55,13 @@ class SignupViewController: UIViewController {
         var fullName = nameTextField.text
         var username = usernameTextField.text
         var password = passwordTextField.text
-        var email = emailTextField.text.lowercaseString
+        var email = emailTextField.text!.lowercaseString
         
         
         if fullName != "" && username != "" && password != "" && email != ""{
             userSignUp()
         } else {
-            println("All Fields Required")
+            print("All Fields Required")
         }
         
         
@@ -97,8 +97,8 @@ class SignupViewController: UIViewController {
                                         self.emailTextField.text = emailID
                                     }
                                     self.nameTextField.text = loginResult["name"] as! String
-                                    var userID = loginResult["id"] as! String
-                                    var facebookProfileUrl = "http://graph.facebook.com/\(userID)/picture?type=large"
+                                    let userID = loginResult["id"] as! String
+                                    let facebookProfileUrl = "http://graph.facebook.com/\(userID)/picture?type=large"
                                     let url = NSURL(string:facebookProfileUrl)
                                     self.imagePicked = true
                                     self.downloadImage(url!)
@@ -117,10 +117,10 @@ class SignupViewController: UIViewController {
     }
     
     func downloadImage(url:NSURL){
-        println("Started downloading \"\(url.lastPathComponent!.stringByDeletingPathExtension)\".")
+        print("Started downloading \"\(url.URLByDeletingPathExtension?.URLString)\".")
         getDataFromUrl(url) { data in
             dispatch_async(dispatch_get_main_queue()) {
-                println("Finished downloading \"\(url.lastPathComponent!.stringByDeletingPathExtension)\".")
+                print("Finished downloading \"\(url.URLByDeletingPathExtension?.URLString)\".")
                 self.profileImageButton?.setBackgroundImage(self.circleMyImage(UIImage(data: data!)!), forState: .Normal)
             }
         }
@@ -134,19 +134,19 @@ class SignupViewController: UIViewController {
     @IBAction func changeProfileImageClicked(sender: AnyObject) {
         
         imagePicker!.delegate = self
-        println("Popped up..")
-        var alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        print("Popped up..")
+        let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
-        var cameraAction = UIAlertAction(title: "Take Photo", style: UIAlertActionStyle.Default){
+        let cameraAction = UIAlertAction(title: "Take Photo", style: UIAlertActionStyle.Default){
             UIAlertAction in
             self.openCamera()
             
         }
-        var gallaryAction = UIAlertAction(title: "Choose Existing Photo", style: UIAlertActionStyle.Default){
+        let gallaryAction = UIAlertAction(title: "Choose Existing Photo", style: UIAlertActionStyle.Default){
             UIAlertAction in
             self.openGallary()
         }
-        var cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){
+        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel){
             UIAlertAction in
         }
         // Add the actions
@@ -189,11 +189,11 @@ class SignupViewController: UIViewController {
             popoverMenu!.presentPopoverFromRect(profileImageButton!.frame, inView: self.view, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
         }
     }
-    func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject])
+    func imagePickerController(imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
         self.pickedPic = info[UIImagePickerControllerOriginalImage] as? UIImage
-        println("Circling "+pickedPic!.description);
+        print("Circling "+pickedPic!.description);
         self.profileImageButton?.setBackgroundImage(circleMyImage(pickedPic!), forState: .Normal)
         self.imagePicked = true
         //sets the selected image to image view
@@ -201,7 +201,7 @@ class SignupViewController: UIViewController {
     func imagePickerControllerDidCancel(imagePicker: UIImagePickerController)
     {
         imagePicker .dismissViewControllerAnimated(true, completion: nil)
-        println("picker cancel.")
+        print("picker cancel.")
     }
     
     @IBAction func backButtonWasHit(sender: AnyObject) {
@@ -227,16 +227,16 @@ class SignupViewController: UIViewController {
         newUser["fullName"] = nameTextField.text
         newUser.username = usernameTextField.text
         newUser.password = passwordTextField.text
-        newUser.email = emailTextField.text.lowercaseString
+        newUser.email = emailTextField.text!.lowercaseString
         if(self.imagePicked == true){
             var image = profileImageButton!.backgroundImageForState(.Normal)!
-            var imageWithName:PFFile = PFFile(name: "profileImage.png", data:UIImagePNGRepresentation(image))
+            var imageWithName:PFFile = PFFile(name: "profileImage.png", data:UIImagePNGRepresentation(image)!)
             imageWithName.saveInBackground();
             newUser["profileImage"] = imageWithName
         }
         newUser.signUpInBackgroundWithBlock { (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
-                let errorString = error.userInfo?["error"] as? NSString
+                let errorString = error.userInfo["error"] as? NSString
                 self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
                 
                 //loadingSpinnerView.removeFromSuperview()
@@ -245,7 +245,7 @@ class SignupViewController: UIViewController {
             }else{
                 PFUser.logInWithUsernameInBackground(newUser.username! , password: newUser.password!, block: { (user, error) in
                     if user != nil {
-                        println("dun logged in")
+                        print("dun logged in")
                         
                         //loadingSpinnerView.removeFromSuperview()
                         
@@ -253,7 +253,7 @@ class SignupViewController: UIViewController {
                     } else {
                         if let error = error {
                             self.view.userInteractionEnabled = true
-                            let errorString = error.userInfo?["error"] as? NSString
+                            let errorString = error.userInfo["error"] as? NSString
                             self.presentViewController(UIAlertController(title: "Uh oh!", message: errorString as! String), animated: true, completion: nil)
                             
                             //loadingSpinnerView.removeFromSuperview()
@@ -273,9 +273,9 @@ class SignupViewController: UIViewController {
 extension SignupViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //    Using Toucan to circle the images
     func circleMyImage(currentImage: UIImage) -> UIImage{
-        var croppedEventPic = Toucan(image: currentImage).resize(CGSize(width: profileImageButton!.frame.width, height: profileImageButton!.frame.height), fitMode: Toucan.Resize.FitMode.Crop).image
+        let croppedEventPic = Toucan(image: currentImage).resize(CGSize(width: profileImageButton!.frame.width, height: profileImageButton!.frame.height), fitMode: Toucan.Resize.FitMode.Crop).image
         
-        var roundedEventPic = Toucan(image: croppedEventPic).resize(CGSize(width: 210, height: 210), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse()
+        let roundedEventPic = Toucan(image: croppedEventPic).resize(CGSize(width: 210, height: 210), fitMode: Toucan.Resize.FitMode.Crop).maskWithEllipse()
         return roundedEventPic.image
     }
 }
