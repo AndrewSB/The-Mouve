@@ -88,10 +88,12 @@ extension AppDelegate {
     
     func checkLogin() {
         let loggedIn = PFUser.currentUser() != nil
-        
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window!.rootViewController = (UIStoryboard(name: loggedIn ? "Main" : "Login", bundle: NSBundle.mainBundle()).instantiateInitialViewController()) as UIViewController?
         window!.makeKeyAndVisible()
+    }
+    func newLocation(){
+        print("You're now located at")
     }
     func logOut() {
 //        UserDefaults.resetUD()

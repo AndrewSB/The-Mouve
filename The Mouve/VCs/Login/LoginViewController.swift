@@ -48,6 +48,7 @@ class LoginViewController: UIViewController {
                 PFUser.logInWithUsernameInBackground(object["username"] as! String, password: self.passwordTextField.text!, block: { (user, error) in
                     if user != nil {
                         print("dun logged in")
+                        appDel.currentUser = user
                         appDel.checkLogin()
                     } else {
                         if let error = error {

@@ -15,6 +15,7 @@ class HomeEventTableViewCell: UITableViewCell {
     var dataFillingOp: NSOperation!
     var event: Events! {
         didSet {
+            self.processEvent(event)
             nameLabel.text = event.name
             descriptionLabel.text = event.about
 
@@ -60,43 +61,34 @@ class HomeEventTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
 //        Hide at first all cells
-
     }
 
-    func processEvent(event: Events!,indexPath: NSIndexPath){
+    func processEvent(event: Events!){
     
         
-        self.event = event
 
-//        dataFillingOp = NSBlockOperation(){
+        dataFillingOp = NSBlockOperation(){
 //            if((appDel.pendingOperations.downloadsInProgress[indexPath]) != nil){
 //                return
 //            }
             let downloadImages: NSOperation = ImageDownloader(eventRecord: self.event)
             let resizeImagesToCell: NSOperation = ImageFiltration(cell: self)
-            resizeImagesToCell.addDependency(downloadImages)
 //            downloadImages.qualityOfService = NSQualityOfService.Utility
+            
+            resizeImagesToCell.addDependency(downloadImages)
 //            appDel.pendingOperations.downloadsInProgress[indexPath] = downloadImages
-//            appDel.pendingOperations.downloadQueue.addOperation(downloadImages)
 //            downloadImages.completionBlock = {
 //                appDel.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
-//                if(appDel.pendingOperations.filtrationsInProgress[indexPath] != nil){
-//                    return
-//                }
-//                appDel.pendingOperations.filtrationsInProgress[indexPath] = resizeImagesToCell
-//                resizeImagesToCell.completionBlock = {
-//                    appDel.pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
-//                }
-                NSOperationQueue.mainQueue().addOperations([downloadImages,resizeImagesToCell], waitUntilFinished: false)
-
-//        appDel.pendingOperations.filtrationQueue.addOperation(dataFillingOp)
-//        dataFillingOp.completionBlock = {
-//    
-//        }
+//            }
+//            resizeImagesToCell.completionBlock = {
+//                appDel.pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
+//            }
+            NSOperationQueue.mainQueue().addOperations([downloadImages,resizeImagesToCell], waitUntilFinished: false)
+        }
+        appDel.pendingOperations.filtrationQueue.addOperation(self.dataFillingOp)
     }
     func cancelProcess(){
-//        self.dataFillingOp.cancel()
-        
+        self.dataFillingOp.cancel()
     }
     @IBAction func profileImageWasTapped(recognizer: UITapGestureRecognizer){
         delegate?.didTapProfileImage(self)

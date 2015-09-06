@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+            <gpx
+            xmlns="http://www.topografix.com/GPX/1/1"
+            xmlns:gpxx = "http://www.garmin.com/xmlschemas/GpxExtensions/v3"
+            xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd
+            http://www.garmin.com/xmlschemas/GpxExtensions/v3
+            http://www8.garmin.com/xmlschemas/GpxExtensions/v3/GpxExtensionsv3.xsd"
+            version="1.1"
+            creator="StefanLage">
+                <wpt lat="40.11196294338183" lon="-88.2274567650034">
+                    <time>2015-09-02 21:07:24 +0000</time>
+                    <name>Urbana</name>
+                    <extensions>
+                        <gpxx:WaypointExtension>
+                            <gpxx:Address>
+                                <gpxx:StreetAddress>West Springfield Avenue</gpxx:StreetAddress>
+                                <gpxx:City>Urbana</gpxx:City>
+                                <gpxx:Country>United States</gpxx:Country>
+                                <gpxx:PostalCode>61801</gpxx:PostalCode>
+                            </gpxx:Address>
+                        </gpxx:WaypointExtension>
+                    </extensions>
+                </wpt>
+            </gpx>

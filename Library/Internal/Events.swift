@@ -134,8 +134,10 @@ class ImageDownloader: NSOperation {
         ParseUtility.getEventBgImg(self.eventRecord){(img: UIImage?,error: NSError?) in
             if(((error) != nil) || (img == nil)){
                 self.eventRecord.localBgImg = appDel.placeHolderBg!
+                print("No BG value for \(self.eventRecord.name)")
             }
             else if self.cancelled {
+                print("Cancel download for \(self.eventRecord.name)")
                 return
             }
             else{
@@ -153,7 +155,7 @@ class ImageDownloader: NSOperation {
                     print("Download Prof Pic for \(self.eventRecord.name)")
                     self.eventRecord.creatorPfImg = img!
                 }
-                return
+//                return
             }
             
 

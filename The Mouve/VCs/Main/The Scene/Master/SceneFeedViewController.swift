@@ -19,14 +19,18 @@ class SceneFeedViewController: UIViewController, FeedComponentTarget{
     @IBOutlet weak var feedTableView: UITableView!
     let defaultRange = 0...4
     let additionalRangeSize = 5
-    var type: SceneType!
+    var type: SceneType!{
+        didSet{
+            
+        }
+    }
     var feedComponent: FeedComponent<Events, SceneFeedViewController>!
 
 
     convenience init(type: SceneType) {
         self.init()
         self.type = type
-
+        LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: appDel)
     }
     func loadInRange(sceneType: SceneType,range: Range<Int>, completionBlock: ([Events]?) -> Void) {
         // 1
@@ -40,8 +44,7 @@ class SceneFeedViewController: UIViewController, FeedComponentTarget{
     override func viewDidLoad() {
         super.viewDidLoad()
         LocalMessage.post(type.hashValue == 0 ? .HomeFeedPageOne : .HomeFeedPageTwo)
-        LocalMessage.observe(.NewLocationRegistered, classFunction: "newLocation", inClass: self)
-//        appDel.location.startUpdatingLocation()
+
         feedComponent = FeedComponent(target: self)
     }
     
@@ -147,9 +150,9 @@ extension SceneFeedViewController: UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
-        let event = feedComponent.content[indexPath.row]
+        cell.event = feedComponent.content[indexPath.row]
 //        if (!tableView.dragging && !tableView.decelerating) {
-            cell.processEvent(event, indexPath: indexPath)
+//            cell.processEvent(event, indexPath: indexPath)
 //        }
         return cell
         
