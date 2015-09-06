@@ -126,13 +126,17 @@ class ImageDownloader: NSOperation {
     //3
     override func main() {
         //4
-        if self.cancelled {
-            return
-        }
+//        if self.cancelled {
+//            return
+//        }
         //5
 
         ParseUtility.getEventBgImg(self.eventRecord){(img: UIImage?,error: NSError?) in
-            if(((error) != nil) || (img == nil)){
+            if((img) != nil){
+                self.eventRecord.localBgImg = img!
+                print("Download BG for \(self.eventRecord.name)")
+            }
+            else if(((error) != nil) || (img == nil)){
                 self.eventRecord.localBgImg = appDel.placeHolderBg!
                 print("No BG value for \(self.eventRecord.name)")
             }
@@ -141,8 +145,7 @@ class ImageDownloader: NSOperation {
                 return
             }
             else{
-                self.eventRecord.localBgImg = img!
-                print("Download BG for \(self.eventRecord.name)")
+                print("well sucks")
             }
             ParseUtility.getProfileImg(self.eventRecord.creator){(img: UIImage?,error: NSError?) in
                 if(((error) != nil) || (img == nil)){

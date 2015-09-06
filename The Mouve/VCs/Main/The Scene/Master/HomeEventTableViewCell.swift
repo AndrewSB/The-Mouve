@@ -15,7 +15,7 @@ class HomeEventTableViewCell: UITableViewCell {
     var dataFillingOp: NSOperation!
     var event: Events! {
         didSet {
-            self.processEvent(event)
+            self.processEvent()
             nameLabel.text = event.name
             descriptionLabel.text = event.about
 
@@ -63,7 +63,8 @@ class HomeEventTableViewCell: UITableViewCell {
 //        Hide at first all cells
     }
 
-    func processEvent(event: Events!){
+//    func processEvent(indexPath: NSIndexPath){
+    func processEvent(){
     
         
 
@@ -73,17 +74,17 @@ class HomeEventTableViewCell: UITableViewCell {
 //            }
             let downloadImages: NSOperation = ImageDownloader(eventRecord: self.event)
             let resizeImagesToCell: NSOperation = ImageFiltration(cell: self)
-//            downloadImages.qualityOfService = NSQualityOfService.Utility
-            
-            resizeImagesToCell.addDependency(downloadImages)
+            downloadImages.qualityOfService = NSQualityOfService.Utility
 //            appDel.pendingOperations.downloadsInProgress[indexPath] = downloadImages
-//            downloadImages.completionBlock = {
+            downloadImages.completionBlock = {
 //                appDel.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
-//            }
-//            resizeImagesToCell.completionBlock = {
+                NSOperationQueue.mainQueue().addOperation(resizeImagesToCell)
+            }
+            resizeImagesToCell.completionBlock = {
 //                appDel.pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
-//            }
-            NSOperationQueue.mainQueue().addOperations([downloadImages,resizeImagesToCell], waitUntilFinished: false)
+            }
+            appDel.pendingOperations.downloadQueue.addOperation(downloadImages)
+//            NSOperationQueue.mainQueue().addOperations([downloadImages,resizeImagesToCell], waitUntilFinished: false)
         }
         appDel.pendingOperations.filtrationQueue.addOperation(self.dataFillingOp)
     }

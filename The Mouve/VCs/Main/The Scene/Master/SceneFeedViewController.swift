@@ -109,13 +109,13 @@ extension SceneFeedViewController: HomeEventTVCDelegate {
     func didFinishLoadingCell(cell: HomeEventTableViewCell) {
         //        self.loadingSpinnerView.removeFromSuperview()
     }
-//    override func viewWillDisappear(animated: Bool) {
-//        appDel.pendingOperations.filtrationQueue.cancelAllOperations()
-//        appDel.pendingOperations.filtrationsInProgress.removeAll(keepCapacity: false)
-//        appDel.pendingOperations.downloadQueue.cancelAllOperations()
-//        appDel.pendingOperations.downloadsInProgress.removeAll(keepCapacity: false)
-//
-//    }
+    override func viewWillDisappear(animated: Bool) {
+        appDel.pendingOperations.filtrationQueue.cancelAllOperations()
+        appDel.pendingOperations.filtrationsInProgress.removeAll(keepCapacity: false)
+        appDel.pendingOperations.downloadQueue.cancelAllOperations()
+        appDel.pendingOperations.downloadsInProgress.removeAll(keepCapacity: false)
+
+    }
 }
 extension SceneFeedViewController : DZNEmptyDataSetSource,DZNEmptyDataSetDelegate {
     func emptyDataSetDidTapButton(scrollView: UIScrollView!) {
@@ -152,7 +152,7 @@ extension SceneFeedViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
         cell.event = feedComponent.content[indexPath.row]
 //        if (!tableView.dragging && !tableView.decelerating) {
-//            cell.processEvent(event, indexPath: indexPath)
+//            cell.processEvent(indexPath)
 //        }
         return cell
         
