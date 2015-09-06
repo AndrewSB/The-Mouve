@@ -96,9 +96,7 @@ extension AppDelegate {
         print("You're now located at")
     }
     func logOut() {
-//        UserDefaults.resetUD()
         PFUser.logOut()
-//        LocalMessage.deallocLM()
         self.checkLogin()
     }
 }
