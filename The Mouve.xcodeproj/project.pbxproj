@@ -100,6 +100,8 @@
 		78CFBD141B192F5D002AE6A2 /* TimeRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CFBD121B192F5D002AE6A2 /* TimeRangeSlider.swift */; };
 		78FC24D71B661769004B65C3 /* GooglePlacesAutocomplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FC24D51B661769004B65C3 /* GooglePlacesAutocomplete.swift */; };
 		78FC24D81B661769004B65C3 /* GooglePlacesAutocomplete.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FC24D61B661769004B65C3 /* GooglePlacesAutocomplete.xib */; };
+		9A08A82C1B9E80F20023EA7A /* IQKeyboardManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A08A82A1B9E80980023EA7A /* IQKeyboardManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9A08A82D1B9E80F70023EA7A /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A08A82A1B9E80980023EA7A /* IQKeyboardManager.framework */; };
 		9A0E64F71B58C1360002547D /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 9A0E64F51B58C1360002547D /* Cartfile */; };
 		9A0E64F81B58C1360002547D /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 9A0E64F61B58C1360002547D /* Cartfile.resolved */; };
 		9A0E652F1B58CFB20002547D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0E652E1B58CFB20002547D /* StringExtension.swift */; };
@@ -110,6 +112,7 @@
 		9A26978B1B6587330009F267 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2697891B6587330009F267 /* Account.swift */; };
 		9A26978C1B6587330009F267 /* ServerRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A26978A1B6587330009F267 /* ServerRequests.swift */; };
 		9A2697911B658FFB0009F267 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2697901B658FFB0009F267 /* User.swift */; };
+		9A43793C1BA3517B00E12D73 /* Bond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A43793B1BA3517B00E12D73 /* Bond.framework */; settings = {ASSET_TAGS = (); }; };
 		9A4823381B58E40C004AD2BC /* DZNEmptyDataSet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4823361B58E40C004AD2BC /* DZNEmptyDataSet.framework */; };
 		9A4823391B58E40C004AD2BC /* DZNEmptyDataSet.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A4823361B58E40C004AD2BC /* DZNEmptyDataSet.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9A51E4B81B87824B00A34028 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A51E4B71B87824B00A34028 /* Activity.swift */; };
@@ -130,8 +133,6 @@
 		9A956D9D1B9CD5FF0003CC86 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A956D8F1B9CD5AC0003CC86 /* ParseUI.framework */; };
 		9AB9B95B1B8FE4F200949867 /* ParseCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB9B95A1B8FE4F200949867 /* ParseCache.swift */; };
 		9ABA887A1B54B17F0014D459 /* MouveStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABA88791B54B17F0014D459 /* MouveStore.swift */; };
-		9AD6C0041B969EE500CDB694 /* IQKeyboardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD6C0031B969EE500CDB694 /* IQKeyboardManager.framework */; settings = {ASSET_TAGS = (); }; };
-		9AD6C0051B969F0800CDB694 /* IQKeyboardManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD6C0031B969EE500CDB694 /* IQKeyboardManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -141,11 +142,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				9A08A82C1B9E80F20023EA7A /* IQKeyboardManager.framework in Embed Frameworks */,
 				9A53E6E71B65933E00BBD5BC /* SwiftyJSON.framework in Embed Frameworks */,
 				46B888CF1AF9552400D872E0 /* Toucan.framework in Embed Frameworks */,
 				9A956D871B9CCCD20003CC86 /* KeychainAccess.framework in Embed Frameworks */,
 				9A4823391B58E40C004AD2BC /* DZNEmptyDataSet.framework in Embed Frameworks */,
-				9AD6C0051B969F0800CDB694 /* IQKeyboardManager.framework in Embed Frameworks */,
 				46B888CD1AF9550A00D872E0 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -257,6 +258,7 @@
 		78FC24D51B661769004B65C3 /* GooglePlacesAutocomplete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GooglePlacesAutocomplete.swift; sourceTree = "<group>"; };
 		78FC24D61B661769004B65C3 /* GooglePlacesAutocomplete.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GooglePlacesAutocomplete.xib; sourceTree = "<group>"; };
 		929586E6563C67344DC3320E /* Urbana.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = gpx; path = Urbana.gpx; sourceTree = "<group>"; };
+		9A08A82A1B9E80980023EA7A /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQKeyboardManager.framework; path = Carthage/Build/iOS/IQKeyboardManager.framework; sourceTree = SOURCE_ROOT; };
 		9A0E64F51B58C1360002547D /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = SOURCE_ROOT; };
 		9A0E64F61B58C1360002547D /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = SOURCE_ROOT; };
 		9A0E652E1B58CFB20002547D /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 		9A2697891B6587330009F267 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		9A26978A1B6587330009F267 /* ServerRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerRequests.swift; sourceTree = "<group>"; };
 		9A2697901B658FFB0009F267 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9A43793B1BA3517B00E12D73 /* Bond.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bond.framework; path = Carthage/Build/iOS/Bond.framework; sourceTree = SOURCE_ROOT; };
 		9A4823361B58E40C004AD2BC /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DZNEmptyDataSet.framework; path = ../../Carthage/Build/iOS/DZNEmptyDataSet.framework; sourceTree = "<group>"; };
 		9A51E4B71B87824B00A34028 /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		9A53E6E21B65932C00BBD5BC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = SOURCE_ROOT; };
@@ -287,7 +290,6 @@
 		9A956D8F1B9CD5AC0003CC86 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		9AB9B95A1B8FE4F200949867 /* ParseCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseCache.swift; sourceTree = "<group>"; };
 		9ABA88791B54B17F0014D459 /* MouveStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; name = MouveStore.swift; path = Models/MouveStore.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		9AD6C0031B969EE500CDB694 /* IQKeyboardManager.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IQKeyboardManager.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,7 +326,8 @@
 				46B29BBB1ADB20F5000B9441 /* SystemConfiguration.framework in Frameworks */,
 				460FF5061AF87815007C6872 /* Fabric.framework in Frameworks */,
 				4673C11C1AF6C857000C034A /* FBAudienceNetwork.framework in Frameworks */,
-				9AD6C0041B969EE500CDB694 /* IQKeyboardManager.framework in Frameworks */,
+				9A43793C1BA3517B00E12D73 /* Bond.framework in Frameworks */,
+				9A08A82D1B9E80F70023EA7A /* IQKeyboardManager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,8 +562,9 @@
 		46B29BC21ADB2187000B9441 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				9A43793B1BA3517B00E12D73 /* Bond.framework */,
+				9A08A82A1B9E80980023EA7A /* IQKeyboardManager.framework */,
 				9A956D851B9CCCC90003CC86 /* KeychainAccess.framework */,
-				9AD6C0031B969EE500CDB694 /* IQKeyboardManager.framework */,
 				9A909C161B941621007BF5A7 /* FeedComponent.swift */,
 				9A1A70381B8D46F5006C8452 /* UIColor+Additions.h */,
 				9A1A70391B8D46F5006C8452 /* UIColor+Additions.m */,

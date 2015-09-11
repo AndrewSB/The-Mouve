@@ -13,9 +13,9 @@ import Toucan
 import Parse
 class HomeEventTableViewCell: UITableViewCell {
     var dataFillingOp: NSOperation!
+    var isDone = false
     var event: Events! {
         didSet {
-            self.processEvent()
             nameLabel.text = event.name
             descriptionLabel.text = event.about
 
@@ -67,25 +67,36 @@ class HomeEventTableViewCell: UITableViewCell {
     func processEvent(){
     
         
-
-        dataFillingOp = NSBlockOperation(){
-//            if((appDel.pendingOperations.downloadsInProgress[indexPath]) != nil){
-//                return
+//        if(!self.isDone){
+            dataFillingOp = NSBlockOperation(){
+    //            if((appDel.pendingOperations.downloadsInProgress[indexPath]) != nil){
+    //                return
+    //            }
+                let downloadImages: NSOperation = ImageDownloader(eventRecord: self.event)
+                let resizeImagesToCell: NSOperation = ImageFiltration(cell: self)
+                downloadImages.qualityOfService = NSQualityOfService.Utility
+    //            appDel.pendingOperations.downloadsInProgress[indexPath] = downloadImages
+                downloadImages.completionBlock = {
+    //                appDel.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
+                    
+                    NSOperationQueue.mainQueue().addOperation(resizeImagesToCell)
+                    
+                }
+                resizeImagesToCell.completionBlock = {
+    //                appDel.pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
+//                    self.isDone = true
+                }
+//                NSOperationQueue.mainQueue().addOperation(downloadImages)
+                appDel.pendingOperations.downloadQueue.addOperation(downloadImages)
+    //            NSOperationQueue.mainQueue().addOperations([downloadImages,resizeImagesToCell], waitUntilFinished: false)
+            }
+//        }
+//        else{
+//            dataFillingOp = NSBlockOperation(){
+//                let resizeImagesToCell: NSOperation = ImageFiltration(cell: self)
+//                NSOperationQueue.mainQueue().addOperation(resizeImagesToCell)
 //            }
-            let downloadImages: NSOperation = ImageDownloader(eventRecord: self.event)
-            let resizeImagesToCell: NSOperation = ImageFiltration(cell: self)
-            downloadImages.qualityOfService = NSQualityOfService.Utility
-//            appDel.pendingOperations.downloadsInProgress[indexPath] = downloadImages
-            downloadImages.completionBlock = {
-//                appDel.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
-                NSOperationQueue.mainQueue().addOperation(resizeImagesToCell)
-            }
-            resizeImagesToCell.completionBlock = {
-//                appDel.pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
-            }
-            appDel.pendingOperations.downloadQueue.addOperation(downloadImages)
-//            NSOperationQueue.mainQueue().addOperations([downloadImages,resizeImagesToCell], waitUntilFinished: false)
-        }
+//        }
         appDel.pendingOperations.filtrationQueue.addOperation(self.dataFillingOp)
     }
     func cancelProcess(){

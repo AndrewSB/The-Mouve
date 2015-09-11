@@ -17,8 +17,8 @@ import DZNEmptyDataSet
 class SceneFeedViewController: UIViewController, FeedComponentTarget{
 
     @IBOutlet weak var feedTableView: UITableView!
-    let defaultRange = 0...4
-    let additionalRangeSize = 5
+    let defaultRange = 0...9
+    let additionalRangeSize = 10
     var type: SceneType!{
         didSet{
             
@@ -152,11 +152,22 @@ extension SceneFeedViewController: UITableViewDataSource{
         let cell = tableView.dequeueReusableCellWithIdentifier("cellID") as! HomeEventTableViewCell
         cell.event = feedComponent.content[indexPath.row]
 //        if (!tableView.dragging && !tableView.decelerating) {
-//            cell.processEvent(indexPath)
+//            cell.processEvent()
 //        }
         return cell
-        
-
+    }
+    func loadImagesForOnscreenRows() {
+        if (self.feedComponent.content.count > 0) {
+            let visiblePaths = self.feedTableView.indexPathsForVisibleRows
+            for i in visiblePaths! {
+                self.loadImageForCellAtIndexPath(i)
+            }
+        }
+    }
+    
+    func loadImageForCellAtIndexPath(indexPath: NSIndexPath) {
+    let cell = self.feedTableView.cellForRowAtIndexPath(indexPath) as! HomeEventTableViewCell
+        cell.processEvent()
     }
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
@@ -186,74 +197,12 @@ extension SceneFeedViewController:  UITableViewDelegate{
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0
     }
-//    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-//        (cell as! HomeEventTableViewCell).cancelProcess()
-//    }
-
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        self.loadImagesForOnscreenRows()
+    }
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if(!decelerate){
+            self.loadImagesForOnscreenRows()
+        }
+    }
 }
-//extension SceneFeedViewController: UIScrollViewDelegate{
-//    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-//        //1
-//        suspendAllOperations()
-//    }
-////
-//    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-//        // 2
-//        if !decelerate {
-//            loadImagesForOnscreenCells()
-//            resumeAllOperations()
-//        }
-//    }
-//    
-//    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-//        // 3
-//        loadImagesForOnscreenCells()
-//        resumeAllOperations()
-//    }
-//    func suspendAllOperations () {
-//        appDel.pendingOperations.downloadQueue.suspended = true
-//        appDel.pendingOperations.filtrationQueue.suspended = true
-//    }
-////
-//    func resumeAllOperations () {
-//        appDel.pendingOperations.downloadQueue.suspended = false
-//        appDel.pendingOperations.filtrationQueue.suspended = false
-//    }
-//
-//    func loadImagesForOnscreenCells () {
-//        //1
-//        if let pathsArray = feedTableView.indexPathsForVisibleRows() {
-//            //2
-//            var allPendingOperations = Set(appDel.pendingOperations.downloadsInProgress.keys.array)
-//            allPendingOperations.unionInPlace(appDel.pendingOperations.filtrationsInProgress.keys.array)
-//            
-//            //3
-//            var toBeCancelled = allPendingOperations
-//            let visiblePaths = Set(pathsArray as! [NSIndexPath])
-//            toBeCancelled.subtractInPlace(visiblePaths)
-//            
-//            //4
-//            var toBeStarted = visiblePaths
-//            toBeStarted.subtractInPlace(allPendingOperations)
-//            
-//            // 5
-//            for indexPath in toBeCancelled {
-//                if let pendingDownload = appDel.pendingOperations.downloadsInProgress[indexPath] {
-//                    pendingDownload.cancel()
-//                }
-//                appDel.pendingOperations.downloadsInProgress.removeValueForKey(indexPath)
-//                if let pendingFiltration = appDel.pendingOperations.filtrationsInProgress[indexPath] {
-//                    pendingFiltration.cancel()
-//                }
-//                appDel.pendingOperations.filtrationsInProgress.removeValueForKey(indexPath)
-//            }
-//            
-//            // 6
-//            for indexPath in toBeStarted {
-//                let indexPath = indexPath as NSIndexPath
-//                let cell = (feedTableView.cellForRowAtIndexPath(indexPath) as! HomeEventTableViewCell)
-////                cell.processEvent(cell.event, indexPath: indexPath)
-//            }
-//        }
-//    }
-//}
